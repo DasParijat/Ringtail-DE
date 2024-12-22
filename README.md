@@ -11,6 +11,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	(12/22/2024) 
 	<li>Created play and story menu for later</li>
 	<li>Have menu buttons print when pressed (for debug purposes)</li>
+	<li>Created settings_menu</li>
 	</ul></li>
 	
 	<li><ul>
