@@ -15,6 +15,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li><ul>
 	(12/21/24) 
 	<li>Created Ringtail DE, Updated README</li>
-	<li>Created a basic menu (only quit works ) + removed flash screen</li>
+	<li>Created a basic menu (only quit works ) + removed godot bootup screen</li>
 	<li>Set window size to 1920x1080</li>
+	<li>Set custom input map for menu button navigation</li>
 </ul>
