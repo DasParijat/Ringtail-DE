@@ -12,6 +12,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Created play and story menu for later</li>
 	<li>Have menu buttons print when pressed (for debug purposes)</li>
 	<li>Created settings_menu</li>
+	<li>Testing tile map in game scene</li>
 	</ul></li>
 	
 	<li><ul>
