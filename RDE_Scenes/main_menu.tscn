@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgynnt6h5g1vk"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/main_menu.gd" id="1_notiw"]
+[ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="2_br78j"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_notiw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 803.0
+offset_right = 476.19
+offset_bottom = 834.0
+scale = Vector2(5.56, 5.56)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="playB" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Play"
+script = ExtResource("2_br78j")
+
+[node name="settingsB" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("2_br78j")
+
+[node name="creditsB" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("2_br78j")
+
+[node name="quitB" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Quit"
+script = ExtResource("2_br78j")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/playB" to="." method="_on_play_b_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/creditsB" to="." method="_on_credits_b_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]

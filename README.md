@@ -1,12 +1,20 @@
 <p>
 Ringtail Definitive Edition is a remake of an old but gold Scratch game I made back in 2022.
 It's a top down bullet hell shooter where you have to take down a nefarious evil and
-hyperrealistc raccoon (technical a monster in the form of a raccon but that's just lore stuff).
+hyperrealistc raccoon (technically a monster in the form of a raccon but that's just lore stuff).
 </p>
 
 <strong>Changelog:</strong>
 <ul>
-	<li>(12/21/24) - Created Ringtail DE, Updated README</li>
-	<li>() - </li>
+	</ul></li>
+	<li><ul>
+	(12/) 
+	<li>...</li>
+	</ul></li>
 	
+	<li><ul>
+	(12/21/24) 
+	<li>Created Ringtail DE, Updated README</li>
+	<li>Created a basic menu (only quit works ) + removed flash screen</li>
+	<li>Set window size to 1920x1080</li>
 </ul>
