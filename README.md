@@ -15,6 +15,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Testing tile map in game scene</li>
 			<li>Have game scene linked to menu scene</li>
 			<li>Set up player, boss, and gun scenes</li>
+			<li>Changed game resolution to 1080x720p</li>
 		</ul>
 	</li>
 	<li>

@@ -1,5 +1,9 @@
 extends Control
 
+func _ready() -> void:
+	# get_viewport().size = DisplayServer.screen_get_size()
+	pass
+	
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	# will open up play_menu

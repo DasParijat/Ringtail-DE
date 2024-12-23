@@ -14,11 +14,11 @@ script = ExtResource("1_notiw")
 
 [node name="front_menu" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 203.0
-offset_top = 803.0
-offset_right = 476.19
-offset_bottom = 834.0
-scale = Vector2(5.56, 5.56)
+offset_left = 121.0
+offset_top = 368.0
+offset_right = 349.0
+offset_bottom = 399.0
+scale = Vector2(1.96977, 1.96977)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="front_menu"]
 layout_mode = 2
