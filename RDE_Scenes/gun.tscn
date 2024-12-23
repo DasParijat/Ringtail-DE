@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c74x71o74tua8"]
+
+[node name="gun" type="Sprite2D"]

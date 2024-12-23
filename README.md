@@ -13,7 +13,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Have menu buttons print when pressed (for debug purposes)</li>
 			<li>Created settings_menu</li>
 			<li>Testing tile map in game scene</li>
-			<li>Have game scene linked to menu scene/li>
+			<li>Have game scene linked to menu scene</li>
+			<li>Set up player, boss, and gun scenes</li>
 		</ul>
 	</li>
 	<li>
