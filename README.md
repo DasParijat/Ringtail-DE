@@ -8,6 +8,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/23/24)
+			<li>Ditched old Ringtail Rebuild Repo, moved assets from there to here</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/22/24)
 			<li>Created play and story menu for later</li>
 			<li>Have menu buttons print when pressed (for debug purposes)</li>
