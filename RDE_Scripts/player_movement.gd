@@ -1,18 +1,20 @@
 extends CharacterBody2D
 
+@export var player_res : PlayerRes
+var speed_modifier : float 
+
+func _ready() -> void:
+	speed_modifier = 1
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	movement(10, 10)
+	print(player_res.base_speed)
+	movement(player_res.base_speed)
 
-func movement(cur_speed, speed_modifier):
+func movement(cur_speed : float):
 	look_at(get_global_mouse_position())
-	# non-dash movement
-	if !(Input.is_action_pressed("dash")):
-		speed_modifier = 1
-	# dash movement
-	else:
-		speed_modifier = 3
 	
-	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		
+	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") #inputs are temp
+	velocity = input_direction * (cur_speed * speed_modifier)
+	
 	move_and_slide()

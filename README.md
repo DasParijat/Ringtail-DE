@@ -11,7 +11,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(12/23/24)
 			<li>Ditched old Ringtail Rebuild Repo, moved assets from there to here</li>
 			<li>Created resource PlayerRes, and used it for new Oswald Resource</li>
-			<li>Made player movement script (not used yet)</li>
+			<li>Put Oswald (player) into game scene (may remove)</li>
+			<li>Made player movement script and added basic movement</li>
 		</ul>
 	</li>
 	<li>

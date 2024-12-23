@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://t3n8e0fyn57u"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/player_movement.gd" id="1_eqbwc"]
+[ext_resource type="Texture2D" uid="uid://bera0klibc5q1" path="res://icon.svg" id="2_nodsd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_saq7g"]
+
+[node name="Oswald" type="CharacterBody2D"]
+script = ExtResource("1_eqbwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nodsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_saq7g")
