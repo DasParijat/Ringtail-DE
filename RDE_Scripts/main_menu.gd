@@ -3,7 +3,7 @@ extends Control
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	# will open up play_menu
-	pass
+	get_tree().change_scene_to_file("res://RDE_Scenes/game.tscn")
 	
 func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
