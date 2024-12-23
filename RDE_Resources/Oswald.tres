@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlayerRes" load_steps=2 format=3 uid="uid://blf71j4t5n6ln"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/playerRes.gd" id="1_dq3hh"]
+
+[resource]
+script = ExtResource("1_dq3hh")
+p_name = "Oswald"
+color = Color(0.949938, 0.82364, 0.168483, 1)
+max_hp = 50
+regen_rate = 5.0
+base_speed = 500.0
+rest_speed = 250.0
+sprint_speed = 750.0
+max_power = 100.0
+base_power_rate = 1.0
