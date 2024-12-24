@@ -8,12 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(player_res.base_speed)
 	movement(player_res.base_speed)
 
 func movement(cur_speed : float):
 	look_at(get_global_mouse_position())
-	
+	print("yo")
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") #inputs are temp
 	velocity = input_direction * (cur_speed * speed_modifier)
 	
