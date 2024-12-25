@@ -1,10 +1,7 @@
 extends CharacterBody2D
 
 @onready var player_res : PlayerRes = get_parent().player_res
-var speed_modifier : float 
-
-func _ready() -> void:
-	speed_modifier = 1
+var speed_modifier : float = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,5 +15,5 @@ func movement(cur_speed : float) -> void:
 	
 	move_and_slide()
 
-func change_speedmod(change : float) -> void:
-	speed_modifier += change
+func set_speedmod(new_val : float) -> void:
+	speed_modifier = new_val

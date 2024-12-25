@@ -11,6 +11,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(12/24/24)
 			<li>Added key mapping for player movement</li>
 			<li>PlayerRes is retrieved from Oswald instead of base player</li>
+			<li>Oswald can determine speed mod in base player</li>
 		</ul>
 	</li>
 	<li>
