@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=5 format=4 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="1_5op00"]
 [ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/oswald.tscn" id="2_1yfeq"]
-[ext_resource type="Resource" uid="uid://blf71j4t5n6ln" path="res://RDE_Resources/Oswald.tres" id="3_rgv3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sstqc"]
 texture = ExtResource("1_5op00")
@@ -276,4 +275,3 @@ tile_set = SubResource("TileSet_k5gdp")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Oswald" parent="." instance=ExtResource("2_1yfeq")]
-player_res = ExtResource("3_rgv3l")

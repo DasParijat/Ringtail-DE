@@ -10,6 +10,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(12/24/24)
 			<li>Added key mapping for player movement</li>
+			<li>PlayerRes is retrieved from Oswald instead of base player</li>
 		</ul>
 	</li>
 	<li>
