@@ -8,6 +8,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/24/24)
+			<li>Added key mapping for player movement</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/23/24)
 			<li>Ditched old Ringtail Rebuild Repo, moved assets from there to here</li>
 			<li>Created resource PlayerRes, and used it for new Oswald Resource</li>

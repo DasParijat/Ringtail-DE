@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 
 func movement(cur_speed : float):
 	look_at(get_global_mouse_position())
-	print("yo")
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") #inputs are temp
+	
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
 	velocity = input_direction * (cur_speed * speed_modifier)
 	
 	move_and_slide()
