@@ -2,7 +2,6 @@ extends Resource
 class_name PlayerRes
 
 # Changable Properties
-@export_category("Identifiers")
 @export var p_name : String
 @export var color: Color 
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://du70fw1o5c5e" path="res://RDE_Resources/OswaldHP.tres" id="1_6a0bh"]
 [ext_resource type="Resource" uid="uid://corvcvjy3cxbn" path="res://RDE_Resources/SMG.tres" id="2_0s6dd"]
-[ext_resource type="Script" path="res://RDE_Scripts/Resource_Scripts/playerRes.gd" id="3_se43b"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/playerRes.gd" id="3_se43b"]
 
 [resource]
 script = ExtResource("3_se43b")

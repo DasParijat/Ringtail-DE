@@ -8,6 +8,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/26/24)
+			<li>Moved resource scripts to under resource folder</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/25/24)
 			<li>Happy Christmas!</li>
 			<li>Added old player sprite from previous game (nefarions)</li>
