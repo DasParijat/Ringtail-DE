@@ -8,6 +8,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/25/24)
+			<li>Added seperate health resource</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/24/24)
 			<li>Added key mapping for player movement</li>
 			<li>PlayerRes is retrieved from Oswald instead of base player</li>

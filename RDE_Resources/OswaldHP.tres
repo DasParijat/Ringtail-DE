@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HealthRes" load_steps=2 format=3 uid="uid://du70fw1o5c5e"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/healthRes.gd" id="1_umdju"]
+
+[resource]
+script = ExtResource("1_umdju")
+max_hp = 50
