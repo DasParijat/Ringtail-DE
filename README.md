@@ -9,8 +9,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(12/25/24)
+			<li>Happy Christmas!</li>
 			<li>Added seperate health resource</li>
 			<li>Added gun resource and created SMG resource</li>
+			<li>Player resource now holds default guns</li>
+			<li>Changed folder colors</li>
 		</ul>
 	</li>
 	<li>
