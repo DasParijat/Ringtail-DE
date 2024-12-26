@@ -26,4 +26,5 @@ func shoot():
 	return 0
 
 func reload():
+	#add code to wait for reload_time to complete
 	ammo_capacity = mag_size 

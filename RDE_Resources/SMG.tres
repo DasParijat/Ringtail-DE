@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="GunRes" load_steps=2 format=3 uid="uid://corvcvjy3cxbn"]
+[gd_resource type="Resource" script_class="GunRes" load_steps=3 format=3 uid="uid://corvcvjy3cxbn"]
 
-[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="1_xgi1f"]
+[ext_resource type="Resource" uid="uid://ts0nwtwx6v6p" path="res://RDE_Resources/SMG_bullet.tres" id="1_3rkm4"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="2_l1qvm"]
 
 [resource]
-script = ExtResource("1_xgi1f")
+script = ExtResource("2_l1qvm")
 name = "SMG"
 mag_size = 30
-damage = 10.0
 fire_rate = 0.2
 reload_time = 2.0
 is_automatic = true
+bullet_res = ExtResource("1_3rkm4")
+num_of_bullets = 1
+bullet_spread = 0.0

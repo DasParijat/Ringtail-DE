@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://ts0nwtwx6v6p"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_bolxm"]
+[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_moiun"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_bolxm")
+sprite = ExtResource("2_moiun")
+damage = 1.0
+enemy_knockback = 0.1
+is_piercing = true
+falloff_point = 1000.0
+falloff_rate = 0.2

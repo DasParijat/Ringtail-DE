@@ -11,6 +11,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(12/26/24)
 			<li>Moved resource scripts to under resource folder</li>
 			<li>Created bullet resource</li>
+			<li>Created SMG bullets</li>
 		</ul>
 	</li>
 	<li>
