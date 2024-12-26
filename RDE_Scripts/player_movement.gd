@@ -3,9 +3,13 @@ extends CharacterBody2D
 @onready var player_res : PlayerRes = get_parent().player_res
 var speed_modifier : float = 1
 
+func _ready() -> void:
+	player_res.reset_speed()
+	player_res.reset_power_rate()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	movement(player_res.base_speed)
+	movement(player_res.cur_speed)
 
 func movement(cur_speed : float) -> void:
 	look_at(get_global_mouse_position())

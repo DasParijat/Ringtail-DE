@@ -26,15 +26,16 @@ class_name PlayerRes
 # how long the cooldown after swithing to a new gun is
 
 # actual gun loadout
-var primary_gun : GunRes
-var secondary_gun : GunRes
+# unless specified, primary and secondary gun will be the defaults
+var primary_gun : GunRes = def_primary_gun
+var secondary_gun : GunRes = def_secondary_gun
 
-var cur_power_rate: float = 0.0
+# cur variables can dynamically change during the game
+var cur_power_rate : float
+var cur_speed : float 
 
-var cur_speed: float = base_speed
-var speed_modifier: float = 1.0
-var motion_modifier: float = 1.0
-
-func set_default_loadout():
-	primary_gun = def_primary_gun
-	secondary_gun = def_secondary_gun
+func reset_speed():
+	cur_speed = base_speed 
+	
+func reset_power_rate():
+	cur_power_rate = base_power_rate
