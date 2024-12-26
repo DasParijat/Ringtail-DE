@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgynnt6h5g1vk"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/main_menu.gd" id="1_notiw"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="2_br78j"]
 
 [node name="main_menu" type="Control"]

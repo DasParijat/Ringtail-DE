@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerRes" load_steps=3 format=3 uid="uid://blf71j4t5n6ln"]
 
 [ext_resource type="Resource" uid="uid://du70fw1o5c5e" path="res://RDE_Resources/OswaldHP.tres" id="1_6a0bh"]
-[ext_resource type="Script" path="res://RDE_Scripts/playerRes.gd" id="1_dq3hh"]
+[ext_resource type="Script" path="res://RDE_Scripts/Resource_Scripts/playerRes.gd" id="1_dq3hh"]
 
 [resource]
 script = ExtResource("1_dq3hh")

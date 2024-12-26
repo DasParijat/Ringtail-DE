@@ -10,6 +10,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(12/25/24)
 			<li>Added seperate health resource</li>
+			<li>Added gun resource and created SMG resource</li>
 		</ul>
 	</li>
 	<li>
