@@ -8,6 +8,7 @@ script = ExtResource("2_l1qvm")
 name = "SMG"
 mag_size = 30
 fire_rate = 0.2
+reload_type = "AUTO"
 reload_time = 2.0
 is_automatic = true
 bullet_res = ExtResource("1_3rkm4")
