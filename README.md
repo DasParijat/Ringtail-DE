@@ -8,6 +8,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/27/24)
+			<li>Added key mapping for shooting, reloading, resting, and switch weapons</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/26/24)
 			<li>Moved resource scripts to under resource folder</li>
 			<li>Created bullet resource</li>
@@ -17,7 +23,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Have base_player script handle sprite texture</li>
 			<li>Made base player node it's own scene</li>
 			<li>Added documentation to resource scripts</li>
-			<li>Added documentation to other scripts</li>
+			<li>Added documentation to every other scripts</li>
 		</ul>
 	</li>
 	<li>
