@@ -1,4 +1,5 @@
 extends Button
+# Handles buttons that can be navigated using keys (WASD/ARROW)
 
 func _ready() -> void:
 	grab_focus()

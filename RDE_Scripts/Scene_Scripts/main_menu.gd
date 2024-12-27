@@ -1,4 +1,6 @@
 extends Control
+# Code handling the whole main menu, including it's submenus
+# Settings Menu is excluded, handled by it's own script
 
 func _ready() -> void:
 	# get_viewport().size = DisplayServer.screen_get_size()

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+# Handles code that every playable character uses
 
 @onready var player_res : PlayerRes = get_parent().player_res
 @onready var sprite : Sprite2D = $Sprite2D

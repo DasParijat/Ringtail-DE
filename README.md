@@ -17,6 +17,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Have base_player script handle sprite texture</li>
 			<li>Made base player node it's own scene</li>
 			<li>Added documentation to resource scripts</li>
+			<li>Added documentation to other scripts</li>
 		</ul>
 	</li>
 	<li>
