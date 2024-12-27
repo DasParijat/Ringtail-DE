@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://c74x71o74tua8"]
+[gd_scene load_steps=3 format=3 uid="uid://c74x71o74tua8"]
 
-[node name="gun" type="Sprite2D"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/gun.gd" id="1_p747b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wn4n"]
+
+[node name="gun" type="Area2D"]
+script = ExtResource("1_p747b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6wn4n")

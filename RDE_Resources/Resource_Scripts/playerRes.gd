@@ -27,8 +27,7 @@ class_name PlayerRes
 
 # actual gun loadout
 # unless specified, primary and secondary gun will be the defaults
-var primary_gun : GunRes = def_primary_gun
-var secondary_gun : GunRes = def_secondary_gun
+@export var gun_array : Array[GunRes] = [def_primary_gun, def_secondary_gun] 
 
 # cur variables can dynamically change during the game
 var cur_power_rate : float

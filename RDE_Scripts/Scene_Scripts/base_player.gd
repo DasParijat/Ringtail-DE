@@ -10,6 +10,12 @@ var speed_modifier : float = 1
 
 func _ready() -> void:
 	sprite.texture = load(sprite_texture_path) 
+	
+	# testing gun array
+	print(player_res.def_primary_gun.name)
+	print(player_res.def_secondary_gun.name)
+	print(player_res.gun_array)
+	
 	player_res.reset_speed()
 	player_res.reset_power_rate()
 	
