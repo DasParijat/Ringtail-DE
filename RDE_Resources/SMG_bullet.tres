@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_moiun"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("1_bolxm")
 sprite = ExtResource("2_moiun")
 damage = 1.0

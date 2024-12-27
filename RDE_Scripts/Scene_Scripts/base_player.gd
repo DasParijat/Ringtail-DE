@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player_res : PlayerRes = get_parent().player_res
 @onready var sprite : Sprite2D = $Sprite2D
 
-@export var sprite_texture_path : String
+@export var sprite_texture_path : String = "res://RDE_Images/nf Player.png"
 
 var speed_modifier : float = 1
 

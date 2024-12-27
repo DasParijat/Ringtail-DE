@@ -1,22 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://t3n8e0fyn57u"]
+[gd_scene load_steps=4 format=3 uid="uid://t3n8e0fyn57u"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/oswald.gd" id="1_ddibq"]
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_player.gd" id="1_eqbwc"]
-[ext_resource type="Resource" uid="uid://blf71j4t5n6ln" path="res://RDE_Resources/Oswald.tres" id="3_ul88x"]
-[ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="4_kq78u"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_saq7g"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/oswald.gd" id="1_qoyxg"]
+[ext_resource type="Resource" uid="uid://blf71j4t5n6ln" path="res://RDE_Resources/Oswald.tres" id="2_xhiw5"]
+[ext_resource type="PackedScene" uid="uid://b5yku1mrxehwp" path="res://RDE_Scenes/base_player.tscn" id="3_eqyry"]
 
 [node name="Oswald" type="Node2D"]
-script = ExtResource("1_ddibq")
-player_res = ExtResource("3_ul88x")
+script = ExtResource("1_qoyxg")
+player_res = ExtResource("2_xhiw5")
 
-[node name="base_player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_eqbwc")
-sprite_texture_path = "res://RDE_Images/nf Player.png"
-
-[node name="base_collision" type="CollisionShape2D" parent="base_player"]
-shape = SubResource("CircleShape2D_saq7g")
-
-[node name="Sprite2D" type="Sprite2D" parent="base_player"]
-texture = ExtResource("4_kq78u")
+[node name="BasePlayer" parent="." instance=ExtResource("3_eqyry")]
