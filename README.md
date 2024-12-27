@@ -12,6 +12,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Moved resource scripts to under resource folder</li>
 			<li>Created bullet resource</li>
 			<li>Created SMG bullets</li>
+			<li>Account for auto/manual reloading in GunRes</li>
+			<li>Renamed player_movement.gd to base_player.gd</li>
+			<li>Have base_player script handle sprite texture</li>
 		</ul>
 	</li>
 	<li>

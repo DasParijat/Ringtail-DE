@@ -2,7 +2,7 @@ extends Resource
 class_name PlayerRes
 
 # Changable Properties
-@export var p_name : String
+@export var name : String
 @export var color: Color 
 
 @export_category("Health")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://t3n8e0fyn57u"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/oswald.gd" id="1_ddibq"]
-[ext_resource type="Script" path="res://RDE_Scripts/player_movement.gd" id="1_eqbwc"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_player.gd" id="1_eqbwc"]
 [ext_resource type="Resource" uid="uid://blf71j4t5n6ln" path="res://RDE_Resources/Oswald.tres" id="3_ul88x"]
 [ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="4_kq78u"]
 
@@ -13,6 +13,7 @@ player_res = ExtResource("3_ul88x")
 
 [node name="base_player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_eqbwc")
+sprite_texture_path = "res://RDE_Images/nf Player.png"
 
 [node name="base_collision" type="CollisionShape2D" parent="base_player"]
 shape = SubResource("CircleShape2D_saq7g")
