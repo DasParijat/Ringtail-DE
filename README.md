@@ -10,6 +10,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(12/27/24)
 			<li>Added key mapping for shooting, reloading, resting, and switch weapons</li>
+			<li>Account for sprint and resting in player movement</li>
 		</ul>
 	</li>
 	<li>

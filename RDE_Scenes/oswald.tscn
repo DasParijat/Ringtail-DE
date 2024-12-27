@@ -8,4 +8,4 @@
 script = ExtResource("1_qoyxg")
 player_res = ExtResource("2_xhiw5")
 
-[node name="BasePlayer" parent="." instance=ExtResource("3_eqyry")]
+[node name="base_player" parent="." instance=ExtResource("3_eqyry")]

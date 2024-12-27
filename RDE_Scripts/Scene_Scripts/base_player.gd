@@ -20,6 +20,12 @@ func _process(delta: float) -> void:
 func movement(cur_speed : float) -> void:
 	look_at(get_global_mouse_position())
 	
+	cur_speed = player_res.base_speed
+	if Input.is_action_pressed("sprint"):
+		cur_speed = player_res.sprint_speed
+	if Input.is_action_pressed("rest"):
+		cur_speed = player_res.rest_speed
+	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
 	velocity = input_direction * (cur_speed * speed_modifier)
 	
