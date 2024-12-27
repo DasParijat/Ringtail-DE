@@ -1,5 +1,7 @@
 extends Resource
 class_name GunRes
+# GunRes used to define
+# specific guns a player can use
 
 @export_category("Qualitative Attributes")
 @export var name: String = "UNNAMED"  

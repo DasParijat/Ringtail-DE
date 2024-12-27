@@ -16,6 +16,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Renamed player_movement.gd to base_player.gd</li>
 			<li>Have base_player script handle sprite texture</li>
 			<li>Made base player node it's own scene</li>
+			<li>Added documentation to resource scripts</li>
 		</ul>
 	</li>
 	<li>

@@ -1,5 +1,6 @@
 extends Resource
 class_name PlayerRes
+# PlayerRes is used to define the stats of each playable character
 
 # Changable Properties
 @export var name : String
