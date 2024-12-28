@@ -7,10 +7,14 @@ extends Node2D
 @onready var bullet_res : BulletRes = gun_res.bullet_res
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
-		print(gun_res.name)
-		shoot()
-		
+	match(gun_res.is_automatic):
+		true:
+			if event.is_action("shoot"):
+				shoot()
+		false:
+			if event.is_action_pressed("shoot"):
+				shoot()
+			
 func shoot():
 	var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
 	bullet.bullet_res = bullet_res

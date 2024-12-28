@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("2_l1qvm")
 name = "SMG"
-bullet_speed = 1250
+bullet_speed = 100
 mag_size = 30
 fire_rate = 0.2
 reload_type = ""
