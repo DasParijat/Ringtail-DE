@@ -3,7 +3,7 @@ class_name PlayerRes
 # PlayerRes is used to define the stats of each playable character
 
 # Changable Properties
-@export var name : String
+@export var name : String = "UNNAMED PLAYER"
 @export var color: Color 
 
 @export_category("Health")

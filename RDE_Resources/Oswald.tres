@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_se43b")
-name = ""
+name = "Oswald"
 color = Color(0.949938, 0.82364, 0.168483, 1)
 health_comp = ExtResource("1_6a0bh")
 regen_rate = 5.0
