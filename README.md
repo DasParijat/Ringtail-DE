@@ -8,10 +8,18 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/28/24)
+			<li>Bullet scene created</li>
+			<li>Player can actually shoot</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/27/24)
 			<li>Added key mapping for shooting, reloading, resting, and switch weapons</li>
 			<li>Account for sprint and resting in player movement</li>
 			<li>Used an array to hold the current weapons the player holds</li>
+			<li>Gun script/node can register the weapon it is and if it's shooting</li>
 		</ul>
 	</li>
 	<li>

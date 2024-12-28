@@ -8,6 +8,7 @@ class_name GunRes
 @export var sprite: Texture2D   
 
 @export_category("Quantitative Attributes")
+@export var bullet_speed : int = 750
 @export var mag_size : int = 30
 @export var fire_rate : float = 0.2       
 @export_enum("AUTO", "MANUAL") var reload_type : String = "AUTO"
