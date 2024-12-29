@@ -1,7 +1,7 @@
 extends Area2D
-	
-var bullet_res : BulletRes 
-var gun_res : GunRes
+
+@onready var gun_res : GunRes
+@onready var bullet_res : BulletRes 
 
 var bullet_travelled : float
 var start_position : Vector2
@@ -14,17 +14,17 @@ func set_bullet_res(res):
 	bullet_res = res
 	
 func falloff_calc():
-	pass
 	# checks if falloff calculation should be enabled, and to do the calc if true
-	#if bullet_travelled > falloff_point:
-	#	damage -= falloff_rate
+	if bullet_travelled > bullet_res.falloff_point:
+		bullet_res.damage -= bullet_res.falloff_rate
+		print(bullet_res.damage)
 		
 func _physics_process(delta):
 	position += transform.x * gun_res.bullet_speed * delta
 	bullet_travelled = global_position.distance_to(start_position)
-	print(bullet_travelled)
+	falloff_calc()
 	
 	# temp test
-	if bullet_travelled > 200:
+	if bullet_res.damage < 0:
 		queue_free()
 		

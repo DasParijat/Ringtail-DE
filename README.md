@@ -11,6 +11,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(12/29/24)
 			<li>Bullet tracks distance it's travelled</li>
 			<li>Removed location variables from bulletRes (instead in bullet script)</li>
+			<li>Bullet script considers falloff point and rate</li>
 		</ul>
 	</li>
 	<li>

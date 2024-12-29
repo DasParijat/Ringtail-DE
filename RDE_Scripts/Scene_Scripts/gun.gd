@@ -26,6 +26,7 @@ func can_shoot() -> bool:
 
 func shoot() -> void:
 	var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
+	print("gun script: ", bullet_res)
 	bullet.bullet_res = bullet_res
 	bullet.gun_res = gun_res
 	
