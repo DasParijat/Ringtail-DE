@@ -8,6 +8,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/29/24)
+			<li>Bullet tracks distance it's travelled</li>
+			<li>Removed location variables from bulletRes (instead in bullet script)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/28/24)
 			<li>Bullet scene created</li>
 			<li>Player can actually shoot</li>
