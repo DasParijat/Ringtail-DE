@@ -10,7 +10,7 @@ class_name GunRes
 @export_category("Quantitative Attributes")
 @export var bullet_speed : int = 750
 @export var mag_size : int = 30
-@export var fire_rate : float = 0.2       
+@export var fire_rate : float = 0.2 # in seconds
 @export_enum("AUTO", "MANUAL") var reload_type : String = "AUTO"
 @export var reload_time : float = 2.0 # in seconds
 @export var is_automatic : bool = true             

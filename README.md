@@ -12,6 +12,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Bullet scene created</li>
 			<li>Player can actually shoot</li>
 			<li>Shooting now consideres if gun is automatic</li>
+			<li>Shooting considers fire_rate/li>
 		</ul>
 	</li>
 	<li>
