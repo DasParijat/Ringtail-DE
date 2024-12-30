@@ -13,6 +13,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Removed location variables from bulletRes (instead in bullet script)</li>
 			<li>Bullet script considers falloff point and rate</li>
 			<li>Moved functions from GunRes to gun script</li>
+			<li>Working on reloading (NOT DONE, NEED IT TO COSIDER RELOAD TIME)</li>
 		</ul>
 	</li>
 	<li>

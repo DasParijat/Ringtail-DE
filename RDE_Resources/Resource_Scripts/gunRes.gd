@@ -17,7 +17,7 @@ class_name GunRes
 
 @export_category("Bullet")
 @export var bullet_res : BulletRes   
-@export var num_of_bullets : int = 99999
+@export var bullets_per_shot : int = 1
 @export var bullet_spread : float 
 
-var cur_ammo: int = mag_size
+var cur_ammo : int
