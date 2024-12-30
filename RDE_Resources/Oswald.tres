@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="PlayerRes" load_steps=4 format=3 uid="uid://blf71j4t5n6ln"]
+[gd_resource type="Resource" script_class="PlayerRes" load_steps=5 format=3 uid="uid://blf71j4t5n6ln"]
 
 [ext_resource type="Resource" uid="uid://du70fw1o5c5e" path="res://RDE_Resources/OswaldHP.tres" id="1_6a0bh"]
 [ext_resource type="Resource" uid="uid://corvcvjy3cxbn" path="res://RDE_Resources/SMG.tres" id="2_0s6dd"]
+[ext_resource type="Resource" uid="uid://bp54wtlywyi31" path="res://RDE_Resources/PumpShotgun.tres" id="2_3vifi"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/playerRes.gd" id="3_se43b"]
 
 [resource]
@@ -16,6 +17,6 @@ sprint_speed = 750.0
 max_power = 100.0
 base_power_rate = 1.0
 def_primary_gun = ExtResource("2_0s6dd")
-def_secondary_gun = ExtResource("2_0s6dd")
+def_secondary_gun = ExtResource("2_3vifi")
 switch_cooldown = 0.0
-gun_array = Array[Object]([ExtResource("2_0s6dd"), null])
+gun_array = Array[Object]([ExtResource("2_0s6dd"), ExtResource("2_3vifi")])

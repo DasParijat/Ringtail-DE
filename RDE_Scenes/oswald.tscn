@@ -11,4 +11,7 @@ player_res = ExtResource("2_xhiw5")
 
 [node name="base_player" parent="." instance=ExtResource("3_eqyry")]
 
-[node name="gun" parent="." instance=ExtResource("4_7lspv")]
+[node name="PrimaryGun" parent="." instance=ExtResource("4_7lspv")]
+
+[node name="SecGun" parent="." instance=ExtResource("4_7lspv")]
+gun_index = 1
