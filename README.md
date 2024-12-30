@@ -10,8 +10,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(12/30/24)
 			<li>Worked on finishing and fixing reload</li>
-			<li>For reload to work, bulletRes needs to be duplicated in scripts it is used
-			(so that the damage or any other value isn't directly linked to the main res)</li>
+			<li>Finished reload (issue was damage var not being local to each bullet)</li>
 		</ul>
 	</li>
 	<li>

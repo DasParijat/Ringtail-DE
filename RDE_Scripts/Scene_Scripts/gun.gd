@@ -14,7 +14,7 @@ extends Node2D
 
 func _ready() -> void:
 	cur_ammo = mag_size
-	bullet_res = bullet_res.duplicate()
+	#bullet_res = bullet_res.duplicate()
 	
 	shoot_timer.wait_time = gun_res.fire_rate
 	reload_timer.wait_time = gun_res.reload_time
@@ -41,8 +41,7 @@ func not_reloading() -> bool:
 func shoot() -> void:
 	if cur_ammo > 0 and not_reloading():
 		var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
-		print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
-		print("mag size: ", mag_size)
+		#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
 		bullet.bullet_res = bullet_res
 		bullet.gun_res = gun_res
 
@@ -53,23 +52,22 @@ func shoot() -> void:
 		shoot_timer.start(gun_res.fire_rate)
 
 func reload() -> void:
-	print("reload")
+	#print("reload")
 	match(gun_res.reload_type):
 		"AUTO":
-			print("got auto")
 			auto_reload()
 		"MANUAL":
 			var manual_reload_time = gun_res.reload_time / mag_size
 			manual_reload(manual_reload_time)
 
 func auto_reload() -> void:
-	print("Auto reload started")
+	#print("Auto reload started")
 	reload_timer.stop()
 	reload_timer.start(gun_res.reload_time)
 	await reload_timer.timeout
 	cur_ammo = mag_size
-	print("Reload complete")
-	print("check: ", cur_ammo, " ", mag_size)
+	#print("Reload complete")
+	#print("check: ", cur_ammo, " ", mag_size)
 
 func manual_reload(manual_reload_time : float) -> void:
 	while cur_ammo < mag_size:
@@ -77,4 +75,4 @@ func manual_reload(manual_reload_time : float) -> void:
 		reload_timer.stop()
 		reload_timer.start(manual_reload_time)
 		await reload_timer.timeout
-		print("Reloaded 1 bullet, current ammo:", cur_ammo)
+		#print("Reloaded 1 bullet, current ammo:", cur_ammo)
