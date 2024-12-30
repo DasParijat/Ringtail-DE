@@ -8,6 +8,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(12/30/24)
+			<li>Bullets don't shoot during reload, however at some point it breaks TODO FIX THIS</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/29/24)
 			<li>Bullet tracks distance it's travelled</li>
 			<li>Removed location variables from bulletRes (instead in bullet script)</li>

@@ -14,39 +14,43 @@ extends Node2D
 
 func _ready() -> void:
 	cur_ammo = mag_size
-	shoot_timer.wait_time = gun_res.fire_rate  
+	shoot_timer.wait_time = gun_res.fire_rate
 	reload_timer.wait_time = gun_res.reload_time
 
 func _process(delta: float) -> void:
 	var is_auto = gun_res.is_automatic
 	position = get_parent().position
-	
-	if can_shoot():
+
+	if can_shoot() and not_reloading():
 		if is_auto and Input.is_action_pressed("shoot"):
 			shoot()
 		elif not is_auto and Input.is_action_just_pressed("shoot"):
 			shoot()
-	
-	if cur_ammo <= 0:
-		await reload()
-	
+
+	if cur_ammo <= 0 and not_reloading():
+		reload()
 
 func can_shoot() -> bool:
 	return shoot_timer.is_stopped()
 
-func shoot() -> void:
-	var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
-	print(cur_ammo)
-	bullet.bullet_res = bullet_res
-	bullet.gun_res = gun_res
-	
-	bullet.global_transform = global_transform
-	get_tree().root.add_child(bullet)
-	
-	cur_ammo -= 1
-	shoot_timer.start(gun_res.fire_rate)
+func not_reloading() -> bool:
+	return reload_timer.is_stopped()
 
-func reload():
+func shoot() -> void:
+	if cur_ammo > 0 and not_reloading():
+		var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
+		print(cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
+		print("mag size: ", mag_size)
+		bullet.bullet_res = bullet_res
+		bullet.gun_res = gun_res
+
+		bullet.global_transform = global_transform
+		get_tree().root.add_child(bullet)
+
+		cur_ammo -= 1
+		shoot_timer.start(gun_res.fire_rate)
+
+func reload() -> void:
 	print("reload")
 	match(gun_res.reload_type):
 		"AUTO":
@@ -55,17 +59,20 @@ func reload():
 		"MANUAL":
 			var manual_reload_time = gun_res.reload_time / mag_size
 			manual_reload(manual_reload_time)
-			
-func end_reload_timer() -> bool:
-	return reload_timer.is_stopped() 
-	
-func auto_reload():
-	reload_timer.start(gun_res.reload_time)
-	await end_reload_timer()
-	cur_ammo = mag_size 
 
-func manual_reload(manual_reload_time):
+func auto_reload() -> void:
+	print("Auto reload started")
+	reload_timer.stop()
+	reload_timer.start(gun_res.reload_time)
+	await reload_timer.timeout
+	cur_ammo = mag_size
+	print("Reload complete")
+	print("check: ", cur_ammo, mag_size)
+
+func manual_reload(manual_reload_time : float) -> void:
 	while cur_ammo < mag_size:
 		cur_ammo += 1
+		reload_timer.stop()
 		reload_timer.start(manual_reload_time)
-		await end_reload_timer()
+		await reload_timer.timeout
+		print("Reloaded 1 bullet, current ammo:", cur_ammo)
