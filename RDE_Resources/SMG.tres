@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="2_l1qvm"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_l1qvm")
 name = "SMG"
 bullet_speed = 100

@@ -9,7 +9,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(12/30/24)
-			<li>Bullets don't shoot during reload, however at some point it breaks TODO FIX THIS</li>
+			<li>Worked on finishing and fixing reload</li>
+			<li>For reload to work, bulletRes needs to be duplicated in scripts it is used
+			(so that the damage or any other value isn't directly linked to the main res)</li>
 		</ul>
 	</li>
 	<li>

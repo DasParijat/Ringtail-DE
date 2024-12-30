@@ -7,6 +7,7 @@ var bullet_travelled : float
 var start_position : Vector2
 
 func _ready():
+	bullet_res = bullet_res.duplicate()
 	start_position = global_position
 	look_at(get_global_mouse_position())
 	
@@ -17,7 +18,7 @@ func falloff_calc():
 	# checks if falloff calculation should be enabled, and to do the calc if true
 	if bullet_travelled > bullet_res.falloff_point:
 		bullet_res.damage -= bullet_res.falloff_rate
-		print(bullet_res.damage)
+		print("bulscript, falloff calc: ", bullet_res.damage)
 		
 func _physics_process(delta):
 	position += transform.x * gun_res.bullet_speed * delta
