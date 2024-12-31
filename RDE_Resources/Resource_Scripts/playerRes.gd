@@ -22,13 +22,12 @@ class_name PlayerRes
 @export_category("Default Guns")
 @export var def_primary_gun : GunRes
 @export var def_secondary_gun : GunRes
-@export var switch_cooldown : float 
+@export var switch_cooldown : float = 0.5
 # how long the cooldown after swithing to a new gun is
 
 # actual gun loadout
 # unless specified, primary and secondary gun will be the defaults
 @export var gun_array : Array[GunRes] = [def_primary_gun, def_secondary_gun] 
-
 # cur variables can dynamically change during the game
 var cur_power_rate : float
 var cur_speed : float 

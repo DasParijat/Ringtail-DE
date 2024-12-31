@@ -15,3 +15,6 @@ player_res = ExtResource("2_xhiw5")
 
 [node name="SecGun" parent="." instance=ExtResource("4_7lspv")]
 gun_index = 1
+
+[node name="GunSwitchTimer" type="Timer" parent="."]
+one_shot = true

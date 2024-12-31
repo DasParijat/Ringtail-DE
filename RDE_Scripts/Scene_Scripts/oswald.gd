@@ -8,6 +8,7 @@ extends Node2D
 @onready var base_player : CharacterBody2D = $base_player
 @onready var primary_gun = $PrimaryGun
 @onready var secondary_gun = $SecGun
+@onready var switch_timer = $GunSwitchTimer
 
 var gun_index : int = 0
 
@@ -21,14 +22,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position = base_player.position
 	
-	if Input.is_action_just_pressed("switch_weapon"):
+	if can_switch() and Input.is_action_just_pressed("switch_weapon"):
 		handle_gun_switch()
-
+		switch_timer.start(player_res.switch_cooldown)
+		
+func can_switch() -> bool:
+	return switch_timer.is_stopped()
+	
 # TODO might move function to PlayerRes
 func handle_gun_switch():
 	print("switch")
-	if gun_index == player_res.gun_array.size():
+	if gun_index == player_res.gun_array.size() - 1:
 		gun_index = -1 #after incrementing, gun_index is back to 0
 	gun_index += 1
 	
-	# TODO put code to handle actually switching the gun, may involve hiding/showing nodes
+	print(gun_index)

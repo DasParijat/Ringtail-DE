@@ -68,7 +68,6 @@ func reload() -> void:
 
 func auto_reload() -> void:
 	#print("Auto reload started")
-	reload_timer.stop()
 	reload_timer.start(gun_res.reload_time)
 	await reload_timer.timeout
 	cur_ammo = mag_size
@@ -78,7 +77,6 @@ func auto_reload() -> void:
 func manual_reload(manual_reload_time : float) -> void:
 	while cur_ammo < mag_size:
 		cur_ammo += 1
-		reload_timer.stop()
 		reload_timer.start(manual_reload_time)
 		await reload_timer.timeout
 		#print("Reloaded 1 bullet, current ammo:", cur_ammo)

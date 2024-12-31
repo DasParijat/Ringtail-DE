@@ -18,5 +18,5 @@ max_power = 100.0
 base_power_rate = 1.0
 def_primary_gun = ExtResource("2_0s6dd")
 def_secondary_gun = ExtResource("2_3vifi")
-switch_cooldown = 0.0
+switch_cooldown = 0.5
 gun_array = Array[Object]([ExtResource("2_0s6dd"), ExtResource("2_3vifi")])
