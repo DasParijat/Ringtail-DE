@@ -9,6 +9,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(12/30/24)
+			<li>Made basic functionality for weapon switching</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			(12/30/24)
 			<li>Worked on finishing and fixing reload</li>
 			<li>Finished reload (issue was damage var not being local to each bullet)</li>
 			<li>Added pump action shotgun as Oswald's secondary weapon</li>

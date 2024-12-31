@@ -20,18 +20,24 @@ func _ready() -> void:
 	reload_timer.wait_time = gun_res.reload_time
 
 func _process(delta: float) -> void:
+	
 	var is_auto = gun_res.is_automatic
 	position = get_parent().position
 
-	if can_shoot() and not_reloading():
+	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
 			shoot()
-		elif not is_auto and Input.is_action_just_pressed("shoot"):
+		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
 			shoot()
 
 	if cur_ammo <= 0 and not_reloading():
 		reload()
 
+func is_selected() -> bool:
+	if get_parent().gun_index == gun_index:
+		return true
+	return false
+		
 func can_shoot() -> bool:
 	return shoot_timer.is_stopped()
 

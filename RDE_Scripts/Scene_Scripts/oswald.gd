@@ -19,13 +19,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# TODO fix this not being exactly on player
 	position = base_player.position
 	
-	handle_gun_switch()
+	if Input.is_action_just_pressed("switch_weapon"):
+		handle_gun_switch()
 
 # TODO might move function to PlayerRes
 func handle_gun_switch():
+	print("switch")
 	if gun_index == player_res.gun_array.size():
 		gun_index = -1 #after incrementing, gun_index is back to 0
 	gun_index += 1
