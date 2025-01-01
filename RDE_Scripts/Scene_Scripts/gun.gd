@@ -66,7 +66,7 @@ func shoot() -> void:
 		shoot_timer.start(gun_res.fire_rate)
 
 func reload() -> void:
-	#print("reload")
+	print("reloading")
 	match(gun_res.reload_type):
 		"AUTO":
 			auto_reload()

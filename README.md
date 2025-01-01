@@ -10,7 +10,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/1/25)
 			<li>Happy New Year</li>
-			<li></li>
+			<li>Doubled pump shotgun's mag size from 5 to 10 (account for shooting two at once)</li>
+			<li>BulletRes texture applies to bullets now</li>
+			<li>PlayeRes has texture property now</li>
+			<li>Resources are more organized by type via folders</li>
 		</ul>
 	</li>
 	<li>
