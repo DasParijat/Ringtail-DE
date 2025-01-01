@@ -11,6 +11,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(12/30/24)
 			<li>Made basic functionality for weapon switching</li>
 			<li>Added switch weapon cooldown</li>
+			<li>Moved weapon switch code to PlayerRes</li>
 		</ul>
 	</li>
 	<li>

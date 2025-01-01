@@ -22,18 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position = base_player.position
 	
-	if can_switch() and Input.is_action_just_pressed("switch_weapon"):
-		handle_gun_switch()
-		switch_timer.start(player_res.switch_cooldown)
+	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 		
 func can_switch() -> bool:
 	return switch_timer.is_stopped()
-	
-# TODO might move function to PlayerRes
-func handle_gun_switch():
-	print("switch")
-	if gun_index == player_res.gun_array.size() - 1:
-		gun_index = -1 #after incrementing, gun_index is back to 0
-	gun_index += 1
-	
-	print(gun_index)
