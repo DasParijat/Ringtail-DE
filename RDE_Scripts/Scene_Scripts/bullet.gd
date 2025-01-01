@@ -6,11 +6,13 @@ extends Area2D
 
 var bullet_travelled : float
 var start_position : Vector2
+var direction : Vector2  
 
 func _ready():
 	#bullet_res = bullet_res.duplicate()
 	start_position = global_position
-	look_at(get_global_mouse_position())
+	
+	direction = Vector2.RIGHT.rotated(rotation).normalized()
 	
 func set_bullet_res(res):
 	bullet_res = res

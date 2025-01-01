@@ -7,12 +7,12 @@
 resource_local_to_scene = true
 script = ExtResource("2_l1qvm")
 name = "SMG"
-bullet_speed = 100
-mag_size = 3
-fire_rate = 0.4
+bullet_speed = 500
+mag_size = 50
+fire_rate = 0.2
 reload_type = "AUTO"
-reload_time = 1.0
+reload_time = 0.7
 is_automatic = true
 bullet_res = ExtResource("1_1yqlq")
 bullets_per_shot = 1
-bullet_spread = 0.0
+bullet_spread = 2.0

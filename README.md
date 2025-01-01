@@ -12,6 +12,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Made basic functionality for weapon switching</li>
 			<li>Added switch weapon cooldown</li>
 			<li>Moved weapon switch code to PlayerRes</li>
+			<li>Gun script handles multi-shot guns</li>
+			<li>Bullet spread basics implemented</li>
 		</ul>
 	</li>
 	<li>

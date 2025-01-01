@@ -14,5 +14,5 @@ reload_type = "MANUAL"
 reload_time = 2.0
 is_automatic = false
 bullet_res = ExtResource("1_heiiq")
-bullets_per_shot = 1
-bullet_spread = 0.0
+bullets_per_shot = 2
+bullet_spread = 50.0

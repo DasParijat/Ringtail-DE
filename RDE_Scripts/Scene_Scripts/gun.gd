@@ -20,6 +20,7 @@ func _ready() -> void:
 	reload_timer.wait_time = gun_res.reload_time
 
 func _process(delta: float) -> void:
+	look_at(get_global_mouse_position())
 	
 	var is_auto = gun_res.is_automatic
 	position = get_parent().position
@@ -46,15 +47,21 @@ func not_reloading() -> bool:
 
 func shoot() -> void:
 	if cur_ammo > 0 and not_reloading():
-		var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
-		#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
-		bullet.bullet_res = bullet_res
-		bullet.gun_res = gun_res
-
-		bullet.global_transform = global_transform
-		get_tree().root.add_child(bullet)
-
-		cur_ammo -= 1
+		for i in range(gun_res.bullets_per_shot):
+			var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
+			#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
+			# resources passed from gun to bullet
+			bullet.bullet_res = bullet_res
+			bullet.gun_res = gun_res
+			
+			# bullet transformations
+			bullet.global_transform = global_transform
+			bullet.global_rotation_degrees = rotation_degrees + randf_range(-gun_res.bullet_spread, gun_res.bullet_spread)
+			
+			# putting bullet in scene
+			get_tree().root.add_child(bullet)
+			
+			cur_ammo -= 1
 		shoot_timer.start(gun_res.fire_rate)
 
 func reload() -> void:
