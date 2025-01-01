@@ -12,6 +12,7 @@ extends Node2D
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
 
+
 func _ready() -> void:
 	cur_ammo = mag_size
 	#bullet_res = bullet_res.duplicate()

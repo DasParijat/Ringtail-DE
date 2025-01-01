@@ -4,8 +4,8 @@ class_name GunRes
 # specific guns a player can use
 
 @export_category("Qualitative Attributes")
-@export var name: String = "UNNAMED"  
-@export var sprite: Texture2D   
+@export var name : String = "UNNAMED"  
+@export var texture : Texture2D   
 
 @export_category("Quantitative Attributes")
 @export var bullet_speed : int = 750

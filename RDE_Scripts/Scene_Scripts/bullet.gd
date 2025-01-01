@@ -3,6 +3,8 @@ extends Area2D
 @onready var gun_res : GunRes
 @onready var bullet_res : BulletRes 
 @onready var damage : float = bullet_res.damage
+@onready var texture : Texture2D = bullet_res.texture
+@onready var sprite = $Sprite2D
 
 var bullet_travelled : float
 var start_position : Vector2
@@ -11,7 +13,7 @@ var direction : Vector2
 func _ready():
 	#bullet_res = bullet_res.duplicate()
 	start_position = global_position
-	
+	sprite.texture = texture
 	direction = Vector2.RIGHT.rotated(rotation).normalized()
 	
 func set_bullet_res(res):

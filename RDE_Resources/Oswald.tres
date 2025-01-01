@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="PlayerRes" load_steps=5 format=3 uid="uid://blf71j4t5n6ln"]
+[gd_resource type="Resource" script_class="PlayerRes" load_steps=6 format=3 uid="uid://blf71j4t5n6ln"]
 
 [ext_resource type="Resource" uid="uid://du70fw1o5c5e" path="res://RDE_Resources/OswaldHP.tres" id="1_6a0bh"]
 [ext_resource type="Resource" uid="uid://corvcvjy3cxbn" path="res://RDE_Resources/SMG.tres" id="2_0s6dd"]
 [ext_resource type="Resource" uid="uid://bp54wtlywyi31" path="res://RDE_Resources/PumpShotgun.tres" id="2_3vifi"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/playerRes.gd" id="3_se43b"]
+[ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="5_n4g7t"]
 
 [resource]
 script = ExtResource("3_se43b")
 name = "Oswald"
 color = Color(0.949938, 0.82364, 0.168483, 1)
+texture = ExtResource("5_n4g7t")
 health_comp = ExtResource("1_6a0bh")
 regen_rate = 5.0
 base_speed = 500.0

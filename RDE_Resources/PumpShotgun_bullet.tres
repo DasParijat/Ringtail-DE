@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://deonx3mfyyc1"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_uphi5"]
-[ext_resource type="Texture2D" uid="uid://b7r5q02t3ru24" path="res://RDE_Images/rt_ringtail1.png" id="2_v3t4c"]
+[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_32qp1"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_uphi5")
-sprite = ExtResource("2_v3t4c")
+texture = ExtResource("2_32qp1")
 damage = 20.0
 enemy_knockback = 0.0
 is_piercing = false

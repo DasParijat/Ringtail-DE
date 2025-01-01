@@ -8,12 +8,19 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/1/25)
+			<li>Happy New Year</li>
+			<li></li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/30/24)
 			<li>Made basic functionality for weapon switching</li>
 			<li>Added switch weapon cooldown</li>
 			<li>Moved weapon switch code to PlayerRes</li>
 			<li>Gun script handles multi-shot guns</li>
-			<li>Bullet spread basics implemented</li>
+			<li>Bullet spread implemented</li>
 		</ul>
 	</li>
 	<li>
