@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
-			spread_rate = ((spread_rate - gun_res.bullet_spread) / 3) #* delta
+			spread_rate += ((gun_res.bullet_spread - spread_rate) * 0.1) # lower the rate the slower
 			print(spread_rate)
 			shoot()
 		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
@@ -58,9 +58,7 @@ func shoot() -> void:
 			bullet.bullet_res = bullet_res
 			bullet.gun_res = gun_res
 			
-			# bullet transformations
-			# smoothing algo: (current_x - desired_x) / rate
-			
+			# bullet transformations			
 			bullet.global_transform = global_transform
 			bullet.global_rotation_degrees = rotation_degrees + randf_range(-spread_rate, spread_rate)
 			

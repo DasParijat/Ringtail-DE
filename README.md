@@ -15,6 +15,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>PlayeRes has texture property now</li>
 			<li>Resources are more organized by type via folders</li>
 			<li>Created test python file</li>
+			<li>Added basics of bullet spread</li>
 		</ul>
 	</li>
 	<li>
