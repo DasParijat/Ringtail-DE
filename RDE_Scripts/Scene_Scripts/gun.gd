@@ -12,7 +12,7 @@ extends Node2D
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
 
-var spread_rate : float = 0.0
+var bullet_spread : float = 0.0
 
 func _ready() -> void:
 	cur_ammo = mag_size
@@ -27,21 +27,18 @@ func _process(delta: float) -> void:
 	var is_auto = gun_res.is_automatic
 	position = get_parent().position
 	
-	# TODO Adjust GunRes properties and this code/naming scheme to accomadate this spread equation
 	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
-			spread_rate += ((gun_res.bullet_spread - spread_rate) * 0.1) # lower the rate the slower
-			print(spread_rate)
 			shoot()
-		elif is_auto and !Input.is_action_pressed("shoot") and spread_rate > 0:
-			spread_rate = 0.0
-			print("reset", spread_rate)
+		elif is_auto and !Input.is_action_pressed("shoot") and bullet_spread > 0:
+			bullet_spread = 0.0 # reset spread rate when continous shooting stops
+			print("reset ", bullet_spread)
 		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
 			shoot()
 
 	if cur_ammo <= 0 and not_reloading():
-		spread_rate = 0.0
-		print("reload", spread_rate)
+		bullet_spread = 0.0
+		print("reload ", bullet_spread)
 		reload()
 
 func is_selected() -> bool:
@@ -57,6 +54,11 @@ func not_reloading() -> bool:
 
 func shoot() -> void:
 	if cur_ammo > 0 and not_reloading():
+		# bullet_spread equation
+		bullet_spread += ((gun_res.max_spread - bullet_spread) * gun_res.spread_rate) 
+		print(bullet_spread)
+		
+		# for loop for bullets per SINGLE shot
 		for i in range(gun_res.bullets_per_shot):
 			var bullet = preload("res://RDE_Scenes/bullet.tscn").instantiate()
 			#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
@@ -66,7 +68,7 @@ func shoot() -> void:
 			
 			# bullet transformations			
 			bullet.global_transform = global_transform
-			bullet.global_rotation_degrees = rotation_degrees + randf_range(-spread_rate, spread_rate)
+			bullet.global_rotation_degrees = rotation_degrees + randf_range(-bullet_spread, bullet_spread)
 			
 			# putting bullet in scene
 			get_tree().root.add_child(bullet)

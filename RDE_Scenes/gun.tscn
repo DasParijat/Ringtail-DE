@@ -10,7 +10,3 @@ one_shot = true
 
 [node name="ReloadTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="ContinousTimer" type="Timer" parent="."]
-
-[connection signal="timeout" from="ContinousTimer" to="." method="_on_continous_timer_timeout"]

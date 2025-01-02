@@ -8,6 +8,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/2/25)
+			<li>Changed naming and location of bullet_spread logic</li>
+			<li>Made SMG shoot faster</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/1/25)
 			<li>Happy New Year</li>
 			<li>Doubled pump shotgun's mag size from 5 to 10 (account for shooting two at once)</li>
