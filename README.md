@@ -16,6 +16,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Resources are more organized by type via folders</li>
 			<li>Created test python file</li>
 			<li>Added basics of bullet spread</li>
+			<li>This includes bullets slowly spreading over a single continous shooting</li>
 		</ul>
 	</li>
 	<li>

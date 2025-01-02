@@ -26,16 +26,22 @@ func _process(delta: float) -> void:
 	
 	var is_auto = gun_res.is_automatic
 	position = get_parent().position
-
+	
+	# TODO Adjust GunRes properties and this code/naming scheme to accomadate this spread equation
 	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
 			spread_rate += ((gun_res.bullet_spread - spread_rate) * 0.1) # lower the rate the slower
 			print(spread_rate)
 			shoot()
+		elif is_auto and !Input.is_action_pressed("shoot") and spread_rate > 0:
+			spread_rate = 0.0
+			print("reset", spread_rate)
 		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
 			shoot()
 
 	if cur_ammo <= 0 and not_reloading():
+		spread_rate = 0.0
+		print("reload", spread_rate)
 		reload()
 
 func is_selected() -> bool:
