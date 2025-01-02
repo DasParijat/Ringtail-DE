@@ -12,3 +12,4 @@ script = ExtResource("1_d646e")
 shape = SubResource("CircleShape2D_yiybb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2

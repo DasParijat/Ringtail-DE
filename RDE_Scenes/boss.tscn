@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://43ajotxx3qd3"]
 
 [node name="boss" type="Sprite2D"]
+z_index = 2

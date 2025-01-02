@@ -11,6 +11,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/2/25)
 			<li>Changed naming and location of bullet_spread logic</li>
 			<li>Made SMG shoot faster</li>
+			<li>Modified layering of nodes in game scene</li>
+			<li>Have camera track player via script</li>
 		</ul>
 	</li>
 	<li>

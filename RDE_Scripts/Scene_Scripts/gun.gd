@@ -32,13 +32,13 @@ func _process(delta: float) -> void:
 			shoot()
 		elif is_auto and !Input.is_action_pressed("shoot") and bullet_spread > 0:
 			bullet_spread = 0.0 # reset spread rate when continous shooting stops
-			print("reset ", bullet_spread)
+			#print("reset ", bullet_spread)
 		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
 			shoot()
 
 	if cur_ammo <= 0 and not_reloading():
 		bullet_spread = 0.0
-		print("reload ", bullet_spread)
+		#print("reload ", bullet_spread)
 		reload()
 
 func is_selected() -> bool:
@@ -56,7 +56,7 @@ func shoot() -> void:
 	if cur_ammo > 0 and not_reloading():
 		# bullet_spread equation
 		bullet_spread += ((gun_res.max_spread - bullet_spread) * gun_res.spread_rate) 
-		print(bullet_spread)
+		#print(bullet_spread)
 		
 		# for loop for bullets per SINGLE shot
 		for i in range(gun_res.bullets_per_shot):
