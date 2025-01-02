@@ -12,6 +12,7 @@ extends Node2D
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
 
+var spread_rate : float = 0.0
 
 func _ready() -> void:
 	cur_ammo = mag_size
@@ -28,6 +29,8 @@ func _process(delta: float) -> void:
 
 	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
+			spread_rate = ((spread_rate - gun_res.bullet_spread) / 3) #* delta
+			print(spread_rate)
 			shoot()
 		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
 			shoot()
@@ -56,8 +59,10 @@ func shoot() -> void:
 			bullet.gun_res = gun_res
 			
 			# bullet transformations
+			# smoothing algo: (current_x - desired_x) / rate
+			
 			bullet.global_transform = global_transform
-			bullet.global_rotation_degrees = rotation_degrees + randf_range(-gun_res.bullet_spread, gun_res.bullet_spread)
+			bullet.global_rotation_degrees = rotation_degrees + randf_range(-spread_rate, spread_rate)
 			
 			# putting bullet in scene
 			get_tree().root.add_child(bullet)

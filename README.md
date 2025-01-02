@@ -14,6 +14,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>BulletRes texture applies to bullets now</li>
 			<li>PlayeRes has texture property now</li>
 			<li>Resources are more organized by type via folders</li>
+			<li>Created test python file</li>
 		</ul>
 	</li>
 	<li>
