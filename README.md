@@ -15,6 +15,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Have camera track player via script</li>
 			<li>Messed around with camera settings</li>
 			<li>Implemented a way to handle power in Oswald</li>
+			<li>Handle putting limits on power val in PlayerRes</li>
+			<li>Oswald's power move is sprinting faster dependent on how big cur_power is</li>
 		</ul>
 	</li>
 	<li>

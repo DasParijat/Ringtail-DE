@@ -56,3 +56,6 @@ func handle_gun_switch(gun_index, timer):
 	
 	return(gun_index)
 		
+func power_limiters() -> void:
+	if cur_power < 0: cur_power = 0 # this should be readable enough
+	if cur_power > max_power: cur_power = max_power
