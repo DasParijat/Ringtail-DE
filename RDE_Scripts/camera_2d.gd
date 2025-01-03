@@ -14,6 +14,8 @@ func _ready() -> void:
 	$".".limit_top = -1000
 	$".".limit_bottom = 1000
 	
+	if player_node == null:
+		printerr("PLAYER NODE UNASSIGNED")
 	#$".".position_smoothing_speed = 5
 	 
 func _process(delta: float) -> void:

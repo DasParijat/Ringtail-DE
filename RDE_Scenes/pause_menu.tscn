@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh6wxwjtwfcwq"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="1_82tdh"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/pause_menu.gd" id="1_acbnt"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_acbnt")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 161.0
+offset_right = 384.0
+offset_bottom = 262.0
+scale = Vector2(3.74023, 3.74023)
+alignment = 1
+
+[node name="resumeB" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Resume"
+script = ExtResource("1_82tdh")
+
+[node name="settingsB" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("1_82tdh")
+
+[node name="quitB" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Quit"
+script = ExtResource("1_82tdh")
+
+[connection signal="pressed" from="HBoxContainer/resumeB" to="." method="_on_resume_b_pressed"]
+[connection signal="pressed" from="HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
+[connection signal="pressed" from="HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]

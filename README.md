@@ -11,6 +11,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/3/25)
 			<li>Added basic pausing</li>
 			<li>In game scene, seperate nodes for fight and cutscenes</li>
+			<li>Oswald's power move can now slow down time</li>
+			<li>CanvasLayer in Game scene for UI stuff</li>
+			<li>Added basic pause menu (needs proper level laoding for it to work properly)</li>
 		</ul>
 	</li>
 	<li>

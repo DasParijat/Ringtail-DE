@@ -15,9 +15,8 @@ extends Node2D
 var gun_index : int = 0
 
 func _ready() -> void:
-	#base_player.set_speedmod(2)
 	cur_power = player_res.max_power
-	print(cur_power)
+	# print(cur_power)
 
 
 func _process(delta: float) -> void:
@@ -32,8 +31,8 @@ func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
 	if cur_power > 0.1 and Input.is_action_pressed("sprint"):
 		base_player.set_speedmod((2 * (cur_power / 100)) + 1) # lower cur power results in less speed
+		Engine.time_scale = 1 - ((cur_power / 100) * 0.8) + 0.2
 		cur_power -= 0.1
-		print("power in use", cur_power)
 	else:
 		base_player.set_speedmod(1)
 	
