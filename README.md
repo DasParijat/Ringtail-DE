@@ -8,6 +8,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/3/25)
+			<li>Added basic pausing</li>
+			<li>In game scene, seperate nodes for fight and cutscenes</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/2/25)
 			<li>Changed naming and location of bullet_spread logic</li>
 			<li>Made SMG shoot faster</li>
