@@ -14,6 +14,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Modified layering of nodes in game scene</li>
 			<li>Have camera track player via script</li>
 			<li>Messed around with camera settings</li>
+			<li>Implemented a way to handle power in Oswald</li>
 		</ul>
 	</li>
 	<li>

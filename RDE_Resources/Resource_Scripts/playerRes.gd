@@ -31,6 +31,7 @@ class_name PlayerRes
 @export var gun_array : Array[GunRes] = [def_primary_gun, def_secondary_gun] 
 # cur variables can dynamically change during the game
 var cur_power_rate : float
+var cur_power : float = 100.0
 var cur_speed : float 
 
 func reset_speed():

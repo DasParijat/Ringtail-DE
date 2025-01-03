@@ -10,19 +10,27 @@ extends Node2D
 @onready var secondary_gun = $SecGun
 @onready var switch_timer = $GunSwitchTimer
 
+@onready var cur_power = player_res.cur_power
+
 var gun_index : int = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#base_player.set_speedmod(2)
-	pass
+	print(cur_power)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position = base_player.position
-	
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
-		
-func can_switch() -> bool:
-	return switch_timer.is_stopped()
+	
+	power_move()
+	
+func power_move() -> void:
+	if cur_power > 0 and Input.is_action_pressed("sprint"):
+		base_player.set_speedmod(2)
+		cur_power -= 0.1
+		print("power in use", cur_power)
+	else:
+		base_player.set_speedmod(1)
+	
+	if cur_power < 0: cur_power = 0 # this should be readable enough
