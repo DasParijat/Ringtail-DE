@@ -14,6 +14,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Oswald's power move can now slow down time</li>
 			<li>CanvasLayer in Game scene for UI stuff</li>
 			<li>Added basic pause menu (needs proper level laoding for it to work properly)</li>
+			<li>base_player gets texture directly from PlayerRes</li>
+			<li>Created MobRes (used for mobs and bosses)</li>
+			<li>Created RingtailHARD (Ringtail for hard mode)</li>
+			<li>Model base_boss scene after base_player scene</li>
 		</ul>
 	</li>
 	<li>

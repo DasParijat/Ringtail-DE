@@ -4,12 +4,10 @@ extends CharacterBody2D
 @onready var player_res : PlayerRes = get_parent().player_res
 @onready var sprite : Sprite2D = $Sprite2D
 
-@export var sprite_texture_path : String = "res://RDE_Images/nf Player.png"
-
 var speed_modifier : float = 1
 
 func _ready() -> void:
-	sprite.texture = load(sprite_texture_path) 
+	sprite.texture = player_res.texture
 	player_res.reset_speed()
 	player_res.reset_power_rate()
 	

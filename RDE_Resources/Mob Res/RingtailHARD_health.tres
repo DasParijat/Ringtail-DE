@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HealthRes" load_steps=2 format=3 uid="uid://bbowctql2vqth"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ymwox"]
+
+[resource]
+script = ExtResource("1_ymwox")
+max_hp = 150
