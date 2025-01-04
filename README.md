@@ -16,8 +16,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Added basic pause menu (needs proper level laoding for it to work properly)</li>
 			<li>base_player gets texture directly from PlayerRes</li>
 			<li>Created MobRes (used for mobs and bosses)</li>
-			<li>Created RingtailHARD (Ringtail for hard mode)</li>
+			<li>Created RingtailHARD (Ringtail for hard mode) and put him in game</li>
 			<li>Model base_boss scene after base_player scene</li>
+			<li>Base player and mob now have CollisionShape2d as var</li>
 		</ul>
 	</li>
 	<li>

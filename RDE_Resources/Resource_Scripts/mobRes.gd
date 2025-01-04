@@ -6,7 +6,10 @@ class_name MobRes
 @export var name : String = "UNNAMED MOB"
 @export var color : Color 
 @export var texture : Texture2D = preload("res://RDE_Images/rt_ringtail1.png")
-@export var is_boss : bool = false
 
 @export_category("Health")
 @export var health_comp : HealthRes
+
+@export_category("Mob Specific")
+@export var is_boss : bool = false
+@export var collision_size : int # replace type with whatever determines shape size

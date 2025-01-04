@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var player_res : PlayerRes = get_parent().player_res
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var collision : CollisionShape2D = $CollisionShape2D
 
 var speed_modifier : float = 1
 
