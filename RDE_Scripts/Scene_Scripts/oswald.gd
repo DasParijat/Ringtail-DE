@@ -23,8 +23,8 @@ func _process(delta: float) -> void:
 	position = base_player.position
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	
-	player_res.health_comp.take_dmg(0.01)
-	print(player_res.health_comp.cur_hp)
+	#player_res.health_comp.take_dmg(0.01)
+	#print(player_res.health_comp.cur_hp)
 	# power stuff
 	player_res.power_limiters()
 	power_move()
