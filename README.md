@@ -18,6 +18,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(1/3/25)
+			<li>Added timer and more attributes to HealthRes</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			(1/3/25)
 			<li>Added basic pausing</li>
 			<li>In game scene, seperate nodes for fight and cutscenes</li>
 			<li>Oswald's power move can now slow down time</li>

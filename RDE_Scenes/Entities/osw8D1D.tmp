@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://t3n8e0fyn57u"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/oswald.gd" id="1_qoyxg"]
+[ext_resource type="Resource" uid="uid://blf71j4t5n6ln" path="res://RDE_Resources/Player Res/Oswald.tres" id="2_xhiw5"]
+[ext_resource type="PackedScene" uid="uid://b5yku1mrxehwp" path="res://RDE_Scenes/Base Entities/base_player.tscn" id="3_eqyry"]
+[ext_resource type="PackedScene" uid="uid://c74x71o74tua8" path="res://RDE_Scenes/Shooting/gun.tscn" id="4_7lspv"]
+
+[node name="Oswald" type="Node2D"]
+script = ExtResource("1_qoyxg")
+player_res = ExtResource("2_xhiw5")
+
+[node name="base_player" parent="." instance=ExtResource("3_eqyry")]
+
+[node name="PrimaryGun" parent="." instance=ExtResource("4_7lspv")]
+
+[node name="SecGun" parent="." instance=ExtResource("4_7lspv")]
+gun_index = 1
+
+[node name="GunSwitchTimer" type="Timer" parent="."]
+one_shot = true
