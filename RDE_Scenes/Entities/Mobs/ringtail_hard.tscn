@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/ringtail_hard.gd" id="1_6fiq8"]
 [ext_resource type="Resource" uid="uid://c8ri6vf360a65" path="res://RDE_Resources/Mob Res/RingtailHARD.tres" id="2_opmw5"]
-[ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/base_boss.tscn" id="2_rfnyv"]
+[ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_boss.tscn" id="2_rfnyv"]
 
 [node name="RingtailHARD" type="Node2D"]
 script = ExtResource("1_6fiq8")

@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy77mdk6wv3fp"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/bullet.gd" id="1_josqu"]
-[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_flwof"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/bullet.gd" id="1_d7ju7"]
+[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_0chfb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t6ga4"]
 
 [node name="bullet" type="Area2D"]
-script = ExtResource("1_josqu")
+script = ExtResource("1_d7ju7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t6ga4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-texture = ExtResource("2_flwof")
+texture = ExtResource("2_0chfb")

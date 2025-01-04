@@ -4,6 +4,15 @@ It's a top down bullet hell shooter where you have to take down a nefarious evil
 hyperrealistc raccoon (technically a monster in the form of a raccon but that's just lore stuff).
 </p>
 
+<strong>Agenda:</strong>
+<ul>
+	<li>Add basic movement/attacks to base_boss</li>
+	<li>Handle camera shake when shooting</li>
+	<li>Test multi-threading with boss movesets</li>
+	<li>Create level res and use it</li>
+	<li>Properly load and unload scenes</li>
+</ul>
+
 <strong>Changelog:</strong>
 <ul>
 	<li>
@@ -19,6 +28,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Created RingtailHARD (Ringtail for hard mode) and put him in game</li>
 			<li>Model base_boss scene after base_player scene</li>
 			<li>Base player and mob now have CollisionShape2d as var</li>
+			<li>Created AGENDA in README to keep track of what to do</li>
 		</ul>
 	</li>
 	<li>

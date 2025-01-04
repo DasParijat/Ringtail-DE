@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="1_5op00"]
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/game.gd" id="1_psimn"]
-[ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/oswald.tscn" id="2_1yfeq"]
+[ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="2_1yfeq"]
 [ext_resource type="Script" path="res://RDE_Scripts/camera_2d.gd" id="2_85jn5"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
-[ext_resource type="PackedScene" uid="uid://cja72mr27m4j3" path="res://RDE_Scenes/ringtail_hard.tscn" id="6_1hpb8"]
+[ext_resource type="PackedScene" uid="uid://cja72mr27m4j3" path="res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn" id="6_1hpb8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sstqc"]
 texture = ExtResource("1_5op00")
