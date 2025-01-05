@@ -12,6 +12,7 @@ extends Node2D
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
 
+var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 var bullet_spread : float = 0.0
 
 func _ready() -> void:
@@ -60,7 +61,7 @@ func shoot() -> void:
 		
 		# for loop for bullets per SINGLE shot
 		for i in range(gun_res.bullets_per_shot):
-			var bullet = preload("res://RDE_Scenes/Shooting/bullet.tscn").instantiate()
+			var bullet = bullet_load.instantiate()
 			#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
 			# resources passed from gun to bullet
 			bullet.bullet_res = bullet_res

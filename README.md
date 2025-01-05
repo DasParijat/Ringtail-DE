@@ -21,6 +21,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Added timer and more attributes to HealthRes</li>
 			<li>Relinked scenes properly (due to folder organization)</li>
 			<li>Added camera lean for aiming</li>
+			<li>Renamed base_boss to base_mob</li>
+			<li>Added hitboxes to base player and mob</li>
+			<li>Added example mob AI code (not used yet)</li>
 		</ul>
 	</li>
 	<li>
