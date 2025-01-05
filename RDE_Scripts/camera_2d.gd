@@ -2,8 +2,8 @@ extends Camera2D
 
 # @onready var player_node : Node2D = level_res.player
 # this commented out code is for future (possible) set up of a level resource
-@onready var player_node : Node2D = get_node("Fight/Oswald")
-var target_node : Node2D = player_node
+@onready var fight_node : Node2D = get_parent().get_node("Fight")
+# fight node handles getting info from dynamically spawned entities (such as player)
 
 var track_player : bool = true
 
@@ -17,15 +17,16 @@ func _ready() -> void:
 	$".".limit_top = -1000
 	$".".limit_bottom = 1000
 	
-	if player_node == null:
-		printerr("PLAYER NODE UNASSIGNED")
+	if fight_node == null:
+		printerr("FIGHT NODE UNASSIGNED")
 	#$".".position_smoothing_speed = 5
 	 
 func _process(delta : float) -> void:
 	if track_player:
 		lean_cam(delta)
-		set_position(player_node.position)
+		set_position(fight_node.player_pos)
 	
+	# TODO make camera have aim and camera shake
 	# TODO make camera flexible so it can be used for cutscenes or such
 
 func lean_cam(delta : float) -> void:

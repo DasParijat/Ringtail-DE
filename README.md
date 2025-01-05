@@ -18,7 +18,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(1/5/25)
-			<li>Working on dynamically adding player and boss to scene in game</li>
+			<li>Worked on dynamically adding player and boss to scene in game</li>
+			<li>Fight node acts as a middle man of info between the entities it spawns, 
+			and the rest of the Game scene</li>
 		</ul>
 	</li>
 	<li>

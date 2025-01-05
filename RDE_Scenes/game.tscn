@@ -294,4 +294,6 @@ tile_set = SubResource("TileSet_k5gdp")
 [node name="Fight" type="Node2D" parent="."]
 script = ExtResource("6_b2j36")
 
+[node name="Player" type="Node2D" parent="Fight"]
+
 [node name="Cutscene" type="Node2D" parent="."]
