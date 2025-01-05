@@ -5,6 +5,8 @@ extends Camera2D
 @onready var fight_node : Node2D = get_parent().get_node("Fight")
 # fight node handles getting info from dynamically spawned entities (such as player)
 
+# TODO Add new attributes to GunRes to describe how the camera should shake when shot
+
 var track_player : bool = true
 
 var smooth_lean : float = 10.0
@@ -25,7 +27,10 @@ func _process(delta : float) -> void:
 	if track_player:
 		lean_cam(delta)
 		set_position(fight_node.player_pos)
-	
+		
+		camera_aim(0.6)
+		camera_shake()
+		
 	# TODO make camera have aim and camera shake
 	# TODO make camera flexible so it can be used for cutscenes or such
 
@@ -39,3 +44,14 @@ func lean_cam(delta : float) -> void:
 	var lean := dir_to_mouse * dist_to_mouse * scale_lean # lean calculation
 	#print(lean)
 	offset = lerp(offset, lean, delta * smooth_lean) # smooths lean
+
+func camera_aim(aim_lean) -> void:
+	if Input.is_action_pressed("aim"):
+		scale_lean = aim_lean
+	else:
+		scale_lean = 0.2
+
+func camera_shake() -> void:
+	if Input.is_action_pressed("shoot"):
+		print("insert camera shake")
+		# TODO put in code to handle camera shake
