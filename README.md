@@ -24,6 +24,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Renamed base_boss to base_mob</li>
 			<li>Added hitboxes to base player and mob</li>
 			<li>Added example mob AI code (not used yet)</li>
+			<li>Created fight_ui and put it in game scene</li>
 		</ul>
 	</li>
 	<li>

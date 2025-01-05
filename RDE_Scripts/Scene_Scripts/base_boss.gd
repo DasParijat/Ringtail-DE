@@ -17,7 +17,7 @@ func test_mobAI_code():
 	# Credit to Eli Cuaycong for basic mob AI
 	# Using it as base and example
 	
-	var player = get_parent().get_node("Fight")
+	var player = get_parent().get_node("Fight").player_scene
 	# concept code, not final code for retrieving player node
 	
 	position += (player.position - position) / 50

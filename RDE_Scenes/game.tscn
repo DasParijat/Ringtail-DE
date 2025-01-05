@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=11 format=4 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="1_5op00"]
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/game.gd" id="1_psimn"]
 [ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="2_1yfeq"]
 [ext_resource type="Script" path="res://RDE_Scripts/camera_2d.gd" id="2_85jn5"]
+[ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_7kxau"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
 [ext_resource type="PackedScene" uid="uid://cja72mr27m4j3" path="res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn" id="6_1hpb8"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight.gd" id="6_b2j36"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sstqc"]
 texture = ExtResource("1_5op00")
@@ -277,6 +279,8 @@ script = ExtResource("1_psimn")
 [node name="pause_menu" parent="UICanvasLayer" instance=ExtResource("3_mfvle")]
 z_index = 3
 
+[node name="fight_ui" parent="UICanvasLayer" instance=ExtResource("3_7kxau")]
+
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player_node")]
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
@@ -291,6 +295,7 @@ tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAI
 tile_set = SubResource("TileSet_k5gdp")
 
 [node name="Fight" type="Node2D" parent="."]
+script = ExtResource("6_b2j36")
 
 [node name="Oswald" parent="Fight" instance=ExtResource("2_1yfeq")]
 
