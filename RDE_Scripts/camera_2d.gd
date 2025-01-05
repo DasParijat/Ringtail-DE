@@ -2,7 +2,7 @@ extends Camera2D
 
 # @onready var player_node : Node2D = level_res.player
 # this commented out code is for future (possible) set up of a level resource
-@export var player_node : Node2D
+@onready var player_node : Node2D = get_node("Fight/Oswald")
 var target_node : Node2D = player_node
 
 var track_player : bool = true

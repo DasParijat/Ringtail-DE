@@ -17,6 +17,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/5/25)
+			<li>Working on dynamically adding player and boss to scene in game</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/4/25)
 			<li>Added timer and more attributes to HealthRes</li>
 			<li>Relinked scenes properly (due to folder organization)</li>
