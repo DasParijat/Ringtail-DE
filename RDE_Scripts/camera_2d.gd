@@ -7,6 +7,9 @@ var target_node : Node2D = player_node
 
 var track_player : bool = true
 
+var smooth_lean : float = 10.0
+var scale_lean : float = 0.2
+
 func _ready() -> void:
 	# to be given by level_res later
 	$".".limit_left = -5000
@@ -18,8 +21,20 @@ func _ready() -> void:
 		printerr("PLAYER NODE UNASSIGNED")
 	#$".".position_smoothing_speed = 5
 	 
-func _process(delta: float) -> void:
+func _process(delta : float) -> void:
 	if track_player:
-		set_position(player_node.get_position())
+		lean_cam(delta)
+		set_position(player_node.position)
 	
 	# TODO make camera flexible so it can be used for cutscenes or such
+
+func lean_cam(delta : float) -> void:
+	# Credit to samsface on YT (https://youtu.be/GXBEt_QqPMs?si=-chTplQUIvqoX3Xg) 
+	var mouse_pos := get_global_mouse_position()
+	
+	var dir_to_mouse := (mouse_pos - global_position).normalized() # direction
+	var dist_to_mouse := global_position.distance_to(mouse_pos) # distance
+	
+	var lean := dir_to_mouse * dist_to_mouse * scale_lean # lean calculation
+	#print(lean)
+	offset = lerp(offset, lean, delta * smooth_lean) # smooths lean

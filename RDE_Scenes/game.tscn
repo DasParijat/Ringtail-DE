@@ -280,8 +280,6 @@ z_index = 3
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player_node")]
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("2_85jn5")

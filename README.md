@@ -17,9 +17,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(1/3/25)
+			(1/4/25)
 			<li>Added timer and more attributes to HealthRes</li>
 			<li>Relinked scenes properly (due to folder organization)</li>
+			<li>Added camera lean for aiming</li>
 		</ul>
 	</li>
 	<li>
