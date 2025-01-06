@@ -9,15 +9,17 @@ extends Camera2D
 
 var track_player : bool = true
 
-var smooth_lean : float = 10.0
 var scale_lean : float = 0.2
 var rng = RandomNumberGenerator.new()
 
-var rand_strength = 30.0
+# TODO get data from GunRes instead keeping it here
+var rand_strength = 100.0
 var shake_fade : float = 5.0
-var shake_strength : float = 0.0
 
 var shake_offset : Vector2
+var shake_strength : float = 0.0
+
+var smooth_offset : float = 10.0
 
 func _ready() -> void:
 	# to be given by level_res later
@@ -32,43 +34,37 @@ func _ready() -> void:
 	 
 func _process(delta : float) -> void:
 	if track_player:
-		lean_cam(delta)
 		set_position(fight_node.player_pos)
+		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
-		camera_aim(0.6)
-		camera_shake(delta)
+		gun_aim(0.6)
+		gun_shake(delta)
 		
-	# TODO make camera have aim and camera shake
 	# TODO make camera flexible so it can be used for cutscenes or such
 
-func lean_cam(delta : float) -> void:
+func lean_cam() -> Vector2:
 	# Credit to samsface on YT (https://youtu.be/GXBEt_QqPMs?si=-chTplQUIvqoX3Xg) 
 	var mouse_pos := get_global_mouse_position()
 	
 	var dir_to_mouse := (mouse_pos - global_position).normalized() # direction
 	var dist_to_mouse := global_position.distance_to(mouse_pos) # distance
 	
-	var lean := (dir_to_mouse * dist_to_mouse * scale_lean) # lean calculation
-	#print(lean)
-	offset = lerp(offset, (lean + shake_offset), delta * smooth_lean) # smooths lean
+	return dir_to_mouse * dist_to_mouse * scale_lean # lean calculation
 
-func camera_aim(aim_lean) -> void:
+func gun_aim(aim_lean) -> void:
 	if Input.is_action_pressed("aim"):
 		scale_lean = aim_lean
 	else:
 		scale_lean = 0.2
 
-func camera_shake(delta : float) -> void:
+func gun_shake(delta : float) -> void:
 	if Input.is_action_pressed("shoot"):
-		apply_shake()
-		# TODO put in code to handle camera shake
+		shake_strength = rand_strength 
 		
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
-		shake_offset = random_offset()
+		shake_offset = get_randshake_offset()
 
-func apply_shake():
-	shake_strength = rand_strength 
-	
-func random_offset():
-	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))
+func get_randshake_offset() -> Vector2:
+	return Vector2(rng.randf_range(-shake_strength, shake_strength), # x axis rand shake
+	rng.randf_range(-shake_strength, shake_strength)) # y axis rand shake
