@@ -22,4 +22,9 @@ class_name GunRes
 @export var max_spread : float = 0
 @export var spread_rate : float = 0.1 # lower the rate the slower it takes to reach max_spread
 
+@export_category("Camera Effect") 
+@export var cam_shake_intensity : float = 0.5 # how far out it shakes to
+@export var cam_shake_frequency : float = 0.5 # how fast it shakes 
+@export var cam_shake_rate : float = 0.5 # how long it shakes
+
 var cur_ammo : int

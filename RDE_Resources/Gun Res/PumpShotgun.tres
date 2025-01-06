@@ -17,3 +17,6 @@ bullet_res = ExtResource("1_5xgcj")
 bullets_per_shot = 2
 max_spread = 0.0
 spread_rate = 0.1
+cam_shake_intensity = 0.5
+cam_shake_frequency = 0.5
+cam_shake_rate = 0.5

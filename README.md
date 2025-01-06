@@ -23,6 +23,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			and the rest of the Game scene</li>
 			<li>Added camera aiming</li>
 			<li>Added base code for triggering camera shake when gun shot</li>
+			<li>Added basic camera shake when shooting/li>
+			<li>Added cam shake attributes in GunRes</li>
 		</ul>
 	</li>
 	<li>
