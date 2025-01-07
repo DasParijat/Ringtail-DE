@@ -28,6 +28,9 @@ func _ready() -> void:
 	$".".limit_top = -1000
 	$".".limit_bottom = 1000
 	
+	var global_signal = get_node("/root/GlobalSignal") 
+	global_signal.connect("cur_gun", Callable(self, "_on_cur_gun"))
+	
 	if fight_node == null:
 		printerr("FIGHT NODE UNASSIGNED")
 	#$".".position_smoothing_speed = 5
@@ -68,3 +71,6 @@ func gun_shake(delta : float) -> void:
 func get_randshake_offset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength), # x axis rand shake
 	rng.randf_range(-shake_strength, shake_strength)) # y axis rand shake
+
+func _on_cur_gun(gun_res):
+	print("Received gun_res: ", gun_res.name)

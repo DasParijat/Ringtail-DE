@@ -16,6 +16,8 @@ extends Node2D
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 var bullet_spread : float = 0.0
 
+var cur_gun_emitted : bool = false
+
 func _ready() -> void:
 	cur_ammo = mag_size
 	#bullet_res = bullet_res.duplicate()
@@ -42,7 +44,10 @@ func _process(delta: float) -> void:
 		bullet_spread = 0.0
 		#print("reload ", bullet_spread)
 		reload()
-
+	
+	if Input.is_action_just_pressed("switch_weapon") and get_parent().gun_index == gun_index:
+		GlobalSignal.cur_gun.emit(gun_res) # For giving cam shake info to the Cam2D in Game scene
+		
 func is_selected() -> bool:
 	if get_parent().gun_index == gun_index:
 		return true
@@ -101,3 +106,5 @@ func manual_reload(manual_reload_time : float) -> void:
 		reload_timer.start(manual_reload_time)
 		await reload_timer.timeout
 		#print("Reloaded 1 bullet, current ammo:", cur_ammo)
+
+	

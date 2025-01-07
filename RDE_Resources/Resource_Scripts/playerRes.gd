@@ -42,7 +42,7 @@ func reset_power_rate():
 
 func set_gun_index(gun_index):
 	#print("switch")
-	if gun_index == gun_array.size() - 1:
+	if gun_index >= gun_array.size() - 1:
 		gun_index = -1 #after incrementing, gun_index is back to 0
 	gun_index += 1
 	
