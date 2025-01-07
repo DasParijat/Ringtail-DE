@@ -17,6 +17,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/7/25)
+			<li>Made bullets spawn under Fight node instead of root</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/6/25)
 			<li>Made global_signals and created signal for getitng current used gun</li>
 			<li>Succesfully have type of gun affect how the camera shakes when shooting</li>

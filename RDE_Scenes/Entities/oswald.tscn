@@ -18,3 +18,5 @@ gun_index = 1
 
 [node name="GunSwitchTimer" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

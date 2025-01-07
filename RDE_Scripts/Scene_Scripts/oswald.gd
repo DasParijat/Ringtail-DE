@@ -40,3 +40,7 @@ func power_move() -> void:
 	else:
 		base_player.set_speedmod(1)
 	
+
+
+func _on_tree_exiting() -> void:
+	print("oswald exit")

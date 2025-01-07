@@ -33,4 +33,6 @@ func _physics_process(delta):
 	# temp test
 	if damage < 0:
 		queue_free()
-		
+
+func _on_tree_exiting() -> void:
+	queue_free()

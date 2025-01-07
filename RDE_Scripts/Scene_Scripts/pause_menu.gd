@@ -15,4 +15,5 @@ func _on_settings_b_pressed() -> void:
 
 
 func _on_quit_b_pressed() -> void:
+	GlobalSignal.quit_game.emit()	
 	get_tree().change_scene_to_file("res://RDE_Scenes/main_menu.tscn")

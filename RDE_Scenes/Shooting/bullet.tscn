@@ -14,3 +14,5 @@ shape = SubResource("CapsuleShape2D_t6ga4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture = ExtResource("2_0chfb")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

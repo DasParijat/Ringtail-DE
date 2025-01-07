@@ -78,7 +78,7 @@ func shoot() -> void:
 			bullet.global_rotation_degrees = rotation_degrees + randf_range(-bullet_spread, bullet_spread)
 			
 			# putting bullet in scene
-			get_tree().root.add_child(bullet)
+			get_parent().get_parent().add_child(bullet)
 			
 			cur_ammo -= 1
 		shoot_timer.start(gun_res.fire_rate)

@@ -33,6 +33,8 @@ func _ready() -> void:
 	var global_signal = get_node("/root/GlobalSignal") 
 	global_signal.connect("cur_gun", Callable(self, "_on_cur_gun"))
 	
+	print(position)
+	
 	if fight_node == null:
 		printerr("FIGHT NODE UNASSIGNED")
 	#$".".position_smoothing_speed = 5
@@ -58,6 +60,7 @@ func lean_cam() -> Vector2:
 
 func gun_aim(aim_lean) -> void:
 	if Input.is_action_pressed("aim"):
+		print(position)
 		scale_lean = aim_lean
 	else:
 		scale_lean = 0.2
@@ -65,7 +68,6 @@ func gun_aim(aim_lean) -> void:
 func gun_shake(delta : float) -> void:
 	if Input.is_action_pressed("shoot"):
 		shake_range = shake_strength 
-		print(shake_strength)
 		
 	if shake_range > 0:
 		shake_range = lerpf(shake_range, 0, shake_fade * delta)
@@ -79,4 +81,3 @@ func _on_cur_gun(gun_res):
 	cur_gun = gun_res
 	shake_strength = cur_gun.shake_strength
 	shake_fade = cur_gun.shake_fade
-	print(cur_gun.name)
