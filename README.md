@@ -17,6 +17,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/6/25)
+			<li>Made global_signals and created signal for getitng current used gun</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/5/25)
 			<li>Worked on dynamically adding player and boss to scene in game</li>
 			<li>Fight node acts as a middle man of info between the entities it spawns, 
