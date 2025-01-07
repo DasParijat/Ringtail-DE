@@ -24,7 +24,7 @@ class_name GunRes
 
 @export_category("Camera Effect") 
 @export var shake_strength : float = 0.5 # how far out it shakes to
-@export var shake_frequency : float = 0.5 # how fast it shakes back to normal
+#@export var shake_frequency : float = 0.5 # how fast it shakes back to normal
 @export var shake_fade : float = 0.5 # how long it shakes
 
 var cur_ammo : int

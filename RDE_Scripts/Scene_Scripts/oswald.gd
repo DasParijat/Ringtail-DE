@@ -16,6 +16,8 @@ var gun_index : int = 0
 
 func _ready() -> void:
 	cur_power = player_res.max_power
+	
+	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure cam gets primary gun_res first
 	# print(cur_power)
 
 

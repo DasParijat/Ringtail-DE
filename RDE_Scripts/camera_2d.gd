@@ -8,18 +8,20 @@ extends Camera2D
 # TODO Add new attributes to GunRes to describe how the camera should shake when shot
 
 var track_player : bool = true
+var cur_gun : GunRes 
 
 var scale_lean : float = 0.2
 var rng = RandomNumberGenerator.new()
 
-# TODO get data from GunRes instead keeping it here
-var rand_strength = 100.0
+# Shake strength and fade are given from cur_gun
+var shake_strength = 100.0 
 var shake_fade : float = 5.0
 
-var shake_offset : Vector2
-var shake_strength : float = 0.0
+# These shake variables are used for other calculations
+var shake_offset : Vector2 # don't change
+var shake_range : float = 0.0 
 
-var smooth_offset : float = 10.0
+var smooth_offset : float = 10.0 # For affecting offset of Camera2D
 
 func _ready() -> void:
 	# to be given by level_res later
@@ -62,15 +64,19 @@ func gun_aim(aim_lean) -> void:
 
 func gun_shake(delta : float) -> void:
 	if Input.is_action_pressed("shoot"):
-		shake_strength = rand_strength 
+		shake_range = shake_strength 
+		print(shake_strength)
 		
-	if shake_strength > 0:
-		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
+	if shake_range > 0:
+		shake_range = lerpf(shake_range, 0, shake_fade * delta)
 		shake_offset = get_randshake_offset()
 
 func get_randshake_offset() -> Vector2:
-	return Vector2(rng.randf_range(-shake_strength, shake_strength), # x axis rand shake
-	rng.randf_range(-shake_strength, shake_strength)) # y axis rand shake
+	return Vector2(rng.randf_range(-shake_range, shake_range), # x axis rand shake
+	rng.randf_range(-shake_range, shake_range)) # y axis rand shake
 
 func _on_cur_gun(gun_res):
-	print("Received gun_res: ", gun_res.name)
+	cur_gun = gun_res
+	shake_strength = cur_gun.shake_strength
+	shake_fade = cur_gun.shake_fade
+	print(cur_gun.name)
