@@ -18,6 +18,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", player_res.get_cur_stats())
 	movement(player_res.cur_speed)
 
 func movement(cur_speed : float) -> void:
