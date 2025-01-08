@@ -13,6 +13,7 @@ func _ready() -> void:
 	
 	player_res.reset_speed()
 	player_res.reset_power_rate()
+	player_res.health_res.reset_health()
 	
 	position = Vector2(0, 0)
 	
@@ -20,6 +21,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", player_res.get_cur_stats())
 	movement(player_res.cur_speed)
+	
+	test_function()
 
 func movement(cur_speed : float) -> void:
 	look_at(get_global_mouse_position())
@@ -37,3 +40,7 @@ func movement(cur_speed : float) -> void:
 
 func set_speedmod(new_val : float) -> void:
 	speed_modifier = new_val
+
+func test_function() -> void:
+	if Input.is_action_just_pressed("test"):
+		player_res.health_res.take_dmg(3.5)

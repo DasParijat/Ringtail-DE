@@ -8,7 +8,7 @@ class_name PlayerRes
 @export var texture : Texture2D = preload("res://RDE_Images/nf Player.png")
 
 @export_category("Health")
-@export var health_comp : HealthRes
+@export var health_res : HealthRes
 @export var regen_rate : float = 5.0
 
 @export_category("Speed")
@@ -36,7 +36,7 @@ var cur_speed : float
 
 func reset_speed():
 	cur_speed = base_speed 
-	
+
 func reset_power_rate():
 	cur_power_rate = base_power_rate
 
@@ -63,6 +63,6 @@ func power_limiters() -> void:
 func get_cur_stats() -> Dictionary:
 	# For giving stats globally the fight_ui can track
 	return {
-		"cur_hp": health_comp.cur_hp,
+		"cur_hp": health_res.cur_hp,
 		"cur_power": cur_power,
 	}

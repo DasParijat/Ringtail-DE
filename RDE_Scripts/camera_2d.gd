@@ -57,7 +57,6 @@ func lean_cam() -> Vector2:
 
 func gun_aim(aim_lean) -> void:
 	if Input.is_action_pressed("aim"):
-		print(position)
 		scale_lean = aim_lean
 	else:
 		scale_lean = 0.2

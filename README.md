@@ -29,6 +29,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Made bullets spawn under Fight node instead of root</li>
 			<li>FIXED exiting and reentering fight (thoughest bug so far)</li>
 			<li>It was fixed by unpausing game just before quitting to menu</li>
+			<li>Player actually has and uses HealthRes</li>
 		</ul>
 	</li>
 	<li>
