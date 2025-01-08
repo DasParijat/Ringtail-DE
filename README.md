@@ -17,6 +17,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/8/25)
+			<li>Added Script IDE Plugin to make coding easier</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/7/25)
 			<li>Made bullets spawn under Fight node instead of root</li>
 			<li>FIXED exiting and reentering fight (thoughest bug so far)</li>
