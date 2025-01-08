@@ -7,10 +7,13 @@ extends CharacterBody2D
 
 var speed_modifier : float = 1
 
+
 func _ready() -> void:
 	sprite.texture = player_res.texture
 	player_res.reset_speed()
 	player_res.reset_power_rate()
+	
+	position = Vector2(0, 0)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

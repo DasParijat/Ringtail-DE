@@ -7,7 +7,7 @@ extends Camera2D
 
 # TODO Add new attributes to GunRes to describe how the camera should shake when shot
 
-var track_player : bool = true
+var track_player : bool = false
 var cur_gun : GunRes 
 
 var scale_lean : float = 0.2
@@ -32,8 +32,6 @@ func _ready() -> void:
 	
 	var global_signal = get_node("/root/GlobalSignal") 
 	global_signal.connect("cur_gun", Callable(self, "_on_cur_gun"))
-	
-	print(position)
 	
 	if fight_node == null:
 		printerr("FIGHT NODE UNASSIGNED")
@@ -81,3 +79,7 @@ func _on_cur_gun(gun_res):
 	cur_gun = gun_res
 	shake_strength = cur_gun.shake_strength
 	shake_fade = cur_gun.shake_fade
+
+
+func _on_fight_player_created() -> void:
+	track_player = true

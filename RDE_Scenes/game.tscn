@@ -292,3 +292,5 @@ tile_set = SubResource("TileSet_k5gdp")
 script = ExtResource("6_b2j36")
 
 [node name="Cutscene" type="Node2D" parent="."]
+
+[connection signal="player_created" from="Fight" to="Camera2D" method="_on_fight_player_created"]

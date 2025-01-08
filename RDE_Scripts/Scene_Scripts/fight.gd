@@ -8,12 +8,15 @@ extends Node2D
 @onready var boss_scene : PackedScene = preload("res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn")
 
 var player_pos : Vector2
+signal player_created()
 
 func _ready() -> void:
 	var player_instance = player_scene.instantiate()
 	var boss_instance = boss_scene.instantiate()
 	
 	add_child(player_instance)
+	player_created.emit()
+	
 	add_child(boss_instance)
 
 func _process(delta: float) -> void:

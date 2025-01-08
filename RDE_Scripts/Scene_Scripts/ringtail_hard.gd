@@ -5,6 +5,7 @@ extends Node2D
 
 # TODO Make a smaller version of the ringtail spirte. he's too fat
 func _ready() -> void:
+	print("boss added")
 	position = base_boss.position
 
 func _process(delta: float) -> void:

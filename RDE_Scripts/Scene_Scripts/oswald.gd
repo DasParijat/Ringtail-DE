@@ -16,14 +16,18 @@ var gun_index : int = 0
 
 func _ready() -> void:
 	cur_power = player_res.max_power
+	position = Vector2(0, 0)
 	
+	print("oswald added")
 	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure cam gets primary gun_res first
 	# print(cur_power)
 
 
 func _process(delta: float) -> void:
-	position = base_player.position
+	position = Vector2(0, 0) #base_player.position
+	print(base_player.position)
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
+	
 	
 	#player_res.health_comp.take_dmg(0.01)
 	#print(player_res.health_comp.cur_hp)
