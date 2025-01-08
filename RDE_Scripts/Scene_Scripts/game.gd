@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var pause_menu = $UICanvasLayer/pause_menu
 
-var is_paused : bool = false
+@onready var is_paused : bool = false
 
 # TODO Fix issue of it still being paused when going back into the game from main menu
 # probably have to deload stuff when quiting

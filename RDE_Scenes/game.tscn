@@ -293,4 +293,5 @@ script = ExtResource("6_b2j36")
 
 [node name="Cutscene" type="Node2D" parent="."]
 
+[connection signal="tree_exiting" from="Camera2D" to="Camera2D" method="_on_tree_exiting"]
 [connection signal="player_created" from="Fight" to="Camera2D" method="_on_fight_player_created"]

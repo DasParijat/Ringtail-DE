@@ -24,8 +24,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	position = Vector2(0, 0) #base_player.position
-	print(base_player.position)
+	position = base_player.position
+	#print(base_player.position)
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	
 	

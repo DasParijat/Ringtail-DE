@@ -10,6 +10,7 @@ var speed_modifier : float = 1
 
 func _ready() -> void:
 	sprite.texture = player_res.texture
+	
 	player_res.reset_speed()
 	player_res.reset_power_rate()
 	
