@@ -60,6 +60,7 @@ func not_reloading() -> bool:
 	return reload_timer.is_stopped()
 
 func shoot() -> void:
+	GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 	if cur_ammo > 0 and not_reloading():
 		# bullet_spread equation
 		bullet_spread += ((gun_res.max_spread - bullet_spread) * gun_res.spread_rate) 
@@ -83,6 +84,15 @@ func shoot() -> void:
 			cur_ammo -= 1
 		shoot_timer.start(gun_res.fire_rate)
 
+func get_cur_stats() -> Dictionary:
+	# For giving stats globally the fight_ui can track
+	return {
+		"cur_ammo": gun_res.cur_ammo,
+		"mag_size": gun_res.mag_size,
+		"gun_type": gun_res.name,
+		"is_reloading": not not_reloading()
+	}
+	
 func reload() -> void:
 	print("reloading")
 	match(gun_res.reload_type):

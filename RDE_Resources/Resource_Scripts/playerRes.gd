@@ -59,3 +59,10 @@ func handle_gun_switch(gun_index, timer):
 func power_limiters() -> void:
 	if cur_power < 0: cur_power = 0 # this should be readable enough
 	if cur_power > max_power: cur_power = max_power
+
+func get_cur_stats() -> Dictionary:
+	# For giving stats globally the fight_ui can track
+	return {
+		"cur_hp": health_comp.cur_hp,
+		"cur_power": cur_power,
+	}

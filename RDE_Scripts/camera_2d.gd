@@ -30,8 +30,7 @@ func _ready() -> void:
 	$".".limit_top = -1000
 	$".".limit_bottom = 1000
 	
-	var global_signal = get_node("/root/GlobalSignal") 
-	global_signal.connect("cur_gun", Callable(self, "_on_cur_gun"))
+	GlobalSignal.connect("cur_gun", Callable(self, "_on_cur_gun"))
 	
 	if fight_node == null:
 		printerr("FIGHT NODE UNASSIGNED")

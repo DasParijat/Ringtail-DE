@@ -19,6 +19,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/8/25)
 			<li>Added Script IDE Plugin to make coding easier</li>
+			<li>Player and Gun emit global signals to send their data to fight_ui</li>
 		</ul>
 	</li>
 	<li>
