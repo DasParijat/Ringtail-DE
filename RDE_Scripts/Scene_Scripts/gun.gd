@@ -20,7 +20,9 @@ var cur_gun_emitted : bool = false
 
 func _ready() -> void:
 	cur_ammo = mag_size
-	#bullet_res = bullet_res.duplicate()
+	if is_selected():
+		GlobalSignal.cur_gun.emit(gun_res)
+		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 	
 	shoot_timer.wait_time = gun_res.fire_rate
 	reload_timer.wait_time = gun_res.reload_time
@@ -34,12 +36,13 @@ func _process(delta: float) -> void:
 	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
 			shoot()
+			print(cur_ammo)
 		elif is_auto and !Input.is_action_pressed("shoot") and bullet_spread > 0:
 			bullet_spread = 0.0 # reset spread rate when continous shooting stops
 			#print("reset ", bullet_spread)
 		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
 			shoot()
-
+	
 	if cur_ammo <= 0 and not_reloading():
 		bullet_spread = 0.0
 		#print("reload ", bullet_spread)
@@ -60,7 +63,6 @@ func not_reloading() -> bool:
 	return reload_timer.is_stopped()
 
 func shoot() -> void:
-	GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 	if cur_ammo > 0 and not_reloading():
 		# bullet_spread equation
 		bullet_spread += ((gun_res.max_spread - bullet_spread) * gun_res.spread_rate) 
@@ -82,13 +84,14 @@ func shoot() -> void:
 			get_parent().get_parent().add_child(bullet)
 			
 			cur_ammo -= 1
+			GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 		shoot_timer.start(gun_res.fire_rate)
 
 func get_cur_stats() -> Dictionary:
 	# For giving stats globally the fight_ui can track
 	return {
-		"cur_ammo": gun_res.cur_ammo,
-		"mag_size": gun_res.mag_size,
+		"cur_ammo": cur_ammo,
+		"mag_size": mag_size,
 		"gun_type": gun_res.name,
 		"is_reloading": not not_reloading()
 	}

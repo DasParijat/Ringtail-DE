@@ -12,12 +12,12 @@ grow_vertical = 2
 script = ExtResource("1_pahoy")
 
 [node name="PlayerStats" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="GunStats" type="Label" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
