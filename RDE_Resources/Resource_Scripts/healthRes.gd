@@ -6,12 +6,16 @@ class_name HealthRes
 @export var max_hp : int
 var cur_hp : int = max_hp
 
-var iframe_timer : Timer = Timer.new()
-var iframe_len : float
+var iframe_timer : Timer #= Timer.new()
+var iframe_len : float = 1
 
 var invicible : bool = false
 var damage_rate : float = 1 # the higher, the more damage taken per usual.
 
+func set_health_res(timer) -> void:
+	iframe_timer = timer # nodes using health res have to have their own timers
+	reset_health() # reset health is seperate so it can be reset on it's own without affecting timer
+	
 func reset_health() -> void:
 	cur_hp = max_hp
 	
@@ -21,6 +25,7 @@ func take_dmg(dmg_amount):
 		print("took damage, hp: ", cur_hp) # for debugging
 		
 		iframe_timer.start(iframe_len)
-		
-# TODO set health limiter so it doesn't go under 0, 
-#		or at least a function to detect that and make player quit game
+
+func is_dead() -> bool:
+	return cur_hp <= 0
+	

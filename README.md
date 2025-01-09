@@ -30,6 +30,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>FIXED exiting and reentering fight (thoughest bug so far)</li>
 			<li>It was fixed by unpausing game just before quitting to menu</li>
 			<li>Player actually has and uses HealthRes</li>
+			<li>iframe timer works now</li>
+			<li>Player's death is recognized</li>
 		</ul>
 	</li>
 	<li>
