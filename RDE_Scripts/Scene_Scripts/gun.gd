@@ -17,6 +17,7 @@ var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 var bullet_spread : float = 0.0
 
 var cur_gun_emitted : bool = false
+var is_auto : bool
 
 func _ready() -> void:
 	cur_ammo = mag_size
@@ -30,13 +31,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
-	var is_auto = gun_res.is_automatic
+	is_auto = gun_res.is_automatic
 	position = get_parent().position
 	
 	if can_shoot() and not_reloading() and is_selected():
 		if is_auto and Input.is_action_pressed("shoot"):
 			shoot()
-			print(cur_ammo)
 		elif is_auto and !Input.is_action_pressed("shoot") and bullet_spread > 0:
 			bullet_spread = 0.0 # reset spread rate when continous shooting stops
 			#print("reset ", bullet_spread)
@@ -100,14 +100,18 @@ func reload() -> void:
 	print("reloading")
 	match(gun_res.reload_type):
 		"AUTO":
-			auto_reload()
+			await auto_reload()
 		"MANUAL":
 			var manual_reload_time = gun_res.reload_time / mag_size
-			manual_reload(manual_reload_time)
-
+			await manual_reload(manual_reload_time)
+			
+	if not_reloading():
+		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
+		
 func auto_reload() -> void:
 	#print("Auto reload started")
 	reload_timer.start(gun_res.reload_time)
+	GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 	await reload_timer.timeout
 	cur_ammo = mag_size
 	#print("Reload complete")
@@ -117,6 +121,7 @@ func manual_reload(manual_reload_time : float) -> void:
 	while cur_ammo < mag_size:
 		cur_ammo += 1
 		reload_timer.start(manual_reload_time)
+		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 		await reload_timer.timeout
 		#print("Reloaded 1 bullet, current ammo:", cur_ammo)
 

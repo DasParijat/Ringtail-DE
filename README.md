@@ -19,6 +19,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/9/25)
 			<li>Cur ammo and mag size can be seen in fight UI</li>
+			<li>Reloading can be seen in fight UI</li>
 		</ul>
 	</li>
 	<li>
