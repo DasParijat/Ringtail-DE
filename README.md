@@ -18,7 +18,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/10/25)
 			<li>Changed game ui (pause and fight) to CanvasLayer</li>
-			<li></li>
+			<li>get_cur_stats moved from PlayerRes to base_player</li>
+			<li>Setting up mob being able to track player</li>
 		</ul>
 	</li>
 	<li>

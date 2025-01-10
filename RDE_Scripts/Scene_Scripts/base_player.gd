@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", player_res.get_cur_stats())
+	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	movement(player_res.cur_speed)
 	
 	death_check()
@@ -51,6 +51,14 @@ func death_check() -> void:
 		print("RIP BOZO")
 		health_res.reset_health()
 		# TODO create global signal that tells everyone player died
+
+func get_cur_stats() -> Dictionary:
+	# For giving stats globally the fight_ui can track
+	return {
+		"position": get_position(),
+		"cur_hp": health_res.cur_hp,
+		"cur_power": player_res.cur_power,
+	}
 	
 func test_function() -> void:
 	if Input.is_action_pressed("test"):

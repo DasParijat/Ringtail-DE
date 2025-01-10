@@ -10,7 +10,9 @@ var player_vector : Vector2
 
 func _ready() -> void:
 	sprite.texture = mob_res.texture
-	position.y = 0
+	position.y = -100
+	
+	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 
 
 func _physics_process(delta: float) -> void:
@@ -27,3 +29,8 @@ func test_mobAI_code():
 	look_at(player)
 	
 	move_and_slide()
+
+func _on_get_cur_stats(type, stats):
+	if type == "PLAYER":
+		pass # TODO Set up code to track player position, 
+			 # but with delay (so mob doesn't instantly know where player is) 
