@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://43ajotxx3qd3"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_boss.gd" id="1_gpktw"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_boss.gd" id="1_2vok1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08nu1"]
 
@@ -8,7 +8,7 @@
 
 [node name="base_mob" type="CharacterBody2D"]
 z_index = 2
-script = ExtResource("1_gpktw")
+script = ExtResource("1_2vok1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_08nu1")

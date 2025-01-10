@@ -5,6 +5,9 @@ extends CharacterBody2D
 @onready var collision : CollisionShape2D = $CollisionShape2D
 @onready var hitbox : CollisionShape2D = $HitBox/CollisionShape2D
 
+var target_vector : Vector2
+var player_vector : Vector2 
+
 func _ready() -> void:
 	sprite.texture = mob_res.texture
 	position.y = 0

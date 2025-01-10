@@ -7,7 +7,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Agenda:</strong>
 <ul>
 	<li>Add basic movement/attacks to base_boss</li>
-	<li>Handle camera shake when shooting</li>
 	<li>Test multi-threading with boss movesets</li>
 	<li>Create level res and use it</li>
 	<li>Properly load and unload scenes</li>
@@ -15,6 +14,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(1/10/25)
+			<li>Changed game ui (pause and fight) to CanvasLayer</li>
+			<li></li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(1/9/25)

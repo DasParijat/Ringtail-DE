@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $UICanvasLayer/pause_menu
+@onready var pause_menu = $pause_menu
 
 @onready var is_paused : bool = false
 

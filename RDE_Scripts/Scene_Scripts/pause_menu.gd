@@ -1,6 +1,6 @@
-extends Control
+extends CanvasLayer
 
-@onready var main = $"../.."
+@onready var main = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
