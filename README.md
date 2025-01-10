@@ -20,6 +20,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/9/25)
 			<li>Cur ammo and mag size can be seen in fight UI</li>
 			<li>Reloading can be seen in fight UI</li>
+			<li>Player can reload on their own</li>
+			<li>is_selected() in gun node applies to more operations now</li>
 		</ul>
 	</li>
 	<li>

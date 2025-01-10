@@ -34,22 +34,26 @@ func _process(delta: float) -> void:
 	is_auto = gun_res.is_automatic
 	position = get_parent().position
 	
-	if can_shoot() and not_reloading() and is_selected():
-		if is_auto and Input.is_action_pressed("shoot"):
-			shoot()
-		elif is_auto and !Input.is_action_pressed("shoot") and bullet_spread > 0:
-			bullet_spread = 0.0 # reset spread rate when continous shooting stops
-			#print("reset ", bullet_spread)
-		elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
-			shoot()
+	if is_selected():
+		if can_shoot() and not_reloading():
+			if is_auto and Input.is_action_pressed("shoot"):
+				shoot()
+			elif is_auto and !Input.is_action_pressed("shoot") and bullet_spread > 0:
+				bullet_spread = 0.0 # reset spread rate when continous shooting stops
+				#print("reset ", bullet_spread)
+			elif not is_auto and Input.is_action_just_pressed("shoot"): # not auto uses action_just_pressed
+				shoot()
+		
+		if Input.is_action_just_pressed("reload"):
+			reload()
+			
+		if cur_ammo <= 0 and not_reloading():
+			#bullet_spread = 0.0
+			#print("reload ", bullet_spread)
+			reload()
 	
-	if cur_ammo <= 0 and not_reloading():
-		bullet_spread = 0.0
-		#print("reload ", bullet_spread)
-		reload()
-	
-	if Input.is_action_just_pressed("switch_weapon") and get_parent().gun_index == gun_index:
-		GlobalSignal.cur_gun.emit(gun_res) # For giving cam shake info to the Cam2D in Game scene
+		if Input.is_action_just_pressed("switch_weapon"):
+			GlobalSignal.cur_gun.emit(gun_res) # For giving cam shake info to the Cam2D in Game scene
 		
 func is_selected() -> bool:
 	if get_parent().gun_index == gun_index:
@@ -98,6 +102,7 @@ func get_cur_stats() -> Dictionary:
 	
 func reload() -> void:
 	print("reloading")
+	bullet_spread = 0.0
 	match(gun_res.reload_type):
 		"AUTO":
 			await auto_reload()
@@ -105,7 +110,7 @@ func reload() -> void:
 			var manual_reload_time = gun_res.reload_time / mag_size
 			await manual_reload(manual_reload_time)
 			
-	if not_reloading():
+	if not_reloading() and is_selected():
 		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 		
 func auto_reload() -> void:
@@ -121,7 +126,8 @@ func manual_reload(manual_reload_time : float) -> void:
 	while cur_ammo < mag_size:
 		cur_ammo += 1
 		reload_timer.start(manual_reload_time)
-		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
+		if is_selected():
+			GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 		await reload_timer.timeout
 		#print("Reloaded 1 bullet, current ammo:", cur_ammo)
 
