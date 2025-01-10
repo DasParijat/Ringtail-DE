@@ -23,6 +23,8 @@ var shake_range : float = 0.0
 
 var smooth_offset : float = 10.0 # For affecting offset of Camera2D
 
+var is_reloading : bool = false
+
 func _ready() -> void:
 	# to be given by level_res later
 	$".".limit_left = -5000
@@ -31,6 +33,7 @@ func _ready() -> void:
 	$".".limit_bottom = 1000
 	
 	GlobalSignal.connect("cur_gun", Callable(self, "_on_cur_gun"))
+	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	if fight_node == null:
 		printerr("FIGHT NODE UNASSIGNED")
@@ -62,7 +65,7 @@ func gun_aim(aim_lean) -> void:
 		scale_lean = 0.2
 
 func gun_shake(delta : float) -> void:
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and not is_reloading:
 		shake_range = shake_strength 
 		
 	if shake_range > 0:
@@ -78,6 +81,10 @@ func _on_cur_gun(gun_res):
 	shake_strength = cur_gun.shake_strength
 	shake_fade = cur_gun.shake_fade
 
-
+func _on_get_cur_stats(type, stats) -> void:
+	# So the camera doesn't shake when player tries shooting during reload
+	if type == "GUN":
+		is_reloading = stats["is_reloading"]
+		
 func _on_fight_player_created() -> void:
 	track_player = true

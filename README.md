@@ -20,8 +20,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/9/25)
 			<li>Cur ammo and mag size can be seen in fight UI</li>
 			<li>Reloading can be seen in fight UI</li>
+			<li>When switching weapons, fight UI will update accordingly</li>
 			<li>Player can reload on their own</li>
-			<li>is_selected() in gun node applies to more operations now</li>
+			<li>is_selected() and not_reloading() in gun node applies to more operations now</li>
+			<li>Gun script code has been organized differently</li>
+			<li>Changed SMG properties (most likely temp)</li>
+			<li>Camera doesn't shake when player tries shooting while reloading</li>
 		</ul>
 	</li>
 	<li>
