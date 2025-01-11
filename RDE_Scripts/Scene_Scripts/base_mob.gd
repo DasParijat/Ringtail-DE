@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var pos_track_delay : float = mob_res.pos_track_delay
 
 @onready var sprite : Sprite2D = $Sprite2D
-@onready var player_track : Timer = $TrackDelay
+@onready var track_delay : Timer = $TrackDelay
 @onready var collision : CollisionShape2D = $CollisionShape2D
 @onready var hitbox : CollisionShape2D = $HitBox/CollisionShape2D
 
@@ -30,9 +30,9 @@ func move_torwards(target, delay, speed, smooth, delta):
 	#print("target pos: ", target_pos, "cur pos: ", global_position)
 
 func track_pos(cur_data, delay) -> void:
-	if player_track.is_stopped() and (target_pos != cur_data):
+	if track_delay.is_stopped() and (target_pos != cur_data):
 		target_pos = cur_data
-		player_track.start(delay)
+		track_delay.start(delay)
 		
 func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":

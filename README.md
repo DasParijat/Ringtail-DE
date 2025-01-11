@@ -17,12 +17,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(1/10/25)
+			<li>100 commits for this project!</li>
 			<li>Changed game ui (pause and fight) to CanvasLayer</li>
 			<li>get_cur_stats moved from PlayerRes to base_player</li>
 			<li>Mob gets player pos data</li>
 			<li>Mob is able to track any position with delay</li>
 			<li>Added basic movement to mob/boss</li>
 			<li>Cur_stats and base_mob now use global_position instead</li>
+			<li>Changed screen resolution to fit moniters better</li>
+			<li>Adjusted position of ui elements</li>
 		</ul>
 	</li>
 	<li>

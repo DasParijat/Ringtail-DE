@@ -7,10 +7,10 @@
 script = ExtResource("1_acbnt")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 210.0
-offset_top = 161.0
-offset_right = 384.0
-offset_bottom = 262.0
+offset_left = 329.0
+offset_top = 164.0
+offset_right = 503.0
+offset_bottom = 265.0
 scale = Vector2(3.74023, 3.74023)
 alignment = 1
 
