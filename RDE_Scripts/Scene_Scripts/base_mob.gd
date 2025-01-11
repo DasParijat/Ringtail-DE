@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var pos_track_delay : float = mob_res.pos_track_delay
 
 @onready var sprite : Sprite2D = $Sprite2D
-@onready var player_track : Timer = $PlayerTrackDelay
+@onready var player_track : Timer = $TrackDelay
 @onready var collision : CollisionShape2D = $CollisionShape2D
 @onready var hitbox : CollisionShape2D = $HitBox/CollisionShape2D
 
@@ -19,19 +19,18 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	test_mobAI_code(delta)
+	# Might change in future, but keep in mind these func 
+	# are intended to be used by the specifc boss movesets
+	move_torwards(player_pos, 0.3, 50, 10, delta)
 	
-func test_mobAI_code(delta):
-	track_pos(player_pos, 0)
+func move_torwards(target, delay, speed, smooth, delta):
+	track_pos(target, delay)
 	look_at(target_pos)
-	position += transform.x * 300 * delta
-	print("target pos: ", target_pos, "cur pos: ", position)
-	# TODO fix up movement
-	
-	#move_and_slide()
+	position += ((target_pos - global_position) / smooth) * speed * delta
+	#print("target pos: ", target_pos, "cur pos: ", global_position)
 
 func track_pos(cur_data, delay) -> void:
-	if player_track.is_stopped(): # and (target_pos != cur_data):
+	if player_track.is_stopped() and (target_pos != cur_data):
 		target_pos = cur_data
 		player_track.start(delay)
 		

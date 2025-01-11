@@ -15,8 +15,8 @@ shape = SubResource("CircleShape2D_08nu1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="PlayerTrackDelay" type="Timer" parent="."]
-wait_time = 0.001
+[node name="TrackDelay" type="Timer" parent="."]
+wait_time = 0.05
 one_shot = true
 autostart = true
 

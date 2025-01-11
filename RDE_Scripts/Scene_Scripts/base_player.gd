@@ -55,7 +55,7 @@ func death_check() -> void:
 func get_cur_stats() -> Dictionary:
 	# For giving stats globally the fight_ui can track
 	return {
-		"position": get_position(),
+		"position": global_position,
 		"cur_hp": health_res.cur_hp,
 		"cur_power": player_res.cur_power,
 	}

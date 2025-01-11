@@ -22,6 +22,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Mob gets player pos data</li>
 			<li>Mob is able to track any position with delay</li>
 			<li>Added basic movement to mob/boss</li>
+			<li>Cur_stats and base_mob now use global_position instead</li>
 		</ul>
 	</li>
 	<li>
