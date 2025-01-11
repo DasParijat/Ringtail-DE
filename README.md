@@ -16,6 +16,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/11/25)
+			<li>Working on having different attacks wait for eachother</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/10/25)
 			<li>100 commits for this project!</li>
 			<li>Changed game ui (pause and fight) to CanvasLayer</li>
