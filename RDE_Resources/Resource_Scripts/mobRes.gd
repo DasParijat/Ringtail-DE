@@ -12,4 +12,5 @@ class_name MobRes
 
 @export_category("Mob Specific")
 @export var is_boss : bool = false
+@export var pos_track_delay : float = 1.5 
 @export var collision_size : int # replace type with whatever determines shape size
