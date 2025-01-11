@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_8a5f1"]
 [ext_resource type="Resource" uid="uid://bbowctql2vqth" path="res://RDE_Resources/Mob Res/RingtailHARD_health.tres" id="1_8jvsn"]
-[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="3_21md0"]
+[ext_resource type="Texture2D" uid="uid://bera0klibc5q1" path="res://icon.svg" id="3_atdqs"]
 
 [resource]
 script = ExtResource("1_8a5f1")
 name = "RingtailEASY"
 color = Color(0.485703, 0.485704, 0.485703, 1)
-texture = ExtResource("3_21md0")
+texture = ExtResource("3_atdqs")
 health_comp = ExtResource("1_8jvsn")
 is_boss = true
+pos_track_delay = 1.5
+collision_size = 0

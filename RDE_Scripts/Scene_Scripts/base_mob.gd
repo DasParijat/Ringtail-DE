@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var collision : CollisionShape2D = $CollisionShape2D
 @onready var hitbox : CollisionShape2D = $HitBox/CollisionShape2D
 
-var target_vector : Vector2
+var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 
 func _ready() -> void:
@@ -19,20 +19,22 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	test_mobAI_code()
+	test_mobAI_code(delta)
 	
-func test_mobAI_code():
-	# Credit to Eli Cuaycong for basic mob AI
-	# Using it as base and example
+func test_mobAI_code(delta):
+	track_pos(player_pos, 0)
+	look_at(target_pos)
+	position += transform.x * 300 * delta
+	print("target pos: ", target_pos, "cur pos: ", position)
+	# TODO fix up movement
 	
-	position += (player_pos - position) / 10
-	look_at(player_pos)
-	
-	move_and_slide()
+	#move_and_slide()
 
-# TODO seperate tracking to it's own function, so it can be applied to any pos
+func track_pos(cur_data, delay) -> void:
+	if player_track.is_stopped(): # and (target_pos != cur_data):
+		target_pos = cur_data
+		player_track.start(delay)
+		
 func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":
-		if player_track.is_stopped():
-			player_pos = stats["position"]
-			player_track.start(2)
+		player_pos = stats["position"]

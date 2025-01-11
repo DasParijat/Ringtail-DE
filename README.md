@@ -19,7 +19,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/10/25)
 			<li>Changed game ui (pause and fight) to CanvasLayer</li>
 			<li>get_cur_stats moved from PlayerRes to base_player</li>
-			<li>Mob is able to track player with delay</li>
+			<li>Mob gets player pos data</li>
+			<li>Mob is able to track any position with delay</li>
 			<li>Added basic movement to mob/boss</li>
 		</ul>
 	</li>
