@@ -20,32 +20,53 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 
+var time_passed : float = 0
 
 func _physics_process(delta: float) -> void:
 	# Might change in future, but keep in mind these func 
 	# are intended to be used by the specifc boss movesets
-	await move_torwards(player_pos, 0.3, 50, 10, delta)
-	await move_torwards(player_pos, 0.1, 100, 12, delta)
-	print("ahoy")
+	#if true:
+	#move_torwards(player_pos, 0, 50, 10, 2.0, delta)
+	#await get_tree().create_timer(2.0, false, false, true).timeout
+	#move_torwards(player_pos, 0.4, 10, 12, 3.0, delta)
+	#await get_tree().create_timer(3.0, false, false, true).timeout
+	#print("ahoy")
+	move_torwards(player_pos, 0, 50, 10, 2.0, delta)
+	time_passed += delta  # Accumulate elapsed time
+	if time_passed >= 3.0:
+		move_torwards(player_pos, 0.4, 10, 12, 3.0, delta)
+		time_passed = 0.0  # Reset the timer
 
-func move_torwards(target, delay, speed, smooth, delta) -> void:
-	print("speed: ", speed)
-	if move_towards_count <= 100 and not in_use:
-		in_use = true
-		while move_towards_count <= 100:
-			track_pos(target, delay)
-			look_at(target_pos)
-			position += ((target_pos - global_position) / smooth) * speed * delta
-			move_towards_count += 1
-			print("count: ", move_towards_count)
-		in_use = false
+func move_torwards(target, delay, speed, smooth, length, delta) -> void:
+	#print("speed: ", speed)
+	#if not in_use:
+		#in_use = true
+		#if move_towards_count < length:
+	#if not get_tree().create_timer(length).timeout:
+	track_pos(target, delay)
+	look_at(target_pos)
+	position += ((target_pos - global_position) / smooth) * speed * delta
+	print(length)
+#await get_tree().create_timer(length, false, false, true).timeout
+			#move_towards_count += 1
+			#print("count: ", move_towards_count, "speed ", speed)
+		#in_use = false
+		#move_towards_count = 0
 		#print("target pos: ", target_pos, "cur pos: ", global_position)
 	
 		
 func track_pos(cur_data, delay) -> void:
+	if delay <= 0:
+		target_pos = cur_data
+		return 
+		
 	if track_delay.is_stopped() and (target_pos != cur_data):
 		target_pos = cur_data
 		track_delay.start(delay)
+
+func wait(seconds : float) -> void:
+	print(seconds)
+	await get_tree().create_timer(seconds).timeout
 		
 func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":
