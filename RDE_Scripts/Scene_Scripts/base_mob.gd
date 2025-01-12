@@ -27,38 +27,26 @@ func _physics_process(delta: float) -> void:
 	# TODO Make it dynamic and easily modifiable
 	match current_state:
 		0:  
-			move_torwards(player_pos, 0, 50, 10, 2.0, delta)
-			time_passed += delta  
-			if time_passed >= 3.0:
-				current_state = 1
-				time_passed = 0.0
+			move_torwards(player_pos, 0, 50, 10, 2, delta, 1)
 		1: 
-			move_torwards(player_pos, 0.4, 10, 12, 3.0, delta)
-			time_passed += delta  
-			if time_passed >= 3.0:
-				current_state = 0
-				time_passed = 0.0
-
-
-
-func move_torwards(target, delay, speed, smooth, length, delta) -> void:
-	#print("speed: ", speed)
-	#if not in_use:
-		#in_use = true
-		#if move_towards_count < length:
-	#if not get_tree().create_timer(length).timeout:
+			move_torwards(player_pos, 0.4, 10, 12, 4, delta, 0)
+				
+func attack_length(wait_time : float, next_state : int, delta : float) -> void:
+	time_passed += delta  
+	#print("time passed ", time_passed, "	wait time: ", wait_time)
+	if time_passed >= wait_time:
+		current_state = next_state
+		time_passed = 0.0
+		
+func move_torwards(target, delay, speed, smooth, length, delta, next_state) -> void:
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
-	print(length)
-#await get_tree().create_timer(length, false, false, true).timeout
-			#move_towards_count += 1
-			#print("count: ", move_towards_count, "speed ", speed)
-		#in_use = false
-		#move_towards_count = 0
-		#print("target pos: ", target_pos, "cur pos: ", global_position)
+	attack_length(length, next_state, delta)
+	#print(length)	
 	
-		
+	#await get_tree().create_timer(length, false, false, true).timeout
+	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
 		target_pos = cur_data
