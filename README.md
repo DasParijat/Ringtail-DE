@@ -16,6 +16,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/12/25)
+			<li>Attacks properly happen after each other, need to make it dynamic</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/11/25)
 			<li>Working on having different attacks wait for eachother</li>
 			<li>Trying to implement timers of sorts for the attacks</li>

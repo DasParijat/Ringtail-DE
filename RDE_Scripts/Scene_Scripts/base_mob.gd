@@ -20,22 +20,26 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 
-var time_passed : float = 0
+var time_passed = 0.0
+var current_state = 0  
 
 func _physics_process(delta: float) -> void:
-	# Might change in future, but keep in mind these func 
-	# are intended to be used by the specifc boss movesets
-	#if true:
-	#move_torwards(player_pos, 0, 50, 10, 2.0, delta)
-	#await get_tree().create_timer(2.0, false, false, true).timeout
-	#move_torwards(player_pos, 0.4, 10, 12, 3.0, delta)
-	#await get_tree().create_timer(3.0, false, false, true).timeout
-	#print("ahoy")
-	move_torwards(player_pos, 0, 50, 10, 2.0, delta)
-	time_passed += delta  # Accumulate elapsed time
-	if time_passed >= 3.0:
-		move_torwards(player_pos, 0.4, 10, 12, 3.0, delta)
-		time_passed = 0.0  # Reset the timer
+	# TODO Make it dynamic and easily modifiable
+	match current_state:
+		0:  
+			move_torwards(player_pos, 0, 50, 10, 2.0, delta)
+			time_passed += delta  
+			if time_passed >= 3.0:
+				current_state = 1
+				time_passed = 0.0
+		1: 
+			move_torwards(player_pos, 0.4, 10, 12, 3.0, delta)
+			time_passed += delta  
+			if time_passed >= 3.0:
+				current_state = 0
+				time_passed = 0.0
+
+
 
 func move_torwards(target, delay, speed, smooth, length, delta) -> void:
 	#print("speed: ", speed)
