@@ -11,14 +11,8 @@ extends CharacterBody2D
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 
-func _ready() -> void:
-	sprite.texture = mob_res.texture
-	position.y = -100
-	
-	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
-
 var time_passed : float = 0.0
-var cur_move : int = 0  
+#var cur_move : int = 0  
 
 # IDEA FOR BETTER MOVEMENT HANDLING SYSTEM
 # Have single function in physics process that handle which move is currently in action
@@ -28,35 +22,39 @@ var cur_move : int = 0
 # This allows the boss itself (Ringtail) to pass down func and params via signal
 # 	and base_mob can read it
 
+var action_queue : Array = []
+var in_use : bool = false
+
 var test_args1 : Array = [player_pos, 0, 50, 10, 5]
 var test_args2 : Array = [player_pos, 0.4, 10, 12, 3]
 
-func _physics_process(delta: float) -> void:
-	# TODO Make it dynamic and easily modifiable
-	move_torwards(test_args1, delta)
-	#move_torwards(test_args2, delta)
+func _ready() -> void:
+	sprite.texture = mob_res.texture
+	position.y = -100
 	
-	test_args1.append(delta)
-	callv("move_torwards", test_args1) 
-
-func action_manager(action : String, params : Array) -> void:
-	# TODO consider callv and possibly scrap this
-	match(action):
-		"move_torwards":
-			pass
+	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	
+	# Example actions with parameters
+	action_queue.append({"action": "move_torwards", "params": [player_pos, 0, 50, 10, 5]})
+	action_queue.append({"action": "move_torwards", "params": [player_pos, 0.4, 10, 12, 3]})
+	
+func _physics_process(delta: float) -> void:
+	# TODO make queue wait until an action is complete
+	if action_queue.size() > 0:
+		var cur_action = action_queue.pop_front()
+		print(cur_action)
+		in_use = true
+		call(cur_action["action"], cur_action["params"], delta)
+		await in_use == false
+		
 			
 func attack_length(wait_time : float, delta : float) -> void:
 	time_passed += delta  
 	#print("time passed ", time_passed, "	wait time: ", wait_time)
 	if time_passed >= wait_time:
-		#cur_move = next_state
+		in_use = false
 		time_passed = 0.0
 
-func can_run(next_move : int) -> bool:
-	# First condition is cur_move of the func
-	# Second condition is for moves at the end of a chain
-	return cur_move == (next_move - 1) or next_move == 0
-	
 func move_torwards(params: Array, delta: float) -> void:
 	var target = player_pos #params[0]
 	var delay = params[1]

@@ -18,8 +18,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/12/25)
 			<li>Attacks properly happen after each other, using an indexing system. 
-			System most likely getting updated</li>
-			<li>Planning on using callv and queues for mob actions</li>
+			System most likely getting updated (OLD DATED NEWS)</li>
+			<li>Using call function and queues for mob actions</li>
+			<li>Added call function and queue, need to make queue wait</li>
 		</ul>
 	</li>
 	<li>
