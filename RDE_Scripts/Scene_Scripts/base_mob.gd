@@ -28,24 +28,28 @@ var cur_move : int = 0
 # This allows the boss itself (Ringtail) to pass down func and params via signal
 # 	and base_mob can read it
 
+var test_args1 : Array = [player_pos, 0, 50, 10, 5]
+var test_args2 : Array = [player_pos, 0.4, 10, 12, 3]
+
 func _physics_process(delta: float) -> void:
 	# TODO Make it dynamic and easily modifiable
-	move_torwards(player_pos, 0, 50, 10, 2, delta, 1)
-	move_torwards(player_pos, 0.4, 10, 12, 4, delta, 0)
+	move_torwards(test_args1, delta)
+	#move_torwards(test_args2, delta)
 	
-	# callv("move_torwards",) just learned this existged
+	test_args1.append(delta)
+	callv("move_torwards", test_args1) 
 
 func action_manager(action : String, params : Array) -> void:
 	# TODO consider callv and possibly scrap this
 	match(action):
 		"move_torwards":
-			move_torwards(params[0], params[1], params[2], params[3], params[4], params[5], params[6])
+			pass
 			
-func attack_length(wait_time : float, next_state : int, delta : float) -> void:
+func attack_length(wait_time : float, delta : float) -> void:
 	time_passed += delta  
 	#print("time passed ", time_passed, "	wait time: ", wait_time)
 	if time_passed >= wait_time:
-		cur_move = next_state
+		#cur_move = next_state
 		time_passed = 0.0
 
 func can_run(next_move : int) -> bool:
@@ -53,13 +57,18 @@ func can_run(next_move : int) -> bool:
 	# Second condition is for moves at the end of a chain
 	return cur_move == (next_move - 1) or next_move == 0
 	
-func move_torwards(target, delay, speed, smooth, length, delta, next_move) -> void:
-	if can_run(next_move):
-		track_pos(target, delay)
-		look_at(target_pos)
-		position += ((target_pos - global_position) / smooth) * speed * delta
-		attack_length(length, next_move, delta)
-		#print(length)	
+func move_torwards(params: Array, delta: float) -> void:
+	var target = player_pos #params[0]
+	var delay = params[1]
+	var speed = params[2]
+	var smooth = params[3]
+	var length = params[4]
+	
+	track_pos(target, delay)
+	look_at(target_pos)
+	position += ((target_pos - global_position) / smooth) * speed * delta
+	attack_length(length, delta)
+	#print(length)	
 	
 	#await get_tree().create_timer(length, false, false, true).timeout
 	
