@@ -11,20 +11,11 @@ extends CharacterBody2D
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 
-var time_passed : float = 0.0
-#var cur_move : int = 0  
-
-# IDEA FOR BETTER MOVEMENT HANDLING SYSTEM
-# Have single function in physics process that handle which move is currently in action
-# Move Manager function takes in MOVE NAME and it's PARAMs ## SCRATCH BECAUSE OF CALLV
-# MM function has a MATCH statement of all moves. ## SCRATCH BECAUSE OF CALLV
-# There is also a queue which tracks which moves should happen after another
-# This allows the boss itself (Ringtail) to pass down func and params via signal
-# 	and base_mob can read it
+var cur_attack_time : float = 0.0
+var cur_local_time : float = 0.0
 
 var action_queue : Array = []
-var cur_action
-var in_use : bool = false
+var cur_action : Dictionary
 
 var test_args1 : Array = [player_pos, 0, 50, 10, 5]
 var test_args2 : Array = [player_pos, 0.4, 10, 12, 3]
@@ -36,13 +27,13 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	# Example actions with parameters
-	action_queue.append({"action": "move_torwards", "params": [player_pos, 0, 50, 10, 2]})
+	action_queue.append({"action": "move_torwards", "params": [player_pos, 0, 50, 10, 20]})
 	#action_queue.append({"action": "move_torwards", "params": [player_pos, 0.4, 10, 12, 3]})
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
 	
-	if action_queue.size() > 0 and time_passed == 0:
+	if action_queue.size() > 0 and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
 		print(cur_action)
 	
@@ -51,12 +42,19 @@ func _physics_process(delta: float) -> void:
 		
 		
 func attack_length(wait_time : float, delta : float) -> void:
-	time_passed += delta  
-	#print("time passed ", time_passed, "	wait time: ", wait_time)
-	if time_passed >= wait_time:
-		#in_use = false
-		time_passed = 0.0
+	cur_attack_time += delta  
+	#print("cur_attack_time ", cur_attack_time, "	wait time: ", wait_time)
+	if cur_attack_time >= wait_time:
+		cur_attack_time = 0.0
 
+func local_wait(wait_time : float, delta : float) -> bool:
+	cur_local_time += delta  
+	print("cur_local_time ", cur_local_time, "	wait time: ", wait_time)
+	if cur_local_time >= wait_time:
+		cur_local_time = 0.0
+		return true
+	return false
+		
 func move_torwards(params: Array, delta: float) -> void:
 	var target = player_pos #params[0]
 	var delay = params[1]
@@ -66,6 +64,7 @@ func move_torwards(params: Array, delta: float) -> void:
 	
 	track_pos(target, delay)
 	look_at(target_pos)
+	await local_wait(1, delta)
 	position += ((target_pos - global_position) / smooth) * speed * delta
 	attack_length(length, delta)
 	#print(length)	

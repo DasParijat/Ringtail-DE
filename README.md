@@ -22,6 +22,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Using call function and queues for mob actions</li>
 			<li>Added call function and queue, when queue empty, 
 			it repeats the last action (may or may not fix)</li>
+			<li>Setting up local timer func to be used within actions</li>
 		</ul>
 	</li>
 	<li>
