@@ -23,6 +23,7 @@ var time_passed : float = 0.0
 # 	and base_mob can read it
 
 var action_queue : Array = []
+var cur_action
 var in_use : bool = false
 
 var test_args1 : Array = [player_pos, 0, 50, 10, 5]
@@ -35,24 +36,25 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	# Example actions with parameters
-	action_queue.append({"action": "move_torwards", "params": [player_pos, 0, 50, 10, 5]})
-	action_queue.append({"action": "move_torwards", "params": [player_pos, 0.4, 10, 12, 3]})
+	action_queue.append({"action": "move_torwards", "params": [player_pos, 0, 50, 10, 2]})
+	#action_queue.append({"action": "move_torwards", "params": [player_pos, 0.4, 10, 12, 3]})
 	
 func _physics_process(delta: float) -> void:
-	# TODO make queue wait until an action is complete
-	if action_queue.size() > 0:
-		var cur_action = action_queue.pop_front()
+	# TODO possibly account for it repeating last action when queue is empty
+	
+	if action_queue.size() > 0 and time_passed == 0:
+		cur_action = action_queue.pop_front()
 		print(cur_action)
-		in_use = true
+	
+	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
-		await in_use == false
 		
-			
+		
 func attack_length(wait_time : float, delta : float) -> void:
 	time_passed += delta  
 	#print("time passed ", time_passed, "	wait time: ", wait_time)
 	if time_passed >= wait_time:
-		in_use = false
+		#in_use = false
 		time_passed = 0.0
 
 func move_torwards(params: Array, delta: float) -> void:

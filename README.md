@@ -20,7 +20,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Attacks properly happen after each other, using an indexing system. 
 			System most likely getting updated (OLD DATED NEWS)</li>
 			<li>Using call function and queues for mob actions</li>
-			<li>Added call function and queue, need to make queue wait</li>
+			<li>Added call function and queue, when queue empty, 
+			it repeats the last action (may or may not fix)</li>
 		</ul>
 	</li>
 	<li>
