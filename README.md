@@ -17,7 +17,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(1/12/25)
-			<li>Attacks properly happen after each other, using an indexing system</li>
+			<li>Attacks properly happen after each other, using an indexing system. 
+			System most likely getting updated</li>
+			<li>Planning on using callv and queues for mob actions</li>
 		</ul>
 	</li>
 	<li>

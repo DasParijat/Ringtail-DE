@@ -20,11 +20,27 @@ func _ready() -> void:
 var time_passed : float = 0.0
 var cur_move : int = 0  
 
+# IDEA FOR BETTER MOVEMENT HANDLING SYSTEM
+# Have single function in physics process that handle which move is currently in action
+# Move Manager function takes in MOVE NAME and it's PARAMs ## SCRATCH BECAUSE OF CALLV
+# MM function has a MATCH statement of all moves. ## SCRATCH BECAUSE OF CALLV
+# There is also a queue which tracks which moves should happen after another
+# This allows the boss itself (Ringtail) to pass down func and params via signal
+# 	and base_mob can read it
+
 func _physics_process(delta: float) -> void:
 	# TODO Make it dynamic and easily modifiable
 	move_torwards(player_pos, 0, 50, 10, 2, delta, 1)
 	move_torwards(player_pos, 0.4, 10, 12, 4, delta, 0)
-				
+	
+	# callv("move_torwards",) just learned this existged
+
+func action_manager(action : String, params : Array) -> void:
+	# TODO consider callv and possibly scrap this
+	match(action):
+		"move_torwards":
+			move_torwards(params[0], params[1], params[2], params[3], params[4], params[5], params[6])
+			
 func attack_length(wait_time : float, next_state : int, delta : float) -> void:
 	time_passed += delta  
 	#print("time passed ", time_passed, "	wait time: ", wait_time)
