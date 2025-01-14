@@ -17,12 +17,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(1/13/25)
-			<li>(Base Mob)
+			<li>(Base Mob) 
 			Seperated move_torwards action into move_torward_player and move_torward_point</li>
-			<li>(Base Mob)
+			<li>(Base Mob) 
 			attack_length renamed to action_duration</li>
-			<li>(Base Mob)
+			<li>(Base Mob) 
 			action_duration used both as a physics timer and for determining attack lengths</li>
+			<li>(Base Mob) 
+			New action func to handle appending to queue</li>
 		</ul>
 	</li>
 	<li>

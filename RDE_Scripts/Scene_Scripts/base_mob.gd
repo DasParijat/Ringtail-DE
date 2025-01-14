@@ -25,11 +25,11 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	action_queue.append({"action": "move_torward_player", "params": [0, 50, 10, 2]})
-	action_queue.append({"action": "action_duration", "params": 1})
-	action_queue.append({"action": "move_torward_player", "params": [0.4, 10, 12, 3]})
-	action_queue.append({"action": "action_duration", "params": 0.5})
-	action_queue.append({"action": "move_torward_point", "params": [Vector2(0, 0), 0, 50, 10, 2]})
+	action("move_torward_player", [0, 50, 10, 2])
+	action("action_duration", 1)
+	action("move_torward_player", [0.4, 10, 12, 3])
+	action("action_duration", 0.5)
+	action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
@@ -40,7 +40,10 @@ func _physics_process(delta: float) -> void:
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
-		
+
+func action(next_action : String, params) -> void:
+	action_queue.append({"action": next_action, "params": params})
+	# params data type can be any
 		
 func action_duration(wait_time : float, delta : float) -> void:
 	cur_attack_time += delta  
@@ -64,15 +67,14 @@ func move_torward_point(params: Array, delta: float) -> void:
 	#await get_tree().create_timer(length, false, false, true).timeout
 
 func move_torward_player(params: Array, delta: float) -> void:
-	var target = player_pos 
 	var delay = params[0]
 	var speed = params[1]
 	var smooth = params[2]
 	var length = params[3]
 	
-	track_pos(target, delay)
-	look_at(target_pos)
-	position += ((target_pos - global_position) / smooth) * speed * delta
+	track_pos(player_pos, delay)
+	look_at(player_pos)
+	position += ((player_pos - global_position) / smooth) * speed * delta
 	action_duration(length, delta)
 		
 func track_pos(cur_data, delay) -> void:
