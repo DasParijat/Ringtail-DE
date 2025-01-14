@@ -23,9 +23,9 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	action("move_torward_player", [0, 50, 10, 2])
+	action("move_torward_player", [1, 0, 50, 10, 2])
 	action("action_duration", 1)
-	action("move_torward_player", [0.4, 10, 12, 3])
+	action("move_torward_player", [1.5, 0.4, 10, 12, 3])
 	action("action_duration", 0.5)
 	action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
 	
@@ -57,38 +57,39 @@ func action_duration(wait_time : float, delta : float) -> void:
 		action_timeout()
 
 func action_timeout() -> void:
+	# Used to signal end of action and move to next in queue
+	# Can also be used to immediatly skip to the next action
 	timeout = true
 	cur_attack_time = 0.0
 	timeout = false
 	
-		
-func move_torward_point(params: Array, delta: float) -> void:
-	var target = params[0]
-	var delay = params[1]
-	var speed = params[2]
-	var smooth = params[3]
-	var length = params[4]
-	
-	track_pos(target, delay)
-	look_at(target_pos)
-	position += ((target_pos - global_position) / smooth) * speed * delta
-	#action_now("move_torward_player", [0, 50, 10, 2]) for testing action_now
-	action_duration(length, delta)
-	print(global_position)	
-	
-	#await get_tree().create_timer(length, false, false, true).timeout
-
-func move_torward_player(params: Array, delta: float) -> void:
+func move_torward(target : Vector2, params : Array, delta : float) -> void:
 	var delay = params[0]
 	var speed = params[1]
 	var smooth = params[2]
 	var length = params[3]
 	
-	track_pos(player_pos, delay)
-	look_at(player_pos)
-	position += ((player_pos - global_position) / smooth) * speed * delta
-	#action_break()
+	track_pos(target, delay)
+	look_at(target_pos)
+	position += ((target_pos - global_position) / smooth) * speed * delta
 	action_duration(length, delta)
+	
+	# torward_player and torward_point are seperate, 
+	# as _player actively gets cur player pos, 
+	# while _point relies on initial coords given
+	
+func move_torward_point(params : Array, delta : float) -> void:
+	var target = params[0]
+	move_torward(target, params.slice(1), delta)
+	
+	#await get_tree().create_timer(length, false, false, true).timeout
+
+func move_torward_player(params: Array, delta: float) -> void:
+	var offset = params[0] 
+	# If boss wants to move to a pos in relation to player
+	# Ex. Boss wants to go opp coords of player, offset = -1
+	
+	move_torward((player_pos * offset), params.slice(1), delta)
 		
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
@@ -99,6 +100,7 @@ func track_pos(cur_data, delay) -> void:
 		track_delay.start(delay)
 
 func wait(seconds : float) -> void:
+	# I MIGHT USE THIS ELSEWARE (im keeping this typo)
 	print(seconds)
 	await get_tree().create_timer(seconds).timeout
 		

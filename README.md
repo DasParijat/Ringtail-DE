@@ -19,6 +19,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/14/25)
 			<li>(Base Mob) 
 			Added action_timeout as a way to reset timer + go to next action in queue</li>
+			<li>(Base Mob) 
+			Base move_torward function remade</li>
+			<li>(Base Mob) 
+			move_torward_player has offset param now</li>
 		</ul>
 	</li>
 	<li>
