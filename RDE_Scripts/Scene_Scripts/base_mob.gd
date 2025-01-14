@@ -12,12 +12,10 @@ var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 
 var cur_attack_time : float = 0.0
+var timeout : bool = true
 
 var action_queue : Array = []
 var cur_action : Dictionary
-
-var test_args1 : Array = [player_pos, 0, 50, 10, 5]
-var test_args2 : Array = [player_pos, 0.4, 10, 12, 3]
 
 func _ready() -> void:
 	sprite.texture = mob_res.texture
@@ -36,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	if action_queue.size() > 0 and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
+		timeout = false
 		print(cur_action)
 	
 	if cur_action:
@@ -49,17 +48,19 @@ func action(next_action : String, params) -> void:
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
 	action_queue.insert(0, {"action": next_action, "params": params})
-
-func action_break() -> void:
-	# Immediatly ends the current action being done and skips to the next one
-	# TODO still need to work on this
-	cur_attack_time = 0.0
 	
 func action_duration(wait_time : float, delta : float) -> void:
-	cur_attack_time += delta  
+	if not timeout:
+		cur_attack_time += delta  
 	#print("cur_attack_time ", cur_attack_time, "	wait time: ", wait_time)
 	if cur_attack_time >= wait_time:
-		cur_attack_time = 0.0
+		action_timeout()
+
+func action_timeout() -> void:
+	timeout = true
+	cur_attack_time = 0.0
+	timeout = false
+	
 		
 func move_torward_point(params: Array, delta: float) -> void:
 	var target = params[0]
@@ -73,7 +74,7 @@ func move_torward_point(params: Array, delta: float) -> void:
 	position += ((target_pos - global_position) / smooth) * speed * delta
 	#action_now("move_torward_player", [0, 50, 10, 2]) for testing action_now
 	action_duration(length, delta)
-	#print(length)	
+	print(global_position)	
 	
 	#await get_tree().create_timer(length, false, false, true).timeout
 
