@@ -12,7 +12,6 @@ var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 
 var cur_attack_time : float = 0.0
-var cur_local_time : float = 0.0
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -27,7 +26,9 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	action_queue.append({"action": "move_torward_player", "params": [0, 50, 10, 2]})
+	action_queue.append({"action": "action_duration", "params": 1})
 	action_queue.append({"action": "move_torward_player", "params": [0.4, 10, 12, 3]})
+	action_queue.append({"action": "action_duration", "params": 0.5})
 	action_queue.append({"action": "move_torward_point", "params": [Vector2(0, 0), 0, 50, 10, 2]})
 	
 func _physics_process(delta: float) -> void:
@@ -41,19 +42,11 @@ func _physics_process(delta: float) -> void:
 		call(cur_action["action"], cur_action["params"], delta)
 		
 		
-func attack_length(wait_time : float, delta : float) -> void:
+func action_duration(wait_time : float, delta : float) -> void:
 	cur_attack_time += delta  
 	#print("cur_attack_time ", cur_attack_time, "	wait time: ", wait_time)
 	if cur_attack_time >= wait_time:
 		cur_attack_time = 0.0
-
-func local_wait(wait_time : float, delta : float) -> bool:
-	cur_local_time += delta  
-	print("cur_local_time ", cur_local_time, "	wait time: ", wait_time)
-	if cur_local_time >= wait_time:
-		cur_local_time = 0.0
-		return true
-	return false
 		
 func move_torward_point(params: Array, delta: float) -> void:
 	var target = params[0]
@@ -64,9 +57,8 @@ func move_torward_point(params: Array, delta: float) -> void:
 	
 	track_pos(target, delay)
 	look_at(target_pos)
-	await local_wait(1, delta)
 	position += ((target_pos - global_position) / smooth) * speed * delta
-	attack_length(length, delta)
+	action_duration(length, delta)
 	#print(length)	
 	
 	#await get_tree().create_timer(length, false, false, true).timeout
@@ -80,9 +72,8 @@ func move_torward_player(params: Array, delta: float) -> void:
 	
 	track_pos(target, delay)
 	look_at(target_pos)
-	await local_wait(1, delta)
 	position += ((target_pos - global_position) / smooth) * speed * delta
-	attack_length(length, delta)
+	action_duration(length, delta)
 		
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
