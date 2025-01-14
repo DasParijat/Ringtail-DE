@@ -16,6 +16,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/13/25)
+			<li>Seperated move_torwards action into move_torward_player and move_torward_point</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/12/25)
 			<li>Attacks properly happen after each other, using an indexing system. 
 			System most likely getting updated (OLD DATED NEWS)</li>
