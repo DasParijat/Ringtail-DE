@@ -23,6 +23,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Base move_torward function remade</li>
 			<li>(Base Mob) 
 			move_torward_player has offset param now</li>
+			<li>(Base Mob) 
+			Working on handling actions that are a combo of other actions</li>
 		</ul>
 	</li>
 	<li>

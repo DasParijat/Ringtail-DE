@@ -23,6 +23,7 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
+	#action("move_stop_torward_player", [1.5, 1, 0.4, 10, 12, 3])
 	action("move_torward_player", [1, 0, 50, 10, 2])
 	action("action_duration", 1)
 	action("move_torward_player", [1.5, 0.4, 10, 12, 3])
@@ -31,6 +32,7 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
+	#print(action_queue)
 	
 	if action_queue.size() > 0 and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
@@ -45,6 +47,13 @@ func action(next_action : String, params) -> void:
 	# params data type can be any
 	action_queue.append({"action": next_action, "params": params})
 
+func action_combo(actions : Array) -> void:
+	# MINDSET
+	# This will add multiple actions to the queue itself
+	# So an action can be a COMBO of other existing actions
+	for action_prop in actions:
+		action(action_prop["action"], action_prop["params"])
+		
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
 	action_queue.insert(0, {"action": next_action, "params": params})
@@ -90,7 +99,16 @@ func move_torward_player(params: Array, delta: float) -> void:
 	# Ex. Boss wants to go opp coords of player, offset = -1
 	
 	move_torward((player_pos * offset), params.slice(1), delta)
-		
+
+func move_stop_torward_player(params : Array) -> void:
+	# Possible mistake, in ready, it adds itself to queue
+	# Then when executed, it just tries to adds on to the queue itself 
+	# Rather than being in the queue as seperate actions
+	var stop_time = params[0]
+	
+	action_combo([{"action": "move_torward_player", "params": params.slice(1)}, 
+				{"action": "action_duration", "params": stop_time}])
+	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
 		target_pos = cur_data 
