@@ -42,9 +42,19 @@ func _physics_process(delta: float) -> void:
 		call(cur_action["action"], cur_action["params"], delta)
 
 func action(next_action : String, params) -> void:
-	action_queue.append({"action": next_action, "params": params})
+	# Adds action to end of queue
 	# params data type can be any
-		
+	action_queue.append({"action": next_action, "params": params})
+
+func action_now(next_action : String, params) -> void:
+	# Adds action to be next executed regardless
+	action_queue.insert(0, {"action": next_action, "params": params})
+
+func action_break() -> void:
+	# Immediatly ends the current action being done and skips to the next one
+	# TODO still need to work on this
+	cur_attack_time = 0.0
+	
 func action_duration(wait_time : float, delta : float) -> void:
 	cur_attack_time += delta  
 	#print("cur_attack_time ", cur_attack_time, "	wait time: ", wait_time)
@@ -61,6 +71,7 @@ func move_torward_point(params: Array, delta: float) -> void:
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
+	#action_now("move_torward_player", [0, 50, 10, 2]) for testing action_now
 	action_duration(length, delta)
 	#print(length)	
 	
@@ -75,6 +86,7 @@ func move_torward_player(params: Array, delta: float) -> void:
 	track_pos(player_pos, delay)
 	look_at(player_pos)
 	position += ((player_pos - global_position) / smooth) * speed * delta
+	#action_break()
 	action_duration(length, delta)
 		
 func track_pos(cur_data, delay) -> void:

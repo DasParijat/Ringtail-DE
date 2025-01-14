@@ -25,6 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			action_duration used both as a physics timer and for determining attack lengths</li>
 			<li>(Base Mob) 
 			New action func to handle appending to queue</li>
+			<li>(Base Mob) 
+			New action_now func to handle adding an action that should immediatly happen</li>
 		</ul>
 	</li>
 	<li>
