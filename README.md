@@ -16,6 +16,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/15/25)
+			<li>(RingtailHARD) 
+			Added way to cycle through custom attacks in parent node</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/14/25)
 			<li>(Base Mob) 
 			Added action_timeout as a way to reset timer + go to next action in queue</li>

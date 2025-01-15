@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	if action_queue.size() > 0 and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
 		timeout = false
+		print(action_queue)
 		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
