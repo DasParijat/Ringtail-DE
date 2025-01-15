@@ -25,6 +25,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			move_torward_player has offset param now</li>
 			<li>(Base Mob) 
 			Working on handling actions that are a combo of other actions</li>
+			<li>(Base Mob) 
+			Added observe action</li>
+			<li>(Base Mob) 
+			Fixed action_combo by using action_now instead of action</li>
 		</ul>
 	</li>
 	<li>

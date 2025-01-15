@@ -23,11 +23,12 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	#action("move_stop_torward_player", [1.5, 1, 0.4, 10, 12, 3])
-	action("move_torward_player", [1, 0, 50, 10, 2])
-	action("action_duration", 1)
-	action("move_torward_player", [1.5, 0.4, 10, 12, 3])
-	action("action_duration", 0.5)
+	action("observe_player", 1)
+	action("move_stop_torward_player", [1.5, 1, 0, 50, 10, 2])
+	#action("move_torward_player", [1, 0, 50, 10, 2])
+	#action("action_duration", 1)
+	#action("move_torward_player", [1.5, 0.4, 10, 12, 3])
+	#action("action_duration", 0.5)
 	action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
 	
 func _physics_process(delta: float) -> void:
@@ -48,11 +49,16 @@ func action(next_action : String, params) -> void:
 	action_queue.append({"action": next_action, "params": params})
 
 func action_combo(actions : Array) -> void:
-	# MINDSET
 	# This will add multiple actions to the queue itself
 	# So an action can be a COMBO of other existing actions
+	actions.reverse() 
+	# Due to action_now putting new actions in index 0,
+	# The last item in array is first executed
+	# Thus reversing makes action sequence line up with 
+	# 	how it's listed in given array
+	
 	for action_prop in actions:
-		action(action_prop["action"], action_prop["params"])
+		action_now(action_prop["action"], action_prop["params"])
 		
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
@@ -88,26 +94,27 @@ func move_torward(target : Vector2, params : Array, delta : float) -> void:
 	# while _point relies on initial coords given
 	
 func move_torward_point(params : Array, delta : float) -> void:
+	#print("point execute")
 	var target = params[0]
 	move_torward(target, params.slice(1), delta)
 	
 	#await get_tree().create_timer(length, false, false, true).timeout
 
 func move_torward_player(params: Array, delta: float) -> void:
+	#print("player execute")
 	var offset = params[0] 
 	# If boss wants to move to a pos in relation to player
 	# Ex. Boss wants to go opp coords of player, offset = -1
 	
 	move_torward((player_pos * offset), params.slice(1), delta)
 
-func move_stop_torward_player(params : Array) -> void:
-	# Possible mistake, in ready, it adds itself to queue
-	# Then when executed, it just tries to adds on to the queue itself 
-	# Rather than being in the queue as seperate actions
-	var stop_time = params[0]
-	
+func move_stop_torward_player(params : Array, delta : float) -> void:
 	action_combo([{"action": "move_torward_player", "params": params.slice(1)}, 
-				{"action": "action_duration", "params": stop_time}])
+				{"action": "action_duration", "params": params[0]}])
+
+func observe_player(wait_time : float, delta : float) -> void:
+	look_at(player_pos)
+	action_duration(wait_time, delta)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
