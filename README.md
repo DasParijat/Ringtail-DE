@@ -31,6 +31,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Fixed action_combo by using action_now instead of action</li>
 			<li>(Base Mob / RingtailHARD) 
 			Testing using actions from parent node</li>
+			<li>(Fight UI) 
+			Reload text shows up next to ammo instead of replacing it</li>
 		</ul>
 	</li>
 	<li>
