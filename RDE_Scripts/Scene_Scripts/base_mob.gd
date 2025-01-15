@@ -23,13 +23,15 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	action("observe_player", 1)
-	action("move_stop_torward_player", [1.5, 1, 0, 50, 10, 2])
+	#action("observe_player", 0.1)
+	#for i in range(3): # testing using for loops
+	#	action("move_stop_torward_player", [i, 1, 0, 50, 10, 2])
+		
 	#action("move_torward_player", [1, 0, 50, 10, 2])
 	#action("action_duration", 1)
 	#action("move_torward_player", [1.5, 0.4, 10, 12, 3])
 	#action("action_duration", 0.5)
-	action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
+	#action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
@@ -38,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	if action_queue.size() > 0 and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
 		timeout = false
-		print(cur_action)
+		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
@@ -52,10 +54,8 @@ func action_combo(actions : Array) -> void:
 	# This will add multiple actions to the queue itself
 	# So an action can be a COMBO of other existing actions
 	actions.reverse() 
-	# Due to action_now putting new actions in index 0,
-	# The last item in array is first executed
-	# Thus reversing makes action sequence line up with 
-	# 	how it's listed in given array
+	# Reversing makes action sequence line up with 
+	# 	how it's listed in given array (due to use of action_now)
 	
 	for action_prop in actions:
 		action_now(action_prop["action"], action_prop["params"])
