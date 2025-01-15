@@ -9,3 +9,7 @@ script = ExtResource("1_6fiq8")
 mob_res = ExtResource("2_opmw5")
 
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
+
+[node name="AttackLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

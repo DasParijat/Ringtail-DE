@@ -3,7 +3,9 @@ extends Node2D
 @export var mob_res : MobRes 
 @export var attack_min : int = 1
 @export var attack_max : int = 4
+
 @onready var base_mob : CharacterBody2D = $base_mob
+@onready var attack_label : Label = $AttackLabel
 
 var cur_attack : int = 0
 
@@ -13,10 +15,10 @@ func _ready() -> void:
 	position = base_mob.position
 	
 func _process(delta: float) -> void:
-	cur_attack = randf_range(attack_min, attack_max)
-	
-	if base_mob.action_queue.size() <= 0:
+	if base_mob.no_action():
 		#cur_attack += 1 
+		cur_attack = randf_range(attack_min, attack_max)
+		attack_label.text = "ATTACK " + str(cur_attack)
 		match(cur_attack):
 			1: 
 				print("attack1")

@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
 	#print(action_queue)
 	
-	if action_queue.size() > 0 and cur_attack_time == 0:
+	if !(no_action()) and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
 		timeout = false
 		print(action_queue)
@@ -64,6 +64,9 @@ func action_combo(actions : Array) -> void:
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
 	action_queue.insert(0, {"action": next_action, "params": params})
+
+func no_action() -> bool:
+	return action_queue.is_empty()
 	
 func action_duration(wait_time : float, delta : float) -> void:
 	if not timeout:

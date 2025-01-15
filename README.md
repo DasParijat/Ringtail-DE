@@ -19,6 +19,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/15/25)
 			<li>(RingtailHARD) 
 			Added way to cycle through custom attacks in parent node</li>
+			<li>(Base Mob / RingtailHARD) 
+			Added no_action func to return false when empty queue</li>
+			<li>(RingtailHARD) 
+			Added test label to see the attack # in-game</li>
 		</ul>
 	</li>
 	<li>
