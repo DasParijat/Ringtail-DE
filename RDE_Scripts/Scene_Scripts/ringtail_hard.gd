@@ -7,7 +7,7 @@ extends Node2D
 @onready var base_mob : CharacterBody2D = $base_mob
 @onready var attack_label : Label = $AttackLabel
 
-var cur_attack : int = 0
+var cur_attack : int = 1
 var chain : bool = false
 
 # TODO Make a smaller version of the ringtail sprite. he's too fat
@@ -16,9 +16,6 @@ func _ready() -> void:
 	position = base_mob.position
 	
 func _process(delta: float) -> void:
-	# TODO make label text actually update properly
-	
-	attack_label.text = "ATTACK " + str(cur_attack)
 	if base_mob.no_action():
 		#cur_attack += 1 
 		match(cur_attack):
@@ -34,31 +31,31 @@ func _process(delta: float) -> void:
 			_: 
 				print("false attack")
 				
-		#attack_label.text = "ATTACK " + str(cur_attack)
-		print(cur_attack)
 		if not chain:		
-			cur_attack = randf_range(attack_min, attack_max)
+			cur_attack = 1 #randf_range(attack_min, attack_max)
+			attack_label.text = "ATTACK " + str(cur_attack)
 		else:
 			chain = false
+			attack_label.text = "ATTACK " + str(cur_attack)
+		# some reason label text assignment only properly works this way
 
 func chain_attack(next_attack : int) -> void:
 	cur_attack = next_attack
 	chain = true
 	
 func attack1() -> void:
-	base_mob.action("observe_player", 2)
+	#base_mob.action("observe_player", 2)
 	base_mob.action("move_torward_player", [1, 0, 25, 10, 4])
 	chain_attack(3)
 
 func attack2() -> void:
-	print("attack 2 start")
-	for i in range(3): # testing using for loops 
+	for i in range(1): # testing using for loops 
 		base_mob.action("move_stop_torward_player", [i + 1, 1, 0, 50, 10, 2])
 	base_mob.action("action_duration", 1)
-	base_mob.action("move_torward_point", [Vector2(0, 100), 0, 50, 10, 1])
+	#base_mob.action("move_torward_point", [Vector2(0, 300), 0, 50, 10, 1])
 	
 func attack3() -> void:
-	base_mob.action("move_torward_point", [Vector2(0, 100), 0, 50, 10, 1])
+	base_mob.action("move_torward_point", [Vector2(0, 100), 0, 50, 10, 0.3])
 	#for i in range(2):
 	#	base_mob.action("observe_player", 0.5)
 	#	base_mob.action("move_torward_player", [1, 0, 70, 10, 2])
