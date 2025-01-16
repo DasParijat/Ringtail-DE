@@ -24,10 +24,10 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	# EXAMPLE ACTIONS
-	#action("move_stop_torward_player", [i, 1, 0, 50, 10, 2])	
-	#action("move_torward_player", [1, 0, 50, 10, 2])
+	#action("move_stop_torward_player", {"offset": 1, "delay": 1, "speed": 50, "smooth": 10, "length": 2})	
+	#action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})
 	#action("action_duration", 0.5)
-	#action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
+	#action("move_torward_point", {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
@@ -36,8 +36,8 @@ func _physics_process(delta: float) -> void:
 	if !(no_action()) and cur_attack_time == 0:
 		cur_action = action_queue.pop_front()
 		timeout = false
-		#print(action_queue)
-		#print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
+		print(action_queue)
+		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
@@ -45,6 +45,8 @@ func _physics_process(delta: float) -> void:
 func action(next_action : String, params) -> void:
 	# Adds action to end of queue
 	# params data type can be any
+	print(next_action)
+	print(params)
 	action_queue.append({"action": next_action, "params": params})
 
 func action_combo(actions : Array) -> void:
@@ -78,39 +80,34 @@ func action_timeout() -> void:
 	cur_attack_time = 0.0
 	timeout = false
 	
-func move_torward(target : Vector2, params : Array, delta : float) -> void:
-	var delay = params[0]
-	var speed = params[1]
-	var smooth = params[2]
-	var length = params[3]
-	
+func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
+	var delay = params["delay"]
+	var speed = params["speed"]
+	var smooth = params["smooth"]
+	var length = params["length"]
+
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
 	action_duration(length, delta)
-	
-	# torward_player and torward_point are seperate, 
-	# as _player actively gets cur player pos, 
-	# while _point relies on initial coords given
-	
-func move_torward_point(params : Array, delta : float) -> void:
-	#print("point execute")
-	var target = params[0]
-	move_torward(target, params.slice(1), delta)
+
+func move_torward_point(params : Dictionary, delta : float) -> void:
+	var target = params["target"]
+	move_torward(target, params, delta)
 	
 	#await get_tree().create_timer(length, false, false, true).timeout
 
-func move_torward_player(params: Array, delta: float) -> void:
+func move_torward_player(params: Dictionary, delta: float) -> void:
 	#print("player execute")
-	var offset = params[0] 
+	var offset = params["offset"] 
 	# If boss wants to move to a pos in relation to player
 	# Ex. Boss wants to go opp coords of player, offset = -1
 	
-	move_torward((player_pos * offset), params.slice(1), delta)
+	move_torward((player_pos * offset), params, delta)
 
-func move_stop_torward_player(params : Array, delta : float) -> void:
-	action_combo([{"action": "move_torward_player", "params": params.slice(1)}, 
-				{"action": "action_duration", "params": params[0]}])
+func move_stop_torward_player(params : Dictionary, delta : float) -> void:
+	action_combo([{"action": "move_torward_player", "params": params}, 
+				{"action": "action_duration", "params": params["length"]}])
 
 func observe_player(wait_time : float, delta : float) -> void:
 	look_at(player_pos)
