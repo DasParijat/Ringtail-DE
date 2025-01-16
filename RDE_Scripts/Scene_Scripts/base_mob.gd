@@ -23,13 +23,9 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	#action("observe_player", 0.1)
-	#for i in range(3): # testing using for loops
-	#	action("move_stop_torward_player", [i, 1, 0, 50, 10, 2])
-		
+	# EXAMPLE ACTIONS
+	#action("move_stop_torward_player", [i, 1, 0, 50, 10, 2])	
 	#action("move_torward_player", [1, 0, 50, 10, 2])
-	#action("action_duration", 1)
-	#action("move_torward_player", [1.5, 0.4, 10, 12, 3])
 	#action("action_duration", 0.5)
 	#action("move_torward_point", [Vector2(0, 0), 0, 50, 10, 2])
 	

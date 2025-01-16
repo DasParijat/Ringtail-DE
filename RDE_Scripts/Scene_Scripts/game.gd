@@ -11,6 +11,9 @@ func _ready() -> void:
 	pause_menu.hide() 
 
 func _process(delta: float) -> void:
+	if not GlobalTime.is_paused:
+		Engine.time_scale = GlobalTime.cur_time_scale
+	
 	if Input.is_action_just_pressed("pause"):
 		pause_game()
 
@@ -20,11 +23,10 @@ func pause_game() -> void:
 	if GlobalTime.is_paused:
 		print(">>PAUSED<<")
 		pause_menu.hide()
-		Engine.time_scale = GlobalTime.cur_time_scale
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
 		
 	GlobalTime.is_paused = not GlobalTime.is_paused
-	print(GlobalTime.is_paused)
+	#print(GlobalTime.is_paused)
 	
