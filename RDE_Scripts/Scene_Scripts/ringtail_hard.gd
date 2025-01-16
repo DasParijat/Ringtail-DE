@@ -47,17 +47,18 @@ func chain_attack(next_attack : int) -> void:
 
 func attack1() -> void:
 	#base_mob.action("observe_player", 2)
-	base_mob.action("move_stop_torward_player", {"offset": 1, "delay": 1, "speed": 50, "smooth": 10, "length": 2})
-	#chain_attack(3)
+	base_mob.action("move_stop_torward_player", {"offset": 1, "delay": 1, "speed": 50, "smooth": 10, "length": 1})
+	chain_attack(2)
 
 func attack2() -> void:
 	for i in range(1): # testing using for loops 
-		base_mob.action("move_stop_torward_player", [i + 1, 1, 0, 50, 10, 2])
+		base_mob.action("move_stop_torward_player", {"offset": i + 1, "delay": 1, "speed": 50, "smooth": 10, "length": 1})	
 	base_mob.action("action_duration", 1)
-	#base_mob.action("move_torward_point", [Vector2(0, 300), 0, 50, 10, 1])
+	base_mob.action("move_torward_point", {"target": Vector2(0, 500), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
+	chain_attack(3)
 	
 func attack3() -> void:
-	base_mob.action("move_torward_point", [Vector2(0, 100), 0, 50, 10, 0.3])
-	#for i in range(2):
-	#	base_mob.action("observe_player", 0.5)
-	#	base_mob.action("move_torward_player", [1, 0, 70, 10, 2])
+	base_mob.action("move_torward_point", {"target": Vector2(0, 100), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
+	for i in range(2):
+		base_mob.action("observe_player", 0.5)
+		base_mob.action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})

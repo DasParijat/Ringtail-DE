@@ -21,6 +21,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added way to chain attacks within a single attack</li>
 			<li>(Base Mob) 
 			Action params are dictionaries instead of arrays</li>
+			<li>(RingtailHARD) 
+			RingtailHARD accounts for params change</li>
 		</ul>
 	</li>
 	<li>
