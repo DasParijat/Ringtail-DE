@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 				print("false attack")
 				
 		if not chain:		
-			cur_attack = 1 #randf_range(attack_min, attack_max)
+			cur_attack = 0 #randf_range(attack_min, attack_max)
 			attack_label.text = "ATTACK " + str(cur_attack)
 		else:
 			chain = false

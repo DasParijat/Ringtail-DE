@@ -17,6 +17,14 @@ var timeout : bool = true
 var action_queue : Array = []
 var cur_action : Dictionary
 
+var default_params = {
+	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2},
+	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2},
+	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
+	"action_duration": 1,
+	"observe_player": 1
+}
+
 func _ready() -> void:
 	sprite.texture = mob_res.texture
 	position.y = -100
@@ -24,7 +32,7 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	# EXAMPLE ACTIONS
-	#action("move_stop_torward_player", {"offset": 1, "delay": 1, "speed": 50, "smooth": 10, "length": 2})	
+	action("move_stop_torward_player", {})	
 	#action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})
 	#action("action_duration", 0.5)
 	#action("move_torward_point", {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
@@ -42,12 +50,15 @@ func _physics_process(delta: float) -> void:
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
 
-func action(next_action : String, params) -> void:
+func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
 	# params data type can be any
 	print(next_action)
-	print(params)
-	action_queue.append({"action": next_action, "params": params})
+	print(mod_params)
+	action_queue.append({"action": next_action, 
+						"params": get_modified_params(next_action, mod_params)})
+						# This is so when action is called, 
+						# don't need to give values for all params
 
 func action_combo(actions : Array) -> void:
 	# This will add multiple actions to the queue itself
@@ -65,7 +76,13 @@ func action_now(next_action : String, params) -> void:
 
 func no_action() -> bool:
 	return action_queue.is_empty()
-	
+
+func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
+	var new_params = default_params[action_name].duplicate()
+	for i in mod.keys():
+		new_params[i] = mod[i]
+	return new_params
+
 func action_duration(wait_time : float, delta : float) -> void:
 	if not timeout:
 		cur_attack_time += delta  
