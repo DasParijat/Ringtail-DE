@@ -19,6 +19,7 @@ config/icon="res://RDE_Images/rt_ringtail1.png"
 [autoload]
 
 GlobalSignal="*res://RDE_Scripts/Global_Scripts/global_signal.gd"
+GlobalTime="*res://RDE_Scripts/Global_Scripts/GlobalTime.gd"
 
 [display]
 

@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	
 	#print(base_player.position)
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
-	
+	#print("ENGINE TIME	", Engine.time_scale)
 	
 	#player_res.health_comp.take_dmg(0.01)
 	#print(player_res.health_comp.cur_hp)
@@ -40,9 +40,10 @@ func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
 	if cur_power > 0.1 and Input.is_action_pressed("sprint"):
 		base_player.set_speedmod((2 * (cur_power / 100)) + 1) # lower cur power results in less speed
-		Engine.time_scale = 1 - ((cur_power / 100) * 0.8) + 0.2
+		GlobalTime.cur_time_scale = clamp(1 - ((cur_power / 100) * 0.8) + 0.2, 0, 1)
 		cur_power -= 0.1
 	else:
+		GlobalTime.cur_time_scale = 1
 		base_player.set_speedmod(1)
 	
 

@@ -23,6 +23,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added no_action func to return false when empty queue</li>
 			<li>(RingtailHARD) 
 			Added test label to see the attack # in-game</li>
+			<li>Created cur_time_scale, along with GlobalTime script/li>
 		</ul>
 	</li>
 	<li>

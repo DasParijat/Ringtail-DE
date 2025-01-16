@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var pause_menu = $pause_menu
 
-@onready var is_paused : bool = false
+#@onready var is_paused : bool = G.is_paused
 
 # TODO Fix issue of it still being paused when going back into the game from main menu
 # probably have to deload stuff when quiting
@@ -17,13 +17,14 @@ func _process(delta: float) -> void:
 # https://youtu.be/JEQR4ALlwVU?si=3ryPHdJG3ungIi0M 
 
 func pause_game() -> void:
-	if is_paused:
+	if GlobalTime.is_paused:
 		print(">>PAUSED<<")
 		pause_menu.hide()
-		Engine.time_scale = 1
+		Engine.time_scale = GlobalTime.cur_time_scale
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
 		
-	is_paused = not is_paused
+	GlobalTime.is_paused = not GlobalTime.is_paused
+	print(GlobalTime.is_paused)
 	
