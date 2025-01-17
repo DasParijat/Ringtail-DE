@@ -7,6 +7,9 @@ extends Node2D
 @onready var base_mob : CharacterBody2D = $base_mob
 @onready var attack_label : Label = $AttackLabel
 
+@onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
+var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
+
 var cur_attack : int = 1
 var chain : bool = false
 
@@ -65,3 +68,17 @@ func attack3() -> void:
 	for i in range(2):
 		base_mob.action("observe_player", 0.5)
 		base_mob.action("move_torward_player", {})
+		base_mob.action("observe_player", 0.1)
+		shoot()
+
+func shoot() -> void:
+	# TODO Fix it so it actually shoots from Ringtail
+	var bullet = bullet_load.instantiate()
+
+	bullet.bullet_res = bullet_res
+	
+	# bullet transformations			
+	bullet.global_transform = global_transform
+	# putting bullet in scene
+	get_parent().get_parent().add_child(bullet)
+			

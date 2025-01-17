@@ -19,6 +19,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/17/25)
 			<li>(Base Mob) 
 			Added way to set default params of specific actions</li>
+			<li>(Bullet) 
+			Bullets are now not reliant on GunRes (allowing mobs to use bullets)</li>
 		</ul>
 	</li>
 	<li>

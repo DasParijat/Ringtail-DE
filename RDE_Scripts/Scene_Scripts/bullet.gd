@@ -7,6 +7,8 @@ extends Area2D
 @onready var sprite = $Sprite2D
 
 var bullet_travelled : float
+var bullet_speed : float = 100
+
 var start_position : Vector2
 var direction : Vector2  
 
@@ -16,8 +18,13 @@ func _ready():
 	sprite.texture = texture
 	direction = Vector2.RIGHT.rotated(rotation).normalized()
 	
+	# Bullets can be used as projectiles from mobs
+	if gun_res:
+		bullet_speed = gun_res.bullet_speed
+	
 func set_bullet_res(res):
 	bullet_res = res
+	
 	
 func falloff_calc():
 	# checks if falloff calculation should be enabled, and to do the calc if true
@@ -26,7 +33,7 @@ func falloff_calc():
 		#print("bulscript, falloff calc: ", damage)
 		
 func _physics_process(delta):
-	position += transform.x * gun_res.bullet_speed * delta
+	position += transform.x * bullet_speed * delta
 	bullet_travelled = global_position.distance_to(start_position)
 	falloff_calc()
 	
