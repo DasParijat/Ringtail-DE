@@ -87,6 +87,10 @@ func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
 		new_params[i] = mod[i]
 	return new_params
 
+func set_default_params(new_def: Dictionary) -> void:
+	for i in new_def.keys():
+		default_params[i] = new_def[i].duplicate()
+	
 func action_duration(wait_time : float, delta : float) -> void:
 	if not timeout:
 		cur_attack_time += delta  

@@ -15,6 +15,8 @@ func _ready() -> void:
 	print("boss added")
 	position = base_mob.position
 	
+	base_mob.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 200, "smooth": 10, "length": 1}})
+	
 func _process(delta: float) -> void:
 	if base_mob.no_action():
 		#cur_attack += 1 
@@ -33,7 +35,7 @@ func _process(delta: float) -> void:
 				pass
 				
 		if not chain:		
-			cur_attack = 0 #randf_range(attack_min, attack_max)
+			cur_attack = 3 #randf_range(attack_min, attack_max)
 			attack_label.text = "ATTACK " + str(cur_attack)
 		else:
 			chain = false

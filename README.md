@@ -16,6 +16,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/17/25)
+			<li>(Base Mob) 
+			Added way to set default params of specific actions</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/16/25)
 			<li>(RingtailHARD) 
 			Added way to chain attacks within a single attack</li>
