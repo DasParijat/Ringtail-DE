@@ -24,7 +24,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD) 
 			RingtailHARD accounts for params change</li>
 			<li>(Base Mob / RingtailHARD) 
-			Working on simplfyiny param inputs</li>
+			Simplified param inputs. Now only need to put in what's different from default</li>
 		</ul>
 	</li>
 	<li>

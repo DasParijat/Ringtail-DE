@@ -29,7 +29,8 @@ func _process(delta: float) -> void:
 				print("attack3")
 				attack3()
 			_: 
-				print("false attack")
+				#print("false attack")
+				pass
 				
 		if not chain:		
 			cur_attack = 0 #randf_range(attack_min, attack_max)
@@ -47,18 +48,18 @@ func chain_attack(next_attack : int) -> void:
 
 func attack1() -> void:
 	#base_mob.action("observe_player", 2)
-	base_mob.action("move_stop_torward_player", {"offset": 1, "delay": 1, "speed": 50, "smooth": 10, "length": 1})
+	base_mob.action("move_stop_torward_player", {"speed": 200})
 	chain_attack(2)
 
 func attack2() -> void:
 	for i in range(1): # testing using for loops 
-		base_mob.action("move_stop_torward_player", {"offset": i + 1, "delay": 1, "speed": 50, "smooth": 10, "length": 1})	
+		base_mob.action("move_stop_torward_player", {"offset": i + 1})	
 	base_mob.action("action_duration", 1)
-	base_mob.action("move_torward_point", {"target": Vector2(0, 500), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
+	base_mob.action("move_torward_point", {"target": Vector2(0, 500), "speed": 100, "length": 0.5})
 	chain_attack(3)
 	
 func attack3() -> void:
-	base_mob.action("move_torward_point", {"target": Vector2(0, 100), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
+	base_mob.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
 	for i in range(2):
 		base_mob.action("observe_player", 0.5)
-		base_mob.action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})
+		base_mob.action("move_torward_player", {})

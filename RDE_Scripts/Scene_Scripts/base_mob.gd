@@ -18,8 +18,8 @@ var action_queue : Array = []
 var cur_action : Dictionary
 
 var default_params = {
-	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2},
-	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2},
+	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
+	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 1},
 	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
 	"action_duration": 1,
 	"observe_player": 1
@@ -55,10 +55,14 @@ func action(next_action : String, mod_params) -> void:
 	# params data type can be any
 	print(next_action)
 	print(mod_params)
-	action_queue.append({"action": next_action, 
-						"params": get_modified_params(next_action, mod_params)})
-						# This is so when action is called, 
-						# don't need to give values for all params
+
+	var params = mod_params
+	if typeof(params) == TYPE_DICTIONARY:
+		params = get_modified_params(next_action, mod_params)
+		# This is so when action is called, 
+		# don't need to give values for all params
+	
+	action_queue.append({"action": next_action, "params": params})
 
 func action_combo(actions : Array) -> void:
 	# This will add multiple actions to the queue itself
