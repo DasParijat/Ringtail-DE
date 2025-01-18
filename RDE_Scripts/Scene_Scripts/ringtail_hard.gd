@@ -27,12 +27,12 @@ func _ready() -> void:
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1}})
 	
-func _process(delta: float) -> void:
 	action_thread = Thread.new()
 	
-	
+func _process(delta: float) -> void:
 	action_thread.start(action_loop.bind(int(randf_range(1, 1))))
-	
+	await action_thread.wait_to_finish()
+	attack_label.text = "ATTACK " + str(cur_action)
 	#action_loop(int(randf_range(attack_min, attack_max)))
 	
 func action_loop(next_attack : int):
@@ -54,10 +54,10 @@ func action_loop(next_attack : int):
 				
 		if not chain:		
 			cur_action = next_attack 
-			attack_label.text = "ATTACK " + str(cur_action)
+			#attack_label.text = "ATTACK " + str(cur_action)
 		else:
 			chain = false
-			attack_label.text = "ATTACK " + str(cur_action)
+			#attack_label.text = "ATTACK " + str(cur_action)
 		# some reason label text assignment only properly works this way
 	
 		
@@ -67,7 +67,7 @@ func chain_attack(next_attack : int) -> void:
 
 func action1() -> void:
 	#base.action("observe_player", 2)
-	base.action("move_torward_point", {"target": base.player_pos, "speed": 50, "length": 0.01})
+	base.action("move_torward_point", {"target": base.player_pos, "speed": 50, "length": 0})
 	#chain_attack(2)
 
 func action2() -> void:

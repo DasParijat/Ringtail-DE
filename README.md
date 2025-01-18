@@ -23,6 +23,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Working on removing the need of two move_torwards,
 			via the default move_torward recognizing and updating
 			player pos</li>
+			<li>(RingtailHARD) 
+			Fixed possible thread issue</li>
 		</ul>
 	</li>
 	<li>
