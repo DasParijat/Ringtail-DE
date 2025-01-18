@@ -10,7 +10,7 @@ extends Node2D
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
-var cur_action : int = 3
+var cur_action : int = 1
 var chain : bool = false
 
 var cur_attack : int = 1 # used for magic attacks
@@ -30,7 +30,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	action_thread = Thread.new()
 	
-	action_thread.start(action_loop.bind(int(randf_range(attack_min, attack_max))))
+	
+	action_thread.start(action_loop.bind(int(randf_range(1, 1))))
 	
 	#action_loop(int(randf_range(attack_min, attack_max)))
 	
@@ -66,7 +67,7 @@ func chain_attack(next_attack : int) -> void:
 
 func action1() -> void:
 	#base.action("observe_player", 2)
-	base.action("move_stop_torward_player", {"speed": 200})
+	base.action("move_torward_point", {"target": base.player_pos, "speed": 50, "length": 0.01})
 	#chain_attack(2)
 
 func action2() -> void:

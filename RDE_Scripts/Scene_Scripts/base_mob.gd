@@ -25,6 +25,13 @@ var default_params = {
 	"observe_player": 1
 }
 
+# ACTION IDEAS:
+# move_torward - default moving used as base
+# move_torward_point - move torward point, end when at point
+# move_torward_player - move torward player 
+# move_when_cond - moves to player / point based on if a condition is true or false, ends when false
+
+
 func _ready() -> void:
 	sprite.texture = mob_res.texture
 	position.y = -100
@@ -110,7 +117,11 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	var speed = params["speed"]
 	var smooth = params["smooth"]
 	var length = params["length"]
-
+	
+	if target == player_pos:
+		print("TRACKING PLAYER <<<<<<<<<<<")
+		target_pos = player_pos
+		
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
@@ -118,6 +129,7 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 
 func move_torward_point(params : Dictionary, delta : float) -> void:
 	var target = params["target"]
+		
 	move_torward(target, params, delta)
 	
 	#await get_tree().create_timer(length, false, false, true).timeout

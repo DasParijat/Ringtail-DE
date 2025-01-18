@@ -16,6 +16,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/18/25)
+			<li>(Base Mob) 
+			Working on list of all actions needed</li>
+			<li>(Base Mob) 
+			Working on removing the need of two move_torwards,
+			via the default move_torward recognizing and updating
+			player pos</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/17/25)
 			<li>(Base Mob) 
 			Added way to set default params of specific actions</li>
