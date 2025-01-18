@@ -4,7 +4,7 @@ extends Node2D
 @export var attack_min : int = 1
 @export var attack_max : int = 4
 
-@onready var base : CharacterBody2D = $base
+@onready var base : CharacterBody2D = $base_mob
 @onready var attack_label : Label = $AttackLabel
 
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
@@ -15,6 +15,11 @@ var chain : bool = false
 
 var cur_attack : int = 1 # used for magic attacks
 
+# Actions and attacks happen independently of each other
+# Not required for every boss
+var action_thread : Thread
+var attack_thread : Thread # to be used later when adding magic attacks
+
 # TODO Make a smaller version of the ringtail sprite. he's too fat
 func _ready() -> void:
 	print("boss added")
@@ -23,9 +28,13 @@ func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1}})
 	
 func _process(delta: float) -> void:
-	action_loop(int(randf_range(attack_min, attack_max)))
-
-func action_loop(next_attack : int) -> void:
+	action_thread = Thread.new()
+	
+	action_thread.start(action_loop.bind(int(randf_range(attack_min, attack_max))))
+	
+	#action_loop(int(randf_range(attack_min, attack_max)))
+	
+func action_loop(next_attack : int):
 	if base.no_action():
 		#cur_action += 1 
 		match(cur_action):
@@ -49,6 +58,7 @@ func action_loop(next_attack : int) -> void:
 			chain = false
 			attack_label.text = "ATTACK " + str(cur_action)
 		# some reason label text assignment only properly works this way
+	
 		
 func chain_attack(next_attack : int) -> void:
 	cur_action = next_attack
@@ -88,3 +98,5 @@ func shoot() -> void:
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)
 			
+func _exit_tree() -> void:
+	action_thread.wait_to_finish()

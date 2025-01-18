@@ -25,6 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Ringtail now shoots bullets from it's location</li>
 			<li>(RingtailHARD) 
 			Reorganized code in RingtailHARD</li>
+			<li>(RingtailHARD) 
+			Added use of threads</li>
 		</ul>
 	</li>
 	<li>
