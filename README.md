@@ -21,6 +21,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added way to set default params of specific actions</li>
 			<li>(Bullet) 
 			Bullets are now not reliant on GunRes (allowing mobs to use bullets)</li>
+			<li>(RingtailHARD) 
+			Ringtail now shoots bullets from it's location</li>
 		</ul>
 	</li>
 	<li>

@@ -10,13 +10,13 @@ extends Node2D
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
-var cur_attack : int = 1
+var cur_attack : int = 3
 var chain : bool = false
 
 # TODO Make a smaller version of the ringtail sprite. he's too fat
 func _ready() -> void:
 	print("boss added")
-	position = base_mob.position
+	global_position = base_mob.global_position
 	
 	base_mob.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 200, "smooth": 10, "length": 1}})
 	
@@ -64,21 +64,25 @@ func attack2() -> void:
 	chain_attack(3)
 	
 func attack3() -> void:
-	base_mob.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
-	for i in range(2):
-		base_mob.action("observe_player", 0.5)
-		base_mob.action("move_torward_player", {})
-		base_mob.action("observe_player", 0.1)
-		shoot()
+	#base_mob.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
+	base_mob.action("move_torward_player", {"speed": 100})
+	#for i in range(2):
+	#	base_mob.action("observe_player", 0.5)
+	#	base_mob.action("move_torward_player", {})
+	#	base_mob.action("observe_player", 0.1)
+	#base_mob.action("action_duration", 1)
+	shoot()
 
 func shoot() -> void:
 	# TODO Fix it so it actually shoots from Ringtail
+	base_mob.action("action_duration", 0.01)
 	var bullet = bullet_load.instantiate()
 
 	bullet.bullet_res = bullet_res
 	
 	# bullet transformations			
-	bullet.global_transform = global_transform
+	bullet.global_transform = base_mob.global_transform
+	bullet.global_position = base_mob.global_position
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)
 			

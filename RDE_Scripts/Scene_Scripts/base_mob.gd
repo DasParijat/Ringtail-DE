@@ -32,7 +32,7 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	# EXAMPLE ACTIONS
-	action("move_stop_torward_player", {})	
+	#action("move_stop_torward_player", {})	
 	#action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})
 	#action("action_duration", 0.5)
 	#action("move_torward_point", {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
