@@ -23,6 +23,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Bullets are now not reliant on GunRes (allowing mobs to use bullets)</li>
 			<li>(RingtailHARD) 
 			Ringtail now shoots bullets from it's location</li>
+			<li>(RingtailHARD) 
+			Reorganized code in RingtailHARD</li>
 		</ul>
 	</li>
 	<li>
