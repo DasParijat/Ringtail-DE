@@ -11,8 +11,7 @@ extends CharacterBody2D
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 
-var cur_attack_time : float = 0.0
-var timeout : bool = true
+var cur_action_time : float = 0.0
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -46,12 +45,11 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
-	#print(action_queue)
+	#print()
 	
-	if !(no_action()) and cur_attack_time == 0:
+	if !(no_action()) and cur_action_time == 0:
 		cur_action = action_queue.pop_front()
-		timeout = false
-		print(action_queue)
+		#print(action_queue)
 		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
@@ -99,18 +97,10 @@ func set_default_params(new_def: Dictionary) -> void:
 		default_params[i] = new_def[i].duplicate()
 	
 func action_duration(wait_time : float, delta : float) -> void:
-	if not timeout:
-		cur_attack_time += delta  
-	#print("cur_attack_time ", cur_attack_time, "	wait time: ", wait_time)
-	if cur_attack_time >= wait_time:
-		action_timeout()
-
-func action_timeout() -> void:
-	# Used to signal end of action and move to next in queue
-	# Can also be used to immediatly skip to the next action
-	timeout = true
-	cur_attack_time = 0.0
-	timeout = false
+	cur_action_time += delta  
+	#print("cur_action_time ", cur_action_time, "	wait time: ", wait_time)
+	if cur_action_time >= wait_time:
+		cur_action_time = 0.0
 	
 func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	var delay = params["delay"]
@@ -119,7 +109,7 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	var length = params["length"]
 	
 	if target == player_pos:
-		print("TRACKING PLAYER <<<<<<<<<<<")
+		#print("TRACKING PLAYER <<<<<<<<<<<")
 		target_pos = player_pos
 		
 	track_pos(target, delay)
@@ -132,7 +122,7 @@ func move_torward_point(params : Dictionary, delta : float) -> void:
 		
 	move_torward(target, params, delta)
 	
-	#await get_tree().create_timer(length, false, false, true).timeout
+	#await get_tree().create_timer(length, false, false, true).action_end
 
 func move_torward_player(params: Dictionary, delta: float) -> void:
 	#print("player execute")

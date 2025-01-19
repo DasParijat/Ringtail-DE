@@ -26,6 +26,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD) 
 			REMOVED THREADS, found them overly complicated for what
 			I may need in the end</li>
+			<li>(Base Mob) 
+			Removed timeout variable, it was useless in the end</li>
 		</ul>
 	</li>
 	<li>
