@@ -7,7 +7,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Agenda:</strong>
 <ul>
 	<li>Add basic movement/attacks to base_boss</li>
-	<li>Test multi-threading with boss movesets</li>
 	<li>Create level res and use it</li>
 	<li>Properly load and unload scenes</li>
 </ul>
@@ -19,6 +18,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/19/25)
 			<li>(Base Mob) 
 			Have move_torward action handle run_until</li>
+			<li>(Base Mob) 
+			Base mob has access to cur player hp</li>
+			<li>(Oswald) 
+			base_player var renamed to base (like with Ringtail)</li>
 		</ul>
 	</li>
 	<li>

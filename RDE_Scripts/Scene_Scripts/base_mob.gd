@@ -10,6 +10,7 @@ extends CharacterBody2D
 
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
+var player_hp : float
 
 var cur_action_time : float = 0.0
 
@@ -46,7 +47,7 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
-	#print()
+	#print(player_hp)
 	
 	if !(no_action()) and action_timeout():
 		cur_action = action_queue.pop_front()
@@ -59,9 +60,6 @@ func _physics_process(delta: float) -> void:
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
 	# params data type can be any
-	print(next_action)
-	print(mod_params)
-
 	var params = mod_params
 	if typeof(params) == TYPE_DICTIONARY:
 		params = get_modified_params(next_action, mod_params)
@@ -174,3 +172,4 @@ func wait(seconds : float) -> void:
 func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":
 		player_pos = stats["position"]
+		player_hp = stats["cur_hp"]

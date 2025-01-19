@@ -5,7 +5,7 @@ extends Node2D
 
 @export var player_res : PlayerRes 
 
-@onready var base_player : CharacterBody2D = $base_player
+@onready var base : CharacterBody2D = $base_player
 @onready var primary_gun = $PrimaryGun
 @onready var secondary_gun = $SecGun
 @onready var switch_timer = $GunSwitchTimer
@@ -24,9 +24,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	position = base_player.position
+	position = base.position
 	
-	#print(base_player.position)
+	#print(base.position)
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	#print("ENGINE TIME	", Engine.time_scale)
 	
@@ -39,12 +39,12 @@ func _process(delta: float) -> void:
 func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
 	if cur_power > 0.1 and Input.is_action_pressed("sprint"):
-		base_player.set_speedmod((2 * (cur_power / 100)) + 1) # lower cur power results in less speed
+		base.set_speedmod((2 * (cur_power / 100)) + 1) # lower cur power results in less speed
 		GlobalTime.cur_time_scale = clamp(1 - ((cur_power / 100) * 0.8) + 0.2, 0, 1)
 		cur_power -= 0.1
 	else:
 		GlobalTime.cur_time_scale = 1
-		base_player.set_speedmod(1)
+		base.set_speedmod(1)
 	
 
 
