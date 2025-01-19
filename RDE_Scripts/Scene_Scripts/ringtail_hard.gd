@@ -11,14 +11,10 @@ extends Node2D
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
 var cur_action : int = 1
-var chain : bool = false
+var chain_action : bool = false
 
-var cur_attack : int = 1 # used for magic attacks
-
-# Actions and attacks happen independently of each other
-# Not required for every boss
-var action_thread : Thread
-var attack_thread : Thread # to be used later when adding magic attacks
+var cur_magic : int = 1 # used for magic attacks
+var chain_magic : bool = false
 
 # TODO Make a smaller version of the ringtail sprite. he's too fat
 func _ready() -> void:
@@ -27,13 +23,8 @@ func _ready() -> void:
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1}})
 	
-	action_thread = Thread.new()
-	
 func _process(delta: float) -> void:
-	action_thread.start(action_loop.bind(int(randf_range(1, 1))))
-	await action_thread.wait_to_finish()
-	attack_label.text = "ATTACK " + str(cur_action)
-	#action_loop(int(randf_range(attack_min, attack_max)))
+	action_loop(int(randf_range(attack_min, attack_max)))
 	
 func action_loop(next_attack : int):
 	if base.no_action():
@@ -52,18 +43,18 @@ func action_loop(next_attack : int):
 				#print("false attack")
 				pass
 				
-		if not chain:		
+		if not chain_action:		
 			cur_action = next_attack 
-			#attack_label.text = "ATTACK " + str(cur_action)
+			attack_label.text = "ATTACK " + str(cur_action)
 		else:
-			chain = false
-			#attack_label.text = "ATTACK " + str(cur_action)
+			chain_action = false
+			attack_label.text = "ATTACK " + str(cur_action)
 		# some reason label text assignment only properly works this way
 	
 		
 func chain_attack(next_attack : int) -> void:
 	cur_action = next_attack
-	chain = true
+	chain_action = true
 
 func action1() -> void:
 	#base.action("observe_player", 2)
@@ -98,6 +89,3 @@ func shoot() -> void:
 
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)
-			
-func _exit_tree() -> void:
-	action_thread.wait_to_finish()
