@@ -66,7 +66,7 @@ func action1() -> void:
 func action2() -> void:
 	for i in range(4): # testing using for loops 
 		base.action("move_stop_torward_player", {"offset": i + 1})	
-	base.action("action_duration", 1)
+	base.action("run_for", 1)
 	#base.action("move_torward_point", {"target": Vector2(0, 500), "speed": 100, "length": 0.5})
 	#chain_attack(3)
 	
@@ -77,11 +77,11 @@ func action3() -> void:
 	#	base.action("observe_player", 0.5)
 	#	base.action("move_torward_player", {})
 	#	base.action("observe_player", 0.1)
-	#base.action("action_duration", 1)
+	#base.action("run_for", 1)
 	shoot()
 
 func shoot() -> void:
-	base.action("action_duration", 0.01) # needed to stop program from moving on to next attack pre-shoot
+	base.action("run_for", 0.01) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()
 	bullet.bullet_res = bullet_res
 	

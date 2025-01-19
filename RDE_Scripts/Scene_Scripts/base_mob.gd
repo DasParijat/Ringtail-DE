@@ -20,7 +20,7 @@ var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 1},
 	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
-	"action_duration": 1,
+	"run_for": 1,
 	"observe_player": 1
 }
 
@@ -40,14 +40,14 @@ func _ready() -> void:
 	# EXAMPLE ACTIONS
 	#action("move_stop_torward_player", {})	
 	#action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})
-	#action("action_duration", 0.5)
+	#action("run_for", 0.5)
 	#action("move_torward_point", {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
 	
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
 	#print()
 	
-	if !(no_action()) and cur_action_time == 0:
+	if !(no_action()) and action_timeout():
 		cur_action = action_queue.pop_front()
 		#print(action_queue)
 		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
@@ -95,13 +95,24 @@ func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
 func set_default_params(new_def: Dictionary) -> void:
 	for i in new_def.keys():
 		default_params[i] = new_def[i].duplicate()
-	
-func action_duration(wait_time : float, delta : float) -> void:
-	cur_action_time += delta  
-	#print("cur_action_time ", cur_action_time, "	wait time: ", wait_time)
-	if cur_action_time >= wait_time:
+
+## WAIT ACTIONS/FUNC
+
+func run_until(condition : bool, delta : float) -> void:
+	# action runs till condition is met
+	cur_action_time += delta # for if time passed needs to be compared
+	if condition:
 		cur_action_time = 0.0
+		
+func run_for(wait_time : float, delta : float) -> void:
+	# action runs for a set amount of time
+	run_until(cur_action_time >= wait_time, delta)
 	
+func action_timeout() -> bool:
+	return cur_action_time == 0.0
+	
+## ACTIONS
+
 func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	var delay = params["delay"]
 	var speed = params["speed"]
@@ -115,7 +126,7 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
-	action_duration(length, delta)
+	run_for(length, delta)
 
 func move_torward_point(params : Dictionary, delta : float) -> void:
 	var target = params["target"]
@@ -134,11 +145,11 @@ func move_torward_player(params: Dictionary, delta: float) -> void:
 
 func move_stop_torward_player(params : Dictionary, delta : float) -> void:
 	action_combo([{"action": "move_torward_player", "params": params}, 
-				{"action": "action_duration", "params": params["length"]}])
+				{"action": "run_for", "params": params["length"]}])
 
 func observe_player(wait_time : float, delta : float) -> void:
 	look_at(player_pos)
-	action_duration(wait_time, delta)
+	run_for(wait_time, delta)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:

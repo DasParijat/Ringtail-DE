@@ -28,6 +28,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			I may need in the end</li>
 			<li>(Base Mob) 
 			Removed timeout variable, it was useless in the end</li>
+			<li>(Base Mob) 
+			Created func action_timeout to return if cur_action_time == 0.0</li>
+			<li>(Base Mob) 
+			Created run_until func that makes an action run until condition is met</li>
+			<li>(Base Mob) 
+			Renamed action_duration to run_for, use run_until within run_for</li>
 		</ul>
 	</li>
 	<li>
