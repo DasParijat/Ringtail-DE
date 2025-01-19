@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	position = get_parent().position
 	
-	if is_selected() and not_reloading():
+	if is_selected() and not_reloading() and not GlobalTime.is_paused:
 		if can_shoot():
 			if is_auto and Input.is_action_pressed("shoot"):
 				shoot()

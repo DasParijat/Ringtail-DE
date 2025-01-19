@@ -22,6 +22,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Base mob has access to cur player hp</li>
 			<li>(Oswald) 
 			base_player var renamed to base (like with Ringtail)</li>
+			<li>(Base Player) 
+			Player doesn't spawn directly on (0, 0) anymore, to avoid random bug</li>
+			<li>(Gun / Camera 2D) 
+			When clicking to unpause, gun no longer shoots</li>
 		</ul>
 	</li>
 	<li>

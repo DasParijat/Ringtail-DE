@@ -24,7 +24,7 @@ func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	
 func _process(delta: float) -> void:
-	action_loop(1)
+	action_loop(int(randf_range(attack_min, attack_max)))
 	
 	#int(randf_range(attack_min, attack_max))
 	

@@ -65,7 +65,7 @@ func gun_aim(aim_lean) -> void:
 		scale_lean = 0.2
 
 func gun_shake(delta : float) -> void:
-	if Input.is_action_pressed("shoot") and not is_reloading:
+	if Input.is_action_pressed("shoot") and not is_reloading and not GlobalTime.is_paused:
 		shake_range = shake_strength 
 		
 	if shake_range > 0:

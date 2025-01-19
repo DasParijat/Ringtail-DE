@@ -19,7 +19,9 @@ func _ready() -> void:
 	
 	health_res.set_health_res(iframe_timer)
 	
-	position = Vector2(0, 0)
+	global_position = Vector2(0, 10)
+	# for some reason if set at (0, 0), 
+	# it will occasionally spawn further away
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -18,9 +18,9 @@ var action_queue : Array = []
 var cur_action : Dictionary
 
 var default_params = {
-	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
-	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 1},
-	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
+	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
+	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
+	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"observe_player": 1
@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	if !(no_action()) and action_timeout():
 		cur_action = action_queue.pop_front()
 		#print(action_queue)
-		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
+		#print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
