@@ -20,6 +20,7 @@ var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 1},
 	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1},
+	"run_until": true,
 	"run_for": 1,
 	"observe_player": 1
 }
@@ -126,14 +127,20 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
-	run_for(length, delta)
-
+	
+	if typeof(length) == TYPE_BOOL:
+		run_until(length, delta)
+	elif length == null:
+		cur_action_time = 0.01
+		# prevents timeout, allow action to go until otherwise
+		# so run can be handled outside of it
+	else:
+		run_for(length, delta)
+	
 func move_torward_point(params : Dictionary, delta : float) -> void:
 	var target = params["target"]
 		
 	move_torward(target, params, delta)
-	
-	#await get_tree().create_timer(length, false, false, true).action_end
 
 func move_torward_player(params: Dictionary, delta: float) -> void:
 	#print("player execute")

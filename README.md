@@ -16,6 +16,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/19/25)
+			<li>(Base Mob) 
+			Have move_torward action handle run_until</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/18/25)
 			<li>(Base Mob) 
 			Working on list of all actions needed</li>

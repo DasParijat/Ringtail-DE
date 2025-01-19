@@ -10,7 +10,7 @@ extends Node2D
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
-var cur_action : int = 2
+var cur_action : int = 1
 var chain_action : bool = false
 
 var cur_magic : int = 1 # used for magic attacks
@@ -21,10 +21,10 @@ func _ready() -> void:
 	print("boss added")
 	global_position = base.global_position
 	
-	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 1}})
+	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	
 func _process(delta: float) -> void:
-	action_loop(int(randf_range(attack_min, attack_max)))
+	action_loop(1)
 	
 	#int(randf_range(attack_min, attack_max))
 	
@@ -60,10 +60,11 @@ func chain_attack(next_attack : int) -> void:
 
 func action1() -> void:
 	#base.action("observe_player", 2)
-	base.action("move_torward_point", {"target": base.player_pos, "speed": 50, "length": 0})
-	#chain_attack(2)
+	base.action("move_torward_player", {"offset": 1.2, "speed": 50, "smooth": 50,"length": null})
+	chain_attack(2)
 
 func action2() -> void:
+	print("attack 2")
 	for i in range(4): # testing using for loops 
 		base.action("move_stop_torward_player", {"offset": i + 1})	
 	base.action("run_for", 1)
