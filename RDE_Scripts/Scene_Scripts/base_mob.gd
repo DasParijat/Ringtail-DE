@@ -13,6 +13,7 @@ var player_pos : Vector2
 var player_hp : float
 
 var cur_action_time : float = 0.0
+var no_hold : bool = true
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -23,6 +24,7 @@ var default_params = {
 	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"run_until": true,
 	"run_for": 1,
+	"hold": true,
 	"observe_player": 1
 }
 
@@ -99,7 +101,7 @@ func set_default_params(new_def: Dictionary) -> void:
 
 func run_until(condition : bool, delta : float) -> void:
 	# action runs till condition is met
-	cur_action_time += delta # for if time passed needs to be compared
+	cur_action_time += delta * int(no_hold) # for if time passed needs to be compared
 	if condition:
 		cur_action_time = 0.0
 		
@@ -109,6 +111,13 @@ func run_for(wait_time : float, delta : float) -> void:
 	
 func action_timeout() -> bool:
 	return cur_action_time == 0.0
+
+func hold(start_hold : bool, delta : float) -> void:
+	# delta is here so it can be used with action
+	if start_hold:
+		no_hold = false
+	else:
+		no_hold = true
 	
 ## ACTIONS
 
@@ -118,10 +127,6 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	var smooth = params["smooth"]
 	var length = params["length"]
 	
-	if target == player_pos:
-		#print("TRACKING PLAYER <<<<<<<<<<<")
-		target_pos = player_pos
-		
 	track_pos(target, delay)
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta

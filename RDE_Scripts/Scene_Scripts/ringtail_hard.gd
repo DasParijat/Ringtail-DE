@@ -10,7 +10,7 @@ extends Node2D
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
-var cur_action : int = 1
+var cur_action : int = 3
 var chain_action : bool = false
 
 var cur_magic : int = 1 # used for magic attacks
@@ -24,7 +24,7 @@ func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	
 func _process(delta: float) -> void:
-	action_loop(int(randf_range(attack_min, attack_max)))
+	action_loop(3)
 	
 	#int(randf_range(attack_min, attack_max))
 	
@@ -33,13 +33,10 @@ func action_loop(next_attack : int):
 		#cur_action += 1 
 		match(cur_action):
 			1: 
-				print("action1")
 				action1()
 			2: 
-				print("action2")
 				action2()
 			3: 
-				print("action3")
 				action3()
 			_: 
 				#print("false attack")
@@ -59,12 +56,13 @@ func chain_attack(next_attack : int) -> void:
 	chain_action = true
 
 func action1() -> void:
+	print("action1")
 	#base.action("observe_player", 2)
-	base.action("move_torward_player", {"offset": 1.2, "speed": 50, "smooth": 50,"length": null})
-	chain_attack(2)
+	base.action("move_torward_player", {"offset": 1.2, "length": 1.5})
+	chain_attack(3)
 
 func action2() -> void:
-	print("attack 2")
+	print("action2")
 	for i in range(4): # testing using for loops 
 		base.action("move_stop_torward_player", {"offset": i + 1})	
 	base.action("run_for", 1)
@@ -72,6 +70,7 @@ func action2() -> void:
 	#chain_attack(3)
 	
 func action3() -> void:
+	print("action3")
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
 	base.action("move_torward_player", {"speed": 100})
 	#for i in range(2):
@@ -79,10 +78,17 @@ func action3() -> void:
 	#	base.action("move_torward_player", {})
 	#	base.action("observe_player", 0.1)
 	#base.action("run_for", 1)
-	shoot()
+	base.action("hold", true)
+	for i in range(5):
+		shoot()
+		print("SHOOT")
+		#base.action("hold")
+		#await get_tree().create_timer(2).timeout
+	base.action("hold", false)
+	chain_attack(1)
 
 func shoot() -> void:
-	base.action("run_for", 0.01) # needed to stop program from moving on to next attack pre-shoot
+	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()
 	bullet.bullet_res = bullet_res
 	
