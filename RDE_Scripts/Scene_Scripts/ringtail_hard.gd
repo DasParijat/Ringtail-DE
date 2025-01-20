@@ -17,7 +17,7 @@ var cur_magic : int = 1 # used for magic attacks
 var can_chain_magic : bool = false
 
 func chain_action(next_attack : int) -> void:
-	base.action("action_buffer", "BUFFER")
+	#base.action("action_buffer", "BUFFER")
 	cur_action = next_attack
 	can_chain_action = true
 
@@ -54,7 +54,7 @@ func action_loop(next_action : int):
 				pass
 				
 		if not can_chain_action:		
-			base.action("action_buffer", "BUFFER")
+			#base.action("action_buffer", "BUFFER")
 			cur_action = next_action 
 		else:
 			can_chain_action = false
@@ -68,8 +68,8 @@ func action1() -> void:
 
 func action2() -> void:
 	print("action2")
-	for i in range(2): # testing using for loops 
-		base.action("move_stop_torward_player", {"offset": i + 1})	
+	for i in range(3): # testing using for loops 
+		base.action("move_stop_torward_player", {"offset": i * 0.5})	
 	#base.action("run_for", 1)
 	#base.action("move_torward_point", {"target": Vector2(0, 500), "speed": 100, "length": 0.5})
 	base.action("run_for", 1.5)

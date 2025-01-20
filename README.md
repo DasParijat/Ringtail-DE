@@ -18,6 +18,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/20/25)
 			<li>(Base Mob / RingtailHARD) 
 			Added buffer to make boss not move immediatly to next action sequence</li>
+			<li>(Base Mob / RingtailHARD) 
+			Buffer is handled internally in action and action_now</li>
 			<li>(RingtailHARD) 
 			Properly fixed attack label</li>
 		</ul>

@@ -76,6 +76,7 @@ func action(next_action : String, mod_params) -> void:
 		# don't need to give values for all params
 	
 	action_queue.append({"action": next_action, "params": params})
+	action_queue.append({"action": "action_buffer", "params": "BUFFER"})
 
 func action_combo(actions : Array) -> void:
 	# This will add multiple actions to the queue itself
@@ -90,6 +91,7 @@ func action_combo(actions : Array) -> void:
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
 	action_queue.insert(0, {"action": next_action, "params": params})
+	action_queue.insert(0, {"action": "action_buffer", "params": "BUFFER"})
 
 func no_action() -> bool:
 	return action_queue.is_empty()
