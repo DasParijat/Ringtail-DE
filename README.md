@@ -22,6 +22,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Buffer is handled internally in action and action_now</li>
 			<li>(RingtailHARD) 
 			Properly fixed attack label</li>
+			<li>(RingtailHARD)
+			Working on making spaced shooting work</li>
 		</ul>
 	</li>
 	<li>

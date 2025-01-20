@@ -64,7 +64,7 @@ func action1() -> void:
 	#base.action("observe_player", 2)
 	base.action("move_torward_player", {"offset": 1.2, "length": 2})
 	base.action("run_for", 3)
-	chain_action(2)
+	chain_action(3)
 
 func action2() -> void:
 	print("action2")
@@ -83,13 +83,15 @@ func action3() -> void:
 	#	base.action("move_torward_player", {})
 	#	base.action("observe_player", 0.1)
 	#base.action("run_for", 1)
-	base.action("hold", true)
-	for i in range(5):
-		shoot()
-		#print("SHOOT")
-		#base.action("hold")
-		#await get_tree().create_timer(2).timeout
-	base.action("hold", false)
+	#base.action("hold", true)
+	var shot_count = 0
+	while shot_count < 5:
+		if base.action_timeout():
+			shoot()
+			print("SHOOT")
+			base.action("run_for", 2)
+			shot_count += 1
+	#base.action("hold", false)
 	chain_action(0)
 
 func shoot() -> void:
