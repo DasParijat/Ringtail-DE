@@ -27,7 +27,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Gun / Camera 2D) 
 			When clicking to unpause, gun no longer shoots</li>
 			<li>(Base Mob / RingtailHARD) 
-			Working on hold function, to stop cur_action_time from going down (stopping the duration)</li>
+			Working on hold function, to stop cur_action_time 
+			from going down (stopping the duration)</li>
+			<li>(RingtailHARD) 
+			Moved and renamed chain related stuff</li>
 		</ul>
 	</li>
 	<li>

@@ -32,7 +32,13 @@ var default_params = {
 # move_torward - default moving used as base
 # move_torward_point - move torward point, end when at point
 # move_torward_player - move torward player 
-# move_when_cond - moves to player / point based on if a condition is true or false, ends when false
+# orbit - goes in a circle around a point
+# orbit_player -  goes in circle around player
+# observe_player - look at player pos
+# rotate - turn in a certain direction (degrees)
+# move_rotate - like rotate except while moving
+# teleport - go insantly to a point 
+
 
 
 func _ready() -> void:
