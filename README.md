@@ -15,6 +15,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/20/25)
+			<li>(Base Mob / RingtailHARD) 
+			Added buffer to make boss not move immediatly to next action sequence</li>
+			<li>(RingtailHARD) 
+			Properly fixed attack label</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/19/25)
 			<li>(Base Mob) 
 			Have move_torward action handle run_until</li>

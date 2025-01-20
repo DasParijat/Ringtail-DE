@@ -24,6 +24,7 @@ var default_params = {
 	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"run_until": true,
 	"run_for": 1,
+	"action_buffer": "BUFFER",
 	"hold": true,
 	"observe_player": 1
 }
@@ -59,8 +60,8 @@ func _physics_process(delta: float) -> void:
 	
 	if !(no_action()) and action_timeout():
 		cur_action = action_queue.pop_front()
-		#print(action_queue)
-		#print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
+		print(action_queue)
+		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
@@ -118,6 +119,12 @@ func run_for(wait_time : float, delta : float) -> void:
 func action_timeout() -> bool:
 	return cur_action_time == 0.0
 
+func action_buffer(message : String, delta : float) -> void:
+	# Buffer is used to stop boss from immediatly 
+	# moving on to next action sequence 
+	print(message)
+	run_for(0, delta)
+	
 func hold(start_hold : bool, delta : float) -> void:
 	# delta is here so it can be used with action
 	if start_hold:
