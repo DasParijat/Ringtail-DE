@@ -20,7 +20,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Action loop doesn't run when game is paused</li>
 			<li>(RingtailHARD) 
 			Using timers to have boss wait until action is complete to
-			add new action to array/li>
+			add new action to array</li>
+			<li>(Base Mob / RingtailHARD) 
+			Working on stopping action_queue while waiting in boss code</li>
 		</ul>
 	</li>
 	<li>

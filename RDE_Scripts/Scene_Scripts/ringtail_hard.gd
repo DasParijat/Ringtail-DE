@@ -20,7 +20,7 @@ func chain_action(next_attack : int) -> void:
 	#base.action("action_buffer", "BUFFER")
 	cur_action = next_attack
 	can_chain_action = true
-	print("in chain: ", cur_action, can_chain_action)
+	#print("in chain: ", cur_action, can_chain_action)
 
 func chain_magic(next_magic : int) -> void:
 	cur_magic = next_magic
@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	#int(randf_range(attack_min, attack_max))
 	
 func action_loop(next_action : int):
-	if base.no_action() and not GlobalTime.is_paused:
+	if base.no_action() and not GlobalTime.is_paused and base.no_hold:
 		#cur_action += 1 
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):
@@ -59,7 +59,6 @@ func action_loop(next_action : int):
 			#base.action("action_buffer", "BUFFER")
 			cur_action = next_action 
 		else:
-			print("cur action: ", cur_action)
 			can_chain_action = false
 	
 func action1() -> void:
@@ -82,14 +81,17 @@ func action3() -> void:
 	print("action3")
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
 	base.action("move_torward_player", {"speed": 100})
+	base.hold(true)
 	await get_tree().create_timer(1).timeout
+	base.hold(false)
 	# creating timer helps RingtailHARD stop complining further code
 	# until prev action doen
-	# TODO possibly find way to integrate this await in base
 	
 	for i in range(10):
 		base.action("move_torward_player", {"speed": 25, "length": 0.2})
+		base.hold(true)
 		await get_tree().create_timer(0.2).timeout
+		base.hold(false)
 		shoot()
 	#base.action("hold", false)
 	chain_action(0)

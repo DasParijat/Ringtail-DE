@@ -58,10 +58,10 @@ func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
 	#print(player_hp)
 	
-	if !(no_action()) and action_timeout():
+	if !(no_action()) and action_timeout() and no_hold:
 		cur_action = action_queue.pop_front()
-		#print(action_queue)
-		#print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
+		print(action_queue)
+		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
@@ -75,8 +75,9 @@ func action(next_action : String, mod_params) -> void:
 		# This is so when action is called, 
 		# don't need to give values for all params
 	
-	action_queue.append({"action": next_action, "params": params})
-	action_queue.append({"action": "action_buffer", "params": 0})
+	if no_hold:
+		action_queue.append({"action": next_action, "params": params})
+	#action_queue.append({"action": "action_buffer", "params": 0})
 
 func action_combo(actions : Array) -> void:
 	# This will add multiple actions to the queue itself
@@ -90,8 +91,9 @@ func action_combo(actions : Array) -> void:
 		
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
-	action_queue.insert(0, {"action": next_action, "params": params})
-	action_queue.insert(0, {"action": "action_buffer", "params": 0})
+	if no_hold:
+		action_queue.insert(0, {"action": next_action, "params": params})
+	#action_queue.insert(0, {"action": "action_buffer", "params": 0})
 
 func no_action() -> bool:
 	return action_queue.is_empty()
@@ -110,7 +112,7 @@ func set_default_params(new_def: Dictionary) -> void:
 
 func run_until(condition : bool, delta : float) -> void:
 	# action runs till condition is met
-	cur_action_time += delta * int(no_hold) # for if time passed needs to be compared
+	cur_action_time += delta #* int(no_hold) # for if time passed needs to be compared
 	if condition:
 		cur_action_time = 0.0
 		
@@ -126,7 +128,7 @@ func action_buffer(length : float, delta : float) -> void:
 	# moving on to next action sequence 
 	run_for(length, delta)
 
-func hold(start_hold : bool, delta : float) -> void:
+func hold(start_hold : bool) -> void:
 	# delta is here so it can be used with action
 	if start_hold:
 		no_hold = false
