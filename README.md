@@ -23,7 +23,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD) 
 			Properly fixed attack label</li>
 			<li>(RingtailHARD)
-			Working on making spaced shooting work</li>
+			Made spaced shooting work</li>
 		</ul>
 	</li>
 	<li>

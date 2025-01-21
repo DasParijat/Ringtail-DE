@@ -63,7 +63,7 @@ func action1() -> void:
 	print("action1")
 	#base.action("observe_player", 2)
 	base.action("move_torward_player", {"offset": 1.2, "length": 2})
-	base.action("run_for", 3)
+	base.action("run_for", 1)
 	chain_action(3)
 
 func action2() -> void:
@@ -84,17 +84,26 @@ func action3() -> void:
 	#	base.action("observe_player", 0.1)
 	#base.action("run_for", 1)
 	#base.action("hold", true)
-	var shot_count = 0
-	while shot_count < 5:
-		if base.action_timeout():
-			shoot()
-			print("SHOOT")
-			base.action("run_for", 2)
-			shot_count += 1
+	
+	#var shot_count = 0
+	#while shot_count < 5:
+		#if base.action_timeout():
+			#shoot()
+			#print(shot_count)
+			#shot_count += 1
+			#base.action_now("run_for", 2)
+			#print(base.cur_action_time)
+			##shot_count += 1
+			#await not base.action_timeout()
+	
+	for i in range(3):
+		shoot()
+		await get_tree().create_timer(3).timeout
 	#base.action("hold", false)
-	chain_action(0)
+	chain_action(2)
 
 func shoot() -> void:
+	print("shoot")
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()
 	bullet.bullet_res = bullet_res
