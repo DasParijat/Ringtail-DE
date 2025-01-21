@@ -15,6 +15,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/21/25)
+			<li>(RingtailHARD) 
+			Action loop doesn't run when game is paused</li>
+			<li>(RingtailHARD) 
+			Using timers to have boss wait until action is complete to
+			add new action to array/li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/20/25)
 			<li>(Base Mob / RingtailHARD) 
 			Added buffer to make boss not move immediatly to next action sequence</li>

@@ -30,6 +30,7 @@ func chain_magic(next_magic : int) -> void:
 func _ready() -> void:
 	print("boss added")
 	global_position = base.global_position
+	global_rotation = base.global_rotation
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	cur_action = 3
@@ -40,9 +41,8 @@ func _process(delta: float) -> void:
 	#int(randf_range(attack_min, attack_max))
 	
 func action_loop(next_action : int):
-	if base.no_action():
+	if base.no_action() and not GlobalTime.is_paused:
 		#cur_action += 1 
-		print(can_chain_action)
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):
 			1: 
@@ -82,11 +82,15 @@ func action3() -> void:
 	print("action3")
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
 	base.action("move_torward_player", {"speed": 100})
-
-	for i in range(3):
+	await get_tree().create_timer(1).timeout
+	# creating timer helps RingtailHARD stop complining further code
+	# until prev action doen
+	# TODO possibly find way to integrate this await in base
+	
+	for i in range(10):
+		base.action("move_torward_player", {"speed": 25, "length": 0.2})
+		await get_tree().create_timer(0.2).timeout
 		shoot()
-		base.action("run_for", 1)
-		await get_tree().create_timer(1).timeout
 	#base.action("hold", false)
 	chain_action(0)
 
@@ -98,6 +102,7 @@ func shoot() -> void:
 	# bullet transformations			
 	bullet.global_transform = base.global_transform
 	bullet.global_position = base.global_position
+	bullet.bullet_speed = 1000
 
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)

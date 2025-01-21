@@ -125,7 +125,7 @@ func action_buffer(length : float, delta : float) -> void:
 	# Buffer is used to stop boss from immediatly 
 	# moving on to next action sequence 
 	run_for(length, delta)
-	
+
 func hold(start_hold : bool, delta : float) -> void:
 	# delta is here so it can be used with action
 	if start_hold:
