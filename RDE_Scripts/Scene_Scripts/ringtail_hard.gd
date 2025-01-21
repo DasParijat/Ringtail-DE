@@ -20,6 +20,7 @@ func chain_action(next_attack : int) -> void:
 	#base.action("action_buffer", "BUFFER")
 	cur_action = next_attack
 	can_chain_action = true
+	print("in chain: ", cur_action, can_chain_action)
 
 func chain_magic(next_magic : int) -> void:
 	cur_magic = next_magic
@@ -31,16 +32,17 @@ func _ready() -> void:
 	global_position = base.global_position
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 1
+	cur_action = 3
 	
 func _process(delta: float) -> void:
-	action_loop(1)
+	action_loop(3)
 	
 	#int(randf_range(attack_min, attack_max))
 	
 func action_loop(next_action : int):
 	if base.no_action():
 		#cur_action += 1 
+		print(can_chain_action)
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):
 			1: 
@@ -57,6 +59,7 @@ func action_loop(next_action : int):
 			#base.action("action_buffer", "BUFFER")
 			cur_action = next_action 
 		else:
+			print("cur action: ", cur_action)
 			can_chain_action = false
 	
 func action1() -> void:
@@ -73,37 +76,21 @@ func action2() -> void:
 	#base.action("run_for", 1)
 	#base.action("move_torward_point", {"target": Vector2(0, 500), "speed": 100, "length": 0.5})
 	base.action("run_for", 1.5)
+	chain_action(1)
 	
 func action3() -> void:
 	print("action3")
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
 	base.action("move_torward_player", {"speed": 100})
-	#for i in range(2):
-	#	base.action("observe_player", 0.5)
-	#	base.action("move_torward_player", {})
-	#	base.action("observe_player", 0.1)
-	#base.action("run_for", 1)
-	#base.action("hold", true)
-	
-	#var shot_count = 0
-	#while shot_count < 5:
-		#if base.action_timeout():
-			#shoot()
-			#print(shot_count)
-			#shot_count += 1
-			#base.action_now("run_for", 2)
-			#print(base.cur_action_time)
-			##shot_count += 1
-			#await not base.action_timeout()
-	
+
 	for i in range(3):
 		shoot()
-		await get_tree().create_timer(3).timeout
+		base.action("run_for", 1)
+		await get_tree().create_timer(1).timeout
 	#base.action("hold", false)
-	chain_action(2)
+	chain_action(0)
 
 func shoot() -> void:
-	print("shoot")
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()
 	bullet.bullet_res = bullet_res

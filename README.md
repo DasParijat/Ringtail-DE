@@ -24,6 +24,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Properly fixed attack label</li>
 			<li>(RingtailHARD)
 			Made spaced shooting work</li>
+			<li>(RingtailHARD)
+			Fixed chain issue? Somehow</li>
+			<li>(MobRes)
+			Added new collision_dmg export var (100th commit of 2025!)</li>
 		</ul>
 	</li>
 	<li>
