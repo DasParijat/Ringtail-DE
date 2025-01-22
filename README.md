@@ -26,6 +26,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Made a debug_queue func to hold all
 			print statements related to queue
 			(debug also now tracks time and seperates each instance by line)</li>
+			<li>(Base Mob) 
+			When there is nothing in action_queue, 
+			base_mob doesn't loop prev action</li>
 		</ul>
 	</li>
 	<li>

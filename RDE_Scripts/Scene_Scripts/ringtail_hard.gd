@@ -36,7 +36,7 @@ func _ready() -> void:
 	cur_action = 1
 	
 func _process(delta: float) -> void:
-	action_loop(3)
+	action_loop(0)
 	
 	#int(randf_range(attack_min, attack_max))
 	
@@ -88,9 +88,9 @@ func action3() -> void:
 	# until prev action doen
 	
 	for i in range(1):
-		base.action("move_torward_player", {"speed": 25, "length": 0.2})
+		base.action("move_torward_player", {"speed": 25, "length": 1})
 		base.hold(true)
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(1).timeout
 		base.hold(false)
 		shoot()
 	#base.action("hold", false)

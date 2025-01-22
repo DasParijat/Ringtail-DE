@@ -57,14 +57,16 @@ func _ready() -> void:
 	#action("move_torward_point", {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
 	
 func _physics_process(delta: float) -> void:
-	# TODO possibly account for it repeating last action when queue is empty
 	#print(player_hp)
 	queue_timer += delta # used to track when actions happen
 	
 	if !(no_action()) and action_timeout(): #and no_hold:
 		cur_action = action_queue.pop_front()
 		debug_queue(true)
-		
+	
+	if no_action():
+		cur_action = {"action": "action_buffer", "params": 0}
+			
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
 
@@ -101,11 +103,14 @@ func no_action() -> bool:
 	return action_queue.is_empty()
 
 func debug_queue(can_print : bool) -> void:
-	if can_print:
-		print("----------------------------------------------")
-		print(action_queue)
-		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
-		print("TIME: ", queue_timer)
+	if not can_print:
+		return
+		
+	print("--[QUEUE_DEBUG]-----------------------------------------")
+	print("|	Q: ", action_queue)
+	print("|	CUR_ACT: ", cur_action, " SIZE: ", action_queue.size())
+	print("|	TIME: ", queue_timer)
+	print("--------------------------------------------------------")
 	
 func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
 	var new_params = default_params[action_name].duplicate()
