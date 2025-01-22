@@ -18,6 +18,8 @@ var no_hold : bool = true
 var action_queue : Array = []
 var cur_action : Dictionary
 
+var queue_timer : float = 0
+
 var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
@@ -25,7 +27,7 @@ var default_params = {
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
-	"hold": true,
+	"action_hold": true,
 	"observe_player": 1
 }
 
@@ -57,12 +59,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# TODO possibly account for it repeating last action when queue is empty
 	#print(player_hp)
+	queue_timer += delta # used to track when actions happen
 	
-	if !(no_action()) and action_timeout() and no_hold:
+	if !(no_action()) and action_timeout(): #and no_hold:
 		cur_action = action_queue.pop_front()
-		print(action_queue)
-		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
-	
+		debug_queue(true)
+		
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
 
@@ -75,8 +77,8 @@ func action(next_action : String, mod_params) -> void:
 		# This is so when action is called, 
 		# don't need to give values for all params
 	
-	if no_hold:
-		action_queue.append({"action": next_action, "params": params})
+	#if no_hold:
+	action_queue.append({"action": next_action, "params": params})
 	#action_queue.append({"action": "action_buffer", "params": 0})
 
 func action_combo(actions : Array) -> void:
@@ -91,13 +93,20 @@ func action_combo(actions : Array) -> void:
 		
 func action_now(next_action : String, params) -> void:
 	# Adds action to be next executed regardless
-	if no_hold:
-		action_queue.insert(0, {"action": next_action, "params": params})
+	#if no_hold:
+	action_queue.insert(0, {"action": next_action, "params": params})
 	#action_queue.insert(0, {"action": "action_buffer", "params": 0})
 
 func no_action() -> bool:
 	return action_queue.is_empty()
 
+func debug_queue(can_print : bool) -> void:
+	if can_print:
+		print("----------------------------------------------")
+		print(action_queue)
+		print("CUR ACTION: ", cur_action, " SIZE: ", action_queue.size())
+		print("TIME: ", queue_timer)
+	
 func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
 	var new_params = default_params[action_name].duplicate()
 	for i in mod.keys():
@@ -132,8 +141,13 @@ func hold(start_hold : bool) -> void:
 	# delta is here so it can be used with action
 	if start_hold:
 		no_hold = false
+		action("action_hold", true)
 	else:
 		no_hold = true
+
+func action_hold(params, delta : float) -> void:
+	# action doesn't take in params
+	run_until(no_hold, delta)
 	
 ## ACTIONS
 

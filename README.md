@@ -15,6 +15,21 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/22/25)
+			<li>(General) 
+			Since the spring semester has started,
+			things might take longer to make</li>
+			<li>(Base Mob) 
+			Created action_hold to stop queue from progressing 
+			while there is a hold (in theory)</li>
+			<li>(Base Mob) 
+			Made a debug_queue func to hold all
+			print statements related to queue
+			(debug also now tracks time and seperates each instance by line)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/21/25)
 			<li>(RingtailHARD) 
 			Action loop doesn't run when game is paused</li>

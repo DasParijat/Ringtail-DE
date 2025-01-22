@@ -17,7 +17,7 @@ var cur_magic : int = 1 # used for magic attacks
 var can_chain_magic : bool = false
 
 func chain_action(next_attack : int) -> void:
-	#base.action("action_buffer", "BUFFER")
+	base.action("action_buffer", 0)
 	cur_action = next_attack
 	can_chain_action = true
 	#print("in chain: ", cur_action, can_chain_action)
@@ -33,7 +33,7 @@ func _ready() -> void:
 	global_rotation = base.global_rotation
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 3
+	cur_action = 1
 	
 func _process(delta: float) -> void:
 	action_loop(3)
@@ -65,7 +65,7 @@ func action1() -> void:
 	print("action1")
 	#base.action("observe_player", 2)
 	base.action("move_torward_player", {"offset": 1.2, "length": 2})
-	base.action("run_for", 1)
+	#base.action("run_for", 1)
 	chain_action(3)
 
 func action2() -> void:
@@ -87,7 +87,7 @@ func action3() -> void:
 	# creating timer helps RingtailHARD stop complining further code
 	# until prev action doen
 	
-	for i in range(10):
+	for i in range(1):
 		base.action("move_torward_player", {"speed": 25, "length": 0.2})
 		base.hold(true)
 		await get_tree().create_timer(0.2).timeout
