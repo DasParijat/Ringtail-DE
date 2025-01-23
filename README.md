@@ -21,7 +21,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			not important but historical</li>
 			<li>(RingtailHARD) 
 			Fixed double shot issue,
-			hold may be entirely useless now</li>
+			hold may be entirely useless now
+			(NEVERMIND)</li>
 		</ul>
 	</li>
 	<li>

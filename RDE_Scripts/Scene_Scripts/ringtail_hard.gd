@@ -21,8 +21,11 @@ var num_of_bullets : int = 0 # test variable
 func chain_action(next_attack : int) -> void:
 	base.action("action_buffer", 0)
 	#base.hold(false)
-	cur_action = next_attack
 	can_chain_action = true
+	cur_action = next_attack
+	print("chain")
+	await base.no_hold
+	action_loop(3)
 	#print("in chain: ", cur_action, can_chain_action)
 
 func chain_magic(next_magic : int) -> void:
@@ -36,16 +39,22 @@ func _ready() -> void:
 	global_rotation = base.global_rotation
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 1
+	cur_action = 3
+	action_loop(3)
+	# trying to have action loop only run after action done
 	
 func _process(delta: float) -> void:
-	action_loop(1)
+	await base.no_hold
+	#action_loop(1)
 	
 	#int(randf_range(attack_min, attack_max))
-	
+
+# TODO possibly use signal
 func action_loop(next_action : int):
-	if base.no_action() and not GlobalTime.is_paused: #and base.no_hold:
+	print("loop started")
+	if base.no_action() and not GlobalTime.is_paused: # and base.no_hold:
 		#cur_action += 1 
+		#await base.no_hold
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):
 			1: 
@@ -81,7 +90,7 @@ func action2() -> void:
 	chain_action(1)
 	
 func action3() -> void:
-	#base.hold(true)
+	base.hold(true)
 	print("action3")
 	num_of_bullets = 0
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
@@ -98,9 +107,9 @@ func action3() -> void:
 		await get_tree().create_timer(1).timeout
 		#base.hold(false)
 		shoot()
-		print("SHOOOT ", i)
-	#base.action("hold", false)
-	chain_action(0)
+		#print("SHOOOT ", i)
+	base.hold(false)
+	chain_action(3)
 	# TODO ISSUE is with action 3 executing itself twice, not within BASE
 	# TODO possibly add HOLD func in Ringtail, not in Base
 
@@ -116,5 +125,5 @@ func shoot() -> void:
 
 	# putting bullet in scene
 	num_of_bullets += 1
-	print(num_of_bullets)
+	#print(num_of_bullets)
 	get_parent().get_parent().add_child(bullet)
