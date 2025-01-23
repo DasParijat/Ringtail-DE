@@ -61,8 +61,9 @@ func _physics_process(delta: float) -> void:
 	queue_timer += delta # used to track when actions happen
 	
 	if !(no_action()) and action_timeout(): #and no_hold:
+		#if no_hold:
 		cur_action = action_queue.pop_front()
-		debug_queue(true)
+		debug_queue(false)
 	
 	if no_action():
 		cur_action = {"action": "action_buffer", "params": 0}
@@ -146,7 +147,7 @@ func hold(start_hold : bool) -> void:
 	# delta is here so it can be used with action
 	if start_hold:
 		no_hold = false
-		action("action_hold", true)
+		#action("action_hold", true)
 	else:
 		no_hold = true
 

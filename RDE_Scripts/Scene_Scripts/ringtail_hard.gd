@@ -16,6 +16,8 @@ var can_chain_action : bool = false
 var cur_magic : int = 1 # used for magic attacks
 var can_chain_magic : bool = false
 
+var num_of_bullets : int = 0 # test variable
+
 func chain_action(next_attack : int) -> void:
 	base.action("action_buffer", 0)
 	cur_action = next_attack
@@ -36,7 +38,7 @@ func _ready() -> void:
 	cur_action = 1
 	
 func _process(delta: float) -> void:
-	action_loop(0)
+	action_loop(1)
 	
 	#int(randf_range(attack_min, attack_max))
 	
@@ -79,22 +81,26 @@ func action2() -> void:
 	
 func action3() -> void:
 	print("action3")
+	num_of_bullets = 0
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
-	base.action("move_torward_player", {"speed": 100})
-	base.hold(true)
-	await get_tree().create_timer(1).timeout
-	base.hold(false)
+	base.action("move_torward_player", {"speed": 100, "length": 0.5})
+	#base.hold(true)
+	await get_tree().create_timer(0.5).timeout
+	#base.hold(false)
 	# creating timer helps RingtailHARD stop complining further code
 	# until prev action doen
 	
-	for i in range(1):
+	for i in range(4):
 		base.action("move_torward_player", {"speed": 25, "length": 1})
-		base.hold(true)
+		#base.hold(true)
 		await get_tree().create_timer(1).timeout
-		base.hold(false)
+		#base.hold(false)
 		shoot()
+		print("SHOOOT ", i)
 	#base.action("hold", false)
 	chain_action(0)
+	# TODO ISSUE is with action 3 executing itself twice, not within BASE
+	# TODO possibly add HOLD func in Ringtail, not in Base
 
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
@@ -107,4 +113,6 @@ func shoot() -> void:
 	bullet.bullet_speed = 1000
 
 	# putting bullet in scene
+	num_of_bullets += 1
+	print(num_of_bullets)
 	get_parent().get_parent().add_child(bullet)

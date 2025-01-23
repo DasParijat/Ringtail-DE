@@ -29,6 +29,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			When there is nothing in action_queue, 
 			base_mob doesn't loop prev action</li>
+			<li>(Base Mob) 
+			When there is nothing in action_queue, 
+			base_mob doesn't loop prev action</li>
+			<li>(RingtailHARD) 
+			Pinpointed problem of double bullets 
+			being with Ringtail rather than base,
+			Possibly need to implement hold there and
+			not in base</li>
 		</ul>
 	</li>
 	<li>
