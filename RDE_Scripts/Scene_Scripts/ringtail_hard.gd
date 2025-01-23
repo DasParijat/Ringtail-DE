@@ -20,6 +20,7 @@ var num_of_bullets : int = 0 # test variable
 
 func chain_action(next_attack : int) -> void:
 	base.action("action_buffer", 0)
+	#base.hold(false)
 	cur_action = next_attack
 	can_chain_action = true
 	#print("in chain: ", cur_action, can_chain_action)
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 	#int(randf_range(attack_min, attack_max))
 	
 func action_loop(next_action : int):
-	if base.no_action() and not GlobalTime.is_paused and base.no_hold:
+	if base.no_action() and not GlobalTime.is_paused: #and base.no_hold:
 		#cur_action += 1 
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):
@@ -80,6 +81,7 @@ func action2() -> void:
 	chain_action(1)
 	
 func action3() -> void:
+	#base.hold(true)
 	print("action3")
 	num_of_bullets = 0
 	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})

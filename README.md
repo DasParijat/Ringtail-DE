@@ -15,6 +15,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/23/25)
+			<li>(General) 
+			Cloned repo onto work laptop,
+			not important but historical</li>
+			<li>(RingtailHARD) 
+			Fixed double shot issue,
+			hold may be entirely useless now</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/22/25)
 			<li>(General) 
 			Since the spring semester has started,
