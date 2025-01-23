@@ -19,10 +19,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(General) 
 			Cloned repo onto work laptop,
 			not important but historical</li>
-			<li>(RingtailHARD) 
-			Fixed double shot issue,
-			hold may be entirely useless now
-			(NEVERMIND)</li>
+			<li>(Base Mob / RingtailHARD) 
+			Fixed double shot issue, 
+			by having action in RG hold,
+			and removing addings buffer when no action in Base</li>
 		</ul>
 	</li>
 	<li>

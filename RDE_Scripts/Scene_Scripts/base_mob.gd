@@ -65,8 +65,8 @@ func _physics_process(delta: float) -> void:
 		cur_action = action_queue.pop_front()
 		debug_queue(true)
 	
-	if no_action():
-		cur_action = {"action": "action_buffer", "params": 0}
+	#if no_action():
+		#cur_action = {"action": "action_buffer", "params": 0}
 			
 	if cur_action:
 		call(cur_action["action"], cur_action["params"], delta)
