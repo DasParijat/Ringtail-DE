@@ -15,6 +15,19 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/24/25)
+			<li>(GlobalTime) 
+			Created local_wait func that
+			any script can use (use with await always)</li>
+			<li>(RingtailHARD) 
+			Replaced instances of await create_timer...
+			with new global local_wait</li>
+			<li>(Base Mob) 
+			Removed useless wait func</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/23/25)
 			<li>(General) 
 			Cloned repo onto work laptop,

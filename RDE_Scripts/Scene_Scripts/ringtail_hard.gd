@@ -70,7 +70,7 @@ func action1() -> void:
 	print("action1")
 	base.action("observe_player", 0.4)
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
-	#await get_tree().create_timer(2).timeout
+	#await GlobalTime.local_wait(1)
 	
 	#base.action("run_for", 1)
 	chain_action(0)
@@ -80,24 +80,25 @@ func action2() -> void:
 	print("action2")
 	for i in range(2): 
 		base.action("move_stop_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
-		await get_tree().create_timer(0.7).timeout
+		await GlobalTime.local_wait(1)
 		# technically await not needed here 
 		# due to it not interacting with out-of-queue actions (like shooting)
-	base.action("run_for", 1.5)
-	await get_tree().create_timer(1.5).timeout
+	base.action("observe_player", 1.5)
+	await GlobalTime.local_wait(1.5)
 	chain_action(0)
 	
 func action3() -> void:
 	base.hold(true)
 	print("action3")
 	base.action("move_torward_player", {"speed": 100, "length": 0.5})
-	await get_tree().create_timer(0.5).timeout
+	await GlobalTime.local_wait(0.5)
+	
 	# creating timer helps RingtailHARD stop complining further code
 	# until prev action doen
 	
 	for i in range(4):
 		base.action("move_torward_player", {"speed": 25, "length": 1})
-		await get_tree().create_timer(1).timeout
+		await GlobalTime.local_wait(1)
 		shoot()
 	chain_action(0)
 

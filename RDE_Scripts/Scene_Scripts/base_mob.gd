@@ -125,7 +125,7 @@ func set_default_params(new_def: Dictionary) -> void:
 
 func run_until(condition : bool, delta : float) -> void:
 	# action runs till condition is met
-	cur_action_time += delta #* int(no_hold) # for if time passed needs to be compared
+	cur_action_time += delta # for if time passed needs to be compared
 	if condition:
 		cur_action_time = 0.0
 		
@@ -170,7 +170,7 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	
 func move_torward_point(params : Dictionary, delta : float) -> void:
 	var target = params["target"]
-		
+	
 	move_torward(target, params, delta)
 
 func move_torward_player(params: Dictionary, delta: float) -> void:
@@ -196,11 +196,6 @@ func track_pos(cur_data, delay) -> void:
 	elif track_delay.is_stopped() and (target_pos != cur_data):
 		target_pos = cur_data
 		track_delay.start(delay)
-
-func wait(seconds : float) -> void:
-	# I MIGHT USE THIS ELSEWARE (im keeping this typo)
-	print(seconds)
-	await get_tree().create_timer(seconds).timeout
 		
 func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":
