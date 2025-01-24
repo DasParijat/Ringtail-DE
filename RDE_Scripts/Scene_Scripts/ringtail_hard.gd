@@ -36,16 +36,17 @@ func _ready() -> void:
 	global_rotation = base.global_rotation
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 2
+	cur_action = 3
 	
 func _process(delta: float) -> void:
 	action_loop(int(randf_range(attack_min, attack_max)))
 	
 	#int(randf_range(attack_min, attack_max))
 
-# MAYBE TODO - Put all cur_action handling in own action handling node
+# MAYBE TODO - Put all cur_action handling in own action handling Node
+# TODO test using ENUM with cur_action instead of int
 func action_loop(next_action : int):
-	if base.no_action() and not GlobalTime.is_paused and base.no_hold:
+	if base.can_change_action():
 		#cur_action += 1 
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):

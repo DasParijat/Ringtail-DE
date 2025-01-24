@@ -25,8 +25,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			and removing addings buffer when no action in Base</li>
 			<li>(Base Mob / RingtailHARD) 
 			Cleaned up code and comments (from double shot mess)</li>
-			<li>(RingtailHARD) 
+			<li>(Base Mob) 
 			Removed action_hold func</li>
+			<li>(Base Mob) 
+			Created can_change_action func,
+			used for parent to see if they can change action</li>
 		</ul>
 	</li>
 	<li>

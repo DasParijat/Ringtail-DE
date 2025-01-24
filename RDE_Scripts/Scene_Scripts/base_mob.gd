@@ -97,6 +97,10 @@ func action_now(next_action : String, params) -> void:
 func no_action() -> bool:
 	return action_queue.is_empty()
 
+func can_change_action() -> bool:
+	# used for parent to check whether they can change action or not
+	return no_action() and not GlobalTime.is_paused and no_hold
+	
 func debug_queue(can_print : bool) -> void:
 	if not can_print:
 		return
