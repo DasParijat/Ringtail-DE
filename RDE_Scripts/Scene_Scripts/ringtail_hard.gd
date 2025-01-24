@@ -16,7 +16,6 @@ var can_chain_action : bool = false
 var cur_magic : int = 1 # used for magic attacks
 var can_chain_magic : bool = false
 
-var num_of_bullets : int = 0 # test variable
 var is_action_running : bool = false
 
 func chain_action(next_attack : int) -> void:
@@ -37,20 +36,17 @@ func _ready() -> void:
 	global_rotation = base.global_rotation
 	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 1
-	# trying to have action loop only run after action done
+	cur_action = 2
 	
 func _process(delta: float) -> void:
-	#await base.no_hold
-	action_loop(1)
+	action_loop(int(randf_range(attack_min, attack_max)))
 	
 	#int(randf_range(attack_min, attack_max))
 
-# TODO possibly use signal
+# MAYBE TODO - Put all cur_action handling in own action handling node
 func action_loop(next_action : int):
 	if base.no_action() and not GlobalTime.is_paused and base.no_hold:
 		#cur_action += 1 
-		#await base.no_hold
 		attack_label.text = "ATTACK " + str(cur_action)
 		match(cur_action):
 			1: 
@@ -64,51 +60,45 @@ func action_loop(next_action : int):
 				pass
 				
 		if not can_chain_action:		
-			#base.action("action_buffer", "BUFFER")
 			cur_action = next_action 
 		else:
 			can_chain_action = false
 	
 func action1() -> void:
-	print("action1")
 	base.hold(true)
-	#base.action("observe_player", 2)
+	print("action1")
+	base.action("observe_player", 0.4)
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
-	await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2).timeout
+	
 	#base.action("run_for", 1)
-	chain_action(3)
+	chain_action(0)
 
 func action2() -> void:
+	base.hold(true)
 	print("action2")
-	for i in range(3): # testing using for loops 
-		base.action("move_stop_torward_player", {"offset": i * 0.5})	
-	#base.action("run_for", 1)
-	#base.action("move_torward_point", {"target": Vector2(0, 500), "speed": 100, "length": 0.5})
+	for i in range(2): 
+		base.action("move_stop_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
+		await get_tree().create_timer(0.7).timeout
+		# technically await not needed here 
+		# due to it not interacting with out-of-queue actions (like shooting)
 	base.action("run_for", 1.5)
-	chain_action(1)
+	await get_tree().create_timer(1.5).timeout
+	chain_action(0)
 	
 func action3() -> void:
 	base.hold(true)
 	print("action3")
-	num_of_bullets = 0
-	#base.action("move_torward_point", {"target": Vector2(0, 100), "speed": 25})
 	base.action("move_torward_player", {"speed": 100, "length": 0.5})
-	#base.hold(true)
 	await get_tree().create_timer(0.5).timeout
-	#base.hold(false)
 	# creating timer helps RingtailHARD stop complining further code
 	# until prev action doen
 	
 	for i in range(4):
 		base.action("move_torward_player", {"speed": 25, "length": 1})
-		#base.hold(true)
 		await get_tree().create_timer(1).timeout
-		#base.hold(false)
 		shoot()
-		#print("SHOOOT ", i)
-	chain_action(1)
-	# TODO ISSUE is with action 3 executing itself twice, not within BASE
-	# TODO possibly add HOLD func in Ringtail, not in Base
+	chain_action(0)
 
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
@@ -121,6 +111,4 @@ func shoot() -> void:
 	bullet.bullet_speed = 1000
 
 	# putting bullet in scene
-	num_of_bullets += 1
-	#print(num_of_bullets)
 	get_parent().get_parent().add_child(bullet)

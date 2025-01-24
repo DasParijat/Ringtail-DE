@@ -23,6 +23,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Fixed double shot issue, 
 			by having action in RG hold,
 			and removing addings buffer when no action in Base</li>
+			<li>(Base Mob / RingtailHARD) 
+			Cleaned up code and comments (from double shot mess)</li>
+			<li>(RingtailHARD) 
+			Removed action_hold func</li>
 		</ul>
 	</li>
 	<li>
