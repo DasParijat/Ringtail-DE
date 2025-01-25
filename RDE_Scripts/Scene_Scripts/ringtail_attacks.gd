@@ -14,7 +14,7 @@ func _ready() -> void:
 	controller.cur_action = 3
 
 func _process(delta: float) -> void:
-	controller.action_loop(int(randf_range(attack_min, attack_max)))
+	controller.action_handling(int(randf_range(attack_min, attack_max)))
 	
 	#int(randf_range(attack_min, attack_max))
 
