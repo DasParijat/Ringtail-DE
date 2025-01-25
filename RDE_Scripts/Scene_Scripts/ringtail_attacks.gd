@@ -1,71 +1,17 @@
 extends Node2D
 
-@export var mob_res : MobRes 
-@export var attack_min : int = 1
-@export var attack_max : int = 4
-
-@onready var base : CharacterBody2D = $base_mob
-@onready var attack_label : Label = $AttackLabel
-@onready var mob_name : String = mob_res.name # used to check what mob it is
-# MAYBE TODO - Rename this script controller, to handle all mobs
+@onready var controller : Node2D = get_parent()
+@onready var base : CharacterBody2D = controller.base
 
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
-var cur_action : int
-var can_chain_action : bool = false
-
-var cur_magic : int = 1 # used for magic attacks
-var can_chain_magic : bool = false
-
-var is_action_running : bool = false
-
-func chain_action(next_attack : int) -> void:
-	base.action("action_buffer", 0)
-	base.hold(false)
-	can_chain_action = true
-	cur_action = next_attack
-	#print("in chain: ", cur_action, can_chain_action)
-
-func chain_magic(next_magic : int) -> void:
-	cur_magic = next_magic
-	can_chain_magic = true
-	
-# TODO Make a smaller version of the ringtail sprite. he's too fat
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("boss added")
-	global_position = base.global_position
-	global_rotation = base.global_rotation
-	
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 3
-	
-func _process(delta: float) -> void:
-	action_loop(int(randf_range(attack_min, attack_max)))
-	
-	#int(randf_range(attack_min, attack_max))
+	controller.cur_action = 3
 
-# MAYBE TODO - Put all cur_action handling in own action handling Node
-func action_loop(next_action : int):
-	if base.can_change_action():
-		#cur_action += 1 
-		attack_label.text = "ATTACK " + str(cur_action)
-		match(cur_action):
-			1: 
-				action1()
-			2: 
-				action2()
-			3: 
-				action3()
-			_: 
-				#print("false attack")
-				pass
-				
-		if not can_chain_action:		
-			cur_action = next_action 
-		else:
-			can_chain_action = false
-	
+
 func action1() -> void:
 	base.hold(true)
 	print("action1")
@@ -74,7 +20,7 @@ func action1() -> void:
 	#await GlobalTime.local_wait(1)
 	
 	#base.action("run_for", 1)
-	chain_action(0)
+	controller.chain_action(0)
 
 func action2() -> void:
 	base.hold(true)
@@ -86,7 +32,7 @@ func action2() -> void:
 		# due to it not interacting with out-of-queue actions (like shooting)
 	base.action("observe_player", 1.5)
 	await GlobalTime.local_wait(1.5)
-	chain_action(0)
+	controller.chain_action(0)
 	
 func action3() -> void:
 	base.hold(true)
@@ -101,7 +47,7 @@ func action3() -> void:
 		base.action("move_torward_player", {"speed": 25, "length": 1})
 		await GlobalTime.local_wait(1)
 		shoot()
-	chain_action(0)
+	controller.chain_action(0)
 
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot

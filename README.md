@@ -15,6 +15,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/25/25)
+			<li>(RingtailAttacks) 
+			Working on moving all actions/Ringtail specific stuff
+			to it's own node and script.</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/24/25)
 			<li>(GlobalTime) 
 			Created local_wait func that
