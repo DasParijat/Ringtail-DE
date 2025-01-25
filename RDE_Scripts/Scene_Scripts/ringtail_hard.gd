@@ -44,7 +44,6 @@ func _process(delta: float) -> void:
 	#int(randf_range(attack_min, attack_max))
 
 # MAYBE TODO - Put all cur_action handling in own action handling Node
-# TODO test using ENUM with cur_action instead of int
 func action_loop(next_action : int):
 	if base.can_change_action():
 		#cur_action += 1 

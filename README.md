@@ -24,6 +24,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			with new global local_wait</li>
 			<li>(Base Mob) 
 			Removed useless wait func</li>
+			<li>(Base Mob) 
+			Made run func which can do 
+			either run_until or run_for 
+			depending on length data type</li>
 		</ul>
 	</li>
 	<li>

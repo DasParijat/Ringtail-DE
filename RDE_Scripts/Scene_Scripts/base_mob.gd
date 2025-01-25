@@ -124,15 +124,27 @@ func set_default_params(new_def: Dictionary) -> void:
 ## WAIT ACTIONS/FUNC
 
 func run_until(condition : bool, delta : float) -> void:
-	# action runs till condition is met
+	## action runs till condition is met
 	cur_action_time += delta # for if time passed needs to be compared
 	if condition:
 		cur_action_time = 0.0
 		
 func run_for(wait_time : float, delta : float) -> void:
-	# action runs for a set amount of time
+	## action runs for a set amount of time
 	run_until(cur_action_time >= wait_time, delta)
-	
+
+func run(length, delta : float) -> void:
+	## Used for if action can handle both run_until and run_for
+	if typeof(length) == TYPE_BOOL:
+		run_until(length, delta)
+	elif str(length).is_valid_float():
+		run_for(float(length), delta)
+	else:
+		print("ERROR: base_mob run() - length not valid")
+		cur_action_time = 0.01
+		# prevents timeout, allow action to go until otherwise
+		# so run can be handled outside of it
+
 func action_timeout() -> bool:
 	return cur_action_time == 0.0
 
@@ -159,14 +171,7 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	look_at(target_pos)
 	position += ((target_pos - global_position) / smooth) * speed * delta
 	
-	if typeof(length) == TYPE_BOOL:
-		run_until(length, delta)
-	elif length == null:
-		cur_action_time = 0.01
-		# prevents timeout, allow action to go until otherwise
-		# so run can be handled outside of it
-	else:
-		run_for(length, delta)
+	run(length, delta)
 	
 func move_torward_point(params : Dictionary, delta : float) -> void:
 	var target = params["target"]
