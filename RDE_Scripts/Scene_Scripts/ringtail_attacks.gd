@@ -1,16 +1,22 @@
 extends Node2D
 
+@export var attack_min : int = 1
+@export var attack_max : int = 4
+
 @onready var controller : Node2D = get_parent()
-@onready var base : CharacterBody2D = controller.base
+@onready var base : CharacterBody2D = $"../base_mob"
 
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	controller.cur_action = 3
 
+func _process(delta: float) -> void:
+	controller.action_loop(int(randf_range(attack_min, attack_max)))
+	
+	#int(randf_range(attack_min, attack_max))
 
 func action1() -> void:
 	base.hold(true)

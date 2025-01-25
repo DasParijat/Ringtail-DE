@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="2_rfnyv"]
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/ringtail_attacks.gd" id="3_i4b22"]
 
-[node name="RingtailHARD" type="Node2D"]
+[node name="RingtailHARD" type="Node2D" node_paths=PackedStringArray("attack_node")]
 script = ExtResource("1_6fiq8")
 mob_res = ExtResource("2_opmw5")
+attack_node = NodePath("RingtailAttacks")
 
 [node name="RingtailAttacks" type="Node2D" parent="."]
 script = ExtResource("3_i4b22")

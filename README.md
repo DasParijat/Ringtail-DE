@@ -19,6 +19,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailAttacks) 
 			Working on moving all actions/Ringtail specific stuff
 			to it's own node and script.</li>
+			<li>(RingtailAttacks) 
+			All actions work with controller node (RingtailHARD)</li>
 		</ul>
 	</li>
 	<li>

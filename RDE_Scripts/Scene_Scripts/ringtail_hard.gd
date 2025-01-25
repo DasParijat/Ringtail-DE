@@ -4,6 +4,8 @@ extends Node2D
 @export var attack_min : int = 1
 @export var attack_max : int = 4
 
+@export var attack_node : Node2D
+
 @onready var base : CharacterBody2D = $base_mob
 @onready var attack_label : Label = $AttackLabel
 @onready var mob_name : String = mob_res.name # used to check what mob it is
@@ -37,12 +39,12 @@ func _ready() -> void:
 	global_position = base.global_position
 	global_rotation = base.global_rotation
 	
-	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	cur_action = 3
+	#base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
+	#cur_action = 3
 	
 func _process(delta: float) -> void:
-	action_loop(int(randf_range(attack_min, attack_max)))
-	
+	#action_loop(int(randf_range(attack_min, attack_max)))
+	pass
 	#int(randf_range(attack_min, attack_max))
 
 # MAYBE TODO - Put all cur_action handling in own action handling Node
@@ -50,16 +52,25 @@ func action_loop(next_action : int):
 	if base.can_change_action():
 		#cur_action += 1 
 		attack_label.text = "ATTACK " + str(cur_action)
-		match(cur_action):
-			1: 
-				action1()
-			2: 
-				action2()
-			3: 
-				action3()
-			_: 
-				#print("false attack")
-				pass
+		
+		var action_name = "action" + str(cur_action)
+		if attack_node.has_method(action_name):
+			base.hold(true)
+			attack_node.call(action_name)
+		else:
+			#print("false attack")
+			base.hold(false)
+
+		#match(cur_action):
+			#1: 
+				#attack_node.action1()
+			#2: 
+				#attack_node.action2()
+			#3: 
+				#attack_node.action3()
+			#_: 
+				##print("false attack")
+				#base.hold(false) # no action to hold
 				
 		if not can_chain_action:		
 			cur_action = next_action 
@@ -67,7 +78,7 @@ func action_loop(next_action : int):
 			can_chain_action = false
 	
 func action1() -> void:
-	base.hold(true)
+	#base.hold(true)
 	print("action1")
 	base.action("observe_player", 0.4)
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
@@ -77,7 +88,7 @@ func action1() -> void:
 	chain_action(0)
 
 func action2() -> void:
-	base.hold(true)
+	#base.hold(true)
 	print("action2")
 	for i in range(2): 
 		base.action("move_stop_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
@@ -89,12 +100,12 @@ func action2() -> void:
 	chain_action(0)
 	
 func action3() -> void:
-	base.hold(true)
+	#base.hold(true)
 	print("action3")
 	base.action("move_torward_player", {"speed": 100, "length": 0.5})
 	await GlobalTime.local_wait(0.5)
 	
-	# creating timer helps RingtailHARD stop complining further code
+	# screating timer helps RingtailHARD stop complining further code
 	# until prev action doen
 	
 	for i in range(4):
