@@ -1,12 +1,10 @@
 extends Node2D
-# TODO rework it once again so controller is child node of attacks
 
-@export var mob_res : MobRes
-@export var attack_node : Node2D
+@onready var attack_node : Node2D = get_parent()
 
-@onready var base : CharacterBody2D = $base_mob
-@onready var attack_label : Label = $AttackLabel
-@onready var mob_name : String = mob_res.name # used to check what mob it is
+@onready var base : CharacterBody2D = $"../base_mob"
+@onready var attack_label : Label = $"../AttackLabel"
+#@onready var mob_name : String = mob_res.name # used to check what mob it is
 # MAYBE TODO - Rename this script controller, to handle all mobs
 
 var cur_action : int

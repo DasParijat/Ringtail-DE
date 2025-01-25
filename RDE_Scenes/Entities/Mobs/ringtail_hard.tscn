@@ -1,17 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://cja72mr27m4j3"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/mob_controller.gd" id="1_6fiq8"]
+[ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="2_ei6ni"]
 [ext_resource type="Resource" uid="uid://c8ri6vf360a65" path="res://RDE_Resources/Mob Res/RingtailHARD.tres" id="2_opmw5"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="2_rfnyv"]
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/ringtail_attacks.gd" id="3_i4b22"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/ringtail_hard.gd" id="3_i4b22"]
 
-[node name="RingtailHARD" type="Node2D" node_paths=PackedStringArray("attack_node")]
-script = ExtResource("1_6fiq8")
-mob_res = ExtResource("2_opmw5")
-attack_node = NodePath("RingtailAttacks")
-
-[node name="RingtailAttacks" type="Node2D" parent="."]
+[node name="RingtailHARD" type="Node2D"]
 script = ExtResource("3_i4b22")
+mob_res = ExtResource("2_opmw5")
+
+[node name="MobController" parent="." instance=ExtResource("2_ei6ni")]
 
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
 

@@ -23,6 +23,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			All actions work with controller node (RingtailHARD)</li>
 			<li>(Mob Controller / RingtailAttacks) 
 			Cleaning up code to reflect new changes</li>
+			<li>(Mob Controller / RingtailHARD) 
+			Reworked it once again so specific actions are handled in parent node,
+			while mob controller is a child of RingtailHARD</li>
 		</ul>
 	</li>
 	<li>
