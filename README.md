@@ -28,6 +28,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Made run func which can do 
 			either run_until or run_for 
 			depending on length data type</li>
+			<li>(Base Mob) 
+			Created cur_delta to track process's delta value,
+			so that all actions can use cur_delta instead of
+			having delta passed down via functions</li>
 		</ul>
 	</li>
 	<li>

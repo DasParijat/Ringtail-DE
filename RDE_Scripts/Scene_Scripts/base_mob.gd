@@ -13,6 +13,7 @@ var player_pos : Vector2
 var player_hp : float
 
 var cur_action_time : float = 0.0
+var cur_delta : float
 var no_hold : bool = true
 
 var action_queue : Array = []
@@ -58,16 +59,17 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	#print(player_hp)
 	queue_timer += delta # used to track when actions happen
+	cur_delta = delta
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
-		debug_queue(true)
+		debug_queue(false)
 	
 	#if no_action():
 		#cur_action = {"action": "action_buffer", "params": 0}
 			
 	if cur_action:
-		call(cur_action["action"], cur_action["params"], delta)
+		call(cur_action["action"], cur_action["params"])
 
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
@@ -123,35 +125,35 @@ func set_default_params(new_def: Dictionary) -> void:
 
 ## WAIT ACTIONS/FUNC
 
-func run_until(condition : bool, delta : float) -> void:
-	## action runs till condition is met
-	cur_action_time += delta # for if time passed needs to be compared
-	if condition:
-		cur_action_time = 0.0
-		
-func run_for(wait_time : float, delta : float) -> void:
-	## action runs for a set amount of time
-	run_until(cur_action_time >= wait_time, delta)
-
-func run(length, delta : float) -> void:
+func run(length) -> void:
 	## Used for if action can handle both run_until and run_for
 	if typeof(length) == TYPE_BOOL:
-		run_until(length, delta)
+		run_until(length)
 	elif str(length).is_valid_float():
-		run_for(float(length), delta)
+		run_for(float(length))
 	else:
 		print("ERROR: base_mob run() - length not valid")
 		cur_action_time = 0.01
 		# prevents timeout, allow action to go until otherwise
 		# so run can be handled outside of it
+		
+func run_until(condition : bool) -> void:
+	## action runs till condition is met
+	cur_action_time += cur_delta # for if time passed needs to be compared
+	if condition:
+		cur_action_time = 0.0
+		
+func run_for(wait_time : float) -> void:
+	## action runs for a set amount of time
+	run_until(cur_action_time >= wait_time)
 
 func action_timeout() -> bool:
 	return cur_action_time == 0.0
 
-func action_buffer(length : float, delta : float) -> void:
+func action_buffer(length : float) -> void:
 	# Buffer is used to stop boss from immediatly 
 	# moving on to next action sequence 
-	run_for(length, delta)
+	run_for(length)
 
 func hold(start_hold : bool) -> void:
 	if start_hold:
@@ -161,7 +163,7 @@ func hold(start_hold : bool) -> void:
 	
 ## ACTIONS
 
-func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
+func move_torward(target : Vector2, params : Dictionary) -> void:
 	var delay = params["delay"]
 	var speed = params["speed"]
 	var smooth = params["smooth"]
@@ -169,30 +171,30 @@ func move_torward(target : Vector2, params : Dictionary, delta : float) -> void:
 	
 	track_pos(target, delay)
 	look_at(target_pos)
-	position += ((target_pos - global_position) / smooth) * speed * delta
+	position += ((target_pos - global_position) / smooth) * speed * cur_delta
 	
-	run(length, delta)
+	run(length)
 	
-func move_torward_point(params : Dictionary, delta : float) -> void:
+func move_torward_point(params : Dictionary) -> void:
 	var target = params["target"]
 	
-	move_torward(target, params, delta)
+	move_torward(target, params)
 
-func move_torward_player(params: Dictionary, delta: float) -> void:
+func move_torward_player(params: Dictionary) -> void:
 	#print("player execute")
 	var offset = params["offset"] 
 	# If boss wants to move to a pos in relation to player
 	# Ex. Boss wants to go opp coords of player, offset = -1
 	
-	move_torward((player_pos * offset), params, delta)
+	move_torward((player_pos * offset), params)
 
-func move_stop_torward_player(params : Dictionary, delta : float) -> void:
+func move_stop_torward_player(params : Dictionary) -> void:
 	action_combo([{"action": "move_torward_player", "params": params}, 
 				{"action": "run_for", "params": params["length"]}])
 
-func observe_player(wait_time : float, delta : float) -> void:
+func observe_player(wait_time : float) -> void:
 	look_at(player_pos)
-	run_for(wait_time, delta)
+	run_for(wait_time)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
