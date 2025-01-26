@@ -15,6 +15,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/26/25)
+			<li>(Mob Controller) 
+			Moving hold stuff to be handled in controller</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/25/25)
 			<li>(RingtailAttacks) 
 			Working on moving all actions/Ringtail specific stuff

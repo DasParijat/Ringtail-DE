@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	#int(randf_range(attack_min, attack_max))
 
 func action1() -> void:
-	base.hold(true)
+	#controller.hold(true)
 	print("action1")
 	base.action("observe_player", 0.4)
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
@@ -31,7 +31,7 @@ func action1() -> void:
 	controller.chain_action(0)
 
 func action2() -> void:
-	base.hold(true)
+	#base.hold(true)
 	print("action2")
 	for i in range(2): 
 		base.action("move_stop_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
@@ -43,7 +43,7 @@ func action2() -> void:
 	controller.chain_action(0)
 	
 func action3() -> void:
-	base.hold(true)
+	#base.hold(true)
 	print("action3")
 	base.action("move_torward_player", {"speed": 100, "length": 0.5})
 	await GlobalTime.local_wait(0.5)
