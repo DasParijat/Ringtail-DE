@@ -18,6 +18,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/26/25)
 			<li>(Mob Controller) 
 			Moving hold stuff to be handled in controller</li>
+			<li>(Base Mob) 
+			Removed references to hold in base mob</li>
 		</ul>
 	</li>
 	<li>

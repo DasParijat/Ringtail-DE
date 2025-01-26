@@ -14,7 +14,6 @@ var player_hp : float
 
 var cur_action_time : float = 0.0
 var cur_delta : float
-var no_hold : bool = true
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -101,7 +100,7 @@ func no_action() -> bool:
 
 func can_change_action() -> bool:
 	# used for parent to check whether they can change action or not
-	return no_action() and not GlobalTime.is_paused #and no_hold
+	return no_action() and not GlobalTime.is_paused
 	
 func debug_queue(can_print : bool) -> void:
 	if not can_print:
@@ -155,12 +154,6 @@ func action_buffer(length : float) -> void:
 	# moving on to next action sequence 
 	run_for(length)
 
-func hold(start_hold : bool) -> void:
-	if start_hold:
-		no_hold = false
-	else:
-		no_hold = true
-	
 ## ACTIONS
 
 func move_torward(target : Vector2, params : Dictionary) -> void:
