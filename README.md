@@ -15,6 +15,18 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/27/25)
+			<li>(General Goal) 
+			Working on adding all actions I planned to add (look at big comment),
+			so that I could move on to stuff beyond action handling</li>
+			<li>(Base Mob) 
+			Removed move_stop_torward_player</li>
+			<li>(Base Mob) 
+			Added orbit action</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/26/25)
 			<li>(Mob Controller) 
 			Moving hold stuff to be handled in controller</li>

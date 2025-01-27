@@ -14,6 +14,7 @@ var player_hp : float
 
 var cur_action_time : float = 0.0
 var cur_delta : float
+var orbit_angle : float = 0.0 # for orbit actions
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -23,7 +24,7 @@ var queue_timer : float = 0
 var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
-	"move_stop_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
+	"orbit": {"center": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -31,12 +32,12 @@ var default_params = {
 }
 
 # ACTION IDEAS:
-# move_torward - default moving used as base
-# move_torward_point - move torward point, end when at point
-# move_torward_player - move torward player 
+# move_torward - default moving used as base DONE
+# move_torward_point - move torward point, end when at point DONE
+# move_torward_player - move torward player DONE
 # orbit - goes in a circle around a point
 # orbit_player -  goes in circle around player
-# observe_player - look at player pos
+# observe_player - look at player pos DONE
 # rotate - turn in a certain direction (degrees)
 # move_rotate - like rotate except while moving
 # teleport - go insantly to a point 
@@ -181,13 +182,22 @@ func move_torward_player(params: Dictionary) -> void:
 	
 	move_torward((player_pos * offset), params)
 
-func move_stop_torward_player(params : Dictionary) -> void:
-	action_combo([{"action": "move_torward_player", "params": params}, 
-				{"action": "run_for", "params": params["length"]}])
+func orbit(params: Dictionary) -> void:
+	var center = params["center"]
+	var radius = params["radius"]
+	var speed = params["speed"]
+	var length = params["length"]
 
-func observe_player(wait_time : float) -> void:
+	orbit_angle += speed * cur_delta
+	var offset = Vector2(cos(orbit_angle) * radius, sin(orbit_angle) * radius)
+	position = center + offset
+	look_at(center)
+
+	run_for(length)
+	
+func observe_player(length : float) -> void:
 	look_at(player_pos)
-	run_for(wait_time)
+	run_for(length)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:

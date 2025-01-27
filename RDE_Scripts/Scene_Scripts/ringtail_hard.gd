@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 func action1() -> void:
 	#controller.hold(true)
 	print("action1")
-	base.action("observe_player", 0.4)
+	base.action("orbit", {"length": 5})
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
 	#await GlobalTime.local_wait(1)
 	
@@ -34,7 +34,7 @@ func action2() -> void:
 	#base.hold(true)
 	print("action2")
 	for i in range(2): 
-		base.action("move_stop_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
+		base.action("move_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
 		await GlobalTime.local_wait(1)
 		# technically await not needed here 
 		# due to it not interacting with out-of-queue actions (like shooting)
