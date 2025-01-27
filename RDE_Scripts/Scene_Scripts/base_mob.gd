@@ -24,7 +24,8 @@ var queue_timer : float = 0
 var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
-	"orbit": {"center": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
+	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
+	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -35,9 +36,10 @@ var default_params = {
 # move_torward - default moving used as base DONE
 # move_torward_point - move torward point, end when at point DONE
 # move_torward_player - move torward player DONE
-# orbit - goes in a circle around a point
-# orbit_player -  goes in circle around player
+# orbit - goes in a circle around a point DONE
+# orbit_player -  goes in circle around player DONE
 # observe_player - look at player pos DONE
+
 # rotate - turn in a certain direction (degrees)
 # move_rotate - like rotate except while moving
 # teleport - go insantly to a point 
@@ -175,26 +177,32 @@ func move_torward_point(params : Dictionary) -> void:
 	move_torward(target, params)
 
 func move_torward_player(params: Dictionary) -> void:
-	#print("player execute")
 	var offset = params["offset"] 
 	# If boss wants to move to a pos in relation to player
 	# Ex. Boss wants to go opp coords of player, offset = -1
 	
 	move_torward((player_pos * offset), params)
 
-func orbit(params: Dictionary) -> void:
-	var center = params["center"]
+func orbit(target : Vector2, params: Dictionary) -> void:
 	var radius = params["radius"]
 	var speed = params["speed"]
 	var length = params["length"]
 
 	orbit_angle += speed * cur_delta
 	var offset = Vector2(cos(orbit_angle) * radius, sin(orbit_angle) * radius)
-	position = center + offset
-	look_at(center)
+	position = target + offset
+	look_at(target)
 
 	run_for(length)
+
+func orbit_point(params: Dictionary) -> void:
+	var target = params["target"]
+	orbit(target, params)
 	
+func orbit_player(params: Dictionary) -> void:
+	var offset = params["offset"]
+	orbit((player_pos * offset), params)
+
 func observe_player(length : float) -> void:
 	look_at(player_pos)
 	run_for(length)

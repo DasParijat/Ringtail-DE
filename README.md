@@ -22,7 +22,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Removed move_stop_torward_player</li>
 			<li>(Base Mob) 
-			Added orbit action</li>
+			Added base orbit action</li>
+			<li>(Base Mob) 
+			Added orbit_player and orbit_point</li>
 		</ul>
 	</li>
 	<li>

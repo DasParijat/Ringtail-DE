@@ -23,7 +23,8 @@ func _process(delta: float) -> void:
 func action1() -> void:
 	#controller.hold(true)
 	print("action1")
-	base.action("orbit", {"length": 5})
+	base.action("orbit_point", {"length": 3})
+	base.action("orbit_player", {"length": 5})
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
 	#await GlobalTime.local_wait(1)
 	
