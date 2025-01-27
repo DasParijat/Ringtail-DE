@@ -24,7 +24,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Added base orbit action</li>
 			<li>(Base Mob) 
-			Added orbit_player and orbit_point</li>
+			Added orbit_player and orbit_point actions</li>
+			<li>(Base Mob) 
+			Added teleport action</li>
 		</ul>
 	</li>
 	<li>

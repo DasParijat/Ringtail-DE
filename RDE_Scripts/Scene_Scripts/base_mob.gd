@@ -29,7 +29,8 @@ var default_params = {
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
-	"observe_player": 1
+	"observe_player": 1,
+	"teleport": Vector2(100, 50)
 }
 
 # ACTION IDEAS:
@@ -195,17 +196,21 @@ func orbit(target : Vector2, params: Dictionary) -> void:
 
 	run_for(length)
 
-func orbit_point(params: Dictionary) -> void:
+func orbit_point(params : Dictionary) -> void:
 	var target = params["target"]
 	orbit(target, params)
 	
-func orbit_player(params: Dictionary) -> void:
+func orbit_player(params : Dictionary) -> void:
 	var offset = params["offset"]
 	orbit((player_pos * offset), params)
 
 func observe_player(length : float) -> void:
 	look_at(player_pos)
-	run_for(length)
+	run(length)
+
+func teleport(target : Vector2) -> void:
+	position = target
+	run_until(true)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:

@@ -23,13 +23,15 @@ func _process(delta: float) -> void:
 func action1() -> void:
 	#controller.hold(true)
 	print("action1")
-	base.action("orbit_point", {"length": 3})
-	base.action("orbit_player", {"length": 5})
+	base.action("orbit_player", {"length": 2})
+	base.action("observe_player", 1.2)
+	base.action("teleport", Vector2(100, 50))
 	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
+	base.action("teleport", Vector2(0, 0))
 	#await GlobalTime.local_wait(1)
 	
 	#base.action("run_for", 1)
-	controller.chain_action(0)
+	controller.chain_action(1)
 
 func action2() -> void:
 	#base.hold(true)
