@@ -27,6 +27,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added orbit_player and orbit_point actions</li>
 			<li>(Base Mob) 
 			Added teleport action</li>
+			<li>(Base Mob) 
+			Using tween for move_torward instead, working on action_rotate</li>
 		</ul>
 	</li>
 	<li>
