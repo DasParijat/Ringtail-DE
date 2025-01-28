@@ -28,7 +28,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Added teleport action</li>
 			<li>(Base Mob) 
-			Using tween for move_torward instead, working on action_rotate</li>
+			Added action_rotate (still needs some tweaking)</li>
+			<li>(Base Mob) 
+			Used tween in move_torward, then reverted back
+			(noted for future reference of tween usage)</li>
 		</ul>
 	</li>
 	<li>

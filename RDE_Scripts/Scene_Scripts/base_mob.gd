@@ -27,7 +27,7 @@ var default_params = {
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
-	"action_rotate": {"rotate": 90, "fixed": false, "length": 1},
+	"action_rotate": {"rotate": 90, "fixed": false, "speed": 5, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -170,9 +170,7 @@ func move_torward(target : Vector2, params : Dictionary) -> void:
 	
 	track_pos(target, delay)
 	look_at(target_pos)
-	
-	var tween = create_tween()
-	tween.tween_property(self, "position", target_pos, length)
+	position += ((target_pos - global_position) / smooth) * speed * cur_delta
 	
 	run(length)
 	
@@ -217,20 +215,22 @@ func teleport(target : Vector2) -> void:
 	run_until(true)
 
 func action_rotate(params : Dictionary) -> void:
-	print("ROTATION: ", rotation_degrees)
+	# TODO still needs tweaking, mainly with fixed param
 	var target_rotation = deg_to_rad(params["rotate"])
+	var speed = params["speed"]
 	var length = params["length"]
 	
-	if not params["fixed"]:
-		target_rotation += rotation
-		
-	var tween = create_tween()
-	tween.tween_property(self, "rotation", target_rotation, length)
+	var rotation_finished : bool = false
+	target_rotation = snappedf(target_rotation, 0.01)
 	
-	run(length)
+	var angle_diff = target_rotation - rotation
+	rotation += angle_diff * speed * cur_delta
 	
-	if action_timeout():
-		tween.tween_property(self, "rotation", 0, 0)
+	print("ROTATION: ", rotation, " target: ", target_rotation)
+	if rotation >= target_rotation - 0.01:
+		rotation_finished = true
+	
+	run_until(rotation_finished)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
