@@ -16,6 +16,7 @@ var cur_action_time : float = 0.0
 var cur_delta : float
 
 var orbit_angle : float = 0.0 # for orbit actions
+var rotation_finished : bool = false # for rotation actions
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -27,7 +28,7 @@ var default_params = {
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
-	"action_rotate": {"rotate": 90, "fixed": false, "speed": 5, "length": 1},
+	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -54,13 +55,7 @@ func _ready() -> void:
 	position.y = -100
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
-	
-	# EXAMPLE ACTIONS
-	#action("move_stop_torward_player", {})	
-	#action("move_torward_player", {"offset": 1, "delay": 0, "speed": 50, "smooth": 10, "length": 2})
-	#action("run_for", 0.5)
-	#action("move_torward_point", {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 10, "length": 2})
-	
+
 func _physics_process(delta: float) -> void:
 	#print(player_hp)
 	queue_timer += delta # used to track when actions happen
@@ -147,6 +142,8 @@ func run_until(condition : bool) -> void:
 	cur_action_time += cur_delta # for if time passed needs to be compared
 	if condition:
 		cur_action_time = 0.0
+		rotation_finished = false
+		orbit_angle = 0.0
 		
 func run_for(wait_time : float) -> void:
 	## action runs for a set amount of time
@@ -215,19 +212,20 @@ func teleport(target : Vector2) -> void:
 	run_until(true)
 
 func action_rotate(params : Dictionary) -> void:
-	# TODO still needs tweaking, mainly with fixed param
-	var target_rotation = deg_to_rad(params["rotate"])
+	var target_rotation = deg_to_rad(params["rotate"]) 
 	var speed = params["speed"]
 	var length = params["length"]
 	
-	var rotation_finished : bool = false
-	target_rotation = snappedf(target_rotation, 0.01)
+	target_rotation = rotation + target_rotation
+	rotation_finished = false
+	target_rotation = snappedf(target_rotation, 0.01) 
 	
 	var angle_diff = target_rotation - rotation
 	rotation += angle_diff * speed * cur_delta
 	
 	print("ROTATION: ", rotation, " target: ", target_rotation)
 	if rotation >= target_rotation - 0.01:
+		#print("rotate check: ", rotation_finished)
 		rotation_finished = true
 	
 	run_until(rotation_finished)

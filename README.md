@@ -16,6 +16,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(1/27/25)
+			<li>(Base Mob) 
+			Working on fixing action_rotate</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			(1/27/25)
 			<li>(General Goal) 
 			Working on adding all actions I planned to add (look at big comment),
 			so that I could move on to stuff beyond action handling</li>

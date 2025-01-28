@@ -23,8 +23,9 @@ func _process(delta: float) -> void:
 func action1() -> void:
 	#controller.hold(true)
 	print("action1")
+	#base.action("orbit_player", {"speed": 10, "length": 2})
 	base.action("action_rotate", {"rotate": 180, "length": 3})
-	base.action("move_torward_player", {"offset": 1.2, "speed": 150, "length": 2})
+	base.action("move_torward_player", {"offset": 1, "speed": 150, "length": 2})
 	#base.action("move_torward_point", {"speed": 10, "length": 3})
 	#base.action("teleport", Vector2(0, 0))
 	#await GlobalTime.local_wait(1)
@@ -57,7 +58,7 @@ func action3() -> void:
 		base.action("move_torward_player", {"speed": 25, "length": 1})
 		await GlobalTime.local_wait(1)
 		shoot()
-	controller.chain_action(0)
+	controller.chain_action(1)
 
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
