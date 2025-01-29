@@ -17,6 +17,7 @@ var cur_delta : float
 
 var orbit_angle : float = 0.0 # for orbit actions
 var rotation_finished : bool = false # for rotation actions
+var target_rotation = 0
 
 var action_queue : Array = []
 var cur_action : Dictionary
@@ -212,21 +213,24 @@ func teleport(target : Vector2) -> void:
 	run_until(true)
 
 func action_rotate(params : Dictionary) -> void:
-	var target_rotation = deg_to_rad(params["rotate"]) 
+	# TODO add way to handle negative values
+	var rotate_amt = deg_to_rad(params["rotate"])
 	var speed = params["speed"]
 	var length = params["length"]
 	
-	target_rotation = rotation + target_rotation
-	rotation_finished = false
-	target_rotation = snappedf(target_rotation, 0.01) 
+	if target_rotation == 0:
+		# only update target rotation once per action
+		target_rotation = rotate_amt + rotation
+		#print("ROTATION: ", rotation, " target: ", target_rotation)
 	
 	var angle_diff = target_rotation - rotation
 	rotation += angle_diff * speed * cur_delta
+	target_rotation = snappedf(target_rotation, 0.1) 
 	
-	print("ROTATION: ", rotation, " target: ", target_rotation)
-	if rotation >= target_rotation - 0.01:
+	if rotation >= target_rotation - 0.1:
 		#print("rotate check: ", rotation_finished)
 		rotation_finished = true
+		target_rotation = 0
 	
 	run_until(rotation_finished)
 	
