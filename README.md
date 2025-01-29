@@ -18,6 +18,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/28/25)
 			<li>(Base Mob) 
 			action_rotate has been fixed and works properly</li>
+			<li>(Base Mob) 
+			Working on move_rotate (Might make it part of base move_torward)</li>
 		</ul>
 	</li>
 	<li>

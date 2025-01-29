@@ -30,6 +30,7 @@ var default_params = {
 	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
+	"move_rotate": {"target": Vector2(0, 0), "rotate": 90, "rot_speed": 10, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -230,7 +231,37 @@ func action_rotate(params : Dictionary) -> void:
 		rotation_finished = true
 		target_rotation = 0
 	
-	run_until(rotation_finished)
+	if typeof(length) == TYPE_BOOL:
+		run_until(rotation_finished)
+	else:
+		run(length)
+
+func move_rotate(params : Dictionary) -> void:
+	# TODO might make it part of move_torward itself
+	var target = params["target"]
+	var speed = params["speed"]
+	var smooth = params["smooth"]
+	var rotate = params["rotate"]
+	var rot_speed = params["rot_speed"]
+	var length = params["length"]
+	
+	track_pos(target, 0)
+	position += ((target_pos - global_position) / smooth) * speed * cur_delta
+	
+	if target_rotation == 0:
+		target_rotation = deg_to_rad(rotate) + rotation
+	
+	var angle_diff = target_rotation - rotation
+	rotation += angle_diff * rot_speed * cur_delta
+	
+	var at_target = position.distance_to(target_pos) < 1.0
+	var at_rotation = abs(rotation - target_rotation) < 0.1
+
+	if at_target and at_rotation:
+		rotation_finished = true
+		target_rotation = 0
+
+	run(length)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:
