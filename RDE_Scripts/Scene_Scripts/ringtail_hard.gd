@@ -24,7 +24,7 @@ func action1() -> void:
 	#controller.hold(true)
 	print("action1")
 	#base.action("orbit_player", {"speed": 10, "length": 2})
-	base.action("move_rotate", {"target": base.player_pos, "rotate": 180, "speed": 75, "length": 2})
+	base.action("move_rotate", {"target": base.player_pos, "rotate": 180, "rot_speed": 2, "speed": 300, "length": 2})
 	base.action("move_torward_player", {"offset": 1, "speed": 150, "length": 1})
 	#base.action("move_torward_point", {"speed": 10, "length": 3})
 	#base.action("teleport", Vector2(0, 0))

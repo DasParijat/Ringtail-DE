@@ -238,28 +238,23 @@ func action_rotate(params : Dictionary) -> void:
 
 func move_rotate(params : Dictionary) -> void:
 	# TODO might make it part of move_torward itself
+	# TODO clean it up
 	var target = params["target"]
 	var speed = params["speed"]
 	var smooth = params["smooth"]
+	var delay = params["delay"]
 	var rotate = params["rotate"]
 	var rot_speed = params["rot_speed"]
 	var length = params["length"]
 	
-	track_pos(target, 0)
-	position += ((target_pos - global_position) / smooth) * speed * cur_delta
+	var direction = Vector2.RIGHT.rotated(rotation)
+
+	track_pos(target, delay)
+	position += direction * speed * cur_delta
 	
-	if target_rotation == 0:
-		target_rotation = deg_to_rad(rotate) + rotation
 	
 	var angle_diff = target_rotation - rotation
-	rotation += angle_diff * rot_speed * cur_delta
-	
-	var at_target = position.distance_to(target_pos) < 1.0
-	var at_rotation = abs(rotation - target_rotation) < 0.1
-
-	if at_target and at_rotation:
-		rotation_finished = true
-		target_rotation = 0
+	rotation += rot_speed * cur_delta
 
 	run(length)
 	
