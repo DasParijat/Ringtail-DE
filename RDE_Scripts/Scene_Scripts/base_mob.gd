@@ -44,12 +44,11 @@ var default_params = {
 # orbit - goes in a circle around a point DONE
 # orbit_player -  goes in circle around player DONE
 # observe_player - look at player pos DONE
+# rotate - turn in a certain direction (degrees) DONE
+# teleport - go insantly to a point DONE
 
-# rotate - turn in a certain direction (degrees)
+# TODO finish this last action!!
 # move_rotate - like rotate except while moving
-# teleport - go insantly to a point 
-
-
 
 func _ready() -> void:
 	sprite.texture = mob_res.texture
@@ -213,21 +212,20 @@ func teleport(target : Vector2) -> void:
 	run_until(true)
 
 func action_rotate(params : Dictionary) -> void:
-	# TODO add way to handle negative values
-	var rotate_amt = deg_to_rad(params["rotate"])
 	var speed = params["speed"]
 	var length = params["length"]
+	var rotate_amt = deg_to_rad(params["rotate"])
 	
 	if target_rotation == 0:
 		# only update target rotation once per action
 		target_rotation = rotate_amt + rotation
-		#print("ROTATION: ", rotation, " target: ", target_rotation)
 	
 	var angle_diff = target_rotation - rotation
 	rotation += angle_diff * speed * cur_delta
-	target_rotation = snappedf(target_rotation, 0.1) 
 	
-	if rotation >= target_rotation - 0.1:
+	#print("ROTATION: ", rotation, " target: ", target_rotation)
+	target_rotation = snappedf(target_rotation, 0.1) 
+	if abs(rotation - target_rotation) < 0.1:
 		#print("rotate check: ", rotation_finished)
 		rotation_finished = true
 		target_rotation = 0

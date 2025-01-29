@@ -17,7 +17,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/28/25)
 			<li>(Base Mob) 
-			action_rotate has been fixed, just needs to handle negative vals</li>
+			action_rotate has been fixed and works properly</li>
 		</ul>
 	</li>
 	<li>
