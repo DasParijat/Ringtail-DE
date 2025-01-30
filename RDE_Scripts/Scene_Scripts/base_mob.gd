@@ -30,7 +30,7 @@ var default_params = {
 	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
-	"move_rotate": {"target": Vector2(0, 0), "rotate": 90, "rot_speed": 10, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
+	"move_rotate": {"rotate": 5, "speed": 50, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -47,9 +47,10 @@ var default_params = {
 # observe_player - look at player pos DONE
 # rotate - turn in a certain direction (degrees) DONE
 # teleport - go insantly to a point DONE
+# move_rotate - like rotate except while moving DONE
 
 # TODO finish this last action!!
-# move_rotate - like rotate except while moving
+# move - just move in direction
 
 func _ready() -> void:
 	sprite.texture = mob_res.texture
@@ -160,6 +161,18 @@ func action_buffer(length : float) -> void:
 
 ## ACTIONS
 
+func move_rotate(params : Dictionary) -> void:
+	var speed = params["speed"]
+	var rotate = params["rotate"]
+	var length = params["length"]
+	
+	var direction = Vector2.RIGHT.rotated(rotation)
+	position += direction * speed * cur_delta
+	
+	rotation += rotate * cur_delta
+	
+	run(length)
+	
 func move_torward(target : Vector2, params : Dictionary) -> void:
 	var delay = params["delay"]
 	var speed = params["speed"]
@@ -235,28 +248,6 @@ func action_rotate(params : Dictionary) -> void:
 		run_until(rotation_finished)
 	else:
 		run(length)
-
-func move_rotate(params : Dictionary) -> void:
-	# TODO might make it part of move_torward itself
-	# TODO clean it up
-	var target = params["target"]
-	var speed = params["speed"]
-	var smooth = params["smooth"]
-	var delay = params["delay"]
-	var rotate = params["rotate"]
-	var rot_speed = params["rot_speed"]
-	var length = params["length"]
-	
-	var direction = Vector2.RIGHT.rotated(rotation)
-
-	track_pos(target, delay)
-	position += direction * speed * cur_delta
-	
-	
-	var angle_diff = target_rotation - rotation
-	rotation += rot_speed * cur_delta
-
-	run(length)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:

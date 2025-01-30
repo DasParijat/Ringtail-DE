@@ -17,7 +17,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/29/25)
 			<li>(Base Mob) 
-			move_rotate works as intended, just needs cleaning up</li>
+			move_rotate action works as intended</li>
+			<li>(Base Mob) 
+			Working on basic move action</li>
 		</ul>
 	</li>
 	<li>
