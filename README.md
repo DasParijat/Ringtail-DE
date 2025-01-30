@@ -15,6 +15,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(1/30/25)
+			<li>(Base Mob) 
+			Working on adding move_dir action,
+			I swear this will be the last</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/29/25)
 			<li>(Base Mob) 
 			move_rotate action works as intended</li>

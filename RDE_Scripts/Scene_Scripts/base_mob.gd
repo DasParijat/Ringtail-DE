@@ -160,6 +160,16 @@ func action_buffer(length : float) -> void:
 
 ## ACTIONS
 
+func move_dir(params : Dictionary) -> void:
+	# TODO finish
+	# point in direction, and move
+	var direction = params["direction"]
+	var speed = params["speed"]
+	var length = params["length"]
+	
+	action_combo([{"action": "action_rotate", "params": {"rotate": 90, "speed": 5, "length": true}},
+				{"action": "move", "params": {"speed": 10, "length": 1}}])
+	
 func move(params : Dictionary) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation) 
 	position += direction * params["speed"] * cur_delta
