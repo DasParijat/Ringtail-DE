@@ -49,9 +49,7 @@ var default_params = {
 # rotate - turn in a certain direction (degrees) DONE
 # teleport - go insantly to a point DONE
 # move_rotate - like rotate except while moving DONE
-
-# TODO finish this last action!!
-# move - just move in direction
+# move - just move in current direction DONE
 
 func _ready() -> void:
 	sprite.texture = mob_res.texture
@@ -163,8 +161,8 @@ func action_buffer(length : float) -> void:
 ## ACTIONS
 
 func move(params : Dictionary) -> void:
-	# TODO put in proper vector thing
-	position += params["speed"] * cur_delta
+	var direction = Vector2.RIGHT.rotated(rotation) 
+	position += direction * params["speed"] * cur_delta
 	
 	run(params["length"])
 	

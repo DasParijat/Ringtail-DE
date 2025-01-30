@@ -19,7 +19,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			move_rotate action works as intended</li>
 			<li>(Base Mob) 
-			Working on basic move action</li>
+			Added basic move action</li>
+			<li>(Base Mob) 
+			All planned actions in base_mob added as of now!!</li>
 		</ul>
 	</li>
 	<li>
