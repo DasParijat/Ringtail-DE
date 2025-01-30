@@ -31,6 +31,7 @@ var default_params = {
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
 	"move_rotate": {"rotate": 5, "speed": 50, "length": 1},
+	"move": {"speed": 10, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -161,6 +162,12 @@ func action_buffer(length : float) -> void:
 
 ## ACTIONS
 
+func move(params : Dictionary) -> void:
+	# TODO put in proper vector thing
+	position += params["speed"] * cur_delta
+	
+	run(params["length"])
+	
 func move_rotate(params : Dictionary) -> void:
 	var speed = params["speed"]
 	var rotate = params["rotate"]
