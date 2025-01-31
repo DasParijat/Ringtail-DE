@@ -31,7 +31,8 @@ var default_params = {
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
 	"move_rotate": {"rotate": 5, "speed": 50, "length": 1},
-	"move": {"speed": 10, "length": 1},
+	"move": {"speed": 50, "length": 1},
+	"move_dir": {"speed": 50, "direction": 90, "length": 1},
 	"run_until": true,
 	"run_for": 1,
 	"action_buffer": 0,
@@ -160,22 +161,36 @@ func action_buffer(length : float) -> void:
 
 ## ACTIONS
 
-func move_dir(params : Dictionary) -> void:
-	# TODO finish
-	# point in direction, and move
-	var direction = params["direction"]
-	var speed = params["speed"]
-	var length = params["length"]
-	
-	action_combo([{"action": "action_rotate", "params": {"rotate": 90, "speed": 5, "length": true}},
-				{"action": "move", "params": {"speed": 10, "length": 1}}])
-	
 func move(params : Dictionary) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation) 
 	position += direction * params["speed"] * cur_delta
 	
 	run(params["length"])
+
+func action_rotate(params : Dictionary) -> void:
+	var speed = params["speed"]
+	var length = params["length"]
+	var rotate_amt = deg_to_rad(params["rotate"])
 	
+	if target_rotation == 0:
+		# only update target rotation once per action
+		target_rotation = rotate_amt + rotation
+	
+	var angle_diff = target_rotation - rotation
+	rotation += angle_diff * speed * cur_delta
+	
+	#print("ROTATION: ", rotation, " target: ", target_rotation)
+	target_rotation = snappedf(target_rotation, 0.1) 
+	if abs(rotation - target_rotation) < 0.1:
+		#print("rotate check: ", rotation_finished)
+		rotation_finished = true
+		target_rotation = 0
+	
+	if typeof(length) == TYPE_BOOL:
+		run_until(rotation_finished)
+	else:
+		run(length)
+		
 func move_rotate(params : Dictionary) -> void:
 	var speed = params["speed"]
 	var rotate = params["rotate"]
@@ -187,7 +202,17 @@ func move_rotate(params : Dictionary) -> void:
 	rotation += rotate * cur_delta
 	
 	run(length)
+
+func move_dir(params : Dictionary) -> void:
+	# TODO finish
+	# point in direction, and move
+	var direction = params["direction"]
+	var speed = params["speed"]
+	var length = params["length"]
 	
+	action_combo([{"action": "action_rotate", "params": {"rotate": direction, "speed": 100, "length": true}},
+				{"action": "move", "params": {"speed": speed, "length": length}}])
+					
 func move_torward(target : Vector2, params : Dictionary) -> void:
 	var delay = params["delay"]
 	var speed = params["speed"]
@@ -239,30 +264,6 @@ func observe_player(length : float) -> void:
 func teleport(target : Vector2) -> void:
 	position = target
 	run_until(true)
-
-func action_rotate(params : Dictionary) -> void:
-	var speed = params["speed"]
-	var length = params["length"]
-	var rotate_amt = deg_to_rad(params["rotate"])
-	
-	if target_rotation == 0:
-		# only update target rotation once per action
-		target_rotation = rotate_amt + rotation
-	
-	var angle_diff = target_rotation - rotation
-	rotation += angle_diff * speed * cur_delta
-	
-	#print("ROTATION: ", rotation, " target: ", target_rotation)
-	target_rotation = snappedf(target_rotation, 0.1) 
-	if abs(rotation - target_rotation) < 0.1:
-		#print("rotate check: ", rotation_finished)
-		rotation_finished = true
-		target_rotation = 0
-	
-	if typeof(length) == TYPE_BOOL:
-		run_until(rotation_finished)
-	else:
-		run(length)
 	
 func track_pos(cur_data, delay) -> void:
 	if delay <= 0:

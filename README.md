@@ -17,8 +17,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(1/30/25)
 			<li>(Base Mob) 
-			Working on adding move_dir action,
+			Added move_dir action,
 			I swear this will be the last</li>
+			<li>(Base Mob) 
+			Rearranged action code</li>
 		</ul>
 	</li>
 	<li>
