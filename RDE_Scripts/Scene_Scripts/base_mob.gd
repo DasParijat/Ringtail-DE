@@ -30,8 +30,7 @@ var default_params = {
 	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
-	"move_rotate": {"rotate": 5, "speed": 50, "length": 1},
-	"move": {"speed": 50, "length": 1},
+	"move": {"speed": 50, "rotate": 0, "length": 1},
 	"move_dir": {"speed": 50, "direction": 90, "length": 1},
 	"run_until": true,
 	"run_for": 1,
@@ -162,10 +161,16 @@ func action_buffer(length : float) -> void:
 ## ACTIONS
 
 func move(params : Dictionary) -> void:
-	var direction = Vector2.RIGHT.rotated(rotation) 
-	position += direction * params["speed"] * cur_delta
+	# Move in current direction, can tilt via rotate
+	var speed = params["speed"]
+	var rotate = params["rotate"]
+	var length = params["length"]
 	
-	run(params["length"])
+	var direction = Vector2.RIGHT.rotated(rotation) 
+	position += direction * speed * cur_delta
+	rotation += rotate * cur_delta
+		
+	run(length)
 
 func action_rotate(params : Dictionary) -> void:
 	var speed = params["speed"]
@@ -191,21 +196,8 @@ func action_rotate(params : Dictionary) -> void:
 	else:
 		run(length)
 		
-func move_rotate(params : Dictionary) -> void:
-	var speed = params["speed"]
-	var rotate = params["rotate"]
-	var length = params["length"]
-	
-	var direction = Vector2.RIGHT.rotated(rotation)
-	position += direction * speed * cur_delta
-	
-	rotation += rotate * cur_delta
-	
-	run(length)
-
 func move_dir(params : Dictionary) -> void:
-	# TODO finish
-	# point in direction, and move
+	# rotate into direction, and move
 	var direction = params["direction"]
 	var speed = params["speed"]
 	var length = params["length"]

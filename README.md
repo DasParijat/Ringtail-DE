@@ -21,6 +21,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			I swear this will be the last</li>
 			<li>(Base Mob) 
 			Rearranged action code</li>
+			<li>(Base Mob) 
+			Removed move_rotate, put it's functionality within move</li>
 		</ul>
 	</li>
 	<li>
