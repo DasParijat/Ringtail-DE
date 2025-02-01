@@ -21,6 +21,9 @@ one_shot = true
 autostart = true
 
 [node name="IFrameTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+autostart = true
 
 [node name="HitBox" type="Area2D" parent="."]
 

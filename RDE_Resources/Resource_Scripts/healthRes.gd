@@ -7,24 +7,26 @@ class_name HealthRes
 var cur_hp : int = max_hp
 
 var iframe_timer : Timer 
-var iframe_len : float = 0
+var iframe_len : float
 
 var invicible : bool = false
 var damage_rate : float = 1 # the higher, the more damage taken per usual.
 
 func set_health_res(timer) -> void:
 	iframe_timer = timer # nodes using health res have to have their own timers
+	iframe_len = iframe_timer.wait_time
 	reset_health() # reset health is seperate so it can be reset on it's own without affecting timer
 	
 func reset_health() -> void:
 	cur_hp = max_hp
 	
 func take_dmg(dmg_amount : float):
-	if not invicible:
+	if iframe_timer.is_stopped() and not invicible:
 		cur_hp = cur_hp - (dmg_amount * damage_rate)
 		print("took damage, hp: ", cur_hp) # for debugging
 		
-		iframe_timer.start(iframe_len)
+		if iframe_len > 0.1:
+			iframe_timer.start(iframe_len)
 
 func is_dead() -> bool:
 	return cur_hp <= 0

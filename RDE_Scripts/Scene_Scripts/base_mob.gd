@@ -66,7 +66,6 @@ func _physics_process(delta: float) -> void:
 			
 	if cur_action:
 		print(health_res.cur_hp)
-		health_res.take_dmg(0.2)
 		call(cur_action["action"], cur_action["params"])
 
 func death_check() -> void:

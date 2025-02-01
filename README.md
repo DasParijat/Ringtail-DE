@@ -16,9 +16,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/1/25)
-			<li>(Base Mob / Bullet / HealthRes) 
-			Working on bullets dealing damage to mobs,
-			issue seems to be with iframe_timer in HealthRes/Base Mob</li>
+			<li>(Base Mob / Bullet) 
+			Bullets deal damage to mobs</li>
+			<li>(HealthRes) 
+			Health resource modified to handle iframe_len better</li>
 		</ul>
 	</li>
 	<li>
