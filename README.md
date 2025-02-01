@@ -6,6 +6,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
+	<li>Add way to damage mob and be damaged from it</li>
 	<li>Create level res and use it</li>
 	<li>Properly load and unload scenes</li>
 </ul>
@@ -17,6 +18,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/31/25)
 			<li>(GlobalSignal / Base Player) 
 			Added global game over signal (emitted when player hp <= 0)</li>
+			<li>(Base Mob) 
+			Set up death check code, like in Base Player</li>
 		</ul>
 	</li>
 	<li>

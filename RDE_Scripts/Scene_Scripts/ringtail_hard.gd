@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 
 func action1() -> void:
 	#controller.hold(true)
-	print("action1")
+	#print("action1")
 	#base.action("orbit_player", {"speed": 10, "length": 2})
 	base.action("orbit_player", {"speed": 10, "length": 1})
 	base.action("move", {"rotate": -0.5, "speed": 150, "length": 5})
@@ -36,7 +36,7 @@ func action1() -> void:
 
 func action2() -> void:
 	#base.hold(true)
-	print("action2")
+	#print("action2")
 	for i in range(2): 
 		base.action("move_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
 		await GlobalTime.local_wait(1)
@@ -48,7 +48,7 @@ func action2() -> void:
 	
 func action3() -> void:
 	#base.hold(true)
-	print("action3")
+	#print("action3")
 	base.action("move_torward_player", {"speed": 100, "length": 0.5})
 	await GlobalTime.local_wait(0.5)
 	

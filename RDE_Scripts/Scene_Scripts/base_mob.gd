@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 @onready var mob_res : MobRes = get_parent().mob_res
+@onready var health_res : HealthRes = mob_res.health_comp
 @onready var pos_track_delay : float = mob_res.pos_track_delay
 
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var track_delay : Timer = $TrackDelay
+@onready var iframe_timer : Timer = $IFrameTimer
 @onready var collision : CollisionShape2D = $CollisionShape2D
 @onready var hitbox : CollisionShape2D = $HitBox/CollisionShape2D
 
@@ -39,28 +41,18 @@ var default_params = {
 	"teleport": Vector2(100, 50)
 }
 
-# ACTION IDEAS:
-# move_torward - default moving used as base DONE
-# move_torward_point - move torward point, end when at point DONE
-# move_torward_player - move torward player DONE
-# orbit - goes in a circle around a point DONE
-# orbit_player -  goes in circle around player DONE
-# observe_player - look at player pos DONE
-# rotate - turn in a certain direction (degrees) DONE
-# teleport - go insantly to a point DONE
-# move_rotate - like rotate except while moving DONE
-# move - just move in current direction DONE
-
 func _ready() -> void:
 	sprite.texture = mob_res.texture
 	position.y = -100
 	
+	health_res.set_health_res(iframe_timer)
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 
 func _physics_process(delta: float) -> void:
 	#print(player_hp)
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
+	death_check()
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
@@ -72,6 +64,15 @@ func _physics_process(delta: float) -> void:
 	if cur_action:
 		call(cur_action["action"], cur_action["params"])
 
+func death_check() -> void:
+	if health_res.is_dead():
+		if mob_res.is_boss:
+			pass
+			# TODO insert signal that game won
+			# TODO also handle mutliple bosses
+		action_queue.clear()
+		queue_free()
+	
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
 	# params data type can be any
