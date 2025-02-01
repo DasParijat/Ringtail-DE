@@ -9,6 +9,6 @@ script = ExtResource("1_bolxm")
 texture = ExtResource("2_moiun")
 damage = 1.0
 enemy_knockback = 0.1
-is_piercing = true
+is_piercing = false
 falloff_point = 1000.0
 falloff_rate = 0.2

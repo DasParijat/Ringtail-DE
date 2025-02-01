@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var track_delay : Timer = $TrackDelay
 @onready var iframe_timer : Timer = $IFrameTimer
 @onready var collision : CollisionShape2D = $CollisionShape2D
-@onready var hitbox : CollisionShape2D = $HitBox/CollisionShape2D
+@onready var hitbox : Area2D = $HitBox
 
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
@@ -46,12 +46,10 @@ func _ready() -> void:
 	position.y = -100
 	
 	if mob_res.is_hittable:
-		add_to_group("HittableMob")
-	else:
-		add_to_group("PassiveMob")
-	
-	#if is_in_group("HittableMob"):
-	#	print("hortiboe")
+		hitbox.add_to_group("Hittable")
+		
+	if hitbox.is_in_group("Hittable"):
+		print("hortiboe")
 		
 	health_res.set_health_res(iframe_timer)
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -278,3 +276,7 @@ func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":
 		player_pos = stats["position"]
 		player_hp = stats["cur_hp"]
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Player"):
+		pass

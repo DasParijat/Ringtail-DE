@@ -43,3 +43,9 @@ func _physics_process(delta):
 
 func _on_tree_exiting() -> void:
 	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Hittable") and not bullet_res.is_piercing:
+		print("is hitting")
+		queue_free()

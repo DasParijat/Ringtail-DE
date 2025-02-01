@@ -66,7 +66,7 @@ func get_cur_stats() -> Dictionary:
 
 func _on_game_over() -> void:
 	health_res.reset_health()
-	
+
 func test_function() -> void:
 	if Input.is_action_pressed("test"):
 		player_res.health_res.take_dmg(3.5)

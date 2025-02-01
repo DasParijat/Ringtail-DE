@@ -16,8 +16,8 @@ func _ready() -> void:
 	controller.cur_action = 1
 
 func _process(delta: float) -> void:
-	controller.action_handling(int(randf_range(attack_min, attack_max)))
-	
+	controller.action_handling(2)
+	pass
 	#int(randf_range(attack_min, attack_max))
 
 func action1() -> void:
@@ -44,7 +44,7 @@ func action2() -> void:
 		# due to it not interacting with out-of-queue actions (like shooting)
 	base.action("observe_player", 1.5)
 	await GlobalTime.local_wait(1.5)
-	controller.chain_action(0)
+	controller.chain_action(2)
 	
 func action3() -> void:
 	#base.hold(true)

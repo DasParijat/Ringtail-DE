@@ -22,9 +22,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created player group</li>
 			<li>(Base Mob) 
 			Set up death check code, like in Base Player</li>
-			<li>(Base Mob) 
-			Created groups HittableMob and PassiveMob,
-			mob can be specified whether player can deal dmg to them</li>
+			<li>(General / Base Mob) 
+			Created global Hittable group for mobs/players that can be hit</li>
+			<li>(Bullet / Base Mob) 
+			Non piercing bullets now dissapear when hitting mob hitbox</li>
 		</ul>
 	</li>
 	<li>

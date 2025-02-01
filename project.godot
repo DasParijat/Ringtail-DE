@@ -41,6 +41,10 @@ folder_colors={
 "res://RDE_Scripts/": "red"
 }
 
+[global_group]
+
+Hittable="Mob/Player can be hit"
+
 [input]
 
 ui_left={
