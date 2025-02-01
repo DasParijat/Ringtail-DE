@@ -45,6 +45,14 @@ func _ready() -> void:
 	sprite.texture = mob_res.texture
 	position.y = -100
 	
+	if mob_res.is_hittable:
+		add_to_group("HittableMob")
+	else:
+		add_to_group("PassiveMob")
+	
+	#if is_in_group("HittableMob"):
+	#	print("hortiboe")
+		
 	health_res.set_health_res(iframe_timer)
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 

@@ -18,8 +18,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(1/31/25)
 			<li>(GlobalSignal / Base Player) 
 			Added global game over signal (emitted when player hp <= 0)</li>
+			<li>(Base Mob)
+			Created player group</li>
 			<li>(Base Mob) 
 			Set up death check code, like in Base Player</li>
+			<li>(Base Mob) 
+			Created groups HittableMob and PassiveMob,
+			mob can be specified whether player can deal dmg to them</li>
 		</ul>
 	</li>
 	<li>
