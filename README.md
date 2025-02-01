@@ -6,13 +6,19 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Add basic movement/attacks to base_boss</li>
 	<li>Create level res and use it</li>
 	<li>Properly load and unload scenes</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(1/31/25)
+			<li>(GlobalSignal / Base Player) 
+			Added global game over signal (emitted when player hp <= 0)</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(1/30/25)

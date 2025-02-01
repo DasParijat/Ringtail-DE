@@ -19,6 +19,8 @@ func _ready() -> void:
 	
 	health_res.set_health_res(iframe_timer)
 	
+	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
+	
 	global_position = Vector2(0, 10)
 	# for some reason if set at (0, 0), 
 	# it will occasionally spawn further away
@@ -51,7 +53,7 @@ func set_speedmod(new_val : float) -> void:
 func death_check() -> void:
 	if health_res.is_dead():
 		print("RIP BOZO")
-		health_res.reset_health()
+		GlobalSignal.game_over.emit()
 		# TODO create global signal that tells everyone player died
 
 func get_cur_stats() -> Dictionary:
@@ -61,6 +63,9 @@ func get_cur_stats() -> Dictionary:
 		"cur_hp": health_res.cur_hp,
 		"cur_power": player_res.cur_power,
 	}
+
+func _on_game_over() -> void:
+	health_res.reset_health()
 	
 func test_function() -> void:
 	if Input.is_action_pressed("test"):
