@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="3_0vsc5"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_8a5f1")
 name = "RingtailEASY"
 color = Color(0.485703, 0.485704, 0.485703, 1)
 texture = ExtResource("3_0vsc5")
 health_comp = ExtResource("1_8jvsn")
 is_boss = true
-is_hostile = true
+is_hittable = true
 pos_track_delay = 1.5
 collision_size = 0
 collision_dmg = 1.0

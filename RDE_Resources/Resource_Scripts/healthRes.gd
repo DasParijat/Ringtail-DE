@@ -6,8 +6,8 @@ class_name HealthRes
 @export var max_hp : int
 var cur_hp : int = max_hp
 
-var iframe_timer : Timer #= Timer.new()
-var iframe_len : float = 1
+var iframe_timer : Timer 
+var iframe_len : float = 0
 
 var invicible : bool = false
 var damage_rate : float = 1 # the higher, the more damage taken per usual.
@@ -19,8 +19,8 @@ func set_health_res(timer) -> void:
 func reset_health() -> void:
 	cur_hp = max_hp
 	
-func take_dmg(dmg_amount):
-	if iframe_timer.is_stopped() and not invicible:
+func take_dmg(dmg_amount : float):
+	if not invicible:
 		cur_hp = cur_hp - (dmg_amount * damage_rate)
 		print("took damage, hp: ", cur_hp) # for debugging
 		

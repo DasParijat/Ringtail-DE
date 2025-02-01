@@ -47,10 +47,7 @@ func _ready() -> void:
 	
 	if mob_res.is_hittable:
 		hitbox.add_to_group("Hittable")
-		
-	if hitbox.is_in_group("Hittable"):
-		print("hortiboe")
-		
+	
 	health_res.set_health_res(iframe_timer)
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 
@@ -68,6 +65,8 @@ func _physics_process(delta: float) -> void:
 		#cur_action = {"action": "action_buffer", "params": 0}
 			
 	if cur_action:
+		print(health_res.cur_hp)
+		health_res.take_dmg(0.2)
 		call(cur_action["action"], cur_action["params"])
 
 func death_check() -> void:
@@ -77,7 +76,7 @@ func death_check() -> void:
 			# TODO insert signal that game won
 			# TODO also handle mutliple bosses
 		action_queue.clear()
-		queue_free()
+		get_parent().queue_free()
 	
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue

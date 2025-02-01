@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ymwox"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_ymwox")
-max_hp = 150
+max_hp = 100

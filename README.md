@@ -15,6 +15,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/1/25)
+			<li>(Base Mob / Bullet / HealthRes) 
+			Working on bullets dealing damage to mobs,
+			issue seems to be with iframe_timer in HealthRes/Base Mob</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/31/25)
 			<li>(GlobalSignal / Base Player) 
 			Added global game over signal (emitted when player hp <= 0)</li>

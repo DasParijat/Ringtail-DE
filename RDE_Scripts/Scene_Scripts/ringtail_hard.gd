@@ -13,7 +13,7 @@ var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	controller.cur_action = 1
+	#controller.cur_action = 2
 
 func _process(delta: float) -> void:
 	controller.action_handling(2)
