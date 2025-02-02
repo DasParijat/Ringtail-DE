@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2ty2wiyymcwh"]
+
+[node name="IFrameTimer" type="Timer"]
+wait_time = 0.09
+one_shot = true
+autostart = true

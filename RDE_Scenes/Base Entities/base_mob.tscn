@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=5 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
+[ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
@@ -20,10 +21,7 @@ wait_time = 0.05
 one_shot = true
 autostart = true
 
-[node name="IFrameTimer" type="Timer" parent="."]
-wait_time = 0.001
-one_shot = true
-autostart = true
+[node name="IFrameTimer" parent="." instance=ExtResource("2_qsc8h")]
 
 [node name="HitBox" type="Area2D" parent="."]
 
