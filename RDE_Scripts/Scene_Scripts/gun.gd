@@ -80,6 +80,7 @@ func shoot() -> void:
 			# bullet transformations			
 			bullet.global_transform = global_transform
 			bullet.global_rotation_degrees = rotation_degrees + randf_range(-bullet_spread, bullet_spread)
+			bullet.target_group = "Enemy"
 			
 			# putting bullet in scene
 			get_parent().get_parent().add_child(bullet)

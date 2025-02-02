@@ -278,8 +278,5 @@ func _on_get_cur_stats(type, stats):
 		player_hp = stats["cur_hp"]
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	print("area hitting base mob ", mob_res.collision_dmg)
-	print(area.get_groups())
 	if area.is_in_group("Player"):
-		print("area hitting base mob ", mob_res.collision_dmg)
 		area.get_parent().health_res.take_dmg(mob_res.collision_dmg)

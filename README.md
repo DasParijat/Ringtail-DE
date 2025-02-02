@@ -6,7 +6,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Add way to damage mob and be damaged from it</li>
 	<li>Create level res and use it</li>
 	<li>Properly load and unload scenes</li>
 </ul>
@@ -17,8 +16,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(2/2/25)
 			<li>(Base Mob / Bullet) 
-			Mobs can deal damage to player
-			TODO assign bullets a specific group they can harm</li>
+			Mobs can deal damage to player</li>
+			<li>(Bullet) 
+			Bullets have target_groups, which are groups they only deal damage to</li>
 		</ul>
 	</li>
 	<li>

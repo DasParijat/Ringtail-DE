@@ -16,7 +16,7 @@ func _ready() -> void:
 	#controller.cur_action = 2
 
 func _process(delta: float) -> void:
-	controller.action_handling(2)
+	controller.action_handling(3)
 	pass
 	#int(randf_range(attack_min, attack_max))
 
@@ -70,6 +70,7 @@ func shoot() -> void:
 	bullet.global_transform = base.global_transform
 	bullet.global_position = base.global_position
 	bullet.bullet_speed = 1000
-
+	bullet.target_group = "Player"
+	
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)
