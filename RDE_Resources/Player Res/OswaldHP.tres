@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_umdju")
+HP_NAME = "OSWALD"
 max_hp = 50
+damage_rate = 1.0
+invicible = false

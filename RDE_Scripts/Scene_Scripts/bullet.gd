@@ -46,7 +46,9 @@ func _on_tree_exiting() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Hittable") and not bullet_res.is_piercing:
+	# TODO make piercing actually matter
+	if area.is_in_group("Hittable"):
 		area.get_parent().health_res.take_dmg(damage)
-		#print(area.get_parent().health_res.cur_hp)
-		queue_free()
+
+		if not bullet_res.is_piercing:
+			queue_free()

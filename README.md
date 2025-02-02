@@ -19,7 +19,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob / Bullet) 
 			Bullets deal damage to mobs</li>
 			<li>(HealthRes) 
-			Health resource modified to handle iframe_len better</li>
+			Health resource has been renovated</li>
 			<li>(General) 
 			Made IFrameTimer scene to be used in both base player and mob</li>
 		</ul>

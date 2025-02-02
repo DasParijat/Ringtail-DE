@@ -3,18 +3,19 @@ class_name HealthRes
 # HealthRes is used to define HP related stats and functions
 # Used by any entity with health
 
-@export var max_hp : int
+@export var HP_NAME : String = "UNAMED HP USER"
+
+@export var max_hp : int = 10
+@export var damage_rate : float = 1 # the higher, the more damage taken per usual.
+@export var invicible : bool = false
+
 var cur_hp : int = max_hp
 
 var iframe_timer : Timer 
 var iframe_len : float
 
-var invicible : bool = false
-var damage_rate : float = 1 # the higher, the more damage taken per usual.
-
 func set_health_res(timer) -> void:
 	iframe_timer = timer # nodes using health res have to have their own timers
-	iframe_len = iframe_timer.wait_time
 	reset_health() # reset health is seperate so it can be reset on it's own without affecting timer
 	
 func reset_health() -> void:
@@ -22,10 +23,15 @@ func reset_health() -> void:
 	
 func take_dmg(dmg_amount : float):
 	if iframe_timer.is_stopped() and not invicible:
-		cur_hp = cur_hp - (dmg_amount * damage_rate)
-		print("took damage, hp: ", cur_hp) # for debugging
+		iframe_len = iframe_timer.wait_time
+		dmg_amount = dmg_amount * damage_rate
 		
-		if iframe_len > 0.1:
+		cur_hp = cur_hp - dmg_amount
+		
+		print(HP_NAME, " took damage, CUR HP: ", cur_hp, 
+		"	DMG AMOUNT: ", dmg_amount) # for debugging
+		
+		if iframe_len >= 0.1 and dmg_amount > 0.0:
 			iframe_timer.start(iframe_len)
 
 func is_dead() -> bool:

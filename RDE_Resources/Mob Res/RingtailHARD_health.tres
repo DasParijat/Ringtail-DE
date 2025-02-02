@@ -5,4 +5,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_ymwox")
-max_hp = 100
+HP_NAME = "RingtailHARD"
+max_hp = 150
+damage_rate = 1.0
+invicible = false
