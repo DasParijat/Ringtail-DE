@@ -15,6 +15,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/2/25)
+			<li>(Base Mob / Bullet) 
+			Mobs can deal damage to player
+			TODO assign bullets a specific group they can harm</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(2/1/25)
 			<li>(Base Mob / Bullet) 
 			Bullets deal damage to mobs</li>

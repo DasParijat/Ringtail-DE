@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=6 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
+[ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_wgsi6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
@@ -15,6 +16,7 @@ script = ExtResource("1_2vok1")
 shape = SubResource("CircleShape2D_xytya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wgsi6")
 
 [node name="TrackDelay" type="Timer" parent="."]
 wait_time = 0.05
@@ -26,7 +28,7 @@ autostart = true
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-scale = Vector2(1.3368, 1.3368)
+scale = Vector2(3.007, 3.007)
 shape = SubResource("CircleShape2D_6i0y3")
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

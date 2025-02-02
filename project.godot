@@ -44,7 +44,8 @@ folder_colors={
 [global_group]
 
 Hittable="Mob/Player can be hit"
-Hostile="Anything that harms player"
+Player="Group for player and their allies"
+Enemy="Anything that harms player"
 
 [input]
 

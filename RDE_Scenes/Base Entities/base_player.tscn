@@ -8,7 +8,7 @@ radius = 26.0768
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt7uj"]
 
-[node name="base_player" type="CharacterBody2D" groups=["Player"]]
+[node name="base_player" type="CharacterBody2D" groups=["Hittable", "Player"]]
 script = ExtResource("1_ssgha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,7 +20,7 @@ z_index = 2
 [node name="IFrameTimer" parent="." instance=ExtResource("2_640n3")]
 wait_time = 0.5
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." groups=["Hittable", "Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 scale = Vector2(3.48, 3.48)
