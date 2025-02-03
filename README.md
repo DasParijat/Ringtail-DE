@@ -14,6 +14,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/3/25)
+			<li>(Base Mob) 
+			Added action_break to break out of cur action</li>
+			<li>(RingtailHARD) 
+			Handle how waiting until a condition works (using action_break)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(2/2/25)
 			<li>(Base Mob / Bullet) 
 			Mobs can deal damage to player</li>
@@ -25,6 +34,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Mob Spawner) 
 			Created mob spawner to handle spawning mobs
 			(to be used within Ringtail Boss for summoning his goons)</li>
+			<li>(Global Mob Handler) 
+			Created global mob handler to track num of mobs/bosses</li>
+			<li>(Mob Spawner) 
+			Doesn't spawn mob if num of mobs is over limit (from GMobHandler)</li>
 		</ul>
 	</li>
 	<li>

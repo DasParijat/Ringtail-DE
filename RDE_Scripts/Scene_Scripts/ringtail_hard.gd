@@ -26,7 +26,14 @@ func action1() -> void:
 	#controller.hold(true)
 	#print("action1")
 	#base.action("orbit_player", {"speed": 10, "length": 2})
-	base.action("orbit_player", {"speed": 10, "length": 1})
+	base.action("move", {"rotate": 0, "speed": 150, "length": 2})
+	
+	# wait until condition
+	base.action("observe_player", true)
+	while base.player_hp >= 45:
+		await GlobalTime.local_wait(0.1)
+	base.action_break()
+	
 	base.action("move", {"rotate": -0.5, "speed": 150, "length": 5})
 	base.action("move_torward_player", {"offset": 1, "speed": 150, "length": 1})
 	#base.action("move_torward_point", {"speed": 10, "length": 3})
@@ -35,7 +42,7 @@ func action1() -> void:
 	
 	#base.action("run_for", 1)
 	await GlobalTime.local_wait(7)
-	spawner.spawn_mob(mob_load, Vector2(0, 100))
+	#spawner.spawn_mob(mob_load, Vector2(0, 100))
 	controller.chain_action(1)
 
 func action2() -> void:

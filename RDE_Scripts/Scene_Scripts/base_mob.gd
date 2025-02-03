@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
-		debug_queue(false)
+		debug_queue(true)
 	
 	#if no_action():
 		#cur_action = {"action": "action_buffer", "params": 0}
@@ -152,7 +152,7 @@ func run(length) -> void:
 func run_until(condition : bool) -> void:
 	## action runs till condition is met
 	cur_action_time += cur_delta # for if time passed needs to be compared
-	if condition:
+	if condition or cur_action_time == 0.0:
 		cur_action_time = 0.0
 		rotation_finished = false
 		orbit_angle = 0.0
@@ -164,6 +164,12 @@ func run_for(wait_time : float) -> void:
 func action_timeout() -> bool:
 	return cur_action_time == 0.0
 
+func action_break() -> void:
+	# Used to break out of current action
+	cur_action_time = 0.0
+	rotation_finished = false
+	orbit_angle = 0.0
+	
 func action_buffer(length : float) -> void:
 	# Buffer is used to stop boss from immediatly 
 	# moving on to next action sequence 
