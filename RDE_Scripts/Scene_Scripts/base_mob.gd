@@ -42,6 +42,10 @@ var default_params = {
 }
 
 func _ready() -> void:
+	GMobHandler.num_of_mobs += 1
+	if mob_res.is_boss:
+		GMobHandler.num_of_bosses += 1
+		
 	sprite.texture = mob_res.texture
 	position.y = -100
 	
