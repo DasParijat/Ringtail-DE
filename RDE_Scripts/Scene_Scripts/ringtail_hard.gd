@@ -7,16 +7,18 @@ extends Node2D
 
 @onready var controller : Node2D = $MobController
 @onready var base : CharacterBody2D = $base_mob
+@onready var spawner : Node2D = $MobSpawner
 
 @onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
 var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
+var mob_load = preload("res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn")
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	#controller.cur_action = 2
 
 func _process(delta: float) -> void:
-	controller.action_handling(3)
+	controller.action_handling(1)
 	pass
 	#int(randf_range(attack_min, attack_max))
 
@@ -32,6 +34,8 @@ func action1() -> void:
 	#await GlobalTime.local_wait(1)
 	
 	#base.action("run_for", 1)
+	await GlobalTime.local_wait(7)
+	spawner.spawn_mob(mob_load, Vector2(0, 100))
 	controller.chain_action(1)
 
 func action2() -> void:

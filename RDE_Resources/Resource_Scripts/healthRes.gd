@@ -28,8 +28,8 @@ func take_dmg(dmg_amount : float):
 		
 		cur_hp = cur_hp - dmg_amount
 		
-		print(HP_NAME, " took damage, CUR HP: ", cur_hp, 
-		"	DMG AMOUNT: ", dmg_amount) # for debugging
+		#print(HP_NAME, " took damage, CUR HP: ", cur_hp, 
+		#"	DMG AMOUNT: ", dmg_amount) # for debugging
 		
 		if iframe_len >= 0.1 and dmg_amount > 0.0:
 			iframe_timer.start(iframe_len)

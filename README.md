@@ -19,6 +19,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Mobs can deal damage to player</li>
 			<li>(Bullet) 
 			Bullets have target_groups, which are groups they only deal damage to</li>
+			<li>(Mob Spawner) 
+			Created mob spawner to handle spawning mobs
+			(to be used within Ringtail Boss for summoning his goons)</li>
 		</ul>
 	</li>
 	<li>
