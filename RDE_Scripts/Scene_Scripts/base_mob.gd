@@ -57,6 +57,7 @@ func _ready() -> void:
 		
 	health_res.set_health_res(iframe_timer)
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
 func _physics_process(delta: float) -> void:
 	#print(player_hp)
@@ -76,10 +77,8 @@ func _physics_process(delta: float) -> void:
 
 func death_check() -> void:
 	if health_res.is_dead():
-		if mob_res.is_boss:
-			pass
-			# TODO insert signal that game won
-			# TODO also handle mutliple bosses
+		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
+			GlobalSignal.emit_signal("game_won")
 		action_queue.clear()
 		get_parent().queue_free()
 	
@@ -287,6 +286,9 @@ func _on_get_cur_stats(type, stats):
 		player_pos = stats["position"]
 		player_hp = stats["cur_hp"]
 
+func _on_game_won() -> void:
+	print("base mob:  game won")
+	
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		area.get_parent().health_res.take_dmg(mob_res.collision_dmg)

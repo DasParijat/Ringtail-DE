@@ -12,6 +12,7 @@ color = Color(0.485703, 0.485704, 0.485703, 1)
 texture = ExtResource("3_0vsc5")
 health_comp = ExtResource("1_8jvsn")
 is_boss = true
+is_enemy = true
 is_hittable = true
 pos_track_delay = 1.5
 collision_size = 0

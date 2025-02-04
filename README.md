@@ -17,6 +17,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/3/25)
 			<li>(Base Mob) 
 			Added action_break to break out of cur action</li>
+			<li>(Base Mob) 
+			Game won signal emitted when last boss is dead</li>
 			<li>(RingtailHARD) 
 			Handle how waiting until a condition works (using action_break)</li>
 		</ul>
