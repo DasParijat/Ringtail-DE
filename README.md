@@ -15,8 +15,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/4/25)
+			<li>(General) 
+			200+ Commits in the repo!</li>
 			<li>(Load Screen) 
-			Added basic loading screen</li>
+			Added basic loading screen,
+			that can load any other scene</li>
+			<li>(GlobalScene) 
+			Created GlobalScene autoload script 
+			to handle info passed between scenes</li>
 		</ul>
 	<li>
 		<ul>
