@@ -14,6 +14,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/5/25)
+			<li>(LevelRes) 
+			Created level resource of STORY_RGT_HARD using levelres</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/4/25)
 			<li>(General) 
 			200+ Commits in the repo!</li>

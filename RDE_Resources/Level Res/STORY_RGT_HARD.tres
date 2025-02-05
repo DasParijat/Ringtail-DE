@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LevelRes" load_steps=2 format=3 uid="uid://ds5x2eini1j0p"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="1_oh108"]
+
+[resource]
+script = ExtResource("1_oh108")
+LEVEL_NAME = "UNNAMED LEVEL"
+tilemap = ""
+player_path = "res://RDE_Scenes/Entities/oswald.tscn"
+enemies = Array[Dictionary]([{
+"init_pos": Vector2(0, 100),
+"path": &"res://RDE_Resources/Mob Res/RingtailHARD.tres"
+}, {
+"init_pos": Vector2(0, 0),
+"path": ""
+}])
