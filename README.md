@@ -14,6 +14,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/4/25)
+			<li>(Load Screen) 
+			Added basic loading screen</li>
+		</ul>
+	<li>
+		<ul>
 			(2/3/25)
 			<li>(Base Mob) 
 			Added action_break to break out of cur action</li>

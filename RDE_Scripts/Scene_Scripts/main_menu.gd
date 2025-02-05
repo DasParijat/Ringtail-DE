@@ -9,7 +9,8 @@ func _ready() -> void:
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	# will open up play_menu
-	get_tree().change_scene_to_file("res://RDE_Scenes/game.tscn")
+	var load_scene : PackedScene = load("res://RDE_Scenes/load_screen.tscn")
+	get_tree().change_scene_to_packed(load_scene)
 	
 func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
