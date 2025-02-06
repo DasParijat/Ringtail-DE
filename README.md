@@ -17,6 +17,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/5/25)
 			<li>(LevelRes) 
 			Created level resource of STORY_RGT_HARD using levelres</li>
+			<li>(GlobalScene) 
+			Changing to loading scene handled in GlobalScene itself</li>
 		</ul>
 	<li>
 	<li>
