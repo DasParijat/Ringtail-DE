@@ -29,6 +29,12 @@ layout_mode = 2
 text = "Quit"
 script = ExtResource("1_82tdh")
 
+[node name="resetB" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "RESET"
+script = ExtResource("1_82tdh")
+
 [connection signal="pressed" from="HBoxContainer/resumeB" to="." method="_on_resume_b_pressed"]
 [connection signal="pressed" from="HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
 [connection signal="pressed" from="HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
+[connection signal="pressed" from="HBoxContainer/resetB" to="." method="_on_reset_b_pressed"]

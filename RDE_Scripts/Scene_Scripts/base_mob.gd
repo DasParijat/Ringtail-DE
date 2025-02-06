@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
-		debug_queue(true)
+		debug_queue(false)
 	
 	#if no_action():
 		#cur_action = {"action": "action_buffer", "params": 0}
