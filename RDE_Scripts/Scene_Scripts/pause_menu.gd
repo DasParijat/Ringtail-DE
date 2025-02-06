@@ -16,10 +16,10 @@ func _on_settings_b_pressed() -> void:
 
 func _on_quit_b_pressed() -> void:
 	unpause() 
-	GlobalScene.load_next_scene("res://RDE_Scenes/main_menu.tscn")
+	GlobalScene.load_next_scene(GlobalScene.MAIN_MENU)
 
 
 func _on_reset_b_pressed() -> void:
 	# temp button for debugging
 	unpause()
-	GlobalScene.load_next_scene("res://RDE_Scenes/game.tscn")
+	GlobalScene.load_next_scene(GlobalScene.GAME)

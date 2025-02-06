@@ -9,7 +9,7 @@ func _ready() -> void:
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	# will open up play_menu
-	GlobalScene.load_next_scene("res://RDE_Scenes/game.tscn")
+	GlobalScene.load_next_scene(GlobalScene.GAME)
 	
 func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
