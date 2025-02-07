@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var pause_menu = $pause_menu
-
 #@onready var is_paused : bool = G.is_paused
 
 # TODO Fix issue of it still being paused when going back into the game from main menu

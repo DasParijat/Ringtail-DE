@@ -17,7 +17,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/6/25)
 			<li>(Level World) 
 			Created level world scene to handle the background of levels.
-			Added tileset and basic collisions</li>
+			Added tileset</li>
+			<li>(RGT_Plains) 
+			Changed level_world to be just Ringtail's Level</li>
+			<li>(GlobalScene) 
+			LevelRes is now stored in GlobalScene</li>
+			<li>(Game) 
+			LevelRes used to add player</li>
 		</ul>
 	<li>
 	<li>

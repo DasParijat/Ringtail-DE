@@ -9,6 +9,7 @@ func _ready() -> void:
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	# will open up play_menu
+	GlobalScene.set_next_level("res://RDE_Resources/Level Res/STORY_RGT_HARD.tres")
 	GlobalScene.load_next_scene(GlobalScene.GAME)
 	
 func _on_settings_b_pressed() -> void:

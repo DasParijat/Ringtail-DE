@@ -4,9 +4,10 @@ class_name LevelRes
 
 @export var LEVEL_NAME : String = "UNNAMED LEVEL"
 
-@export var tilemap : String 
-@export var player_path : String = "res://RDE_Scenes/Entities/oswald.tscn"
+@export var world_path : String
+@export var mob_layout_path : String
 
+@export var player_path : String = "res://RDE_Scenes/Entities/oswald.tscn"
 # Possibly find way to make this easier to add 
 @export var enemies : Array[Dictionary] = [
 	{
