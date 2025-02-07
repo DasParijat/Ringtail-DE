@@ -10,15 +10,13 @@ var boss_scene : PackedScene
 var fight_res : FightRes
 var player_scene : PackedScene
 
+var player_name = "NO NAME"
 var player_pos : Vector2
 signal player_created()
 
-func _ready() -> void:
-	pass
-	
 func _process(delta: float) -> void:
-	if find_child("Oswald"):
-		player_pos = get_node("Oswald").position 
+	if has_node(player_name):
+		player_pos = get_node(player_name).position 
 	# Gets and updates position of player for outside nodes to use (such as camera)
 
 func create_fight() -> void:
@@ -28,7 +26,9 @@ func create_fight() -> void:
 	# If not given a specified gun_array, keep array player default
 	if fight_res.gun_array.size() > 0:
 		player_instance.player_res.gun_array = fight_res.gun_array
-		
+	
+	player_name = player_instance.player_res.name
+	
 	add_child(player_instance)
 	player_created.emit()
 	

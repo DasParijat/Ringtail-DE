@@ -41,6 +41,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game) 
 			Fight Res / Level Res works with Fight, 
 			for both player and boss</li>
+			<li>(Fight) 
+			Finding the player node's position is more flexible, 
+			now a player of any type besides Oswald can be tracked</li>
 		</ul>
 	<li>
 	<li>
