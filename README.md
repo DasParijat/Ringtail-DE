@@ -14,6 +14,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/6/25)
+			<li>(Level World) 
+			Created level world scene to handle the background of levels.
+			Added tileset and basic collisions</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/5/25)
 			<li>(LevelRes) 
 			Created level resource of STORY_RGT_HARD using levelres</li>
