@@ -22,10 +22,13 @@ func _process(delta: float) -> void:
 	# Gets and updates position of player for outside nodes to use (such as camera)
 
 func create_fight() -> void:
-	print(fight_res.FIGHT_NAME)
 	var player_instance = player_scene.instantiate()
 	var boss_instance = boss_scene.instantiate()
 	
+	# If not given a specified gun_array, keep array player default
+	if fight_res.gun_array.size() > 0:
+		player_instance.player_res.gun_array = fight_res.gun_array
+		
 	add_child(player_instance)
 	player_created.emit()
 	

@@ -9,4 +9,4 @@ class_name FightRes
 @export var single_boss : PackedScene
 
 @export var player_path : PackedScene #= "res://RDE_Scenes/Entities/oswald.tscn"
-@export var guns : Array = []
+@export var gun_array : Array[GunRes] = [] # If empty, player uses it's default gun array

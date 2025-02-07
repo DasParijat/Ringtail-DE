@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/6/25)
 			<li>(Fight Res) 
 			Renamed Level Res to Fight Res and made a new seperate LevelRes</li>
+			<li>(Fight Res) 
+			Allowed FightRes to pass in custom gun array for player</li>
 			<li>(Game) 
 			Fight Res / Level Res works with Fight, 
 			for both player and boss</li>
