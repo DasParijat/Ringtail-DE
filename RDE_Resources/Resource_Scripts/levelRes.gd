@@ -4,14 +4,10 @@ class_name LevelRes
 
 @export var LEVEL_NAME : String = "UNNAMED LEVEL"
 
-@export var world_path : String
-@export var mob_layout_path : String
+@export var order : Array[Resource] = []
 
-@export var player_path : String = "res://RDE_Scenes/Entities/oswald.tscn"
-# Possibly find way to make this easier to add 
-@export var enemies : Array[Dictionary] = [
-	{
-		"path": StringName("res://RDE_Resources/Mob Res/RingtailHARD.tres"),
-		"init_pos": Vector2(0, 100)
-	}
-]
+var index = 0
+func next_sequence() -> void:
+	if index < order.size():
+		index += 1
+		

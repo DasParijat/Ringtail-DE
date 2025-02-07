@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var pause_menu = $pause_menu
+@onready var level : LevelRes = GlobalScene.next_level
+
+@onready var fight_res : FightRes = load("res://RDE_Resources/Fight Res/RGT_HARD.tres")
+signal fight_res_set
 #@onready var is_paused : bool = G.is_paused
 
 # TODO Fix issue of it still being paused when going back into the game from main menu
@@ -8,6 +12,10 @@ extends Node2D
 
 func _ready() -> void:
 	pause_menu.hide() 
+	
+	if level.order[level.index] is FightRes:
+		fight_res = level.order[level.index]
+		fight_res_set.emit()
 
 func _process(delta: float) -> void:
 	if not GlobalTime.is_paused:

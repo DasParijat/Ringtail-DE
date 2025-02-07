@@ -34,6 +34,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/6/25)
+			<li>(Fight Res) 
+			Renamed Level Res to Fight Res and made a new seperate LevelRes</li>
+			<li>(Game) 
+			Working on having Game scene interpret LevelRes for Fight</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(2/6/25)
 			<li>(Level World) 
 			Created level world scene to handle the background of levels.
 			Added tileset</li>

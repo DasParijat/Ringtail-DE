@@ -1,14 +1,9 @@
-[gd_resource type="Resource" script_class="LevelRes" load_steps=2 format=3 uid="uid://ds5x2eini1j0p"]
+[gd_resource type="Resource" script_class="LevelRes" load_steps=3 format=3 uid="uid://dyx3hy23y2m81"]
 
+[ext_resource type="Resource" uid="uid://ds5x2eini1j0p" path="res://RDE_Resources/Fight Res/RGT_HARD.tres" id="1_34e2t"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="1_oh108"]
 
 [resource]
 script = ExtResource("1_oh108")
 LEVEL_NAME = "STORY_RGT_HARD"
-world_path = ""
-mob_layout_path = ""
-player_path = "res://RDE_Scenes/Entities/oswald.tscn"
-enemies = Array[Dictionary]([{
-"init_pos": Vector2(0, 100),
-"path": &"res://RDE_Resources/Mob Res/RingtailHARD.tres"
-}])
+order = Array[Resource]([ExtResource("1_34e2t")])

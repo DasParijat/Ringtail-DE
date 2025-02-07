@@ -4,13 +4,18 @@ extends Node2D
 
 # Fight node will load the player and boss scenes at the start of a fight.
 # it will load based on what LevelRes gives it
-@onready var player_scene : PackedScene = load(GlobalScene.next_level.player_path)
+
+#@onready var level_res : LevelRes = GlobalScene.next_level.order[0]
+@onready var fight_res : FightRes = GlobalScene.next_level.order[0]
+
+@onready var player_scene : PackedScene = fight_res.player_path
 @onready var boss_scene : PackedScene = load("res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn")
 
 var player_pos : Vector2
 signal player_created()
 
 func _ready() -> void:
+	print(fight_res.FIGHT_NAME)
 	var player_instance = player_scene.instantiate()
 	var boss_instance = boss_scene.instantiate()
 	
