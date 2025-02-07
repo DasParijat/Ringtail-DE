@@ -6,8 +6,27 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Create level res and use it</li>
-	<li>Properly load and unload scenes</li>
+	<li>LEVEL HANDLING PLAN
+	<ul>
+		<li>(WORLD) 
+		Each setting will be it's own custom scene</li>
+		<li>(ENEMY_SPAWNING) 
+		Each custom layout of enemies will be it's own scene,
+		There will be a default layout scene which orders any mob in a certain way 
+		(Takes in array of mobs, puts them in specific order)(Used if no special layout)</li>
+		<li>(FIGHT RES) 
+		Fight res will take in player, guns, world, and enemy layout
+		(If no given enemy layout, use default alongside array of mob scenes)</li>
+		<li>(LEVEL RES?) 
+		Level Res will comprise of cutscenes and FightRes, in a specific order</li>
+		<li>(GAME SCENE) 
+		Game scene will load ENEMY LAYOUT in FIGHT, 
+		If world is already same as the current world (EX. prev world use for cutscene), 
+		then don't load world and have "seamless" load into fight, 
+		else load world with loading screen.
+		Game loads LevelRes, handling both cutscenes and fights</li>
+	</ul>
+	</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -24,6 +43,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			LevelRes is now stored in GlobalScene</li>
 			<li>(Game) 
 			LevelRes used to add player</li>
+			<li>(General) 
+			Created Level Handling Plan in README, 
+			to get a clearer picture of how to handle levels</li>
 		</ul>
 	<li>
 	<li>
