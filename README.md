@@ -37,7 +37,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight Res) 
 			Renamed Level Res to Fight Res and made a new seperate LevelRes</li>
 			<li>(Game) 
-			Working on having Game scene interpret LevelRes for Fight</li>
+			Fight Res / Level Res works with Fight (in terms of player)</li>
 		</ul>
 	<li>
 	<li>
