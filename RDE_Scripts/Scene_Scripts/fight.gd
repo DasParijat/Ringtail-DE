@@ -3,10 +3,9 @@ extends Node2D
 # and the rest of the Game scene
 
 # Fight node will load the player and boss scenes at the start of a fight.
-# it will load based on what LevelRes gives it
+# it will load based on what FightRes gives it
 
-#@onready var level_res : LevelRes = GlobalScene.next_level.order[0]
-@onready var boss_scene : PackedScene = load("res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn")
+var boss_scene : PackedScene 
 
 var fight_res : FightRes
 var player_scene : PackedScene
@@ -32,7 +31,24 @@ func create_fight() -> void:
 	
 	add_child(boss_instance)
 
+func clear_fight() -> void:
+	# Insert code to clear all child nodes
+	pass
+
 func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res
+	
+	# Getting player
 	player_scene = fight_res.player_path
+	
+	# Getting Boss / Mobs
+	if fight_res.single_boss:
+		boss_scene = fight_res.single_boss 
+		
+	if fight_res.mob_layout_path:
+		# Insert code to handle adding mob layout to fight
+		# May not work on mob layout for a while since 
+		# not needed for Ringtail specifically
+		pass
+	
 	create_fight()

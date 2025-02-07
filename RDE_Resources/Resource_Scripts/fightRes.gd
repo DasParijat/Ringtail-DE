@@ -6,6 +6,7 @@ class_name FightRes
 
 @export var world_path : PackedScene
 @export var mob_layout_path : PackedScene
+@export var single_boss : PackedScene
 
 @export var player_path : PackedScene #= "res://RDE_Scenes/Entities/oswald.tscn"
 @export var guns : Array = []
