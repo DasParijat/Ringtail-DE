@@ -33,6 +33,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/8/25)
+			<li>(Game Background) 
+			Created game background to handle/load fight backgrounds</li>
+			<li>(Fight Res) 
+			Renamed vars from _path to _scene, reflecting their new data type</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/7/25)
 			<li>(Fight Res) 
 			Renamed Level Res to Fight Res and made a new seperate LevelRes</li>

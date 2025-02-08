@@ -46,13 +46,13 @@ func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res
 	
 	# Getting player
-	player_scene = fight_res.player_path
+	player_scene = fight_res.player_scene
 	
 	# Getting Boss / Mobs
 	if fight_res.single_boss:
 		boss_scene = fight_res.single_boss 
 		
-	if fight_res.mob_layout_path:
+	if fight_res.mob_layout_scene:
 		# Insert code to handle adding mob layout to fight
 		# May not work on mob layout for a while since 
 		# not needed for Ringtail specifically

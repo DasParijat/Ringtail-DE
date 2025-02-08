@@ -11,7 +11,7 @@
 [resource]
 script = ExtResource("1_g67wl")
 FIGHT_NAME = "RGT_HARD"
-world_path = ExtResource("2_ta4uo")
+world_scene = ExtResource("2_ta4uo")
 single_boss = ExtResource("3_syque")
-player_path = ExtResource("1_iqtjs")
+player_scene = ExtResource("1_iqtjs")
 gun_array = Array[ExtResource("1_77xtu")]([ExtResource("2_o5ide"), ExtResource("3_kigni")])
