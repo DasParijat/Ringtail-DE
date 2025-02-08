@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_163st"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="4_72mc8"]
-[ext_resource type="Script" path="res://RDE_Scenes/game_background.gd" id="4_g2vm3"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/game_background.gd" id="4_a1q2e"]
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight.gd" id="6_b2j36"]
 
 [node name="Game" type="Node2D"]
@@ -21,7 +21,7 @@ editor_draw_drag_margin = true
 script = ExtResource("2_85jn5")
 
 [node name="Background" type="Node2D" parent="."]
-script = ExtResource("4_g2vm3")
+script = ExtResource("4_a1q2e")
 
 [node name="RGT_Plains" parent="Background" instance=ExtResource("4_72mc8")]
 visible = false

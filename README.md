@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/8/25)
 			<li>(Game Background) 
 			Created game background to handle/load fight backgrounds</li>
+			<li>(Game Background) 
+			Game Background doesn't load world if it's already there</li>
 			<li>(Fight Res) 
 			Renamed vars from _path to _scene, reflecting their new data type</li>
 		</ul>
