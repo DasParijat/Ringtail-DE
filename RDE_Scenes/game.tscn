@@ -23,7 +23,7 @@ script = ExtResource("2_85jn5")
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("4_a1q2e")
 
-[node name="RGT_Plains" parent="Background" instance=ExtResource("4_72mc8")]
+[node name="TEST WORLD" parent="Background" instance=ExtResource("4_72mc8")]
 visible = false
 
 [node name="Fight" type="Node2D" parent="."]
