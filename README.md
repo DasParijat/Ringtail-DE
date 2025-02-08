@@ -43,6 +43,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			and world creation handled in own function</li>
 			<li>(Fight Res) 
 			Renamed vars from _path to _scene, reflecting their new data type</li>
+			<li>(RGT_Plains) 
+			Removed collisions (for now), added CanvasModulate</li>
 		</ul>
 	<li>
 	<li>
