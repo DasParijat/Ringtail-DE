@@ -7,25 +7,25 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Agenda:</strong>
 <ul>
 	<li>LEVEL HANDLING PLAN
-	<ul>
-		<li>(WORLD) 
-		Each setting will be it's own custom scene</li>
-		<li>(ENEMY_SPAWNING) 
-		Each custom layout of enemies will be it's own scene,
-		There will be a default layout scene which orders any mob in a certain way 
-		(Takes in array of mobs, puts them in specific order)(Used if no special layout)</li>
-		<li>(FIGHT RES) 
-		Fight res will take in player, guns, world, and enemy layout
-		(If no given enemy layout, use default alongside array of mob scenes)</li>
-		<li>(LEVEL RES?) 
-		Level Res will comprise of cutscenes and FightRes, in a specific order</li>
-		<li>(GAME SCENE) 
-		Game scene will load ENEMY LAYOUT in FIGHT, 
-		If world is already same as the current world (EX. prev world use for cutscene), 
-		then don't load world and have "seamless" load into fight, 
-		else load world with loading screen.
-		Game loads LevelRes, handling both cutscenes and fights</li>
-	</ul>
+		<ul>
+			<li>(WORLD) 
+			Each setting will be it's own custom scene</li>
+			<li>(ENEMY_SPAWNING) 
+			Each custom layout of enemies will be it's own scene,
+			There will be a default layout scene which orders any mob in a certain way 
+			(Takes in array of mobs, puts them in specific order)(Used if no special layout)</li>
+			<li>(FIGHT RES) 
+			Fight res will take in player, guns, world, and enemy layout
+			(If no given enemy layout, use default alongside array of mob scenes)</li>
+			<li>(LEVEL RES?) 
+			Level Res will comprise of cutscenes and FightRes, in a specific order</li>
+			<li>(GAME SCENE) 
+			Game scene will load ENEMY LAYOUT in FIGHT, 
+			If world is already same as the current world (EX. prev world use for cutscene), 
+			then don't load world and have "seamless" load into fight, 
+			else load world with loading screen.
+			Game loads LevelRes, handling both cutscenes and fights</li>
+		</ul>
 	</li>
 </ul>
 
@@ -33,7 +33,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(2/6/25)
+			(2/7/25)
 			<li>(Fight Res) 
 			Renamed Level Res to Fight Res and made a new seperate LevelRes</li>
 			<li>(Fight Res) 
@@ -44,6 +44,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight) 
 			Finding the player node's position is more flexible, 
 			now a player of any type besides Oswald can be tracked</li>
+			<li>(Fight) 
+			Added clear_fight func to get rid of all nodes under Fight</li>
+			<li>(Base Mob) 
+			Action queue debug func now shows mob name, 
+			as well as it can be toggled from Inspector</li>
 		</ul>
 	<li>
 	<li>

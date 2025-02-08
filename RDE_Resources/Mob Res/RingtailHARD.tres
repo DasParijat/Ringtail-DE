@@ -7,7 +7,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_8a5f1")
-name = "RingtailEASY"
+name = "RingtailHARD"
 color = Color(0.485703, 0.485704, 0.485703, 1)
 texture = ExtResource("3_0vsc5")
 health_comp = ExtResource("1_8jvsn")

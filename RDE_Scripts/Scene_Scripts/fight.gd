@@ -5,10 +5,9 @@ extends Node2D
 # Fight node will load the player and boss scenes at the start of a fight.
 # it will load based on what FightRes gives it
 
-var boss_scene : PackedScene 
-
 var fight_res : FightRes
 var player_scene : PackedScene
+var boss_scene : PackedScene 
 
 var player_name = "NO NAME"
 var player_pos : Vector2
@@ -18,6 +17,11 @@ func _process(delta: float) -> void:
 	if has_node(player_name):
 		player_pos = get_node(player_name).position 
 	# Gets and updates position of player for outside nodes to use (such as camera)
+	
+	# For testing
+	if Input.is_action_just_pressed("test"):
+		#clear_fight()
+		pass
 
 func create_fight() -> void:
 	var player_instance = player_scene.instantiate()
@@ -35,8 +39,8 @@ func create_fight() -> void:
 	add_child(boss_instance)
 
 func clear_fight() -> void:
-	# Insert code to clear all child nodes
-	pass
+	for child_node in get_children():
+		child_node.queue_free()
 
 func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res

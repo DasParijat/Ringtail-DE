@@ -48,6 +48,7 @@ func _process(delta : float) -> void:
 		gun_shake(delta)
 		
 	# TODO make camera flexible so it can be used for cutscenes or such
+	# TODO have camera stop tracking player when player node is removed/dead
 
 func lean_cam() -> Vector2:
 	# Credit to samsface on YT (https://youtu.be/GXBEt_QqPMs?si=-chTplQUIvqoX3Xg) 

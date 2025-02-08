@@ -10,6 +10,8 @@ extends CharacterBody2D
 @onready var collision : CollisionShape2D = $CollisionShape2D
 @onready var hitbox : Area2D = $HitBox
 
+@export var debug_action_queue = false
+
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 var player_hp : float
@@ -67,7 +69,7 @@ func _physics_process(delta: float) -> void:
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
-		debug_queue(false)
+		debug_queue(debug_action_queue)
 	
 	#if no_action():
 		#cur_action = {"action": "action_buffer", "params": 0}
@@ -119,6 +121,7 @@ func debug_queue(can_print : bool) -> void:
 		return
 		
 	print("--[QUEUE_DEBUG]-----------------------------------------")
+	print("|	NAME: ", mob_res.name)
 	print("|	Q: ", action_queue)
 	print("|	CUR_ACT: ", cur_action, " SIZE: ", action_queue.size())
 	print("|	TIME: ", queue_timer)
