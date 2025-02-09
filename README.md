@@ -39,7 +39,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(LevelRes) 
 			Added sequence_end var to track when index under order size</li>
 			<li>(Game) 
-			Working on having Game handle multiple (fight) sequences</li>
+			Game can handle multiple sequences (so far)</li>
 		</ul>
 	<li>
 	<li>

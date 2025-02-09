@@ -79,6 +79,7 @@ func _physics_process(delta: float) -> void:
 
 func death_check() -> void:
 	if health_res.is_dead():
+		print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
 			GlobalSignal.emit_signal("game_won")
 		action_queue.clear()
@@ -295,3 +296,8 @@ func _on_game_won() -> void:
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
+
+func _on_tree_exiting() -> void:
+	GMobHandler.num_of_mobs -= 1
+	if mob_res.is_boss:
+		GMobHandler.num_of_bosses -= 1

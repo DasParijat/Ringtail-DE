@@ -36,6 +36,6 @@ func has_same_world(world_scene: PackedScene) -> bool:
 		return false
 
 	var world_name = world_scene.resource_path.get_file().get_basename()
-	print(get_child(1).name, "	packed scene name: ", world_name)
+	#print(get_child(1).name, "	packed scene name: ", world_name)
 	return get_child(1).name == world_name
 	

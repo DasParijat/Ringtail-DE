@@ -31,4 +31,5 @@ autostart = true
 scale = Vector2(3.007, 3.007)
 shape = SubResource("CircleShape2D_6i0y3")
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
