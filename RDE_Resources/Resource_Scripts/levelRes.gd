@@ -7,7 +7,14 @@ class_name LevelRes
 @export var order : Array[Resource] = []
 
 var index = 0
+var sequence_end : bool = false
+
 func next_sequence() -> void:
-	if index < order.size():
+	var continue_sequence = index < order.size() - 1
+	
+	if continue_sequence:
 		index += 1
+	sequence_end = not continue_sequence
+		
+	
 		

@@ -12,6 +12,7 @@ signal fight_res_set
 
 func _ready() -> void:
 	pause_menu.hide() 
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	
 	if level.order[level.index] is FightRes:
 		fight_res = level.order[level.index]
@@ -37,3 +38,11 @@ func pause_game() -> void:
 	GlobalTime.is_paused = not GlobalTime.is_paused
 	#print(GlobalTime.is_paused)
 	
+func _on_game_won() -> void:
+	level.next_sequence()
+	if level.sequence_end:
+		# Go back to main menu
+		# Change to victory screen or whatever later
+		GlobalScene.load_next_scene("res://RDE_Scenes/main_menu.tscn")
+	
+	# TODO insert code to handle if sequence didn't end

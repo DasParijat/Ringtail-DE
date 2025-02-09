@@ -33,6 +33,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/9/25)
+			<li>(Game) 
+			When game won emits, game auto quits back to menu</li>
+			<li>(LevelRes) 
+			Added sequence_end var to track when index under order size</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/8/25)
 			<li>(Game Background) 
 			Created game background to handle/load fight backgrounds</li>
