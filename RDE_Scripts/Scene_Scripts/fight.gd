@@ -9,7 +9,9 @@ var fight_res : FightRes
 var player_scene : PackedScene
 var boss_scene : PackedScene 
 
-var player_name = "NO NAME"
+var boss_name = "NO BOSS NAME"
+
+var player_name = "NO PLAYER NAME"
 var player_pos : Vector2
 signal player_created()
 
@@ -50,10 +52,12 @@ func create_fight() -> void:
 		player_instance.player_res.gun_array = fight_res.gun_array
 	
 	player_name = player_instance.player_res.name
+	if not has_node(player_name):
+		add_child(player_instance)
+		player_created.emit()
 	
-	add_child(player_instance)
-	player_created.emit()
-	
+	# Not checking with boss because
+	# having another boss be added might be on purpose
 	add_child(boss_instance)
 
 func clear_fight() -> void:

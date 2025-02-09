@@ -40,6 +40,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added sequence_end var to track when index under order size</li>
 			<li>(Game) 
 			Game can handle multiple sequences (so far)</li>
+			<li>(Game) 
+			Game checks if player node already exists before spawning one</li>
 		</ul>
 	<li>
 	<li>
