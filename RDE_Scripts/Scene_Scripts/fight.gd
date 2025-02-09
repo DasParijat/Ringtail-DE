@@ -13,6 +13,24 @@ var player_name = "NO NAME"
 var player_pos : Vector2
 signal player_created()
 
+func _on_game_fight_res_set() -> void:
+	fight_res = get_parent().fight_res
+	
+	# Getting player
+	player_scene = fight_res.player_scene
+	
+	# Getting Boss / Mobs
+	if fight_res.single_boss:
+		boss_scene = fight_res.single_boss 
+		
+	if fight_res.mob_layout_scene:
+		# Insert code to handle adding mob layout to fight
+		# May not work on mob layout for a while since 
+		# not needed for Ringtail specifically
+		pass
+	
+	create_fight()
+	
 func _process(delta: float) -> void:
 	if has_node(player_name):
 		player_pos = get_node(player_name).position 
@@ -41,21 +59,3 @@ func create_fight() -> void:
 func clear_fight() -> void:
 	for child_node in get_children():
 		child_node.queue_free()
-
-func _on_game_fight_res_set() -> void:
-	fight_res = get_parent().fight_res
-	
-	# Getting player
-	player_scene = fight_res.player_scene
-	
-	# Getting Boss / Mobs
-	if fight_res.single_boss:
-		boss_scene = fight_res.single_boss 
-		
-	if fight_res.mob_layout_scene:
-		# Insert code to handle adding mob layout to fight
-		# May not work on mob layout for a while since 
-		# not needed for Ringtail specifically
-		pass
-	
-	create_fight()

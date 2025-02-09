@@ -44,7 +44,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight Res) 
 			Renamed vars from _path to _scene, reflecting their new data type</li>
 			<li>(RGT_Plains) 
-			Removed collisions (for now), added CanvasModulate</li>
+			Removed collisions (for now)</li>
+			<li>(Game Background) 
+			Added CanvasModulate and have it handled by Background Node</li>
 		</ul>
 	<li>
 	<li>
