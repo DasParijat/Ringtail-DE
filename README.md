@@ -47,6 +47,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Removed collisions (for now)</li>
 			<li>(Game Background) 
 			Added CanvasModulate and have it handled by Background Node</li>
+			<li>(Cutscene Res) 
+			Created basic cutscene resource</li>
 		</ul>
 	<li>
 	<li>
