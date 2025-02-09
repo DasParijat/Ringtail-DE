@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_oh108")
 LEVEL_NAME = "STORY_RGT_HARD"
-order = Array[Resource]([ExtResource("1_34e2t")])
+order = Array[Resource]([ExtResource("1_34e2t"), ExtResource("1_34e2t")])

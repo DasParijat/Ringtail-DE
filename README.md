@@ -38,6 +38,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			When game won emits, game auto quits back to menu</li>
 			<li>(LevelRes) 
 			Added sequence_end var to track when index under order size</li>
+			<li>(Game) 
+			Working on having Game handle multiple (fight) sequences</li>
 		</ul>
 	<li>
 	<li>
