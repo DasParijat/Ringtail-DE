@@ -8,7 +8,9 @@ const LOAD_SCENE : PackedScene = preload("res://RDE_Scenes/load_screen.tscn")
 var next_scene : String
 var next_level : LevelRes 
 
-var scene_type : String
+enum SceneType {FIGHT, CSCENE, MAIN_MENU}
+var cur_scene_type : SceneType
+
 # possible future vars
 #var game_level : LevelRes
 #var cutscene_id

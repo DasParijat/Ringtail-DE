@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	# get_viewport().size = DisplayServer.screen_get_size()
+	GlobalScene.cur_scene_type = GlobalScene.SceneType.MAIN_MENU
 	pass
 	
 # front_menu buttons

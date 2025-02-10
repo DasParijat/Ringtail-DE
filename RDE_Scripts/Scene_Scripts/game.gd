@@ -41,12 +41,15 @@ func next_in_order(increment : int) -> void:
 		return
 		
 	if level.order[level.index] is FightRes:
+		GlobalScene.cur_scene_type = GlobalScene.SceneType.FIGHT
 		fight_res = level.order[level.index]
 		print("LEVEL INDEX: ", level.index)
+		
 		fight_res_set.emit()
 		return
 	
 	if level.order[level.index] is CutsceneRes:
+		GlobalScene.cur_scene_type = GlobalScene.SceneType.CSCENE
 		return
 		
 func pause_game() -> void:

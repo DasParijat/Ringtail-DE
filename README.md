@@ -33,6 +33,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/10/25)
+			<li>(GlobalScene) 
+			Created SceneType enum</li>
+			<li>(Game / Main Menu) 
+			cur_scene_type is modified in Game and Main Menu</li>
+	<li>
+	<li>
+		<ul>
 			(2/9/25)
 			<li>(Game) 
 			When game won emits, game auto quits back to menu</li>
