@@ -42,6 +42,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Game can handle multiple sequences (so far)</li>
 			<li>(Game) 
 			Game checks if player node already exists before spawning one</li>
+			<li>(GlobalScene) 
+			Created scene_type var to track what kinda scene is playing (Ex. Game, Cutscene)</li>
+			<li>(FightRes) 
+			Created game_modes array to hold the modes applied (to be used in far future)</li>
+			<li>(RingtailHARD) 
+			Turned him blue for now</li>
 		</ul>
 	<li>
 	<li>
