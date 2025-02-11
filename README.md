@@ -34,6 +34,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/10/25)
+			<li>(General) 
+			Installed Dialogic (along with gdUnit4 for it's test scripts), 
+			as of now, not been used and may have been installed improperly</li>
 			<li>(GlobalScene) 
 			Created SceneType enum</li>
 			<li>(Game / Main Menu) 
