@@ -1,15 +1,13 @@
-[gd_resource type="Resource" script_class="FightRes" load_steps=6 format=3 uid="uid://2iis2jxe67vb"]
+[gd_resource type="Resource" script_class="FightRes" load_steps=5 format=3 uid="uid://2iis2jxe67vb"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="1_8h3og"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/fightRes.gd" id="2_12mie"]
 [ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="2_kq7il"]
 [ext_resource type="PackedScene" uid="uid://dynvq35tw44w5" path="res://RDE_Scenes/Entities/Mobs/tutorial_mob.tscn" id="4_3suo6"]
-[ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="5_6figo"]
 
 [resource]
 script = ExtResource("2_12mie")
 FIGHT_NAME = "TUTORIAL"
-world_scene = ExtResource("5_6figo")
 single_boss = ExtResource("4_3suo6")
 game_modes = Array[String]([])
 player_scene = ExtResource("2_kq7il")

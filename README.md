@@ -37,6 +37,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(TutorialMob) 
 			Created TutorialMob, and things related to Tutorial Mob 
 			(Such as it's fight and health res)</li>
+			<li>(Game Background) 
+			Handles if FightRes given has no world
+			(If it doesn't, it keeps prev world / remain blank)</li>
 		</ul>
 	<li>
 	<li>
