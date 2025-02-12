@@ -33,6 +33,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/11/25)
+			<li>(TutorialMob) 
+			Created TutorialMob, and things related to Tutorial Mob 
+			(Such as it's fight and health res)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/10/25)
 			<li>(General) 
 			Installed Dialogic (along with gdUnit4 for it's test scripts), 
@@ -41,6 +49,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created SceneType enum</li>
 			<li>(Game / Main Menu) 
 			cur_scene_type is modified in Game and Main Menu</li>
+		</ul>
 	<li>
 	<li>
 		<ul>

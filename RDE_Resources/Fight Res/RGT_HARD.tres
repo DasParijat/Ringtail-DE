@@ -13,5 +13,6 @@ script = ExtResource("1_g67wl")
 FIGHT_NAME = "RGT_HARD"
 world_scene = ExtResource("2_ta4uo")
 single_boss = ExtResource("3_syque")
+game_modes = Array[String]([])
 player_scene = ExtResource("1_iqtjs")
 gun_array = Array[ExtResource("1_77xtu")]([ExtResource("2_o5ide"), ExtResource("3_kigni")])

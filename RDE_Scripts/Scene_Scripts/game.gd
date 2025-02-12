@@ -5,10 +5,7 @@ extends Node2D
 
 @onready var fight_res : FightRes 
 signal fight_res_set
-#@onready var is_paused : bool = G.is_paused
 
-# TODO Fix issue of it still being paused when going back into the game from main menu
-# probably have to deload stuff when quiting
 
 func _ready() -> void:
 	pause_menu.hide() 

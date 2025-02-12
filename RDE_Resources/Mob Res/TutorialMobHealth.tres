@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HealthRes" load_steps=2 format=3 uid="uid://j444kq0xpsbf"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_xojni"]
+
+[resource]
+script = ExtResource("1_xojni")
+HP_NAME = "TutorialMob"
+max_hp = 10
+damage_rate = 1.0
+invicible = false

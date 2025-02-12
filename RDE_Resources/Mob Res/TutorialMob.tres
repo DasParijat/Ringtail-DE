@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MobRes" load_steps=3 format=3 uid="uid://b16wpuisr77as"]
+
+[ext_resource type="Resource" uid="uid://j444kq0xpsbf" path="res://RDE_Resources/Mob Res/TutorialMobHealth.tres" id="1_of6v5"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_wqajs"]
+
+[resource]
+script = ExtResource("1_wqajs")
+name = "TutorialMob"
+color = Color(0, 0, 0, 1)
+health_comp = ExtResource("1_of6v5")
+is_boss = true
+is_enemy = true
+is_hittable = false
+pos_track_delay = 1.0
+collision_size = 0
+collision_dmg = 1.0
