@@ -33,6 +33,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/12/25)
+			<li>(Tutorial Mob) 
+			Tutorial mob properly implemented now</li>
+		</ul>
+	<li>	
+	<li>
+		<ul>
 			(2/11/25)
 			<li>(TutorialMob) 
 			Created TutorialMob, and things related to Tutorial Mob 

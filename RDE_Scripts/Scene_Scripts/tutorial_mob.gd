@@ -1,13 +1,20 @@
 extends Node2D
 
-# TODO CONNECT TO BASE MOB AND MOB CONTROLLER
-# TODO GET MOB RES
+# TODO work on tutorial attacks
 
-# Called when the node enters the scene tree for the first time.
+@export var mob_res : MobRes
+
+@export var attack_min : int = 1
+@export var attack_max : int = 4
+
+@onready var controller : Node2D = $MobController
+@onready var base : CharacterBody2D = $base_mob
+
 func _ready() -> void:
-	pass # Replace with function body.
+	# base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#controller.action_handling(1)
 	pass

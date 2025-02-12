@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dynvq35tw44w5"]
+[gd_scene load_steps=5 format=3 uid="uid://dynvq35tw44w5"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/tutorial_mob.gd" id="1_2c6u2"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="1_im3kf"]
 [ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="2_17qgy"]
+[ext_resource type="Resource" uid="uid://b16wpuisr77as" path="res://RDE_Resources/Mob Res/TutorialMob.tres" id="2_86v5j"]
 
 [node name="TutorialMob" type="Node2D"]
 script = ExtResource("1_2c6u2")
+mob_res = ExtResource("2_86v5j")
 
 [node name="base_mob" parent="." instance=ExtResource("1_im3kf")]
 

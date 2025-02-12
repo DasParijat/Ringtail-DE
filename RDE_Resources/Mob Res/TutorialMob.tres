@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=3 format=3 uid="uid://b16wpuisr77as"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=4 format=3 uid="uid://b16wpuisr77as"]
 
 [ext_resource type="Resource" uid="uid://j444kq0xpsbf" path="res://RDE_Resources/Mob Res/TutorialMobHealth.tres" id="1_of6v5"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_wqajs"]
+[ext_resource type="Texture2D" uid="uid://bera0klibc5q1" path="res://icon.svg" id="3_2e8yu"]
 
 [resource]
 script = ExtResource("1_wqajs")
 name = "TutorialMob"
 color = Color(0, 0, 0, 1)
+texture = ExtResource("3_2e8yu")
 health_comp = ExtResource("1_of6v5")
 is_boss = true
 is_enemy = true
