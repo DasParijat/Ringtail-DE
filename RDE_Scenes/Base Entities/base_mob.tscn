@@ -16,6 +16,7 @@ script = ExtResource("1_2vok1")
 
 [node name="MobCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xytya")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wgsi6")

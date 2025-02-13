@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/13/25)
 			<li>(Base Player) 
 			Added enemy detection collision, it works</li>
+			<li>(Base Mob / Mob Res) 
+			Mobs can have their collision turned on/off (off by default)</li>
 			<li>(Base Player / Base Mob) 
 			Renamed collision shapes for better understanding of what 
 			they're used for</li>

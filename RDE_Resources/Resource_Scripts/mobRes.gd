@@ -14,6 +14,7 @@ class_name MobRes
 @export var is_boss : bool = false
 @export var is_enemy : bool = true
 @export var is_hittable : bool = true # can player shoot mob or not
+@export var collision_enabled : bool = false
 
 @export var pos_track_delay : float = 1.5 
 @export var collision_size : int # replace type with whatever determines shape size

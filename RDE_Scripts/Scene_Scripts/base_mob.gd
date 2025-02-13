@@ -53,6 +53,9 @@ func _ready() -> void:
 	sprite.texture = mob_res.texture
 	position.y = -100
 	
+	if mob_res.collision_enabled:
+		mob_collision.disabled = false
+		
 	if mob_res.is_hittable:
 		hitbox.add_to_group("Hittable")
 	
@@ -294,7 +297,8 @@ func _on_get_cur_stats(type, stats):
 
 func _on_game_won() -> void:
 	print("base mob:  game won")
-	
+
+# TODO Make it so it continously deals damage when player is in hitbox
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		area.get_parent().health_res.take_dmg(mob_res.collision_dmg)

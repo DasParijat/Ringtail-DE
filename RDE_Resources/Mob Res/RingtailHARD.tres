@@ -14,6 +14,7 @@ health_comp = ExtResource("1_8jvsn")
 is_boss = true
 is_enemy = true
 is_hittable = true
+collision_enabled = false
 pos_track_delay = 1.5
 collision_size = 0
 collision_dmg = 1.0
