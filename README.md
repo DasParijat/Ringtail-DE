@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/12/25)
 			<li>(Tutorial Mob) 
 			Tutorial mob properly implemented now</li>
+			<li>(Base Mob) 
+			Added player detection collision, it works</li>
 		</ul>
 	<li>	
 	<li>

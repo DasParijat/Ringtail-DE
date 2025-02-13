@@ -7,14 +7,16 @@ extends CharacterBody2D
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var track_delay : Timer = $TrackDelay
 @onready var iframe_timer : Timer = $IFrameTimer
-@onready var collision : CollisionShape2D = $CollisionShape2D
+@onready var mob_collision : CollisionShape2D = $MobCollisionShape
 @onready var hitbox : Area2D = $HitBox
+@onready var player_detect : Area2D = $PlayerDetection
 
 @export var debug_action_queue = false
 
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 var player_hp : float
+var is_near_player : bool = false
 
 var cur_action_time : float = 0.0
 var cur_delta : float
@@ -62,7 +64,7 @@ func _ready() -> void:
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
 func _physics_process(delta: float) -> void:
-	#print(player_hp)
+	#print(is_near_player)
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
 	death_check()
@@ -297,6 +299,14 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
 
+func _on_player_detection_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Player"):
+		is_near_player = true
+
+func _on_player_detection_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Player"):
+		is_near_player = false
+		
 func _on_tree_exiting() -> void:
 	GMobHandler.num_of_mobs -= 1
 	if mob_res.is_boss:

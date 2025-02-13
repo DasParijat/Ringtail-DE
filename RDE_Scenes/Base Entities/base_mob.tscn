@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=7 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
@@ -8,11 +8,13 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i0y3"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_173ax"]
+
 [node name="base_mob" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("1_2vok1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="MobCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xytya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,5 +33,13 @@ autostart = true
 scale = Vector2(3.007, 3.007)
 shape = SubResource("CircleShape2D_6i0y3")
 
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_173ax")
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="PlayerDetection" to="." method="_on_player_detection_area_entered"]
+[connection signal="area_exited" from="PlayerDetection" to="." method="_on_player_detection_area_exited"]
