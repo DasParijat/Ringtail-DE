@@ -5,10 +5,11 @@ extends CharacterBody2D
 @onready var health_res : HealthRes = player_res.health_res
 
 @onready var sprite : Sprite2D = $Sprite2D
-@onready var collision : CollisionShape2D = $CollisionShape2D
+@onready var player_collision : CollisionShape2D = $BaseCollision
 @onready var iframe_timer : Timer = $IFrameTimer
 
 var speed_modifier : float = 1
+var is_near_enemy : bool = false
 
 
 func _ready() -> void:
@@ -64,9 +65,17 @@ func get_cur_stats() -> Dictionary:
 		"cur_power": player_res.cur_power,
 	}
 
+func _on_hostile_detection_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		is_near_enemy = true
+		
+func _on_hostile_detection_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		is_near_enemy = false
+		
 func _on_game_over() -> void:
 	health_res.reset_health()
-
+	
 func test_function() -> void:
 	if Input.is_action_pressed("test"):
 		player_res.health_res.take_dmg(3.5)

@@ -33,6 +33,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/13/25)
+			<li>(Base Player) 
+			Added enemy detection collision, it works</li>
+			<li>(Base Player / Base Mob) 
+			Renamed collision shapes for better understanding of what 
+			they're used for</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/12/25)
 			<li>(Tutorial Mob) 
 			Tutorial mob properly implemented now</li>
