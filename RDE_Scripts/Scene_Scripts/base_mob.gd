@@ -18,6 +18,9 @@ var player_pos : Vector2
 var player_hp : float
 var is_near_player : bool = false
 
+var player_in_hitbox : bool = false
+var damage_cooldown : float = 0.0
+
 var cur_action_time : float = 0.0
 var cur_delta : float
 
@@ -71,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
 	death_check()
+	deal_hitbox_dmg()
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
@@ -81,7 +85,8 @@ func _physics_process(delta: float) -> void:
 			
 	if cur_action:
 		call(cur_action["action"], cur_action["params"])
-
+	
+			
 func death_check() -> void:
 	if health_res.is_dead():
 		print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
@@ -89,7 +94,23 @@ func death_check() -> void:
 			GlobalSignal.emit_signal("game_won")
 		action_queue.clear()
 		get_parent().queue_free()
+
+func deal_hitbox_dmg() -> void:
+	# Breaking when player not in hitbox
+	if not player_in_hitbox:
+		return
 	
+	# Increasing cooldown timer and breaking if not yet reach cooldown point
+	damage_cooldown += cur_delta
+	if damage_cooldown < mob_res.collision_dmg_cooldown:
+		return
+		
+	# Dealing damage to player(s)
+	for area in hitbox.get_overlapping_areas():
+		if area.is_in_group("Player"):
+			area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
+	damage_cooldown = 0.0
+			
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
 	# params data type can be any
@@ -298,11 +319,17 @@ func _on_get_cur_stats(type, stats):
 func _on_game_won() -> void:
 	print("base mob:  game won")
 
-# TODO Make it so it continously deals damage when player is in hitbox
+## Area2D Collisions
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
-		area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
-
+		player_in_hitbox = true
+		damage_cooldown = mob_res.collision_dmg_cooldown
+		
+func _on_hit_box_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Player"):
+		player_in_hitbox = false
+		damage_cooldown = 0.0
+	
 func _on_player_detection_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		is_near_player = true

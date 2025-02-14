@@ -30,7 +30,7 @@ func action1() -> void:
 	
 	# wait until condition
 	base.action("observe_player", true)
-	while base.player_hp >= 45:
+	while base.player_hp >= 10:
 		await GlobalTime.local_wait(0.1)
 	base.action_break()
 	

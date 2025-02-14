@@ -41,6 +41,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player / Base Mob) 
 			Renamed collision shapes for better understanding of what 
 			they're used for</li>
+			<li>(Base Mob) 
+			Mobs hitbox now deal continous damage to a player</li>
+			<li>(MobRes) 
+			Added collision_dmg_cooldown 
+			for the rate a mob's hitbox should deal damage</li>
 		</ul>
 	<li>
 	<li>

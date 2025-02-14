@@ -17,4 +17,5 @@ is_hittable = true
 collision_enabled = false
 pos_track_delay = 1.5
 collision_size = 0
-collision_dmg = 1.0
+collision_dmg = 2.0
+collision_dmg_cooldown = 0.3
