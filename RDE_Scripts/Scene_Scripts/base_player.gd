@@ -22,7 +22,8 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	
-	global_position = get_parent().position
+	global_position = Vector2(0, 10)
+	#global_position = get_parent().position
 	# for some reason if set at (0, 0), 
 	# it will occasionally spawn further away
 	print(global_position)
