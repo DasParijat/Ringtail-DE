@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/14/25)
 			<li>(Fight UI) 
 			Player power is now visible</li>
+			<li>(Oswald / Base Player) 
+			Cur power is properly updated across all nodes</li>
 		</ul>
 	<li>
 	<li>

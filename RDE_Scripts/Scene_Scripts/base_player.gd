@@ -62,7 +62,7 @@ func get_cur_stats() -> Dictionary:
 	return {
 		"position": global_position,
 		"cur_hp": health_res.cur_hp,
-		"cur_power": player_res.cur_power,
+		"cur_power": round(player_res.cur_power),
 	}
 
 func _on_hostile_detection_area_entered(area: Area2D) -> void:

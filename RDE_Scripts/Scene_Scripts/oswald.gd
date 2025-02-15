@@ -10,12 +10,10 @@ extends Node2D
 @onready var secondary_gun = $SecGun
 @onready var switch_timer = $GunSwitchTimer
 
-@onready var cur_power = player_res.cur_power
-
 var gun_index : int = 0
 
 func _ready() -> void:
-	cur_power = player_res.max_power
+	player_res.cur_power = player_res.max_power
 	position = Vector2(0, 0)
 	
 	print("oswald added")
@@ -36,13 +34,12 @@ func _process(delta: float) -> void:
 	player_res.power_limiters()
 	power_move()
 
-# TODO connect cur_power from res to base to player !! 
 func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
-	if cur_power > 0.1 and Input.is_action_pressed("sprint"):
-		base.set_speedmod((2 * (cur_power / 100)) + 1) # lower cur power results in less speed
-		GlobalTime.cur_time_scale = clamp(1 - ((cur_power / 100) * 0.8) + 0.2, 0, 1)
-		cur_power -= 0.1
+	if player_res.cur_power > 0.1 and Input.is_action_pressed("sprint"):
+		base.set_speedmod((2 * (player_res.cur_power / 100)) + 1) # lower cur power results in less speed
+		GlobalTime.cur_time_scale = clamp(1 - ((player_res.cur_power / 100) * 0.8) + 0.2, 0, 1)
+		player_res.cur_power -= 0.1
 	else:
 		GlobalTime.cur_time_scale = 1
 		base.set_speedmod(1)
