@@ -33,6 +33,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/14/25)
+			<li>(Fight UI) 
+			Player power is now visible</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/13/25)
 			<li>(Base Player) 
 			Added enemy detection collision, it works</li>

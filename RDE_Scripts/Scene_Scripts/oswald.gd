@@ -35,7 +35,8 @@ func _process(delta: float) -> void:
 	# power stuff
 	player_res.power_limiters()
 	power_move()
-	
+
+# TODO connect cur_power from res to base to player !! 
 func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
 	if cur_power > 0.1 and Input.is_action_pressed("sprint"):

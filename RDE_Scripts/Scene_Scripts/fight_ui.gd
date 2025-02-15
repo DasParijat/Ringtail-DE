@@ -7,7 +7,8 @@ func _ready() -> void:
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
 		"PLAYER":
-			$PlayerStats.text = str(stats["cur_hp"])
+			$PlayerPower.text = "POWER: " + str(stats["cur_power"])
+			$PlayerHP.text = "HP: " + str(stats["cur_hp"])
 		"GUN":
 			var reload_text : String = ""
 			if stats["is_reloading"]:
