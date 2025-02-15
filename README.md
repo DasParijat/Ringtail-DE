@@ -34,6 +34,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/14/25)
+			<li>(Base Player / Oswald / Fight) 
+			Player properly spawns at position given by FightRes</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(2/14/25)
 			<li>(Fight UI) 
 			Player power is now visible</li>
 			<li>(Oswald / Base Player) 

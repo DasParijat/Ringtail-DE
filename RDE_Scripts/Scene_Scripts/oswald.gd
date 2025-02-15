@@ -11,10 +11,10 @@ extends Node2D
 @onready var switch_timer = $GunSwitchTimer
 
 var gun_index : int = 0
+var spawn_pos : Vector2
 
 func _ready() -> void:
 	player_res.cur_power = player_res.max_power
-	position = Vector2(0, 0)
 	
 	print("oswald added")
 	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure cam gets primary gun_res first

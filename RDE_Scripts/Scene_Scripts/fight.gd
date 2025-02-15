@@ -53,7 +53,7 @@ func create_fight() -> void:
 	
 	player_name = player_instance.player_res.name
 	if not has_node(player_name):
-		#player_instance.global_position = fight_res.player_spawn
+		player_instance.spawn_pos = fight_res.player_spawn
 		add_child(player_instance)
 		player_created.emit()
 	

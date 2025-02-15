@@ -11,7 +11,6 @@ extends CharacterBody2D
 var speed_modifier : float = 1
 var is_near_enemy : bool = false
 
-
 func _ready() -> void:
 	sprite.texture = player_res.texture
 	
@@ -22,11 +21,11 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	
-	global_position = Vector2(0, 10)
-	#global_position = get_parent().position
-	# for some reason if set at (0, 0), 
-	# it will occasionally spawn further away
+	global_position = get_parent().spawn_pos
+
 	print(global_position)
+	print(position)
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
