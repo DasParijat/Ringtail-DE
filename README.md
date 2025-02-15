@@ -38,6 +38,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Player power is now visible</li>
 			<li>(Oswald / Base Player) 
 			Cur power is properly updated across all nodes</li>
+			<li>(Fight Res) 
+			Added spawn coords for player and single boss, 
+			still working on implementing them</li>
 		</ul>
 	<li>
 	<li>

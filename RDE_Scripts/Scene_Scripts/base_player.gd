@@ -22,9 +22,10 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	
-	global_position = Vector2(0, 10)
+	global_position = get_parent().position
 	# for some reason if set at (0, 0), 
 	# it will occasionally spawn further away
+	print(global_position)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
