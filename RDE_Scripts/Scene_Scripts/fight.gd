@@ -53,12 +53,14 @@ func create_fight() -> void:
 	
 	player_name = player_instance.player_res.name
 	if not has_node(player_name):
-		player_instance.spawn_pos = fight_res.player_spawn
+		player_instance.position = fight_res.player_spawn
 		add_child(player_instance)
 		player_created.emit()
 	
 	# Not checking with boss because
 	# having another boss be added might be on purpose
+	#global_position = fight_res.single_boss_spawn
+	boss_instance.position = fight_res.single_boss_spawn
 	add_child(boss_instance)
 
 func clear_fight() -> void:

@@ -54,8 +54,10 @@ func _ready() -> void:
 		GMobHandler.num_of_bosses += 1
 		
 	sprite.texture = mob_res.texture
-	position.y = -100
-	
+	position = get_parent().position
+	print("boss: ", global_position)
+	print("boss: ", position)
+
 	if mob_res.collision_enabled:
 		mob_collision.disabled = false
 		

@@ -33,9 +33,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(2/14/25)
+			(2/15/25)
 			<li>(Base Player / Oswald / Fight) 
 			Player properly spawns at position given by FightRes</li>
+			<li>(Base Mob / Fight) 
+			Boss properly spawns at position given by FightRes</li>
+			<li>(Fight General) 
+			Player/Boss mob is spawned via modifying the position 
+			(NOT global_position)</li>
 		</ul>
 	<li>
 	<li>

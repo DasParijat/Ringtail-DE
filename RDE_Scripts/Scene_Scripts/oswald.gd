@@ -11,7 +11,6 @@ extends Node2D
 @onready var switch_timer = $GunSwitchTimer
 
 var gun_index : int = 0
-var spawn_pos : Vector2
 
 func _ready() -> void:
 	player_res.cur_power = player_res.max_power
