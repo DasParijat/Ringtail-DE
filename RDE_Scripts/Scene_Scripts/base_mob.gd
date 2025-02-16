@@ -55,8 +55,7 @@ func _ready() -> void:
 		
 	sprite.texture = mob_res.texture
 	position = get_parent().position
-	print("boss: ", global_position)
-	print("boss: ", position)
+	#print("boss: ", global_position, "\nboss: ", position)
 
 	if mob_res.collision_enabled:
 		mob_collision.disabled = false
@@ -112,7 +111,7 @@ func deal_hitbox_dmg() -> void:
 		if area.is_in_group("Player"):
 			area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
 	damage_cooldown = 0.0
-			
+
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
 	# params data type can be any

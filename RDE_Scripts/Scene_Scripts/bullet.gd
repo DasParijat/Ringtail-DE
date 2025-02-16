@@ -48,9 +48,9 @@ func _on_tree_exiting() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	# TODO make piercing actually matter
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):
-		area.get_parent().health_res.take_dmg(damage)
-
+		var parent = area.get_parent()
+		parent.health_res.take_dmg(damage)
+		
 		if not bullet_res.is_piercing:
 			queue_free()

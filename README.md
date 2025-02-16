@@ -41,6 +41,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight General) 
 			Player/Boss mob is spawned via modifying the position 
 			(NOT global_position)</li>
+			<li>(Bullet Res) 
+			Knockback removed, is_piercing values modified</li>
 		</ul>
 	<li>
 	<li>

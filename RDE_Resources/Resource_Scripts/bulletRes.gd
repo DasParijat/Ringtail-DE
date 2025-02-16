@@ -8,7 +8,6 @@ class_name BulletRes
 
 @export_category("Quantitative Attributes")
 @export var damage : float
-@export var enemy_knockback : float
 @export var is_piercing : bool
 
 @export_category("Falloff")
