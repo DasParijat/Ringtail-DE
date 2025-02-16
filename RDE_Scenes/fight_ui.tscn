@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=5 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight_ui.gd" id="1_pahoy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qadh1"]
+bg_color = Color(0.886275, 0.67451, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n105d"]
+bg_color = Color(0.931333, 0.424595, 0.296938, 1)
 
 [node name="fight_ui" type="CanvasLayer"]
 script = ExtResource("1_pahoy")
@@ -18,3 +26,29 @@ offset_bottom = 23.0
 offset_top = 53.0
 offset_right = 40.0
 offset_bottom = 76.0
+
+[node name="PlayerHPBar" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = 4.0
+offset_top = 74.0
+offset_right = 244.0
+offset_bottom = 78.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_72i1f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qadh1")
+value = 50.0
+show_percentage = false
+
+[node name="DamageBar" type="ProgressBar" parent="PlayerHPBar"]
+z_index = -1
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 4.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_n105d")
+value = 80.0
+show_percentage = false
+
+[node name="DamageDelayTimer" type="Timer" parent="PlayerHPBar"]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="PlayerHPBar/DamageDelayTimer" to="." method="_on_damage_delay_timer_timeout"]

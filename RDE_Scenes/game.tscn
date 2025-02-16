@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=8 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/camera_2d.gd" id="2_85jn5"]
 [ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_163st"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
-[ext_resource type="PackedScene" uid="uid://b8p5oe678r8bv" path="res://RDE_Scenes/Cutscenes/test_cutscene.tscn" id="4_6ymgf"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="4_72mc8"]
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/game_background.gd" id="4_a1q2e"]
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight.gd" id="6_b2j36"]
@@ -20,8 +19,6 @@ rotation_smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("2_85jn5")
-
-[node name="test_cutscene" parent="." instance=ExtResource("4_6ymgf")]
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("4_a1q2e")

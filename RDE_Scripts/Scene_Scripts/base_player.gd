@@ -22,6 +22,7 @@ func _ready() -> void:
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	
 	position = get_parent().position
+	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	#print("player: ", global_position, "\nplayer: ", position)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,6 +60,7 @@ func get_cur_stats() -> Dictionary:
 	# For giving stats globally the fight_ui can track
 	return {
 		"position": global_position,
+		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
 		"cur_power": round(player_res.cur_power),
 	}

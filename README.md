@@ -22,6 +22,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/15/25)
+			<li>(README) 
+			Created new agenda</li>
+			<li>(Fight UI) 
+			Added health bar for player, 
+			still working on making damage bar work</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(2/15/25)
 			<li>(General) 
 			Created folders to hold cutscenes and FDialogic related stuff</li>
 			<li>(Base Player / Oswald / Fight) 
