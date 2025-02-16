@@ -27,9 +27,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Oswald": "res://RDE_Dialogic/Oswald.dch",
+"Ringtail": "res://RDE_Dialogic/Ringtail.dch",
 "unit_test_character": "res://addons/dialogic/Tests/Resources/unit_test_character.dch"
 }
-directories/dtl_directory={}
+directories/dtl_directory={
+"test_timeline": "res://RDE_Dialogic/test_timeline.dtl"
+}
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="Default"
@@ -69,6 +73,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/scri
 
 folder_colors={
 "res://RDE_Audio/": "purple",
+"res://RDE_Dialogic/": "teal",
 "res://RDE_Images/": "purple",
 "res://RDE_Resources/": "blue",
 "res://RDE_Scenes/": "yellow",

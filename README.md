@@ -34,6 +34,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/15/25)
+			<li>(General) 
+			Created folders to hold cutscenes and FDialogic related stuff</li>
 			<li>(Base Player / Oswald / Fight) 
 			Player properly spawns at position given by FightRes</li>
 			<li>(Base Mob / Fight) 
@@ -43,6 +45,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(NOT global_position)</li>
 			<li>(Bullet Res) 
 			Knockback removed, is_piercing values modified</li>
+			<li>(Test Cutscene) 
+			Created test cutscene (Using dialogic)</li>
 		</ul>
 	<li>
 	<li>
