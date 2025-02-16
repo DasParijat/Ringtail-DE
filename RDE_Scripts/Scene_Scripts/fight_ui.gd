@@ -11,6 +11,11 @@ func _ready() -> void:
 	
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
+		# TODO work on making bars smooth (possibly using smoothing formula)
+		# examples from base player
+		# (2 * (player_res.cur_power / 100)
+		# clamp(1 - ((player_res.cur_power / 100) * 0.8)
+		
 		"PLAYER":
 			cur_player_hp = stats["cur_hp"]
 			$PlayerPower.text = "POWER: " + str(stats["cur_power"])
@@ -21,12 +26,11 @@ func _on_get_cur_stats(type, stats) -> void:
 			
 			$PlayerHPBar.value = cur_player_hp
 			$PlayerHPBar/DamageBar.value = prev_player_hp
-			print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
+			#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 			
 			if cur_player_hp < prev_player_hp:
-				# TODO fix this timer
-				$PlayerHPBar/DamageDelayTimer.start()
-			else:
+				await GlobalTime.local_wait(5)
+				print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 				prev_player_hp = cur_player_hp
 			
 		"GUN":
@@ -35,8 +39,3 @@ func _on_get_cur_stats(type, stats) -> void:
 				reload_text = " RELOADING"
 				
 			$GunStats.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"]) + reload_text
-
-func _on_damage_delay_timer_timeout() -> void:
-	print("timeout!!!")
-	prev_player_hp = cur_player_hp
-	$PlayerHPBar/DamageBar.value = prev_player_hp

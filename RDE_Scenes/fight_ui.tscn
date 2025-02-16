@@ -46,9 +46,3 @@ offset_bottom = 4.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_n105d")
 value = 80.0
 show_percentage = false
-
-[node name="DamageDelayTimer" type="Timer" parent="PlayerHPBar"]
-wait_time = 0.3
-one_shot = true
-
-[connection signal="timeout" from="PlayerHPBar/DamageDelayTimer" to="." method="_on_damage_delay_timer_timeout"]
