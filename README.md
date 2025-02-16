@@ -21,12 +21,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(2/15/25)
+			(2/16/25)
 			<li>(README) 
 			Created new agenda</li>
 			<li>(Fight UI) 
-			Added health bar for player, 
-			still working on making damage bar work</li>
+			Added health bar and delayed damage bar for player, 
+			with smooth decreasing</li>
+			<li>(Base Player) 
+			Handles damage delay for health bar</li>
 		</ul>
 	<li>
 	<li>

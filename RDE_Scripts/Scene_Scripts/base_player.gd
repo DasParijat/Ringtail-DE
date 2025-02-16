@@ -10,6 +10,7 @@ extends CharacterBody2D
 
 var speed_modifier : float = 1
 var is_near_enemy : bool = false
+var is_hurting : bool = false
 
 func _ready() -> void:
 	sprite.texture = player_res.texture
@@ -62,9 +63,16 @@ func get_cur_stats() -> Dictionary:
 		"position": global_position,
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
+		"is_hurting": is_hurting or is_near_enemy,
 		"cur_power": round(player_res.cur_power),
 	}
 
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	is_hurting = true
+
+func _on_hit_box_area_exited(area: Area2D) -> void:
+	is_hurting = false
+	
 func _on_hostile_detection_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		is_near_enemy = true

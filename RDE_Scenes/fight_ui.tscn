@@ -8,7 +8,7 @@
 bg_color = Color(0.886275, 0.67451, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n105d"]
-bg_color = Color(0.931333, 0.424595, 0.296938, 1)
+bg_color = Color(0.969137, 0.969137, 0.969137, 1)
 
 [node name="fight_ui" type="CanvasLayer"]
 script = ExtResource("1_pahoy")
