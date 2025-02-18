@@ -21,6 +21,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/17/25)
+			<li>(Fight UI) 
+			Added Power Bar,
+			need to set max_value to max_power</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/16/25)
 			<li>(README) 
 			Created new agenda</li>

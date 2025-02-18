@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=6 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight_ui.gd" id="1_pahoy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qadh1"]
-bg_color = Color(0.886275, 0.67451, 0, 1)
+bg_color = Color(0.819936, 0.707208, 0.089014, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n105d"]
 bg_color = Color(0.969137, 0.969137, 0.969137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbayi"]
+bg_color = Color(0.866744, 0.494495, 7.70092e-07, 1)
 
 [node name="fight_ui" type="CanvasLayer"]
 script = ExtResource("1_pahoy")
@@ -45,4 +48,15 @@ offset_right = 240.0
 offset_bottom = 4.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_n105d")
 value = 80.0
+show_percentage = false
+
+[node name="PowerBar" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = 6.0
+offset_top = 90.0
+offset_right = 246.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_72i1f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xbayi")
+value = 50.0
 show_percentage = false

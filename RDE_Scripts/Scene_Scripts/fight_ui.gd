@@ -23,9 +23,11 @@ func _on_get_cur_stats(type, stats) -> void:
 			$PlayerPower.text = "POWER: " + str(stats["cur_power"])
 			#$PlayerHP.text = "HP: " + str(stats["cur_hp"])
 			
+			
 			PlayerHPBar.max_value = stats["max_hp"]
 			DamageDelayBar.max_value = stats["max_hp"]
 			
+			update_bar($PowerBar, stats["cur_power"], 0.5)
 			update_bar(PlayerHPBar, cur_player_hp, 0.5)
 			if not stats["is_hurting"]:
 				update_bar(DamageDelayBar, cur_player_hp, 3)
