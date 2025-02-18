@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var PlayerHPBar : ProgressBar = $PlayerHPBar
 @onready var DamageDelayBar : ProgressBar = $PlayerHPBar/DamageBar
-@onready var PlayerPowerBar : ProgressBar
+@onready var PlayerPowerBar : ProgressBar = $PowerBar
 
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
@@ -26,8 +26,9 @@ func _on_get_cur_stats(type, stats) -> void:
 			
 			PlayerHPBar.max_value = stats["max_hp"]
 			DamageDelayBar.max_value = stats["max_hp"]
+			PlayerPowerBar.max_value = stats["max_power"]
 			
-			update_bar($PowerBar, stats["cur_power"], 0.5)
+			update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
 			update_bar(PlayerHPBar, cur_player_hp, 0.5)
 			if not stats["is_hurting"]:
 				update_bar(DamageDelayBar, cur_player_hp, 3)

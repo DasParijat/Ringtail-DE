@@ -23,8 +23,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(2/17/25)
 			<li>(Fight UI) 
-			Added Power Bar,
-			need to set max_value to max_power</li>
+			Added Power Bar</li>
+			<li>(Base Player) 
+			get_cur_stats now returns max_power from player_res</li>
 		</ul>
 	<li>
 	<li>
