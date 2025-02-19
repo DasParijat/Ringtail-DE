@@ -21,6 +21,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/19/25)
+			<li>(Fight UI) 
+			Created GunInUse (Show current gun) </li>
+			<li>(Fight UI) 
+			Moved GunStats into bottom left</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/18/25)
 			<li>(PROJECT Viewport) 
 			Under Stretch, mode set to viewport, 
