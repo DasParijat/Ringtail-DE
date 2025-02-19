@@ -99,6 +99,7 @@ func get_cur_stats() -> Dictionary:
 		"cur_ammo": cur_ammo,
 		"mag_size": mag_size,
 		"gun_type": gun_res.name,
+		"gun_image": gun_res.texture,
 		"is_reloading": not not_reloading()
 	}
 	

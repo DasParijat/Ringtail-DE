@@ -5,8 +5,7 @@ class_name GunRes
 
 @export_category("Qualitative Attributes")
 @export var name : String = "UNNAMED"  
-# @export var texture : Texture2D   
-# for now, texture not needed for GunRes
+@export var texture : Texture2D   
 
 @export_category("Quantitative Attributes")
 @export var bullet_speed : int = 750

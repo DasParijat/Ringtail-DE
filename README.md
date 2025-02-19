@@ -26,6 +26,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created GunInUse (Show current gun) </li>
 			<li>(Fight UI) 
 			Moved GunStats into bottom left</li>
+			<li>(GunRes) 
+			GunRes now holds texture (for UI), 
+			SMG and Shotgun have images</li>
 		</ul>
 	<li>
 	<li>

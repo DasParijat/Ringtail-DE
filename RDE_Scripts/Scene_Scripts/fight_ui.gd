@@ -18,11 +18,6 @@ func _ready() -> void:
 	
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
-		# TODO work on making bars smooth (possibly using smoothing formula)
-		# examples from base player
-		# (2 * (player_res.cur_power / 100)
-		# clamp(1 - ((player_res.cur_power / 100) * 0.8)
-		
 		"PLAYER":
 			cur_player_hp = stats["cur_hp"]
 			$PlayerPower.text = "POWER: " + str(stats["cur_power"])
@@ -43,7 +38,8 @@ func _on_get_cur_stats(type, stats) -> void:
 			var reload_text : String = ""
 			if stats["is_reloading"]:
 				reload_text = " RELOADING"
-				
+			
+			GunInUse.texture = stats["gun_image"]
 			GunStats.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"]) + reload_text
 
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:

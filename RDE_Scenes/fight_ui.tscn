@@ -78,5 +78,5 @@ offset_right = 140.0
 grow_vertical = 0
 
 [node name="GunInUse" type="Sprite2D" parent="PlayerUI"]
-position = Vector2(10, -10)
+position = Vector2(50, -50)
 texture = ExtResource("2_p00x8")
