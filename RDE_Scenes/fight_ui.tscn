@@ -32,16 +32,19 @@ offset_bottom = 76.0
 
 [node name="PlayerUI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = -20.0
+grow_vertical = 0
 
 [node name="PlayerHPBar" type="ProgressBar" parent="PlayerUI"]
 z_index = 1
-offset_left = 4.0
-offset_top = 74.0
-offset_right = 244.0
-offset_bottom = 78.0
+offset_right = 240.0
+offset_bottom = 4.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_72i1f")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qadh1")
 value = 50.0
@@ -58,10 +61,9 @@ show_percentage = false
 
 [node name="PowerBar" type="ProgressBar" parent="PlayerUI"]
 z_index = 1
-offset_left = 6.0
-offset_top = 90.0
-offset_right = 246.0
-offset_bottom = 94.0
+offset_top = 7.035
+offset_right = 240.0
+offset_bottom = 11.035
 theme_override_styles/background = SubResource("StyleBoxEmpty_72i1f")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xbayi")
 value = 50.0

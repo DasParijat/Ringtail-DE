@@ -22,10 +22,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/18/25)
+			<li>(PROJECT Viewport) 
+			Under Stretch, mode set to viewport, 
+			and aspect is set to keep_height</li>
 			<li>(Fight UI) 
-			Created PlayerUI to hold all player bars</li>
+			Created PlayerUI to hold all player bars,</li>
 			<li>(Fight UI) 
-			Manually made bars appear in the bottom left</li>
+			2D Ordering of bars change, appear on bottom left now</li>
 		</ul>
 	<li>
 	<li>
