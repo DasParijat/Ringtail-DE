@@ -21,6 +21,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/18/25)
+			<li>(Fight UI) 
+			Created PlayerUI to hold all player bars</li>
+			<li>(Fight UI) 
+			Manually made bars appear in the bottom left</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/17/25)
 			<li>(Fight UI) 
 			Added Power Bar</li>

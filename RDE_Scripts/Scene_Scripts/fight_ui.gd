@@ -1,14 +1,28 @@
 extends CanvasLayer
 
-@onready var PlayerHPBar : ProgressBar = $PlayerHPBar
-@onready var DamageDelayBar : ProgressBar = $PlayerHPBar/DamageBar
-@onready var PlayerPowerBar : ProgressBar = $PowerBar
+@onready var PlayerUI : Control = $PlayerUI
+
+@onready var PlayerHPBar : ProgressBar = $PlayerUI/PlayerHPBar
+@onready var DamageDelayBar : ProgressBar = $PlayerUI/PlayerHPBar/DamageBar
+@onready var PlayerPowerBar : ProgressBar = $PlayerUI/PowerBar
 
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	print(get_viewport().get_visible_rect().size)
+	# TODO Work on making viewport and UI more flexible
+	
+	PlayerUI.anchor_left = 0
+	PlayerUI.anchor_top = 1
+	PlayerUI.anchor_right = 0
+	PlayerUI.anchor_bottom = 1
+	
+	PlayerUI.offset_left = 20
+	PlayerUI.offset_top = -120  
+	PlayerUI.offset_right = 220  
+	PlayerUI.offset_bottom = -20  
 	
 	
 func _on_get_cur_stats(type, stats) -> void:

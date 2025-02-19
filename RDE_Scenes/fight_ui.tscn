@@ -30,7 +30,13 @@ offset_top = 53.0
 offset_right = 40.0
 offset_bottom = 76.0
 
-[node name="PlayerHPBar" type="ProgressBar" parent="."]
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerHPBar" type="ProgressBar" parent="PlayerUI"]
 z_index = 1
 offset_left = 4.0
 offset_top = 74.0
@@ -41,7 +47,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_qadh1")
 value = 50.0
 show_percentage = false
 
-[node name="DamageBar" type="ProgressBar" parent="PlayerHPBar"]
+[node name="DamageBar" type="ProgressBar" parent="PlayerUI/PlayerHPBar"]
 z_index = -1
 layout_mode = 0
 offset_right = 240.0
@@ -50,7 +56,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_n105d")
 value = 80.0
 show_percentage = false
 
-[node name="PowerBar" type="ProgressBar" parent="."]
+[node name="PowerBar" type="ProgressBar" parent="PlayerUI"]
 z_index = 1
 offset_left = 6.0
 offset_top = 90.0
