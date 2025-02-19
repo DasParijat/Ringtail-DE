@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+# TODO organize each UI into their proper section
+# According to the design doc
+
 @onready var PlayerUI : Control = $PlayerUI
 
 @onready var PlayerHPBar : ProgressBar = $PlayerUI/PlayerHPBar

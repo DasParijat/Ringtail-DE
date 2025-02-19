@@ -40,14 +40,16 @@ func movement(cur_speed : float) -> void:
 	cur_speed = player_res.base_speed
 	if Input.is_action_pressed("sprint"):
 		cur_speed = player_res.sprint_speed
+		
 	if Input.is_action_pressed("rest"):
 		cur_speed = player_res.rest_speed
+		# TODO add way to actually heal when restings
 	
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
 	velocity = input_direction * (cur_speed * speed_modifier)
 	
 	move_and_slide()
-
+	
 func set_speedmod(new_val : float) -> void:
 	speed_modifier = new_val
 

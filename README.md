@@ -13,6 +13,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	boss (top middle when one boss), 
 	and mob (Directly on mob)</li>
 	<li>Create power bar for player, and show gun player is using</li>
+	<li>Make resting actually heal player</li>
 	<li>Implement audio</li>
 	<li>Menu animations, clicking play should "tween" to level select menu</li>
 </ul>
