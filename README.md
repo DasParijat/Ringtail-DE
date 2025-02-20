@@ -30,6 +30,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(GunRes) 
 			GunRes now holds texture (for UI), 
 			SMG and Shotgun have images</li>
+			<li>(Base Player) 
+			Resting mechanic now works as intended 
+			(heals player at interval when pressed down)</li>
 		</ul>
 	<li>
 	<li>

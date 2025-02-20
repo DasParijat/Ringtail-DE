@@ -1,14 +1,12 @@
-[gd_resource type="Resource" script_class="GunRes" load_steps=4 format=3 uid="uid://bp54wtlywyi31"]
+[gd_resource type="Resource" script_class="GunRes" load_steps=3 format=3 uid="uid://bp54wtlywyi31"]
 
 [ext_resource type="Resource" uid="uid://deonx3mfyyc1" path="res://RDE_Resources/Bullet Res/PumpShotgun_bullet.tres" id="1_5xgcj"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="2_xv64q"]
-[ext_resource type="Texture2D" uid="uid://bera0klibc5q1" path="res://icon.svg" id="3_n6psl"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_xv64q")
 name = "PUMPSHOT"
-texture = ExtResource("3_n6psl")
 bullet_speed = 750
 mag_size = 10
 fire_rate = 0.5

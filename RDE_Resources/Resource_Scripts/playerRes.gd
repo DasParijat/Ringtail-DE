@@ -9,7 +9,7 @@ class_name PlayerRes
 
 @export_category("Health")
 @export var health_res : HealthRes
-@export var regen_rate : float = 5.0
+@export var regen_rate : float = 0.2
 
 @export_category("Speed")
 @export var base_speed : float = 1000.0

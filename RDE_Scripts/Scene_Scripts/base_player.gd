@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var iframe_timer : Timer = $IFrameTimer
 
 var speed_modifier : float = 1
+var rest_timeout : float = 0.0
+
 var is_near_enemy : bool = false
 var is_hurting : bool = false
 
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	movement(player_res.cur_speed)
 	
+	rest_check(delta)
 	death_check()
 	test_function()
 
@@ -49,6 +52,17 @@ func movement(cur_speed : float) -> void:
 	velocity = input_direction * (cur_speed * speed_modifier)
 	
 	move_and_slide()
+
+func rest_check(delta):
+	# TODO Make code cleaner
+	# Handle max_hp limit within health_res
+	# Make var in player res stating interval between rest_timeout
+	if Input.is_action_pressed("rest") and player_res.health_res.cur_hp < player_res.health_res.max_hp:
+		rest_timeout += delta
+		print(rest_timeout)
+		if rest_timeout >= 1.0:
+			player_res.health_res.cur_hp += player_res.regen_rate
+			rest_timeout = 0.0
 	
 func set_speedmod(new_val : float) -> void:
 	speed_modifier = new_val
