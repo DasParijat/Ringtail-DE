@@ -25,6 +25,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/20/25)
 			<li>(HealthRes) 
 			cur_hp now uses setter to restrict it to 0 to max_hp</li>
+			<li>(HealthRes) 
+			is_max_hp made to check cur_hp == max_hp</li>
+			<li>(PlayerRes) 
+			regen_amt and regen_rate used to modify regen</li>
+			<li>(Base Player) 
+			Made rest check code cleaner</li>
 		</ul>
 	<li>
 	<li>

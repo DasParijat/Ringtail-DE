@@ -54,10 +54,13 @@ func movement(cur_speed : float) -> void:
 	move_and_slide()
 
 func rest_check(delta):
-	if Input.is_action_pressed("rest"): 
+	# NOTE: Doesn't run when hp is max, 
+	#	else player can increase rest_timeout to an unintended value 
+	#	and possibly cheese game. 
+	if Input.is_action_pressed("rest") and not health_res.is_max_hp: 
 		rest_timeout += delta
-		if rest_timeout >= 1.0:
-			player_res.health_res.cur_hp += player_res.regen_rate
+		if rest_timeout >= player_res.regen_rate:
+			health_res.cur_hp += player_res.regen_amt
 			rest_timeout = 0.0
 	
 func set_speedmod(new_val : float) -> void:
@@ -67,7 +70,6 @@ func death_check() -> void:
 	if health_res.is_dead():
 		print("RIP BOZO")
 		GlobalSignal.game_over.emit()
-		# TODO create global signal that tells everyone player died
 
 func get_cur_stats() -> Dictionary:
 	# For giving stats globally the fight_ui can track
