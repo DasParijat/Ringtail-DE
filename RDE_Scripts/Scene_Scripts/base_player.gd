@@ -54,12 +54,8 @@ func movement(cur_speed : float) -> void:
 	move_and_slide()
 
 func rest_check(delta):
-	# TODO Make code cleaner
-	# Handle max_hp limit within health_res
-	# Make var in player res stating interval between rest_timeout
-	if Input.is_action_pressed("rest") and player_res.health_res.cur_hp < player_res.health_res.max_hp:
+	if Input.is_action_pressed("rest"): 
 		rest_timeout += delta
-		print(rest_timeout)
 		if rest_timeout >= 1.0:
 			player_res.health_res.cur_hp += player_res.regen_rate
 			rest_timeout = 0.0

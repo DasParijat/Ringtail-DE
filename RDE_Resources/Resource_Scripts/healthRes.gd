@@ -9,7 +9,15 @@ class_name HealthRes
 @export var damage_rate : float = 1 # the higher, the more damage taken per usual.
 @export var invicible : bool = false
 
-var cur_hp : int = max_hp
+var _cur_hp : int = max_hp # Bottom-Level Var DO NOT MODIFY ELSEWHERE
+var is_max_hp : bool = true
+
+var cur_hp : int: # Top-Level
+	get:
+		return _cur_hp
+	set(value):
+		_cur_hp = clampi(value, 0, max_hp)
+		is_max_hp = _cur_hp == max_hp
 
 var iframe_timer : Timer 
 var iframe_len : float

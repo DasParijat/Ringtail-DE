@@ -22,6 +22,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/20/25)
+			<li>(HealthRes) 
+			cur_hp now uses setter to restrict it to 0 to max_hp</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/19/25)
 			<li>(Fight UI) 
 			Created GunInUse (Show current gun) </li>
