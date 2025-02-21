@@ -70,6 +70,7 @@ func death_check() -> void:
 	if health_res.is_dead():
 		print("RIP BOZO")
 		GlobalSignal.game_over.emit()
+		# Takes in signal within base player code
 
 func get_cur_stats() -> Dictionary:
 	# For giving stats globally the fight_ui can track
@@ -97,8 +98,9 @@ func _on_hostile_detection_area_exited(area: Area2D) -> void:
 		is_near_enemy = false
 		
 func _on_game_over() -> void:
-	health_res.reset_health()
+	#health_res.reset_health()
+	GlobalScene.load_next_scene(GlobalScene.GAME_OVER)
 	
 func test_function() -> void:
 	if Input.is_action_pressed("test"):
-		player_res.health_res.take_dmg(3.5)
+		player_res.health_res.take_dmg(10)

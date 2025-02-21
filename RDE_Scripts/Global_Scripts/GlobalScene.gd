@@ -2,6 +2,7 @@ extends Node
 
 const GAME = "res://RDE_Scenes/game.tscn"
 const MAIN_MENU = "res://RDE_Scenes/main_menu.tscn"
+const GAME_OVER = "res://RDE_Scenes/game_over.tscn"
 
 const LOAD_SCENE : PackedScene = preload("res://RDE_Scenes/load_screen.tscn")
 

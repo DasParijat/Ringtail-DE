@@ -23,6 +23,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/20/25)
+			<li>(Game Over) 
+			Created basic Game Over scene, 
+			including text, retry button and quit button</li>
 			<li>(HealthRes) 
 			cur_hp now uses setter to restrict it to 0 to max_hp</li>
 			<li>(HealthRes) 
@@ -31,6 +34,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			regen_amt and regen_rate used to modify regen</li>
 			<li>(Base Player) 
 			Made rest check code cleaner</li>
+			<li>(Base Player) 
+			Goes to game over screen when dead (instead of resetting HP)</li>
 		</ul>
 	<li>
 	<li>
