@@ -14,7 +14,6 @@ func next_sequence() -> void:
 	
 	if continue_sequence:
 		index += 1
-		#GlobalScene.cur_order = index
 	sequence_end = not continue_sequence
 		
 	

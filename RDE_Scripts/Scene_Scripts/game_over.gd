@@ -11,3 +11,4 @@ func _on_retry_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	GlobalScene.load_next_scene(GlobalScene.MAIN_MENU)
+	

@@ -14,7 +14,8 @@ var cur_scene_type : SceneType
 
 signal quit_to_menu
 
-var cur_order = null
+var prev_scene 
+var cur_scene = MAIN_MENU
 
 # possible future vars
 #var game_level : LevelRes
@@ -26,8 +27,16 @@ func set_next_level(new_level : String) -> void:
 func set_next_scene(new_scene : String) -> void:
 	next_scene = new_scene
 
+func update_scene_history(new_scene : String) -> void:
+	# TODO possibly keep whole array storing ALL previous scenes (not needed now)
+	prev_scene = cur_scene
+	cur_scene = new_scene
+	#print("cur scene: ", cur_scene, " prev_scene: ", prev_scene)
+
 func load_next_scene(new_scene : String) -> void:
-	if new_scene == MAIN_MENU:
+	update_scene_history(new_scene)
+		
+	if new_scene == MAIN_MENU: # Might get rid of signal due to prev scene thing
 		print("new scene is main menu")
 		emit_signal("quit_to_menu")
 	
