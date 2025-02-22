@@ -9,8 +9,10 @@ signal fight_res_set
 
 func _ready() -> void:
 	pause_menu.hide() 
+
 	print("LEVEL INDEX: ", level.index)
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	GlobalScene.connect("quit_to_menu", Callable(self, "_on_quit_to_menu"))
 	
 	#level.index = level.order.size() - 1 # This code is for if I want to run last in order
 	next_in_order(0)
@@ -29,11 +31,15 @@ func next_in_order(increment : int) -> void:
 		for i in range(increment):
 			level.next_sequence()
 	
+	#GlobalScene.cur_order = level.index
 	if level.sequence_end:
 		# Go back to main menu
 		print("sequence end")
 		level.sequence_end = false
+		
+		#GlobalScene.emit_signal("quit_to_menu")
 		GlobalScene.load_next_scene(GlobalScene.MAIN_MENU)
+		
 		print("LEVEL INDEX: ", level.index)
 		return
 		
@@ -63,6 +69,7 @@ func pause_game() -> void:
 func _on_game_won() -> void:
 	print("game won on GAME end")
 	next_in_order(1)
-	
-func _on_tree_exiting() -> void:
+
+func _on_quit_to_menu() -> void:
+	print("QUIT TO MENU")
 	level.index = 0

@@ -22,6 +22,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/21/25)
+			<li>(Global Scene) 
+			Created quit_to_menu signal, for when next scene is main menu</li>
+			<li>(Game / Game Over) 
+			Working on having quiting and returning to game be more flexible 
+			(Game over and retry should bring you back to cur fight, 
+			quit to menu and play should take you to start of level)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/20/25)
 			<li>(Game Over) 
 			Created basic Game Over scene, 

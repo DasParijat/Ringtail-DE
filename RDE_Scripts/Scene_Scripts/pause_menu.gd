@@ -15,7 +15,8 @@ func _on_settings_b_pressed() -> void:
 	#get_tree().change_scene_to_file("insert file link to scene")
 
 func _on_quit_b_pressed() -> void:
-	unpause() 
+	unpause()
+	#GlobalScene.emit_signal("quit_to_menu")
 	GlobalScene.load_next_scene(GlobalScene.MAIN_MENU)
 
 
