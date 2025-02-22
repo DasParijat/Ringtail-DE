@@ -25,9 +25,12 @@ func _process(delta: float) -> void:
 	if not GlobalTime.is_paused:
 		Engine.time_scale = GlobalTime.cur_time_scale
 	
-	if Input.is_action_just_pressed("pause"):
-		pause_game()
+	#if Input.is_action_just_pressed("pause"):
+	#	pause_game()
 
+func _unhandled_input(event : InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		pause_game()
 # Menu Tutorial: https://youtu.be/JEQR4ALlwVU?si=3ryPHdJG3ungIi0M 
 
 func next_in_order(increment : int) -> void:
@@ -76,7 +79,3 @@ func _on_game_won() -> void:
 
 func _on_game_over() -> void:
 	pass
-	
-func _on_quit_to_menu() -> void:
-	print("QUIT TO MENU")
-	#level.index = 0

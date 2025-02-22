@@ -12,8 +12,6 @@ var next_level : LevelRes
 enum SceneType {FIGHT, CSCENE, MAIN_MENU}
 var cur_scene_type : SceneType
 
-signal quit_to_menu
-
 var prev_scene 
 var cur_scene = MAIN_MENU
 
@@ -35,10 +33,6 @@ func update_scene_history(new_scene : String) -> void:
 
 func load_next_scene(new_scene : String) -> void:
 	update_scene_history(new_scene)
-		
-	if new_scene == MAIN_MENU: # Might get rid of signal due to prev scene thing
-		print("new scene is main menu")
-		emit_signal("quit_to_menu")
 	
 	set_next_scene(new_scene)
 	get_tree().change_scene_to_packed(LOAD_SCENE)

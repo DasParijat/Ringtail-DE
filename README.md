@@ -22,6 +22,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/22/25)
+			<li>(Game) 
+			Pause handling code moved to it's own function</li>
+			<li>(Global Scene) 
+			Removed references to quit_to_menu signal</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/21/25)
 			<li>(Global Scene) 
 			Created quit_to_menu signal, for when next scene is main menu 
