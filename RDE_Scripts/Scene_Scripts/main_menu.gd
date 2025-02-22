@@ -17,7 +17,7 @@ func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
 	# ideally, opens up seetings_menu within here.
 	pass
-	#get_tree().change_scene_to_file("insert file link to scene")
+	#GlobalScene.load_next_scene(GlobalScene.SETTINGS)
 
 func _on_credits_b_pressed() -> void:
 	pass

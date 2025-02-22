@@ -7,11 +7,16 @@
 script = ExtResource("1_acbnt")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 329.0
-offset_top = 164.0
-offset_right = 503.0
-offset_bottom = 265.0
-scale = Vector2(3.74023, 3.74023)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.965
+offset_top = 100.0
+offset_right = 87.035
+offset_bottom = 236.0
+grow_horizontal = 2
+scale = Vector2(3.17, 3.17)
+pivot_offset = Vector2(87, 0)
 alignment = 1
 
 [node name="resumeB" type="Button" parent="HBoxContainer"]

@@ -12,7 +12,7 @@ func _on_resume_b_pressed() -> void:
 
 func _on_settings_b_pressed() -> void:
 	pass # Replace with function body.
-	#get_tree().change_scene_to_file("insert file link to scene")
+	#GlobalScene.load_next_scene(GlobalScene.SETTINGS)
 
 func _on_quit_b_pressed() -> void:
 	unpause()
