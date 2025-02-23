@@ -13,15 +13,20 @@ func _ready() -> void:
 func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res
 	world_scene = fight_res.world_scene
-
+	
+	# If no world scene in first part of level, have blank world
+	# Else, load the given world or keep / reload the previous world
 	if world_scene:
-		# If no world scene, then it should have blank world / keep previous world
-		if has_same_world(world_scene): return
 		create_world()
+	elif GlobalScene.world_scene_history.size() > 0:
+		world_scene = GlobalScene.world_scene_history[0]
+		create_world()
+		
 	print("WS History: ", GlobalScene.world_scene_history)
 	
 func create_world() -> void:
 	print("loading world")
+	if has_same_world(world_scene): return
 	clear_current_world()
 	
 	GlobalScene.update_world_scene_history(world_scene)
@@ -38,6 +43,7 @@ func clear_current_world() -> void:
 			child_node.queue_free()
 	
 func has_same_world(world_scene: PackedScene) -> bool:
+	print("HAS SAME WORLD FUNC USED!!")
 	if get_child_count() == 0:
 		return false
 		

@@ -30,6 +30,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Global Scene / Game Background) 
 			Created world_scene_history to track what worlds have been used 
 			(To be used so fight res with no world keep the prev world after reset)</li>
+			<li>(Game Background) 
+			Loading fight res with no world can keep prev world</li>
 			<li>(Global Scene) 
 			Removed references to quit_to_menu signal</li>
 			<li>(Global Scene) 
