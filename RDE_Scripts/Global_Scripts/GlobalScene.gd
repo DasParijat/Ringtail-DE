@@ -16,6 +16,7 @@ var cur_scene_type : SceneType
 var prev_scene 
 var cur_scene = MAIN_MENU
 
+var world_scene_history : Array[PackedScene]
 # possible future vars
 #var game_level : LevelRes
 #var cutscene_id
@@ -32,6 +33,10 @@ func update_scene_history(new_scene : String) -> void:
 	cur_scene = new_scene
 	#print("cur scene: ", cur_scene, " prev_scene: ", prev_scene)
 
+func update_world_scene_history(new_world : PackedScene) -> void:
+	if world_scene_history.size() == 0 or world_scene_history[0] != new_world:
+		world_scene_history.append(new_world)
+		
 func load_next_scene(new_scene : String) -> void:
 	update_scene_history(new_scene)
 	

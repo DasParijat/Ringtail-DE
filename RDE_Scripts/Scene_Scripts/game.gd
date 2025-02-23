@@ -16,8 +16,6 @@ func _ready() -> void:
 	print("LEVEL INDEX: ", level.index)
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
-	GlobalScene.connect("quit_to_menu", Callable(self, "_on_quit_to_menu"))
-	
 	#level.index = level.order.size() - 1 # This code is for if I want to run last in order
 	next_in_order(0)
 

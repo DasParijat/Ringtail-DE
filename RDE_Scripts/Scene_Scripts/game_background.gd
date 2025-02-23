@@ -5,6 +5,11 @@ extends Node2D
 var fight_res : FightRes
 var world_scene : PackedScene
 
+func _ready() -> void:
+	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
+		print("RESET WS HISTORY")
+		GlobalScene.world_scene_history = []
+	
 func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res
 	world_scene = fight_res.world_scene
@@ -13,11 +18,13 @@ func _on_game_fight_res_set() -> void:
 		# If no world scene, then it should have blank world / keep previous world
 		if has_same_world(world_scene): return
 		create_world()
+	print("WS History: ", GlobalScene.world_scene_history)
 	
 func create_world() -> void:
 	print("loading world")
 	clear_current_world()
 	
+	GlobalScene.update_world_scene_history(world_scene)
 	var world_instance = world_scene.instantiate()
 	add_child(world_instance)
 	
