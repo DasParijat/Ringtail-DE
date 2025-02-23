@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=8 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
 [ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_wgsi6"]
+[ext_resource type="Script" path="res://RDE_Scripts/boss_hp_bars.gd" id="4_6n13u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
@@ -27,6 +28,22 @@ one_shot = true
 autostart = true
 
 [node name="IFrameTimer" parent="." instance=ExtResource("2_qsc8h")]
+
+[node name="BossHPBars" type="CanvasLayer" parent="."]
+script = ExtResource("4_6n13u")
+
+[node name="BaseBar" type="ProgressBar" parent="BossHPBars"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 15.0
+offset_right = 250.0
+offset_bottom = 35.0
+grow_horizontal = 2
+scale = Vector2(1.52, 1.52)
+pivot_offset = Vector2(250, 0)
+show_percentage = false
 
 [node name="HitBox" type="Area2D" parent="."]
 
