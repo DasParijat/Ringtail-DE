@@ -7,13 +7,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Agenda:</strong>
 <ul>
 	<li>Work on making and implementing cutscenes with Dialogic</li>
-	<li>Create a game over menu</li>
+	<li>Create a game over menu</li> DONE
 	<li>Create a victory menu that tracks stats of the fight</li>
-	<li>Create health bars for player (bottom left), 
+	<li>Create health bars for player (bottom left), DONE
 	boss (top middle when one boss), 
 	and mob (Directly on mob)</li>
-	<li>Create power bar for player, and show gun player is using</li>
-	<li>Make resting actually heal player</li>
+	<li>Create power bar for player, and show gun player is using</li> DONE
+	<li>Make resting actually heal player</li> DONE
 	<li>Implement audio</li>
 	<li>Menu animations, clicking play should "tween" to level select menu</li>
 </ul>
@@ -36,6 +36,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Removed references to quit_to_menu signal</li>
 			<li>(Global Scene) 
 			Added SETTINGS constant</li>
+			<li>(Pytest) 
+			Deleted the Test Python file</li>
+			<li>(AGENDA) 
+			Updated agenda to reflect progress</li>
 		</ul>
 	<li>
 	<li>
