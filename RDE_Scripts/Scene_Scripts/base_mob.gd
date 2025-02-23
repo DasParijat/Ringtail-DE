@@ -13,6 +13,8 @@ extends CharacterBody2D
 
 @export var debug_action_queue = false
 
+signal health_res_set
+
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 var player_hp : float
@@ -67,6 +69,7 @@ func _ready() -> void:
 		hitbox.add_to_group("Enemy")
 		
 	health_res.set_health_res(iframe_timer)
+	health_res_set.emit()
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 

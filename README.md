@@ -27,6 +27,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created BossHPBars</li>
 			<li>(BossHPBars) 
 			Written plan for how BossHPBars will work</li>
+			<li>(BossHPBars) 
+			Single HP bar now display boss health</li>
 		</ul>
 	<li>
 	<li>
