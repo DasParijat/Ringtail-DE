@@ -23,8 +23,6 @@ func _on_get_cur_stats(type, stats) -> void:
 	match(type):
 		"PLAYER":
 			cur_player_hp = stats["cur_hp"]
-			$PlayerPower.text = "POWER: " + str(stats["cur_power"])
-			#$PlayerHP.text = "HP: " + str(stats["cur_hp"])
 			
 			
 			PlayerHPBar.max_value = stats["max_hp"]

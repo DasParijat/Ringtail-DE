@@ -17,15 +17,6 @@ bg_color = Color(0.866744, 0.494495, 7.70092e-07, 1)
 [node name="fight_ui" type="CanvasLayer"]
 script = ExtResource("1_pahoy")
 
-[node name="PlayerHP" type="Label" parent="."]
-offset_top = 26.0
-offset_right = 40.0
-offset_bottom = 49.0
-
-[node name="PlayerPower" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="PlayerUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 2

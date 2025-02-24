@@ -23,6 +23,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(2/23/25)
+			<li>(Fight UI) 
+			Got rid of labels</li>
+			<li>(BossHPBars) 
+			Added background for BossHPBar</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(2/23/25)
 			<li>(Base Mob) 
 			Created BossHPBars</li>
 			<li>(BossHPBars) 

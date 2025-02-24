@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=9 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://RDE_Scripts/boss_hp_bars.gd" id="4_6n13u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_feynf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdwj"]
 bg_color = Color(1, 0.334056, 0.347318, 1)
@@ -48,7 +46,6 @@ offset_bottom = 35.0
 grow_horizontal = 2
 scale = Vector2(1.52, 1.52)
 pivot_offset = Vector2(250, 0)
-theme_override_styles/background = SubResource("StyleBoxEmpty_feynf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0tdwj")
 show_percentage = false
 
