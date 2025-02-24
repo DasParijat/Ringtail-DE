@@ -27,6 +27,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Got rid of labels</li>
 			<li>(BossHPBars) 
 			Added background for BossHPBar</li>
+			<li>(BossHPBars) 
+			Working on handling multiple bars</li>
 		</ul>
 	<li>
 	<li>
