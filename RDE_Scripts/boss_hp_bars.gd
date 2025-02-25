@@ -28,18 +28,23 @@ func _on_base_mob_health_res_set() -> void:
 
 func create_hp_bar(min : float, max : float) -> ProgressBar:
 	var bar = ProgressBar.new()
-
+	var style = StyleBoxFlat.new()
+	
 	bar.min_value = min
 	bar.max_value = max
 	
 	bar.position = Vector2(390, 15)
-	bar.size = Vector2(200, 0)   # fix this gawd damn bug it should not be y 27
+	bar.custom_minimum_size = Vector2(500, 20)
 	bar.scale = Vector2(1.52, 1.52)
 	bar.pivot_offset = Vector2(250, 0)
-	# add code to set style box
-
 	bar.show_percentage = false
-
+	
+	style.set_corner_radius_all(4)
+	style.bg_color = Color8(255, 85, 90)
+	style.set_content_margin_all(0)
+	
+	bar.add_theme_stylebox_override("fill", style)
+	
 	return bar
 
 func _process(delta: float) -> void:

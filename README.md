@@ -28,6 +28,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(BossHPBars) 
 			Added background for BossHPBar</li>
 			<li>(BossHPBars) 
+			BossHPBars can now create it's own HP bars</li>
+			<li>(BossHPBars) 
 			Working on handling multiple bars</li>
 		</ul>
 	<li>
