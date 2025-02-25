@@ -5,7 +5,9 @@ extends CanvasLayer
 @onready var max_hp : float = -1
 @onready var cur_hp : float = -1 
 
-@export var num_of_bars : int = 1
+@export var num_of_bars : int = 3
+@export var max_bar_darkness : int = 80
+
 var hp_bars : Array = []
 
 func _on_base_mob_health_res_set() -> void:
@@ -20,7 +22,7 @@ func _on_base_mob_health_res_set() -> void:
 	#$BaseBar.max_value = max_hp
 	
 	for i in range(num_of_bars):
-		var bar = create_hp_bar(0, max_hp)
+		var bar = create_hp_bar(floor(max_hp / num_of_bars) * i, floor(max_hp / num_of_bars) * (i + 1))
 		#floor(max_hp / num_of_bars) * i, floor(max_hp / num_of_bars) * (i + 1)
 		bar.name = "HPBar_" + str(i + 1)
 		add_child(bar)
@@ -29,6 +31,7 @@ func _on_base_mob_health_res_set() -> void:
 func create_hp_bar(min : float, max : float) -> ProgressBar:
 	var bar = ProgressBar.new()
 	var style = StyleBoxFlat.new()
+	var bg_style = StyleBoxFlat.new()
 	
 	bar.min_value = min
 	bar.max_value = max
@@ -43,7 +46,12 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	style.bg_color = Color8(255, 85, 90)
 	style.set_content_margin_all(0)
 	
+	bg_style.set_corner_radius_all(4)
+	bg_style.bg_color = Color8(0, 0, 0, (max_bar_darkness / num_of_bars))
+	bg_style.set_content_margin_all(0)
+	
 	bar.add_theme_stylebox_override("fill", style)
+	bar.add_theme_stylebox_override("background", bg_style)
 	
 	return bar
 

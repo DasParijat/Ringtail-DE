@@ -22,15 +22,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(2/23/25)
+			(2/24/25)
 			<li>(Fight UI) 
 			Got rid of labels</li>
+			<li>(Project Display) 
+			Changed strech mode from viewport to canvas_objects</li>
 			<li>(BossHPBars) 
 			Added background for BossHPBar</li>
 			<li>(BossHPBars) 
 			BossHPBars can now create it's own HP bars</li>
 			<li>(BossHPBars) 
-			Working on handling multiple bars</li>
+			Handles multiple health bars</li>
 		</ul>
 	<li>
 	<li>
