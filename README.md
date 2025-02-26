@@ -25,6 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/25/25)
 			<li>(Base Mob) 
 			Created local hp bar</li>
+			<li>(Base Mob) 
+			Local/Boss HP bar is used depending on mob's is_boss status</li>
 		</ul>
 	<li>
 	<li>

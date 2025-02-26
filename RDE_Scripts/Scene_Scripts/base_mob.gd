@@ -5,9 +5,13 @@ extends CharacterBody2D
 @onready var pos_track_delay : float = mob_res.pos_track_delay
 
 @onready var sprite : Sprite2D = $Sprite2D
+
 @onready var track_delay : Timer = $TrackDelay
 @onready var iframe_timer : Timer = $IFrameTimer
+
 @onready var local_hp_bar : ProgressBar = $LocalHPBar
+@onready var boss_hp_bars : CanvasLayer = $BossHPBars
+
 @onready var mob_collision : CollisionShape2D = $MobCollisionShape
 @onready var hitbox : Area2D = $HitBox
 @onready var player_detect : Area2D = $PlayerDetection
@@ -56,6 +60,11 @@ func _ready() -> void:
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses += 1
 		
+		# Health Bar show/hidden code
+		local_hp_bar.hide()
+		boss_hp_bars.show()
+		
+		
 	sprite.texture = mob_res.texture
 	position = get_parent().position
 	#print("boss: ", global_position, "\nboss: ", position)
@@ -72,7 +81,6 @@ func _ready() -> void:
 	health_res.set_health_res(iframe_timer)
 	health_res_set.emit()
 	
-	local_hp_bar.max_value = health_res.max_hp
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
@@ -82,14 +90,11 @@ func _physics_process(delta: float) -> void:
 	cur_delta = delta
 	death_check()
 	deal_hitbox_dmg()
+	health_bar_handling()
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
 		debug_queue(debug_action_queue)
-
-	# TODO possibly move local_hp_bar stuff into own function to call from here
-	local_hp_bar.value = health_res.cur_hp
-	local_hp_bar.rotation = -rotation
 	
 	if cur_action:
 		call(cur_action["action"], cur_action["params"])
@@ -119,6 +124,11 @@ func deal_hitbox_dmg() -> void:
 			area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
 	damage_cooldown = 0.0
 
+func health_bar_handling() -> void:
+	if not mob_res.is_boss:
+		local_hp_bar.value = health_res.cur_hp
+		local_hp_bar.rotation = -rotation
+		
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue
 	# params data type can be any
