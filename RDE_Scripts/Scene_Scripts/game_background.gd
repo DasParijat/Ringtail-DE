@@ -7,7 +7,7 @@ var world_scene : PackedScene
 
 func _ready() -> void:
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
-		print("RESET WS HISTORY")
+		#print("RESET WS HISTORY")
 		GlobalScene.world_scene_history = []
 	
 func _on_game_fight_res_set() -> void:
@@ -22,7 +22,7 @@ func _on_game_fight_res_set() -> void:
 		world_scene = GlobalScene.world_scene_history[0]
 		create_world()
 		
-	print("WS History: ", GlobalScene.world_scene_history)
+	#print("WS History: ", GlobalScene.world_scene_history)
 	
 func create_world() -> void:
 	print("loading world")
@@ -43,7 +43,7 @@ func clear_current_world() -> void:
 			child_node.queue_free()
 	
 func has_same_world(world_scene: PackedScene) -> bool:
-	print("HAS SAME WORLD FUNC USED!!")
+	#print("HAS SAME WORLD FUNC USED!!")
 	if get_child_count() == 0:
 		return false
 		

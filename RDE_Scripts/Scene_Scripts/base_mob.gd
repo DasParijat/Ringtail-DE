@@ -24,6 +24,7 @@ var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 var player_hp : float
 var is_near_player : bool = false
+var distance_to_player : float = 0.0
 
 var player_in_hitbox : bool = false
 var damage_cooldown : float = 0.0
@@ -333,6 +334,9 @@ func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":
 		player_pos = stats["position"]
 		player_hp = stats["cur_hp"]
+		
+		distance_to_player = player_pos.distance_to(global_position)
+		#print("distance to play: ", distance_to_player)
 
 func _on_game_won() -> void:
 	print("base mob:  game won")

@@ -22,6 +22,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/26/25)
+			<li>(Base Mob) 
+			Base Mob now tracks it's distance to player</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/25/25)
 			<li>(Base Mob) 
 			Created local hp bar</li>
