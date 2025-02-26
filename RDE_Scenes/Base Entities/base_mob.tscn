@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=10 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://RDE_Scripts/boss_hp_bars.gd" id="4_6n13u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8qa6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdwj"]
 bg_color = Color(1, 0.333333, 0.352941, 1)
@@ -31,6 +33,19 @@ one_shot = true
 autostart = true
 
 [node name="IFrameTimer" parent="." instance=ExtResource("2_qsc8h")]
+
+[node name="LocalHPBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = -50.0
+offset_right = 25.0
+offset_bottom = -46.0
+grow_horizontal = 2
+pivot_offset = Vector2(16.21, 0)
+theme_override_styles/fill = SubResource("StyleBoxFlat_t8qa6")
+show_percentage = false
 
 [node name="BossHPBars" type="CanvasLayer" parent="."]
 script = ExtResource("4_6n13u")

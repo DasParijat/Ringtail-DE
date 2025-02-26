@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var track_delay : Timer = $TrackDelay
 @onready var iframe_timer : Timer = $IFrameTimer
+@onready var local_hp_bar : ProgressBar = $LocalHPBar
 @onready var mob_collision : CollisionShape2D = $MobCollisionShape
 @onready var hitbox : Area2D = $HitBox
 @onready var player_detect : Area2D = $PlayerDetection
@@ -67,9 +68,11 @@ func _ready() -> void:
 	
 	if mob_res.is_enemy:
 		hitbox.add_to_group("Enemy")
-		
+	
 	health_res.set_health_res(iframe_timer)
 	health_res_set.emit()
+	
+	local_hp_bar.max_value = health_res.max_hp
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
@@ -83,10 +86,11 @@ func _physics_process(delta: float) -> void:
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
 		debug_queue(debug_action_queue)
+
+	# TODO possibly move local_hp_bar stuff into own function to call from here
+	local_hp_bar.value = health_res.cur_hp
+	local_hp_bar.rotation = -rotation
 	
-	#if no_action():
-		#cur_action = {"action": "action_buffer", "params": 0}
-			
 	if cur_action:
 		call(cur_action["action"], cur_action["params"])
 	
