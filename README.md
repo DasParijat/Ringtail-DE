@@ -22,6 +22,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/27/25)
+			<li>(Base Mob / RingtailHARD) 
+			Testing out class base mob (didn't work)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/26/25)
 			<li>(Base Mob) 
 			Base Mob now tracks it's distance to player</li>

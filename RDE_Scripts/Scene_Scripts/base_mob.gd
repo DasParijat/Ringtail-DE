@@ -1,3 +1,4 @@
+#class_name BaseMob - NOTE: might try to rework as class in future
 extends CharacterBody2D
 
 @onready var mob_res : MobRes = get_parent().mob_res

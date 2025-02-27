@@ -17,6 +17,6 @@ is_hittable = true
 collision_enabled = false
 pos_track_delay = 1.5
 collision_size = Vector2(1, 1)
-hitbox_size = Vector2(50, 50)
+hitbox_size = Vector2(4, 4)
 collision_dmg = 2.0
 collision_dmg_cooldown = 0.3
