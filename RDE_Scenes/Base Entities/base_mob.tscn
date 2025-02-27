@@ -66,10 +66,11 @@ theme_override_font_sizes/font_size = 1
 theme_override_styles/fill = SubResource("StyleBoxFlat_0tdwj")
 
 [node name="HitBox" type="Area2D" parent="."]
+scale = Vector2(4, 4)
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="HitBox"]
-scale = Vector2(3.007, 3.007)
 shape = SubResource("CircleShape2D_6i0y3")
+debug_color = Color(0.652427, 0.51261, 0.223088, 0.42)
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 

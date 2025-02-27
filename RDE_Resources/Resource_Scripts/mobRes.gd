@@ -17,7 +17,8 @@ class_name MobRes
 @export var collision_enabled : bool = false
 
 @export var pos_track_delay : float = 1.5 
-@export var collision_size : int # replace type with whatever determines shape size
+@export var collision_size : Vector2 = Vector2(1, 1)
+@export var hitbox_size : Vector2 = Vector2(4, 4)
 
 @export var collision_dmg : float = 1.0
 @export var collision_dmg_cooldown : float = 1.0 # in seconds

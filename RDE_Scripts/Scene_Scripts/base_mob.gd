@@ -82,6 +82,9 @@ func _ready() -> void:
 	health_res.set_health_res(iframe_timer)
 	health_res_set.emit()
 	
+	mob_collision.scale = mob_res.collision_size
+	hitbox.scale = mob_res.hitbox_size
+	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 

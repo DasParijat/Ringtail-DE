@@ -25,6 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(2/26/25)
 			<li>(Base Mob) 
 			Base Mob now tracks it's distance to player</li>
+			<li>(Mob Res / Base Mob) 
+			Size of MobCollision and Hitbox are set by MobRes</li>
 		</ul>
 	<li>
 	<li>
