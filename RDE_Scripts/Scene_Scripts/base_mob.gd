@@ -99,6 +99,7 @@ func _physics_process(delta: float) -> void:
 	death_check()
 	deal_hitbox_dmg()
 	health_bar_handling()
+	player_proximity_detection(mob_res.player_detection_radius)
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
@@ -336,6 +337,13 @@ func track_pos(cur_data, delay) -> void:
 	elif track_delay.is_stopped() and (target_pos != cur_data):
 		target_pos = cur_data
 		track_delay.start(delay)
+
+func player_proximity_detection(detection_radius : float) -> void:
+	#print(is_near_player)
+	if distance_to_player < detection_radius:
+		is_near_player = true
+	else:
+		is_near_player = false
 		
 func _on_get_cur_stats(type, stats):
 	if type == "PLAYER":

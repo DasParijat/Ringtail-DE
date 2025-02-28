@@ -27,6 +27,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Handles player res size properties</li>
 			<li>(Base Player) 
 			Holds child nodes in onready variables</li>
+			<li>(Base Mob / Mob Res)  
+			Player detection is handled using distance instead of Area2D</li>
 		</ul>
 	<li>
 	<li>

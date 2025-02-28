@@ -15,6 +15,7 @@ class_name MobRes
 @export var is_enemy : bool = true
 @export var is_hittable : bool = true # can player shoot mob or not
 @export var collision_enabled : bool = false
+@export var player_detection_radius : float = 150
 
 @export_category("Sizing")
 @export var pos_track_delay : float = 1.5 
