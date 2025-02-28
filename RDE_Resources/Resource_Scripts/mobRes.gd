@@ -16,9 +16,13 @@ class_name MobRes
 @export var is_hittable : bool = true # can player shoot mob or not
 @export var collision_enabled : bool = false
 
+@export_category("Sizing")
 @export var pos_track_delay : float = 1.5 
+@export var mob_size : Vector2 = Vector2(1, 1)
+@export var sprite_size : Vector2 = Vector2(1, 1)
 @export var collision_size : Vector2 = Vector2(1, 1)
 @export var hitbox_size : Vector2 = Vector2(4, 4)
 
+@export_category("Collision Damage")
 @export var collision_dmg : float = 1.0
 @export var collision_dmg_cooldown : float = 1.0 # in seconds
