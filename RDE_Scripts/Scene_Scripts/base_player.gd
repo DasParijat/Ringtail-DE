@@ -5,8 +5,12 @@ extends CharacterBody2D
 @onready var health_res : HealthRes = player_res.health_res
 
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var collision : CollisionShape2D = $BaseCollision
 @onready var player_collision : CollisionShape2D = $BaseCollision
 @onready var iframe_timer : Timer = $IFrameTimer
+
+@onready var hitbox : Area2D = $HitBox
+@onready var hostile_detect : Area2D = $HostileDetection
 
 var speed_modifier : float = 1
 var rest_timeout : float = 0.0
@@ -25,7 +29,9 @@ func _ready() -> void:
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	
 	scale = player_res.player_size
-	# add the other scales
+	collision.scale = player_res.collision_size
+	hitbox.scale = player_res.hitbox_size
+	hostile_detect.scale = player_res.hostile_detect_size
 	
 	position = get_parent().position
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())

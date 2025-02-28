@@ -22,6 +22,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(2/28/25)
+			<li>(Base Player) 
+			Handles player res size properties</li>
+			<li>(Base Player) 
+			Holds child nodes in onready variables</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/27/25)
 			<li>(Base Mob / RingtailHARD) 
 			Tested out class base mob (didn't work)</li>

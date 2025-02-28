@@ -22,6 +22,7 @@ class_name MobRes
 @export var sprite_size : Vector2 = Vector2(1, 1)
 @export var collision_size : Vector2 = Vector2(1, 1)
 @export var hitbox_size : Vector2 = Vector2(4, 4)
+@export var player_detect_size : Vector2 = Vector2(1, 1)
 
 @export_category("Collision Damage")
 @export var collision_dmg : float = 1.0
