@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=9 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
@@ -13,8 +13,6 @@
 bg_color = Color(1, 0.333333, 0.352941, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i0y3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_173ax"]
 
 [node name="base_mob" type="CharacterBody2D"]
 z_index = 2
@@ -72,15 +70,7 @@ scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_6i0y3")
 debug_color = Color(0.652427, 0.51261, 0.223088, 0.42)
 
-[node name="PlayerDetection" type="Area2D" parent="."]
-
-[node name="PlayerDetectCollision" type="CollisionShape2D" parent="PlayerDetection"]
-scale = Vector2(10, 10)
-shape = SubResource("CircleShape2D_173ax")
-
 [connection signal="health_res_set" from="." to="BossHPBars" method="_on_base_mob_health_res_set"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
-[connection signal="area_entered" from="PlayerDetection" to="." method="_on_player_detection_area_entered"]
-[connection signal="area_exited" from="PlayerDetection" to="." method="_on_player_detection_area_exited"]

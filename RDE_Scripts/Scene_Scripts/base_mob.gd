@@ -15,7 +15,6 @@ extends CharacterBody2D
 
 @onready var mob_collision : CollisionShape2D = $MobCollisionShape
 @onready var hitbox : Area2D = $HitBox
-@onready var player_detect : Area2D = $PlayerDetection
 
 @export var debug_action_queue = false
 
@@ -87,7 +86,6 @@ func _ready() -> void:
 	mob_collision.scale = mob_res.collision_size
 	sprite.scale = mob_res.sprite_size
 	hitbox.scale = mob_res.hitbox_size
-	player_detect.scale = mob_res.player_detect_size
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
@@ -366,14 +364,6 @@ func _on_hit_box_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		player_in_hitbox = false
 		damage_cooldown = 0.0
-	
-func _on_player_detection_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Player"):
-		is_near_player = true
-
-func _on_player_detection_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Player"):
-		is_near_player = false
 		
 func _on_tree_exiting() -> void:
 	GMobHandler.num_of_mobs -= 1
