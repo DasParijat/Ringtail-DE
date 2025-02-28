@@ -24,6 +24,9 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	
+	scale = player_res.player_size
+	# add the other scales
+	
 	position = get_parent().position
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	#print("player: ", global_position, "\nplayer: ", position)

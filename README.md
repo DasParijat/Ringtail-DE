@@ -24,9 +24,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(2/27/25)
 			<li>(Base Mob / RingtailHARD) 
-			Testing out class base mob (didn't work)</li>
+			Tested out class base mob (didn't work)</li>
 			<li>(Mob Res / Base Mob) 
 			MobRes handles custom sizing for sprite and mob as a whole</li>
+			<li>(Player Res) 
+			Added size properties similar to MobRes</li>
 		</ul>
 	<li>
 	<li>

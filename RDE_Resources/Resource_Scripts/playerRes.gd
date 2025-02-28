@@ -31,6 +31,14 @@ class_name PlayerRes
 # unless specified, primary and secondary gun will be the defaults
 @export var gun_array : Array[GunRes] = [def_primary_gun, def_secondary_gun] 
 # cur variables can dynamically change during the game
+
+@export_category("Sizing")
+@export var player_size : Vector2 = Vector2(1, 1)
+@export var sprite_size : Vector2 = Vector2(1, 1)
+@export var collision_size : Vector2 = Vector2(1, 1)
+@export var hitbox_size : Vector2 = Vector2(1, 1)
+@export var hostile_detect_size : Vector2 = Vector2(1, 1)
+
 var cur_power_rate : float
 var cur_power : float = 100.0
 var cur_speed : float 
