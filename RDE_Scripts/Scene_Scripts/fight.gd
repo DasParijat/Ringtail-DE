@@ -5,6 +5,8 @@ extends Node2D
 # Fight node will load the player and boss scenes at the start of a fight.
 # it will load based on what FightRes gives it
 
+@onready var fight_time_tracker = $FightTimeTracker
+
 var fight_res : FightRes
 var player_scene : PackedScene
 var boss_scene : PackedScene 
@@ -62,7 +64,17 @@ func create_fight() -> void:
 	#global_position = fight_res.single_boss_spawn
 	boss_instance.position = fight_res.single_boss_spawn
 	add_child(boss_instance)
+	
+	GlobalFightStats.fight_stats["time"] = 0.0
+	fight_time_tracker.start()
 
 func clear_fight() -> void:
 	for child_node in get_children():
 		child_node.queue_free()
+
+func _on_fight_time_tracker_timeout() -> void:
+	GlobalFightStats.fight_stats["time"] += 1.0
+	GlobalFightStats.fight_stats["total_time"] += 1.0
+	print("glkobal time: ", GlobalFightStats.fight_stats["time"])
+	print("glkobal toal time: ", GlobalFightStats.fight_stats["total_time"])
+	print("num of deaths: ", GlobalFightStats.fight_stats["num_of_deaths"])

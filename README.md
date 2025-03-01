@@ -32,6 +32,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			due to this, got rid of PlayerDetect Area2D</li>
 			<li>(Fight Stats / GlobalFightStats)  
 			Created control scene and global script to hold stats for the fight as a whole</li>
+			<li>(Game / Fight / GlobalFightStats)  
+			Time, Total Time, and num of deaths handled properly</li>
 		</ul>
 	<li>
 	<li>

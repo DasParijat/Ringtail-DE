@@ -34,6 +34,9 @@ script = ExtResource("6_b2j36")
 
 [node name="fight_ui" parent="Fight" instance=ExtResource("3_163st")]
 
+[node name="FightTimeTracker" type="Timer" parent="Fight"]
+autostart = true
+
 [node name="Cutscene" type="Node2D" parent="."]
 
 [connection signal="fight_res_set" from="." to="Background" method="_on_game_fight_res_set"]
@@ -41,3 +44,4 @@ script = ExtResource("6_b2j36")
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="tree_exiting" from="Camera2D" to="Camera2D" method="_on_tree_exiting"]
 [connection signal="player_created" from="Fight" to="Camera2D" method="_on_fight_player_created"]
+[connection signal="timeout" from="Fight/FightTimeTracker" to="Fight" method="_on_fight_time_tracker_timeout"]
