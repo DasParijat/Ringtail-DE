@@ -23,6 +23,7 @@ GlobalTime="*res://RDE_Scripts/Global_Scripts/GlobalTime.gd"
 GMobHandler="*res://RDE_Scripts/Global_Scripts/GlobalMobHandler.gd"
 GlobalScene="*res://RDE_Scripts/Global_Scripts/GlobalScene.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalFightStats="*res://RDE_Scripts/Global_Scripts/GlobalFightStats.gd"
 
 [dialogic]
 

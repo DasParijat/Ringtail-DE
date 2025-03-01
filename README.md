@@ -10,8 +10,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Create a game over menu DONE</li> 
 	<li>Create a victory menu that tracks stats of the fight</li>
 	<li>Create health bars for player (bottom left), DONE
-	boss (top middle when one boss), 
-	and mob (Directly on mob)</li>
+	boss (top middle when one boss), DONE
+	and mob (Directly on mob) DONE</li> 
 	<li>Create power bar for player, and show gun player is using DONE</li> 
 	<li>Make resting actually heal player DONE</li> 
 	<li>Implement audio</li>
@@ -30,6 +30,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob / Mob Res)  
 			Player detection is handled using distance instead of Area2D, 
 			due to this, got rid of PlayerDetect Area2D</li>
+			<li>(Fight Stats / GlobalFightStats)  
+			Created control scene and global script to hold stats for the fight as a whole</li>
 		</ul>
 	<li>
 	<li>
