@@ -22,6 +22,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/1/25)
+			<li>(Health Res) 
+			Considers if health res is for a playable character (for fight stat reasons)</li>
+			<li>(Fight Stats) 
+			Damage taken is now handled (in health res)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(2/28/25)
 			<li>(Base Player) 
 			Handles player res size properties</li>

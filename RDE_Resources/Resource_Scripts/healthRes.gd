@@ -4,6 +4,7 @@ class_name HealthRes
 # Used by any entity with health
 
 @export var HP_NAME : String = "UNAMED HP USER"
+@export var is_player : bool = false
 
 @export var max_hp : int = 10
 @export var damage_rate : float = 1 # the higher, the more damage taken per usual.
@@ -35,7 +36,10 @@ func take_dmg(dmg_amount : float):
 		dmg_amount = dmg_amount * damage_rate
 		
 		cur_hp = cur_hp - dmg_amount
-		
+		if is_player: 
+			# Only a player's hp is considered for damage_taken
+			GlobalFightStats.fight_stats["damage_taken"] += dmg_amount
+			
 		#print(HP_NAME, " took damage, CUR HP: ", cur_hp, 
 		#"	DMG AMOUNT: ", dmg_amount) # for debugging
 		

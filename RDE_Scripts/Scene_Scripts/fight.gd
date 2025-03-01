@@ -66,6 +66,7 @@ func create_fight() -> void:
 	add_child(boss_instance)
 	
 	GlobalFightStats.fight_stats["time"] = 0.0
+	GlobalFightStats.fight_stats["damage_taken"] = 0.0
 	fight_time_tracker.start()
 
 func clear_fight() -> void:
@@ -73,8 +74,11 @@ func clear_fight() -> void:
 		child_node.queue_free()
 
 func _on_fight_time_tracker_timeout() -> void:
+	# Increment fight stat time every 1 second
 	GlobalFightStats.fight_stats["time"] += 1.0
 	GlobalFightStats.fight_stats["total_time"] += 1.0
+	
 	print("glkobal time: ", GlobalFightStats.fight_stats["time"])
 	print("glkobal toal time: ", GlobalFightStats.fight_stats["total_time"])
 	print("num of deaths: ", GlobalFightStats.fight_stats["num_of_deaths"])
+	print("damag taken: ", GlobalFightStats.fight_stats["damage_taken"])
