@@ -26,7 +26,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Health Res) 
 			Considers if health res is for a playable character (for fight stat reasons)</li>
 			<li>(Fight Stats) 
-			Damage taken is now handled (in health res)</li>
+			Damage taken is handled (in health res)</li>
+			<li>(Fight Stats) 
+			Fight type is handled</li>
+			<li>(Fight Stats / Fight) 
+			Cleaned up fight stats code, & created print func</li>
 		</ul>
 	<li>
 	<li>
