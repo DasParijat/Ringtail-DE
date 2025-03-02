@@ -2,11 +2,16 @@ extends Control
 # Code handling the whole main menu, including it's submenus
 # Settings Menu is excluded, handled by it's own script
 
+@onready var front_menu : Container = $front_menu
+@onready var play_menu : Container = $play_menu
+@onready var story_menu : Container = $story_menu
+
 func _ready() -> void:
-	# get_viewport().size = DisplayServer.screen_get_size()
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.MAIN_MENU
-	
 	GlobalFightStats.reset_fight_stats()
+	
+	front_menu.size = DisplayServer.window_get_size() / 3
+	# TODO set size of other menus when I get to them
 	
 # front_menu buttons
 func _on_play_b_pressed() -> void:

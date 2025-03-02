@@ -31,6 +31,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Fight type is handled</li>
 			<li>(Fight Stats / Fight) 
 			Cleaned up fight stats code, & created print func</li>
+			<li>(Main Menu) 
+			Each of the menus are assigned to variables</li>
+			<li>(Main Menu) 
+			Front menu recentered</li>
 		</ul>
 	<li>
 	<li>
