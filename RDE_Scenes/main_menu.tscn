@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgynnt6h5g1vk"]
+[gd_scene load_steps=4 format=3 uid="uid://dgynnt6h5g1vk"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="2_br78j"]
+[ext_resource type="Script" path="res://RDE_Scripts/fight_select_button.gd" id="3_v6pk2"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -79,22 +80,23 @@ alignment = 1
 [node name="RgEASY" type="Button" parent="story_menu/VBoxContainer"]
 layout_mode = 2
 text = "EASY"
-script = ExtResource("2_br78j")
+script = ExtResource("3_v6pk2")
 
 [node name="RgNORM" type="Button" parent="story_menu/VBoxContainer"]
 layout_mode = 2
 text = "NORMAL"
-script = ExtResource("2_br78j")
+script = ExtResource("3_v6pk2")
 
 [node name="RgHARD" type="Button" parent="story_menu/VBoxContainer"]
 layout_mode = 2
 text = "HARD"
-script = ExtResource("2_br78j")
+script = ExtResource("3_v6pk2")
+fight_type = "STORY_RGT_HARD"
 
 [node name="RgTRUE" type="Button" parent="story_menu/VBoxContainer"]
 layout_mode = 2
 text = "TRUE"
-script = ExtResource("2_br78j")
+script = ExtResource("3_v6pk2")
 
 [node name="custom_menu" type="MarginContainer" parent="."]
 layout_mode = 0

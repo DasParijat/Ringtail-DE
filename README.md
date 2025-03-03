@@ -27,6 +27,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Pressing play brings up story_menu (using tween)</li>
 			<li>(Main Menu) 
 			Story Menu orientation adjusted</li>
+			<li>(Fight Select Button) 
+			Created extended script of nav_button to handle fights</li>
+			<li>(Main Menu) 
+			Selecting RingtailHARD takes you to it's fight</li>
 		</ul>
 	<li>
 	<li>

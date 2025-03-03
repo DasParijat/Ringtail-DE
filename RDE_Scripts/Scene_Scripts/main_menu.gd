@@ -15,6 +15,7 @@ func _ready() -> void:
 	
 # front_menu buttons
 func _on_play_b_pressed() -> void:
+	# TODO Fix issue of Play button not working after quiting game 
 	# will open up play_menu
 	var tween = create_tween()
 	tween.set_parallel(true)
