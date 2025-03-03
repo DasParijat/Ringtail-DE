@@ -15,7 +15,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Create power bar for player, and show gun player is using DONE</li> 
 	<li>Make resting actually heal player DONE</li> 
 	<li>Implement audio</li>
-	<li>Menu animations, clicking play should "tween" to level select menu</li>
+	<li>Menu animations, clicking play should "tween" to level select menu DONE SORTA</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -29,6 +29,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Story Menu orientation adjusted</li>
 			<li>(Fight Select Button) 
 			Created extended script of nav_button to handle fights</li>
+			<li>(Fight Select Button) 
+			Handles locked fights & when fight_type not given</li>
 			<li>(Main Menu) 
 			Selecting RingtailHARD takes you to it's fight</li>
 			<li>(Main Menu) 

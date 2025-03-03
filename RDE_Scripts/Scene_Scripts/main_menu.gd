@@ -25,10 +25,6 @@ func _on_play_b_pressed() -> void:
 	tween.tween_property(front_menu, "position", Vector2(0, -500), 0.5)
 	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.5)
 	
-	#await tween.finished
-	#GlobalScene.set_next_level("res://RDE_Resources/Level Res/STORY_RGT_HARD.tres")
-	#GlobalScene.load_next_scene(GlobalScene.GAME)
-	
 func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
 	# ideally, opens up seetings_menu within here.
