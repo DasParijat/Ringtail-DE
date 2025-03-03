@@ -31,6 +31,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created extended script of nav_button to handle fights</li>
 			<li>(Main Menu) 
 			Selecting RingtailHARD takes you to it's fight</li>
+			<li>(Main Menu) 
+			When scene loaded, engine time scale hard-coded to be set back to 1
+			(so nothing in menu is messed up from game pausing or such)</li>
 		</ul>
 	<li>
 	<li>

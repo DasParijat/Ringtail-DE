@@ -7,6 +7,8 @@ extends Control
 @onready var story_menu : Container = $story_menu
 
 func _ready() -> void:
+	Engine.time_scale = 1 # Ensures time scale is normal when menu loads
+	 
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.MAIN_MENU
 	GlobalFightStats.reset_fight_stats()
 	
@@ -23,7 +25,7 @@ func _on_play_b_pressed() -> void:
 	tween.tween_property(front_menu, "position", Vector2(0, -500), 0.5)
 	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.5)
 	
-	await tween.finished
+	#await tween.finished
 	#GlobalScene.set_next_level("res://RDE_Resources/Level Res/STORY_RGT_HARD.tres")
 	#GlobalScene.load_next_scene(GlobalScene.GAME)
 	
