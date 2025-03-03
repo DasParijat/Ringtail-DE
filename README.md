@@ -22,6 +22,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/2/25)
+			<li>(Main Menu) 
+			Pressing play brings up story_menu (using tween)</li>
+			<li>(Main Menu) 
+			Story Menu orientation adjusted</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/1/25)
 			<li>(Health Res) 
 			Considers if health res is for a playable character (for fight stat reasons)</li>

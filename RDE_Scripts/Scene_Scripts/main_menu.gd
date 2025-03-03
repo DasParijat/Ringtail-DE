@@ -16,8 +16,15 @@ func _ready() -> void:
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	# will open up play_menu
-	GlobalScene.set_next_level("res://RDE_Resources/Level Res/STORY_RGT_HARD.tres")
-	GlobalScene.load_next_scene(GlobalScene.GAME)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_property(front_menu, "position", Vector2(0, -500), 0.5)
+	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.5)
+	
+	await tween.finished
+	#GlobalScene.set_next_level("res://RDE_Resources/Level Res/STORY_RGT_HARD.tres")
+	#GlobalScene.load_next_scene(GlobalScene.GAME)
 	
 func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
