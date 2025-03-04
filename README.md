@@ -22,6 +22,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/3/25)
+			<li>(Main Menu) 
+			Made story_menu and front_menu into basic control nodes</li>
+			<li>(Main Menu) 
+			Removed center container and made label (might modify later)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/2/25)
 			<li>(Main Menu) 
 			Pressing play brings up story_menu (using tween)</li>

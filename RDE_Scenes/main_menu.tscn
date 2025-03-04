@@ -13,35 +13,87 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_notiw")
 
-[node name="front_menu" type="CenterContainer" parent="."]
+[node name="front_menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="CenterContainer" parent="front_menu"]
 layout_mode = 0
 offset_right = 427.0
 offset_bottom = 241.0
 scale = Vector2(3, 3)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="front_menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="front_menu/Container"]
 layout_mode = 2
 alignment = 1
 
-[node name="playB" type="Button" parent="front_menu/HBoxContainer"]
+[node name="playB" type="Button" parent="front_menu/Container/HBoxContainer"]
 layout_mode = 2
 text = "Play"
 script = ExtResource("2_br78j")
 
-[node name="settingsB" type="Button" parent="front_menu/HBoxContainer"]
+[node name="settingsB" type="Button" parent="front_menu/Container/HBoxContainer"]
 layout_mode = 2
 text = "Settings"
 script = ExtResource("2_br78j")
 
-[node name="creditsB" type="Button" parent="front_menu/HBoxContainer"]
+[node name="creditsB" type="Button" parent="front_menu/Container/HBoxContainer"]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("2_br78j")
 
-[node name="quitB" type="Button" parent="front_menu/HBoxContainer"]
+[node name="quitB" type="Button" parent="front_menu/Container/HBoxContainer"]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("2_br78j")
+
+[node name="story_menu" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 18.0
+offset_top = 783.0
+offset_right = 124.0
+offset_bottom = 919.0
+scale = Vector2(5, 5)
+
+[node name="FightButtonHolder" type="VBoxContainer" parent="story_menu"]
+layout_mode = 2
+offset_left = 14.0
+offset_right = 92.0
+offset_bottom = 136.0
+alignment = 1
+
+[node name="RgEASY" type="Button" parent="story_menu/FightButtonHolder"]
+layout_mode = 2
+text = "EASY"
+script = ExtResource("3_v6pk2")
+
+[node name="RgNORM" type="Button" parent="story_menu/FightButtonHolder"]
+layout_mode = 2
+text = "NORMAL"
+script = ExtResource("3_v6pk2")
+
+[node name="RgHARD" type="Button" parent="story_menu/FightButtonHolder"]
+layout_mode = 2
+text = "HARD"
+script = ExtResource("3_v6pk2")
+fight_type = "STORY_RGT_HARD"
+
+[node name="RgTRUE" type="Button" parent="story_menu/FightButtonHolder"]
+layout_mode = 2
+text = "TRUE"
+script = ExtResource("3_v6pk2")
+
+[node name="BoxContainer" type="PanelContainer" parent="story_menu"]
+layout_mode = 2
+offset_left = 122.6
+offset_top = 58.2
+offset_right = 226.47
+offset_bottom = 81.2
+
+[node name="Label" type="Label" parent="story_menu/BoxContainer"]
+layout_mode = 2
+text = "asdadasdada"
 
 [node name="play_menu" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -65,47 +117,14 @@ layout_mode = 2
 text = "Custom"
 script = ExtResource("2_br78j")
 
-[node name="story_menu" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 1000.0
-offset_right = 129.0
-offset_bottom = 1136.0
-scale = Vector2(5, 5)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="story_menu"]
-layout_mode = 2
-alignment = 1
-
-[node name="RgEASY" type="Button" parent="story_menu/VBoxContainer"]
-layout_mode = 2
-text = "EASY"
-script = ExtResource("3_v6pk2")
-
-[node name="RgNORM" type="Button" parent="story_menu/VBoxContainer"]
-layout_mode = 2
-text = "NORMAL"
-script = ExtResource("3_v6pk2")
-
-[node name="RgHARD" type="Button" parent="story_menu/VBoxContainer"]
-layout_mode = 2
-text = "HARD"
-script = ExtResource("3_v6pk2")
-fight_type = "STORY_RGT_HARD"
-
-[node name="RgTRUE" type="Button" parent="story_menu/VBoxContainer"]
-layout_mode = 2
-text = "TRUE"
-script = ExtResource("3_v6pk2")
-
 [node name="custom_menu" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="pressed" from="front_menu/HBoxContainer/playB" to="." method="_on_play_b_pressed"]
-[connection signal="pressed" from="front_menu/HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
-[connection signal="pressed" from="front_menu/HBoxContainer/creditsB" to="." method="_on_credits_b_pressed"]
-[connection signal="pressed" from="front_menu/HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
+[connection signal="pressed" from="front_menu/Container/HBoxContainer/playB" to="." method="_on_play_b_pressed"]
+[connection signal="pressed" from="front_menu/Container/HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
+[connection signal="pressed" from="front_menu/Container/HBoxContainer/creditsB" to="." method="_on_credits_b_pressed"]
+[connection signal="pressed" from="front_menu/Container/HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
 [connection signal="pressed" from="play_menu/HBoxContainer/storyB" to="." method="_on_story_b_pressed"]
 [connection signal="pressed" from="play_menu/HBoxContainer/customB" to="." method="_on_custom_b_pressed"]

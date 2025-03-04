@@ -2,9 +2,9 @@ extends Control
 # Code handling the whole main menu, including it's submenus
 # Settings Menu is excluded, handled by it's own script
 
-@onready var front_menu : Container = $front_menu
+@onready var front_menu : Control = $front_menu
 @onready var play_menu : Container = $play_menu
-@onready var story_menu : Container = $story_menu
+@onready var story_menu : Control = $story_menu
 
 func _ready() -> void:
 	Engine.time_scale = 1 # Ensures time scale is normal when menu loads
@@ -22,8 +22,8 @@ func _on_play_b_pressed() -> void:
 	var tween = create_tween()
 	tween.set_parallel(true)
 	
-	tween.tween_property(front_menu, "position", Vector2(0, -500), 0.5)
-	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.5)
+	tween.tween_property(front_menu, "position", Vector2(0, -500), 0.3)
+	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.3)
 	
 func _on_settings_b_pressed() -> void:
 	# will show settings_menu (seperate scene)
