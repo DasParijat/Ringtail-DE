@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgynnt6h5g1vk"]
+[gd_scene load_steps=5 format=3 uid="uid://dgynnt6h5g1vk"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="2_br78j"]
+[ext_resource type="Texture2D" uid="uid://b7r5q02t3ru24" path="res://RDE_Images/rt_ringtail1.png" id="2_r6r50"]
 [ext_resource type="Script" path="res://RDE_Scripts/fight_select_button.gd" id="3_v6pk2"]
 
 [node name="main_menu" type="Control"]
@@ -18,10 +19,21 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="TextureRect" type="TextureRect" parent="front_menu"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 71.0
+offset_right = 1100.0
+offset_bottom = 738.0
+scale = Vector2(0.74418, 0.452872)
+texture = ExtResource("2_r6r50")
+
 [node name="Container" type="CenterContainer" parent="front_menu"]
 layout_mode = 0
-offset_right = 427.0
-offset_bottom = 241.0
+offset_left = 300.0
+offset_top = 474.0
+offset_right = 528.0
+offset_bottom = 505.0
 scale = Vector2(3, 3)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="front_menu/Container"]
@@ -51,10 +63,19 @@ script = ExtResource("2_br78j")
 [node name="story_menu" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 18.0
-offset_top = 783.0
+offset_top = 1106.0
 offset_right = 124.0
-offset_bottom = 919.0
+offset_bottom = 1242.0
 scale = Vector2(5, 5)
+
+[node name="SM_exitB" type="Button" parent="story_menu"]
+layout_mode = 0
+offset_left = 195.2
+offset_top = 107.0
+offset_right = 240.2
+offset_bottom = 138.0
+text = "Back"
+script = ExtResource("2_br78j")
 
 [node name="FightButtonHolder" type="VBoxContainer" parent="story_menu"]
 layout_mode = 2
@@ -126,5 +147,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="front_menu/Container/HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
 [connection signal="pressed" from="front_menu/Container/HBoxContainer/creditsB" to="." method="_on_credits_b_pressed"]
 [connection signal="pressed" from="front_menu/Container/HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
+[connection signal="pressed" from="story_menu/SM_exitB" to="." method="_on_sm_exit_b_pressed"]
 [connection signal="pressed" from="play_menu/HBoxContainer/storyB" to="." method="_on_story_b_pressed"]
 [connection signal="pressed" from="play_menu/HBoxContainer/customB" to="." method="_on_custom_b_pressed"]

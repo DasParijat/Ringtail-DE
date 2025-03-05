@@ -22,7 +22,7 @@ func _on_play_b_pressed() -> void:
 	var tween = create_tween()
 	tween.set_parallel(true)
 	
-	tween.tween_property(front_menu, "position", Vector2(0, -500), 0.3)
+	tween.tween_property(front_menu, "position", Vector2(0, -720), 0.3)
 	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.3)
 	
 func _on_settings_b_pressed() -> void:
@@ -45,3 +45,11 @@ func _on_story_b_pressed() -> void:
 func _on_custom_b_pressed() -> void:
 	# will show custom_menu
 	pass
+
+# Story Menu Buttons
+func _on_sm_exit_b_pressed() -> void:
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_property(story_menu, "position", Vector2(0,720), 0.3)
+	tween.tween_property(front_menu, "position", Vector2(0, 0), 0.3)

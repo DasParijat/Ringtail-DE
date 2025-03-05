@@ -22,6 +22,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/4/25)
+			<li>(Main Menu / Front Menu) 
+			Readjusted front_menu, added texture to test where title would be</li>
+			<li>(Main Menu / Story Menu) 
+			Added working back button in story_menu</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/3/25)
 			<li>(Main Menu) 
 			Made story_menu and front_menu into basic control nodes</li>
