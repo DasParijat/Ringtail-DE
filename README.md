@@ -24,6 +24,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(3/4/25)
 			<li>(Main Menu / Front Menu) 
+			Readjusted front_menu, aswell as added logo to it</li>
+			<li>(RDE Images) 
+			Added an actual Ringtail Logo (Still concept but first official art made for this project !!)</li>
+			<li>(Main Menu / Front Menu) 
 			Readjusted front_menu, added texture to test where title would be</li>
 			<li>(Main Menu / Story Menu) 
 			Added working back button in story_menu</li>

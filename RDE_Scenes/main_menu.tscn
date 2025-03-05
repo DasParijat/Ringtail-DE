@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="2_br78j"]
-[ext_resource type="Texture2D" uid="uid://b7r5q02t3ru24" path="res://RDE_Images/rt_ringtail1.png" id="2_r6r50"]
+[ext_resource type="Texture2D" uid="uid://de6rwa7vonopp" path="res://RDE_Images/RDE_Logo1.png" id="2_i6n23"]
 [ext_resource type="Script" path="res://RDE_Scripts/fight_select_button.gd" id="3_v6pk2"]
 
 [node name="main_menu" type="Control"]
@@ -19,14 +19,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="front_menu"]
+[node name="Logo" type="TextureRect" parent="front_menu"]
 layout_mode = 0
-offset_left = 359.0
-offset_top = 71.0
-offset_right = 1100.0
-offset_bottom = 738.0
-scale = Vector2(0.74418, 0.452872)
-texture = ExtResource("2_r6r50")
+offset_left = 268.0
+offset_top = 138.0
+offset_right = 1021.0
+offset_bottom = 275.0
+texture = ExtResource("2_i6n23")
 
 [node name="Container" type="CenterContainer" parent="front_menu"]
 layout_mode = 0
