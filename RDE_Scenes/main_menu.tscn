@@ -19,7 +19,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Logo" type="TextureRect" parent="front_menu"]
+[node name="Title" type="TextureRect" parent="front_menu"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 138.0
@@ -61,55 +61,57 @@ script = ExtResource("2_br78j")
 
 [node name="story_menu" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 18.0
-offset_top = 1106.0
-offset_right = 124.0
-offset_bottom = 1242.0
-scale = Vector2(5, 5)
+offset_top = 720.0
+offset_bottom = 720.0
+scale = Vector2(3.46891, 3.46891)
 
 [node name="SM_exitB" type="Button" parent="story_menu"]
-layout_mode = 0
-offset_left = 195.2
-offset_top = 107.0
-offset_right = 240.2
-offset_bottom = 138.0
+layout_mode = 2
+offset_left = 266.667
+offset_top = 125.0
+offset_right = 311.667
+offset_bottom = 156.0
 text = "Back"
 script = ExtResource("2_br78j")
 
-[node name="FightButtonHolder" type="VBoxContainer" parent="story_menu"]
+[node name="CenterContainer" type="CenterContainer" parent="story_menu"]
+layout_mode = 0
+offset_left = 54.6667
+offset_top = 14.3333
+offset_right = 132.667
+offset_bottom = 150.333
+
+[node name="FightButtonHolder" type="VBoxContainer" parent="story_menu/CenterContainer"]
 layout_mode = 2
-offset_left = 14.0
-offset_right = 92.0
-offset_bottom = 136.0
 alignment = 1
 
-[node name="RgEASY" type="Button" parent="story_menu/FightButtonHolder"]
+[node name="RgEASY" type="Button" parent="story_menu/CenterContainer/FightButtonHolder"]
 layout_mode = 2
 text = "EASY"
 script = ExtResource("3_v6pk2")
 
-[node name="RgNORM" type="Button" parent="story_menu/FightButtonHolder"]
+[node name="RgNORM" type="Button" parent="story_menu/CenterContainer/FightButtonHolder"]
 layout_mode = 2
 text = "NORMAL"
 script = ExtResource("3_v6pk2")
 
-[node name="RgHARD" type="Button" parent="story_menu/FightButtonHolder"]
+[node name="RgHARD" type="Button" parent="story_menu/CenterContainer/FightButtonHolder"]
 layout_mode = 2
 text = "HARD"
 script = ExtResource("3_v6pk2")
 fight_type = "STORY_RGT_HARD"
 
-[node name="RgTRUE" type="Button" parent="story_menu/FightButtonHolder"]
+[node name="RgTRUE" type="Button" parent="story_menu/CenterContainer/FightButtonHolder"]
 layout_mode = 2
 text = "TRUE"
 script = ExtResource("3_v6pk2")
 
 [node name="BoxContainer" type="PanelContainer" parent="story_menu"]
 layout_mode = 2
-offset_left = 122.6
-offset_top = 58.2
-offset_right = 226.47
-offset_bottom = 81.2
+offset_left = 184.0
+offset_top = 56.0
+offset_right = 286.0
+offset_bottom = 79.0
 
 [node name="Label" type="Label" parent="story_menu/BoxContainer"]
 layout_mode = 2

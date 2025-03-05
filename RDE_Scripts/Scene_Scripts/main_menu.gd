@@ -6,6 +6,8 @@ extends Control
 @onready var play_menu : Container = $play_menu
 @onready var story_menu : Control = $story_menu
 
+var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
+
 func _ready() -> void:
 	Engine.time_scale = 1 # Ensures time scale is normal when menu loads
 	 
