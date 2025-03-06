@@ -25,6 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/5/25)
 			<li>(RGT_Plains) 
 			Added collision boundary around perimeter</li>
+			<li>(Game Camera) 
+			Camera now properly keeps up with player (using tracking speed)</li>
 		</ul>
 	<li>
 	<li>

@@ -8,6 +8,7 @@ extends Camera2D
 # TODO Add new attributes to GunRes to describe how the camera should shake when shot
 
 var track_player : bool = false
+var player_tracking_speed : float = 1.5
 var cur_gun : GunRes 
 
 var scale_lean : float = 0.2
@@ -41,7 +42,7 @@ func _ready() -> void:
 	 
 func _process(delta : float) -> void:
 	if track_player:
-		set_position(fight_node.player_pos)
+		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		gun_aim(0.6)

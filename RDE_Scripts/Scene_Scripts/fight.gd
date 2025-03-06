@@ -79,4 +79,4 @@ func _on_fight_time_tracker_timeout() -> void:
 	GlobalFightStats.fight_stats["time"] += 1.0
 	GlobalFightStats.fight_stats["total_time"] += 1.0
 	
-	GlobalFightStats.print_fight_stats()
+	#GlobalFightStats.print_fight_stats()
