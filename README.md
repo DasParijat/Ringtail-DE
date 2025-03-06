@@ -22,6 +22,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/5/25)
+			<li>(RGT_Plains) 
+			Added collision boundary around perimeter</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/4/25)
 			<li>(Main Menu / Front Menu) 
 			Readjusted front_menu, aswell as added logo to it</li>
