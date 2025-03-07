@@ -28,6 +28,8 @@ color = Color(0.972549, 0.74902, 0.647059, 1)
 
 [node name="TEST_WORLD" parent="Background" instance=ExtResource("4_72mc8")]
 visible = false
+cam_border_x = 600.0
+cam_border_y = 400.0
 
 [node name="Fight" type="Node2D" parent="."]
 script = ExtResource("6_b2j36")

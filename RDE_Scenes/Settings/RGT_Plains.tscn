@@ -268,9 +268,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x5net")
 
 [node name="RGT_Plains" type="Node2D"]
+position = Vector2(-100, -250)
 script = ExtResource("1_tm7va")
-cam_border_x = 1500.0
-cam_border_y = 1000.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(4.05826, 4.14905)
