@@ -23,6 +23,7 @@ rotation_smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("2_85jn5")
+player_tracking_speed = 1.5
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("4_a1q2e")

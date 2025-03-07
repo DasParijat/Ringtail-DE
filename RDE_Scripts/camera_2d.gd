@@ -5,14 +5,12 @@ extends Camera2D
 @onready var fight_node : Node2D = get_parent().get_node("Fight")
 # fight node handles getting info from dynamically spawned entities (such as player)
 
-# TODO Add new attributes to GunRes to describe how the camera should shake when shot
-
 var track_player : bool = false
-var player_tracking_speed : float = 1.5
+@export var player_tracking_speed : float = 1.0
 var cur_gun : GunRes 
 
 var scale_lean : float = 0.2
-var max_lean_distance : float = 400
+@export var max_lean_distance : float = 200
 var rng = RandomNumberGenerator.new()
 
 # Shake strength and fade are given from cur_gun
@@ -35,13 +33,13 @@ func _ready() -> void:
 		printerr("FIGHT NODE UNASSIGNED")
 	#$".".position_smoothing_speed = 5
 	 
-func _process(delta : float) -> void:
-	if is_beyond_cam_border():
-		#print("STOPPED TRAKCING")
-		track_player = true
-	else:
-		track_player = true
-	
+func _process(delta : float) -> void:	
+	if GlobalScene.cam_border_x and GlobalScene.cam_border_y:
+		$".".limit_left = -GlobalScene.cam_border_x
+		$".".limit_right = GlobalScene.cam_border_x
+		$".".limit_top = -GlobalScene.cam_border_y
+		$".".limit_bottom = GlobalScene.cam_border_y
+		
 	if track_player:
 		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
@@ -53,12 +51,6 @@ func _process(delta : float) -> void:
 	# TODO make camera flexible so it can be used for cutscenes or such
 	# TODO have camera stop tracking player when player node is removed/dead
 
-func is_beyond_cam_border() -> bool:
-	var x = fight_node.player_pos.x
-	var y = fight_node.player_pos.y
-	
-	return x >= GlobalScene.cam_border_x or x <= -(GlobalScene.cam_border_x) or y >= GlobalScene.cam_border_y or y <= -(GlobalScene.cam_border_y)
-	
 func lean_cam() -> Vector2:
 	# Credit to samsface on YT (https://youtu.be/GXBEt_QqPMs?si=-chTplQUIvqoX3Xg) 
 	var mouse_pos := get_global_mouse_position()
