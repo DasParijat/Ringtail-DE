@@ -35,24 +35,29 @@ func _ready() -> void:
 	#$".".position_smoothing_speed = 5
 	 
 func _process(delta : float) -> void:
-	if GlobalScene.cam_border_x and GlobalScene.cam_border_y:
-		$".".limit_left = -GlobalScene.cam_border_x
-		$".".limit_right = GlobalScene.cam_border_x
-		$".".limit_top = -GlobalScene.cam_border_y
-		$".".limit_bottom = GlobalScene.cam_border_y
-	
-	# TODO Add code to turn off track_player when near cam border
+	if is_beyond_cam_border():
+		print("STOPPED TRAKCING")
+		track_player = false
+	else:
+		track_player = true
 	
 	if track_player:
 		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		gun_aim(0.6)
-		gun_shake(delta)
-		
+
+	gun_shake(delta)
+	
 	# TODO make camera flexible so it can be used for cutscenes or such
 	# TODO have camera stop tracking player when player node is removed/dead
 
+func is_beyond_cam_border() -> bool:
+	var x = fight_node.player_pos.x
+	var y = fight_node.player_pos.y
+	
+	return x >= GlobalScene.cam_border_x or x <= -(GlobalScene.cam_border_x) or y >= GlobalScene.cam_border_y or y <= -(GlobalScene.cam_border_y)
+	
 func lean_cam() -> Vector2:
 	# Credit to samsface on YT (https://youtu.be/GXBEt_QqPMs?si=-chTplQUIvqoX3Xg) 
 	var mouse_pos := get_global_mouse_position()

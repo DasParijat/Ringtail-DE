@@ -25,6 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/6/25)
 			<li>(RGT_Plains / GlobalScene / Game Camera) 
 			Added way to pass cam border from setting to camera</li>
+			<li>(Game Camera) 
+			Stops tracking player when player is beyond cam border</li>
 		</ul>
 	<li>
 	<li>
