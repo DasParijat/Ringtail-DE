@@ -27,6 +27,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added way to pass cam border from setting to camera</li>
 			<li>(Game Camera) 
 			Stops tracking player when player is beyond cam border</li>
+			<li>(Game Camera) 
+			There is a cutoff in how far out you can aim</li>
 		</ul>
 	<li>
 	<li>
