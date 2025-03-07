@@ -22,6 +22,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/6/25)
+			<li>(RGT_Plains / GlobalScene / Game Camera) 
+			Added way to pass cam border from setting to camera</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/5/25)
 			<li>(RGT_Plains) 
 			Added collision boundary around perimeter</li>

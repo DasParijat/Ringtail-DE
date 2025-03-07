@@ -27,12 +27,6 @@ var smooth_offset : float = 10.0 # For affecting offset of Camera2D
 var is_reloading : bool = false
 
 func _ready() -> void:
-	# to be given by level_res later
-	$".".limit_left = -5000
-	$".".limit_right = 5000
-	$".".limit_top = -1000
-	$".".limit_bottom = 1000
-	
 	GlobalSignal.connect("cur_gun", Callable(self, "_on_cur_gun"))
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
@@ -41,6 +35,14 @@ func _ready() -> void:
 	#$".".position_smoothing_speed = 5
 	 
 func _process(delta : float) -> void:
+	if GlobalScene.cam_border_x and GlobalScene.cam_border_y:
+		$".".limit_left = -GlobalScene.cam_border_x
+		$".".limit_right = GlobalScene.cam_border_x
+		$".".limit_top = -GlobalScene.cam_border_y
+		$".".limit_bottom = GlobalScene.cam_border_y
+	
+	# TODO Add code to turn off track_player when near cam border
+	
 	if track_player:
 		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)

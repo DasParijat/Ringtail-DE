@@ -33,6 +33,7 @@ func create_world() -> void:
 	var world_instance = world_scene.instantiate()
 	add_child(world_instance)
 	
+	
 func clear_current_world() -> void:
 	if get_child_count() <= 1:
 		return # Nothing useless to delete

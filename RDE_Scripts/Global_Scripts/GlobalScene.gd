@@ -20,6 +20,8 @@ var world_scene_history : Array[PackedScene]
 # possible future vars
 #var game_level : LevelRes
 #var cutscene_id
+var cam_border_x : float
+var cam_border_y : float
 
 func set_next_level(new_level : String) -> void:
 	next_level = load(new_level)

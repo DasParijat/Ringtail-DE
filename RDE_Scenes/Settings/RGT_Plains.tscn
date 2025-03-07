@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://sv71npsv8bdn"]
+[gd_scene load_steps=5 format=4 uid="uid://sv71npsv8bdn"]
 
 [ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="1_ng276"]
+[ext_resource type="Script" path="res://RDE_Scripts/tilemap_info.gd" id="1_tm7va"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5net"]
 texture = ExtResource("1_ng276")
@@ -267,6 +268,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x5net")
 
 [node name="RGT_Plains" type="Node2D"]
+script = ExtResource("1_tm7va")
+cam_border_x = 3000.0
+cam_border_y = 5000.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(4.05826, 4.14905)
