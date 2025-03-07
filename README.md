@@ -25,6 +25,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/7/25)
 			<li>(RGT_Plains) 
 			Readjusted position and camera border</li>
+			<li>(Game Camera) 
+			Reverting back to using built-in camera limits</li>
+			<li>(RGT_Plains) 
+			RGT_Plains now has tiles beyond boundary (unaccessible obviously)</li>
 		</ul>
 	<li>
 	<li>

@@ -38,7 +38,7 @@ func _ready() -> void:
 func _process(delta : float) -> void:
 	if is_beyond_cam_border():
 		#print("STOPPED TRAKCING")
-		track_player = false
+		track_player = true
 	else:
 		track_player = true
 	
@@ -66,7 +66,6 @@ func lean_cam() -> Vector2:
 	var dir_to_mouse := (mouse_pos - global_position).normalized() # direction
 	var dist_to_mouse := global_position.distance_to(mouse_pos) # distance
 	
-	# TODO possibly have max lean be passed in from gun
 	return dir_to_mouse * clampf(dist_to_mouse * scale_lean, -max_lean_distance, max_lean_distance) # lean calculation
 
 func gun_aim(aim_lean) -> void:
