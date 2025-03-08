@@ -15,6 +15,8 @@ extends CanvasLayer
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
 
+var player_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
+
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	print(get_viewport().get_visible_rect().size)
@@ -24,6 +26,8 @@ func _on_get_cur_stats(type, stats) -> void:
 		"PLAYER":
 			cur_player_hp = stats["cur_hp"]
 			
+			player_hp_stylebox.bg_color = stats["player_color"]
+			PlayerHPBar.add_theme_stylebox_override("fill", player_hp_stylebox)
 			
 			PlayerHPBar.max_value = stats["max_hp"]
 			DamageDelayBar.max_value = stats["max_hp"]

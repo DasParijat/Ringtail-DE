@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created new assets for Oswald (player) and Ringtail (boss)</li>
 			<li>(Oswald) 
 			Applied new Oswald sprite</li>
+			<li>(Fight UI) 
+			Takes in player res color to set color of HP bar</li>
 			<li>(RingtailHARD) 
 			Applied new Ringtail sprite, removed modulate</li>
 		</ul>
