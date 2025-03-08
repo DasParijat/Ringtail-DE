@@ -75,7 +75,6 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/scri
 
 folder_colors={
 "res://RDE_Audio/": "purple",
-"res://RDE_Dialogic/": "teal",
 "res://RDE_Images/": "purple",
 "res://RDE_Resources/": "blue",
 "res://RDE_Scenes/": "yellow",

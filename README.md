@@ -6,7 +6,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Work on making and implementing cutscenes with Dialogic</li>
 	<li>Create a game over menu DONE</li> 
 	<li>Create a victory menu that tracks stats of the fight</li>
 	<li>Create health bars for player (bottom left), DONE
@@ -30,6 +29,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/7/25)
 			<li>(READ ME) 
 			Added asset credits in README</li>
+			<li>(Dialogic) 
+			REMOVED Dialogic addon, plan to focus on gameplay and menus for now, 
+			plus may create own cutscene/dialogue manager since dialogic took up
+			a lot of space</li>
 			<li>(RGT_Plains) 
 			Readjusted position and camera border</li>
 			<li>(Game Camera) 
