@@ -20,6 +20,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Asset Credits:</strong>
 <ul>
 	<li>Grass and Tree Tilesets: https://cainos.itch.io/pixel-art-top-down-basic</li>
+	<li>Ringtail (Raccoon Itself): https://commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -27,8 +28,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(3/8/25)
+			<li>(READ ME) 
+			Gave credit to the original image of Ringtail</li>
 			<li>(RGT_Plain) 
 			Created 2nd tree layer and reduced size of tilelayer</li>
+			<li>(Images) 
+			Created new assets for Oswald (player) and Ringtail (boss)</li>
+			<li>(Oswald) 
+			Applied new Oswald sprite</li>
+			<li>(RingtailHARD) 
+			Applied new Ringtail sprite, removed modulate</li>
 		</ul>
 	<li>
 	<li>
