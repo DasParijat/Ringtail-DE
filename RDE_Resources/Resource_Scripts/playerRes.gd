@@ -4,7 +4,8 @@ class_name PlayerRes
 
 # Changable Properties
 @export var name : String = "UNNAMED PLAYER"
-@export var color : Color 
+@export var primary_color : Color 
+@export var secondary_color : Color 
 @export var texture : Texture2D = preload("res://RDE_Images/nf Player.png")
 
 @export_category("Health")

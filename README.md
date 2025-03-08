@@ -37,9 +37,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Oswald) 
 			Applied new Oswald sprite</li>
 			<li>(Fight UI) 
-			Takes in player res color to set color of HP bar</li>
+			Takes in player res primary color to set color of HP bar, 
+			and player res secondary color to set color of power bar</li>
 			<li>(RingtailHARD) 
 			Applied new Ringtail sprite, removed modulate</li>
+			<li>(Base Player / Player Res) 
+			Has primary and secondary colors, 
+			is broadcasted in get_cur_stats for player</li>
 		</ul>
 	<li>
 	<li>

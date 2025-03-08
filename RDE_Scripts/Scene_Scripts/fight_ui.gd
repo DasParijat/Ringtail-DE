@@ -16,6 +16,7 @@ var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
 
 var player_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
+var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -24,15 +25,19 @@ func _ready() -> void:
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
 		"PLAYER":
-			cur_player_hp = stats["cur_hp"]
-			
-			player_hp_stylebox.bg_color = stats["player_color"]
+			# Bar coloring
+			player_hp_stylebox.bg_color = stats["player_pri_color"]
 			PlayerHPBar.add_theme_stylebox_override("fill", player_hp_stylebox)
+			player_power_stylebox.bg_color = stats["player_sec_color"]
+			PlayerPowerBar.add_theme_stylebox_override("fill", player_power_stylebox)
 			
+			# Bar max values
 			PlayerHPBar.max_value = stats["max_hp"]
 			DamageDelayBar.max_value = stats["max_hp"]
 			PlayerPowerBar.max_value = stats["max_power"]
 			
+			# Always updating
+			cur_player_hp = stats["cur_hp"]
 			update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
 			update_bar(PlayerHPBar, cur_player_hp, 0.5)
 			if not stats["is_hurting"]:

@@ -91,7 +91,8 @@ func get_cur_stats() -> Dictionary:
 		"is_hurting": is_hurting or is_near_enemy,
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),
-		"player_color": player_res.color
+		"player_pri_color": player_res.primary_color,
+		"player_sec_color": player_res.secondary_color
 	}
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
