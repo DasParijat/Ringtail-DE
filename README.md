@@ -18,17 +18,26 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Menu animations, clicking play should "tween" to level select menu DONE SORTA</li>
 </ul>
 
+<strong>Asset Credits:</strong>
+<ul>
+	<li>Grass and Tree Tilesets: https://cainos.itch.io/pixel-art-top-down-basic</li>
+</ul>
+
 <strong>Changelog:</strong>
 <ul>
 	<li>
 		<ul>
 			(3/7/25)
+			<li>(READ ME) 
+			Added asset credits in README</li>
 			<li>(RGT_Plains) 
 			Readjusted position and camera border</li>
 			<li>(Game Camera) 
 			Reverting back to using built-in camera limits + clean up Camera code</li>
 			<li>(RGT_Plains) 
 			RGT_Plains now has tiles beyond boundary (unaccessible obviously)</li>
+			<li>(RGT_Plains) 
+			Added tree tileset and put it in RGT_Plains</li>
 		</ul>
 	<li>
 	<li>
