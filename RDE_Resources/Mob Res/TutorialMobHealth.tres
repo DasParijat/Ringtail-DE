@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_xojni")
 HP_NAME = "TutorialMob"
+is_player = false
 max_hp = 10
 damage_rate = 1.0
 invicible = false

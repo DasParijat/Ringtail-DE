@@ -27,6 +27,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/9/25)
+			<li>(General) 
+			Something happened with the files and enemy_knockback has somehow been removed (?),
+			possibly other stuff may be affected, but for now everything is fine</li>
+			<li>(Game / RGT_Plains / Tilemap Script) 
+			Worlds can set initial canvas modulate in Game</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/8/25)
 			<li>(Base Player / Player Res) 
 			Replaced all absolute paths with UID's (except fight button)</li>

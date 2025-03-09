@@ -9,6 +9,8 @@
 script = ExtResource("2_12mie")
 FIGHT_NAME = "TUTORIAL"
 single_boss = ExtResource("4_3suo6")
+single_boss_spawn = Vector2(0, -100)
 game_modes = Array[String]([])
 player_scene = ExtResource("2_kq7il")
+player_spawn = Vector2(0, 10)
 gun_array = Array[ExtResource("1_8h3og")]([])

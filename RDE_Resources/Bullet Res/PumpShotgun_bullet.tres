@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://deonx3mfyyc1"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_uphi5"]
-[ext_resource type="Texture2D" uid="uid://bera0klibc5q1" path="res://icon.svg" id="2_rii66"]
+[ext_resource type="Texture2D" uid="uid://dk432aa6800jh" path="res://icon.svg" id="2_rii66"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_uphi5")
 texture = ExtResource("2_rii66")
 damage = 20.0
-enemy_knockback = 1000.0
 is_piercing = true
 falloff_point = 400.0
 falloff_rate = 0.2

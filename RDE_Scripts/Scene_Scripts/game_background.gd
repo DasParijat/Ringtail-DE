@@ -33,6 +33,9 @@ func create_world() -> void:
 	var world_instance = world_scene.instantiate()
 	add_child(world_instance)
 	
+	print("WI COLOR: ", world_instance.base_canvas_mod)
+	canvas_mod.color = world_instance.base_canvas_mod
+	
 	
 func clear_current_world() -> void:
 	if get_child_count() <= 1:
