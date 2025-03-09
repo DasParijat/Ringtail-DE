@@ -1,11 +1,11 @@
 extends Node
 
-const GAME = "res://RDE_Scenes/game.tscn"
-const MAIN_MENU = "res://RDE_Scenes/main_menu.tscn"
-const GAME_OVER = "res://RDE_Scenes/game_over.tscn"
-const SETTINGS = "res://RDE_Scenes/settings_menu.tscn"
+const GAME = "uid://bi38sacvfy6xa" 
+const MAIN_MENU = "uid://dgynnt6h5g1vk"
+const GAME_OVER = "uid://dd4jbqa68fpne"
+const SETTINGS = "uid://rfijw7j5g1v2"
 
-const LOAD_SCENE : PackedScene = preload("res://RDE_Scenes/load_screen.tscn")
+const LOAD_SCENE : PackedScene = preload("uid://b7ky1sqwiq4tv")
 
 var next_scene : String
 var next_level : LevelRes 

@@ -4,7 +4,7 @@ class_name BulletRes
 # Bullets can be used for both player guns and boss attacks
 
 @export_category("Qualitative Attributes")
-@export var texture : Texture2D = preload("res://RDE_Images/test_bullet.png")
+@export var texture : Texture2D = preload("uid://dqpq6unqud4qy")
 
 @export_category("Quantitative Attributes")
 @export var damage : float

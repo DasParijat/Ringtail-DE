@@ -6,7 +6,7 @@ class_name PlayerRes
 @export var name : String = "UNNAMED PLAYER"
 @export var primary_color : Color 
 @export var secondary_color : Color 
-@export var texture : Texture2D = preload("res://RDE_Images/nf Player.png")
+@export var texture : Texture2D = preload("uid://c7klbsnbfmrvy")
 
 @export_category("Health")
 @export var health_res : HealthRes

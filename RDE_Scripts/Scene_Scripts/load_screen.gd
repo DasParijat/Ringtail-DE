@@ -7,7 +7,7 @@ extends Control
 var progress : Array[float] = []
 var scene_load_status : int
 
-var scene_name : String = "res://RDE_Scenes/main_menu.tscn"
+var scene_name : String = GlobalScene.MAIN_MENU
 # if not working, scene loads to main menu
 
 func _ready() -> void:

@@ -9,9 +9,9 @@ extends Node2D
 @onready var base : CharacterBody2D = $base_mob
 @onready var spawner : Node2D = $MobSpawner
 
-@onready var bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
-var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
-var mob_load = preload("res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn")
+@onready var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
+var bullet_load = preload("uid://cy77mdk6wv3fp")
+var mob_load = preload("uid://cja72mr27m4j3")
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
@@ -28,6 +28,8 @@ func action1() -> void:
 	#base.action("orbit_player", {"speed": 10, "length": 2})
 	base.action("move", {"rotate": 0, "speed": 150, "length": 2})
 	
+	await GlobalTime.local_wait(2)
+	shoot()
 	# wait until condition
 	base.action("observe_player", true)
 	while base.player_hp >= 10:

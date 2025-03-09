@@ -13,7 +13,7 @@ extends Node2D
 @onready var cur_ammo : int = gun_res.cur_ammo
 
 
-var bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
+var bullet_load = preload("uid://cy77mdk6wv3fp")
 var bullet_spread : float = 0.0
 
 var cur_gun_emitted : bool = false

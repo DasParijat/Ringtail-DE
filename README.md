@@ -28,6 +28,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(3/8/25)
+			<li>(Base Player / Player Res) 
+			Replaced all absolute paths with UID's (except fight button)</li>
 			<li>(READ ME) 
 			Gave credit to the original image of Ringtail</li>
 			<li>(RGT_Plain) 

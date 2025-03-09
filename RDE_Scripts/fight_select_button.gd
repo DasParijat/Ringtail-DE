@@ -15,7 +15,8 @@ func _pressed() -> void:
 	if is_locked:
 		print("IS LOCKED")
 		return
-		
+	
+	# Probably not UID this
 	var fight_res_path = "res://RDE_Resources/Level Res/" + fight_type + ".tres"
 	GlobalScene.set_next_level(fight_res_path)
 	GlobalScene.load_next_scene(GlobalScene.GAME)

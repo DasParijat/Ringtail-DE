@@ -5,7 +5,7 @@ class_name MobRes
 # Changable Properties
 @export var name : String = "UNNAMED MOB"
 @export var color : Color 
-@export var texture : Texture2D = preload("res://RDE_Images/rt_ringtail1.png")
+@export var texture : Texture2D = preload("uid://5ry8kssatn11")
 
 @export_category("Health")
 @export var health_comp : HealthRes
