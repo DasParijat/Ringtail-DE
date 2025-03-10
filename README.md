@@ -27,6 +27,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/10/25)
+			<li>(Main Menu) 
+			Single play button used to start fight instead of the fight select buttons</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/9/25)
 			<li>(General) 
 			Something happened with the files and enemy_knockback has somehow been removed (?),
