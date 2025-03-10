@@ -33,6 +33,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			possibly other stuff may be affected, but for now everything is fine</li>
 			<li>(Game / RGT_Plains / Tilemap Script) 
 			Worlds can set initial canvas modulate in Game</li>
+			<li>(Main Menu) 
+			Working on having single play button, 
+			instead of getting into fight from level select buttons</li>
 		</ul>
 	<li>
 	<li>

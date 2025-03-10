@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgynnt6h5g1vk"]
+[gd_scene load_steps=6 format=3 uid="uid://dgynnt6h5g1vk"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="2_br78j"]
 [ext_resource type="Texture2D" uid="uid://de6rwa7vonopp" path="res://RDE_Images/RDE_Logo1.png" id="2_i6n23"]
 [ext_resource type="Script" path="res://RDE_Scripts/fight_select_button.gd" id="3_v6pk2"]
+[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/story_menu.gd" id="4_bakqm"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -64,13 +65,21 @@ anchors_preset = 0
 offset_top = 720.0
 offset_bottom = 720.0
 scale = Vector2(3.46891, 3.46891)
+script = ExtResource("4_bakqm")
 
-[node name="SM_exitB" type="Button" parent="story_menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="story_menu"]
+layout_mode = 0
+offset_left = 235.232
+offset_top = 115.022
+offset_right = 331.232
+offset_bottom = 155.022
+
+[node name="playfightB" type="Button" parent="story_menu/HBoxContainer"]
 layout_mode = 2
-offset_left = 266.667
-offset_top = 125.0
-offset_right = 311.667
-offset_bottom = 156.0
+text = "PLAY"
+
+[node name="SM_exitB" type="Button" parent="story_menu/HBoxContainer"]
+layout_mode = 2
 text = "Back"
 script = ExtResource("2_br78j")
 
@@ -148,6 +157,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="front_menu/Container/HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
 [connection signal="pressed" from="front_menu/Container/HBoxContainer/creditsB" to="." method="_on_credits_b_pressed"]
 [connection signal="pressed" from="front_menu/Container/HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
-[connection signal="pressed" from="story_menu/SM_exitB" to="." method="_on_sm_exit_b_pressed"]
+[connection signal="pressed" from="story_menu/HBoxContainer/SM_exitB" to="." method="_on_sm_exit_b_pressed"]
 [connection signal="pressed" from="play_menu/HBoxContainer/storyB" to="." method="_on_story_b_pressed"]
 [connection signal="pressed" from="play_menu/HBoxContainer/customB" to="." method="_on_custom_b_pressed"]

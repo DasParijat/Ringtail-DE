@@ -17,6 +17,7 @@ func _pressed() -> void:
 		return
 	
 	# Probably not UID this
+	get_parent_control().get_parent_control().get_parent_control().selected_fight = fight_type
 	var fight_res_path = "res://RDE_Resources/Level Res/" + fight_type + ".tres"
 	GlobalScene.set_next_level(fight_res_path)
 	GlobalScene.load_next_scene(GlobalScene.GAME)
