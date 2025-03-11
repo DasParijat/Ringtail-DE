@@ -116,14 +116,14 @@ layout_mode = 2
 text = "TRUE"
 script = ExtResource("3_v6pk2")
 
-[node name="BoxContainer" type="PanelContainer" parent="story_menu"]
+[node name="FightDesc" type="PanelContainer" parent="story_menu"]
 layout_mode = 2
 offset_left = 184.0
 offset_top = 56.0
 offset_right = 286.0
 offset_bottom = 79.0
 
-[node name="Label" type="Label" parent="story_menu/BoxContainer"]
+[node name="Text" type="Label" parent="story_menu/FightDesc"]
 layout_mode = 2
 text = "asdadasdada"
 

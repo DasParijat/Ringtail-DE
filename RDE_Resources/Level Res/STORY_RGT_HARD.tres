@@ -7,4 +7,5 @@
 [resource]
 script = ExtResource("1_oh108")
 LEVEL_NAME = "STORY_RGT_HARD"
+LEVEL_DESC = "This is ringtail hard"
 order = Array[Resource]([ExtResource("1_34e2t"), ExtResource("1_iyjj6")])

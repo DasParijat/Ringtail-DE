@@ -3,7 +3,7 @@ class_name LevelRes
 # LevelRes is used to define what's in the level
 
 @export var LEVEL_NAME : String = "UNNAMED LEVEL"
-
+@export var LEVEL_DESC : String = "This is a description for a level, displayed in story menu"
 @export var order : Array[Resource] = []
 
 var index = 0

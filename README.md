@@ -30,6 +30,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/10/25)
 			<li>(Main Menu) 
 			Single play button used to start fight instead of the fight select buttons</li>
+			<li>(Main Menu) 
+			Description text works and updates properly</li>
+			<li>(LevelRes) 
+			LevelRes has new description property</li>
 		</ul>
 	<li>
 	<li>
