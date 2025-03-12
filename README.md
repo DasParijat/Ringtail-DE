@@ -35,6 +35,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Moved where cam limits are set (from process to ready)</li>
 			<li>(PumpShotgun / SMG) 
 			Changed properties for SMG and Shotgun to be more "realistic"</li>
+			<li>(BulletRes) 
+			Added gun_shot_sound, not used yet</li>
+			<li>(Base Mob) 
+			Working on having mobs follow camera borders</li>
 		</ul>
 	<li>
 	<li>

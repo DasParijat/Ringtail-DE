@@ -5,6 +5,7 @@ class_name BulletRes
 
 @export_category("Qualitative Attributes")
 @export var texture : Texture2D = preload("uid://dqpq6unqud4qy")
+@export var gun_shot_sound : AudioStreamMP3
 
 @export_category("Quantitative Attributes")
 @export var damage : float
