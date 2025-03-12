@@ -17,5 +17,5 @@ bullet_res = ExtResource("1_64ekl")
 bullets_per_shot = 1
 max_spread = 2.0
 spread_rate = 0.1
-shake_strength = 40.0
+shake_strength = 20.0
 shake_fade = 1.0

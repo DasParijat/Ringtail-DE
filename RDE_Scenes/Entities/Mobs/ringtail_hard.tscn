@@ -15,7 +15,6 @@ mob_res = ExtResource("2_opmw5")
 [node name="MobSpawner" parent="." instance=ExtResource("4_u45r0")]
 
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
-debug_action_queue = true
 
 [node name="AttackLabel" type="Label" parent="."]
 offset_right = 40.0

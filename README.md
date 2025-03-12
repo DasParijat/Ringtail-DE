@@ -33,6 +33,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(Actions according to the planning doc rather than for testing)</li>
 			<li>(Game Camera) 
 			Moved where cam limits are set (from process to ready)</li>
+			<li>(PumpShotgun / SMG) 
+			Changed properties for SMG and Shotgun to be more "realistic"</li>
 		</ul>
 	<li>
 	<li>

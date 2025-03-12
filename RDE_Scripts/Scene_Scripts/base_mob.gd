@@ -97,6 +97,7 @@ func _physics_process(delta: float) -> void:
 	death_check()
 	deal_hitbox_dmg()
 	health_bar_handling()
+	border_handling()
 	player_proximity_detection(mob_res.player_detection_radius)
 	
 	if !(no_action()) and action_timeout(): 
@@ -135,6 +136,16 @@ func health_bar_handling() -> void:
 	if not mob_res.is_boss:
 		local_hp_bar.value = health_res.cur_hp
 		local_hp_bar.rotation = -rotation
+
+func border_handling() -> void:
+	var clamped_pos = Vector2(
+		clampf(global_position.x, 0, GlobalScene.cam_border_x),
+		clampf(global_position.y, 0, GlobalScene.cam_border_y)
+	)
+
+	if global_position > clamped_pos:
+		print("Border hit - Original pos: ", global_position, " Clamped pos: ", clamped_pos)
+		global_position = clamped_pos
 		
 func action(next_action : String, mod_params) -> void:
 	# Adds action to end of queue

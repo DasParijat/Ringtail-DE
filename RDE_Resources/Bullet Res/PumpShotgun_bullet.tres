@@ -7,7 +7,7 @@
 resource_local_to_scene = true
 script = ExtResource("1_uphi5")
 texture = ExtResource("2_rii66")
-damage = 20.0
+damage = 7.0
 is_piercing = true
 falloff_point = 400.0
 falloff_rate = 0.2
