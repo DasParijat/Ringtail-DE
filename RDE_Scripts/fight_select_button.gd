@@ -16,5 +16,6 @@ func _pressed() -> void:
 		print("IS LOCKED")
 		return
 	
-	get_parent_control().get_parent_control().get_parent_control().selected_fight = fight_type
+	GlobalMenu.emit_signal("fight_selected_pressed", fight_type)
+	#get_parent_control().get_parent_control().get_parent_control().selected_fight = fight_type
 	

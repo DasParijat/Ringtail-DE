@@ -5,16 +5,20 @@ var selected_fight : String = "" # Get info on what fight the player is looking 
 var fight_res_path : String = ""
 var loaded_selected_fight : LevelRes
 
-func _process(delta: float) -> void:
-	fight_res_path = "res://RDE_Resources/Level Res/" + selected_fight + ".tres"
+func _ready() -> void:
+	GlobalMenu.connect("fight_selected_pressed", Callable(self, "_on_fight_selected_pressed"))
+	
+func _on_fight_selected_pressed(fight_type) -> void:
+	fight_res_path = "res://RDE_Resources/Level Res/" + fight_type + ".tres"
 	
 	# If selected fight changes, then set description to latest valid level description
 	if load(fight_res_path) and load(fight_res_path) != loaded_selected_fight:
 		# Load level res to get level desc
+		selected_fight = fight_type
 		loaded_selected_fight = load(fight_res_path)
 		#print("level desc: ", loaded_selected_fight.LEVEL_DESC)
 		FightDescText.text = loaded_selected_fight.LEVEL_DESC
-	
+		
 func _on_playfight_b_pressed() -> void:
 	if selected_fight:
 		GlobalScene.set_next_level(fight_res_path)

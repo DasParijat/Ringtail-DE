@@ -27,6 +27,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/12/25)
+			<li>(GlobalMenu / Menu) 
+			GlobalMenu created, fight_select buttons now emit signal when it's pressed</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/11/25)
 			<li>(RingtailHARD) 
 			Started giving Ringtail proper actions 
