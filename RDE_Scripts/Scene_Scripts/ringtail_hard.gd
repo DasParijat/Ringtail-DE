@@ -15,49 +15,28 @@ var mob_load = preload("uid://cja72mr27m4j3")
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	#controller.cur_action = 2
+	controller.cur_action = 1
 
 func _process(delta: float) -> void:
-	controller.action_handling(1)
-	pass
-	#int(randf_range(attack_min, attack_max))
-
+	controller.action_handling(randi_range(attack_min, attack_max))
+	
 func action1() -> void:
-	#controller.hold(true)
-	#print("action1")
-	#base.action("orbit_player", {"speed": 10, "length": 2})
-	base.action("move", {"rotate": 0, "speed": 150, "length": 2})
-	
-	await GlobalTime.local_wait(2)
-	shoot()
-	# wait until condition
-	base.action("observe_player", true)
-	while base.player_hp >= 10:
-		await GlobalTime.local_wait(0.1)
-	base.action_break()
-	
-	base.action("move", {"rotate": -0.5, "speed": 150, "length": 5})
-	base.action("move_torward_player", {"offset": 1, "speed": 150, "length": 1})
-	#base.action("move_torward_point", {"speed": 10, "length": 3})
-	#base.action("teleport", Vector2(0, 0))
-	#await GlobalTime.local_wait(1)
-	
-	#base.action("run_for", 1)
-	await GlobalTime.local_wait(7)
+	for i in randi_range(2, 4):
+		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 2})
+		await GlobalTime.local_wait(2)
 	#spawner.spawn_mob(mob_load, Vector2(0, 100))
-	controller.chain_action(1)
+	controller.chain_action(2)
 
 func action2() -> void:
 	#base.hold(true)
 	#print("action2")
-	for i in range(2): 
-		base.action("move_torward_player", {"offset": i * 0.5, "speed": 75, "length": 0.7})
+	for i in range(4): 
+		base.action("move_torward_point", {"target": base.player_pos, "speed": 150, "smooth": 50, "length": 1})
 		await GlobalTime.local_wait(1)
-		# technically await not needed here 
 		# due to it not interacting with out-of-queue actions (like shooting)
 	base.action("observe_player", 1.5)
 	await GlobalTime.local_wait(1.5)
-	controller.chain_action(2)
+	controller.chain_action(3)
 	
 func action3() -> void:
 	#base.hold(true)

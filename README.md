@@ -27,6 +27,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/11/25)
+			<li>(RingtailHARD) 
+			Started giving Ringtail proper actions 
+			(Actions according to the planning doc rather than for testing)</li>
+			<li>(Game Camera) 
+			Moved where cam limits are set (from process to ready)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/10/25)
 			<li>(Main Menu) 
 			Single play button used to start fight instead of the fight select buttons</li>

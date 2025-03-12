@@ -115,6 +115,7 @@ fight_type = "STORY_RGT_HARD"
 layout_mode = 2
 text = "TRUE"
 script = ExtResource("3_v6pk2")
+is_locked = true
 
 [node name="FightDesc" type="PanelContainer" parent="story_menu"]
 layout_mode = 2

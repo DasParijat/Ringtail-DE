@@ -29,17 +29,17 @@ func _ready() -> void:
 	GlobalSignal.connect("cur_gun", Callable(self, "_on_cur_gun"))
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	if fight_node == null:
-		printerr("FIGHT NODE UNASSIGNED")
-	#$".".position_smoothing_speed = 5
-	 
-func _process(delta : float) -> void:	
 	if GlobalScene.cam_border_x and GlobalScene.cam_border_y:
 		$".".limit_left = -GlobalScene.cam_border_x
 		$".".limit_right = GlobalScene.cam_border_x
 		$".".limit_top = -GlobalScene.cam_border_y
 		$".".limit_bottom = GlobalScene.cam_border_y
 		
+	if fight_node == null:
+		printerr("FIGHT NODE UNASSIGNED")
+	#$".".position_smoothing_speed = 5
+	 
+func _process(delta : float) -> void:
 	if track_player:
 		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
