@@ -23,8 +23,22 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Ringtail (Raccoon Itself): https://commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
 </ul>
 
+<strong>Playtesters (Date's are last time they played):</strong>
+<ul>
+	<li>Matt Bran (3/13)</li>
+	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast</li>
+	<li>April Melendez (3/13) - Liked the camera</li>
+</ul>
+
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(3/13/25)
+			<li>(README) 
+			Added playtesting section to README</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(3/12/25)
