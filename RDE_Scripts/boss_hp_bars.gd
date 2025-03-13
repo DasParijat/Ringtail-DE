@@ -1,12 +1,13 @@
 extends CanvasLayer
 
 @onready var base : CharacterBody2D = get_parent()
+@onready var mob_res : MobRes = base.mob_res 
 
 @onready var max_hp : float = -1
 @onready var cur_hp : float = -1 
 
 @export var num_of_bars : int = 3
-@export var max_bar_darkness : int = 80
+@export var max_bar_darkness : int = 175
 
 var hp_bars : Array = []
 
@@ -19,6 +20,7 @@ func _on_base_mob_health_res_set() -> void:
 	# # EX: Max HP of 50, 4 bars, 1st bar range from 0 to 12, 2nd bar range from 13 to 24, 3rd bar range from 25 to 37, 4th bar range from 38 to 50
 	
 	max_hp = base.health_res.max_hp
+	mob_res = base.mob_res
 	#$BaseBar.max_value = max_hp
 	
 	for i in range(num_of_bars):
@@ -43,11 +45,14 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	bar.show_percentage = false
 	
 	style.set_corner_radius_all(4)
-	style.bg_color = Color8(255, 85, 90)
+	style.bg_color = mob_res.color
 	style.set_content_margin_all(0)
 	
 	bg_style.set_corner_radius_all(4)
-	bg_style.bg_color = Color8(0, 0, 0, (max_bar_darkness / num_of_bars))
+	bg_style.bg_color = Color8(mob_res.hp_bg_color.r8, 
+								mob_res.hp_bg_color.g8, 
+								mob_res.hp_bg_color.b8, 
+								(max_bar_darkness / num_of_bars))
 	bg_style.set_content_margin_all(0)
 	
 	bar.add_theme_stylebox_override("fill", style)

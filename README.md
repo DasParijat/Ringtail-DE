@@ -37,6 +37,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/13/25)
 			<li>(README) 
 			Added playtesting section to README</li>
+			<li>(MobRes / RingtailHARD Res) 
+			Added hp_bg_color, RingtailHARD now has colors</li>
+			<li>(Base Mob) 
+			BossHPBars color affected my mob_res colors, 
+			also max_bar_darkness is now way darker</li>
 		</ul>
 	<li>
 	<li>
