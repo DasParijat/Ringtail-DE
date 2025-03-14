@@ -7,7 +7,8 @@
 [resource]
 script = ExtResource("1_wqajs")
 name = "TutorialMob"
-color = Color(0, 0, 0, 1)
+color = Color(0.289033, 0.587833, 0.820883, 1)
+hp_bg_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_2e8yu")
 health_comp = ExtResource("1_of6v5")
 is_boss = true

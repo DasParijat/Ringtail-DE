@@ -25,6 +25,7 @@ var player_pos : Vector2
 var player_hp : float
 var is_near_player : bool = false
 var distance_to_player : float = 0.0
+var is_flipped_look : bool = true
 
 var player_in_hitbox : bool = false
 var damage_cooldown : float = 0.0
@@ -99,6 +100,7 @@ func _physics_process(delta: float) -> void:
 	health_bar_handling()
 	border_handling()
 	player_proximity_detection(mob_res.player_detection_radius)
+	sprite_dir_handling()
 	
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
@@ -146,9 +148,17 @@ func border_handling() -> void:
 	if global_position > clamped_pos:
 		print("Border hit - Original pos: ", global_position, " Clamped pos: ", clamped_pos)
 		global_position = clamped_pos
+
+func sprite_dir_handling() -> void:
+	if is_flipped_look:
+		var rot_deg = rad_to_deg(rotation)
+		rot_deg = fmod(rot_deg + 180, 360) - 180
+
+		sprite.flip_h = abs(rot_deg) > 90
+		sprite.global_rotation_degrees = 0
 		
 func action(next_action : String, mod_params) -> void:
-	# Adds action to end of queue
+	## Adds action to end of queue
 	# params data type can be any
 	var params = mod_params
 	if typeof(params) == TYPE_DICTIONARY:

@@ -34,6 +34,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/14/25)
+			<li>(Base Mob) 
+			Sprite can now point by flipping sprite, rather than directly pointing</li>
+			<li>(Gun) 
+			Gave gun an audiostreamplayer2D (for gun shot sounds)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/13/25)
 			<li>(README) 
 			Added playtesting section to README</li>
