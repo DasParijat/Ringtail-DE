@@ -25,7 +25,7 @@ var player_pos : Vector2
 var player_hp : float
 var is_near_player : bool = false
 var distance_to_player : float = 0.0
-var is_flipped_look : bool = true
+var sprite_flip_enabled : bool = true
 
 var player_in_hitbox : bool = false
 var damage_cooldown : float = 0.0
@@ -150,7 +150,8 @@ func border_handling() -> void:
 		global_position = clamped_pos
 
 func sprite_dir_handling() -> void:
-	if is_flipped_look:
+	sprite_flip_enabled = mob_res.sprtflip_enabled
+	if sprite_flip_enabled:
 		var rot_deg = rad_to_deg(rotation)
 		rot_deg = fmod(rot_deg + 180, 360) - 180
 

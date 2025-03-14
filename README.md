@@ -37,6 +37,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/14/25)
 			<li>(Base Mob) 
 			Sprite can now point by flipping sprite, rather than directly pointing</li>
+			<li>(Mob Res) 
+			Sprite flipping is a property (that can be changed mid game)</li>
+			<li>(RingtailHARD / Mob Controller) 
+			Handles dynamic sprite flipping. 
+			(DEV NOTE: I'm genuinely surprised how smooth the implementation of this was)</li>
 			<li>(Gun) 
 			Gave gun an audiostreamplayer2D (for gun shot sounds)</li>
 		</ul>

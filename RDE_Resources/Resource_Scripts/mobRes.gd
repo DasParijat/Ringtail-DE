@@ -7,6 +7,7 @@ class_name MobRes
 @export var color : Color 
 @export var hp_bg_color : Color
 @export var texture : Texture2D = preload("uid://5ry8kssatn11")
+@export var base_sprtflip_enabled = true
 
 @export_category("Health")
 @export var health_comp : HealthRes
@@ -28,3 +29,5 @@ class_name MobRes
 @export_category("Collision Damage")
 @export var collision_dmg : float = 1.0
 @export var collision_dmg_cooldown : float = 1.0 # in seconds
+
+var sprtflip_enabled : bool = base_sprtflip_enabled # sprtflip can be changed mid fight

@@ -41,6 +41,7 @@ func action_handling(next_action : int):
 		#cur_action += 1 
 		attack_label.text = "ATTACK " + str(cur_action)
 		
+		base.mob_res.sprtflip_enabled = base.mob_res.base_sprtflip_enabled
 		var action_name = "action" + str(cur_action)
 		if attack_node.has_method(action_name):
 			hold(true)

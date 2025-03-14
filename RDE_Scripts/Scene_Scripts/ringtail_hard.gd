@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 	controller.action_handling(randi_range(attack_min, attack_max))
 	
 func action1() -> void:
+	mob_res.sprtflip_enabled = false
 	for i in randi_range(2, 4):
 		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 2})
 		await GlobalTime.local_wait(2)
