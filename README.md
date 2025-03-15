@@ -38,7 +38,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player / Oswald) 
 			Can no longer rest / use power when game paused</li>
 			<li>(Fight UI) 
-			Changed how gun stats are shown, reflect the final idea more</li>
+			Changed how gun stats are shown, reflect the final idea more,
+			Gun Stats are held in a container, with seperate labels for ammo and reload</li>
 			<li>(PumpShotgun Res) 
 			PumpShotgun now has sprite (temp but reflects final design)</li>
 		</ul>

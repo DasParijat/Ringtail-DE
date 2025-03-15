@@ -47,11 +47,14 @@ func _on_get_cur_stats(type, stats) -> void:
 			#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 		"GUN":
 			var reload_text : String = ""
+			GunReload.hide()
 			if stats["is_reloading"]:
-				reload_text = " RELOADING"
+				reload_text = "RELOADING"
+				GunReload.show()
 			
 			GunInUse.texture = stats["gun_image"]
-			GunAmmo.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"]) + reload_text
+			GunAmmo.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"])
+			GunReload.text = reload_text
 
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	bar.value = new_hp
