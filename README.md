@@ -6,15 +6,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Create a game over menu DONE</li> 
-	<li>Create a victory menu that tracks stats of the fight</li>
-	<li>Create health bars for player (bottom left), DONE
-	boss (top middle when one boss), DONE
-	and mob (Directly on mob) DONE</li> 
-	<li>Create power bar for player, and show gun player is using DONE</li> 
-	<li>Make resting actually heal player DONE</li> 
 	<li>Implement audio</li>
-	<li>Menu animations, clicking play should "tween" to level select menu DONE SORTA</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -44,7 +36,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD / Mob Controller) 
 			Handles dynamic sprite flipping. 
 			(DEV NOTE: I'm genuinely surprised how smooth the implementation of this was)</li>
-			<li>(Gun) 
+			<li>(Gun)               
 			Gave gun an audiostreamplayer2D (for gun shot sounds)</li>
 		</ul>
 	<li>
