@@ -29,6 +29,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/15/25)
 			<li>(NavButton) 
 			Made navButton script into a class</li>
+			<li>(RingtailHARD) 
+			Created attack plan for RingtailHARD</li>
+			<li>(Base Mob) 
+			Updated in-code documentation</li>
+			<li>(Base Player) 
+			Updated in-code documentation</li>
 		</ul>
 	<li>
 	<li>

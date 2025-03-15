@@ -39,31 +39,35 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Constantly updating global player stats
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
-	movement(player_res.cur_speed)
+	movement(player_res.cur_speed) # Where movement is handled
 	
+	# Checks
 	rest_check(delta)
 	death_check()
 	test_function()
 
 func movement(cur_speed : float) -> void:
+	## Handles all movement of player
 	look_at(get_global_mouse_position())
 	
+	# Speed handling
 	cur_speed = player_res.base_speed
 	if Input.is_action_pressed("sprint"):
 		cur_speed = player_res.sprint_speed
 		
 	if Input.is_action_pressed("rest"):
 		cur_speed = player_res.rest_speed
-		# TODO add way to actually heal when restings
 	
+	# Input handling / Sets final speed
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
 	velocity = input_direction * (cur_speed * speed_modifier)
-	#print(global_position)
 	
-	move_and_slide()
+	move_and_slide() # actual movement
 
 func rest_check(delta):
+	## Handles when player "rests" (pressing rest button)
 	# NOTE: Doesn't run when hp is max, 
 	#	else player can increase rest_timeout to an unintended value 
 	#	and possibly cheese game. 
@@ -74,21 +78,23 @@ func rest_check(delta):
 			rest_timeout = 0.0
 	
 func set_speedmod(new_val : float) -> void:
+	## Modify speed_modifier
 	speed_modifier = new_val
 
 func death_check() -> void:
+	## Checks if player is dead, and emits game over signal
 	if health_res.is_dead():
 		print("RIP BOZO")
 		GlobalSignal.game_over.emit()
 		# Takes in signal within base player code
 
 func get_cur_stats() -> Dictionary:
-	# For giving stats globally the fight_ui can track
+	## For giving stats globally the fight_ui can track
 	return {
 		"position": global_position,
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
-		"is_hurting": is_hurting or is_near_enemy,
+		"is_hurting": is_hurting or is_near_enemy, # For health bar
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),
 		"player_pri_color": player_res.primary_color,
@@ -96,23 +102,29 @@ func get_cur_stats() -> Dictionary:
 	}
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
+	## Updates player is being hurt
 	is_hurting = true
 
 func _on_hit_box_area_exited(area: Area2D) -> void:
+	## Updates player is not being hurt
 	is_hurting = false
 	
 func _on_hostile_detection_area_entered(area: Area2D) -> void:
+	## Sets is_near_enemy to true
 	if area.is_in_group("Enemy"):
 		is_near_enemy = true
 		
 func _on_hostile_detection_area_exited(area: Area2D) -> void:
+	## Sets is_near_enemy to false
 	if area.is_in_group("Enemy"):
 		is_near_enemy = false
 		
 func _on_game_over() -> void:
+	## Switches to game over scene
 	#health_res.reset_health()
 	GlobalScene.load_next_scene(GlobalScene.GAME_OVER)
 	
 func test_function() -> void:
+	## If test button pressed, something happens
 	if Input.is_action_pressed("test"):
 		player_res.health_res.take_dmg(10)

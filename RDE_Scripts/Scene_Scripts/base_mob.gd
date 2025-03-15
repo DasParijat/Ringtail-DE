@@ -92,9 +92,12 @@ func _ready() -> void:
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
 func _physics_process(delta: float) -> void:
-	#print(is_near_player)
+	
+	## Delta updaters
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
+	
+	## Constant handling
 	death_check()
 	deal_hitbox_dmg()
 	health_bar_handling()
@@ -102,6 +105,7 @@ func _physics_process(delta: float) -> void:
 	player_proximity_detection(mob_res.player_detection_radius)
 	sprite_dir_handling()
 	
+	## Action Queue Handling
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
 		debug_queue(debug_action_queue)
@@ -111,6 +115,7 @@ func _physics_process(delta: float) -> void:
 	
 			
 func death_check() -> void:
+	## Check if mob health_res is dead, and respond accordingly
 	if health_res.is_dead():
 		print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
@@ -119,6 +124,7 @@ func death_check() -> void:
 		get_parent().queue_free()
 
 func deal_hitbox_dmg() -> void:
+	## Handles dealing damage to player when in hitbox
 	# Breaking when player not in hitbox
 	if not player_in_hitbox:
 		return
@@ -135,11 +141,13 @@ func deal_hitbox_dmg() -> void:
 	damage_cooldown = 0.0
 
 func health_bar_handling() -> void:
+	## Handles updating local hp bar
 	if not mob_res.is_boss:
 		local_hp_bar.value = health_res.cur_hp
 		local_hp_bar.rotation = -rotation
 
 func border_handling() -> void:
+	## Handles preventing mob from going beyond world/cam border
 	var clamped_pos = Vector2(
 		clampf(global_position.x, 0, GlobalScene.cam_border_x),
 		clampf(global_position.y, 0, GlobalScene.cam_border_y)
@@ -176,8 +184,7 @@ func action(next_action : String, mod_params) -> void:
 	action_queue.append({"action": next_action, "params": params})
 
 func action_combo(actions : Array) -> void:
-	# This will add multiple actions to the queue itself
-	# So an action can be a COMBO of other existing actions
+	## This will add a combo of actions to the queue itself
 	actions.reverse() 
 	# Reversing makes action sequence line up with 
 	# 	how it's listed in given array (due to use of action_now)
@@ -190,13 +197,15 @@ func action_now(next_action : String, params) -> void:
 	action_queue.insert(0, {"action": next_action, "params": params})
 	
 func no_action() -> bool:
+	## True if action queue is empty
 	return action_queue.is_empty()
 
 func can_change_action() -> bool:
-	# used for parent to check whether they can change action or not
+	## Used for parent to check whether they can change action or not
 	return no_action() and not GlobalTime.is_paused
 	
 func debug_queue(can_print : bool) -> void:
+	## Used to print out action queue related info
 	if not can_print:
 		return
 		
@@ -208,12 +217,14 @@ func debug_queue(can_print : bool) -> void:
 	print("--------------------------------------------------------")
 	
 func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
+	## Any length of params is taken in, and combined with the rest of the default params.
 	var new_params = default_params[action_name].duplicate()
 	for i in mod.keys():
 		new_params[i] = mod[i]
 	return new_params
 
 func set_default_params(new_def: Dictionary) -> void:
+	## For changing the default params of an action
 	for i in new_def.keys():
 		default_params[i] = new_def[i].duplicate()
 
@@ -244,23 +255,23 @@ func run_for(wait_time : float) -> void:
 	run_until(cur_action_time >= wait_time)
 
 func action_timeout() -> bool:
+	## When action is over
 	return cur_action_time == 0.0
 
 func action_break() -> void:
-	# Used to break out of current action
+	## Used to break out of current action
 	cur_action_time = 0.0
 	rotation_finished = false
 	orbit_angle = 0.0
 	
 func action_buffer(length : float) -> void:
-	# Buffer is used to stop boss from immediatly 
-	# moving on to next action sequence 
+	## Buffer is used to stop boss from immediatly moving on to next action sequence 
 	run_for(length)
 
 ## ACTIONS
 
 func move(params : Dictionary) -> void:
-	# Move in current direction, can tilt via rotate
+	## Move in current direction, can tilt via rotate
 	var speed = params["speed"]
 	var rotate = params["rotate"]
 	var length = params["length"]
@@ -272,6 +283,7 @@ func move(params : Dictionary) -> void:
 	run(length)
 
 func action_rotate(params : Dictionary) -> void:
+	## Rotates to point to a specific direction
 	var speed = params["speed"]
 	var length = params["length"]
 	var rotate_amt = deg_to_rad(params["rotate"])
@@ -296,7 +308,7 @@ func action_rotate(params : Dictionary) -> void:
 		run(length)
 		
 func move_dir(params : Dictionary) -> void:
-	# rotate into direction, and move
+	## Rotate into direction, and move
 	var direction = params["direction"]
 	var speed = params["speed"]
 	var length = params["length"]
@@ -305,6 +317,7 @@ func move_dir(params : Dictionary) -> void:
 				{"action": "move", "params": {"speed": speed, "length": length}}])
 					
 func move_torward(target : Vector2, params : Dictionary) -> void:
+	## Moves torward a target, used as base for other move func
 	var delay = params["delay"]
 	var speed = params["speed"]
 	var smooth = params["smooth"]
@@ -317,11 +330,13 @@ func move_torward(target : Vector2, params : Dictionary) -> void:
 	run(length)
 	
 func move_torward_point(params : Dictionary) -> void:
+	## Move torward a Vector2 point
 	var target = params["target"]
 	
 	move_torward(target, params)
 
 func move_torward_player(params: Dictionary) -> void:
+	## Move torward player
 	var offset = params["offset"] 
 	# If boss wants to move to a pos in relation to player
 	# Ex. Boss wants to go opp coords of player, offset = -1
@@ -329,6 +344,7 @@ func move_torward_player(params: Dictionary) -> void:
 	move_torward((player_pos * offset), params)
 
 func orbit(target : Vector2, params: Dictionary) -> void:
+	## Circle around a target, used as base for other orbit func
 	var radius = params["radius"]
 	var speed = params["speed"]
 	var length = params["length"]
@@ -341,22 +357,27 @@ func orbit(target : Vector2, params: Dictionary) -> void:
 	run_for(length)
 
 func orbit_point(params : Dictionary) -> void:
+	## Circle around a Vector2 point
 	var target = params["target"]
 	orbit(target, params)
 	
 func orbit_player(params : Dictionary) -> void:
+	## Circle around the player
 	var offset = params["offset"]
 	orbit((player_pos * offset), params)
 
 func observe_player(length : float) -> void:
+	## Look at player for a specified length
 	look_at(player_pos)
 	run(length)
 
 func teleport(target : Vector2) -> void:
+	## Teleport to Vector2 point
 	position = target
-	run_until(true)
+	run_until(true) # true parameter means action will timeout immediatly
 	
-func track_pos(cur_data, delay) -> void:
+func track_pos(cur_data, delay : float) -> void:
+	## Tracks a target with delay (or no delay at all)
 	if delay <= 0:
 		target_pos = cur_data 
 		return
@@ -365,13 +386,14 @@ func track_pos(cur_data, delay) -> void:
 		track_delay.start(delay)
 
 func player_proximity_detection(detection_radius : float) -> void:
-	#print(is_near_player)
+	## Updates is_near_player accordingly
 	if distance_to_player < detection_radius:
 		is_near_player = true
 	else:
 		is_near_player = false
 		
 func _on_get_cur_stats(type, stats):
+	## Gets player stats and distance to player
 	if type == "PLAYER":
 		player_pos = stats["position"]
 		player_hp = stats["cur_hp"]
@@ -380,20 +402,24 @@ func _on_get_cur_stats(type, stats):
 		#print("distance to play: ", distance_to_player)
 
 func _on_game_won() -> void:
+	## What mob does when game won
 	print("base mob:  game won")
 
 ## Area2D Collisions
 func _on_hit_box_area_entered(area: Area2D) -> void:
+	## Starts dealing dmg to player if in hitbox
 	if area.is_in_group("Player"):
 		player_in_hitbox = true
 		damage_cooldown = mob_res.collision_dmg_cooldown
 		
 func _on_hit_box_area_exited(area: Area2D) -> void:
+	## Stops dealing dmg to player if out of hitbox
 	if area.is_in_group("Player"):
 		player_in_hitbox = false
 		damage_cooldown = 0.0
 		
 func _on_tree_exiting() -> void:
+	## Decrement num of mobs and/or num of bosses
 	GMobHandler.num_of_mobs -= 1
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses -= 1
