@@ -150,14 +150,20 @@ func border_handling() -> void:
 		global_position = clamped_pos
 
 func sprite_dir_handling() -> void:
+	## Handles how sprite looks at direction
 	sprite_flip_enabled = mob_res.sprtflip_enabled
+	#print(abs(global_rotation_sdegrees), " FLIP: ", sprite.flip_h, " TRUE ROTATE: ", global_rotation_degrees)
 	if sprite_flip_enabled:
-		var rot_deg = rad_to_deg(rotation)
-		rot_deg = fmod(rot_deg + 180, 360) - 180
-
-		sprite.flip_h = abs(rot_deg) > 90
 		sprite.global_rotation_degrees = 0
-		
+	else:
+		sprite.global_rotation_degrees = global_rotation_degrees
+	
+	# NOTE: Sprite flip h/v handled outside if statement 
+	#		so setting it is only done once rather than twice (one in if, one in else)
+	sprite.flip_h = abs(global_rotation_degrees) > 90 and sprite_flip_enabled
+	sprite.flip_v = abs(global_rotation_degrees) > 90 and not sprite_flip_enabled
+	# flip_v is so when heading in dir, it doesn't look upside-down
+	
 func action(next_action : String, mod_params) -> void:
 	## Adds action to end of queue
 	# params data type can be any

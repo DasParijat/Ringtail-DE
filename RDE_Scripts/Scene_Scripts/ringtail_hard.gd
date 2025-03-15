@@ -22,11 +22,11 @@ func _process(delta: float) -> void:
 	
 func action1() -> void:
 	mob_res.sprtflip_enabled = false
-	for i in randi_range(2, 4):
-		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 2})
-		await GlobalTime.local_wait(2)
+	for i in randi_range(1, 2):
+		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 1})
+		await GlobalTime.local_wait(1)
 	#spawner.spawn_mob(mob_load, Vector2(0, 100))
-	controller.chain_action(2)
+	controller.chain_action(3)
 
 func action2() -> void:
 	#base.hold(true)
@@ -41,7 +41,6 @@ func action2() -> void:
 	
 func action3() -> void:
 	#base.hold(true)
-	#print("action3")
 	base.action("move_torward_player", {"speed": 100, "length": 0.5})
 	await GlobalTime.local_wait(0.5)
 	

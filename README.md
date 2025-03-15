@@ -37,6 +37,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/14/25)
 			<li>(Base Mob) 
 			Sprite can now point by flipping sprite, rather than directly pointing</li>
+			<li>(Base Mob) 
+			Sprite never goes upside down when pointing</li>
 			<li>(Mob Res) 
 			Sprite flipping is a property (that can be changed mid game)</li>
 			<li>(RingtailHARD / Mob Controller) 
