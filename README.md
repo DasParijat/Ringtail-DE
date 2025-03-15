@@ -35,6 +35,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Updated in-code documentation</li>
 			<li>(Base Player) 
 			Updated in-code documentation</li>
+			<li>(Base Player / Oswald) 
+			Can no longer rest / use power when game paused</li>
 			<li>(Fight UI) 
 			Changed how gun stats are shown, reflect the final idea more</li>
 			<li>(PumpShotgun Res) 

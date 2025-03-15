@@ -44,9 +44,10 @@ func _process(delta: float) -> void:
 	movement(player_res.cur_speed) # Where movement is handled
 	
 	# Checks
-	rest_check(delta)
-	death_check()
-	test_function()
+	if not GlobalTime.is_paused:
+		rest_check(delta)
+		death_check()
+		test_function()
 
 func movement(cur_speed : float) -> void:
 	## Handles all movement of player
