@@ -9,8 +9,9 @@ extends CanvasLayer
 @onready var DamageDelayBar : ProgressBar = $PlayerUI/PlayerHPBar/DamageBar
 @onready var PlayerPowerBar : ProgressBar = $PlayerUI/PowerBar
 
-@onready var GunStats : Label = $PlayerUI/GunStats
-@onready var GunInUse : Sprite2D = $PlayerUI/GunInUse
+@onready var GunInUse : TextureRect = $PlayerUI/GunUI/HBoxContainer/GunInUse
+@onready var GunAmmo : Label = $PlayerUI/GunUI/HBoxContainer/GunStats/GunAmmo
+@onready var GunReload : Label = $PlayerUI/GunUI/HBoxContainer/GunStats/GunReload
 
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
@@ -50,7 +51,7 @@ func _on_get_cur_stats(type, stats) -> void:
 				reload_text = " RELOADING"
 			
 			GunInUse.texture = stats["gun_image"]
-			GunStats.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"]) + reload_text
+			GunAmmo.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"]) + reload_text
 
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	bar.value = new_hp

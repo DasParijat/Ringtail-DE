@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight_ui.gd" id="1_pahoy"]
-[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_p00x8"]
+[ext_resource type="Texture2D" uid="uid://c2v6btjf2f41c" path="res://RDE_Images/pumpshot_1.png" id="2_k4l24"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
@@ -58,16 +58,36 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xbayi")
 value = 50.0
 show_percentage = false
 
-[node name="GunStats" type="Label" parent="PlayerUI"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = -23.0
-offset_right = 140.0
-grow_vertical = 0
+[node name="GunUI" type="PanelContainer" parent="PlayerUI"]
+layout_mode = 0
+offset_top = -48.0
+offset_right = 205.0
+offset_bottom = -4.0
 
-[node name="GunInUse" type="Sprite2D" parent="PlayerUI"]
-position = Vector2(50, -50)
-texture = ExtResource("2_p00x8")
+[node name="ColorRect" type="ColorRect" parent="PlayerUI/GunUI"]
+layout_mode = 2
+size_flags_stretch_ratio = 30.6
+color = Color(0, 0, 0, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/GunUI"]
+layout_mode = 2
+
+[node name="GunInUse" type="TextureRect" parent="PlayerUI/GunUI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_k4l24")
+
+[node name="GunStats" type="VBoxContainer" parent="PlayerUI/GunUI/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="GunAmmo" type="Label" parent="PlayerUI/GunUI/HBoxContainer/GunStats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "10/10"
+horizontal_alignment = 2
+
+[node name="GunReload" type="Label" parent="PlayerUI/GunUI/HBoxContainer/GunStats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "RELOADING"
+horizontal_alignment = 2
