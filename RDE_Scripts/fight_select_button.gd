@@ -1,4 +1,4 @@
-extends "res://RDE_Scripts/navButton.gd"
+extends navButton
 
 # TODO add script to VBoxContainer to handle adding/unlocking buttons
 

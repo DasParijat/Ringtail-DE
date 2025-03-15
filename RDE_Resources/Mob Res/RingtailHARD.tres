@@ -11,6 +11,7 @@ name = "RingtailHARD"
 color = Color(0.967964, 0.436217, 0.353092, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
 texture = ExtResource("3_sot35")
+base_sprtflip_enabled = true
 health_comp = ExtResource("1_8jvsn")
 is_boss = true
 is_enemy = true

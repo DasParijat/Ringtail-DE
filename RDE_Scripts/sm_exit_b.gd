@@ -1,4 +1,4 @@
-extends "res://RDE_Scripts/navButton.gd"
+extends navButton
 
 
 # Called when the node enters the scene tree for the first time.

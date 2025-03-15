@@ -1,3 +1,4 @@
+class_name navButton
 extends Button
 # Handles buttons that can be navigated using keys (WASD/ARROW)
 

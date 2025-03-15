@@ -26,6 +26,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/15/25)
+			<li>(NavButton) 
+			Made navButton script into a class</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/14/25)
 			<li>(Base Mob) 
 			Sprite can now point by flipping sprite, rather than directly pointing</li>
