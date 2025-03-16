@@ -23,6 +23,9 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	print(get_viewport().get_visible_rect().size)
 	
+	player_hp_stylebox.set_corner_radius_all(4)
+	player_power_stylebox.set_corner_radius_all(4)
+	
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
 		"PLAYER":

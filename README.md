@@ -40,6 +40,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			Changed how gun stats are shown, reflect the final idea more,
 			Gun Stats are held in a container, with seperate labels for ammo and reload</li>
+			<li>(Fight UI) 
+			Fight UI elements are more rounded and flexible</li>
 			<li>(PumpShotgun Res) 
 			PumpShotgun now has sprite (temp but reflects final design)</li>
 		</ul>

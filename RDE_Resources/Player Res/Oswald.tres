@@ -10,7 +10,7 @@
 script = ExtResource("3_se43b")
 name = "Oswald"
 primary_color = Color(1, 0.854902, 0.462745, 1)
-secondary_color = Color(1, 0.615686, 0.462745, 1)
+secondary_color = Color(0.864355, 0.683398, 0, 1)
 texture = ExtResource("5_rwotw")
 health_res = ExtResource("1_6a0bh")
 regen_rate = 1.0
