@@ -32,6 +32,7 @@ script = ExtResource("4_a1q2e")
 color = Color(0.972549, 0.74902, 0.647059, 1)
 
 [node name="TEST_WORLD" parent="Background" instance=ExtResource("4_72mc8")]
+visible = false
 
 [node name="Fight" type="Node2D" parent="."]
 script = ExtResource("6_b2j36")
