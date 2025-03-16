@@ -19,6 +19,8 @@ var prev_player_hp : float = 101
 var player_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 
+var reload_text : String = ""
+
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	print(get_viewport().get_visible_rect().size)
@@ -49,11 +51,17 @@ func _on_get_cur_stats(type, stats) -> void:
 			
 			#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 		"GUN":
-			var reload_text : String = ""
-			GunReload.hide()
 			if stats["is_reloading"]:
 				reload_text = "RELOADING"
 				GunReload.show()
+				GunAmmo.modulate = Color8(GunAmmo.modulate.r8, GunAmmo.modulate.g8, GunAmmo.modulate.b8,
+										  150) # Alpha only value that matters here
+			else:
+				reload_text = ""
+				GunReload.hide()
+				GunAmmo.modulate = Color8(GunAmmo.modulate.r8, GunAmmo.modulate.g8, GunAmmo.modulate.b8, 
+										  255)
+				# probably an easier way to reset modulate but eh
 			
 			GunInUse.texture = stats["gun_image"]
 			GunAmmo.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"])

@@ -35,6 +35,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/16/25)
 			<li>(README) 
 			Updated AGENDA, added new things</li>
+			<li>(Fight UI) 
+			Ammo counter turns semi-transparent when reloading</li>
 		</ul>
 	<li>
 	<li>

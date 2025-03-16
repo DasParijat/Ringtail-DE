@@ -49,10 +49,8 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	style.set_content_margin_all(0)
 	
 	bg_style.set_corner_radius_all(4)
-	bg_style.bg_color = Color8(mob_res.hp_bg_color.r8, 
-								mob_res.hp_bg_color.g8, 
-								mob_res.hp_bg_color.b8, 
-								(max_bar_darkness / num_of_bars))
+	bg_style.bg_color = Color8(mob_res.hp_bg_color.r8, mob_res.hp_bg_color.g8, mob_res.hp_bg_color.b8, 
+							  (max_bar_darkness / num_of_bars))
 	bg_style.set_content_margin_all(0)
 	
 	bar.add_theme_stylebox_override("fill", style)
