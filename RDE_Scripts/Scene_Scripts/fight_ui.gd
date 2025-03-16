@@ -30,14 +30,29 @@ func _ready() -> void:
 	
 	player_hp_stylebox.set_corner_radius_all(4)
 	player_power_stylebox.set_corner_radius_all(4)
+
+func power_overlay_handling(has_power : bool) -> void:
+	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayer
 	
+	if Input.is_action_just_pressed("sprint") and has_power:
+		PO_anim_player.play("PO_fade_IN")
+	if Input.is_action_just_released("sprint"):
+		# Currently flashes when power out but sprint released
+		# Might keep cause it looks kinda cool
+		PO_anim_player.play("PO_fade_OUT")
+		
 func _on_get_cur_stats(type, stats) -> void:
+	## Always gets current stats / Is pretty much the _process func here
+	# TODO possibly seperate each UI thing into it's own function
 	match(type):
 		"PLAYER":
-			# Bar / Power Overlay coloring
+			# Power Overlay
+			PowerOverlay.color = stats["player_sec_color"]
+			power_overlay_handling(stats["cur_power"] > 0)
+			
+			# Bar
 			player_hp_stylebox.bg_color = stats["player_pri_color"]
 			PlayerHPBar.add_theme_stylebox_override("fill", player_hp_stylebox)
-			PowerOverlay.modulate = stats["player_sec_color"]
 			player_power_stylebox.bg_color = stats["player_sec_color"]
 			PlayerPowerBar.add_theme_stylebox_override("fill", player_power_stylebox)
 			

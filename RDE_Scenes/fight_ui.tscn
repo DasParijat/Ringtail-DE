@@ -34,27 +34,12 @@ corner_radius_bottom_left = 4
 expand_margin_left = 3.0
 expand_margin_right = 5.0
 
-[sub_resource type="Animation" id="Animation_yecig"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_mk6c8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -64,26 +49,41 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_otsff"]
-resource_name = "fade out"
+[sub_resource type="Animation" id="Animation_msccb"]
+resource_name = "PO_fade_IN"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118)]
+}
+
+[sub_resource type="Animation" id="Animation_f0ahw"]
+resource_name = "PO_fade_OUT"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fuu3l"]
 _data = {
-"RESET": SubResource("Animation_mk6c8"),
-"fade out": SubResource("Animation_otsff"),
-"fade_in": SubResource("Animation_yecig")
+"PO_fade_IN": SubResource("Animation_msccb"),
+"PO_fade_OUT": SubResource("Animation_f0ahw"),
+"RESET": SubResource("Animation_mk6c8")
 }
 
 [node name="fight_ui" type="CanvasLayer"]
@@ -165,7 +165,7 @@ text = "RELOADING"
 layer = 0
 
 [node name="PowerOverlay" type="ColorRect" parent="CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -177,3 +177,4 @@ color = Color(0.552534, 0.157892, 0.519227, 0.639216)
 libraries = {
 "": SubResource("AnimationLibrary_fuu3l")
 }
+speed_scale = 2.0

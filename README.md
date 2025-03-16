@@ -38,7 +38,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			Ammo counter turns semi-transparent when reloading</li>
 			<li>(Fight UI) 
-			Setting up power overlay</li>
+			Power overlay affect occurs when power button pressed</li>
+			<li>(Base Player) 
+			Base player now emits player_res in get_cur_stats</li>
 		</ul>
 	<li>
 	<li>
