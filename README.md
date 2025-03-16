@@ -6,7 +6,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Implement audio</li>
+	<li>Implement audio (Sound Effects and Music)</li>
+	<li>Ringtail fight moves</li>
+	<li>Fight UI / Boss Bar UI 
+	(Custom sprites for guns, keyboard hints)</li>
+	<li>Make way to gain player power</li>
+	<li>Create new assets for world (modified version of tileset)</li>
+	<li>Stylize menu and buttons</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -24,6 +30,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(3/16/25)
+			<li>(README) 
+			Updated AGENDA, added new things</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(3/15/25)
