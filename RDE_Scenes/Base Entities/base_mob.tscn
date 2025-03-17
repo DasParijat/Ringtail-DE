@@ -49,6 +49,10 @@ show_percentage = false
 visible = false
 script = ExtResource("4_6n13u")
 
+[node name="BossName" type="Label" parent="BossHPBars"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="BaseBar" type="ProgressBar" parent="BossHPBars"]
 anchors_preset = 5
 anchor_left = 0.5

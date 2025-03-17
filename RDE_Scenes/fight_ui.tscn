@@ -94,11 +94,12 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -20.0
-offset_right = 10.0
-offset_bottom = -20.0
+offset_left = 15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = -30.0
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 
 [node name="PlayerHPBar" type="ProgressBar" parent="PlayerUI"]
 z_index = 1
@@ -171,7 +172,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.552534, 0.157892, 0.519227, 0.639216)
+color = Color(0.524251, 0.284772, 0.00685324, 0.639216)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PowerOverlay"]
 libraries = {

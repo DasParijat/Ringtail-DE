@@ -4,6 +4,7 @@ extends Node2D
 @export var cam_border_y : float = 1200
 
 @export var base_canvas_mod : Color = Color(255, 255, 255, 100)
+# RGT Plains canvas mod - f8bfa5
 
 func _ready() -> void:
 	GlobalScene.cam_border_x = cam_border_x

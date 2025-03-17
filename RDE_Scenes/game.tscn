@@ -29,7 +29,7 @@ player_tracking_speed = 1.5
 script = ExtResource("4_a1q2e")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Background"]
-color = Color(0.972549, 0.74902, 0.647059, 1)
+color = Color(0.691453, 0.342539, 0.161267, 1)
 
 [node name="TEST_WORLD" parent="Background" instance=ExtResource("4_72mc8")]
 visible = false
