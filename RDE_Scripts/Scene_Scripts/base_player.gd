@@ -78,7 +78,10 @@ func rest_check(delta):
 	if Input.is_action_pressed("rest") and not health_res.is_max_hp: 
 		rest_timeout += delta
 		if rest_timeout >= player_res.regen_rate:
-			health_res.cur_hp += player_res.regen_amt
+			# When at max power, more health will regen
+			var health_gain : float = clampf(player_res.regen_amt * (player_res.cur_power / 75), 0.5, player_res.regen_amt)
+			health_res.cur_hp += health_gain
+			print(health_gain)
 			rest_timeout = 0.0
 	
 func set_speedmod(new_val : float) -> void:
