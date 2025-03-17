@@ -7,9 +7,11 @@
 [resource]
 script = ExtResource("1_wqajs")
 name = "TutorialMob"
+display_name = "TUTORIAL MOB"
 color = Color(0.289033, 0.587833, 0.820883, 1)
 hp_bg_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_2e8yu")
+base_sprtflip_enabled = true
 health_comp = ExtResource("1_of6v5")
 is_boss = true
 is_enemy = true

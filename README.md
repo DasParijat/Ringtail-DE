@@ -43,6 +43,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Fight UI size has increased</li>
 			<li>(Base Player) 
 			Base player now emits player_res in get_cur_stats</li>
+			<li>(Mob Res) 
+			Mob Res now has display name (for hp bar)</li>
+			<li>(Base Mob HP Bars) 
+			Display name is shown for BossHPBar,
+			also cleaned up code for when mob_res is set</li>
 		</ul>
 	<li>
 	<li>

@@ -8,6 +8,7 @@
 resource_local_to_scene = true
 script = ExtResource("1_8a5f1")
 name = "RingtailHARD"
+display_name = "RINGTAIL"
 color = Color(0.967964, 0.436217, 0.353092, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
 texture = ExtResource("3_sot35")

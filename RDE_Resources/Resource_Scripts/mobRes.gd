@@ -4,6 +4,7 @@ class_name MobRes
 
 # Changable Properties
 @export var name : String = "UNNAMED MOB"
+@export var display_name : String = "NO DISPLAY NAME GIVEN" # used for health bar
 @export var color : Color 
 @export var hp_bg_color : Color
 @export var texture : Texture2D = preload("uid://5ry8kssatn11")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=10 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
@@ -9,8 +9,17 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8qa6"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_cbuce"]
+font_size = 17
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(2, 2)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdwj"]
 bg_color = Color(1, 0.333333, 0.352941, 1)
+shadow_color = Color(0, 0, 0, 0.686275)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i0y3"]
 
@@ -46,12 +55,23 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_t8qa6")
 show_percentage = false
 
 [node name="BossHPBars" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("4_6n13u")
 
 [node name="BossName" type="Label" parent="BossHPBars"]
-offset_right = 40.0
-offset_bottom = 23.0
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.5
+offset_top = 17.0
+offset_right = 29.5
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(1.2, 1)
+text = "Ringtail"
+label_settings = SubResource("LabelSettings_cbuce")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BaseBar" type="ProgressBar" parent="BossHPBars"]
 anchors_preset = 5
