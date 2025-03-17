@@ -29,3 +29,4 @@ sprite_size = Vector2(1, 1)
 collision_size = Vector2(1, 1)
 hitbox_size = Vector2(1, 1)
 hostile_detect_size = Vector2(1, 1)
+power_near_enemy_boost = 0.7

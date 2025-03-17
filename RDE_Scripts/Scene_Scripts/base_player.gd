@@ -123,6 +123,10 @@ func _on_hostile_detection_area_exited(area: Area2D) -> void:
 		is_near_enemy = false
 
 func _on_update_power(power_update : float) -> void:
+	if is_near_enemy: 
+		# power given has (near_enemy_boost)% increase when near enemy
+		power_update += power_update * player_res.power_near_enemy_boost  
+	
 	player_res.cur_power += power_update
 	
 func _on_game_over() -> void:

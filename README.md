@@ -35,6 +35,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/17/25)
 			<li>(Base Player / Bullet) 
 			cur_power updates when bullet hits it's target (not player)</li>
+			<li>(Base Player / Player Res) 
+			There's a boost in power gain when player near enemy</li>
 		</ul>
 	<li>
 	<li>

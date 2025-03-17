@@ -39,8 +39,10 @@ class_name PlayerRes
 @export var collision_size : Vector2 = Vector2(1, 1)
 @export var hitbox_size : Vector2 = Vector2(1, 1)
 @export var hostile_detect_size : Vector2 = Vector2(1, 1)
+@export var power_near_enemy_boost : float = 0.5 # percentage
 
 var cur_power_rate : float
+
 var cur_power : float = 100.0
 var cur_speed : float 
 
@@ -67,5 +69,6 @@ func handle_gun_switch(gun_index, timer):
 	return(gun_index)
 		
 func power_limiters() -> void:
-	if cur_power < 0: cur_power = 0 # this should be readable enough
+	# this should be readable enough
+	if cur_power < 0: cur_power = 0
 	if cur_power > max_power: cur_power = max_power
