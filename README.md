@@ -32,6 +32,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/17/25)
+			<li>(Base Player / Bullet) 
+			cur_power updates when bullet hits it's target (not player)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/16/25)
 			<li>(README) 
 			Updated AGENDA, added new things</li>

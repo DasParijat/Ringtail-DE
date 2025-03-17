@@ -52,5 +52,9 @@ func _on_area_entered(area: Area2D) -> void:
 		var parent = area.get_parent()
 		parent.health_res.take_dmg(damage)
 		
+		if target_group != "Player":
+			# Allows player cur_power to update when hitting enemy
+			GlobalSignal.emit_signal("update_power", damage / 2)
+		
 		if not bullet_res.is_piercing:
 			queue_free()

@@ -27,6 +27,7 @@ func _ready() -> void:
 	health_res.set_health_res(iframe_timer)
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
+	GlobalSignal.connect("update_power", Callable(self, "_on_update_power"))
 	
 	scale = player_res.player_size
 	collision.scale = player_res.collision_size
@@ -120,7 +121,10 @@ func _on_hostile_detection_area_exited(area: Area2D) -> void:
 	## Sets is_near_enemy to false
 	if area.is_in_group("Enemy"):
 		is_near_enemy = false
-		
+
+func _on_update_power(power_update : float) -> void:
+	player_res.cur_power += power_update
+	
 func _on_game_over() -> void:
 	## Switches to game over scene
 	#health_res.reset_health()
