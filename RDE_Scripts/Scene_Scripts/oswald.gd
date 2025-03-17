@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 	#player_res.health_comp.take_dmg(0.01)
 	#print(player_res.health_comp.cur_hp)
 	# power stuff
-	player_res.power_limiters()
 	power_move()
 
 func power_move() -> void:

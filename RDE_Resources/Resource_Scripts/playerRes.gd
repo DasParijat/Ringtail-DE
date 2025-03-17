@@ -43,7 +43,7 @@ class_name PlayerRes
 
 var cur_power_rate : float
 
-var cur_power : float = 100.0
+var cur_power : float = clampf(max_power, 0, max_power)
 var cur_speed : float 
 
 func reset_speed():
@@ -67,8 +67,3 @@ func handle_gun_switch(gun_index, timer):
 		timer.start(switch_cooldown)
 	
 	return(gun_index)
-		
-func power_limiters() -> void:
-	# this should be readable enough
-	if cur_power < 0: cur_power = 0
-	if cur_power > max_power: cur_power = max_power

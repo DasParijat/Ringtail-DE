@@ -44,6 +44,8 @@ func _process(delta: float) -> void:
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	movement(player_res.cur_speed) # Where movement is handled
 	
+	player_res.cur_power = clampf(player_res.cur_power, 0, player_res.max_power)
+	
 	# Checks
 	if not GlobalTime.is_paused:
 		rest_check(delta)

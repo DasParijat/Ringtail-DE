@@ -33,10 +33,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(3/17/25)
+			<li>(General / NavButton) 
+			Godot is tweaking over some files when I save but things run fine regardless</li>
 			<li>(Base Player / Bullet) 
 			cur_power updates when bullet hits it's target (not player)</li>
 			<li>(Base Player / Player Res) 
 			There's a boost in power gain when player near enemy</li>
+			<li>(Base Player / Player Res) 
+			Using clampf to set boundaries for cur_power rather than custom func</li>
 		</ul>
 	<li>
 	<li>
