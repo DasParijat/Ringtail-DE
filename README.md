@@ -39,6 +39,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Replaced the sprite of RingtailHARD
 			(This new one is based on the wiki version, rather than the
 			cropped version that I've had for years)</li>
+			<li>(Fight UI / Base Mob) 
+			Changed fonts of Fight UI + Boss HP bar</li>
 		</ul>
 	<li>
 	<li>

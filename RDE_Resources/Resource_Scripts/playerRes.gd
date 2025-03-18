@@ -43,7 +43,7 @@ class_name PlayerRes
 
 var cur_power_rate : float
 
-var cur_power : float = clampf(max_power, 0, max_power)
+var cur_power : float = 0
 var cur_speed : float 
 
 func reset_speed():

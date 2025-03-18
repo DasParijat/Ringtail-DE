@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=15 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight_ui.gd" id="1_pahoy"]
 
@@ -32,7 +32,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 expand_margin_left = 3.0
+expand_margin_top = 3.0
 expand_margin_right = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="SystemFont" id="SystemFont_xxacr"]
+font_names = PackedStringArray("Bahnschrift")
+font_weight = 500
+font_stretch = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrqkd"]
+font = SubResource("SystemFont_xxacr")
+font_size = 25
+
+[sub_resource type="SystemFont" id="SystemFont_dtrxk"]
+font_names = PackedStringArray("Bahnschrift")
+font_italic = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_sqe4i"]
+line_spacing = 5.0
+font = SubResource("SystemFont_dtrxk")
+font_size = 10
 
 [sub_resource type="Animation" id="Animation_msccb"]
 resource_name = "PO_fade_IN"
@@ -150,17 +170,20 @@ stretch_mode = 5
 
 [node name="GunStats" type="VBoxContainer" parent="PlayerUI/GunUI/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = -4
+theme_override_constants/separation = -1
 
 [node name="GunAmmo" type="Label" parent="PlayerUI/GunUI/HBoxContainer/GunStats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "10/10"
+label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="GunReload" type="Label" parent="PlayerUI/GunUI/HBoxContainer/GunStats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "RELOADING"
+label_settings = SubResource("LabelSettings_sqe4i")
+horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
