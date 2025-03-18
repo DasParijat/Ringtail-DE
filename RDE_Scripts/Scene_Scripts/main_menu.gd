@@ -6,6 +6,8 @@ extends Control
 @onready var play_menu : Container = $play_menu
 @onready var story_menu : Control = $story_menu
 
+@onready var bg_anim_player : AnimationPlayer = $front_menu/Background/AnimationPlayer
+
 func _ready() -> void:
 	Engine.time_scale = 1 # Ensures time scale is normal when menu loads
 	 
@@ -22,6 +24,7 @@ func _on_play_b_pressed() -> void:
 	var tween = create_tween()
 	tween.set_parallel(true)
 	
+	bg_anim_player.play("leave_main_menu")
 	tween.tween_property(front_menu, "position", Vector2(0, -720), 0.3)
 	tween.tween_property(story_menu, "position", Vector2(0, 0), 0.3)
 	
@@ -51,5 +54,6 @@ func _on_sm_exit_b_pressed() -> void:
 	var tween = create_tween()
 	tween.set_parallel(true)
 	
+	bg_anim_player.play("return_main_menu")
 	tween.tween_property(story_menu, "position", Vector2(0,720), 0.3)
 	tween.tween_property(front_menu, "position", Vector2(0, 0), 0.3)

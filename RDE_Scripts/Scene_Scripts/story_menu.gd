@@ -1,6 +1,7 @@
 extends Control
 
 @onready var FightDescText : Label = $FightDesc/Text
+
 var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
 var fight_res_path : String = ""
 var loaded_selected_fight : LevelRes

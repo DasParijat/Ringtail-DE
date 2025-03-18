@@ -10,7 +10,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Ringtail fight moves</li>
 	<li>Fight UI / Boss Bar UI 
 	(Custom sprites for guns, keyboard hints)</li>
-	<li>Make way to gain player power</li>
+	<li>Make way to gain player power (DONE)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Stylize menu and buttons</li>
 </ul>
@@ -41,6 +41,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Using clampf to set boundaries for cur_power rather than custom func</li>
 			<li>(Base Player) 
 			The amt of hp rest gives depends on power</li>
+			<li>(Main Menu Background) 
+			Added background to main menu, that darkens when not on front_menu,
+			Image is temp but may reflect final product</li>
 		</ul>
 	<li>
 	<li>
