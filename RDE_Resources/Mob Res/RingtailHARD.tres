@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_8a5f1"]
 [ext_resource type="Resource" uid="uid://bbowctql2vqth" path="res://RDE_Resources/Mob Res/RingtailHARD_health.tres" id="1_8jvsn"]
-[ext_resource type="Texture2D" uid="uid://5ry8kssatn11" path="res://RDE_Images/rt_ringtail2.png" id="3_sot35"]
+[ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="3_yt8cx"]
 
 [resource]
 resource_local_to_scene = true
@@ -11,7 +11,7 @@ name = "RingtailHARD"
 display_name = "RINGTAIL"
 color = Color(0.967964, 0.436217, 0.353092, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
-texture = ExtResource("3_sot35")
+texture = ExtResource("3_yt8cx")
 base_sprtflip_enabled = true
 health_comp = ExtResource("1_8jvsn")
 is_boss = true

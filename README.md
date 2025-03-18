@@ -17,8 +17,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Asset Credits:</strong>
 <ul>
-	<li>Grass and Tree Tilesets: https://cainos.itch.io/pixel-art-top-down-basic</li>
-	<li>Ringtail (Raccoon Itself): https://commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
+	<li>Grass and Tree Tilesets: cainos.itch.io/pixel-art-top-down-basic</li>
+	<li>Ringtail (Raccoon Itself): commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
 </ul>
 
 <strong>Playtesters (Date's are last time they played):</strong>
@@ -30,6 +30,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(3/18/25)
+			<li>(Images) 
+			Added image of raccoon directly from wiki source</li>
+			<li>(RingtailHARD) 
+			Replaced the sprite of RingtailHARD
+			(This new one is based on the wiki version, rather than the
+			cropped version that I've had for years)</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(3/17/25)
