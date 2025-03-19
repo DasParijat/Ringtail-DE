@@ -41,6 +41,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			cropped version that I've had for years)</li>
 			<li>(Fight UI / Base Mob) 
 			Changed fonts of Fight UI + Boss HP bar</li>
+			<li>(Bullet) 
+			Bullets start to fade away when reaching fall_off point</li>
+			<li>(Player Res / Oswald) 
+			Cur_power starts at 0 instead of max</li>
 		</ul>
 	<li>
 	<li>

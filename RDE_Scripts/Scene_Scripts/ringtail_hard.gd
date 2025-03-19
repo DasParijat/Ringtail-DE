@@ -35,7 +35,8 @@ func _ready() -> void:
 # Targeting triangles (triangles circle around player)
 
 func _process(delta: float) -> void:
-	controller.action_handling(randi_range(attack_min, attack_max))
+	#controller.action_handling(randi_range(attack_min, attack_max))
+	pass
 	
 func action1() -> void:
 	mob_res.sprtflip_enabled = false

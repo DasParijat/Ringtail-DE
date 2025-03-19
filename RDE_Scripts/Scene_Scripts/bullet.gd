@@ -32,6 +32,7 @@ func falloff_calc():
 	# checks if falloff calculation should be enabled, and to do the calc if true
 	if bullet_travelled > bullet_res.falloff_point:
 		damage -= bullet_res.falloff_rate
+		modulate.a -= bullet_res.falloff_rate / 2
 		#print("bulscript, falloff calc: ", damage)
 		
 func _physics_process(delta):

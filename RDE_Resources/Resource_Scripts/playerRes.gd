@@ -43,7 +43,7 @@ class_name PlayerRes
 
 var cur_power_rate : float
 
-var cur_power : float = 0
+var cur_power : float = max_power 
 var cur_speed : float 
 
 func reset_speed():
