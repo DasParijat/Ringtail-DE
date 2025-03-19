@@ -32,6 +32,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/19/25)
+			<li>(Bullet) 
+			Bullets now fade away when they damage under 0, 
+			modification of yesterday's bullet change</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/18/25)
 			<li>(Images) 
 			Added image of raccoon directly from wiki source</li>

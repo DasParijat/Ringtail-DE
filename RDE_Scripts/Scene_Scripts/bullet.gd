@@ -32,7 +32,6 @@ func falloff_calc():
 	# checks if falloff calculation should be enabled, and to do the calc if true
 	if bullet_travelled > bullet_res.falloff_point:
 		damage -= bullet_res.falloff_rate
-		modulate.a -= bullet_res.falloff_rate / 2
 		#print("bulscript, falloff calc: ", damage)
 		
 func _physics_process(delta):
@@ -40,9 +39,12 @@ func _physics_process(delta):
 	bullet_travelled = global_position.distance_to(start_position)
 	falloff_calc()
 	
-	# temp test
 	if damage < 0:
-		queue_free()
+		if modulate.a > 0:
+			# if else statement used to make sure bullet queue frees when modulate <= 0
+			modulate.a -= bullet_res.falloff_rate / 2
+		else:
+			queue_free()
 
 func _on_tree_exiting() -> void:
 	queue_free()
