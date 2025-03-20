@@ -13,7 +13,7 @@ extends Node2D
 var gun_index : int = 0
 
 func _ready() -> void:
-	player_res.cur_power = 0
+	player_res.cur_power = player_res.max_power
 	
 	print("oswald added")
 	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure cam gets primary gun_res first
@@ -34,8 +34,8 @@ func _process(delta: float) -> void:
 func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
 	if player_res.cur_power > 0.1 and Input.is_action_pressed("sprint") and not GlobalTime.is_paused:
-		base.set_speedmod((2 * (player_res.cur_power / 100)) + 0.25) # lower cur power results in less speed
-		GlobalTime.cur_time_scale = clampf(((player_res.cur_power / 100) * 0.8) + 0.2, 0, 1)
+		base.set_speedmod((3 * (player_res.cur_power / 100)) + 0.25) # lower cur power results in less speed
+		GlobalTime.cur_time_scale = ((player_res.cur_power / 100) / 3) #clampf(((player_res.cur_power / 100) * 0.8) + 0.2, 0, 1)
 		# TODO Mess around with this more
 		print(GlobalTime.cur_time_scale)
 		player_res.cur_power -= 0.1

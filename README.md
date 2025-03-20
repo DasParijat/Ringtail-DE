@@ -32,6 +32,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/20/25)
+			<li>(RGT Plains) 
+			Made grass more varied</li>
+			<li>(Oswald) 
+			Tweaking power slow motion</li>
+			<li>(Gun) 
+			max_spread can be reduced by aiming or resting</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/19/25)
 			<li>(Bullet) 
 			Bullets now fade away when they damage under 0, 

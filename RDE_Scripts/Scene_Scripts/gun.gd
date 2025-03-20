@@ -65,7 +65,10 @@ func not_reloading() -> bool:
 func shoot() -> void:
 	if cur_ammo > 0 and not_reloading():
 		# bullet_spread equation
-		bullet_spread += ((gun_res.max_spread - bullet_spread) * gun_res.spread_rate) 
+		var max_spread = (gun_res.max_spread # Max spread is reduced when aiming and resting
+							- (int(Input.is_action_pressed("aim")) * gun_res.max_spread / 4)
+							- (int(Input.is_action_pressed("rest")) * gun_res.max_spread / 4))
+		bullet_spread += ((max_spread - bullet_spread) * gun_res.spread_rate) 
 		#print(bullet_spread)
 		
 		# for loop for bullets per SINGLE shot
