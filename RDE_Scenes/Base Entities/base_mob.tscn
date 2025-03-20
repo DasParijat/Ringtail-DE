@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=12 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
@@ -20,6 +20,14 @@ font_size = 20
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.588235)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0h1w"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdwj"]
 bg_color = Color(1, 0.333333, 0.352941, 1)
@@ -90,6 +98,7 @@ grow_horizontal = 2
 scale = Vector2(1.52, 1.52)
 pivot_offset = Vector2(250, 0)
 theme_override_font_sizes/font_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_c0h1w")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0tdwj")
 
 [node name="HitBox" type="Area2D" parent="."]

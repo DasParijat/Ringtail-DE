@@ -42,6 +42,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Gun shot sound handling moved from gun to bullet</li>
 			<li>(Bullet) 
 			Gun shot sounds are actually heard, and vary in pitch</li>
+			<li>(Base Mob) 
+			BossHPBar is actually centered now, plus shadows</li>
 		</ul>
 	<li>
 	<li>

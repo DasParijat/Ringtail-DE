@@ -37,7 +37,9 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	bar.min_value = min
 	bar.max_value = max
 	
-	bar.position = Vector2(390, 15)
+	bar.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	bar.position = Vector2(-250, 15)
+	
 	bar.custom_minimum_size = Vector2(500, 20)
 	bar.scale = Vector2(1.52, 1.52)
 	bar.pivot_offset = Vector2(250, 0)
