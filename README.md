@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Bullet) 
 			Bullets now fade away when they damage under 0, 
 			modification of yesterday's bullet change</li>
+			<li>(SMG / Images) 
+			Added SMG icon and gun shot sound, and modified other SMG properties</li>
 		</ul>
 	<li>
 	<li>
