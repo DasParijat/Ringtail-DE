@@ -12,6 +12,7 @@ extends Node2D
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
 
+@onready var audio_player : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var bullet_load = preload("uid://cy77mdk6wv3fp")
 var bullet_spread : float = 0.0
@@ -25,6 +26,7 @@ func _ready() -> void:
 	reload_timer.wait_time = gun_res.reload_time
 	is_auto = gun_res.is_automatic
 	
+	audio_player.stream = gun_res.bullet_res.gun_shot_sound
 	update_ui()
 	
 	if is_selected():
@@ -83,6 +85,9 @@ func shoot() -> void:
 			bullet.target_group = "Enemy"
 			
 			# putting bullet in fight scene
+			# TODO redo audio system by having gun spawn audio players rather than using one
+			audio_player.pitch_scale = randf_range(0.5, 1.5)
+			audio_player.play()
 			get_parent().get_parent().add_child(bullet)
 			
 			cur_ammo -= 1
