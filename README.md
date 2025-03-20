@@ -36,14 +36,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Bullet) 
 			Bullets now fade away when they damage under 0, 
 			modification of yesterday's bullet change</li>
+			<li>(Bullet) 
+			Gun shot sounds are actually heard, and vary in pitch</li>
 			<li>(SMG / Images) 
 			Added SMG icon and gun shot sound, and modified other SMG properties</li>
 			<li>(Gun) 
 			Gun shot sound handling moved from gun to bullet</li>
-			<li>(Bullet) 
-			Gun shot sounds are actually heard, and vary in pitch</li>
 			<li>(Base Mob) 
 			BossHPBar is actually centered now, plus shadows</li>
+			<li>(Main Menu) 
+			Recentered front menu, and changed main_menu to CanvasLayer</li>
 		</ul>
 	<li>
 	<li>
