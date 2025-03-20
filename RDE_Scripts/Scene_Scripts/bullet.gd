@@ -2,9 +2,12 @@ extends Area2D
 
 @onready var gun_res : GunRes
 @onready var bullet_res : BulletRes 
+
 @onready var damage : float = bullet_res.damage
 @onready var texture : Texture2D = bullet_res.texture
+
 @onready var sprite = $Sprite2D
+@onready var audio_stream : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var bullet_travelled : float
 var bullet_speed : float = 100
@@ -19,6 +22,11 @@ func _ready():
 	start_position = global_position
 	sprite.texture = texture
 	direction = Vector2.RIGHT.rotated(rotation).normalized()
+	
+	# Play gun shot sound when spawned
+	audio_stream.stream = bullet_res.gun_shot_sound
+	audio_stream.pitch_scale = randf_range(0.8, 1.2)
+	audio_stream.play()
 	
 	# Bullets can be used as projectiles from mobs
 	if gun_res:

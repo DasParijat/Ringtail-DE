@@ -39,6 +39,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(SMG / Images) 
 			Added SMG icon and gun shot sound, and modified other SMG properties</li>
 			<li>(Gun) 
+			Gun shot sound handling moved from gun to bullet</li>
+			<li>(Bullet) 
 			Gun shot sounds are actually heard, and vary in pitch</li>
 		</ul>
 	<li>
