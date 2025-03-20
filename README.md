@@ -39,6 +39,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Tweaking power slow motion</li>
 			<li>(Gun) 
 			max_spread can be reduced by aiming or resting</li>
+			<li>(GlobalPlayer) 
+			Created GlobalPlayer autoload script</li>
 		</ul>
 	<li>
 	<li>

@@ -24,6 +24,7 @@ GMobHandler="*res://RDE_Scripts/Global_Scripts/GlobalMobHandler.gd"
 GlobalScene="*res://RDE_Scripts/Global_Scripts/GlobalScene.gd"
 GlobalFightStats="*res://RDE_Scripts/Global_Scripts/GlobalFightStats.gd"
 GlobalMenu="*res://RDE_Scripts/Global_Scripts/GlobalMenu.gd"
+GlobalPlayer="*res://RDE_Scripts/Global_Scripts/GlobalPlayer.gd"
 
 [dialogic]
 
