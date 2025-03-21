@@ -33,10 +33,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(3/21/25)
-			<li>(Image) 
+			<li>(Images) 
 			Added Alpaca Logo and new pumpshot icon</li>
 			<li>(Fight UI) 
 			Margin container around gun icon</li>
+			<li>(Fight UI) 
+			Several refinements to UI 
+			(Different sizing and spacing, shadows, ammo text centered)</li>
 		</ul>
 	<li>
 	<li>

@@ -9,7 +9,7 @@ extends CanvasLayer
 @onready var DamageDelayBar : ProgressBar = $PlayerUI/PlayerHPBar/DamageBar
 @onready var PlayerPowerBar : ProgressBar = $PlayerUI/PowerBar
 
-@onready var GunInUse : TextureRect = $PlayerUI/GunUI/HBoxContainer/Container/GunInUse
+@onready var GunInUse : TextureRect = $PlayerUI/GunUI/HBoxContainer/MarginContainer/GunInUse
 @onready var GunAmmo : Label = $PlayerUI/GunUI/HBoxContainer/GunStats/GunAmmo
 @onready var GunReload : Label = $PlayerUI/GunUI/HBoxContainer/GunStats/GunReload
 
