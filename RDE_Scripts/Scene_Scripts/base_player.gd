@@ -42,6 +42,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Constantly updating global player stats
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
+	GlobalPlayer.input_handling()
+	
 	movement(player_res.cur_speed) # Where movement is handled
 	
 	player_res.cur_power = clampf(player_res.cur_power, 0, player_res.max_power)
@@ -51,17 +53,14 @@ func _process(delta: float) -> void:
 		rest_check(delta)
 		death_check()
 		test_function()
-
+		
 func movement(cur_speed : float) -> void:
 	## Handles all movement of player
 	look_at(get_global_mouse_position())
 	
 	# Speed handling
 	cur_speed = player_res.base_speed
-	if Input.is_action_pressed("sprint"):
-		cur_speed = player_res.sprint_speed
-		
-	if Input.is_action_pressed("rest"):
+	if GlobalPlayer.is_resting:
 		cur_speed = player_res.rest_speed
 	
 	# Input handling / Sets final speed
@@ -75,7 +74,7 @@ func rest_check(delta):
 	# NOTE: Doesn't run when hp is max, 
 	#	else player can increase rest_timeout to an unintended value 
 	#	and possibly cheese game. 
-	if Input.is_action_pressed("rest") and not health_res.is_max_hp: 
+	if GlobalPlayer.is_resting and not health_res.is_max_hp: 
 		rest_timeout += delta
 		if rest_timeout >= player_res.regen_rate:
 			# When at max power, more health will regen

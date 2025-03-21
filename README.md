@@ -38,8 +38,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			Margin container around gun icon</li>
 			<li>(Fight UI) 
-			Several refinements to UI 
+			Several refinements to Fight UI 
 			(Different sizing and spacing, shadows, ammo text centered)</li>
+			<li>(GlobalPlayer / Base Player) 
+			Added input handling in GlobalPlayer, used in Base Player</li>
+			<li>(Base Player) 
+			Removed sprinting, sprint button only used for power now</li>
 		</ul>
 	<li>
 	<li>
