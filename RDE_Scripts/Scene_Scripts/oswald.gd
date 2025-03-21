@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 
 func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
-	if player_res.cur_power > 0.1 and Input.is_action_pressed("sprint") and not GlobalTime.is_paused:
-		base.set_speedmod(1.2) 
+	if player_res.cur_power > 0.1 and GlobalPlayer.power_activated and not GlobalTime.is_paused:
+		base.set_speedmod(1.5) 
 		GlobalTime.cur_time_scale = 0.3 
 
 		#print(GlobalTime.cur_time_scale)

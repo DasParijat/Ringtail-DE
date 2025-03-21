@@ -40,6 +40,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			Several refinements to Fight UI 
 			(Different sizing and spacing, shadows, ammo text centered)</li>
+			<li>(Fight UI) 
+			No more flashing when no power but releasing power button</li>
 			<li>(GlobalPlayer / Base Player) 
 			Added input handling in GlobalPlayer, used in Base Player</li>
 			<li>(Base Player) 

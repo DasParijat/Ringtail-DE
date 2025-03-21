@@ -23,6 +23,7 @@ var player_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 
 var reload_text : String = ""
+var using_power : bool = false
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -33,13 +34,13 @@ func _ready() -> void:
 
 func power_overlay_handling(has_power : bool) -> void:
 	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayer
-	
+
 	if Input.is_action_just_pressed("sprint") and has_power:
 		PO_anim_player.play("PO_fade_IN")
-	if Input.is_action_just_released("sprint"):
-		# Currently flashes when power out but sprint released
-		# Might keep cause it looks kinda cool
+		using_power = true
+	if Input.is_action_just_released("sprint") and using_power:
 		PO_anim_player.play("PO_fade_OUT")
+		using_power = false
 		
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
