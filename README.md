@@ -32,6 +32,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/21/25)
+			<li>(Image) 
+			Added Alpaca Logo and new pumpshot icon</li>
+			<li>(Fight UI) 
+			Margin container around gun icon</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/20/25)
 			<li>(RGT Plains) 
 			Made grass more varied</li>

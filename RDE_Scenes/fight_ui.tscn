@@ -163,7 +163,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3q1gu")
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="GunInUse" type="TextureRect" parent="PlayerUI/GunUI/HBoxContainer"]
+[node name="Container" type="MarginContainer" parent="PlayerUI/GunUI/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 2
+
+[node name="GunInUse" type="TextureRect" parent="PlayerUI/GunUI/HBoxContainer/Container"]
 layout_mode = 2
 expand_mode = 3
 stretch_mode = 5
