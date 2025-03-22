@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://43ajotxx3qd3"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/base_mob.gd" id="1_2vok1"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
 [ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_wgsi6"]
 [ext_resource type="Script" path="res://RDE_Scripts/boss_hp_bars.gd" id="4_6n13u"]

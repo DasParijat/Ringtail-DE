@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cpiu3tcragd52"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/fight_ui.gd" id="1_pahoy"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/fight_ui.gd" id="1_pahoy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
@@ -60,6 +60,7 @@ shadow_size = 2
 font_names = PackedStringArray("Bahnschrift")
 font_weight = 500
 font_stretch = 200
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jrqkd"]
 font = SubResource("SystemFont_xxacr")
@@ -68,6 +69,7 @@ font_size = 25
 [sub_resource type="SystemFont" id="SystemFont_dtrxk"]
 font_names = PackedStringArray("Bahnschrift")
 font_italic = true
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_sqe4i"]
 line_spacing = 5.0

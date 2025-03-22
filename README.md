@@ -33,6 +33,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(3/21/25)
+			<li>(Folders) 
+			Renamed Scene Folder to Local Script, created new branch in git for this</li>
 			<li>(MovieMaker) 
 			Used Godot's movie maker feature to record test footage,
 			as well as create file to hold movie maker videos</li>

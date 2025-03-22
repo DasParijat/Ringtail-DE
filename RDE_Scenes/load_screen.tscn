@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7ky1sqwiq4tv"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Scene_Scripts/load_screen.gd" id="1_af250"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/load_screen.gd" id="1_af250"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x2wty"]
 font_size = 100
