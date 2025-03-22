@@ -34,7 +34,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(3/22/25)
 			<li>(Folders) 
-			Creating and rearranging specific folders for scripts</li>
+			Creating and rearranging specific folders for scripts, 
+			removed sm_exitB.gd as it wasn't being used</li>
 		</ul>
 	<li>
 	<li>

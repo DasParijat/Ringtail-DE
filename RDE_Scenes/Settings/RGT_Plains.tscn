@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://sv71npsv8bdn"]
 
 [ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="1_ng276"]
-[ext_resource type="Script" path="res://RDE_Scripts/tilemap_info.gd" id="1_tm7va"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game World/tilemap_info.gd" id="1_tm7va"]
 [ext_resource type="Texture2D" uid="uid://40xhcd6xuxau" path="res://RDE_Images/TX Plant.png" id="3_hhmf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5net"]

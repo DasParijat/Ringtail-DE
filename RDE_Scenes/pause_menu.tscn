@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bh6wxwjtwfcwq"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/navButton.gd" id="1_82tdh"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_82tdh"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/pause_menu.gd" id="1_acbnt"]
 
 [node name="pause_menu" type="CanvasLayer"]
