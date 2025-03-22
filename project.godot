@@ -68,6 +68,10 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/pizza/Pictures/2GameDev/GodotDev/Ringtail-DE/movie_maker.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
@@ -87,6 +91,12 @@ folder_colors={
 Hittable="Mob/Player can be hit"
 Player="Group for player and their allies"
 Enemy="Anything that harms player"
+
+[importer_defaults]
+
+animation_library={
+"animation/fps": 30.0
+}
 
 [input]
 

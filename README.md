@@ -33,6 +33,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(3/21/25)
+			<li>(MovieMaker) 
+			Used Godot's movie maker feature to record test footage,
+			as well as create file to hold movie maker videos</li>
 			<li>(Images) 
 			Added Alpaca Logo and new pumpshot icon</li>
 			<li>(Fight UI) 
