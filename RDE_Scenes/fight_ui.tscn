@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cpiu3tcragd52"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/fight_ui.gd" id="1_pahoy"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 

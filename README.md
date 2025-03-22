@@ -32,6 +32,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/22/25)
+			<li>(Folders) 
+			Creating and rearranging specific folders for scripts</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/21/25)
 			<li>(Folders) 
 			Renamed Scene Folder to Local Script, created new branch in git for this</li>

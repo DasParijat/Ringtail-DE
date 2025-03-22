@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5yku1mrxehwp"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/base_player.gd" id="1_ssgha"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/base_player.gd" id="1_ssgha"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_640n3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yiybb"]
