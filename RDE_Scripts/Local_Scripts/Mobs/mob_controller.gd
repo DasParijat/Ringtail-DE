@@ -1,9 +1,10 @@
+class_name MobController
 extends Node2D
 
 @onready var attack_node : Node2D = get_parent()
 
-@onready var base : CharacterBody2D = $"../base_mob"
-@onready var attack_label : Label = $"../AttackLabel"
+@export var base : BaseMob 
+@export var attack_label : Label # Not required
 #@onready var mob_name : String = mob_res.name # used to check what mob it is
 
 var cur_action : int
@@ -39,7 +40,8 @@ func _ready() -> void:
 func action_handling(next_action : int):
 	if base.can_change_action() and no_hold:
 		#cur_action += 1 
-		attack_label.text = "ATTACK " + str(cur_action)
+		if attack_label:
+			attack_label.text = "ATTACK " + str(cur_action)
 		
 		base.mob_res.sprtflip_enabled = base.mob_res.base_sprtflip_enabled
 		var action_name = "action" + str(cur_action)

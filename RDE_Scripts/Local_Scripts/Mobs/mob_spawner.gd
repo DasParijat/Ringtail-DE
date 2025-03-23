@@ -1,3 +1,4 @@
+class_name MobSpawner
 extends Node2D
 # This node is for mobs / entities that handle spawning of other mobs
 # Dev Note 2/2/25: Surprisingly light num of code to get it working

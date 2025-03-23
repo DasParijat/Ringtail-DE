@@ -7,8 +7,8 @@ extends Node2D
 @export var attack_min : int = 1
 @export var attack_max : int = 4
 
-@onready var controller : Node2D = $MobController
-@onready var base : CharacterBody2D = $base_mob
+@onready var controller : MobController = $MobController
+@onready var base : BaseMob = $base_mob
 
 func _ready() -> void:
 	# base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})

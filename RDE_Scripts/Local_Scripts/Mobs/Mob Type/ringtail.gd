@@ -3,9 +3,9 @@ extends Node2D
 
 @export var mob_res : MobRes
 
-@export var controller : Node2D
-@export var base : CharacterBody2D 
-@export var spawner : Node2D
+@export var controller : MobController
+@export var base : BaseMob 
+@export var spawner : MobSpawner
 
 var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var bullet_load = preload("uid://cy77mdk6wv3fp")

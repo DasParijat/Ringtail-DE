@@ -13,7 +13,8 @@ controller = NodePath("MobController")
 base = NodePath("base_mob")
 spawner = NodePath("MobSpawner")
 
-[node name="MobController" parent="." instance=ExtResource("2_ei6ni")]
+[node name="MobController" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_ei6ni")]
+base = NodePath("../base_mob")
 
 [node name="MobSpawner" parent="." instance=ExtResource("4_u45r0")]
 script = null

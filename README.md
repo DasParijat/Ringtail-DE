@@ -39,6 +39,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Ringtail / RingtailHARD) 
 			Created ringtail class that all difficulties off ringtail can extend off,
 			including RingtailHARD</li>
+			<li>(Base Mob) 
+			Turned MobController, MobSpawner, and BaseMob into classes</li>
+			<li>(Mob Controller) 
+			Mob Controller uses exports rather than onready for taking in base mob</li>
 		</ul>
 	<li>
 	<li>
