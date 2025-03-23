@@ -36,6 +36,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Folders) 
 			Creating and rearranging specific folders for scripts, 
 			removed sm_exitB.gd as it wasn't being used</li>
+			<li>(Ringtail / RingtailHARD) 
+			Created ringtail class that all difficulties off ringtail can extend off,
+			including RingtailHARD</li>
 		</ul>
 	<li>
 	<li>
