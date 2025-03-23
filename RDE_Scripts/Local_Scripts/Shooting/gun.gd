@@ -1,3 +1,4 @@
+class_name PlayerGun
 extends Node2D
 
 @export var gun_index : int = 0  # 0 for primary gun, 1 for secondary gun

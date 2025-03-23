@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://t3n8e0fyn57u"]
+[gd_scene load_steps=4 format=3 uid="uid://t3n8e0fyn57u"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/Player Type/oswald.gd" id="1_qoyxg"]
-[ext_resource type="Resource" uid="uid://blf71j4t5n6ln" path="res://RDE_Resources/Player Res/Oswald.tres" id="2_xhiw5"]
 [ext_resource type="PackedScene" uid="uid://b5yku1mrxehwp" path="res://RDE_Scenes/Base Entities/base_player.tscn" id="3_eqyry"]
 [ext_resource type="PackedScene" uid="uid://c74x71o74tua8" path="res://RDE_Scenes/Shooting/gun.tscn" id="4_7lspv"]
 
-[node name="Oswald" type="Node2D"]
+[node name="Oswald" type="Node2D" node_paths=PackedStringArray("base", "primary_gun", "secondary_gun", "switch_timer")]
 script = ExtResource("1_qoyxg")
-player_res = ExtResource("2_xhiw5")
+base = NodePath("base_player")
+primary_gun = NodePath("PrimaryGun")
+secondary_gun = NodePath("SecGun")
+switch_timer = NodePath("GunSwitchTimer")
 
 [node name="base_player" parent="." instance=ExtResource("3_eqyry")]
 

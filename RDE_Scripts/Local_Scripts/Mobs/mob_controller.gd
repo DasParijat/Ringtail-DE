@@ -34,8 +34,8 @@ func hold(start_hold : bool) -> void:
 		
 func _ready() -> void:
 	print("boss added")
-	global_position = base.global_position
-	global_rotation = base.global_rotation
+	#global_position = base.global_position
+	#global_rotation = base.global_rotation
 
 func action_handling(next_action : int):
 	if base.can_change_action() and no_hold:

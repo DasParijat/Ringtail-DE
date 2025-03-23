@@ -32,6 +32,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/23/25)
+			<li>(Oswald) 
+			Reorganized how Oswald node got it's resource/nodes</li>
+			<li>(Base Player / Gun) 
+			Gave class names to base player and gun scripts</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/22/25)
 			<li>(Folders) 
 			Creating and rearranging specific folders for scripts, 

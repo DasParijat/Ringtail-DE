@@ -1,3 +1,4 @@
+class_name BasePlayer
 extends CharacterBody2D
 # Handles code that every playable character uses
 
