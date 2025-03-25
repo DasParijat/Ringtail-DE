@@ -45,12 +45,22 @@ func _process(delta : float) -> void:
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		gun_aim(0.6)
+		player_power_handling(1.2, 10)
 
 	gun_shake(delta)
 	
 	# TODO make camera flexible so it can be used for cutscenes or such
 	# TODO have camera stop tracking player when player node is removed/dead
 
+func player_power_handling(zoom_amt : float, zoom_rate : float) -> void:
+	var target_zoom: Vector2
+	if GlobalPlayer.power_activated:
+		target_zoom = Vector2.ONE * zoom_amt
+	else:
+		target_zoom = Vector2.ONE
+
+	zoom = zoom.lerp(target_zoom, get_process_delta_time() * zoom_rate)
+		
 func lean_cam() -> Vector2:
 	# Credit to samsface on YT (https://youtu.be/GXBEt_QqPMs?si=-chTplQUIvqoX3Xg) 
 	var mouse_pos := get_global_mouse_position()

@@ -35,6 +35,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/24/25)
 			<li>(Oswald) 
 			Oswald uses it's power when near enemy</li>
+			<li>(Game Camera) 
+			Zooms in when power is being used</li>
 		</ul>
 	<li>
 	<li>
