@@ -40,6 +40,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			PowerOverlay uses power_activated var for animation handling,
 			rather than the power key itself</li>
+			<li>(Fight UI) 
+			When cur_power is over half, power bar glows</li>
 		</ul>
 	<li>
 	<li>

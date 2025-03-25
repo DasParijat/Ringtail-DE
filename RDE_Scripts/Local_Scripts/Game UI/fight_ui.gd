@@ -60,6 +60,8 @@ func _on_get_cur_stats(type, stats) -> void:
 			player_hp_stylebox.bg_color = stats["player_pri_color"]
 			PlayerHPBar.add_theme_stylebox_override("fill", player_hp_stylebox)
 			player_power_stylebox.bg_color = stats["player_sec_color"]
+			player_power_stylebox.shadow_color = stats["player_sec_color"]
+			player_power_stylebox.shadow_size = (2 * int(stats["cur_power"] > (stats["max_power"] / 2)))
 			PlayerPowerBar.add_theme_stylebox_override("fill", player_power_stylebox)
 			
 			# Bar max values
