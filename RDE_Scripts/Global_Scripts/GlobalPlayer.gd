@@ -1,13 +1,12 @@
 extends Node
 
-var power_activated : bool = false
+var power_activated : bool = false # Handled in player specifc (Oswald)
 var is_resting : bool = false
 var is_aiming : bool = false
 var is_moving : bool = false
 
 func input_handling() -> void:
 	## Handles Input keys to booleans
-	power_activated = action_key("sprint")
 	is_resting = action_key("rest")
 	is_aiming = action_key("aim")
 

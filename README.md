@@ -32,6 +32,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/25/25)
+			<li>(Oswald / GlobalPlayer) 
+			power_activated handled in Oswald instead</li>
+			<li>(Fight UI) 
+			PowerOverlay uses power_activated var for animation handling,
+			rather than the power key itself</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/24/25)
 			<li>(Oswald) 
 			Oswald uses it's power when near enemy</li>

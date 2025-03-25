@@ -53,7 +53,8 @@ func _process(delta : float) -> void:
 	# TODO have camera stop tracking player when player node is removed/dead
 
 func player_power_handling(zoom_amt : float, zoom_rate : float) -> void:
-	var target_zoom: Vector2
+	var target_zoom : Vector2
+	
 	if GlobalPlayer.power_activated:
 		target_zoom = Vector2.ONE * zoom_amt
 	else:

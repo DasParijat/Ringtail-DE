@@ -25,9 +25,14 @@ func _process(delta: float) -> void:
 
 func power_move() -> void:
 	# this power move logic is EXCLUSIVE to oswald
-	if base.is_near_enemy and player_res.cur_power > ceil(player_res.max_power / 2):
-		GlobalPlayer.power_activated = true
-		
+	GlobalPlayer.power_activated = (
+		(
+		Input.is_action_pressed("sprint") 
+		or (base.is_near_enemy and player_res.cur_power > ceil(player_res.max_power / 2))
+		) 
+		and not GlobalTime.is_paused
+	)
+	
 	if player_res.cur_power > 0.1 and GlobalPlayer.power_activated and not GlobalTime.is_paused:
 		base.set_speedmod(1.5) 
 		GlobalTime.cur_time_scale = 0.3 

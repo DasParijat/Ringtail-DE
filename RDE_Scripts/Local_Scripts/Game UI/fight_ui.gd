@@ -35,12 +35,17 @@ func _ready() -> void:
 func power_overlay_handling(has_power : bool) -> void:
 	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayer
 
-	if Input.is_action_just_pressed("sprint") and has_power:
-		PO_anim_player.play("PO_fade_IN")
+	if GlobalPlayer.power_activated and has_power:
+		## For fading in anim
 		using_power = true
-	if Input.is_action_just_released("sprint") and using_power:
-		PO_anim_player.play("PO_fade_OUT")
+		if PowerOverlay.modulate.a >= 0:
+			PO_anim_player.play("PO_fade_IN")
+			
+	if GlobalPlayer.power_activated and using_power:
+		## For fading out anim
 		using_power = false
+		if PowerOverlay.modulate.a >= 0:
+			PO_anim_player.play("PO_fade_OUT")
 		
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
