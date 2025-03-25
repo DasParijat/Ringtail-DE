@@ -31,7 +31,7 @@ shape = SubResource("CircleShape2D_bt7uj")
 [node name="HostileDetection" type="Area2D" parent="."]
 
 [node name="HostileDetectCollision" type="CollisionShape2D" parent="HostileDetection"]
-scale = Vector2(7, 7)
+scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_ftfls")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

@@ -32,10 +32,10 @@ func _ready() -> void:
 	player_hp_stylebox.set_corner_radius_all(4)
 	player_power_stylebox.set_corner_radius_all(4)
 
-func power_overlay_handling(has_power : bool) -> void:
+func power_overlay_handling() -> void:
 	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayer
 
-	if GlobalPlayer.power_activated and has_power:
+	if GlobalPlayer.power_activated:
 		## For fading in anim
 		using_power = true
 		if PowerOverlay.modulate.a >= 0:
@@ -54,7 +54,7 @@ func _on_get_cur_stats(type, stats) -> void:
 		"PLAYER":
 			# Power Overlay
 			PowerOverlay.color = stats["player_sec_color"]
-			power_overlay_handling(stats["cur_power"] > 0)
+			power_overlay_handling()
 			
 			# Bar
 			player_hp_stylebox.bg_color = stats["player_pri_color"]
