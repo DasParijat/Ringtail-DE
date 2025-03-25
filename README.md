@@ -32,6 +32,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/24/25)
+			<li>(Oswald) 
+			Oswald uses it's power when near enemy</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/23/25)
 			<li>(Oswald) 
 			Reorganized how Oswald node got it's resource/nodes</li>
