@@ -33,23 +33,26 @@ func _ready() -> void:
 # Targeting triangles (triangles circle around player)
 
 func action1() -> void:
+	## Follow player
 	mob_res.sprtflip_enabled = false
 	for i in randi_range(1, 2):
 		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 1})
 		await GlobalTime.local_wait(1)
 	#spawner.spawn_mob(mob_load, Vector2(0, 100))
-	controller.chain_action(3)
-
+	#controller.chain_action(3)
+	controller.hold(false)
+	
 func action2() -> void:
 	#base.hold(true)
 	#print("action2")
-	for i in range(4): 
-		base.action("move_torward_point", {"target": base.player_pos, "speed": 150, "smooth": 50, "length": 1})
-		await GlobalTime.local_wait(1)
+	for i in range(randi_range(2, 6)): 
+		base.action("move_torward_point", {"target": base.player_pos, "delay": 0, "speed": 200, "length": 0.5})
+		await GlobalTime.local_wait(0.5)
+		print("RUNSDNSABFWUIEDBIAC", i)
 		# due to it not interacting with out-of-queue actions (like shooting)
-	base.action("observe_player", 1.5)
-	await GlobalTime.local_wait(1.5)
-	controller.chain_action(3)
+
+	#controller.chain_action(3)
+	controller.hold(false)
 	
 func action3() -> void:
 	#base.hold(true)
@@ -63,7 +66,8 @@ func action3() -> void:
 		base.action("move_torward_player", {"speed": 25, "length": 1})
 		await GlobalTime.local_wait(1)
 		shoot()
-	controller.chain_action(1)
+	#controller.chain_action(1)
+	controller.hold(false)
 
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot

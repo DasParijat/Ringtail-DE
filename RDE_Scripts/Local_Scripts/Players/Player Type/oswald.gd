@@ -29,7 +29,9 @@ func power_move() -> void:
 	GlobalPlayer.power_activated = (
 		(
 		Input.is_action_pressed("sprint") 
-		or (base.is_near_enemy and player_res.cur_power > ceil(player_res.max_power / 2))
+		or (base.is_near_enemy 
+			and player_res.cur_power > ceil(player_res.max_power / 2) 
+			and GlobalPlayer.is_moving)
 		) 
 		and not GlobalTime.is_paused and player_res.cur_power > 0.1 
 	)

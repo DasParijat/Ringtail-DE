@@ -48,6 +48,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Gun properly handles multiple bullets and how they spread</li>
 			<li>(PumpShotgun) 
 			PumpShotgun has new bullet sprite + property modifications</li>
+			<li>(RingtailHARD) 
+			Proper dash action created</li>
+			<li>(Oswald) 
+			Near-enemy power activation only activated when player is moving</li>
 		</ul>
 	<li>
 	<li>

@@ -21,5 +21,5 @@ extends Ringtail
 # Targeting triangles (triangles circle around player)
 
 func _process(delta: float) -> void:
-	controller.action_handling(randi_range(attack_min, attack_max))
+	controller.action_handling(2 )# randi_range(attack_min, attack_max))
 	pass
