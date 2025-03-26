@@ -22,5 +22,6 @@ script = null
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
 
 [node name="AttackLabel" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0

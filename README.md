@@ -42,6 +42,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			rather than the power key itself</li>
 			<li>(Fight UI) 
 			When cur_power is over half, power bar glows</li>
+			<li>(Game Camera) 
+			Minor camera modifications</li>
+			<li>(Gun / GunRes) 
+			Gun properly handles multiple bullets and how they spread</li>
+			<li>(PumpShotgun) 
+			PumpShotgun has new bullet sprite + property modifications</li>
 		</ul>
 	<li>
 	<li>

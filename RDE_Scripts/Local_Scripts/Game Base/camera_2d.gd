@@ -44,7 +44,7 @@ func _process(delta : float) -> void:
 		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
-		gun_aim(0.6)
+		gun_aim(1)
 		player_power_handling(1.2, 10)
 
 	gun_shake(delta)

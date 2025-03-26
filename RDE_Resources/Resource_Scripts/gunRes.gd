@@ -18,6 +18,7 @@ class_name GunRes
 @export_category("Bullet")
 @export var bullet_res : BulletRes   
 @export var bullets_per_shot : int = 1
+@export var bullets_per_shot_spread : float = 0
 @export var max_spread : float = 0
 @export var spread_rate : float = 0.1 # lower the rate the slower it takes to reach max_spread
 

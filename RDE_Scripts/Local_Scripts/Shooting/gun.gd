@@ -82,7 +82,9 @@ func shoot() -> void:
 			
 			# bullet transformations			
 			bullet.global_transform = global_transform
-			bullet.global_rotation_degrees = rotation_degrees + randf_range(-bullet_spread, bullet_spread)
+			bullet.global_rotation_degrees = (rotation_degrees 
+											+ randf_range(-bullet_spread, bullet_spread)
+											+ (gun_res.bullets_per_shot_spread + ((i-1) * gun_res.bullets_per_shot_spread))) #if i % 2 == 0 else -gun_res.bullets_per_shot_spread))
 			bullet.target_group = "Enemy"
 			
 			# putting bullet in fight scene

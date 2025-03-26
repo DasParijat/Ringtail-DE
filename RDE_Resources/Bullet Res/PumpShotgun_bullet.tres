@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://deonx3mfyyc1"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_uphi5"]
-[ext_resource type="Texture2D" uid="uid://dk432aa6800jh" path="res://icon.svg" id="2_rii66"]
+[ext_resource type="Texture2D" uid="uid://capi8q674i86f" path="res://RDE_Images/pumpshot_bullet.png" id="2_tgli8"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_uphi5")
-texture = ExtResource("2_rii66")
+texture = ExtResource("2_tgli8")
 damage = 7.0
 is_piercing = true
 falloff_point = 400.0
