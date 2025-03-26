@@ -43,13 +43,10 @@ func action1() -> void:
 	controller.hold(false)
 	
 func action2() -> void:
-	#base.hold(true)
-	#print("action2")
+	## Dash to player
 	for i in range(randi_range(2, 6)): 
 		base.action("move_torward_point", {"target": base.player_pos, "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
-		print("RUNSDNSABFWUIEDBIAC", i)
-		# due to it not interacting with out-of-queue actions (like shooting)
 
 	#controller.chain_action(3)
 	controller.hold(false)
