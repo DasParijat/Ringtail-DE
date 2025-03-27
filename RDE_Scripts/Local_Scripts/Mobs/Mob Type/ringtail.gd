@@ -17,8 +17,8 @@ func _ready() -> void:
 
 # ATTACK PLAN
 # PHYSICAL
-# Follow player
-# Dash to last player position (0.2s~ distance)
+# Follow player DONE
+# Dash to last player position (0.2s~ distance) DONE
 # Dash to opposite of last player position
 # Dash to random places 
 # Follow and teleport when hits player
@@ -52,18 +52,12 @@ func action2() -> void:
 	controller.hold(false)
 	
 func action3() -> void:
-	#base.hold(true)
-	base.action("move_torward_player", {"speed": 100, "length": 0.5})
-	await GlobalTime.local_wait(0.5)
-	
-	# creating timer helps RingtailHARD stop complining further code
-	# until prev action doen
-	
-	for i in range(4):
-		base.action("move_torward_player", {"speed": 25, "length": 1})
-		await GlobalTime.local_wait(1)
-		shoot()
-	#controller.chain_action(1)
+	## Dash to opposite* of player
+	for i in range(randi_range(1, 3)): 
+		print(Vector2(base.player_pos.x * -0.2, base.player_pos.y * -0.2))
+		base.action("move_torward_point", {"target": Vector2(base.player_pos.x * -0.2, base.player_pos.y * -0.2), "delay": 0, "speed": 200, "length": 0.5})
+		await GlobalTime.local_wait(0.5)
+
 	controller.hold(false)
 
 func shoot() -> void:

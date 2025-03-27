@@ -32,7 +32,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(3/25/25)
+			(3/27/25)
+			<li>(Ringtail) 
+			Added action to dash to opposite* of player pos</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(3/26/25)
 			<li>(Main Menu / Images) 
 			Added new game logo</li>
 		</ul>
