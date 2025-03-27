@@ -19,8 +19,8 @@ func _ready() -> void:
 # PHYSICAL
 # Follow player DONE
 # Dash to last player position (0.2s~ distance) DONE
-# Dash to opposite of last player position
-# Dash to random places 
+# Dash to opposite of last player position DONE
+# Dash to random places DONE
 # Follow and teleport when hits player
 # Point and launch towards player (then teleport somewhere else)
 
@@ -54,12 +54,19 @@ func action2() -> void:
 func action3() -> void:
 	## Dash to opposite* of player
 	for i in range(randi_range(1, 3)): 
-		print(Vector2(base.player_pos.x * -0.2, base.player_pos.y * -0.2))
 		base.action("move_torward_point", {"target": Vector2(base.player_pos.x * -0.2, base.player_pos.y * -0.2), "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 
 	controller.hold(false)
 
+func action4() -> void:
+	## Dash to random places near player
+	for i in range(randi_range(1, 3)): 
+		base.action("move_torward_point", {"target": Vector2(base.player_pos.x + randf_range(100, 600), base.player_pos.y + randf_range(100, 600)), "delay": 0, "speed": 200, "length": 0.5})
+		await GlobalTime.local_wait(0.5)
+
+	controller.hold(false)
+	
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()

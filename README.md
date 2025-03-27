@@ -34,7 +34,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(3/27/25)
 			<li>(Ringtail) 
-			Added action to dash to opposite* of player pos</li>
+			Added action to dash to opposite* of player pos,
+			as well as action to dash to random pos in relation to player pos</li>
 		</ul>
 	<li>
 	<li>
