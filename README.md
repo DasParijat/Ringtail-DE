@@ -23,13 +23,20 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Playtesters (Date's are last time they played):</strong>
 <ul>
-	<li>Matt Bran (3/13)</li>
+	<li>Matt Bran (3/26)</li>
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast</li>
-	<li>April Melendez (3/13) - Liked the camera</li>
+	<li>April Melendez (3/24) - Liked the camera</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(3/25/25)
+			<li>(Main Menu / Images) 
+			Added new game logo</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(3/25/25)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_br78j"]
 [ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="2_ew7i8"]
-[ext_resource type="Texture2D" uid="uid://de6rwa7vonopp" path="res://RDE_Images/RDE_Logo1.png" id="2_i6n23"]
+[ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="3_snekp"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="3_v6pk2"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/story_menu.gd" id="4_bakqm"]
 
@@ -96,7 +96,7 @@ offset_left = 283.0
 offset_top = 138.0
 offset_right = 1036.0
 offset_bottom = 275.0
-texture = ExtResource("2_i6n23")
+texture = ExtResource("3_snekp")
 
 [node name="Container" type="CenterContainer" parent="front_menu"]
 layout_mode = 0
