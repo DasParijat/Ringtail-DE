@@ -32,6 +32,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/29/25)
+			<li>(Ringtail) 
+			Added action to point and follow player (then teleport elsewhere)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/28/25)
 			<li>(General) 
 			Progress for the next week or two may be slowed due to school work,

@@ -21,7 +21,7 @@ func _ready() -> void:
 # Dash to last player position (0.2s~ distance) DONE
 # Dash to opposite of last player position DONE
 # Dash to random places DONE
-# Follow and teleport when hits player
+# Follow and teleport when hits player DONE
 # Point and launch towards player (then teleport somewhere else)
 
 # MAGIC
@@ -71,17 +71,36 @@ func action5() -> void:
 	## Follow player, if near player, teleport elsewhere
 	mob_res.sprtflip_enabled = false
 	for i in randi_range(3, 6):
-		base.action("move_torward_player", {"offset": 1, "speed": 600, "length": 0.3})
-		await GlobalTime.local_wait(0.3)
+		base.action("move_torward_player", {"offset": 1, "speed": 600, "length": 0.4})
+		await GlobalTime.local_wait(0.4)
 		
-		# might change teleport to really fast dash
 		if base.distance_to_player < 2000:
-			base.action("teleport", Vector2(base.player_pos.x + randf_range(600, 1200), base.player_pos.y + randf_range(600, 1200)))
+			mob_res.sprtflip_enabled = true
+			base.action("move_torward_point", {"target": Vector2(base.player_pos.x + randf_range(600, 1200), base.player_pos.y + randf_range(600, 1200)), "delay": 0, "speed": 750, "length": 0.3})
+			await GlobalTime.local_wait(0.3)
+			mob_res.sprtflip_enabled = false
 		base.action("move_torward_player", {"offset": 1.5, "speed": randi_range(100, 200), "length": 1})
 		await GlobalTime.local_wait(1)
 		
 	controller.hold(false)
-	
+
+func action6() -> void:
+	## Point and launch towards player
+	var observe_time : int
+	for i in randi_range(1, 3):
+		mob_res.sprtflip_enabled = false
+		observe_time = randi_range(1, 2)
+		base.action("observe_player", observe_time)
+		await GlobalTime.local_wait(observe_time)
+		
+		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(400, 500), "length": 3})
+		await GlobalTime.local_wait(3)
+		
+		#mob_res.sprtflip_enabled = true
+		base.action("move_torward_point", {"target": Vector2(base.player_pos.x + randf_range(100, 250), base.player_pos.y + randf_range(100, 250)), "delay": 0, "speed": 750, "length": 0.3})
+		await GlobalTime.local_wait(0.3)
+
+	controller.hold(false)
 	
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
