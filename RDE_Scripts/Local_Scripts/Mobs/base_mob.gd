@@ -154,7 +154,7 @@ func border_handling() -> void:
 	)
 
 	if global_position > clamped_pos:
-		print("Border hit - Original pos: ", global_position, " Clamped pos: ", clamped_pos)
+		#print("Border hit - Original pos: ", global_position, " Clamped pos: ", clamped_pos)
 		global_position = clamped_pos
 
 func sprite_dir_handling() -> void:

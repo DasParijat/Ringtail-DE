@@ -66,6 +66,22 @@ func action4() -> void:
 		await GlobalTime.local_wait(0.5)
 
 	controller.hold(false)
+
+func action5() -> void:
+	## Follow player, if near player, teleport elsewhere
+	mob_res.sprtflip_enabled = false
+	for i in randi_range(3, 6):
+		base.action("move_torward_player", {"offset": 1, "speed": 600, "length": 0.3})
+		await GlobalTime.local_wait(0.3)
+		
+		# might change teleport to really fast dash
+		if base.distance_to_player < 2000:
+			base.action("teleport", Vector2(base.player_pos.x + randf_range(600, 1200), base.player_pos.y + randf_range(600, 1200)))
+		base.action("move_torward_player", {"offset": 1.5, "speed": randi_range(100, 200), "length": 1})
+		await GlobalTime.local_wait(1)
+		
+	controller.hold(false)
+	
 	
 func shoot() -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
