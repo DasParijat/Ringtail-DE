@@ -38,6 +38,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			will focus moreso on Ringtail's moveset</li>
 			<li>(Ringtail) 
 			Added action to dash to player then teleport elsewhere</li>
+			<li>(Images / Adverts) 
+			Added 5 teaser images of Ringtail</li>
 		</ul>
 	<li>
 	<li>
