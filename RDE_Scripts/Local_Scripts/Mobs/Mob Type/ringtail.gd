@@ -48,7 +48,7 @@ func action2() -> void:
 		base.action("move_torward_point", {"target": base.player_pos, "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 	
-	spawner.spawn_mob(mob_load, global_position)
+	#spawner.spawn_mob(mob_load, global_position)
 	#controller.chain_action(3)
 	controller.hold(false)
 	

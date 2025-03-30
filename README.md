@@ -32,6 +32,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/30/25)
+			<li>(Base Mob / Fight UI) 
+			Main boss now sends stats globally, fight_ui can access them</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/29/25)
 			<li>(Ringtail) 
 			Added action to point and follow player (then teleport elsewhere)</li>

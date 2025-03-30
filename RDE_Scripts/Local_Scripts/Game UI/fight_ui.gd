@@ -77,6 +77,8 @@ func _on_get_cur_stats(type, stats) -> void:
 				update_bar(DamageDelayBar, cur_player_hp, 3)
 			
 			#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
+		"MAIN_BOSS":
+			print("main boss mob res name: ", stats["mob_res"].name)
 		"GUN":
 			if stats["is_reloading"]:
 				reload_text = "RELOADING"

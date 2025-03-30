@@ -69,8 +69,8 @@ func _ready() -> void:
 		
 		# Health Bar show/hidden code
 		local_hp_bar.hide()
-		if GMobHandler.num_of_bosses < 2:
-			boss_hp_bars.show()
+		#if GMobHandler.num_of_bosses < 2:
+		#	boss_hp_bars.show()
 		
 		
 	sprite.texture = mob_res.texture
@@ -96,9 +96,12 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	
+	if not GMobHandler.boss_queue.is_empty():
+		if GMobHandler.boss_queue[0] == mob_id:
+			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS", get_cur_stats())
 
 func _physics_process(delta: float) -> void:
-	print(GMobHandler.boss_queue)
 	## Delta updaters
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
@@ -111,6 +114,11 @@ func _physics_process(delta: float) -> void:
 	player_proximity_detection(mob_res.player_detection_radius)
 	sprite_dir_handling()
 	
+	## Give stats globally if main boss
+	if not GMobHandler.boss_queue.is_empty():
+		if GMobHandler.boss_queue[0] == mob_id:
+			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS", get_cur_stats())
+		
 	## Action Queue Handling
 	if !(no_action()) and action_timeout(): 
 		cur_action = action_queue.pop_front()
@@ -177,6 +185,16 @@ func sprite_dir_handling() -> void:
 	sprite.flip_h = abs(global_rotation_degrees) > 90 and sprite_flip_enabled
 	sprite.flip_v = abs(global_rotation_degrees) > 90 and not sprite_flip_enabled
 	# flip_v is so when heading in dir, it doesn't look upside-down
+
+func get_cur_stats() -> Dictionary:
+	# TODO add stats to give
+	## For the main boss to give stats globally that fight_ui can track
+	return {
+		"position": global_position,
+		"max_hp": health_res.max_hp,
+		"cur_hp": health_res.cur_hp,
+		"mob_res": mob_res
+	}
 	
 func action(next_action : String, mod_params) -> void:
 	## Adds action to end of queue
