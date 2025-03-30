@@ -1,39 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=8 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
 [ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_wgsi6"]
-[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/boss_hp_bars.gd" id="4_6n13u"]
+[ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="4_k776p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8qa6"]
-
-[sub_resource type="SystemFont" id="SystemFont_ewhls"]
-font_names = PackedStringArray("Bahnschrift")
-font_weight = 475
-subpixel_positioning = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_cbuce"]
-font = SubResource("SystemFont_ewhls")
-font_size = 20
-shadow_size = 0
-shadow_color = Color(0, 0, 0, 0.588235)
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0h1w"]
-bg_color = Color(0, 0, 0, 0.294118)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdwj"]
-bg_color = Color(1, 0.333333, 0.352941, 1)
-shadow_color = Color(0, 0, 0, 0.686275)
-shadow_size = 5
-shadow_offset = Vector2(2, 2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i0y3"]
 
@@ -68,39 +42,7 @@ pivot_offset = Vector2(16.21, 0)
 theme_override_styles/fill = SubResource("StyleBoxFlat_t8qa6")
 show_percentage = false
 
-[node name="BossHPBars" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("4_6n13u")
-
-[node name="BossName" type="Label" parent="BossHPBars"]
-z_index = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -34.0
-offset_top = 20.0
-offset_right = 34.0
-offset_bottom = 43.0
-grow_horizontal = 2
-text = "RINGTAIL"
-label_settings = SubResource("LabelSettings_cbuce")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BaseBar" type="ProgressBar" parent="BossHPBars"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -250.0
-offset_top = 15.0
-offset_right = 250.0
-offset_bottom = 35.0
-grow_horizontal = 2
-scale = Vector2(1.52, 1.52)
-pivot_offset = Vector2(250, 0)
-theme_override_font_sizes/font_size = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_c0h1w")
-theme_override_styles/fill = SubResource("StyleBoxFlat_0tdwj")
+[node name="BossHPBars" parent="." instance=ExtResource("4_k776p")]
 
 [node name="HitBox" type="Area2D" parent="."]
 scale = Vector2(4, 4)
@@ -109,7 +51,6 @@ scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_6i0y3")
 debug_color = Color(0.652427, 0.51261, 0.223088, 0.42)
 
-[connection signal="health_res_set" from="." to="BossHPBars" method="_on_base_mob_health_res_set"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]

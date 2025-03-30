@@ -20,6 +20,8 @@ extends CharacterBody2D
 
 signal health_res_set
 
+var mob_id : int # Unique id for mob
+
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 var player_hp : float
@@ -58,9 +60,12 @@ var default_params = {
 }
 
 func _ready() -> void:
+	mob_id = GMobHandler.get_mob_id()
+	
 	GMobHandler.num_of_mobs += 1
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses += 1
+		GMobHandler.boss_queue.append(mob_id)
 		
 		# Health Bar show/hidden code
 		local_hp_bar.hide()
@@ -93,7 +98,7 @@ func _ready() -> void:
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
 func _physics_process(delta: float) -> void:
-	
+	print(GMobHandler.boss_queue)
 	## Delta updaters
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
@@ -424,3 +429,4 @@ func _on_tree_exiting() -> void:
 	GMobHandler.num_of_mobs -= 1
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses -= 1
+		GMobHandler.boss_queue.erase(mob_id)

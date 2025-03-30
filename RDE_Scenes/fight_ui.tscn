@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=18 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
+[ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
@@ -235,3 +236,5 @@ libraries = {
 "": SubResource("AnimationLibrary_fuu3l")
 }
 speed_scale = 2.0
+
+[node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]

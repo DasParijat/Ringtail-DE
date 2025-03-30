@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://2dqex8m25wb0"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/boss_hp_bars.gd" id="1_cx8yl"]
+
+[sub_resource type="SystemFont" id="SystemFont_ewhls"]
+font_names = PackedStringArray("Bahnschrift")
+font_weight = 475
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbuce"]
+font = SubResource("SystemFont_ewhls")
+font_size = 20
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0h1w"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tdwj"]
+bg_color = Color(1, 0.333333, 0.352941, 1)
+shadow_color = Color(0, 0, 0, 0.686275)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[node name="BossHPBars" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_cx8yl")
+
+[node name="BossName" type="Label" parent="."]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 20.0
+offset_right = 34.0
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "RINGTAIL"
+label_settings = SubResource("LabelSettings_cbuce")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BaseBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 15.0
+offset_right = 250.0
+offset_bottom = 35.0
+grow_horizontal = 2
+scale = Vector2(1.52, 1.52)
+pivot_offset = Vector2(250, 0)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_c0h1w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0tdwj")

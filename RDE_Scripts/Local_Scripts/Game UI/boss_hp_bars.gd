@@ -1,10 +1,13 @@
 extends CanvasLayer
 
-@onready var base : CharacterBody2D = get_parent()
-@onready var mob_res : MobRes = base.mob_res 
+#@onready var base : CharacterBody2D = get_parent()
+#@onready var mob_res : MobRes = base.mob_res 
 
-@onready var max_hp : float = -1
-@onready var cur_hp : float = -1 
+var base
+var mob_res
+
+var max_hp : float = -1
+var cur_hp : float = -1 
 
 @onready var boss_name: Label = $BossName
 
@@ -14,6 +17,8 @@ extends CanvasLayer
 var hp_bars : Array = []
 
 func _on_base_mob_health_res_set() -> void:
+	return # TODO remove this when i want to use boss hp bar again
+	
 	max_hp = base.health_res.max_hp
 	mob_res = base.mob_res
 	
@@ -63,9 +68,10 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	return bar
 
 func _process(delta: float) -> void:
-	if base.health_res.cur_hp > -1:
-		for bar in hp_bars: 
-			update_bar(bar, base.health_res.cur_hp, 0.5)
+	#if base.health_res.cur_hp > -1:
+	#	for bar in hp_bars: 
+	#		update_bar(bar, base.health_res.cur_hp, 0.5)
+	pass
 	
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	bar.value = new_hp

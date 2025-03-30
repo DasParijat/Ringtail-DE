@@ -36,8 +36,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Ringtail) 
 			Added action to point and follow player (then teleport elsewhere)</li>
 			<li>(Base Mob) 
-			Minor fix with how boss health bars are shown,
-			boss health bar won't show if num of bosses over 1 (meaning a boss already has a healthbar)</li>
+			Working on handling boss hp bars in new way</li>
+			<li>(Base Mob / GlobalMobHandler) 
+			Added unique mob_id's and a globally accessible array of bosses (using id's)</li>
 		</ul>
 	<li>
 	<li>
