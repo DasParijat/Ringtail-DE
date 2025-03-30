@@ -64,7 +64,8 @@ func _ready() -> void:
 		
 		# Health Bar show/hidden code
 		local_hp_bar.hide()
-		boss_hp_bars.show()
+		if GMobHandler.num_of_bosses < 2:
+			boss_hp_bars.show()
 		
 		
 	sprite.texture = mob_res.texture

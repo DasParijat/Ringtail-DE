@@ -17,6 +17,9 @@ func _on_base_mob_health_res_set() -> void:
 	max_hp = base.health_res.max_hp
 	mob_res = base.mob_res
 	
+	if not mob_res.is_boss:
+		return
+		
 	boss_name.text = mob_res.display_name
 	
 	var num_of_childs = get_child_count() 
@@ -63,7 +66,7 @@ func _process(delta: float) -> void:
 	if base.health_res.cur_hp > -1:
 		for bar in hp_bars: 
 			update_bar(bar, base.health_res.cur_hp, 0.5)
-
+	
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	bar.value = new_hp
 	

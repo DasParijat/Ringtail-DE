@@ -9,7 +9,7 @@ extends Node2D
 
 var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var bullet_load = preload("uid://cy77mdk6wv3fp")
-var mob_load = preload("uid://cja72mr27m4j3")
+var mob_load = preload("uid://dynvq35tw44w5")
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
@@ -22,7 +22,7 @@ func _ready() -> void:
 # Dash to opposite of last player position DONE
 # Dash to random places DONE
 # Follow and teleport when hits player DONE
-# Point and launch towards player (then teleport somewhere else)
+# Point and launch towards player (then teleport somewhere else) DONE
 
 # MAGIC
 # Random triangle bullets (like with obignale and darius)
@@ -47,7 +47,8 @@ func action2() -> void:
 	for i in range(randi_range(2, 6)): 
 		base.action("move_torward_point", {"target": base.player_pos, "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
-
+	
+	spawner.spawn_mob(mob_load, global_position)
 	#controller.chain_action(3)
 	controller.hold(false)
 	

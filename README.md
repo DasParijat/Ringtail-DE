@@ -8,9 +8,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>Implement audio (Sound Effects and Music)</li>
 	<li>Ringtail fight moves</li>
+	<li>Make way to identify main boss of fight</li>
 	<li>Fight UI / Boss Bar UI 
-	(Custom sprites for guns, keyboard hints)</li>
-	<li>Make way to gain player power (DONE)</li>
+	(keyboard hints)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Stylize menu and buttons</li>
 </ul>
@@ -35,6 +35,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(3/29/25)
 			<li>(Ringtail) 
 			Added action to point and follow player (then teleport elsewhere)</li>
+			<li>(Base Mob) 
+			Minor fix with how boss health bars are shown,
+			boss health bar won't show if num of bosses over 1 (meaning a boss already has a healthbar)</li>
 		</ul>
 	<li>
 	<li>

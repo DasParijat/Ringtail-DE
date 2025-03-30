@@ -3,7 +3,7 @@ extends Node2D
 # This node is for mobs / entities that handle spawning of other mobs
 # Dev Note 2/2/25: Surprisingly light num of code to get it working
 
-func spawn_mob(mob, mob_pos : Vector2) -> void:
+func spawn_mob(mob : PackedScene, mob_pos : Vector2) -> void:
 	if GMobHandler.num_of_mobs >= GMobHandler.MOB_LIMIT:
 		return
 		
