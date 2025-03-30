@@ -97,9 +97,10 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	
+	print(GMobHandler.boss_queue)
 	if not GMobHandler.boss_queue.is_empty():
 		if GMobHandler.boss_queue[0] == mob_id:
-			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS", get_cur_stats())
+			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS_START", get_cur_stats())
 
 func _physics_process(delta: float) -> void:
 	## Delta updaters
@@ -448,3 +449,5 @@ func _on_tree_exiting() -> void:
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses -= 1
 		GMobHandler.boss_queue.erase(mob_id)
+		print("boss deleted: ", GMobHandler.boss_queue)
+		

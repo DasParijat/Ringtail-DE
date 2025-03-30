@@ -15,7 +15,6 @@ extends CanvasLayer
 
 @onready var PowerOverlay : ColorRect = $CanvasLayer/PowerOverlay
 
-
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
 
@@ -25,9 +24,14 @@ var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 var reload_text : String = ""
 var using_power : bool = false
 
+var boss_mob_res
+
+var max_boss_hp : float = 100
+var cur_boss_hp : float = 0.0
+
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
-	print(get_viewport().get_visible_rect().size)
+	#print(get_viewport().get_visible_rect().size)
 	
 	player_hp_stylebox.set_corner_radius_all(4)
 	player_power_stylebox.set_corner_radius_all(4)
@@ -77,8 +81,6 @@ func _on_get_cur_stats(type, stats) -> void:
 				update_bar(DamageDelayBar, cur_player_hp, 3)
 			
 			#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
-		"MAIN_BOSS":
-			print("main boss mob res name: ", stats["mob_res"].name)
 		"GUN":
 			if stats["is_reloading"]:
 				reload_text = "RELOADING"

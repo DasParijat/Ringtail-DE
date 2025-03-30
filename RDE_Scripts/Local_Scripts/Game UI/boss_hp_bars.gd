@@ -3,8 +3,7 @@ extends CanvasLayer
 #@onready var base : CharacterBody2D = get_parent()
 #@onready var mob_res : MobRes = base.mob_res 
 
-var base
-var mob_res
+var mob_res : MobRes
 
 var max_hp : float = -1
 var cur_hp : float = -1 
@@ -16,17 +15,25 @@ var cur_hp : float = -1
 
 var hp_bars : Array = []
 
-func _on_base_mob_health_res_set() -> void:
-	return # TODO remove this when i want to use boss hp bar again
+func _ready() -> void:
+	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
-	max_hp = base.health_res.max_hp
-	mob_res = base.mob_res
+func _on_get_cur_stats(type, stats) -> void:
+	#return # TODO remove this when i want to use boss hp bar again
+	if type == "MAIN_BOSS" or type == "MAIN_BOSS_START":
+		max_hp = stats["max_hp"]
+		cur_hp = stats["cur_hp"]
+		mob_res = stats["mob_res"]
 	
-	if not mob_res.is_boss:
-		return
-		
+	if type == "MAIN_BOSS_START":
+		print("SET UP NEW BARRR!!!!!")
+		for i in range(num_of_bars):
+			remove_child(get_child(i + 2))
+		set_boss_hp_bar()
+	
+func set_boss_hp_bar() -> void:
 	boss_name.text = mob_res.display_name
-	
+
 	var num_of_childs = get_child_count() 
 	# Used to make sure hp bars don't overlap with pre-added nodes
 
@@ -68,9 +75,9 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	return bar
 
 func _process(delta: float) -> void:
-	#if base.health_res.cur_hp > -1:
-	#	for bar in hp_bars: 
-	#		update_bar(bar, base.health_res.cur_hp, 0.5)
+	if cur_hp > -1:
+		for bar in hp_bars: 
+			update_bar(bar, cur_hp, 0.5)
 	pass
 	
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
