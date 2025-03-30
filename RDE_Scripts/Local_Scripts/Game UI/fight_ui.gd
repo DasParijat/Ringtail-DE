@@ -1,7 +1,7 @@
-extends CanvasLayer
+## Fight Ui Handles Player and Gun UI
+## Boss HP Bar handled seperately
 
-# TODO organize each UI into their proper section
-# According to the design doc
+extends CanvasLayer
 
 @onready var PlayerUI : Control = $PlayerUI
 
@@ -23,11 +23,6 @@ var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 
 var reload_text : String = ""
 var using_power : bool = false
-
-var boss_mob_res
-
-var max_boss_hp : float = 100
-var cur_boss_hp : float = 0.0
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -53,51 +48,56 @@ func power_overlay_handling() -> void:
 		
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
-	# TODO possibly seperate each UI thing into it's own function
 	match(type):
 		"PLAYER":
-			# Power Overlay
-			PowerOverlay.color = stats["player_sec_color"]
-			power_overlay_handling()
-			
-			# Bar
-			player_hp_stylebox.bg_color = stats["player_pri_color"]
-			PlayerHPBar.add_theme_stylebox_override("fill", player_hp_stylebox)
-			player_power_stylebox.bg_color = stats["player_sec_color"]
-			player_power_stylebox.shadow_color = stats["player_sec_color"]
-			player_power_stylebox.shadow_size = (2 * int(stats["cur_power"] > (stats["max_power"] / 2)))
-			PlayerPowerBar.add_theme_stylebox_override("fill", player_power_stylebox)
-			
-			# Bar max values
-			PlayerHPBar.max_value = stats["max_hp"]
-			DamageDelayBar.max_value = stats["max_hp"]
-			PlayerPowerBar.max_value = stats["max_power"]
-			
-			# Always updating
-			cur_player_hp = stats["cur_hp"]
-			update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
-			update_bar(PlayerHPBar, cur_player_hp, 0.5)
-			if not stats["is_hurting"]:
-				update_bar(DamageDelayBar, cur_player_hp, 3)
-			
-			#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
+			set_player_ui(stats)
 		"GUN":
-			if stats["is_reloading"]:
-				reload_text = "RELOADING"
-				GunReload.show()
-				GunAmmo.modulate = Color8(GunAmmo.modulate.r8, GunAmmo.modulate.g8, GunAmmo.modulate.b8,
-										  150) # Alpha only value that matters here
-			else:
-				reload_text = ""
-				GunReload.hide()
-				GunAmmo.modulate = Color8(GunAmmo.modulate.r8, GunAmmo.modulate.g8, GunAmmo.modulate.b8, 
-										  255)
-				# probably an easier way to reset modulate but eh
-			
-			GunInUse.texture = stats["gun_image"]
-			GunAmmo.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"])
-			GunReload.text = reload_text
+			set_gun_ui(stats)
 
+func set_player_ui(stats : Dictionary) -> void:
+	# Power Overlay
+	PowerOverlay.color = stats["player_sec_color"]
+	power_overlay_handling()
+	
+	# Bar
+	player_hp_stylebox.bg_color = stats["player_pri_color"]
+	PlayerHPBar.add_theme_stylebox_override("fill", player_hp_stylebox)
+	player_power_stylebox.bg_color = stats["player_sec_color"]
+	player_power_stylebox.shadow_color = stats["player_sec_color"]
+	player_power_stylebox.shadow_size = (2 * int(stats["cur_power"] > (stats["max_power"] / 2)))
+	PlayerPowerBar.add_theme_stylebox_override("fill", player_power_stylebox)
+	
+	# Bar max values
+	PlayerHPBar.max_value = stats["max_hp"]
+	DamageDelayBar.max_value = stats["max_hp"]
+	PlayerPowerBar.max_value = stats["max_power"]
+	
+	# Always updating
+	cur_player_hp = stats["cur_hp"]
+	update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
+	update_bar(PlayerHPBar, cur_player_hp, 0.5)
+	if not stats["is_hurting"]:
+		update_bar(DamageDelayBar, cur_player_hp, 3)
+	
+	#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
+
+func set_gun_ui(stats : Dictionary) -> void:
+	if stats["is_reloading"]:
+		reload_text = "RELOADING"
+		GunReload.show()
+		GunAmmo.modulate = Color8(GunAmmo.modulate.r8, GunAmmo.modulate.g8, GunAmmo.modulate.b8,
+								  150) # Alpha only value that matters here
+	else:
+		reload_text = ""
+		GunReload.hide()
+		GunAmmo.modulate = Color8(GunAmmo.modulate.r8, GunAmmo.modulate.g8, GunAmmo.modulate.b8, 
+								  255)
+		# probably an easier way to reset modulate but eh
+	
+	GunInUse.texture = stats["gun_image"]
+	GunAmmo.text = str(stats["cur_ammo"]) + " / " + str(stats["mag_size"])
+	GunReload.text = reload_text
+	
 func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	bar.value = new_hp
 	

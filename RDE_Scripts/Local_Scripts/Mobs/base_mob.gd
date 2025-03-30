@@ -11,7 +11,6 @@ extends CharacterBody2D
 @onready var iframe_timer : Timer = $IFrameTimer
 
 @onready var local_hp_bar : ProgressBar = $LocalHPBar
-@onready var boss_hp_bars : CanvasLayer = $BossHPBars
 
 @onready var mob_collision : CollisionShape2D = $MobCollisionShape
 @onready var hitbox : Area2D = $HitBox

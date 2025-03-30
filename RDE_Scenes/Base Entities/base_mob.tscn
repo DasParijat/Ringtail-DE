@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=7 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/base_mob.gd" id="1_2vok1"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
 [ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_wgsi6"]
-[ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="4_k776p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
@@ -41,8 +40,6 @@ grow_horizontal = 2
 pivot_offset = Vector2(16.21, 0)
 theme_override_styles/fill = SubResource("StyleBoxFlat_t8qa6")
 show_percentage = false
-
-[node name="BossHPBars" parent="." instance=ExtResource("4_k776p")]
 
 [node name="HitBox" type="Area2D" parent="."]
 scale = Vector2(4, 4)

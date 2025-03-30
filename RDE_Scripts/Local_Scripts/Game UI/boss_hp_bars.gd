@@ -19,17 +19,20 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 func _on_get_cur_stats(type, stats) -> void:
-	#return # TODO remove this when i want to use boss hp bar again
-	if type == "MAIN_BOSS" or type == "MAIN_BOSS_START":
-		max_hp = stats["max_hp"]
-		cur_hp = stats["cur_hp"]
-		mob_res = stats["mob_res"]
-	
-	if type == "MAIN_BOSS_START":
-		print("SET UP NEW BARRR!!!!!")
-		for i in range(num_of_bars):
-			remove_child(get_child(i + 2))
-		set_boss_hp_bar()
+	match(type):
+		"MAIN_BOSS_START":
+			## Setup only
+			# Remove previous bar if any
+			for i in range(num_of_bars):
+				remove_child(get_child(i + 2))
+			
+			max_hp = stats["max_hp"]
+			mob_res = stats["mob_res"]
+			
+			set_boss_hp_bar()
+		"MAIN_BOSS":
+			## Constantly updating vars
+			cur_hp = stats["cur_hp"]
 	
 func set_boss_hp_bar() -> void:
 	boss_name.text = mob_res.display_name
