@@ -22,9 +22,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not GlobalTime.is_paused:
 		Engine.time_scale = GlobalTime.cur_time_scale
-	
-	#if Input.is_action_just_pressed("pause"):
-	#	pause_game()
 
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("pause"):

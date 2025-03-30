@@ -36,7 +36,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob / Fight UI) 
 			Main boss now sends stats globally, fight_ui can access them</li>
 			<li>(Base Mob / Fight UI) 
-			Got boss health bar mostly working, just needs to reset after each fight</li>
+			Boss HP Bar now handled primarily in Fight UI</li>
 		</ul>
 	<li>
 	<li>

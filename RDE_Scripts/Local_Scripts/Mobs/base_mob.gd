@@ -97,10 +97,7 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	
-	print(GMobHandler.boss_queue)
-	if not GMobHandler.boss_queue.is_empty():
-		if GMobHandler.boss_queue[0] == mob_id:
-			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS_START", get_cur_stats())
+	set_main_boss_stats()
 
 func _physics_process(delta: float) -> void:
 	## Delta updaters
@@ -116,9 +113,8 @@ func _physics_process(delta: float) -> void:
 	sprite_dir_handling()
 	
 	## Give stats globally if main boss
-	if not GMobHandler.boss_queue.is_empty():
-		if GMobHandler.boss_queue[0] == mob_id:
-			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS", get_cur_stats())
+	set_main_boss_stats() # For when main boss changes
+	emit_main_boss_stats() # For constantly emitting current stats if main boss
 		
 	## Action Queue Handling
 	if !(no_action()) and action_timeout(): 
@@ -196,7 +192,18 @@ func get_cur_stats() -> Dictionary:
 		"cur_hp": health_res.cur_hp,
 		"mob_res": mob_res
 	}
-	
+
+func emit_main_boss_stats() -> void:
+	if not GMobHandler.boss_queue.is_empty():
+		if GMobHandler.boss_queue[0] == mob_id:
+			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS", get_cur_stats())
+			
+func set_main_boss_stats() -> void:
+	if not GMobHandler.boss_queue.is_empty():
+		if GMobHandler.boss_queue[0] == mob_id and GMobHandler.prev_main_boss != GMobHandler.boss_queue[0]:
+			GlobalSignal.emit_signal("get_cur_stats", "MAIN_BOSS_START", get_cur_stats())
+			GMobHandler.prev_main_boss = GMobHandler.boss_queue[0]
+			
 func action(next_action : String, mod_params) -> void:
 	## Adds action to end of queue
 	# params data type can be any
@@ -449,5 +456,4 @@ func _on_tree_exiting() -> void:
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses -= 1
 		GMobHandler.boss_queue.erase(mob_id)
-		print("boss deleted: ", GMobHandler.boss_queue)
-		
+		print("boss has been deleted, cur boss queue: ", GMobHandler.boss_queue)
