@@ -7,6 +7,10 @@ extends Camera2D
 
 var track_player : bool = false
 @export var player_tracking_speed : float = 1.0
+
+var track_boss : bool =  false
+@export var boss_tracking_speed : float = 1.0
+
 var cur_gun : GunRes 
 
 var scale_lean : float = 0.2
@@ -24,6 +28,7 @@ var shake_range : float = 0.0
 var smooth_offset : float = 10.0 # For affecting offset of Camera2D
 
 var is_reloading : bool = false
+var main_boss_pos : Vector2
 
 func _ready() -> void:
 	GlobalSignal.connect("cur_gun", Callable(self, "_on_cur_gun"))
@@ -45,8 +50,11 @@ func _process(delta : float) -> void:
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		gun_aim(1)
-		player_power_handling(1.2, 10)
-
+	elif track_boss:
+		set_position(main_boss_pos * player_tracking_speed)
+		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
+	
+	player_power_handling(1.2, 10)
 	gun_shake(delta)
 	
 	# TODO make camera flexible so it can be used for cutscenes or such
@@ -98,6 +106,9 @@ func _on_get_cur_stats(type, stats) -> void:
 	# So the camera doesn't shake when player tries shooting during reload
 	if type == "GUN":
 		is_reloading = stats["is_reloading"]
+	elif type == "MAIN_BOSS":
+		main_boss_pos = stats["position"]
 		
 func _on_fight_player_created() -> void:
 	track_player = true
+	#track_boss = true

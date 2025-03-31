@@ -32,6 +32,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(3/31/25)
+			<li>(Game Camera) 
+			Camera can now track main boss position,
+			useful for my idea of the victory screen</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/30/25)
 			<li>(Base Mob / Fight UI) 
 			Main boss now sends stats globally, fight_ui can access them</li>
