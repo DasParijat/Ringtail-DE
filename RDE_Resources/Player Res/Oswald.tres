@@ -19,6 +19,7 @@ base_speed = 500.0
 rest_speed = 250.0
 sprint_speed = 750.0
 max_power = 100.0
+power_ex_cutoff = 85.0
 base_power_rate = 1.0
 def_primary_gun = ExtResource("2_0s6dd")
 def_secondary_gun = ExtResource("2_3vifi")

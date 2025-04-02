@@ -32,6 +32,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/1/25)
+			<li>(PlayerRes / Oswald / FightUI) 
+			Added power_ex_cutoff to player res, 
+			to determine how much power is needed for the ability to be enhanced.</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(3/31/25)
 			<li>(Game Camera) 
 			Camera can now track main boss position,

@@ -12,7 +12,7 @@ extends Node2D
 var gun_index : int = 0
 
 func _ready() -> void:
-	player_res.cur_power = player_res.max_power
+	#player_res.cur_power = 0 #player_res.max_power
 	
 	print("oswald added")
 	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure camera gets primary gun_res first
@@ -30,7 +30,7 @@ func power_move() -> void:
 		(
 		Input.is_action_pressed("sprint") 
 		or (base.is_near_enemy 
-			and player_res.cur_power > ceil(player_res.max_power / 2) 
+			and player_res.cur_power > player_res.power_ex_cutoff 
 			and GlobalPlayer.is_moving)
 		) 
 		and not GlobalTime.is_paused and player_res.cur_power > 0.1 
