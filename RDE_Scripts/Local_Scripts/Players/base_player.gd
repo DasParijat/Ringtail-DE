@@ -22,6 +22,7 @@ var is_hurting : bool = false
 func _ready() -> void:
 	sprite.texture = player_res.texture
 	
+	player_res.cur_power = player_res.starting_power
 	player_res.reset_speed()
 	player_res.reset_power_rate()
 	

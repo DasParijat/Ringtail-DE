@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(PlayerRes / Oswald / FightUI) 
 			Added power_ex_cutoff to player res, 
 			to determine how much power is needed for the ability to be enhanced.</li>
+			<li>(PlayerRes / Base Mob) 
+			Added starting_power property to determine cur_power level at start</li>
 		</ul>
 	<li>
 	<li>

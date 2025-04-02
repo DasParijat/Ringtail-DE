@@ -12,8 +12,6 @@ extends Node2D
 var gun_index : int = 0
 
 func _ready() -> void:
-	#player_res.cur_power = 0 #player_res.max_power
-	
 	print("oswald added")
 	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure camera gets primary gun_res first
 

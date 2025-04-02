@@ -20,6 +20,7 @@ class_name PlayerRes
 
 @export_category("Power")
 @export var max_power : float = 100.0
+@export var starting_power : float = 0.0
 @export var power_ex_cutoff : float = 75.0 
 # If power over this, then the special ability is enhanced
 @export var base_power_rate : float = 1.0
@@ -45,7 +46,7 @@ class_name PlayerRes
 
 var cur_power_rate : float
 
-var cur_power : float #= max_power 
+var cur_power : float 
 var cur_speed : float 
 
 func reset_speed():
