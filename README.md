@@ -32,6 +32,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/2/25)
+			<li>(Main Menu) 
+			RingtailNORM is now playable from menu</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/1/25)
 			<li>(PlayerRes / Oswald / FightUI) 
 			Added power_ex_cutoff to player res, 

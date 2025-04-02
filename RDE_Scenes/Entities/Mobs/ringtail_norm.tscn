@@ -18,5 +18,6 @@ spawner = NodePath("MobSpawner")
 [node name="MobSpawner" type="Node2D" parent="."]
 script = ExtResource("3_p5vyq")
 
-[node name="MobController" type="Node2D" parent="."]
+[node name="MobController" type="Node2D" parent="." node_paths=PackedStringArray("base")]
 script = ExtResource("4_j5mie")
+base = NodePath("../base_mob")

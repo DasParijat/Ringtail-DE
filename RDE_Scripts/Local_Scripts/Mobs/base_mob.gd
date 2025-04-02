@@ -455,4 +455,3 @@ func _on_tree_exiting() -> void:
 	if mob_res.is_boss:
 		GMobHandler.num_of_bosses -= 1
 		GMobHandler.boss_queue.erase(mob_id)
-		print("boss has been deleted, cur boss queue: ", GMobHandler.boss_queue)

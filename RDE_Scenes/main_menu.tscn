@@ -175,6 +175,7 @@ script = ExtResource("3_v6pk2")
 layout_mode = 2
 text = "NORMAL"
 script = ExtResource("3_v6pk2")
+fight_type = "STORY_RGT_NORM"
 
 [node name="RgHARD" type="Button" parent="story_menu/CenterContainer/FightButtonHolder"]
 layout_mode = 2
