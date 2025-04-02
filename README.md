@@ -38,6 +38,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			to determine how much power is needed for the ability to be enhanced.</li>
 			<li>(PlayerRes / Base Mob) 
 			Added starting_power property to determine cur_power level at start</li>
+			<li>(RingtailNORM) 
+			Added normal version of Ringtail (not playable from menu yet), 
+			Created mob res, health res, fight res, level res, scene and script</li>
 		</ul>
 	<li>
 	<li>

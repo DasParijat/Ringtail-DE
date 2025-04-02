@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FightRes" load_steps=6 format=3 uid="uid://dyxlbkuw0veyo"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="1_mkdym"]
+[ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="2_6wnpo"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/fightRes.gd" id="3_e8yek"]
+[ext_resource type="PackedScene" uid="uid://bbrq72pdye12d" path="res://RDE_Scenes/Entities/Mobs/ringtail_norm.tscn" id="4_aijre"]
+[ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="5_78dcm"]
+
+[resource]
+script = ExtResource("3_e8yek")
+FIGHT_NAME = "RGT_HARD"
+world_scene = ExtResource("5_78dcm")
+single_boss = ExtResource("4_aijre")
+single_boss_spawn = Vector2(0, -200)
+game_modes = Array[String]([])
+player_scene = ExtResource("2_6wnpo")
+player_spawn = Vector2(100, 20)
+gun_array = Array[ExtResource("1_mkdym")]([])

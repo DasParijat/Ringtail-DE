@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbrq72pdye12d"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/ringtail_norm.gd" id="1_mxqsq"]
+[ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="2_8t2ox"]
+[ext_resource type="Resource" uid="uid://h4lap7khbxit" path="res://RDE_Resources/Mob Res/RingtailNORM.tres" id="2_cymev"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/mob_spawner.gd" id="3_p5vyq"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/mob_controller.gd" id="4_j5mie"]
+
+[node name="RingtailNORM" type="Node2D" node_paths=PackedStringArray("controller", "base", "spawner")]
+script = ExtResource("1_mxqsq")
+mob_res = ExtResource("2_cymev")
+controller = NodePath("MobController")
+base = NodePath("base_mob")
+spawner = NodePath("MobSpawner")
+
+[node name="base_mob" parent="." instance=ExtResource("2_8t2ox")]
+
+[node name="MobSpawner" type="Node2D" parent="."]
+script = ExtResource("3_p5vyq")
+
+[node name="MobController" type="Node2D" parent="."]
+script = ExtResource("4_j5mie")

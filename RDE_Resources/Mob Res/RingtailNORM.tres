@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="MobRes" load_steps=4 format=3 uid="uid://h4lap7khbxit"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_ixbsx"]
+[ext_resource type="Resource" uid="uid://ct67gwrysl5xa" path="res://RDE_Resources/Mob Res/RingtailNORM_health.tres" id="1_nmr8h"]
+[ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="3_ips8g"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ixbsx")
+name = "RingtailNORM"
+display_name = "RINGTAIL"
+color = Color(0.982049, 0.348406, 0.692162, 1)
+hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+texture = ExtResource("3_ips8g")
+base_sprtflip_enabled = true
+health_comp = ExtResource("1_nmr8h")
+is_boss = true
+is_enemy = true
+is_hittable = true
+collision_enabled = false
+player_detection_radius = 150.0
+pos_track_delay = 1.5
+mob_size = Vector2(1.4, 1)
+sprite_size = Vector2(1, 1)
+collision_size = Vector2(1, 1)
+hitbox_size = Vector2(4, 4)
+collision_dmg = 2.0
+collision_dmg_cooldown = 0.3
