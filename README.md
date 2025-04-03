@@ -35,6 +35,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/2/25)
 			<li>(Main Menu) 
 			RingtailNORM is now playable from menu</li>
+			<li>(RingtailHARD / RingtailNORM / Tutorial Mob) 
+			Each mob no longer has own health res script, 
+			instead health_comp is custom-made within it's mob_res</li>
 		</ul>
 	<li>
 	<li>
