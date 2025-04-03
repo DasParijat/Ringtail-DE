@@ -32,6 +32,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/3/25)
+			<li>(GlobalPlayer) 
+			Added is_shooting bool</li>
+			<li>(Game Camera) 
+			Gun shake handled using GlobalPlayer</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/2/25)
 			<li>(Main Menu) 
 			RingtailNORM is now playable from menu</li>
