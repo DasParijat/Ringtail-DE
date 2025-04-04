@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_0l3xx"]
 [ext_resource type="AudioStream" uid="uid://dxrffalrjmi6x" path="res://RDE_Audio/ak47 base sound effect.mp3" id="1_q3o7e"]
-[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_qcbph"]
+[ext_resource type="Texture2D" uid="uid://bhrd7w1g4y6q7" path="res://RDE_Images/RGT_bullet2.png" id="3_dtdft"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_0l3xx")
-texture = ExtResource("2_qcbph")
+texture = ExtResource("3_dtdft")
 gun_shot_sound = ExtResource("1_q3o7e")
 damage = 10.0
 is_piercing = true

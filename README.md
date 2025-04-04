@@ -37,6 +37,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added is_shooting bool</li>
 			<li>(Game Camera) 
 			Gun shake handled using GlobalPlayer</li>
+			<li>(Ringtail) 
+			Added new RGT_Projectile texture,
+			Ringtail shoots every 3 seconds now (for testing)</li>
 		</ul>
 	<li>
 	<li>
