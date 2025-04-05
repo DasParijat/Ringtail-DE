@@ -65,7 +65,7 @@ func action3() -> void:
 func action4() -> void:
 	## Dash to random places near player
 	for i in range(randi_range(1, 3)): 
-		base.action("move_torward_point", {"target": Vector2(base.player_pos.x + randf_range(100, 600), base.player_pos.y + randf_range(100, 600)), "delay": 0, "speed": 200, "length": 0.5})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 
 	controller.hold(false)
@@ -79,7 +79,7 @@ func action5() -> void:
 		
 		if base.distance_to_player < 2000:
 			mob_res.sprtflip_enabled = true
-			base.action("move_torward_point", {"target": Vector2(base.player_pos.x + randf_range(600, 1200), base.player_pos.y + randf_range(600, 1200)), "delay": 0, "speed": 750, "length": 0.3})
+			base.action("move_torward_point", {"target": base.get_rand_player_pos(600, 1200, 600, 1200), "delay": 0, "speed": 750, "length": 0.3})
 			await GlobalTime.local_wait(0.3)
 			mob_res.sprtflip_enabled = false
 		base.action("move_torward_player", {"offset": 1.5, "speed": randi_range(100, 200), "length": 1})
@@ -100,7 +100,7 @@ func action6() -> void:
 		await GlobalTime.local_wait(3)
 		
 		#mob_res.sprtflip_enabled = true
-		base.action("move_torward_point", {"target": Vector2(base.player_pos.x + randf_range(100, 250), base.player_pos.y + randf_range(100, 250)), "delay": 0, "speed": 750, "length": 0.3})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 250, 100, 250), "delay": 0, "speed": 750, "length": 0.3})
 		await GlobalTime.local_wait(0.3)
 
 	controller.hold(false)
@@ -125,5 +125,5 @@ func shoot_from_boss() -> void:
 
 func shoot_from_rand() -> void:
 	# TODO make it actually aim at player
-	shoot(Vector2(base.player_pos.x + randf_range(100, 250), base.player_pos.y + randf_range(100, 250)), 
+	shoot(base.get_rand_player_pos(150, 200, 150, 200), 
 			2000)

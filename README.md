@@ -35,6 +35,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/4/25)
 			<li>(Ringtail) 
 			Turned shoot func into base for shoot_from_boss and shoot_from_rand</li>
+			<li>(Base Mob / Ringtail) 
+			Made get_rand_player_pos func to return a random Vector2 in relation to player,
+			used instead of constantly doing the long Vector2 rand thing</li>
 		</ul>
 	<li>
 	<li>

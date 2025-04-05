@@ -432,6 +432,12 @@ func _on_get_cur_stats(type, stats):
 		distance_to_player = player_pos.distance_to(global_position)
 		#print("distance to play: ", distance_to_player)
 
+func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : float) -> Vector2:
+	## Returns a randomized position in relation to player_pos
+	## Used in general when wanting to deal with random positions
+	return Vector2(player_pos.x + randf_range(from_x, to_x), 
+				   player_pos.y + randf_range(from_y, to_y))
+	
 func _on_game_won() -> void:
 	## What mob does when game won
 	print("base mob:  game won")
