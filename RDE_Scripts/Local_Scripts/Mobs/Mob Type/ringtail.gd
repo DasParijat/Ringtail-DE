@@ -11,6 +11,8 @@ var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var bullet_load = preload("uid://cy77mdk6wv3fp")
 var mob_load = preload("uid://dynvq35tw44w5")
 
+var total_delta : float = 0.0
+
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	controller.cur_action = 1
@@ -103,16 +105,25 @@ func action6() -> void:
 
 	controller.hold(false)
 	
-func shoot() -> void:
+func shoot(position : Vector2, speed : float) -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()
 	bullet.bullet_res = bullet_res
 	
 	# bullet transformations			
 	bullet.global_transform = base.global_transform
-	bullet.global_position = base.global_position
-	bullet.bullet_speed = 1000
+	
+	bullet.global_position = position
+	bullet.bullet_speed = speed
 	bullet.target_group = "Player"
 	
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)
+
+func shoot_from_boss() -> void:
+	shoot(base.global_position, 1000)
+
+func shoot_from_rand() -> void:
+	# TODO make it actually aim at player
+	shoot(Vector2(base.player_pos.x + randf_range(100, 250), base.player_pos.y + randf_range(100, 250)), 
+			2000)
