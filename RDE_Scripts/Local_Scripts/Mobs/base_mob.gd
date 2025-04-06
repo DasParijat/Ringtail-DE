@@ -434,9 +434,10 @@ func _on_get_cur_stats(type, stats):
 
 func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : float) -> Vector2:
 	## Returns a randomized position in relation to player_pos
+	## Automatically handles negative values, so given pos can be all around
 	## Used in general when wanting to deal with random positions
-	return Vector2(player_pos.x + randf_range(from_x, to_x), 
-				   player_pos.y + randf_range(from_y, to_y))
+	return Vector2(player_pos.x + (randf_range(from_x, to_x) * signf(randf() - 0.5)), 
+				   player_pos.y + (randf_range(from_y, to_y) * signf(randf() - 0.5)))
 	
 func _on_game_won() -> void:
 	## What mob does when game won

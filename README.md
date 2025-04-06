@@ -8,7 +8,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>Implement audio (Sound Effects and Music)</li>
 	<li>Ringtail fight moves</li>
-	<li>Make way to identify main boss of fight</li>
+	<li>Make way to identify main boss of fight DONE</li>
 	<li>Fight UI / Boss Bar UI 
 	(keyboard hints)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
@@ -23,9 +23,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Playtesters (Date's are last time they played):</strong>
 <ul>
-	<li>Matt Bran (3/26)</li>
-	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast</li>
-	<li>April Melendez (3/24) - Liked the camera</li>
+	<li>Matt Bran (4/2)</li>
+	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
+	<li>April Melendez (4/2) - Liked the camera</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -36,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Ringtail) 
 			shoot_from_rand works as intended 
 			(aims at player when spawned in)</li>
+			<li>(Base Mob) 
+			Fixed get_rand_player_pos, automatically handles negative values</li>
 		</ul>
 	<li>
 	<li>

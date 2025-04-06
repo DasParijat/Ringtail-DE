@@ -125,5 +125,5 @@ func shoot_from_boss() -> void:
 	shoot(base.global_position, 1000, base.player_pos)
 
 func shoot_from_rand() -> void:
-	shoot(base.get_rand_player_pos(-500, 500, -500, 500), 
-			2000, base.player_pos)
+	shoot(base.get_rand_player_pos(500, 1000, 500, 1000), 
+			4000, base.player_pos)
