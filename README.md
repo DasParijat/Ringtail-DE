@@ -32,6 +32,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/5/25)
+			<li>(Ringtail) 
+			shoot_from_rand works as intended 
+			(aims at player when spawned in)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/4/25)
 			<li>(Ringtail) 
 			Turned shoot func into base for shoot_from_boss and shoot_from_rand</li>

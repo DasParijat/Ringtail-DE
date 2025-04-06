@@ -105,25 +105,25 @@ func action6() -> void:
 
 	controller.hold(false)
 	
-func shoot(position : Vector2, speed : float) -> void:
+func shoot(position : Vector2, speed : float, target_pos : Vector2) -> void:
 	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
 	var bullet = bullet_load.instantiate()
 	bullet.bullet_res = bullet_res
-	
-	# bullet transformations			
+
 	bullet.global_transform = base.global_transform
-	
+
 	bullet.global_position = position
 	bullet.bullet_speed = speed
+	bullet.look_at(target_pos)
+	
 	bullet.target_group = "Player"
 	
 	# putting bullet in scene
 	get_parent().get_parent().add_child(bullet)
 
 func shoot_from_boss() -> void:
-	shoot(base.global_position, 1000)
+	shoot(base.global_position, 1000, base.player_pos)
 
 func shoot_from_rand() -> void:
-	# TODO make it actually aim at player
-	shoot(base.get_rand_player_pos(150, 200, 150, 200), 
-			2000)
+	shoot(base.get_rand_player_pos(-500, 500, -500, 500), 
+			2000, base.player_pos)
