@@ -26,6 +26,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Matt Bran (4/2)</li>
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
 	<li>April Melendez (4/2) - Liked the camera</li>
+	<li>Alexander King (4/6) - Liked the camera, found it fun, thought Ringtail was too fast</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -35,6 +36,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/7/25)
 			<li>(Bullet) 
 			Bullets track player_pos and main_boss_pos, used for following</li>
+			<li>(Playtesters / README) 
+			Added Alex as playtester</li>
 		</ul>
 	<li>
 	<li>
