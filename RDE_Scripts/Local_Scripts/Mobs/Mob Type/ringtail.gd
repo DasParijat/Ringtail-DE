@@ -27,7 +27,7 @@ func _ready() -> void:
 # Point and launch towards player (then teleport somewhere else) DONE
 
 # MAGIC
-# Random triangle bullets (like with obignale and darius)
+# Random triangle bullets (like with obignale and darius) DONE
 # Explosion thing
 # Tracking triangles (will follow player for a bit before just going straight)
 # Chain explosion thing
@@ -127,3 +127,12 @@ func shoot_from_boss() -> void:
 func shoot_from_rand() -> void:
 	shoot(base.get_rand_player_pos(500, 1000, 500, 1000), 
 			4000, base.player_pos)
+
+func shoot_laser(num_of_bullets : int, time_difference : float) -> void:
+	# Variables so each bullet has the same start pos and target
+	var start_pos : Vector2 = base.get_rand_player_pos(500, 1000, 500, 1000)
+	var target : Vector2 = base.player_pos
+	
+	for i in range(num_of_bullets):
+		shoot(start_pos, 3000, target)
+		await GlobalTime.local_wait(time_difference)

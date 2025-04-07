@@ -1,7 +1,7 @@
 extends Ringtail
 
 @export var attack_min : int = 1
-@export var attack_max : int = 4
+@export var attack_max : int = 6
 
 func _process(delta: float) -> void:
 	controller.action_handling(randi_range(attack_min, attack_max))
@@ -9,5 +9,5 @@ func _process(delta: float) -> void:
 	total_delta += delta
 
 	if total_delta >= 1.0:
-		shoot_from_rand()
+		shoot_laser(5, 0.05)
 		total_delta = 0.0
