@@ -35,6 +35,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/6/25)
 			<li>(Ringtail) 
 			Added shoot_laser to shoot multiple projectiles in a row</li>
+			<li>(Bullet) 
+			Working on adding bullets that follow target for a bit</li>
 		</ul>
 	<li>
 	<li>

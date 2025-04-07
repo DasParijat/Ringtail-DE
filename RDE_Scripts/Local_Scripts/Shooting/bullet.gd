@@ -17,6 +17,11 @@ var direction : Vector2
 
 var target_group : String
 
+var target_pos : Vector2
+var follow_target : bool = true
+var follow_target_length : float = 3.0
+var total_follow_time : float = 0.0
+
 func _ready():
 	#bullet_res = bullet_res.duplicate()
 	start_position = global_position
@@ -44,6 +49,8 @@ func falloff_calc():
 		
 func _physics_process(delta):
 	position += transform.x * bullet_speed * delta
+	follow_target_handling()
+		
 	bullet_travelled = global_position.distance_to(start_position)
 	falloff_calc()
 	
@@ -57,6 +64,13 @@ func _physics_process(delta):
 func _on_tree_exiting() -> void:
 	queue_free()
 
+func follow_target_handling() -> void:
+	if not follow_target or not target_pos:
+		return
+		
+	if target_pos and total_follow_time <= follow_target_length:
+		look_at(target_pos)
+	total_follow_time += get_physics_process_delta_time()
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):

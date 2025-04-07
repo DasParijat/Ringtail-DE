@@ -114,7 +114,7 @@ func shoot(position : Vector2, speed : float, target_pos : Vector2) -> void:
 
 	bullet.global_position = position
 	bullet.bullet_speed = speed
-	bullet.look_at(target_pos)
+	bullet.target_pos = target_pos
 	
 	bullet.target_group = "Player"
 	
