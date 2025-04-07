@@ -19,10 +19,14 @@ var target_group : String
 
 var target_pos : Vector2
 var follow_target : bool = true
-var follow_target_length : float = 3.0
+var follow_target_length : float = 0.3
 var total_follow_time : float = 0.0
 
+var player_pos : Vector2
+var main_boss_pos : Vector2
+
 func _ready():
+	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	#bullet_res = bullet_res.duplicate()
 	start_position = global_position
 	sprite.texture = texture
@@ -61,16 +65,23 @@ func _physics_process(delta):
 		else:
 			queue_free()
 
+func follow_target_handling() -> void:
+	if not follow_target or not target_pos or total_follow_time >= follow_target_length:
+		return
+	
+	# TODO add code to modify whether to follow player or main boss
+	look_at(player_pos)
+	total_follow_time += get_process_delta_time()
+	
+func _on_get_cur_stats(type, stats) -> void:
+	match(type):
+		"PLAYER":
+			player_pos = stats["position"]
+		"MAIN_BOSS":
+			main_boss_pos = stats["position"]
+			
 func _on_tree_exiting() -> void:
 	queue_free()
-
-func follow_target_handling() -> void:
-	if not follow_target or not target_pos:
-		return
-		
-	if target_pos and total_follow_time <= follow_target_length:
-		look_at(target_pos)
-	total_follow_time += get_physics_process_delta_time()
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):

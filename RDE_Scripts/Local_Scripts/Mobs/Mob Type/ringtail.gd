@@ -122,7 +122,7 @@ func shoot(position : Vector2, speed : float, target_pos : Vector2) -> void:
 	get_parent().get_parent().add_child(bullet)
 
 func shoot_from_boss() -> void:
-	shoot(base.global_position, 1000, base.player_pos)
+	shoot(base.global_position, 500, base.player_pos)
 
 func shoot_from_rand() -> void:
 	shoot(base.get_rand_player_pos(500, 1000, 500, 1000), 
