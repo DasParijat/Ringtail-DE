@@ -17,7 +17,7 @@ var direction : Vector2
 
 var target_group : String
 
-var follow_target : bool = true
+var follow_target : bool = false
 var follow_target_length : float = 2
 var total_follow_time : float = 0.0
 

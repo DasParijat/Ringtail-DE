@@ -11,11 +11,13 @@ var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var bullet_load = preload("uid://cy77mdk6wv3fp")
 var mob_load = preload("uid://dynvq35tw44w5")
 
+var shoot_attack : ShootAttack
+
 var total_delta : float = 0.0
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	controller.cur_action = 1
+	shoot_attack = ShootAttack.new(base, bullet_load, bullet_res, get_parent().get_parent())
 
 # ATTACK PLAN
 # PHYSICAL
@@ -105,28 +107,3 @@ func action6() -> void:
 
 	controller.hold(false)
 	
-func shoot(position : Vector2 = base.global_position, speed : float = 500, target_group : String = "Player") -> void:
-	#base.action("run_until", true) # needed to stop program from moving on to next attack pre-shoot
-	var bullet = bullet_load.instantiate()
-	bullet.bullet_res = bullet_res
-
-	bullet.global_transform = base.global_transform
-
-	bullet.global_position = position
-	bullet.bullet_speed = speed
-	bullet.target_group = target_group
-	
-	# putting bullet in scene
-	get_parent().get_parent().add_child(bullet)
-	
-func shoot_from_rand(speed : float = 500, from_x : float = 500, to_x : float = 1000, from_y : float = 500, to_y : float = 1000) -> void:
-	shoot(base.get_rand_player_pos(from_x, to_x, from_y, to_y), 
-			speed)
-
-func shoot_laser(num_of_bullets : int, time_difference : float = 0.2, speed : float = 500) -> void:
-	# Variables so each bullet has the same start pos and target
-	var start_pos : Vector2 = base.get_rand_player_pos(500, 1000, 500, 1000)
-	
-	for i in range(num_of_bullets):
-		shoot(start_pos, speed)
-		await GlobalTime.local_wait(time_difference)

@@ -25,7 +25,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>Matt Bran (4/2)</li>
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
-	<li>April Melendez (4/2) - Liked the camera</li>
+	<li>April Melendez (4/7) - Liked the camera</li>
 	<li>Alexander King (4/6) - Liked the camera, found it fun, thought Ringtail was too fast</li>
 </ul>
 
@@ -41,6 +41,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Ringtail) 
 			Added optional parameters to shoot functions,
 			shoot() replaces shoot_from_boss() due to this</li>
+			<li>(ShootAttack) 
+			Created ShootAttack class to handle shoot attacks for mobs</li>
 		</ul>
 	<li>
 	<li>
