@@ -38,6 +38,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Bullets track player_pos and main_boss_pos, used for following</li>
 			<li>(Playtesters / README) 
 			Added Alex as playtester</li>
+			<li>(Ringtail) 
+			Added optional parameters to shoot functions,
+			shoot() replaces shoot_from_boss() due to this</li>
 		</ul>
 	<li>
 	<li>

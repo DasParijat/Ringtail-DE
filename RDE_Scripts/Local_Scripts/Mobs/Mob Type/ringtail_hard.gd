@@ -9,5 +9,5 @@ func _process(delta: float) -> void:
 	total_delta += delta
 
 	if total_delta >= 1.0:
-		shoot_from_boss()
+		shoot_laser(10)
 		total_delta = 0.0

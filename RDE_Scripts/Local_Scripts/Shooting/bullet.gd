@@ -17,9 +17,8 @@ var direction : Vector2
 
 var target_group : String
 
-var target_pos : Vector2
 var follow_target : bool = true
-var follow_target_length : float = 0.3
+var follow_target_length : float = 2
 var total_follow_time : float = 0.0
 
 var player_pos : Vector2
@@ -66,11 +65,15 @@ func _physics_process(delta):
 			queue_free()
 
 func follow_target_handling() -> void:
-	if not follow_target or not target_pos or total_follow_time >= follow_target_length:
+	if not follow_target or total_follow_time >= follow_target_length:
 		return
 	
-	# TODO add code to modify whether to follow player or main boss
-	look_at(player_pos)
+	if target_group == "Player":
+		look_at(player_pos)
+	elif target_group == "MainBoss":
+		# TODO add target group MainBoss
+		look_at(main_boss_pos)
+		
 	total_follow_time += get_process_delta_time()
 	
 func _on_get_cur_stats(type, stats) -> void:
