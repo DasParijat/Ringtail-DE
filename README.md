@@ -27,10 +27,31 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
 	<li>April Melendez (4/7) - Liked the camera</li>
 	<li>Alexander King (4/6) - Liked the camera, found it fun, thought Ringtail was too fast</li>
+	<li>Playing with 1 HP (4/9) - I myself played RingtailHARD with 1 max hp, some things of note:
+									<ol>
+										<li>Able to switch weapons mid power move</li>
+										<li>Able to gain power while using power</li>
+										<li>Idea: Nearby boss automatic power move should only
+										kick in when player is low on HP</li>
+										<li>Idea: Bullets should have ability to be part of enemy/player groups</li>
+									</ol>
+									</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(4/9/25)
+			<li>(HealthRes) 
+			Added OneHit health res (only has 1 hp),
+			meant for any player res, and could be used 
+			when making modes in future</li>
+			<li>(Playtesting / RingtailHARD) 
+			Playtested RingtailHARD with 1 HP, 
+			made some notes about it (discoveries and ideas)</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(4/8/25)

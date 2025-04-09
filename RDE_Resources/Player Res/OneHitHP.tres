@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HealthRes" load_steps=2 format=3 uid="uid://dcdqenxhyx5u4"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_eilf5"]
+
+[resource]
+script = ExtResource("1_eilf5")
+HP_NAME = "OHKO"
+is_player = true
+max_hp = 1
+damage_rate = 1.0
+invicible = false
