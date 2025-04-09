@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 
 	if total_delta >= 1.0:
 		shoot_attack.shoot()
-		shoot_attack.shoot_laser(10)
-		shoot_attack.shoot_from_rand()
+		#shoot_attack.shoot_laser({}, 10)
+		#shoot_attack.shoot_from_rand()
 		 
 		total_delta = 0.0

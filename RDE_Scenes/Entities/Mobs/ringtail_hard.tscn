@@ -8,6 +8,8 @@
 
 [node name="RingtailHARD" type="Node2D" node_paths=PackedStringArray("controller", "base", "spawner")]
 script = ExtResource("3_i4b22")
+attack_min = null
+attack_max = null
 mob_res = ExtResource("2_opmw5")
 controller = NodePath("MobController")
 base = NodePath("base_mob")

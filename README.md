@@ -50,6 +50,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Playtesting / RingtailHARD) 
 			Playtested RingtailHARD with 1 HP, 
 			made some notes about it (discoveries and ideas)</li>
+			<li>(ShootAttack) 
+			Working on making the parameters for shoot to be contained in dictionary</li>
 		</ul>
 	<li>
 	<li>
