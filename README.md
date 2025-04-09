@@ -33,6 +33,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/8/25)
+			<li>(Gun) 
+			Adding reloading text close to player
+			(To make it easier for player to know their gun is reloading)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/7/25)
 			<li>(Bullet) 
 			Bullets track player_pos and main_boss_pos, used for following</li>

@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var GunInUse : TextureRect = $PlayerUI/GunUI/HBoxContainer/MarginContainer/GunInUse
 @onready var GunAmmo : Label = $PlayerUI/GunUI/HBoxContainer/GunStats/GunAmmo
 @onready var GunReload : Label = $PlayerUI/GunUI/HBoxContainer/GunStats/GunReload
+@onready var LocalReloadText: Label = $PlayerUI/LocalReloadText
 
 @onready var PowerOverlay : ColorRect = $CanvasLayer/PowerOverlay
 

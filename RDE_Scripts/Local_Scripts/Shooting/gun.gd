@@ -9,6 +9,7 @@ extends Node2D
 
 @onready var shoot_timer : Timer = $ShootTimer
 @onready var reload_timer : Timer = $ReloadTimer
+@onready var reload_text : Label = $ReloadText
 
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
@@ -34,6 +35,13 @@ func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	position = get_parent().position
 	
+	if not not_reloading():
+		reload_text.show()
+		reload_text.global_position = global_position + Vector2(0, 30)
+		reload_text.rotation = -global_rotation
+	else:
+		reload_text.hide()
+		
 	if is_selected() and not_reloading() and not GlobalTime.is_paused:
 		if can_shoot():
 			if is_auto and Input.is_action_pressed("shoot"):

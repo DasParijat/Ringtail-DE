@@ -16,7 +16,6 @@ class_name PlayerRes
 @export_category("Speed")
 @export var base_speed : float = 1000.0
 @export var rest_speed : float = 100.0
-@export var sprint_speed : float = 300.0
 
 @export_category("Power")
 @export var max_power : float = 100.0

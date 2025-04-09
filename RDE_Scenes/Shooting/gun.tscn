@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c74x71o74tua8"]
+[gd_scene load_steps=3 format=3 uid="uid://c74x71o74tua8"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Shooting/gun.gd" id="1_45twv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jej7s"]
+font_size = 20
 
 [node name="gun" type="Node2D"]
 script = ExtResource("1_45twv")
@@ -10,3 +13,11 @@ one_shot = true
 
 [node name="ReloadTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ReloadText" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "RELOADING"
+label_settings = SubResource("LabelSettings_jej7s")
+horizontal_alignment = 1
