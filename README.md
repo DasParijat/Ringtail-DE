@@ -35,8 +35,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(4/8/25)
 			<li>(Gun) 
-			Adding reloading text close to player
-			(To make it easier for player to know their gun is reloading)</li>
+			Added (and stylized) reloading text close to player
+			(To make it easier for player to know their gun is reloading, 
+			as well as know if other unused gun they switched out of is
+			still reloading)</li>
 		</ul>
 	<li>
 	<li>

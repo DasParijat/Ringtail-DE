@@ -35,13 +35,8 @@ func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	position = get_parent().position
 	
-	if not not_reloading():
-		reload_text.show()
-		reload_text.global_position = global_position + Vector2(0, 30)
-		reload_text.rotation = -global_rotation
-	else:
-		reload_text.hide()
-		
+	reload_text_handling()
+	
 	if is_selected() and not_reloading() and not GlobalTime.is_paused:
 		if can_shoot():
 			if is_auto and Input.is_action_pressed("shoot"):
@@ -71,6 +66,22 @@ func can_shoot() -> bool:
 func not_reloading() -> bool:
 	return reload_timer.is_stopped()
 
+func reload_text_handling() -> void:
+	if not_reloading():
+		reload_text.hide()
+		return
+	
+	# Sets text to semi transparent if gun not selected
+	# Not completely hidden so player is aware other gun is still reloading
+	if is_selected():
+		reload_text.self_modulate = Color(1, 1, 1)
+	else:
+		reload_text.self_modulate = Color(1, 1, 1, 0.3)
+		
+	reload_text.show()
+	reload_text.global_position = global_position + Vector2(-56, 35) # Specifc pos makes it centered
+	reload_text.rotation = -global_rotation # This makes it remain 0 degrees no matter what
+		
 func shoot() -> void:
 	if cur_ammo > 0 and not_reloading():
 		# bullet_spread equation
