@@ -69,7 +69,7 @@ func pause_game() -> void:
 	#print(GlobalTime.is_paused)
 	
 func _on_game_won() -> void:
-	print("game won on GAME end")
+	print("game won on GAME end (printed from game scene script)")
 	
 	# TODO When proper victory screen is made, move this code for fight stats to occur after victory screen is done
 	GlobalFightStats.fight_stats["total_time"] = 0.0

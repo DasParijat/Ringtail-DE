@@ -441,6 +441,9 @@ func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : fl
 	
 func _on_game_won() -> void:
 	## What mob does when game won
+	sprite.flip_h = true
+	action_queue = []
+	
 	print("base mob:  game won")
 
 ## Area2D Collisions

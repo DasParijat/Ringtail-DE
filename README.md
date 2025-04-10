@@ -25,7 +25,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>Matt Bran (4/2)</li>
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
-	<li>April Melendez (4/7) - Liked the camera</li>
+	<li>April Melendez (4/10) - healing should use a chunk of power instead of slowly draining. 
+	maybe it has its own cooldown like reloading? Also have it heal more when at higher hp and vice versa</li>
 	<li>Alexander King (4/6) - Liked the camera, found it fun, thought Ringtail was too fast</li>
 	<li>Playing with 1 HP (4/9) - I myself played RingtailHARD with 1 max hp, some things of note:
 		<ol>
