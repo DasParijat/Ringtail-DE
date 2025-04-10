@@ -18,7 +18,7 @@ var direction : Vector2
 var target_group : String
 
 var follow_target : bool = false
-var follow_target_length : float = 2
+var follow_target_length : float = 1
 var total_follow_time : float = 0.0
 
 var player_pos : Vector2
@@ -70,8 +70,7 @@ func follow_target_handling() -> void:
 	
 	if target_group == "Player":
 		look_at(player_pos)
-	elif target_group == "MainBoss":
-		# TODO add target group MainBoss
+	elif target_group == "Enemy":
 		look_at(main_boss_pos)
 		
 	total_follow_time += get_process_delta_time()

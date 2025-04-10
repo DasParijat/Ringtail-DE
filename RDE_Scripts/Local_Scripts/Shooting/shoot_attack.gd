@@ -10,7 +10,8 @@ var base_bullet_params : Dictionary = {
 	"position": Vector2(0, 10),
 	"speed": 500,
 	"target_group": "Player",
-	"follow_target": false
+	"follow_target": false,
+	"follow_target_length": 1.0
 }
 func _init(given_base : BaseMob, given_bullet_load : PackedScene, given_bullet_res : BulletRes, given_game_scene : Node) -> void:
 	base = given_base
@@ -48,10 +49,12 @@ func shoot(bullet_params : Dictionary = {"position": base.global_position}) -> v
 		
 	bullet.global_transform = base.global_transform
 
-	bullet.global_position = params["position"] #set_bullet_prop(base.global_position, bullet_params["position"])
-	bullet.bullet_speed = params["speed"] #set_bullet_prop(500, bullet_params["speed"])
-	bullet.target_group = params["target_group"] #set_bullet_prop("Player", bullet_params["target_group"])
-	bullet.follow_target = params["follow_target"] #set_bullet_prop(false, bullet_params["follow_target"])
+	bullet.global_position = params["position"] 
+	bullet.bullet_speed = params["speed"] 
+	bullet.target_group = params["target_group"] 
+	
+	bullet.follow_target = params["follow_target"]
+	bullet.follow_target_length = params["follow_target_length"]
 	
 	# putting bullet into game scene
 	game_scene.add_child(bullet)
