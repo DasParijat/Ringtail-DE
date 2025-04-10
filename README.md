@@ -45,6 +45,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/10/25)
 			<li>(ShootAttack) 
 			Can modify bullet properties from shoot functions through dictionaries</li>
+			<li>(Oswald) 
+			Changed near_boss power activation to only activate when hp is less than 15</li>
 		</ul>
 	<li>
 	<li>

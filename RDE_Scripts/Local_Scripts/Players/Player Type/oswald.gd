@@ -29,6 +29,7 @@ func power_move() -> void:
 		Input.is_action_pressed("sprint") 
 		or (base.is_near_enemy 
 			and player_res.cur_power > player_res.power_ex_cutoff 
+			and player_res.health_res.cur_hp < 15
 			and GlobalPlayer.is_moving)
 		) 
 		and not GlobalTime.is_paused and player_res.cur_power > 0.1 
