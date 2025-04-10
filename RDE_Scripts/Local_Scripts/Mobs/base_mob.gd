@@ -247,14 +247,14 @@ func debug_queue(can_print : bool) -> void:
 	print("|	TIME: ", queue_timer)
 	print("--------------------------------------------------------")
 	
-func get_modified_params(action_name: String, mod: Dictionary) -> Dictionary:
+func get_modified_params(action_name : String, mod : Dictionary) -> Dictionary:
 	## Any length of params is taken in, and combined with the rest of the default params.
 	var new_params = default_params[action_name].duplicate()
 	for i in mod.keys():
 		new_params[i] = mod[i]
 	return new_params
 
-func set_default_params(new_def: Dictionary) -> void:
+func set_default_params(new_def : Dictionary) -> void:
 	## For changing the default params of an action
 	for i in new_def.keys():
 		default_params[i] = new_def[i].duplicate()
