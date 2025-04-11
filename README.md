@@ -43,6 +43,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/11/25)
+			<li>(Bullet / ShootAttack) 
+			Bullets can be added to groups within script 
+			(If added to enemy group, then nearby-power activation works with them too)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/10/25)
 			<li>(ShootAttack) 
 			Can modify bullet properties from shoot functions through dictionaries</li>

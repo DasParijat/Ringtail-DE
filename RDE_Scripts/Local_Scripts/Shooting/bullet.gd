@@ -16,6 +16,7 @@ var start_position : Vector2
 var direction : Vector2  
 
 var target_group : String
+var in_group : String = "in_group"
 
 var follow_target : bool = false
 var follow_target_length : float = 1
@@ -26,7 +27,8 @@ var main_boss_pos : Vector2
 
 func _ready():
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
-	#bullet_res = bullet_res.duplicate()
+	if in_group not in ["", "NULL", "NONE"]: add_to_group(in_group)
+	
 	start_position = global_position
 	sprite.texture = texture
 	direction = Vector2.RIGHT.rotated(rotation).normalized()

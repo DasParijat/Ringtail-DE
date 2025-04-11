@@ -11,7 +11,8 @@ var base_bullet_params : Dictionary = {
 	"speed": 500,
 	"target_group": "Player",
 	"follow_target": false,
-	"follow_target_length": 1.0
+	"follow_target_length": 1.0,
+	"in_group": "Enemy"
 }
 func _init(given_base : BaseMob, given_bullet_load : PackedScene, given_bullet_res : BulletRes, given_game_scene : Node) -> void:
 	base = given_base
@@ -51,7 +52,9 @@ func shoot(bullet_params : Dictionary = {"position": base.global_position}) -> v
 
 	bullet.global_position = params["position"] 
 	bullet.bullet_speed = params["speed"] 
+	
 	bullet.target_group = params["target_group"] 
+	bullet.in_group = params["in_group"]
 	
 	bullet.follow_target = params["follow_target"]
 	bullet.follow_target_length = params["follow_target_length"]
