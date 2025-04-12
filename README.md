@@ -47,6 +47,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Bullet / ShootAttack) 
 			Bullets can be added to groups within script 
 			(If added to enemy group, then nearby-power activation works with them too)</li>
+			<li>(ShootAttack) 
+			_shoot function is now treated as purely for internal use,
+			shooting like normal (shoot from mob) is done with shoot()</li>
+			<li>(RingtailHARD) 
+			Refined how to shoot/do anything on an interval within _process func</li>
 		</ul>
 	<li>
 	<li>

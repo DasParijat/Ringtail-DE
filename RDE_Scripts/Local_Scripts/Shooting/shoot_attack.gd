@@ -34,7 +34,8 @@ func set_default_params(new_def : Dictionary) -> void:
 	for i in new_def.keys():
 		base_bullet_params[i] = new_def[i].duplicate()
 
-func shoot(bullet_params : Dictionary = {"position": base.global_position}) -> void: 
+func _shoot(bullet_params : Dictionary = {"position": base.global_position}) -> void: 
+	## Base shoot func, used within shoot_attack only
 	if not base:
 		return # For when mob deletes itself & base no longer exists
 	
@@ -47,7 +48,8 @@ func shoot(bullet_params : Dictionary = {"position": base.global_position}) -> v
 	else:
 		printerr("BULLET PARAMS NEED TO BE DICTIONARY TYPE")
 		return
-		
+	
+	print(params)
 	bullet.global_transform = base.global_transform
 
 	bullet.global_position = params["position"] 
@@ -61,15 +63,20 @@ func shoot(bullet_params : Dictionary = {"position": base.global_position}) -> v
 	
 	# putting bullet into game scene
 	game_scene.add_child(bullet)
+
+func shoot(bullet_params : Dictionary = base_bullet_params):
+	## Shoot used by mob (shoots from mob itself)
+	bullet_params["position"] = base.global_position
+	_shoot(bullet_params)
 	
 func shoot_from_rand(bullet_params : Dictionary = base_bullet_params, from_x : float = 500, to_x : float = 1000, from_y : float = 500, to_y : float = 1000) -> void:
 	bullet_params["position"] = base.get_rand_player_pos(from_x, to_x, from_y, to_y)
-	shoot(bullet_params)
+	_shoot(bullet_params)
 
 func shoot_laser(bullet_params : Dictionary =  base_bullet_params, num_of_bullets : int = 10, time_difference : float = 0.2) -> void:
 	# So each bullet has the same start pos and target
 	var start_pos : Vector2 = base.get_rand_player_pos(500, 1000, 500, 1000)
 	
 	for i in range(num_of_bullets):
-		shoot(bullet_params)
+		_shoot(bullet_params)
 		await GlobalTime.local_wait(time_difference)
