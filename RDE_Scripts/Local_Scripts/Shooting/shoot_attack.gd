@@ -49,9 +49,8 @@ func _shoot(bullet_params : Dictionary = {"position": base.global_position}) -> 
 		printerr("BULLET PARAMS NEED TO BE DICTIONARY TYPE")
 		return
 	
-	print(params)
 	bullet.global_transform = base.global_transform
-
+	
 	bullet.global_position = params["position"] 
 	bullet.bullet_speed = params["speed"] 
 	

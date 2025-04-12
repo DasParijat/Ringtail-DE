@@ -8,3 +8,6 @@ func local_wait(seconds : float) -> Signal:
 	## Always use 'await' with this func
 	#print(seconds)
 	return get_tree().create_timer(seconds).timeout
+
+func process_interval(interval_time : float, total_delta : float, delta : float) -> bool:
+	return fmod(total_delta, interval_time) < delta

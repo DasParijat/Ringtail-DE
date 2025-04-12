@@ -8,7 +8,9 @@ func _process(delta: float) -> void:
 	
 	total_delta += delta
 	
-	if fmod(total_delta, 1.0) < delta:
+	if GlobalTime.process_interval(1.0, total_delta, delta):
 		shoot_attack.shoot({"follow_target": true, "follow_target_length": 2.0})
+		
+	if GlobalTime.process_interval(3.0, total_delta, delta):
 		shoot_attack.shoot_laser({"speed": 1000, "in_group": "NONE"}, 10)
-		shoot_attack.shoot_from_rand({"in_group": "Player"})
+		shoot_attack.shoot_from_rand()

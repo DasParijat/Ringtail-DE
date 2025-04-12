@@ -43,6 +43,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/12/25)
+			<li>(GlobalTime / RingtailHARD) 
+			Added func to handle waiting an interval time in process func's</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/11/25)
 			<li>(Bullet / ShootAttack) 
 			Bullets can be added to groups within script 

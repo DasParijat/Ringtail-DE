@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 		rest_check(delta)
 		death_check()
 		test_function()
-		
+	
 func movement(cur_speed : float) -> void:
 	## Handles all movement of player
 	look_at(get_global_mouse_position())
