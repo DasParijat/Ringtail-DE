@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=9 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="4_72mc8"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game World/game_background.gd" id="4_a1q2e"]
+[ext_resource type="PackedScene" uid="uid://nlpg0x3l8com" path="res://RDE_Scenes/victory_menu.tscn" id="4_b4hy0"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/fight.gd" id="6_b2j36"]
 
 [node name="Game" type="Node2D"]
@@ -25,6 +26,8 @@ editor_draw_drag_margin = true
 script = ExtResource("2_85jn5")
 player_tracking_speed = 1.5
 max_lean_distance = 250.0
+
+[node name="VictoryMenu" parent="Camera2D" instance=ExtResource("4_b4hy0")]
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("4_a1q2e")

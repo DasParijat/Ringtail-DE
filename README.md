@@ -46,6 +46,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/12/25)
 			<li>(GlobalTime / RingtailHARD) 
 			Added func to handle waiting an interval time in process func's</li>
+			<li>(Bullet) 
+			follow_target_time takes in seconds differently (more readable)</li>
+			<li>(Victory Menu) 
+			Started making victory menu scene and code needed for it</li>
 		</ul>
 	<li>
 	<li>

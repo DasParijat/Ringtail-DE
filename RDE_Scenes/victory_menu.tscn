@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://nlpg0x3l8com"]
+
+[ext_resource type="PackedScene" uid="uid://f2i0ysltk7fr" path="res://RDE_Scenes/fight_stats.tscn" id="1_4tjlq"]
+
+[node name="VictoryMenu" type="CanvasLayer"]
+
+[node name="fight_stats" parent="." instance=ExtResource("1_4tjlq")]
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 134.0
+offset_right = 225.0
+offset_bottom = 31.0
+text = "CONTINUE"

@@ -4,8 +4,9 @@ extends Node2D
 @onready var level : LevelRes = GlobalScene.next_level
 
 @onready var fight_res : FightRes 
-signal fight_res_set
 
+signal fight_res_set
+signal on_victory # Used to communicate to cam, victory menu, and fight that its on victory screen
 
 func _ready() -> void:
 	pause_menu.hide() 
@@ -71,6 +72,7 @@ func pause_game() -> void:
 func _on_game_won() -> void:
 	print("game won on GAME end (printed from game scene script)")
 	
+	on_victory.emit()
 	# TODO When proper victory screen is made, move this code for fight stats to occur after victory screen is done
 	GlobalFightStats.fight_stats["total_time"] = 0.0
 	GlobalFightStats.fight_stats["num_of_deaths"] = 0

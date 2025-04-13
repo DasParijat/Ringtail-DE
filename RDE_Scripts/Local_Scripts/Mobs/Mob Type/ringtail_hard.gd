@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	total_delta += delta
 	
 	if GlobalTime.process_interval(1.0, total_delta, delta):
-		shoot_attack.shoot({"follow_target": true, "follow_target_length": 2.0})
+		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5})
 		
 	if GlobalTime.process_interval(3.0, total_delta, delta):
 		shoot_attack.shoot_laser({"speed": 1000, "in_group": "NONE"}, 10)

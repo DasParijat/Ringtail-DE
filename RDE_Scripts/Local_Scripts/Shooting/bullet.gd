@@ -67,7 +67,7 @@ func _physics_process(delta):
 			queue_free()
 
 func follow_target_handling() -> void:
-	if not follow_target or total_follow_time >= follow_target_length:
+	if not follow_target or total_follow_time >= (follow_target_length / 10):
 		return
 	
 	if target_group == "Player":
