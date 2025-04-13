@@ -43,6 +43,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/13/25)
+			<li>(Victory Menu / GlobalScene) 
+			Added on_victory and off_victory signal to tell game when victory menu is showing</li>
+			<li>(Game) 
+			When fight won, game doesn't go next in order till off_victory is emitted</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/12/25)
 			<li>(GlobalTime / RingtailHARD) 
 			Added func to handle waiting an interval time in process func's</li>

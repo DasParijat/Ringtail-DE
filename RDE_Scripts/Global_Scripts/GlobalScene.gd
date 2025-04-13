@@ -23,6 +23,9 @@ var world_scene_history : Array[PackedScene]
 var cam_border_x : float
 var cam_border_y : float
 
+signal on_victory()  # Used to communicate to cam, victory menu, and fight that its on victory screen
+signal off_victory()
+
 func set_next_level(new_level : String) -> void:
 	next_level = load(new_level)
 	
