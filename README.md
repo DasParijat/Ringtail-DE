@@ -48,6 +48,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added on_victory and off_victory signal to tell game when victory menu is showing</li>
 			<li>(Game) 
 			When fight won, game doesn't go next in order till off_victory is emitted</li>
+			<li>(Game Camera) 
+			Camera goes to boss's last position when on victory screen</li>
 		</ul>
 	<li>
 	<li>

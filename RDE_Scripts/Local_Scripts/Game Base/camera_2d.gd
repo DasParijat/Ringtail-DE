@@ -34,6 +34,7 @@ func _ready() -> void:
 	GlobalSignal.connect("cur_gun", Callable(self, "_on_cur_gun"))
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
+	GlobalScene.connect("on_victory", Callable(self, "_on_victory"))
 	if GlobalScene.cam_border_x and GlobalScene.cam_border_y:
 		$".".limit_left = -GlobalScene.cam_border_x
 		$".".limit_right = GlobalScene.cam_border_x
@@ -52,7 +53,7 @@ func _process(delta : float) -> void:
 		gun_aim(1)
 	elif track_boss:
 		set_position(main_boss_pos * player_tracking_speed)
-		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
+		#offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 	
 	player_power_handling(1.2, 10)
 	gun_shake(delta)
@@ -111,4 +112,13 @@ func _on_get_cur_stats(type, stats) -> void:
 		
 func _on_fight_player_created() -> void:
 	track_player = true
-	#track_boss = true
+	track_boss = false
+
+func _on_victory() -> void:
+	track_player = false
+	track_boss = true
+	
+	await GlobalScene.off_victory
+	
+	track_player = true
+	track_boss = false
