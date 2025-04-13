@@ -43,6 +43,8 @@ var cur_action : Dictionary
 
 var queue_timer : float = 0
 
+var process_enabled : bool = true
+
 var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
@@ -99,6 +101,9 @@ func _ready() -> void:
 	set_main_boss_stats()
 
 func _physics_process(delta: float) -> void:
+	if not process_enabled:
+		return # For when main boss dies but not removed from queue
+
 	## Delta updaters
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
@@ -130,8 +135,9 @@ func death_check() -> void:
 		print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
 			GlobalSignal.emit_signal("game_won")
+		else:
+			get_parent().queue_free() # non-bosses queue free immediatly
 		action_queue.clear()
-		get_parent().queue_free()
 
 func deal_hitbox_dmg() -> void:
 	## Handles dealing damage to player when in hitbox
@@ -441,10 +447,15 @@ func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : fl
 	
 func _on_game_won() -> void:
 	## What mob does when game won
-	sprite.flip_h = true
-	action_queue = []
+	# TODO make different code for if main boss or regular mob receives this
+	process_enabled = false
 	
+	sprite.flip_h = false
+	action_queue = []
 	print("base mob:  game won")
+	
+	await GlobalScene.off_victory
+	get_parent().queue_free()
 
 ## Area2D Collisions
 func _on_hit_box_area_entered(area: Area2D) -> void:
