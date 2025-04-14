@@ -52,9 +52,10 @@ func _process(delta : float) -> void:
 		
 		gun_aim(1)
 	elif track_boss:
-		set_position(main_boss_pos * player_tracking_speed)
-		#offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
-	
+		set_position(main_boss_pos) #* player_tracking_speed)
+		offset = Vector2(-200, 0) 
+		zoom = zoom.lerp(Vector2(2, 2), delta * 10)
+		
 	player_power_handling(1.2, 10)
 	gun_shake(delta)
 	
