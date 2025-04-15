@@ -17,6 +17,7 @@ var hp_bars : Array = []
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
@@ -91,3 +92,8 @@ func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(bar, "value", new_hp, rate)
 	
+func _on_game_won() -> void:
+	# TODO Possibly make it fade out/in instead of instantly showing/hiding
+	$".".hide()
+	await GlobalScene.off_victory
+	$".".show()

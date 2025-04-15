@@ -27,6 +27,7 @@ var using_power : bool = false
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	#print(get_viewport().get_visible_rect().size)
 	
 	player_hp_stylebox.set_corner_radius_all(4)
@@ -106,3 +107,9 @@ func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(bar, "value", new_hp, rate)
+
+func _on_game_won() -> void:
+	# TODO Possibly make it fade out/in instead of instantly showing/hiding
+	PlayerUI.hide()
+	await GlobalScene.off_victory
+	PlayerUI.show()

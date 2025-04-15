@@ -50,6 +50,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Player can no longer shoot during victory menu</li>
 			<li>(Base Mob) 
 			Handles what happens to non-boss mobs when game won</li>
+			<li>(Fight UI) 
+			FightUI hides when victory menu is up</li>
 		</ul>
 	<li>
 	<li>
