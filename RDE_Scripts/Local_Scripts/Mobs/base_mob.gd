@@ -103,13 +103,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not process_enabled:
 		return # For when main boss dies but not removed from queue
-
+	
 	## Delta updaters
 	queue_timer += delta # used to track when actions happen
 	cur_delta = delta
 	
 	## Constant handling
-	death_check()
 	deal_hitbox_dmg()
 	health_bar_handling()
 	border_handling()
@@ -128,7 +127,9 @@ func _physics_process(delta: float) -> void:
 	if cur_action:
 		call(cur_action["action"], cur_action["params"])
 	
-			
+	## Death check handled at end so process func can immediatly stop (for main boss mobs)
+	death_check()
+	
 func death_check() -> void:
 	## Check if mob health_res is dead, and respond accordingly
 	if health_res.is_dead():
@@ -451,8 +452,11 @@ func _on_game_won() -> void:
 	process_enabled = false
 	action_queue.clear()
 	if mob_res.is_boss:
+		## Flip over sprite to show they're dead
+		sprite.global_rotation_degrees = 0
 		sprite.flip_v = true
-		print("base mob:  game won")
+		
+		#print("base mob:  game won")
 		await GlobalScene.off_victory
 		
 	get_parent().queue_free()

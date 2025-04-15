@@ -43,10 +43,18 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/15/25)
+			<li>(Base Mob) 
+			Boss sprite flips upside down when game won, 
+			death check handled at the end of a process loop</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/14/25)
 			<li>(ShootAttack / RingtailHARD) 
 			No new projectiles are able to be fired once Ringtail/Boss dies</li>
-			<li>(Guh) 
+			<li>(Gun) 
 			Player can no longer shoot during victory menu</li>
 			<li>(Base Mob) 
 			Handles what happens to non-boss mobs when game won</li>
