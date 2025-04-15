@@ -20,6 +20,8 @@ var bullet_spread : float = 0.0
 var cur_gun_emitted : bool = false
 var is_auto : bool
 
+var gun_usable : bool = true
+
 func _ready() -> void:
 	cur_ammo = mag_size
 	shoot_timer.wait_time = gun_res.fire_rate
@@ -28,6 +30,7 @@ func _ready() -> void:
 	
 	update_ui()
 	
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	if is_selected():
 		GlobalSignal.cur_gun.emit(gun_res)
 	
@@ -37,7 +40,7 @@ func _process(delta: float) -> void:
 	
 	reload_text_handling()
 	
-	if is_selected() and not_reloading() and not GlobalTime.is_paused:
+	if is_selected() and not_reloading() and gun_usable and not GlobalTime.is_paused:
 		if can_shoot():
 			if is_auto and Input.is_action_pressed("shoot"):
 				shoot()
@@ -126,6 +129,12 @@ func get_cur_stats() -> Dictionary:
 		"gun_image": gun_res.texture,
 		"is_reloading": not not_reloading()
 	}
+
+func _on_game_won() -> void:
+	gun_usable = false
+	
+	await GlobalScene.off_victory
+	gun_usable = true
 	
 func reload() -> void:
 	print("reloading")

@@ -46,6 +46,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/14/25)
 			<li>(ShootAttack / RingtailHARD) 
 			No new projectiles are able to be fired once Ringtail/Boss dies</li>
+			<li>(Guh) 
+			Player can no longer shoot during victory menu</li>
 			<li>(Base Mob) 
 			Handles what happens to non-boss mobs when game won</li>
 		</ul>
