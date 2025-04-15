@@ -43,6 +43,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/14/25)
+			<li>(ShootAttack / RingtailHARD) 
+			No new projectiles are able to be fired once Ringtail/Boss dies</li>
+			<li>(Base Mob) 
+			Handles what happens to non-boss mobs when game won</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/13/25)
 			<li>(Victory Menu / GlobalScene) 
 			Added on_victory and off_victory signal to tell game when victory menu is showing</li>

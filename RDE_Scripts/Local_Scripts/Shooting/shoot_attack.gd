@@ -6,6 +6,8 @@ var bullet_load : PackedScene
 var bullet_res : BulletRes
 var game_scene : Node
 
+var can_shoot : bool = true
+
 var base_bullet_params : Dictionary = {
 	"position": Vector2(0, 10),
 	"speed": 500,
@@ -14,12 +16,18 @@ var base_bullet_params : Dictionary = {
 	"follow_target_length": 1.0,
 	"in_group": "Enemy"
 }
+
 func _init(given_base : BaseMob, given_bullet_load : PackedScene, given_bullet_res : BulletRes, given_game_scene : Node) -> void:
 	base = given_base
 	bullet_load = given_bullet_load
 	bullet_res = given_bullet_res
 	game_scene = given_game_scene
+	
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 
+func _on_game_won() -> void:
+	can_shoot = false
+	
 func get_modified_params(mod : Dictionary) -> Dictionary:
 	## Any length of params is taken in, and combined with the rest of the default params.
 	# Copied from base mob
@@ -36,7 +44,7 @@ func set_default_params(new_def : Dictionary) -> void:
 
 func _shoot(bullet_params : Dictionary = {"position": base.global_position}) -> void: 
 	## Base shoot func, used within shoot_attack only
-	if not base:
+	if not can_shoot or not base:
 		return # For when mob deletes itself & base no longer exists
 	
 	var bullet = bullet_load.instantiate()

@@ -449,12 +449,12 @@ func _on_game_won() -> void:
 	## What mob does when game won
 	# TODO make different code for if main boss or regular mob receives this
 	process_enabled = false
-	
-	sprite.flip_h = false
-	action_queue = []
-	print("base mob:  game won")
-	
-	await GlobalScene.off_victory
+	action_queue.clear()
+	if mob_res.is_boss:
+		sprite.flip_v = true
+		print("base mob:  game won")
+		await GlobalScene.off_victory
+		
 	get_parent().queue_free()
 
 ## Area2D Collisions
