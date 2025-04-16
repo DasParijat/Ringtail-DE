@@ -37,6 +37,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>Idea: Bullets should have ability to be part of enemy/player groups</li>
 		</ol>
 	</li>
+	<li>Dylan Kelly (4/15) -Idea: Let players upload a picture of their face and have it be a boss</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -47,6 +48,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Boss sprite flips upside down when game won, 
 			death check handled at the end of a process loop</li>
+			<li>(PlayTesters) 
+			Dylan Kelly playtested</li>
 		</ul>
 	<li>
 	<li>
