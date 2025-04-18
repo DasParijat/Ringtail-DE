@@ -44,6 +44,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/17/25)
+			<li>(Fight Stats / Victory Menu) 
+			Fight stats are now viewable in victory menu</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/16/25)
 			<li>(PlayTesters) 
 			Updated playtesters</li>
