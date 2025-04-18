@@ -6,12 +6,31 @@
 [node name="VictoryMenu" type="CanvasLayer"]
 script = ExtResource("1_sdjne")
 
-[node name="fight_stats" parent="." instance=ExtResource("1_4tjlq")]
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -81.41
+offset_right = 463.0
+offset_bottom = -50.41
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 835
 
-[node name="Continue" type="Button" parent="."]
-offset_left = 134.0
-offset_right = 225.0
-offset_bottom = 31.0
+[node name="StatsContainer" type="MarginContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="fight_stats" parent="HSplitContainer/StatsContainer" instance=ExtResource("1_4tjlq")]
+layout_mode = 2
+
+[node name="ButtonContainer" type="MarginContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="HSplitContainer/ButtonContainer"]
+layout_mode = 2
 text = "CONTINUE"
 
-[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="HSplitContainer/ButtonContainer/Continue" to="." method="_on_continue_pressed"]

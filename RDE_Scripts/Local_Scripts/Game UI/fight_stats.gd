@@ -15,8 +15,8 @@ func _on_game_won() -> void:
 	## 		however fight_stats text updates only on game_on signal, 
 	##		so at least for this functionality, time going on doesn't matter
 	
-	FightTime.text = str(GlobalFightStats.fight_stats["time"])
-	TotalTime.text = str(GlobalFightStats.fight_stats["total_time"])
-	DamageTaken.text = str(ceil(GlobalFightStats.fight_stats["damage_taken"]))
-	NumOfDeaths.text = str(GlobalFightStats.fight_stats["num_of_deaths"])
-	FightType.text = str(GlobalFightStats.fight_stats["fight_type"])
+	FightTime.text = "Time: " + str(GlobalFightStats.fight_stats["time"])
+	TotalTime.text = "Total Time: " + str(GlobalFightStats.fight_stats["total_time"])
+	DamageTaken.text = "Damage Taken: " + str(ceil(GlobalFightStats.fight_stats["damage_taken"]))
+	NumOfDeaths.text = "Deaths: " + str(GlobalFightStats.fight_stats["num_of_deaths"])
+	FightType.text = "Fight: " + str(GlobalFightStats.fight_stats["fight_type"])

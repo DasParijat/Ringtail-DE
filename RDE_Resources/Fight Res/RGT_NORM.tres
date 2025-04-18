@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("3_e8yek")
-FIGHT_NAME = "RGT_HARD"
+FIGHT_NAME = "RGT_NORM"
 world_scene = ExtResource("5_78dcm")
 single_boss = ExtResource("4_aijre")
 single_boss_spawn = Vector2(0, -200)

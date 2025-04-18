@@ -44,6 +44,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/18/25)
+			<li>(Fight Stats / Victory Menu) 
+			Adjusting how victory menu is visually organized</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/17/25)
 			<li>(Fight Stats / Victory Menu) 
 			Fight stats are now viewable in victory menu</li>

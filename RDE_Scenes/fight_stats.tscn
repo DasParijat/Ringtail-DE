@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://f2i0ysltk7fr"]
+[gd_scene load_steps=4 format=3 uid="uid://f2i0ysltk7fr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_stats.gd" id="1_iwqbc"]
+
+[sub_resource type="SystemFont" id="SystemFont_dtrxk"]
+font_names = PackedStringArray("Bahnschrift")
+font_italic = true
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5jun"]
+line_spacing = 5.0
+font = SubResource("SystemFont_dtrxk")
+font_size = 75
 
 [node name="fight_stats" type="Control"]
 layout_mode = 3
@@ -14,15 +24,30 @@ offset_bottom = 40.0
 
 [node name="FightTime" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+text = "Time: "
+label_settings = SubResource("LabelSettings_n5jun")
+horizontal_alignment = 2
 
 [node name="TotalTime" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+text = "Total Time: "
+label_settings = SubResource("LabelSettings_n5jun")
+horizontal_alignment = 2
 
 [node name="DamageTaken" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+text = "DamageTaken: "
+label_settings = SubResource("LabelSettings_n5jun")
+horizontal_alignment = 2
 
 [node name="NumOfDeaths" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+text = "NumOfDeaths: "
+label_settings = SubResource("LabelSettings_n5jun")
+horizontal_alignment = 2
 
 [node name="FightType" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+text = "FightType: "
+label_settings = SubResource("LabelSettings_n5jun")
+horizontal_alignment = 2
