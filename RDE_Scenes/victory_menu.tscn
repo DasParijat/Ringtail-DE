@@ -1,33 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://nlpg0x3l8com"]
+[gd_scene load_steps=4 format=3 uid="uid://nlpg0x3l8com"]
 
 [ext_resource type="PackedScene" uid="uid://f2i0ysltk7fr" path="res://RDE_Scenes/fight_stats.tscn" id="1_4tjlq"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/victory_menu.gd" id="1_sdjne"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cl45v"]
+content_margin_left = 275.0
+content_margin_top = 294.0
+
 [node name="VictoryMenu" type="CanvasLayer"]
 script = ExtResource("1_sdjne")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
+[node name="HSplitContainer" type="PanelContainer" parent="."]
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -463.0
-offset_top = -81.41
-offset_right = 463.0
-offset_bottom = -50.41
-grow_horizontal = 2
+offset_top = -165.5
+offset_right = 407.655
+offset_bottom = 165.5
 grow_vertical = 2
-theme_override_constants/separation = 835
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cl45v")
 
 [node name="StatsContainer" type="MarginContainer" parent="HSplitContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 100
 
 [node name="fight_stats" parent="HSplitContainer/StatsContainer" instance=ExtResource("1_4tjlq")]
 layout_mode = 2
 
 [node name="ButtonContainer" type="MarginContainer" parent="HSplitContainer"]
 layout_mode = 2
+theme_override_constants/margin_top = 300
 
 [node name="Continue" type="Button" parent="HSplitContainer/ButtonContainer"]
 layout_mode = 2

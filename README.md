@@ -44,6 +44,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/19/25)
+			<li>(Victory Menu) 
+			Victory Menu is now completely on the left side of screen</li>
+			<li>(Fight Stats) 
+			Uses export instead of direct linking to get labels</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/18/25)
 			<li>(Fight Stats / Victory Menu) 
 			Adjusting how victory menu is visually organized</li>

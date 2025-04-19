@@ -1,10 +1,10 @@
 extends Control
 
-@onready var FightTime: Label = $VBoxContainer/FightTime
-@onready var TotalTime: Label = $VBoxContainer/TotalTime
-@onready var DamageTaken: Label = $VBoxContainer/DamageTaken
-@onready var NumOfDeaths: Label = $VBoxContainer/NumOfDeaths
-@onready var FightType: Label = $VBoxContainer/FightType
+@export var FightTime: Label
+@export var TotalTime: Label
+@export var DamageTaken: Label
+@export var NumOfDeaths: Label
+@export var FightType: Label
 
 func _ready() -> void:
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won")) 

@@ -1,53 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://f2i0ysltk7fr"]
+[gd_scene load_steps=5 format=3 uid="uid://f2i0ysltk7fr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_stats.gd" id="1_iwqbc"]
 
-[sub_resource type="SystemFont" id="SystemFont_dtrxk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsfhx"]
+bg_color = Color(0.00566115, 0.00566115, 0.00566115, 0.545098)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="SystemFont" id="SystemFont_xsfor"]
 font_names = PackedStringArray("Bahnschrift")
 font_italic = true
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_n5jun"]
 line_spacing = 5.0
-font = SubResource("SystemFont_dtrxk")
+font = SubResource("SystemFont_xsfor")
 font_size = 75
 
-[node name="fight_stats" type="Control"]
+[node name="fight_stats" type="Control" node_paths=PackedStringArray("FightTime", "TotalTime", "DamageTaken", "NumOfDeaths", "FightType")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_iwqbc")
+FightTime = NodePath("CenterContainer/PanelContainer/VBoxContainer/FightTime")
+TotalTime = NodePath("CenterContainer/PanelContainer/VBoxContainer/TotalTime")
+DamageTaken = NodePath("CenterContainer/PanelContainer/VBoxContainer/DamageTaken")
+NumOfDeaths = NodePath("CenterContainer/PanelContainer/VBoxContainer/NumOfDeaths")
+FightType = NodePath("CenterContainer/PanelContainer/VBoxContainer/FightType")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_right = 502.0
+offset_bottom = 396.0
+use_top_left = true
 
-[node name="FightTime" type="Label" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_direction = 3
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jsfhx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="FightTime" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Time: "
 label_settings = SubResource("LabelSettings_n5jun")
-horizontal_alignment = 2
 
-[node name="TotalTime" type="Label" parent="VBoxContainer"]
+[node name="TotalTime" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Total Time: "
 label_settings = SubResource("LabelSettings_n5jun")
-horizontal_alignment = 2
 
-[node name="DamageTaken" type="Label" parent="VBoxContainer"]
+[node name="DamageTaken" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "DamageTaken: "
+text = "Damage Taken: "
 label_settings = SubResource("LabelSettings_n5jun")
-horizontal_alignment = 2
 
-[node name="NumOfDeaths" type="Label" parent="VBoxContainer"]
+[node name="NumOfDeaths" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "NumOfDeaths: "
+text = "Deaths: "
 label_settings = SubResource("LabelSettings_n5jun")
-horizontal_alignment = 2
 
-[node name="FightType" type="Label" parent="VBoxContainer"]
+[node name="FightType" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "FightType: "
+text = "Fight: "
 label_settings = SubResource("LabelSettings_n5jun")
-horizontal_alignment = 2
