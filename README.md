@@ -46,7 +46,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(4/20/25)
 			<li>(Game Pause) 
-			Working on having a smoother pause transition</li>
+			Pause button doesn't pause immediatly (allows for pausing effects)</li>
+			<li>(Game Camera) 
+			Camera zooms in when paused</li>
 		</ul>
 	<li>
 	<li>

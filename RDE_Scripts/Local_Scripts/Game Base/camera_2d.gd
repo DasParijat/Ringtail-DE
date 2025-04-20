@@ -51,9 +51,10 @@ func _process(delta : float) -> void:
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		if GlobalTime.is_paused:
-			zoom = zoom.lerp(Vector2(1.5, 1.5), delta * 10)
+			print("is paused in cam")
+			zoom = zoom.lerp(Vector2(2, 2), delta * 3)
 		else:
-			zoom = zoom.lerp(Vector2(1, 1), delta * 10)
+			zoom = zoom.lerp(Vector2(1, 1), delta * 3)
 			
 		gun_aim(1)
 	elif track_boss:
