@@ -7,6 +7,8 @@ extends Node2D
 
 signal fight_res_set
 
+var pause_transition : bool = false
+
 func _ready() -> void:
 	pause_menu.hide() 
 	
@@ -58,12 +60,17 @@ func next_in_order(increment : int) -> void:
 		return
 		
 func pause_game() -> void:
-	if GlobalTime.is_paused:
+	if GlobalTime.is_paused or pause_transition:
 		print(">>PAUSED<<")
+		print("UNPAUSE -- is_paused: ", GlobalTime.is_paused, " transition: ", pause_transition)
 		pause_menu.hide()
 	else:
+		print("PAUSE -- is_paused: ", GlobalTime.is_paused, " transition: ", pause_transition)
+		pause_transition = true
 		pause_menu.show()
+		await GlobalTime.local_wait(1)
 		Engine.time_scale = 0
+		pause_transition = false
 		
 	GlobalTime.is_paused = not GlobalTime.is_paused
 	#print(GlobalTime.is_paused)

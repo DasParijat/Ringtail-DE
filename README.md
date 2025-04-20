@@ -44,6 +44,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/20/25)
+			<li>(Game Pause) 
+			Working on having a smoother pause transition</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/19/25)
 			<li>(Victory Menu) 
 			Victory Menu is now completely on the left side of screen</li>
