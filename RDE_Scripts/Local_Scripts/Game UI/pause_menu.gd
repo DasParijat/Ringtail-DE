@@ -1,9 +1,24 @@
 extends CanvasLayer
 
 @onready var main = $".."
+@onready var panel_container: PanelContainer = $PanelContainer
 
+var tween : Tween = Tween.new()
+
+func slide_menu_out() -> void:
+	tween = create_tween()
+	tween.set_parallel(true) 
+	print("slide menu")
+	
+	tween.tween_property(panel_container, "position:x", -400, 0.5).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(panel_container, "modulate", Color(1, 1, 1, 0), 0.5)
+
+	#await tween.finished
+	
 func unpause() -> void:
 	# Need to unpause so the Engine time scale isn't 0 when going to menu
+	#await slide_menu_out()
+	slide_menu_out()
 	GlobalSignal.quit_game.emit()
 	main.pause_game() 
 	

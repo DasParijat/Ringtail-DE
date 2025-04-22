@@ -1,45 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh6wxwjtwfcwq"]
+[gd_scene load_steps=4 format=3 uid="uid://bh6wxwjtwfcwq"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_82tdh"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/pause_menu.gd" id="1_acbnt"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7iwrl"]
+content_margin_left = 9.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
 [node name="pause_menu" type="CanvasLayer"]
 script = ExtResource("1_acbnt")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -86.965
-offset_top = 100.0
-offset_right = 87.035
-offset_bottom = 236.0
-grow_horizontal = 2
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -85.0
+offset_right = 174.0
+offset_bottom = 61.0
+grow_vertical = 2
 scale = Vector2(3.17, 3.17)
-pivot_offset = Vector2(87, 0)
+pivot_offset = Vector2(0, 88.155)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7iwrl")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
 alignment = 1
 
-[node name="resumeB" type="Button" parent="HBoxContainer"]
+[node name="resumeB" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "Resume"
 script = ExtResource("1_82tdh")
 
-[node name="settingsB" type="Button" parent="HBoxContainer"]
+[node name="settingsB" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "Settings"
 script = ExtResource("1_82tdh")
 
-[node name="quitB" type="Button" parent="HBoxContainer"]
+[node name="quitB" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("1_82tdh")
 
-[node name="resetB" type="Button" parent="HBoxContainer"]
+[node name="resetB" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "RESET"
 script = ExtResource("1_82tdh")
 
-[connection signal="pressed" from="HBoxContainer/resumeB" to="." method="_on_resume_b_pressed"]
-[connection signal="pressed" from="HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
-[connection signal="pressed" from="HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
-[connection signal="pressed" from="HBoxContainer/resetB" to="." method="_on_reset_b_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/resumeB" to="." method="_on_resume_b_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/settingsB" to="." method="_on_settings_b_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/quitB" to="." method="_on_quit_b_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/resetB" to="." method="_on_reset_b_pressed"]

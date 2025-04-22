@@ -65,7 +65,7 @@ func pause_game() -> void:
 		
 	if GlobalTime.is_paused:
 		#print("UNPAUSE -- is_paused: ", GlobalTime.is_paused, " transition: ", pause_transition)
-		pause_menu.hide()
+		#pause_menu.hide()
 		Engine.time_scale = GlobalTime.cur_time_scale
 		GlobalTime.is_paused = false
 	else:
@@ -74,7 +74,7 @@ func pause_game() -> void:
 		
 		pause_transition = true
 		pause_menu.show()
-		await GlobalTime.local_wait(0.3)
+		await GlobalTime.local_wait(0.1)
 		pause_transition = false
 		
 		Engine.time_scale = 0

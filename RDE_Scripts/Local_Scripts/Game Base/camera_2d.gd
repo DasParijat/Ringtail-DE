@@ -51,7 +51,6 @@ func _process(delta : float) -> void:
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		if GlobalTime.is_paused:
-			print("is paused in cam")
 			zoom = zoom.lerp(Vector2(2, 2), delta * 3)
 		else:
 			zoom = zoom.lerp(Vector2(1, 1), delta * 3)
