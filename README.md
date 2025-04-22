@@ -47,8 +47,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/21/25)
 			<li>(Pause Menu) 
 			Slight change in pause menu look</li>
+			<li>(Pause Menu) 
+			Pause menu uses tween animations</li>
 			<li>(Game Camera) 
-			Camera zooms in quicker when paused</li>
+			Camera zooms in quicker and closer when paused</li>
 		</ul>
 	<li>
 	<li>

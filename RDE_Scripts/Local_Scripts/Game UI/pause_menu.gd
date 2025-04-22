@@ -5,24 +5,27 @@ extends CanvasLayer
 
 var tween : Tween = Tween.new()
 
-func slide_menu_out() -> void:
+func slide_menu_out(x_pos : float, modulate : float, rate : float = 0.1) -> void:
 	tween = create_tween()
 	tween.set_parallel(true) 
-	print("slide menu")
 	
-	tween.tween_property(panel_container, "position:x", -400, 0.5).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(panel_container, "modulate", Color(1, 1, 1, 0), 0.5)
+	tween.tween_property(panel_container, "position:x", x_pos, rate).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(panel_container, "modulate", Color(1, 1, 1, modulate), rate)
 
-	#await tween.finished
-	
+func _process(delta: float) -> void:
+	# TODO Possiblu add better way to handle tweens
+	if GlobalTime.is_paused:
+		slide_menu_out(100, 1)
+	else:
+		slide_menu_out(-800, 0, 0.5)
+		
 func unpause() -> void:
 	# Need to unpause so the Engine time scale isn't 0 when going to menu
-	#await slide_menu_out()
-	slide_menu_out()
 	GlobalSignal.quit_game.emit()
 	main.pause_game() 
 	
 func _on_resume_b_pressed() -> void:
+	await slide_menu_out(-400, 0)
 	main.pause_game()
 
 func _on_settings_b_pressed() -> void:
