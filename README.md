@@ -48,7 +48,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Pause) 
 			Created game_pause / game_unpause signal for Game node children</li>
 			<li>(Pause Menu) 
-			Redone how tweens are handled</li>
+			Redone how tweens are handled, 
+			and pause menu hidden in beginning</li>
+			<li>(Game Background) 
+			Canvas mod turns darkish when game paused</li>
 		</ul>
 	<li>
 	<li>

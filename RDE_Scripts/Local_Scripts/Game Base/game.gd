@@ -13,8 +13,6 @@ signal game_unpause
 var pause_transition : bool = false
 
 func _ready() -> void:
-	game_unpause.emit()
-	
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
 		level.index = 0
 		
