@@ -7,10 +7,13 @@ extends Node2D
 
 signal fight_res_set
 
+signal game_pause
+signal game_unpause
+
 var pause_transition : bool = false
 
 func _ready() -> void:
-	pause_menu.hide() 
+	game_unpause.emit()
 	
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
 		level.index = 0
@@ -61,6 +64,8 @@ func next_in_order(increment : int) -> void:
 		
 func pause_game() -> void:
 	if pause_transition:
+		## pause_transition makes it so pause input not handled 
+		## when transitioning from unpaused to pause 
 		return
 		
 	if GlobalTime.is_paused:
@@ -68,12 +73,13 @@ func pause_game() -> void:
 		#pause_menu.hide()
 		Engine.time_scale = GlobalTime.cur_time_scale
 		GlobalTime.is_paused = false
+		game_unpause.emit()
 	else:
 		#print("PAUSE -- is_paused: ", GlobalTime.is_paused, " transition: ", pause_transition)
 		GlobalTime.is_paused = true
 		
 		pause_transition = true
-		pause_menu.show()
+		game_pause.emit()
 		await GlobalTime.local_wait(0.1)
 		pause_transition = false
 		

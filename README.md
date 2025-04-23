@@ -44,6 +44,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/22/25)
+			<li>(Game Pause) 
+			Created game_pause / game_unpause signal for Game node children</li>
+			<li>(Pause Menu) 
+			Redone how tweens are handled</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/21/25)
 			<li>(Pause Menu) 
 			Slight change in pause menu look</li>
