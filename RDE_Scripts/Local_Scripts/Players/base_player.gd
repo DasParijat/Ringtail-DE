@@ -44,6 +44,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Constantly updating global player stats
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
+	# TODO make player invincible on gane won signal
 	GlobalPlayer.input_handling()
 	
 	movement(player_res.cur_speed) # Where movement is handled

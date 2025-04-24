@@ -9,6 +9,8 @@ var world_scene : PackedScene
 var default_canvas_mod : Color 
 
 func _ready() -> void:
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
 		#print("RESET WS HISTORY")
 		GlobalScene.world_scene_history = []
@@ -66,4 +68,9 @@ func _on_game_pause() -> void:
 
 func _on_game_unpause() -> void:
 	## Reset color on unpause
+	canvas_mod.color = default_canvas_mod
+
+func _on_game_won() -> void:
+	canvas_mod.color = Color(0.4, 0.4, 0.4, 1)
+	await GlobalScene.off_victory
 	canvas_mod.color = default_canvas_mod
