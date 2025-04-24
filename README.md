@@ -44,6 +44,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/24/25)
+			<li>(Pause Menu) 
+			Working on resolving bug where pause menu doesn't show sometimes</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/23/25)
 			<li>(Game Background / Victory Menu) 
 			Game background goes dark on victory screen</li>
