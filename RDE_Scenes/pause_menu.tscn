@@ -33,6 +33,7 @@ text = "Resume"
 script = ExtResource("1_82tdh")
 
 [node name="settingsB" type="Button" parent="PanelContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Settings"
 script = ExtResource("1_82tdh")

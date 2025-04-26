@@ -10,19 +10,20 @@ func _ready() -> void:
 	set_def_prop()
 	$".".hide()
 
-func set_def_prop(x_pos : float = -400, mod = Color(1,1,1,0)) -> void:
+func set_def_prop(x_pos : float = -400, alpha = 0) -> void:
 	## How pause menu should be normally (when unpaused)
 	## Given param values are the true default
 	panel_container.position.x = x_pos
-	panel_container.modulate = mod
+	panel_container.modulate = Color(1,1,1, alpha)
 	
 func slide_menu(x_pos : float, modulate : float, rate : float = 0.1) -> void:
 	tween = create_tween()
 	tween.set_parallel(true) 
+	tween.set_speed_scale(1.0)# / Engine.time_scale)
 	
 	tween.tween_property(panel_container, "position:x", x_pos, rate).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(panel_container, "modulate", Color(1, 1, 1, modulate), rate)
-	
+		
 	await tween.finished
 	
 func _leave_pause_state() -> void:
@@ -49,11 +50,11 @@ func _on_reset_b_pressed() -> void:
 	GlobalScene.load_next_scene(GlobalScene.GAME)
 
 func _on_game_pause() -> void:
-	set_def_prop() # make sure it starts in unpause position
 	$".".show()
 	await slide_menu(0, 1, 0.1)
 	set_def_prop(0, 1)
 
 func _on_game_unpause() -> void:
 	await slide_menu(-400, 0, 0.3)
-	#$".".hide()
+	$".".hide()
+	set_def_prop()

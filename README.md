@@ -13,6 +13,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	(keyboard hints)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Stylize menu and buttons</li>
+	<li>MAYBE Create more flexible way to pause game (without affecting UI/non-game elements)</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -42,6 +43,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(4/25/25)
+			<li>(General) 
+			Could be better way to handle pausing (pause game but not whole engine),
+			however game is still playable and pause issues are only very occasional visual bugs,
+			so focus will be on the game itself (for now)</li>
+			<li>(Pause Menu) 
+			Removed settings button, due to limited nature of pausing</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(4/24/25)
