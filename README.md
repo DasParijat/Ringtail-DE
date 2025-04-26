@@ -45,6 +45,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/26/25)
+			<li>(NavButton) 
+			NavButton now inherits BaseButton instead of Button (to handle TextureButton)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/25/25)
 			<li>(General) 
 			Could be better way to handle pausing (pause game but not whole engine),

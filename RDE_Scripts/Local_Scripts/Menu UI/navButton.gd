@@ -1,5 +1,5 @@
 class_name navButton
-extends Button
+extends BaseButton
 # Handles buttons that can be navigated using keys (WASD/ARROW)
 
 func _ready() -> void:
