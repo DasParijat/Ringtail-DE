@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvm484ao1k7up"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/explosion.gd" id="1_4ij6d"]
+[ext_resource type="Resource" uid="uid://yybxqsw4iskg" path="res://RDE_Resources/Mob Res/Explosion.tres" id="2_odcpl"]
+[ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_kudxo"]
+[ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="4_3dpm1"]
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_4ij6d")
+mob_res = ExtResource("2_odcpl")
+
+[node name="base_mob" parent="." instance=ExtResource("3_kudxo")]
+
+[node name="MobController" parent="." node_paths=PackedStringArray("base") instance=ExtResource("4_3dpm1")]
+base = NodePath("../base_mob")

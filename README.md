@@ -48,6 +48,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(4/26/25)
 			<li>(NavButton) 
 			NavButton now inherits BaseButton instead of Button (to handle TextureButton)</li>
+			<li>(RingtailHARD / Explosion Mob) 
+			Created explosion mob (to be spawned in)</li>
 		</ul>
 	<li>
 	<li>

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://yybxqsw4iskg"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_t33ov"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ybj5t"]
+[ext_resource type="Texture2D" uid="uid://6xn8cy0wvy1c" path="res://RDE_Images/circle.png" id="3_cb4hh"]
+
+[sub_resource type="Resource" id="Resource_ad0pf"]
+script = ExtResource("1_ybj5t")
+HP_NAME = "BOOM BOOM"
+is_player = false
+max_hp = 10
+damage_rate = 1.0
+invicible = true
+
+[resource]
+script = ExtResource("1_t33ov")
+name = "EXPLOSION"
+display_name = "BOOM BOOM"
+color = Color(0, 0, 0, 1)
+hp_bg_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_cb4hh")
+base_sprtflip_enabled = false
+health_comp = SubResource("Resource_ad0pf")
+is_boss = false
+is_enemy = true
+is_hittable = false
+collision_enabled = false
+player_detection_radius = 150.0
+pos_track_delay = 1.5
+mob_size = Vector2(1, 1)
+sprite_size = Vector2(0.05, 0.05)
+collision_size = Vector2(1, 1)
+hitbox_size = Vector2(4, 4)
+collision_dmg = 1.0
+collision_dmg_cooldown = 1.0

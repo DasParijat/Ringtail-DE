@@ -31,10 +31,9 @@ func _ready() -> void:
 # MAGIC
 # Random triangle bullets (like with obignale and darius) DONE
 # Explosion thing
-# Tracking triangles (will follow player for a bit before just going straight)
+# Tracking triangles (will follow player for a bit before just going straight) DONE
 # Chain explosion thing
-# Laser triangles (series of triangles towards player)
-# Targeting triangles (triangles circle around player)
+# Laser triangles (series of triangles towards player) DONE
 
 func action1() -> void:
 	## Follow player
