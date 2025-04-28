@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://yybxqsw4iskg"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://4jruqmed2nmm"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_t33ov"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ybj5t"]
@@ -26,6 +26,7 @@ is_enemy = true
 is_hittable = false
 collision_enabled = false
 player_detection_radius = 150.0
+mini_hp_visible = false
 pos_track_delay = 1.5
 mob_size = Vector2(1, 1)
 sprite_size = Vector2(0.05, 0.05)

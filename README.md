@@ -43,6 +43,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+<	li>
+		<ul>
+			(4/27/25)
+			<li>(Mob Res) 
+			Non-boss mobs can now have their mini-hp bar disabled</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(4/26/25)

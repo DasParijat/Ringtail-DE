@@ -73,6 +73,8 @@ func _ready() -> void:
 		#if GMobHandler.num_of_bosses < 2:
 		#	boss_hp_bars.show()
 		
+	if not mob_res.mini_hp_visible:
+		local_hp_bar.hide()
 		
 	sprite.texture = mob_res.texture
 	position = get_parent().position

@@ -10,6 +10,7 @@ extends Node2D
 var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var bullet_load = preload("uid://cy77mdk6wv3fp")
 var mob_load = preload("uid://dynvq35tw44w5")
+var explosion_load = preload("res://RDE_Scenes/Entities/Mobs/explosion.tscn")
 
 var shoot_attack : ShootAttack
 

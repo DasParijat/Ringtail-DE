@@ -10,7 +10,7 @@ func _process(delta : float) -> void:
 	
 	if GlobalTime.process_interval(1.0, total_delta, delta):
 		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5})
-		spawner.spawn_mob(preload("uid://cvm484ao1k7up"), base.player_pos)
+		spawner.spawn_mob(explosion_load, base.player_pos)
 		
 	if GlobalTime.process_interval(3.0, total_delta, delta):
 		shoot_attack.shoot_laser({"speed": 1000, "in_group": "NONE"}, 10)
