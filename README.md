@@ -43,7 +43,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
-<	li>
+	<li>
+		<ul>
+			(4/28/25)
+			<li>(Base Player) 
+			Have player pass on position instead of global position in get_cur_stats
+			(makes mob spawning more accurate, but makes ringtail less aggressive, 
+			might need to tweak ringtail)</li>
+		</ul>
+	<li>
+	<li>
 		<ul>
 			(4/27/25)
 			<li>(Mob Res) 

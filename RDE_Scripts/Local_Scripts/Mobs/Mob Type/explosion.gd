@@ -11,7 +11,7 @@ extends Node2D
 @onready var base : BaseMob = $base_mob
 
 func _ready() -> void:
-	print("BOOOOOOOOOOOOOOOOOOOOOM")
+	print("BOOOOOOOOOOOOOOOOOOOOOM ", global_position)
 
 
 func _process(delta: float) -> void:

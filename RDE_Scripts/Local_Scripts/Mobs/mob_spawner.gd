@@ -4,12 +4,13 @@ extends Node2D
 # Dev Note 2/2/25: Surprisingly light num of code to get it working
 
 func spawn_mob(mob : PackedScene, mob_pos : Vector2) -> void:
-	#print("spawn mob pos: ", mob_pos)
+	print("spawn mob pos: ", mob_pos)
 	if GMobHandler.num_of_mobs >= GMobHandler.MOB_LIMIT:
 		#print("BREAKING MOB LIMIT")
 		return
 		
-	var mob_instance = mob.instantiate()
+	var mob_instance : Node2D = mob.instantiate()
+	mob_instance.global_transform = global_transform
 	mob_instance.global_position = mob_pos
 	#print(mob_instance.global_position)
 	
