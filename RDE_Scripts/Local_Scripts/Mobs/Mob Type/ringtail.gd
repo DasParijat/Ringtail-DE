@@ -49,7 +49,7 @@ func action1() -> void:
 func action2() -> void:
 	## Dash to player
 	for i in range(randi_range(2, 6)): 
-		base.action("move_torward_point", {"target": base.player_pos, "delay": 0, "speed": 200, "length": 0.5})
+		base.action("move_torward_point", {"target": base.player_global_pos, "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 	
 	#spawner.spawn_mob(mob_load, global_position)
@@ -59,7 +59,7 @@ func action2() -> void:
 func action3() -> void:
 	## Dash to opposite* of player
 	for i in range(randi_range(1, 3)): 
-		base.action("move_torward_point", {"target": Vector2(base.player_pos.x * -0.2, base.player_pos.y * -0.2), "delay": 0, "speed": 200, "length": 0.5})
+		base.action("move_torward_point", {"target": Vector2(base.player_global_pos.x * -0.2, base.player_global_pos.y * -0.2), "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 
 	controller.hold(false)

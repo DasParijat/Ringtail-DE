@@ -23,6 +23,8 @@ var mob_id : int # Unique id for mob
 
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
+var player_global_pos : Vector2
+
 var player_hp : float
 var is_near_player : bool = false
 var distance_to_player : float = 0.0
@@ -436,6 +438,7 @@ func _on_get_cur_stats(type, stats):
 	## Gets player stats and distance to player
 	if type == "PLAYER":
 		player_pos = stats["position"]
+		player_global_pos = stats["global_pos"]
 		player_hp = stats["cur_hp"]
 		
 		distance_to_player = player_pos.distance_to(global_position)
@@ -445,8 +448,8 @@ func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : fl
 	## Returns a randomized position in relation to player_pos
 	## Automatically handles negative values, so given pos can be all around
 	## Used in general when wanting to deal with random positions
-	return Vector2(player_pos.x + (randf_range(from_x, to_x) * signf(randf() - 0.5)), 
-				   player_pos.y + (randf_range(from_y, to_y) * signf(randf() - 0.5)))
+	return Vector2(player_global_pos.x + (randf_range(from_x, to_x) * signf(randf() - 0.5)), 
+				   player_global_pos.y + (randf_range(from_y, to_y) * signf(randf() - 0.5)))
 	
 func _on_game_won() -> void:
 	## What mob does when game won

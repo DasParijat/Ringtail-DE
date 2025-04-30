@@ -45,6 +45,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/29/25)
+			<li>(Base Player) 
+			Base player passes on global_position and position seperately</li>
+			<li>(Base Mob / Bullet) 
+			Anything using player position here now uses player global position</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/28/25)
 			<li>(Base Player) 
 			Have player pass on position instead of global position in get_cur_stats

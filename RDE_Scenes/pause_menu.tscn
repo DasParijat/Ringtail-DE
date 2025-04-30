@@ -11,6 +11,7 @@ content_margin_top = 5.0
 content_margin_bottom = 5.0
 
 [sub_resource type="SystemFont" id="SystemFont_vut3q"]
+subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_lfwrd"]
 default_font = SubResource("SystemFont_vut3q")

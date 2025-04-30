@@ -26,6 +26,7 @@ is_enemy = true
 is_hittable = true
 collision_enabled = false
 player_detection_radius = 150.0
+mini_hp_visible = true
 pos_track_delay = 1.0
 mob_size = Vector2(1, 1)
 sprite_size = Vector2(1, 1)

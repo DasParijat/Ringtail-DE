@@ -100,6 +100,7 @@ func get_cur_stats() -> Dictionary:
 	## For giving stats globally the fight_ui can track
 	return {
 		"position": position,
+		"global_pos": global_position,
 		"player_res": player_res,
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,

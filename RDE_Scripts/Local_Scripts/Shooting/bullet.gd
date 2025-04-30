@@ -80,7 +80,7 @@ func follow_target_handling() -> void:
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
 		"PLAYER":
-			player_pos = stats["position"]
+			player_pos = stats["global_pos"]
 		"MAIN_BOSS":
 			main_boss_pos = stats["position"]
 			
