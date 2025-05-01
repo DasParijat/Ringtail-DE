@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://4jruqmed2nmm"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://yybxqsw4iskg"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_t33ov"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ybj5t"]
