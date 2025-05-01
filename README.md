@@ -45,6 +45,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(4/30/25)
+			<li>(Explosion) 
+			Explosion animation and queuing free works</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(4/29/25)
 			<li>(Base Player) 
 			Base player passes on global_position and position seperately</li>

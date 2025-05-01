@@ -4,7 +4,7 @@ extends Node2D
 # Dev Note 2/2/25: Surprisingly light num of code to get it working
 
 func spawn_mob(mob : PackedScene, mob_pos : Vector2) -> void:
-	print("spawn mob pos: ", mob_pos)
+	#print("spawn mob pos: ", mob_pos)
 	if GMobHandler.num_of_mobs >= GMobHandler.MOB_LIMIT:
 		#print("BREAKING MOB LIMIT")
 		return
