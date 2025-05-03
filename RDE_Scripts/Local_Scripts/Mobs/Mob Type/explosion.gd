@@ -11,7 +11,7 @@ extends Node2D
 @export var explosion_max_size = Vector2(5, 5)
 
 @export var explosion_wait : float = 3
-@export var flash_amt : int = 3
+@export var flash_amt : int = 9
 
 @onready var controller : MobController = $MobController
 @onready var base : BaseMob = $base_mob
@@ -33,6 +33,10 @@ func explosion(node : Node):
 	tween.tween_property(node, "scale", explosion_max_size, 1).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(node, "modulate", Color(1,1,1,0), 1).set_ease(Tween.EASE_IN_OUT)
 	
+	# Cutoff point where explosion boom stops dealing damage
+	if modulate.a < 0.2:
+		mob_res.collision_dmg = 0
+		
 	await tween.finished
 	queue_free()
 

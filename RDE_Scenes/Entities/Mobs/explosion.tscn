@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/explosion.gd" id="1_4ij6d"]
 [ext_resource type="Resource" uid="uid://4jruqmed2nmm" path="res://RDE_Resources/Mob Res/Explosion.tres" id="2_odcpl"]
-[ext_resource type="Texture2D" uid="uid://dk432aa6800jh" path="res://icon.svg" id="3_k7ime"]
+[ext_resource type="Texture2D" uid="uid://dj2ne7mijyc3w" path="res://RDE_Images/explosion_boom.png" id="3_c543m"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_kudxo"]
 [ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="4_3dpm1"]
-[ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="4_ibbb0"]
-[ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="5_8xoxa"]
+[ext_resource type="Texture2D" uid="uid://tfmw6jtjwy2m" path="res://RDE_Images/explosion1.png" id="4_yj4fw"]
+[ext_resource type="Texture2D" uid="uid://bnxl1sthqsiyf" path="res://RDE_Images/explosion2.png" id="5_stwfg"]
 
 [node name="Explosion" type="Node2D"]
 script = ExtResource("1_4ij6d")
 mob_res = ExtResource("2_odcpl")
-explosion_texture = ExtResource("3_k7ime")
-flash1_texture = ExtResource("4_ibbb0")
-flash2_texture = ExtResource("5_8xoxa")
+explosion_texture = ExtResource("3_c543m")
+flash1_texture = ExtResource("4_yj4fw")
+flash2_texture = ExtResource("5_stwfg")
 
 [node name="base_mob" parent="." instance=ExtResource("3_kudxo")]
 

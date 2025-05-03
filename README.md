@@ -45,6 +45,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/3/25)
+			<li>(Explosion / Images) 
+			Explosion has proper textures, and added cutoff point after it explodes 
+			(When reach cutoff point, explosion stops dealing damage)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/2/25)
 			<li>(Explosion) 
 			Explosion no longer deals damage in warning phase, 

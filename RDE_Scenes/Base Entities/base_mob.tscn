@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/base_mob.gd" id="1_2vok1"]
+[ext_resource type="Texture2D" uid="uid://tfmw6jtjwy2m" path="res://RDE_Images/explosion1.png" id="2_eg004"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_qsc8h"]
-[ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_wgsi6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
@@ -19,7 +19,7 @@ shape = SubResource("CircleShape2D_xytya")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wgsi6")
+texture = ExtResource("2_eg004")
 
 [node name="TrackDelay" type="Timer" parent="."]
 wait_time = 0.05
