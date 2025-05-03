@@ -45,6 +45,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/2/25)
+			<li>(Explosion) 
+			Explosion no longer deals damage in warning phase</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/1/25)
 			<li>(Explosion) 
 			Explosion tween affects base mob sprite rather than itself</li>
