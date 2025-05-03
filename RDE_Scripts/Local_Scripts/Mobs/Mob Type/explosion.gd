@@ -6,10 +6,11 @@ extends Node2D
 @export var flash1_texture : Texture
 @export var flash2_texture : Texture
 
+@export var explosion_dmg : float = 2
 @export var explosion_init_size = Vector2(1, 1)
 @export var explosion_max_size = Vector2(5, 5)
 
-@export var explosion_wait : float = 0.5
+@export var explosion_wait : float = 3
 @export var flash_amt : int = 3
 
 @onready var controller : MobController = $MobController
@@ -22,12 +23,9 @@ func _ready() -> void:
 	
 func explosion(node : Node):
 	scale = Vector2(explosion_init_size)
+	await warning_animation()
 	
-	# TODO finish flashing animation
-	for i in range(flash_amt):
-		await GlobalTime.local_wait(explosion_wait / flash_amt)
-	
-	mob_res.collision_dmg = 2
+	mob_res.collision_dmg = explosion_dmg
 	
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -37,3 +35,14 @@ func explosion(node : Node):
 	
 	await tween.finished
 	queue_free()
+
+func warning_animation() -> void:
+	## Sprite flashes during warning phase
+	for i in range(flash_amt):
+		if i % 2 == 0:
+			sprite.texture = flash1_texture
+		else:
+			sprite.texture = flash2_texture
+			
+		await GlobalTime.local_wait(explosion_wait / flash_amt)
+	sprite.texture = explosion_texture

@@ -47,7 +47,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(5/2/25)
 			<li>(Explosion) 
-			Explosion no longer deals damage in warning phase</li>
+			Explosion no longer deals damage in warning phase, 
+			as well as it has flashing animation during warning phase</li>
 		</ul>
 	<li>
 	<li>
