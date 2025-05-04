@@ -18,6 +18,7 @@ extends Node2D
 @onready var sprite : Sprite2D = $base_mob/Sprite2D
 
 func _ready() -> void:
+	#print("explosion spawned")
 	mob_res.collision_dmg = 0
 	explosion(sprite)
 	

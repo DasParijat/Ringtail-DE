@@ -33,7 +33,8 @@ func hold(start_hold : bool) -> void:
 		no_hold = true
 		
 func _ready() -> void:
-	print("boss added")
+	pass
+	#print("boss added")
 	#global_position = base.global_position
 	#global_rotation = base.global_rotation
 

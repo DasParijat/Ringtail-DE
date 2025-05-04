@@ -45,6 +45,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/4/25)
+			<li>(Base Player) 
+			Stops looking at mouse pointer when game paused</li>
+			<li>(Mob Spawner) 
+			No longer spawns mob when on victory screen</li>
+			<li>(Mob Controller) 
+			Removed boss added print statement that was hiding there for months now</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/3/25)
 			<li>(Bullet) 
 			Following bullets stop directly following when close to target</li>

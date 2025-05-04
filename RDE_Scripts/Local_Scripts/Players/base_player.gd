@@ -59,7 +59,8 @@ func _process(delta: float) -> void:
 	
 func movement(cur_speed : float) -> void:
 	## Handles all movement of player
-	look_at(get_global_mouse_position())
+	if not GlobalTime.is_paused:
+		look_at(get_global_mouse_position())
 	
 	# Speed handling
 	cur_speed = player_res.base_speed
