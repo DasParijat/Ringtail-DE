@@ -48,6 +48,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/4/25)
 			<li>(Base Player) 
 			Stops looking at mouse pointer when game paused</li>
+			<li>(Hollow Projectile / Ringtail) 
+			Created new hollow_projectile bullet res, which is a non-piercing version 
+			of the regular RGT_projectile</li>
+			<li>(Images) 
+			Added texture for hollow_projectile bullet</li>
 			<li>(Mob Spawner) 
 			No longer spawns mob when on victory screen</li>
 			<li>(Mob Controller) 

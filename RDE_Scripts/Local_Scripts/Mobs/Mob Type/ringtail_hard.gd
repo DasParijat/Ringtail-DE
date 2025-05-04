@@ -9,9 +9,9 @@ func _process(delta : float) -> void:
 	total_delta += delta
 	
 	if GlobalTime.process_interval(2.0, total_delta, delta):
-		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5, "is_piercing": false})
+		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
 		spawner.spawn_mob(explosion_load, base.player_pos)
 		
 	if GlobalTime.process_interval(3.0, total_delta, delta):
-		shoot_attack.shoot_laser({"speed": 1000, "in_group": "NONE"}, 10)
-		shoot_attack.shoot_from_rand()
+		projectile.shoot_laser({"speed": 1000, "in_group": "NONE"}, 10)
+		projectile.shoot_from_rand()

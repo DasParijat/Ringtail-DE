@@ -10,4 +10,4 @@ func _process(delta: float) -> void:
 	total_delta += delta
 	
 	if GlobalTime.process_interval(1.0, total_delta, delta):
-		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5})
+		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
