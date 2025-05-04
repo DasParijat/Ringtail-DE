@@ -6,4 +6,8 @@ extends Ringtail
 
 func _process(delta: float) -> void:
 	controller.action_handling(randi_range(attack_min, attack_max))
-	pass
+	
+	total_delta += delta
+	
+	if GlobalTime.process_interval(1.0, total_delta, delta):
+		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5})

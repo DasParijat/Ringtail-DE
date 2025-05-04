@@ -46,9 +46,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/3/25)
+			<li>(Bullet) 
+			Following bullets stop directly following when close to target</li>
 			<li>(Explosion / Images) 
 			Explosion has proper textures, and added cutoff point after it explodes 
 			(When reach cutoff point, explosion stops dealing damage)</li>
+			<li>(Pause Menu) 
+			Changed pause menu back to normal buttons</li>
+			<li>(Bullet) 
+			Bullet script turned into class</li>
+			<li>(ShootAttack) 
+			Attempting to be able to override is_piercing stat through ShootAttack (rhymes)</li>
 		</ul>
 	<li>
 	<li>

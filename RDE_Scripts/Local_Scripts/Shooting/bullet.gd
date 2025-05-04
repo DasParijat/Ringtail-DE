@@ -1,3 +1,4 @@
+class_name Bullet
 extends Area2D
 
 @onready var gun_res : GunRes
@@ -70,9 +71,9 @@ func follow_target_handling() -> void:
 	if not follow_target or total_follow_time >= (follow_target_length / 10):
 		return
 	
-	if target_group == "Player":
+	if target_group == "Player" and player_pos.distance_to(global_position) > 100:
 		look_at(player_pos)
-	elif target_group == "Enemy":
+	elif target_group == "Enemy" and main_boss_pos.distance_to(global_position) > 100:
 		look_at(main_boss_pos)
 		
 	total_follow_time += get_process_delta_time()
@@ -87,7 +88,7 @@ func _on_get_cur_stats(type, stats) -> void:
 func _on_tree_exiting() -> void:
 	queue_free()
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area : Area2D) -> void:
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):
 		var parent = area.get_parent()
 		parent.health_res.take_dmg(damage)

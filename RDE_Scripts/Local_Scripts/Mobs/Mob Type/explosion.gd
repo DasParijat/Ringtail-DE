@@ -6,12 +6,12 @@ extends Node2D
 @export var flash1_texture : Texture
 @export var flash2_texture : Texture
 
-@export var explosion_dmg : float = 2
-@export var explosion_init_size = Vector2(1, 1)
-@export var explosion_max_size = Vector2(5, 5)
+@onready var explosion_dmg : float = 2
+@onready var explosion_init_size = Vector2(1, 1)
+@onready var explosion_max_size = Vector2(5, 5)
 
-@export var explosion_wait : float = 3
-@export var flash_amt : int = 9
+@onready var explosion_wait : float = 3
+@onready var flash_amt : int = 9
 
 @onready var controller : MobController = $MobController
 @onready var base : BaseMob = $base_mob

@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh6wxwjtwfcwq"]
+[gd_scene load_steps=7 format=3 uid="uid://bh6wxwjtwfcwq"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_82tdh"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/pause_menu.gd" id="1_acbnt"]
-[ext_resource type="Texture2D" uid="uid://c7klbsnbfmrvy" path="res://RDE_Images/nf Player.png" id="2_7fv0h"]
-[ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="3_2e54k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7iwrl"]
 content_margin_left = 9.0
@@ -38,18 +36,17 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_7iwrl")
 layout_mode = 2
 alignment = 1
 
-[node name="resumeB" type="TextureButton" parent="PanelContainer/HBoxContainer"]
+[node name="resumeB" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lfwrd")
 shortcut = SubResource("Shortcut_barfy")
-texture_normal = ExtResource("2_7fv0h")
-texture_hover = ExtResource("3_2e54k")
+text = "Resume"
 script = ExtResource("1_82tdh")
 
 [node name="resetB" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lfwrd")
-text = "RESET"
+text = "Reset"
 script = ExtResource("1_82tdh")
 
 [node name="quitB" type="Button" parent="PanelContainer/HBoxContainer"]

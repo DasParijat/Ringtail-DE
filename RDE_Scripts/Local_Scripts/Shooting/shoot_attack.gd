@@ -14,6 +14,7 @@ var base_bullet_params : Dictionary = {
 	"target_group": "Player",
 	"follow_target": false,
 	"follow_target_length": 1.0,
+	"is_piercing": null,
 	"in_group": "Enemy"
 }
 
@@ -48,6 +49,9 @@ func _shoot(bullet_params : Dictionary = {"position": base.global_position}) -> 
 		return # For when mob deletes itself & base no longer exists
 	
 	var bullet = bullet_load.instantiate()
+	
+	if base_bullet_params["is_piercing"]:
+		bullet_res.is_piercing = base_bullet_params["is_piercing"]
 	bullet.bullet_res = bullet_res
 	
 	var params = bullet_params

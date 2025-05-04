@@ -8,8 +8,8 @@ func _process(delta : float) -> void:
 	
 	total_delta += delta
 	
-	if GlobalTime.process_interval(1.0, total_delta, delta):
-		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5})
+	if GlobalTime.process_interval(2.0, total_delta, delta):
+		shoot_attack.shoot({"follow_target": true, "follow_target_length": 5, "is_piercing": false})
 		spawner.spawn_mob(explosion_load, base.player_pos)
 		
 	if GlobalTime.process_interval(3.0, total_delta, delta):
