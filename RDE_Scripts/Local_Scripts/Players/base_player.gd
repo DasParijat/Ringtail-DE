@@ -19,6 +19,9 @@ var rest_timeout : float = 0.0
 var is_near_enemy : bool = false
 var is_hurting : bool = false
 
+var prev_hp : float
+var total_delta : float
+
 func _ready() -> void:
 	sprite.texture = player_res.texture
 	
@@ -27,6 +30,7 @@ func _ready() -> void:
 	player_res.reset_power_rate()
 	
 	health_res.set_health_res(iframe_timer)
+	prev_hp = health_res.cur_hp
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	GlobalSignal.connect("update_power", Callable(self, "_on_update_power"))
@@ -42,6 +46,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	total_delta += delta
 	# Constantly updating global player stats
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	# TODO make player invincible on gane won signal
@@ -56,6 +61,11 @@ func _process(delta: float) -> void:
 		rest_check(delta)
 		death_check()
 		test_function()
+		
+		if GlobalTime.process_interval(0.3, total_delta, delta):
+			prev_hp = health_res.cur_hp
+		
+		is_hurting = prev_hp > health_res.cur_hp
 	
 func movement(cur_speed : float) -> void:
 	## Handles all movement of player
@@ -105,20 +115,12 @@ func get_cur_stats() -> Dictionary:
 		"player_res": player_res,
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
-		"is_hurting": is_hurting, # or is_near_enemy, # For health bar
+		"is_hurting": is_hurting, #or is_near_enemy, # For health bar
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),
 		"player_pri_color": player_res.primary_color,
 		"player_sec_color": player_res.secondary_color
 	}
-
-func _on_hit_box_area_entered(area: Area2D) -> void:
-	## Updates player is being hurt
-	is_hurting = true
-
-func _on_hit_box_area_exited(area: Area2D) -> void:
-	## Updates player is not being hurt
-	is_hurting = false
 	
 func _on_hostile_detection_area_entered(area: Area2D) -> void:
 	## Sets is_near_enemy to true

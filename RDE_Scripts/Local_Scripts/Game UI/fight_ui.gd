@@ -56,7 +56,6 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 	if is_recent_ouch:
 		if !stats["is_hurting"]:
 			is_recent_ouch = false
-		return
 	elif stats["is_hurting"]:
 		is_recent_ouch = true
 		if HurtOverlay.modulate.a >= 0:
@@ -95,6 +94,7 @@ func set_player_ui(stats : Dictionary) -> void:
 	if not stats["is_hurting"]:
 		update_bar(DamageDelayBar, cur_player_hp, 3)
 	hurt_overlay_handling(stats)
+	#print(cur_player_hp)
 	#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 
 func set_gun_ui(stats : Dictionary) -> void:

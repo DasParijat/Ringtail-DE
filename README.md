@@ -47,7 +47,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(5/5/25)
 			<li>(Fight UI) 
-			Working on having a visual indicater the player is being hurt</li>
+			Added visual indicater the player is being hurt</li>
+			<li>(Base Player / Fight UI) 
+			Changed how is_hurting value works 
+			(actually checks hp difference rather than check hitbox)</li>
 		</ul>
 	<li>
 	<li>
