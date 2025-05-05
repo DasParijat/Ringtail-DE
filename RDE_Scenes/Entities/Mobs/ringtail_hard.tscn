@@ -6,11 +6,11 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/ringtail_hard.gd" id="3_i4b22"]
 [ext_resource type="PackedScene" uid="uid://dvady2m7qh3xl" path="res://RDE_Scenes/Base Entities/mob_spawner.tscn" id="4_u45r0"]
 
-[node name="RingtailHARD" type="Node2D" node_paths=PackedStringArray("controller", "base", "spawner")]
+[node name="RingtailHARD" type="Node2D" node_paths=PackedStringArray("base", "controller", "spawner")]
 script = ExtResource("3_i4b22")
 mob_res = ExtResource("2_opmw5")
-controller = NodePath("MobController")
 base = NodePath("base_mob")
+controller = NodePath("MobController")
 spawner = NodePath("MobSpawner")
 
 [node name="MobController" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_ei6ni")]

@@ -45,6 +45,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/5/25)
+			<li>(Fight UI) 
+			Working on having a visual indicater the player is being hurt</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/4/25)
 			<li>(Base Player) 
 			Stops looking at mouse pointer when game paused</li>

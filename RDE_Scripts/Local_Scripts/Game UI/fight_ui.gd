@@ -15,6 +15,7 @@ extends CanvasLayer
 @onready var LocalReloadText: Label = $PlayerUI/LocalReloadText
 
 @onready var PowerOverlay : ColorRect = $CanvasLayer/PowerOverlay
+@onready var HurtOverlay : ColorRect = $"CanvasLayer/HurtOverlay"
 
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
@@ -24,6 +25,7 @@ var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 
 var reload_text : String = ""
 var using_power : bool = false
+var is_recent_ouch : bool = false
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -34,7 +36,7 @@ func _ready() -> void:
 	player_power_stylebox.set_corner_radius_all(4)
 
 func power_overlay_handling() -> void:
-	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayer
+	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayerPO
 
 	if GlobalPlayer.power_activated:
 		## For fading in anim
@@ -47,7 +49,19 @@ func power_overlay_handling() -> void:
 		using_power = false
 		if PowerOverlay.modulate.a >= 0:
 			PO_anim_player.play("PO_fade_OUT")
-		
+
+func hurt_overlay_handling(stats : Dictionary) -> void:
+	var HO_anim_player : AnimationPlayer = $CanvasLayer/HurtOverlay/AnimationPlayer
+	
+	if is_recent_ouch:
+		if !stats["is_hurting"]:
+			is_recent_ouch = false
+		return
+	elif stats["is_hurting"]:
+		is_recent_ouch = true
+		if HurtOverlay.modulate.a >= 0:
+			HO_anim_player.play("HO_ouch")
+	
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
 	match(type):
@@ -80,7 +94,7 @@ func set_player_ui(stats : Dictionary) -> void:
 	update_bar(PlayerHPBar, cur_player_hp, 0.5)
 	if not stats["is_hurting"]:
 		update_bar(DamageDelayBar, cur_player_hp, 3)
-	
+	hurt_overlay_handling(stats)
 	#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 
 func set_gun_ui(stats : Dictionary) -> void:

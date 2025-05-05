@@ -105,7 +105,7 @@ func get_cur_stats() -> Dictionary:
 		"player_res": player_res,
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
-		"is_hurting": is_hurting or is_near_enemy, # For health bar
+		"is_hurting": is_hurting, # or is_near_enemy, # For health bar
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),
 		"player_pri_color": player_res.primary_color,

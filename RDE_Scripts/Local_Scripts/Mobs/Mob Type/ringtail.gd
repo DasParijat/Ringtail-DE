@@ -3,13 +3,13 @@ extends Node2D
 
 @export var mob_res : MobRes
 
-@export var controller : MobController
 @export var base : BaseMob 
+@export var controller : MobController
 @export var spawner : MobSpawner
 
-var bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
-var hollow_bullet_res = preload("uid://nthx7tndyfqe")
-var bullet_load = preload("uid://cy77mdk6wv3fp")
+var _bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
+var _hollow_bullet_res = preload("uid://nthx7tndyfqe")
+var _bullet_load = preload("uid://cy77mdk6wv3fp")
 
 var mob_load = preload("uid://dynvq35tw44w5")
 var explosion_load = preload("res://RDE_Scenes/Entities/Mobs/explosion.tscn")
@@ -21,8 +21,8 @@ var total_delta : float = 0.0
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
-	projectile = ShootAttack.new(base, bullet_load, bullet_res, get_parent().get_parent())
-	hollow_projectile = ShootAttack.new(base, bullet_load, hollow_bullet_res, get_parent().get_parent())
+	projectile = ShootAttack.new(base, _bullet_load, _bullet_res, get_parent().get_parent())
+	hollow_projectile = ShootAttack.new(base, _bullet_load, _hollow_bullet_res, get_parent().get_parent())
 # ATTACK PLAN
 # PHYSICAL
 # Follow player DONE
