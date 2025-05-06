@@ -41,11 +41,21 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>Dylan Kelly (4/15) -Idea: Let players upload a picture of their face and have it be a boss</li>
 </ul>
 
+<strong>Bug List:</strong>
+<ul>
+	<li>(5/5) - Player still takes damage during victory screen</li>
+	<li>(5/5) - Can still pause during victory screen</li>
+	<li>(5/5) - Bullet falloff damage can result in giving negative damage 
+	(healing target instead)</li>
+</ul>
+
 <strong>Changelog:</strong>
 <ul>
 	<li>
 		<ul>
 			(5/5/25)
+			<li>(Bug List) 
+			Created list of bugs in README</li>
 			<li>(Fight UI) 
 			Added visual indicater the player is being hurt</li>
 			<li>(Base Player / Fight UI) 
