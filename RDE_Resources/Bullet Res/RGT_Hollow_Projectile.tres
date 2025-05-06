@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_aryj6")
 texture = ExtResource("2_1baxj")
+fade_on_exit = true
 damage = 1.5
 is_piercing = false
 falloff_point = 2000.0

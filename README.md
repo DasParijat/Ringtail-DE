@@ -46,7 +46,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>(5/5) - Player still takes damage during victory screen</li>
 	<li>(5/5) - Can still pause during victory screen</li>
 	<li>(5/5) - Bullet falloff damage can result in giving negative damage 
-	(healing target instead)</li>
+	(healing target instead) (RESOLVED)</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -61,6 +61,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player / Fight UI) 
 			Changed how is_hurting value works 
 			(actually checks hp difference rather than check hitbox)</li>
+			<li>(Bullet / Bullet Res) 
+			Bullets can now fade when exiting (deal no damage during fading),
+			bullets exit on game won</li>
 		</ul>
 	<li>
 	<li>

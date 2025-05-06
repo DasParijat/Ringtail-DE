@@ -28,6 +28,7 @@ var main_boss_pos : Vector2
 
 func _ready():
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	if in_group not in ["", "NULL", "NONE"]: add_to_group(in_group)
 	
 	start_position = global_position
@@ -49,7 +50,7 @@ func set_bullet_res(res):
 	
 func falloff_calc():
 	# checks if falloff calculation should be enabled, and to do the calc if true
-	if bullet_travelled > bullet_res.falloff_point:
+	if bullet_travelled > bullet_res.falloff_point and damage > 0.07:
 		damage -= bullet_res.falloff_rate
 		#print("bulscript, falloff calc: ", damage)
 		
@@ -84,9 +85,21 @@ func _on_get_cur_stats(type, stats) -> void:
 			player_pos = stats["global_pos"]
 		"MAIN_BOSS":
 			main_boss_pos = stats["position"]
-			
-func _on_tree_exiting() -> void:
+
+func exiting() -> void:
+	## Handles how bullets exit
+	while modulate.a > 0 and bullet_res.fade_on_exit:
+		damage = 0
+		await GlobalTime.local_wait(0.01)
+		modulate.a -= 0.1
+		
 	queue_free()
+	
+func _on_game_won() -> void:
+	exiting()
+	
+func _on_tree_exiting() -> void:
+	exiting()
 
 func _on_area_entered(area : Area2D) -> void:
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):
@@ -98,4 +111,4 @@ func _on_area_entered(area : Area2D) -> void:
 			GlobalSignal.emit_signal("update_power", damage / 2)
 		
 		if not bullet_res.is_piercing:
-			queue_free()
+			exiting()
