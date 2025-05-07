@@ -56,6 +56,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/7/25)
 			<li>(Main Menu / Images) 
 			Added QR code that leads to feedback form (temp)</li>
+			<li>(Main Menu) 
+			All fight res for story menu load when game starts
+			(rather than when player selects button)</li>
 		</ul>
 	<li>
 	<li>
