@@ -9,6 +9,7 @@ resource_local_to_scene = true
 script = ExtResource("1_bolxm")
 texture = ExtResource("2_moiun")
 gun_shot_sound = ExtResource("1_fkhwd")
+fade_on_exit = false
 damage = 0.5
 is_piercing = false
 falloff_point = 3000.0

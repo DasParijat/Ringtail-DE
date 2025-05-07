@@ -53,6 +53,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/6/25)
+			<li>(Main Menu / Images) 
+			Added new menu background</li>
+			<li>(Main Menu) 
+			Readjusted elements in main menu</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/5/25)
 			<li>(Bug List) 
 			Created list of bugs in README</li>

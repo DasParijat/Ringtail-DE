@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/main_menu.gd" id="1_notiw"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_br78j"]
-[ext_resource type="Texture2D" uid="uid://dblsyhvhau2ki" path="res://RDE_Images/TX Tileset Grass.png" id="2_ew7i8"]
+[ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="2_t31j8"]
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="3_snekp"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="3_v6pk2"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/story_menu.gd" id="4_bakqm"]
@@ -82,7 +82,8 @@ offset_left = -56.0
 offset_top = -38.0
 offset_right = 1383.0
 offset_bottom = 1548.0
-texture = ExtResource("2_ew7i8")
+texture = ExtResource("2_t31j8")
+expand_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="front_menu/Background"]
 libraries = {
@@ -92,18 +93,18 @@ speed_scale = 3.0
 
 [node name="Title" type="TextureRect" parent="front_menu"]
 layout_mode = 0
-offset_left = 283.0
-offset_top = 138.0
-offset_right = 1036.0
-offset_bottom = 275.0
+offset_left = 290.0
+offset_top = 115.0
+offset_right = 1043.0
+offset_bottom = 307.0
 texture = ExtResource("3_snekp")
 
 [node name="Container" type="CenterContainer" parent="front_menu"]
 layout_mode = 0
-offset_left = 315.0
-offset_top = 474.0
-offset_right = 543.0
-offset_bottom = 505.0
+offset_left = 321.0
+offset_top = 487.0
+offset_right = 549.0
+offset_bottom = 518.0
 scale = Vector2(3, 3)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="front_menu/Container"]
@@ -133,17 +134,17 @@ script = ExtResource("2_br78j")
 [node name="story_menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 720.0
-offset_bottom = 720.0
-scale = Vector2(3.46891, 3.46891)
+offset_top = 760.0
+offset_bottom = 760.0
+scale = Vector2(4.029, 4.029)
 script = ExtResource("4_bakqm")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="story_menu"]
 layout_mode = 0
-offset_left = 235.232
-offset_top = 115.022
-offset_right = 331.232
-offset_bottom = 155.022
+offset_left = 206.255
+offset_top = 114.42
+offset_right = 302.255
+offset_bottom = 154.42
 
 [node name="playfightB" type="Button" parent="story_menu/HBoxContainer"]
 layout_mode = 2
@@ -157,9 +158,9 @@ script = ExtResource("2_br78j")
 
 [node name="CenterContainer" type="CenterContainer" parent="story_menu"]
 layout_mode = 0
-offset_left = 54.6667
+offset_left = 18.8632
 offset_top = 14.3333
-offset_right = 132.667
+offset_right = 96.8635
 offset_bottom = 150.333
 
 [node name="FightButtonHolder" type="VBoxContainer" parent="story_menu/CenterContainer"]
@@ -191,10 +192,10 @@ is_locked = true
 
 [node name="FightDesc" type="PanelContainer" parent="story_menu"]
 layout_mode = 2
-offset_left = 184.0
-offset_top = 56.0
-offset_right = 286.0
-offset_bottom = 79.0
+offset_left = 114.42
+offset_top = 14.6438
+offset_right = 216.42
+offset_bottom = 37.6438
 
 [node name="Text" type="Label" parent="story_menu/FightDesc"]
 layout_mode = 2
