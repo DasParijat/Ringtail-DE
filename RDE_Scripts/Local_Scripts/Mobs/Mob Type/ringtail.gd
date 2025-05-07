@@ -8,7 +8,7 @@ extends Node2D
 @export var spawner : MobSpawner
 
 var _bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
-var _hollow_bullet_res = preload("uid://nthx7tndyfqe")
+var _hollow_bullet_res = preload("res://RDE_Resources/Bullet Res/RGT_Hollow_Projectile.tres")
 var _bullet_load = preload("uid://cy77mdk6wv3fp")
 
 var mob_load = preload("uid://dynvq35tw44w5")

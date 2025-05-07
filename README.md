@@ -24,7 +24,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Playtesters (Date's are last time they played):</strong>
 <ul>
-	<li>Matt Brana (4/23) - Liked the camera and gameplay, Ideas: </li>
+	<li>Matt Brana (5/7) - Liked the camera and gameplay, Ideas: </li>
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
 	<li>April Melendez (5/1) - healing should use a chunk of power instead of slowly draining. 
 	maybe it has its own cooldown like reloading? Also have it heal more when at higher hp and vice versa</li>
@@ -39,10 +39,24 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		</ol>
 	</li>
 	<li>Dylan Kelly (4/15) -Idea: Let players upload a picture of their face and have it be a boss</li>
+	<li>Faded0cean (5/7) 
+		<ol>
+			<li>Rated hard mode 8/10 difficulty</li>
+			<li>Very fun and entertaining, 
+			movement is smooth and weapons are fun and powerful.</li>
+			<li>Frame loss when too much on screen, 
+			no warning for incoming projectiles, 
+			shooting is hard when having to dodge so much.</li>
+			<li>When you drain a health bar give the boss a moment where they stand still and power up, 
+			it will give the player time to reload/heal. 
+			Great game!</li>
+		</ol>
+	</li>
 </ul>
 
 <strong>Bug List:</strong>
 <ul>
+	<li>(5/7) - Player can get stuck in wall (RARE BUG)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
 	<li>(5/5) - Can still pause during victory screen (RESOLVED)</li>
 	<li>(5/5) - Bullet falloff damage can result in giving negative damage 
@@ -65,6 +79,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Bombs don't spawn directly on player anymore</li>
 			<li>(Base Mob) 
 			get_rand_player_pos use position instead of global_pos</li>
+			<li>(Playtesters) 
+			Faded0cean gave feedback for game (via form)</li>
 		</ul>
 	<li>
 	<li>

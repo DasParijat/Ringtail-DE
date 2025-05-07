@@ -206,6 +206,7 @@ playble. Scan QR code to
 give feedback"
 
 [node name="QRCode" type="TextureRect" parent="story_menu"]
+layout_mode = 0
 offset_left = 115.165
 offset_top = 97.2946
 offset_right = 405.165

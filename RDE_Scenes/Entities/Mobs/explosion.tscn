@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs3h8plo2l7ka"]
+[gd_scene load_steps=8 format=3 uid="uid://cvm484ao1k7up"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/explosion.gd" id="1_4ij6d"]
-[ext_resource type="Resource" uid="uid://4jruqmed2nmm" path="res://RDE_Resources/Mob Res/Explosion.tres" id="2_odcpl"]
+[ext_resource type="Resource" uid="uid://yybxqsw4iskg" path="res://RDE_Resources/Mob Res/Explosion.tres" id="2_odcpl"]
 [ext_resource type="Texture2D" uid="uid://dj2ne7mijyc3w" path="res://RDE_Images/explosion_boom.png" id="3_c543m"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_kudxo"]
 [ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="4_3dpm1"]

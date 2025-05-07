@@ -14,7 +14,7 @@ var bullet_travelled : float
 var bullet_speed : float = 100
 
 var start_position : Vector2
-var direction : Vector2  
+var direction : Vector2
 
 var target_group : String
 var in_group : String = "in_group"

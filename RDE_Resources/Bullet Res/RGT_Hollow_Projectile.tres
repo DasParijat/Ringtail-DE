@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://nthx7tndyfqe"]
+[gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://4lo6ff71m1wt"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_aryj6"]
 [ext_resource type="Texture2D" uid="uid://c5b2mjnohxul0" path="res://RDE_Images/RGT_hollow_bullet.png" id="2_1baxj"]
