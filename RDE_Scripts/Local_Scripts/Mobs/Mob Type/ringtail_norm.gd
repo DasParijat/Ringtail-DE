@@ -1,5 +1,5 @@
 extends Ringtail
-
+# NORMAL
 
 @export var attack_min : int = 1
 @export var attack_max : int = 2

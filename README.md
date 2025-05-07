@@ -54,6 +54,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/7/25)
+			<li>(RingtailEASY) 
+			Added "easy" mode for Ringtail</li>
 			<li>(Main Menu / Images) 
 			Added QR code that leads to feedback form (temp)</li>
 			<li>(Main Menu) 
