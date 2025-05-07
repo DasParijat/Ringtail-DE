@@ -61,6 +61,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Main Menu) 
 			All fight res for story menu load when game starts
 			(rather than when player selects button)</li>
+			<li>(RingtailHARD) 
+			Bombs don't spawn directly on player anymore</li>
+			<li>(Base Mob) 
+			get_rand_player_pos use position instead of global_pos</li>
 		</ul>
 	<li>
 	<li>
