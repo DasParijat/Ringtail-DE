@@ -53,6 +53,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/7/25)
+			<li>(Main Menu / Images) 
+			Added QR code that leads to feedback form (temp)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/6/25)
 			<li>(Main Menu / Images) 
 			Added new menu background</li>

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh6wxwjtwfcwq"]
+[gd_scene load_steps=8 format=3 uid="uid://bh6wxwjtwfcwq"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_82tdh"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/pause_menu.gd" id="1_acbnt"]
+[ext_resource type="Texture2D" uid="uid://cdgj6ewrllrtj" path="res://RDE_Images/RDE_Comments_QRCode.png" id="3_32ybn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7iwrl"]
 content_margin_left = 9.0
@@ -60,6 +61,22 @@ visible = false
 layout_mode = 2
 text = "Settings"
 script = ExtResource("1_82tdh")
+
+[node name="QRCode" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -166.0
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("3_32ybn")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/resumeB" to="." method="_on_resume_b_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/resetB" to="." method="_on_reset_b_pressed"]
