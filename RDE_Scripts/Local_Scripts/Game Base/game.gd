@@ -11,6 +11,7 @@ signal game_pause
 signal game_unpause
 
 var pause_transition : bool = false
+var on_victory_screen : bool = false
 
 func _ready() -> void:
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
@@ -61,7 +62,7 @@ func next_in_order(increment : int) -> void:
 		return
 		
 func pause_game() -> void:
-	if pause_transition:
+	if pause_transition or on_victory_screen:
 		## pause_transition makes it so pause input not handled 
 		## when transitioning from unpaused to pause 
 		return
@@ -90,7 +91,9 @@ func _on_game_won() -> void:
 	print("game won on GAME end (printed from game scene script)")
 	
 	GlobalScene.on_victory.emit()
+	on_victory_screen = true
 	await GlobalScene.off_victory
+	on_victory_screen = false
 	
 	GlobalFightStats.fight_stats["total_time"] = 0.0
 	GlobalFightStats.fight_stats["num_of_deaths"] = 0

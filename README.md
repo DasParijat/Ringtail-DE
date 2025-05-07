@@ -44,7 +44,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Bug List:</strong>
 <ul>
 	<li>(5/5) - Player still takes damage during victory screen</li>
-	<li>(5/5) - Can still pause during victory screen</li>
+	<li>(5/5) - Can still pause during victory screen (RESOLVED)</li>
 	<li>(5/5) - Bullet falloff damage can result in giving negative damage 
 	(healing target instead) (RESOLVED)</li>
 </ul>
@@ -58,6 +58,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added new menu background</li>
 			<li>(Main Menu) 
 			Readjusted elements in main menu</li>
+			<li>(Game Pause) 
+			Resolved issue of being able to pause when on victory screen</li>
 		</ul>
 	<li>
 	<li>
