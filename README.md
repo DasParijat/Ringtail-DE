@@ -67,6 +67,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/8/25)
+			<li>(General) 
+			Setting up code for in-game photo mode 
+			(Used to pause game and move the camera)</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/7/25)
 			<li>(RingtailEASY) 
 			Added "easy" mode for Ringtail</li>

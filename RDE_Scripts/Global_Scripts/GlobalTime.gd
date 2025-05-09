@@ -1,6 +1,7 @@
 extends Node
 
 var is_paused : bool = false
+var photo_enabled : bool = false # For photo mode
 
 var game_time_scale : float = 1 
 # game_time_scale is what determines the pace of every game object (including pausing)	
