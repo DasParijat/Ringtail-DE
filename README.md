@@ -72,6 +72,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game) 
 			Added ability to pause without bringing up menu
 			(part of photo mode feature)</li>
+			<li>(Game Camera) 
+			Moved pause handling outside of track_player if-statement</li>
 		</ul>
 	<li>
 	<li>
