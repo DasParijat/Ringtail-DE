@@ -50,11 +50,19 @@ func _on_reset_b_pressed() -> void:
 	GlobalScene.load_next_scene(GlobalScene.GAME)
 
 func _on_game_pause() -> void:
+	if GlobalTime.photo_enabled:
+		return
+	GlobalTime.photo_enabled = false
+	
 	$".".show()
 	await slide_menu(0, 1, 0.1)
 	set_def_prop(0, 1)
 
 func _on_game_unpause() -> void:
+	if GlobalTime.photo_enabled:
+		return
+	GlobalTime.photo_enabled = false
+	
 	await slide_menu(-400, 0, 0.3)
 	$".".hide()
 	set_def_prop()

@@ -50,7 +50,7 @@ func _process(delta : float) -> void:
 		set_position(fight_node.player_pos * player_tracking_speed)
 		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
-		if GlobalTime.is_paused:
+		if GlobalTime.is_paused and not GlobalTime.photo_enabled:
 			zoom = zoom.lerp(Vector2(3, 3), delta * 3)
 		else:
 			zoom = zoom.lerp(Vector2(1, 1), delta * 3)

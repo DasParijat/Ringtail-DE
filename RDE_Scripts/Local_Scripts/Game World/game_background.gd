@@ -64,7 +64,8 @@ func has_same_world(world_scene: PackedScene) -> bool:
 
 func _on_game_pause() -> void:
 	## Set screen to gray-ish on pause
-	canvas_mod.color = Color(0.5, 0.5, 0.5, 1)
+	if not GlobalTime.photo_enabled:
+		canvas_mod.color = Color(0.5, 0.5, 0.5, 1)
 
 func _on_game_unpause() -> void:
 	## Reset color on unpause

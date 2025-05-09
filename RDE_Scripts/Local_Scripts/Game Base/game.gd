@@ -29,6 +29,16 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event : InputEvent) -> void:
 	if event.is_action_pressed("pause"):
+		GlobalTime.photo_enabled = false
+		pause_game()
+		
+	if event.is_action_pressed("enable_photo"):
+		print("enable photo")
+		if GlobalTime.photo_enabled or GlobalTime.is_paused or on_victory_screen:
+			GlobalTime.photo_enabled = false
+		else:
+			GlobalTime.photo_enabled = true
+			
 		pause_game()
 # Menu Tutorial: https://youtu.be/JEQR4ALlwVU?si=3ryPHdJG3ungIi0M 
 

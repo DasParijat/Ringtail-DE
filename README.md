@@ -56,6 +56,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Bug List:</strong>
 <ul>
+	<li>(4/?) - Pause menu doesn't show up  when rapidly pausing</li>
 	<li>(5/7) - Player can get stuck in wall (RARE BUG)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
 	<li>(5/5) - Can still pause during victory screen (RESOLVED)</li>
@@ -65,6 +66,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(5/9/25)
+			<li>(Game) 
+			Added ability to pause without bringing up menu
+			(part of photo mode feature)</li>
+		</ul>
+	<li>
 	<li>
 		<ul>
 			(5/8/25)
