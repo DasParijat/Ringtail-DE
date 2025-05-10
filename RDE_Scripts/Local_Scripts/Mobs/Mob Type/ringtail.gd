@@ -13,6 +13,7 @@ var _bullet_load = preload("uid://cy77mdk6wv3fp")
 
 var mob_load = preload("uid://dynvq35tw44w5")
 var explosion_load = preload("res://RDE_Scenes/Entities/Mobs/explosion.tscn")
+var minitail_speed = preload("res://RDE_Scenes/Entities/Mobs/minitail_speed.tscn")
 
 var projectile : ShootAttack
 var hollow_projectile : ShootAttack

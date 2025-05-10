@@ -8,7 +8,7 @@
 script = ExtResource("1_dkt1k")
 HP_NAME = "Ringtail NORM"
 is_player = false
-max_hp = 200
+max_hp = 300
 damage_rate = 1.0
 invicible = false
 

@@ -68,6 +68,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/10/25)
+			<li>(MinitailSPEED) 
+			Created minitail speed variant (mob spawned by ringtail), 
+			not functional but exists and can spawn</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/9/25)
 			<li>(Game) 
 			Added ability to pause without bringing up menu

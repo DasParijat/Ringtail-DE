@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://ew4pwt7n7u3n"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_xmwl6"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_gepl6"]
+[ext_resource type="Texture2D" uid="uid://5ry8kssatn11" path="res://RDE_Images/rt_ringtail2.png" id="3_foatp"]
+
+[sub_resource type="Resource" id="Resource_x6ded"]
+script = ExtResource("1_xmwl6")
+HP_NAME = "MinitailSPEED"
+is_player = false
+max_hp = 10
+damage_rate = 2.0
+invicible = false
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_gepl6")
+name = "MinitailSPEED"
+display_name = "MinitailSPEED"
+color = Color(0.727038, 0.619402, 0, 1)
+hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+texture = ExtResource("3_foatp")
+base_sprtflip_enabled = true
+health_comp = SubResource("Resource_x6ded")
+is_boss = false
+is_enemy = true
+is_hittable = true
+collision_enabled = false
+player_detection_radius = 150.0
+mini_hp_visible = true
+pos_track_delay = 1.5
+mob_size = Vector2(0.5, 0.5)
+sprite_size = Vector2(1, 1)
+collision_size = Vector2(1, 1)
+hitbox_size = Vector2(4, 4)
+collision_dmg = 1.0
+collision_dmg_cooldown = 0.2

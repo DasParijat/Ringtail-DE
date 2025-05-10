@@ -11,7 +11,7 @@ func _process(delta : float) -> void:
 	
 	if GlobalTime.process_interval(2.0, total_delta, delta):
 		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
-		spawner.spawn_mob(explosion_load, base.get_rand_player_pos(-100,100,-100,100))
+		spawner.spawn_mob(minitail_speed, base.get_rand_player_pos(-100,100,-100,100))
 		
 	if GlobalTime.process_interval(3.0, total_delta, delta):
 		projectile.shoot_laser({"speed": 1000, "in_group": "NONE"}, 15)
