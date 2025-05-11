@@ -70,9 +70,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(5/11/25)
 			<li>(Base Mob) 
-			Local HP Bar works (might need adjustments when it comes to positioining)</li>
+			Local HP Bar works (needs adjustments when it comes to positioning)</li>
 			<li>(RingtailHARD) 
 			Minitail spawns on/near Ringtail itself</li>
+			<li>(MinitailSPEED) 
+			Created sprite for MinitailSPEED</li>
 		</ul>
 	<li>
 	<li>

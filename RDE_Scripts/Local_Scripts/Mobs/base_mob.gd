@@ -74,7 +74,9 @@ func _ready() -> void:
 		#local_hp_bar.hide()
 		#if GMobHandler.num_of_bosses < 2:
 		#	boss_hp_bars.show()
-		
+	
+	# Sets up local hp bar
+	local_hp_bar.hide()
 	if mob_res.mini_hp_visible and not mob_res.is_boss:
 		var local_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 		local_hp_bar.max_value = health_res.max_hp
@@ -84,8 +86,6 @@ func _ready() -> void:
 		local_hp_bar.set_position(Vector2(0, -60))
 		
 		local_hp_bar.scale = mob_res.mob_size * 2
-	else:
-		local_hp_bar.hide()
 		
 	sprite.texture = mob_res.texture
 	position = get_parent().position
@@ -153,8 +153,11 @@ func death_check() -> void:
 			var tween : Tween = create_tween()
 			tween.set_parallel(true)
 			
-			tween.tween_property(self, "modulate", Color(0, 0, 0, 0), 0.2)
-			tween.tween_property(self, "scale", mob_res.mob_size * 1.5, 0.2)
+			var death_color : Color = mob_res.color
+			death_color.a = 0
+			
+			tween.tween_property(self, "modulate", death_color, 0.2)
+			tween.tween_property(self, "scale", mob_res.mob_size * 1.3, 0.2)
 			
 			await tween.finished
 			get_parent().queue_free() # non-bosses queue free immediatly
@@ -179,10 +182,12 @@ func deal_hitbox_dmg() -> void:
 
 func health_bar_handling() -> void:
 	## Handles updating local hp bar
-	if not mob_res.is_boss:
+	if not mob_res.is_boss and health_res.cur_hp < health_res.max_hp:
+		if !local_hp_bar.visible: local_hp_bar.show()
+		
 		local_hp_bar.value = health_res.cur_hp
 		local_hp_bar.rotation = -rotation
-
+	
 func border_handling() -> void:
 	## Handles preventing mob from going beyond world/cam border
 	var clamped_pos = Vector2(
