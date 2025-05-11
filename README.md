@@ -70,8 +70,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(5/10/25)
 			<li>(MinitailSPEED) 
-			Created minitail speed variant (mob spawned by ringtail), 
-			not functional but exists and can spawn</li>
+			Created minitail speed variant (mob spawned by ringtail)</li>
+			<li>(Base Mob) 
+			Non-boss mobs have fade out animation when they die</li>
 		</ul>
 	<li>
 	<li>

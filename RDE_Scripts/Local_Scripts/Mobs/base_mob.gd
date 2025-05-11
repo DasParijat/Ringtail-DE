@@ -141,6 +141,13 @@ func death_check() -> void:
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
 			GlobalSignal.emit_signal("game_won")
 		else:
+			var tween : Tween = create_tween()
+			tween.set_parallel(true)
+			
+			tween.tween_property(self, "modulate", Color(0, 0, 0, 0), 0.2)
+			tween.tween_property(self, "scale", mob_res.mob_size * 1.5, 0.2)
+			
+			await tween.finished
 			get_parent().queue_free() # non-bosses queue free immediatly
 		action_queue.clear()
 
