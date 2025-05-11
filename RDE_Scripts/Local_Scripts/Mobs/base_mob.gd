@@ -71,11 +71,20 @@ func _ready() -> void:
 		GMobHandler.boss_queue.append(mob_id)
 		
 		# Health Bar show/hidden code
-		local_hp_bar.hide()
+		#local_hp_bar.hide()
 		#if GMobHandler.num_of_bosses < 2:
 		#	boss_hp_bars.show()
 		
-	if not mob_res.mini_hp_visible:
+	if mob_res.mini_hp_visible and not mob_res.is_boss:
+		var local_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
+		local_hp_bar.max_value = health_res.max_hp
+		
+		local_hp_stylebox.bg_color = mob_res.color
+		local_hp_bar.add_theme_stylebox_override("fill", local_hp_stylebox)
+		local_hp_bar.set_position(Vector2(0, -60))
+		
+		local_hp_bar.scale = mob_res.mob_size * 2
+	else:
 		local_hp_bar.hide()
 		
 	sprite.texture = mob_res.texture

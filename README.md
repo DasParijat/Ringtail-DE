@@ -68,6 +68,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/11/25)
+			<li>(Base Mob) 
+			Local HP Bar works (might need adjustments when it comes to positioining)</li>
+			<li>(RingtailHARD) 
+			Minitail spawns on/near Ringtail itself</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/10/25)
 			<li>(MinitailSPEED) 
 			Created minitail speed variant (mob spawned by ringtail)</li>

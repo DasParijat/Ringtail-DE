@@ -6,7 +6,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xytya"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8qa6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rwi5"]
+bg_color = Color(0, 0, 0, 0.470588)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i0y3"]
 
@@ -38,7 +39,7 @@ offset_right = 25.0
 offset_bottom = -46.0
 grow_horizontal = 2
 pivot_offset = Vector2(16.21, 0)
-theme_override_styles/fill = SubResource("StyleBoxFlat_t8qa6")
+theme_override_styles/background = SubResource("StyleBoxFlat_2rwi5")
 show_percentage = false
 
 [node name="HitBox" type="Area2D" parent="."]
