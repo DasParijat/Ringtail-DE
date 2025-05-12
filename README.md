@@ -73,6 +73,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Redone health bar handling func</li>
 			<li>(MinitailSPEED) 
 			Nerfed their speed</li>
+			<li>(FightUI) 
+			Working on having visual indicater player is low on hp</li>
 		</ul>
 	<li>
 	<li>

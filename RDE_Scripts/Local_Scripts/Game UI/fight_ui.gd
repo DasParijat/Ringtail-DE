@@ -53,6 +53,10 @@ func power_overlay_handling() -> void:
 func hurt_overlay_handling(stats : Dictionary) -> void:
 	var HO_anim_player : AnimationPlayer = $CanvasLayer/HurtOverlay/AnimationPlayer
 	
+	# TODO redo this checking but with animation instead
+	if HurtOverlay.modulate.a < 0.2 and stats["cur_hp"] < (stats["max_hp"] / 5):
+		HurtOverlay.modulate.a = 0.2
+		
 	if is_recent_ouch:
 		if !stats["is_hurting"]:
 			is_recent_ouch = false
@@ -60,7 +64,7 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 		is_recent_ouch = true
 		if HurtOverlay.modulate.a >= 0:
 			HO_anim_player.play("HO_ouch")
-	
+		
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
 	match(type):
