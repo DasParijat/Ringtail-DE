@@ -2,7 +2,7 @@ extends Node2D
 # Minitail SPEED
 
 @export var attack_min : int = 1
-@export var attack_max : int = 2
+@export var attack_max : int = 1
 
 @export var mob_res : MobRes
 
@@ -19,7 +19,7 @@ func _process(delta : float) -> void:
 func action1() -> void:
 	## Dash near to player
 	for i in range(5): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 700, "length": 0.3})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 600, "length": 0.3})
 		await GlobalTime.local_wait(0.3)
 	
 	controller.hold(false)
@@ -27,7 +27,7 @@ func action1() -> void:
 func action2() -> void:
 	## Dash to random places near player
 	for i in range(10): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 700, "length": 0.3})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 600, "length": 0.3})
 		await GlobalTime.local_wait(0.3)
 	
 	controller.hold(false)

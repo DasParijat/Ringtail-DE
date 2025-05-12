@@ -68,6 +68,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/12/25)
+			<li>(Base Mob) 
+			Redone health bar handling func</li>
+			<li>(MinitailSPEED) 
+			Nerfed their speed</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/11/25)
 			<li>(Base Mob) 
 			Local HP Bar works (needs adjustments when it comes to positioning)</li>

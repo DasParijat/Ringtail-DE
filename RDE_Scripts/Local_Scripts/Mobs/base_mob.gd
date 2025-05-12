@@ -182,11 +182,14 @@ func deal_hitbox_dmg() -> void:
 
 func health_bar_handling() -> void:
 	## Handles updating local hp bar
-	if not mob_res.is_boss and health_res.cur_hp < health_res.max_hp:
-		if !local_hp_bar.visible: local_hp_bar.show()
+	if mob_res.is_boss:
+		return
 		
-		local_hp_bar.value = health_res.cur_hp
-		local_hp_bar.rotation = -rotation
+	if (health_res.cur_hp < health_res.max_hp 
+		and !local_hp_bar.visible): local_hp_bar.show()
+	
+	local_hp_bar.value = health_res.cur_hp
+	local_hp_bar.rotation = -rotation # Makes sure bar is always horizontal
 	
 func border_handling() -> void:
 	## Handles preventing mob from going beyond world/cam border
