@@ -73,8 +73,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Redone health bar handling func</li>
 			<li>(MinitailSPEED) 
 			Nerfed their speed</li>
+			<li>(PumpShotgun Bullets) 
+			Shotgun bullets no longer pierce</li>
 			<li>(FightUI) 
-			Working on having visual indicater player is low on hp</li>
+			HurtOverlay is slightly transparent when hp is low enough 
+			(To warn player they are close to dying)</li>
 		</ul>
 	<li>
 	<li>

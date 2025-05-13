@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=20 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
@@ -151,9 +151,25 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jpmnx"]
+resource_name = "HO_ouch_(low)"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../HurtOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.682353), Color(1, 1, 1, 0.294118)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fuu3l"]
 _data = {
 "HO_ouch": SubResource("Animation_cnosd"),
+"HO_ouch_(low)": SubResource("Animation_jpmnx"),
 "PO_fade_IN": SubResource("Animation_msccb"),
 "PO_fade_OUT": SubResource("Animation_f0ahw"),
 "RESET": SubResource("Animation_mk6c8")

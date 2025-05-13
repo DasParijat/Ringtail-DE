@@ -52,10 +52,13 @@ func power_overlay_handling() -> void:
 
 func hurt_overlay_handling(stats : Dictionary) -> void:
 	var HO_anim_player : AnimationPlayer = $CanvasLayer/HurtOverlay/AnimationPlayer
+	var warning_point : float = (stats["max_hp"] / 5) * 1.5
 	
-	# TODO redo this checking but with animation instead
-	if HurtOverlay.modulate.a < 0.2 and stats["cur_hp"] < (stats["max_hp"] / 5):
-		HurtOverlay.modulate.a = 0.2
+	## Check if cur_hp recovered past warning point
+	if stats["cur_hp"] >= warning_point:
+		if HurtOverlay.modulate.a > 0:
+			var tween = create_tween()
+			tween.tween_property(HurtOverlay, "modulate:a", 0.0, 0.5)
 		
 	if is_recent_ouch:
 		if !stats["is_hurting"]:
@@ -63,7 +66,10 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 	elif stats["is_hurting"]:
 		is_recent_ouch = true
 		if HurtOverlay.modulate.a >= 0:
-			HO_anim_player.play("HO_ouch")
+			if stats["cur_hp"] < warning_point:
+				HO_anim_player.play("HO_ouch_(low)")
+			else:
+				HO_anim_player.play("HO_ouch")
 		
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
