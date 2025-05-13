@@ -146,7 +146,7 @@ func _physics_process(delta: float) -> void:
 func death_check() -> void:
 	## Check if mob health_res is dead, and respond accordingly
 	if health_res.is_dead():
-		print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
+		#print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
 			GlobalSignal.emit_signal("game_won")
 		else:
@@ -303,7 +303,7 @@ func run(length) -> void:
 	elif str(length).is_valid_float():
 		run_for(float(length))
 	else:
-		print("ERROR: base_mob run() - length not valid")
+		printerr("ERROR: base_mob run() - length not valid")
 		cur_action_time = 0.01
 		# prevents timeout, allow action to go until otherwise
 		# so run can be handled outside of it
@@ -472,8 +472,8 @@ func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : fl
 	## Returns a randomized position in relation to player_pos
 	## Automatically handles negative values, so given pos can be all around
 	## Used in general when wanting to deal with random positions
-	return Vector2(player_pos.x + (randf_range(from_x, to_x) * signf(randf() - 0.5)), 
-				   player_pos.y + (randf_range(from_y, to_y) * signf(randf() - 0.5)))
+	return Vector2(player_global_pos.x + (randf_range(from_x, to_x) * signf(randf() - 0.5)), 
+				   player_global_pos.y + (randf_range(from_y, to_y) * signf(randf() - 0.5)))
 	
 func _on_game_won() -> void:
 	## What mob does when game won

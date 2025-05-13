@@ -69,10 +69,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/12/25)
+			<li>(General) 
+			Commented out most print statements</li>
 			<li>(Base Mob) 
 			Redone health bar handling func</li>
 			<li>(MinitailSPEED) 
-			Nerfed their speed</li>
+			Nerfed their speed, changed how they behaved slightly</li>
 			<li>(PumpShotgun Bullets) 
 			Shotgun bullets no longer pierce</li>
 			<li>(FightUI) 

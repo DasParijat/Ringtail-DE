@@ -30,7 +30,7 @@ func _on_game_fight_res_set() -> void:
 	#print("WS History: ", GlobalScene.world_scene_history)
 	
 func create_world() -> void:
-	print("loading world")
+	#print("loading world")
 	if has_same_world(world_scene): return
 	clear_current_world()
 	

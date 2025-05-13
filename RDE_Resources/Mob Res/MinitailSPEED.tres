@@ -8,8 +8,8 @@
 script = ExtResource("1_xmwl6")
 HP_NAME = "MinitailSPEED"
 is_player = false
-max_hp = 10
-damage_rate = 2.0
+max_hp = 15
+damage_rate = 1.0
 invicible = false
 
 [resource]
@@ -33,5 +33,5 @@ mob_size = Vector2(0.8, 0.8)
 sprite_size = Vector2(1, 1)
 collision_size = Vector2(1, 1)
 hitbox_size = Vector2(4, 4)
-collision_dmg = 1.0
+collision_dmg = 0.5
 collision_dmg_cooldown = 0.2

@@ -17,7 +17,7 @@ func _ready() -> void:
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
 		level.index = 0
 		
-	print("LEVEL INDEX: ", level.index)
+	#print("LEVEL INDEX: ", level.index)
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	#level.index = level.order.size() - 1 # This code is for if I want to run last in order
@@ -33,7 +33,7 @@ func _unhandled_input(event : InputEvent) -> void:
 		pause_game()
 		
 	if event.is_action_pressed("enable_photo"):
-		print("enable photo")
+		#print("enable photo")
 		if GlobalTime.photo_enabled or GlobalTime.is_paused or on_victory_screen:
 			GlobalTime.photo_enabled = false
 		else:
@@ -50,19 +50,19 @@ func next_in_order(increment : int) -> void:
 	#GlobalScene.cur_order = level.index
 	if level.sequence_end:
 		# Go back to main menu
-		print("sequence end")
+		#print("sequence end")
 		level.sequence_end = false
 		
 		#GlobalScene.emit_signal("quit_to_menu")
 		GlobalScene.load_next_scene(GlobalScene.MAIN_MENU)
 		
-		print("LEVEL INDEX: ", level.index)
+		#print("LEVEL INDEX: ", level.index)
 		return
 		
 	if level.order[level.index] is FightRes:
 		GlobalScene.cur_scene_type = GlobalScene.SceneType.FIGHT
 		fight_res = level.order[level.index]
-		print("LEVEL INDEX: ", level.index)
+		#print("LEVEL INDEX: ", level.index)
 		
 		fight_res_set.emit()
 		return
@@ -98,7 +98,7 @@ func pause_game() -> void:
 	#print(GlobalTime.is_paused)
 	
 func _on_game_won() -> void:
-	print("game won on GAME end (printed from game scene script)")
+	#print("game won on GAME end (printed from game scene script)")
 	
 	GlobalScene.on_victory.emit()
 	on_victory_screen = true

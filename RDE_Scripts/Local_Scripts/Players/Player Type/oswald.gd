@@ -12,7 +12,7 @@ extends Node2D
 var gun_index : int = 0
 
 func _ready() -> void:
-	print("oswald added")
+	#print("oswald added")
 	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure camera gets primary gun_res first
 
 func _process(delta: float) -> void:
@@ -46,4 +46,5 @@ func power_move() -> void:
 		base.set_speedmod(1)
 		
 func _on_tree_exiting() -> void:
-	print("oswald exit")
+	#print("oswald exit")
+	pass

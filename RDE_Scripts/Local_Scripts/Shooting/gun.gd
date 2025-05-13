@@ -137,7 +137,7 @@ func _on_game_won() -> void:
 	gun_usable = true
 	
 func reload() -> void:
-	print("reloading")
+	#print("reloading")
 	bullet_spread = 0.0
 	match(gun_res.reload_type):
 		"AUTO":
