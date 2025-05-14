@@ -69,6 +69,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/13/25)
+			<li>(Oswald / Player Res) 
+			Working on better way to access gun info from Oswald</li>
 			<li>(Ringtail) 
 			Boss phases are handled within Ringtail</li>
 			<li>(RingtailHARD) 

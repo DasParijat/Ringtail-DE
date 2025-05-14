@@ -5,20 +5,26 @@ extends Node2D
 @export var player_res : PlayerRes = preload("res://RDE_Resources/Player Res/Oswald.tres")
 
 @export var base : BasePlayer 
-@export var primary_gun : PlayerGun
-@export var secondary_gun : PlayerGun
+@export var gun_array : Array[PlayerGun]
 @export var switch_timer : Timer
+
+var cur_gun : PlayerGun
+var next_gun : PlayerGun
 
 var gun_index : int = 0
 
 func _ready() -> void:
 	#print("oswald added")
-	GlobalSignal.cur_gun.emit(primary_gun.gun_res) # makes sure camera gets primary gun_res first
+	GlobalSignal.cur_gun.emit(gun_array[0].gun_res) # makes sure camera gets primary gun_res first
 
 func _process(delta: float) -> void:
 	position = base.position
 	
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
+	
+	cur_gun = gun_array[gun_index]
+	next_gun = gun_array[player_res.get_next_gun_index(gun_index)]
+	
 	power_move()
 
 func power_move() -> void:

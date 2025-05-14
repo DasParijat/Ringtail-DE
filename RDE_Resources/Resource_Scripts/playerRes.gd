@@ -54,7 +54,7 @@ func reset_speed():
 func reset_power_rate():
 	cur_power_rate = base_power_rate
 
-func set_gun_index(gun_index):
+func get_next_gun_index(gun_index):
 	#print("switch")
 	if gun_index >= gun_array.size() - 1:
 		gun_index = -1 #after incrementing, gun_index is back to 0
@@ -65,7 +65,7 @@ func set_gun_index(gun_index):
 
 func handle_gun_switch(gun_index : int, timer : Timer) -> int:
 	if timer.is_stopped() and Input.is_action_just_pressed("switch_weapon"):
-		gun_index = set_gun_index(gun_index)
+		gun_index = get_next_gun_index(gun_index)
 		timer.start(switch_cooldown)
 	
 	return(gun_index)
