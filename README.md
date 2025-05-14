@@ -68,6 +68,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/14/25)
+			<li>(RingtailHARD) 
+			Incorporarted phases into RingtailHARD</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/13/25)
 			<li>(Oswald / Player Res) 
 			Working on better way to access gun info from Oswald</li>
