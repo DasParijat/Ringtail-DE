@@ -19,6 +19,7 @@ var projectile : ShootAttack
 var hollow_projectile : ShootAttack
 
 var total_delta : float = 0.0
+var phase : int = 1
 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
@@ -40,6 +41,14 @@ func _ready() -> void:
 # Chain explosion thing
 # Laser triangles (series of triangles towards player) DONE
 
+func phase_handler(num_of_phases : int) -> void:
+	## Handles changing phases based on hp
+	#print("PHASE: ", phase, " hp: ", mob_res.health_comp.cur_hp)
+	phase = 1 + floor(
+		(mob_res.health_comp.max_hp - mob_res.health_comp.cur_hp) 
+		/ (mob_res.health_comp.max_hp / num_of_phases)
+		)
+		
 func action1() -> void:
 	## Follow player
 	mob_res.sprtflip_enabled = false

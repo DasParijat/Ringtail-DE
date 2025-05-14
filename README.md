@@ -69,8 +69,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/13/25)
+			<li>(Ringtail) 
+			Boss phases are handled within Ringtail</li>
 			<li>(RingtailHARD) 
-			Created phase variable that changes after 1/3 hp removed</li>
+			MinitailSPEED spawns 2nd phase onwards</li>
 			<li>(MinitalSPEED) 
 			Modified minitailSPEED</li>
 		</ul>
