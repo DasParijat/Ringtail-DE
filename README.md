@@ -68,6 +68,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/13/25)
+			<li>(RingtailHARD) 
+			Created phase variable that changes after 1/3 hp removed</li>
+			<li>(MinitalSPEED) 
+			Modified minitailSPEED</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/12/25)
 			<li>(General) 
 			Commented out most print statements</li>

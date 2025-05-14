@@ -63,9 +63,10 @@ func set_gun_index(gun_index):
 	#print(gun_index)
 	return(gun_index)
 
-func handle_gun_switch(gun_index, timer):
+func handle_gun_switch(gun_index : int, timer : Timer) -> int:
 	if timer.is_stopped() and Input.is_action_just_pressed("switch_weapon"):
 		gun_index = set_gun_index(gun_index)
 		timer.start(switch_cooldown)
 	
 	return(gun_index)
+	
