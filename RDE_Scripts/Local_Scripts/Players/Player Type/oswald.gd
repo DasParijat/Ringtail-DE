@@ -20,11 +20,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position = base.position
 	
-	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
+	#if not GlobalPlayer.power_activated:
+	#	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	
 	cur_gun = gun_array[gun_index]
 	next_gun = gun_array[player_res.get_next_gun_index(gun_index)]
 	
+	# TODO tweak this to see how it positively/negatively affects gameplay
+	# Rn, it only auto-switches when player presses shoot button
+	# Originally a power-exclusive thing, but might keep it here.
+	# Could have this only trigger if power is high enough
+	if (switch_timer.is_stopped() and Input.is_action_just_pressed("switch_weapon")) or (player_res.cur_power > player_res.power_ex_cutoff and not cur_gun.not_reloading()):
+		gun_index = player_res.get_next_gun_index(gun_index)
+		switch_timer.start(player_res.switch_cooldown)
+		
 	power_move()
 
 func power_move() -> void:
@@ -45,7 +54,11 @@ func power_move() -> void:
 	if GlobalPlayer.power_activated:
 		base.set_speedmod(1.5) 
 		GlobalTime.cur_time_scale = 0.3 
-
+		
+		if 1 == 0: #cur_gun.cur_ammo <= 0:
+			print("!! auto-switch")
+			gun_index = 1 #player_res.get_next_gun_index(gun_index)
+			
 		player_res.cur_power -= 0.1
 	else:
 		GlobalTime.cur_time_scale = 1

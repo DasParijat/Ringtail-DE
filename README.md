@@ -71,6 +71,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/14/25)
 			<li>(RingtailHARD) 
 			Incorporarted phases into RingtailHARD</li>
+			<li>(Oswald) 
+			Working on incorporating auto-switching (switching to next gun automatically)</li>
 		</ul>
 	<li>
 	<li>
