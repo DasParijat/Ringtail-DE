@@ -7,6 +7,8 @@ extends CanvasLayer
 
 @onready var PlayerHPBar : ProgressBar = $PlayerUI/PlayerHPBar
 @onready var DamageDelayBar : ProgressBar = $PlayerUI/PlayerHPBar/DamageBar
+@onready var StoredHpBar: ProgressBar = $PlayerUI/PlayerHPBar/StoredHPBar
+
 @onready var PlayerPowerBar : ProgressBar = $PlayerUI/PowerBar
 
 @onready var GunInUse : TextureRect = $PlayerUI/GunUI/HBoxContainer/MarginContainer/GunInUse
@@ -21,6 +23,7 @@ var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
 
 var player_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
+var stored_hp_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 
 var reload_text : String = ""
@@ -94,6 +97,7 @@ func set_player_ui(stats : Dictionary) -> void:
 	
 	# Bar max values
 	PlayerHPBar.max_value = stats["max_hp"]
+	StoredHpBar.max_value = stats["max_hp"]
 	DamageDelayBar.max_value = stats["max_hp"]
 	PlayerPowerBar.max_value = stats["max_power"]
 	
@@ -101,8 +105,18 @@ func set_player_ui(stats : Dictionary) -> void:
 	cur_player_hp = stats["cur_hp"]
 	update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
 	update_bar(PlayerHPBar, cur_player_hp, 0.5)
-	if not stats["is_hurting"]:
-		update_bar(DamageDelayBar, cur_player_hp, 3)
+	
+	if stats["stored_hp"] >= stats["player_res"].max_stored_hp:
+		stored_hp_stylebox.bg_color = Color(0, 0.5, 0)
+	elif stats["stored_hp"] > stats["player_res"].stored_hp_threshold:
+		stored_hp_stylebox.bg_color = Color(1, 1, 1)
+	else:
+		stored_hp_stylebox.bg_color = Color(0.5, 0, 0)
+		
+	StoredHpBar.add_theme_stylebox_override("fill", stored_hp_stylebox)
+	update_bar(StoredHpBar, (cur_player_hp + stats["stored_hp"]), 0.5)
+	#if not stats["is_hurting"]:
+	#	update_bar(DamageDelayBar, cur_player_hp, 3)
 	hurt_overlay_handling(stats)
 	#print(cur_player_hp)
 	#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)

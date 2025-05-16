@@ -67,6 +67,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/16/25)
 			<li>(Player Res / Base Player) 
 			PlayerRes has properties related to stored hp</li>
+			<li>(Fight UI) 
+			Stored hp displayed in health bar, along with colors representing it's state
+			(Not-usable, usable and growing, usable but reached max). 
+			Still need to work on making the corner radisu the same for all colors</li>
 		</ul>
 	<li>
 	<li>

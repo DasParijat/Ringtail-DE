@@ -91,8 +91,7 @@ func rest_check(delta):
 	#	else player can increase rest_timeout to an unintended value 
 	#	and possibly cheese game. 
 	
-	# TODO implement new healing system across base player, fight ui, and player res
-	print("stored hp: ", stored_hp)
+	#print("stored hp: ", stored_hp)
 	var no_overflow : bool = ((health_res.cur_hp + stored_hp) <= health_res.max_hp
 								and health_res.cur_hp < health_res.max_hp)
 								
@@ -128,6 +127,7 @@ func get_cur_stats() -> Dictionary:
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
 		"stored_hp": stored_hp,
+		"stored_hp_usable": stored_hp > player_res.stored_hp_threshold,
 		"is_hurting": is_hurting, #or is_near_enemy, # For health bar
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),

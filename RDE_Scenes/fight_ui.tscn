@@ -22,7 +22,7 @@ shadow_color = Color(0, 0, 0, 0.0784314)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n105d"]
-bg_color = Color(0.969137, 0.969137, 0.969137, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -201,6 +201,17 @@ value = 50.0
 show_percentage = false
 
 [node name="DamageBar" type="ProgressBar" parent="PlayerUI/PlayerHPBar"]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ux8q1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n105d")
+value = 80.0
+show_percentage = false
+
+[node name="StoredHPBar" type="ProgressBar" parent="PlayerUI/PlayerHPBar"]
 z_index = -1
 layout_mode = 0
 offset_right = 240.0
