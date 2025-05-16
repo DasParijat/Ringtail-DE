@@ -64,7 +64,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(5/14/25)
+			(5/16/25)
+			<li>(Player Res / Base Player) 
+			PlayerRes has properties related to stored hp</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(5/15/25)
 			<li>(Base Player) 
 			Implementing new way of healing 
 			(Based off April's suggestion)</li>

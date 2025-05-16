@@ -12,6 +12,8 @@ class_name PlayerRes
 @export var health_res : HealthRes
 @export var regen_rate : float = 1
 @export var regen_amt : float = 2
+@export var max_stored_hp : float = 5 # max limit stored hp can go
+@export var stored_hp_threshold : float = 5 # when stored hp reaches this, it can be used
 
 @export_category("Speed")
 @export var base_speed : float = 1000.0

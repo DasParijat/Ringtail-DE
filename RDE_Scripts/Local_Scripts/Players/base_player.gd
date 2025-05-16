@@ -95,15 +95,16 @@ func rest_check(delta):
 	print("stored hp: ", stored_hp)
 	var no_overflow : bool = ((health_res.cur_hp + stored_hp) <= health_res.max_hp
 								and health_res.cur_hp < health_res.max_hp)
-	if stored_hp < (health_res.max_hp / 5) and no_overflow:
+								
+	if stored_hp < player_res.max_stored_hp and no_overflow:
 		rest_timeout += delta
-		if rest_timeout >= 3.0: #player_res.regen_rate:
+		if rest_timeout >= player_res.regen_rate:
 			var health_gain : float = clampf(player_res.regen_amt * (player_res.cur_power / 25), 1, player_res.regen_amt)
-			stored_hp += health_gain / 5
+			stored_hp += health_gain
 			rest_timeout = 0.0
 			#print("stored hp: ", stored_hp, " health gain: ", health_gain)
 		
-	if GlobalPlayer.is_resting and stored_hp > 5 and no_overflow: 
+	if GlobalPlayer.is_resting and stored_hp > player_res.stored_hp_threshold and no_overflow: 
 		health_res.cur_hp += stored_hp
 		stored_hp = 0
 	
@@ -126,6 +127,7 @@ func get_cur_stats() -> Dictionary:
 		"player_res": player_res,
 		"max_hp": health_res.max_hp,
 		"cur_hp": health_res.cur_hp,
+		"stored_hp": stored_hp,
 		"is_hurting": is_hurting, #or is_near_enemy, # For health bar
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),
