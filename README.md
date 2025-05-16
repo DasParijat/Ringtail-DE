@@ -69,6 +69,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/14/25)
+			<li>(Oswald) 
+			Player can auto-switch when they shoot while cur_gun reloading</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
+			(5/14/25)
 			<li>(RingtailHARD) 
 			Incorporarted phases into RingtailHARD</li>
 			<li>(Oswald) 
