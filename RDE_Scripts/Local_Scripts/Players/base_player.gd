@@ -19,6 +19,8 @@ var rest_timeout : float = 0.0
 var is_near_enemy : bool = false
 var is_hurting : bool = false
 
+var stored_hp : float = 0
+
 var prev_hp : float
 var total_delta : float
 
@@ -88,13 +90,22 @@ func rest_check(delta):
 	# NOTE: Doesn't run when hp is max, 
 	#	else player can increase rest_timeout to an unintended value 
 	#	and possibly cheese game. 
-	if GlobalPlayer.is_resting and not health_res.is_max_hp: 
+	
+	# TODO implement new healing system across base player, fight ui, and player res
+	print("stored hp: ", stored_hp)
+	var no_overflow : bool = ((health_res.cur_hp + stored_hp) <= health_res.max_hp
+								and health_res.cur_hp < health_res.max_hp)
+	if stored_hp < (health_res.max_hp / 5) and no_overflow:
 		rest_timeout += delta
-		if rest_timeout >= player_res.regen_rate:
-			# When at max power, more health will regen
+		if rest_timeout >= 3.0: #player_res.regen_rate:
 			var health_gain : float = clampf(player_res.regen_amt * (player_res.cur_power / 25), 1, player_res.regen_amt)
-			health_res.cur_hp += health_gain
+			stored_hp += health_gain / 5
 			rest_timeout = 0.0
+			#print("stored hp: ", stored_hp, " health gain: ", health_gain)
+		
+	if GlobalPlayer.is_resting and stored_hp > 5 and no_overflow: 
+		health_res.cur_hp += stored_hp
+		stored_hp = 0
 	
 func set_speedmod(new_val : float) -> void:
 	## Modify speed_modifier

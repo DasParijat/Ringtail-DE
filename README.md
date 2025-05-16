@@ -6,14 +6,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
+	<li>Implement new chunk healing system across base player, fight ui, GlobalPlayer(?), and player res</li>
 	<li>Implement audio (Sound Effects and Music)</li>
 	<li>Ringtail fight moves</li>
-	<li>Make way to identify main boss of fight DONE</li>
 	<li>Fight UI / Boss Bar UI 
 	(keyboard hints)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Stylize menu and buttons</li>
-	<li>MAYBE Create more flexible way to pause game (without affecting UI/non-game elements)</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -59,9 +58,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>(4/?) - Pause menu doesn't show up  when rapidly pausing</li>
 	<li>(5/7) - Player can get stuck in wall (RARE BUG)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
-	<li>(5/5) - Can still pause during victory screen (RESOLVED)</li>
-	<li>(5/5) - Bullet falloff damage can result in giving negative damage 
-	(healing target instead) (RESOLVED)</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -69,6 +65,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/14/25)
+			<li>(Base Player) 
+			Implementing new way of healing 
+			(Based off April's suggestion)</li>
 			<li>(Oswald) 
 			Player can auto-switch when they shoot while cur_gun reloading</li>
 		</ul>
