@@ -103,7 +103,7 @@ func rest_check(delta):
 			rest_timeout = 0.0
 			#print("stored hp: ", stored_hp, " health gain: ", health_gain)
 		
-	if GlobalPlayer.is_resting and stored_hp > player_res.stored_hp_threshold and no_overflow: 
+	if GlobalPlayer.is_resting and stored_hp > player_res.stored_hp_threshold: # and no_overflow: 
 		health_res.cur_hp += stored_hp
 		stored_hp = 0
 	

@@ -46,7 +46,9 @@ func power_move() -> void:
 			and player_res.health_res.cur_hp < 15
 			and GlobalPlayer.is_moving)
 		) 
-		and not GlobalTime.is_paused and player_res.cur_power > 0.1 
+		or (base.is_near_enemy
+			and GlobalPlayer.power_activated)
+		and not GlobalTime.is_paused and player_res.cur_power > 1 
 	)
 	
 	# power move itself
