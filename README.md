@@ -64,6 +64,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/17/25)
+			<li>(Fight UI) 
+			FightUI properly displays stored hp</li>
+			<li>(Oswald Res) 
+			Increased max_stored_hp</li>
+		</ul>
+	<li>
+	<li>
+		<ul>
 			(5/16/25)
 			<li>(Player Res / Base Player) 
 			PlayerRes has properties related to stored hp</li>

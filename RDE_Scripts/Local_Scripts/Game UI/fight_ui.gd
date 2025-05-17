@@ -106,18 +106,25 @@ func set_player_ui(stats : Dictionary) -> void:
 	update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
 	update_bar(PlayerHPBar, cur_player_hp, 0.5)
 	
+	stored_hp_stylebox = StoredHpBar.get_theme_stylebox("fill").duplicate()
+
 	if stats["stored_hp"] >= stats["player_res"].max_stored_hp:
-		stored_hp_stylebox.bg_color = Color(0, 0.5, 0)
-	elif stats["stored_hp"] > stats["player_res"].stored_hp_threshold:
+		## When stored_hp reaches max
 		stored_hp_stylebox.bg_color = Color(1, 1, 1)
+	elif stats["stored_hp"] > stats["player_res"].stored_hp_threshold:
+		## When stored_hp is usable
+		stored_hp_stylebox.bg_color = Color(1, 0.9, 0.9)
 	else:
-		stored_hp_stylebox.bg_color = Color(0.5, 0, 0)
+		## When stored_hp is unusable
+		stored_hp_stylebox.bg_color = Color(0.4, 0.3, 0.3)
 		
 	StoredHpBar.add_theme_stylebox_override("fill", stored_hp_stylebox)
 	update_bar(StoredHpBar, (cur_player_hp + stats["stored_hp"]), 0.5)
-	#if not stats["is_hurting"]:
-	#	update_bar(DamageDelayBar, cur_player_hp, 3)
+	
 	hurt_overlay_handling(stats)
+	#if not stats["is_hurting"]: # OLD DAMAGE BAR CODE
+	#	update_bar(DamageDelayBar, cur_player_hp, 3)
+	
 	#print(cur_player_hp)
 	#print("prev hp: ", prev_player_hp, " cur hp: ", cur_player_hp)
 
