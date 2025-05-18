@@ -114,6 +114,10 @@ func set_player_ui(stats : Dictionary) -> void:
 	elif stats["stored_hp"] > stats["player_res"].stored_hp_threshold:
 		## When stored_hp is usable
 		stored_hp_stylebox.bg_color = Color(1, 0.9, 0.9)
+	elif GlobalPlayer.is_resting:
+		## When stored_hp is unusable but player resting
+		# (resting makes stored_hp regen faster
+		stored_hp_stylebox.bg_color = Color(0.5, 0.4, 0.4)
 	else:
 		## When stored_hp is unusable
 		stored_hp_stylebox.bg_color = Color(0.4, 0.3, 0.3)

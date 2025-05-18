@@ -65,18 +65,23 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/17/25)
+			<li>(General) 
+			Tweaking power and other player related abilities</li>
 			<li>(Fight UI) 
 			FightUI properly displays stored hp</li>
 			<li>(Base Player) 
-			Fixed issue of not being able to heal if stored_hp touches max hp</li>
-			<li>(Base Player) 
-			Player can hold rest button to speed up stored_hp growth</li>
-			<li>(Base Player) 
+			Fixed issue of not being able to heal if stored_hp touches max hp, 
+			Player can hold rest button to speed up stored_hp growth, and 
 			stored_hp is automatically used when player is close to death AND they have ex power</li>
 			<li>(Oswald Res) 
 			Decreased regen_amt, and increased max_stored_hp and stored_hp_threshold</li>
 			<li>(Oswald) 
-			Power remains activated if near enemy (regardless of input)</li>
+			Power remains activated if near enemy (regardless of input), 
+			also power related stats were nerfed</li>
+			<li>(Bullet) 
+			Bullet damage gives less power</li>
+			<li>(MinitailSPEED) 
+			Gives 5 power when it dies</li>
 		</ul>
 	<li>
 	<li>
