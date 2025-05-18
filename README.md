@@ -69,6 +69,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			FightUI properly displays stored hp</li>
 			<li>(Base Player) 
 			Fixed issue of not being able to heal if stored_hp touches max hp</li>
+			<li>(Base Player) 
+			Player can hold rest button to speed up stored_hp growth</li>
+			<li>(Base Player) 
+			stored_hp is automatically used when player is close to death AND they have ex power</li>
 			<li>(Oswald Res) 
 			Decreased regen_amt, and increased max_stored_hp and stored_hp_threshold</li>
 			<li>(Oswald) 

@@ -96,14 +96,20 @@ func rest_check(delta):
 								and health_res.cur_hp < health_res.max_hp)
 								
 	if stored_hp < player_res.max_stored_hp and no_overflow:
-		rest_timeout += delta
+		rest_timeout += delta * (1 + (1.2 * int(GlobalPlayer.is_resting)))
 		if rest_timeout >= player_res.regen_rate:
 			var health_gain : float = clampf(player_res.regen_amt * (player_res.cur_power / 25), 1, player_res.regen_amt)
 			stored_hp += health_gain
 			rest_timeout = 0.0
 			#print("stored hp: ", stored_hp, " health gain: ", health_gain)
 		
-	if GlobalPlayer.is_resting and stored_hp > player_res.stored_hp_threshold: # and no_overflow: 
+	if (
+			(
+			GlobalPlayer.is_resting 
+			or (health_res.cur_hp <= 1 and player_res.cur_power > player_res.power_ex_cutoff)
+			) 
+			and stored_hp > player_res.stored_hp_threshold
+		):
 		health_res.cur_hp += stored_hp
 		stored_hp = 0
 	

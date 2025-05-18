@@ -70,7 +70,7 @@ func next_in_order(increment : int) -> void:
 	if level.order[level.index] is CutsceneRes:
 		GlobalScene.cur_scene_type = GlobalScene.SceneType.CSCENE
 		return
-		
+	
 func pause_game() -> void:
 	if pause_transition or on_victory_screen:
 		## pause_transition makes it so pause input not handled 
