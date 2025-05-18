@@ -11,8 +11,10 @@ var _bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var _hollow_bullet_res = preload("res://RDE_Resources/Bullet Res/RGT_Hollow_Projectile.tres")
 var _bullet_load = preload("uid://cy77mdk6wv3fp")
 
-var mob_load = preload("uid://dynvq35tw44w5")
+var mob_load = preload("uid://dynvq35tw44w5") # tutorial boss
+
 var explosion_load = preload("res://RDE_Scenes/Entities/Mobs/explosion.tscn")
+var minitail_default = preload("res://RDE_Scenes/Entities/Mobs/minitail_default.tscn")
 var minitail_speed = preload("res://RDE_Scenes/Entities/Mobs/minitail_speed.tscn")
 
 var projectile : ShootAttack

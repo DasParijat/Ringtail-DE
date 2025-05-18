@@ -67,6 +67,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/18/25)
 			<li>(README) 
 			Fixed issue with listing dates in changelog</li>
+			<li>(MinitailDEF / RingtailHARD) 
+			Created MinitailDEF, a simple small version of Ringtail</li>
 		</ul>
 	</li>
 	<li>
