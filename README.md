@@ -64,6 +64,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/18/25)
+			<li>(README) 
+			Fixed issue with listing dates in changelog</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/17/25)
 			<li>(General) 
 			Tweaking power and other player related abilities</li>
@@ -83,7 +90,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(MinitailSPEED) 
 			Gives 5 power when it dies</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/16/25)
@@ -94,7 +101,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(Not-usable, usable and growing, usable but reached max). 
 			Still need to work on making the corner radisu the same for all colors</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/15/25)
@@ -104,7 +111,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Oswald) 
 			Player can auto-switch when they shoot while cur_gun reloading</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/14/25)
@@ -113,7 +120,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Oswald) 
 			Working on incorporating auto-switching (switching to next gun automatically)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/13/25)
@@ -126,7 +133,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(MinitalSPEED) 
 			Modified minitailSPEED</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/12/25)
@@ -142,7 +149,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			HurtOverlay is slightly transparent when hp is low enough 
 			(To warn player they are close to dying)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/11/25)
@@ -153,7 +160,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(MinitailSPEED) 
 			Created sprite for MinitailSPEED</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/10/25)
@@ -162,7 +169,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Non-boss mobs have fade out animation when they die</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/9/25)
@@ -172,7 +179,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Camera) 
 			Moved pause handling outside of track_player if-statement</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/8/25)
@@ -180,7 +187,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Setting up code for in-game photo mode 
 			(Used to pause game and move the camera)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/7/25)
@@ -198,7 +205,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Playtesters) 
 			Faded0cean gave feedback for game (via form)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/6/25)
@@ -209,7 +216,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Pause) 
 			Resolved issue of being able to pause when on victory screen</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/5/25)
@@ -224,7 +231,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Bullets can now fade when exiting (deal no damage during fading),
 			bullets exit on game won</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/4/25)
@@ -240,7 +247,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Mob Controller) 
 			Removed boss added print statement that was hiding there for months now</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/3/25)
@@ -256,7 +263,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(ShootAttack) 
 			Attempting to be able to override is_piercing stat through ShootAttack (rhymes)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/2/25)
@@ -264,21 +271,21 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Explosion no longer deals damage in warning phase, 
 			as well as it has flashing animation during warning phase</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(5/1/25)
 			<li>(Explosion) 
 			Explosion tween affects base mob sprite rather than itself</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/30/25)
 			<li>(Explosion) 
 			Explosion animation and queuing free works</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/29/25)
@@ -287,7 +294,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob / Bullet) 
 			Anything using player position here now uses player global position</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/28/25)
@@ -296,14 +303,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(makes mob spawning more accurate, but makes ringtail less aggressive, 
 			might need to tweak ringtail)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/27/25)
 			<li>(Mob Res) 
 			Non-boss mobs can now have their mini-hp bar disabled</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/26/25)
@@ -312,7 +319,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD / Explosion Mob) 
 			Created explosion mob (to be spawned in)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/25/25)
@@ -323,21 +330,21 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Pause Menu) 
 			Removed settings button, due to limited nature of pausing</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/24/25)
 			<li>(Pause Menu) 
 			Working on resolving bug where pause menu doesn't show sometimes</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/23/25)
 			<li>(Game Background / Victory Menu) 
 			Game background goes dark on victory screen</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/22/25)
@@ -349,7 +356,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Background) 
 			Canvas mod turns darkish when game paused</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/21/25)
@@ -360,7 +367,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Camera) 
 			Camera zooms in quicker and closer when paused</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/20/25)
@@ -369,7 +376,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Camera) 
 			Camera zooms in when paused</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/19/25)
@@ -378,28 +385,28 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight Stats) 
 			Uses export instead of direct linking to get labels</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/18/25)
 			<li>(Fight Stats / Victory Menu) 
 			Adjusting how victory menu is visually organized</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/17/25)
 			<li>(Fight Stats / Victory Menu) 
 			Fight stats are now viewable in victory menu</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/16/25)
 			<li>(PlayTesters) 
 			Updated playtesters</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/15/25)
@@ -409,7 +416,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(PlayTesters) 
 			Dylan Kelly playtested</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/14/25)
@@ -422,7 +429,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			FightUI hides when victory menu is up</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/13/25)
@@ -436,7 +443,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Main boss still visible on victory menu, however process func is disabled</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/12/25)
@@ -447,7 +454,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Victory Menu) 
 			Started making victory menu scene and code needed for it</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/11/25)
@@ -460,7 +467,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD) 
 			Refined how to shoot/do anything on an interval within _process func</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/10/25)
@@ -471,7 +478,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Bullet / ShootAttack) 
 			Added way to modify follow_target_length</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/9/25)
@@ -485,7 +492,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(ShootAttack) 
 			Working on making the parameters for shoot to be contained in dictionary</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/8/25)
@@ -495,7 +502,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			as well as know if other unused gun they switched out of is
 			still reloading)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/7/25)
@@ -509,7 +516,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(ShootAttack) 
 			Created ShootAttack class to handle shoot attacks for mobs</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/6/25)
@@ -518,7 +525,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Bullet) 
 			Working on adding bullets that follow target for a bit</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/5/25)
@@ -528,7 +535,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Fixed get_rand_player_pos, automatically handles negative values</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/4/25)
@@ -538,7 +545,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Made get_rand_player_pos func to return a random Vector2 in relation to player,
 			used instead of constantly doing the long Vector2 rand thing</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/3/25)
@@ -550,7 +557,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added new RGT_Projectile texture,
 			Ringtail shoots every 3 seconds now (for testing)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/2/25)
@@ -560,7 +567,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Each mob no longer has own health res script, 
 			instead health_comp is custom-made within it's mob_res</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(4/1/25)
@@ -573,7 +580,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added normal version of Ringtail (not playable from menu yet), 
 			Created mob res, health res, fight res, level res, scene and script</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/31/25)
@@ -581,7 +588,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Camera can now track main boss position,
 			useful for my idea of the victory screen</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/30/25)
@@ -590,7 +597,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob / Fight UI) 
 			Boss HP Bar now handled primarily in Fight UI</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/29/25)
@@ -601,7 +608,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob / GlobalMobHandler) 
 			Added unique mob_id's and a globally accessible array of bosses (using id's)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/28/25)
@@ -613,7 +620,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Images / Adverts) 
 			Added 5 teaser images of Ringtail</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/27/25)
@@ -621,14 +628,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added action to dash to opposite* of player pos,
 			as well as action to dash to random pos in relation to player pos</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/26/25)
 			<li>(Main Menu / Images) 
 			Added new game logo</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/25/25)
@@ -652,7 +659,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Oswald) 
 			Near-enemy power activation only activated when player is moving</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/24/25)
@@ -661,7 +668,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Camera) 
 			Zooms in when power is being used</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/23/25)
@@ -670,7 +677,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player / Gun) 
 			Gave class names to base player and gun scripts</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/22/25)
@@ -685,7 +692,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Mob Controller) 
 			Mob Controller uses exports rather than onready for taking in base mob</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/21/25)
@@ -708,7 +715,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player) 
 			Removed sprinting, sprint button only used for power now</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/20/25)
@@ -721,7 +728,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(GlobalPlayer) 
 			Created GlobalPlayer autoload script</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/19/25)
@@ -739,7 +746,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Main Menu) 
 			Recentered front menu, and changed main_menu to CanvasLayer</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/18/25)
@@ -756,7 +763,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Player Res / Oswald) 
 			Cur_power starts at 0 instead of max</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/17/25)
@@ -772,7 +779,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added background to main menu, that darkens when not on front_menu,
 			Image is temp but may reflect final product</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/16/25)
@@ -792,7 +799,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Display name is shown for BossHPBar,
 			also cleaned up code for when mob_res is set</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/15/25)
@@ -814,7 +821,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(PumpShotgun Res) 
 			PumpShotgun now has sprite (temp but reflects final design)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/14/25)
@@ -830,7 +837,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Gun)               
 			Gave gun an audiostreamplayer2D (for gun shot sounds)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/13/25)
@@ -842,14 +849,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			BossHPBars color affected my mob_res colors, 
 			also max_bar_darkness is now way darker</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/12/25)
 			<li>(GlobalMenu / Menu) 
 			GlobalMenu created, fight_select buttons now emit signal when it's pressed</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/11/25)
@@ -865,7 +872,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Working on having mobs follow camera borders</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/10/25)
@@ -876,7 +883,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(LevelRes) 
 			LevelRes has new description property</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/9/25)
@@ -889,7 +896,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Working on having single play button, 
 			instead of getting into fight from level select buttons</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/8/25)
@@ -912,7 +919,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Has primary and secondary colors, 
 			is broadcasted in get_cur_stats for player</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/7/25)
@@ -931,7 +938,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RGT_Plains) 
 			Added tree tileset and put it in RGT_Plains</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/6/25)
@@ -942,7 +949,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Camera) 
 			There is a cutoff in how far out you can aim</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/5/25)
@@ -951,7 +958,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game Camera) 
 			Camera now properly keeps up with player (using tracking speed)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/4/25)
@@ -966,7 +973,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Main Menu / Story Menu) 
 			Readjusted story_menu</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/3/25)
@@ -975,7 +982,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Main Menu) 
 			Removed center container and made label (might modify later)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/2/25)
@@ -993,7 +1000,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			When scene loaded, engine time scale hard-coded to be set back to 1
 			(so nothing in menu is messed up from game pausing or such)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(3/1/25)
@@ -1026,7 +1033,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game / Fight / GlobalFightStats)  
 			Time, Total Time, and num of deaths handled properly</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/27/25)
@@ -1037,7 +1044,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Player Res) 
 			Added size properties similar to MobRes</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/26/25)
@@ -1046,7 +1053,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Mob Res / Base Mob) 
 			Size of MobCollision and Hitbox are set by MobRes</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/25/25)
@@ -1055,7 +1062,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Local/Boss HP bar is used depending on mob's is_boss status</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/24/25)
@@ -1070,7 +1077,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(BossHPBars) 
 			Handles multiple health bars</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/23/25)
@@ -1081,7 +1088,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(BossHPBars) 
 			Single HP bar now display boss health</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/22/25)
@@ -1104,7 +1111,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Updated agenda to reflect progress</li>
 		</ul>
 	<li>
-	<li>
+	</li>
 		<ul>
 			(2/21/25)
 			<li>(Global Scene) 
@@ -1117,7 +1124,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(Game over and retry brings you back to cur fight, 
 			quit to menu and play takes you to start of level)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/20/25)
@@ -1135,7 +1142,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player) 
 			Goes to game over screen when dead (instead of resetting HP)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/19/25)
@@ -1150,7 +1157,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Resting mechanic now works as intended 
 			(heals player at interval when pressed down)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/18/25)
@@ -1162,7 +1169,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			2D Ordering of bars change, appear on bottom left now</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/17/25)
@@ -1171,7 +1178,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player) 
 			get_cur_stats now returns max_power from player_res</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/16/25)
@@ -1183,7 +1190,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Player) 
 			Handles damage delay for health bar</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/15/25)
@@ -1201,7 +1208,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Test Cutscene) 
 			Created test cutscene (Using dialogic)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/14/25)
@@ -1213,7 +1220,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added spawn coords for player and single boss, 
 			still working on implementing them</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/13/25)
@@ -1230,7 +1237,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added collision_dmg_cooldown 
 			for the rate a mob's hitbox should deal damage</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/12/25)
@@ -1239,7 +1246,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Added player detection collision, it works</li>
 		</ul>
-	<li>	
+	</li>	
 	<li>
 		<ul>
 			(2/11/25)
@@ -1250,7 +1257,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Handles if FightRes given has no world
 			(If it doesn't, it keeps prev world / remain blank)</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/10/25)
@@ -1262,7 +1269,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Game / Main Menu) 
 			cur_scene_type is modified in Game and Main Menu</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/9/25)
@@ -1281,7 +1288,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD) 
 			Turned him blue for now</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/8/25)
@@ -1301,7 +1308,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Cutscene Res) 
 			Created basic cutscene resource</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/7/25)
@@ -1321,7 +1328,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Action queue debug func now shows mob name, 
 			as well as it can be toggled from Inspector</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/6/25)
@@ -1339,7 +1346,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			to get a clearer picture of how to handle levels</li>
 		</ul>
 	<li>
-	<li>
+	</li>
 		<ul>
 			(2/5/25)
 			<li>(LevelRes) 
@@ -1353,7 +1360,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Pause menu uses new load scene,
 			and reset game button added</li>
 		</ul>
-	<li>
+	</li>
 	<li>
 		<ul>
 			(2/4/25)
@@ -1366,6 +1373,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created GlobalScene autoload script 
 			to handle info passed between scenes</li>
 		</ul>
+	</li>
 	<li>
 		<ul>
 			(2/3/25)
