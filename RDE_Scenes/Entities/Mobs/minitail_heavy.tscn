@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsgnlhd42ck70"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/minitail_heavy.gd" id="1_e4j7q"]
+[ext_resource type="Resource" uid="uid://c20bjfluwired" path="res://RDE_Resources/Mob Res/MinitailHEAVY.tres" id="2_w34iy"]
+[ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_oqfbc"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/mob_controller.gd" id="4_8l41f"]
+
+[node name="Minitail_Default" type="Node2D" node_paths=PackedStringArray("base", "controller")]
+script = ExtResource("1_e4j7q")
+mob_res = ExtResource("2_w34iy")
+base = NodePath("base_mob")
+controller = NodePath("MobController")
+
+[node name="base_mob" parent="." instance=ExtResource("3_oqfbc")]
+
+[node name="MobController" type="Node2D" parent="." node_paths=PackedStringArray("base")]
+script = ExtResource("4_8l41f")
+base = NodePath("../base_mob")

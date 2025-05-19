@@ -16,6 +16,7 @@ var mob_load = preload("uid://dynvq35tw44w5") # tutorial boss
 var explosion_load = preload("res://RDE_Scenes/Entities/Mobs/explosion.tscn")
 var minitail_default = preload("res://RDE_Scenes/Entities/Mobs/minitail_default.tscn")
 var minitail_speed = preload("res://RDE_Scenes/Entities/Mobs/minitail_speed.tscn")
+var minitail_heavy = preload("res://RDE_Scenes/Entities/Mobs/minitail_heavy.tscn")
 
 var projectile : ShootAttack
 var hollow_projectile : ShootAttack

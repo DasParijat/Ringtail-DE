@@ -36,6 +36,9 @@ func phase2():
 		
 	if GlobalTime.process_interval(1.0, total_delta, get_process_delta_time()):
 		spawner.spawn_mob(explosion_load, base.player_pos)
+		
+	if GlobalTime.process_interval(5.0, total_delta, get_process_delta_time()):
+		spawner.spawn_mob(minitail_heavy, base.global_position)
 	
 func phase3():
 	if GlobalTime.process_interval(8.0, total_delta, get_process_delta_time()):
