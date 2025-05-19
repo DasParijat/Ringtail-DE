@@ -64,6 +64,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/19/25)
+			<li>(MinitailHEAVY) 
+			Created MinitailHEAVY</li>
+			<li>(MinitailSHIELD) 
+			Created MinitailSHIELD</li>
+			<li>(Ringtail) 
+			Ringtail has variables for new minitails</li>
+		</ul>
+	</li>	
+	<li>
+		<ul>
 			(5/18/25)
 			<li>(README) 
 			Fixed issue with listing dates in changelog</li>

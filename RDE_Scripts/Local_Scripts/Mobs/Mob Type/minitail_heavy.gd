@@ -13,7 +13,7 @@ func _process(delta : float) -> void:
 
 
 func action1() -> void:
-	## Dash near to player
+	## Dash near to player then go to random pos
 	base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0.3, "speed": 150, "length": 1})
 	await GlobalTime.local_wait(1)
 		

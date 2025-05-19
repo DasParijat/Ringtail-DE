@@ -218,7 +218,6 @@ func sprite_dir_handling() -> void:
 	# flip_v is so when heading in dir, it doesn't look upside-down
 
 func get_cur_stats() -> Dictionary:
-	# TODO add stats to give
 	## For the main boss to give stats globally that fight_ui can track
 	return {
 		"position": global_position,

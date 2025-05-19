@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_oqfbc"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/mob_controller.gd" id="4_8l41f"]
 
-[node name="Minitail_Default" type="Node2D" node_paths=PackedStringArray("base", "controller")]
+[node name="Minitail_Heavy" type="Node2D" node_paths=PackedStringArray("base", "controller")]
 script = ExtResource("1_e4j7q")
 mob_res = ExtResource("2_w34iy")
 base = NodePath("base_mob")
