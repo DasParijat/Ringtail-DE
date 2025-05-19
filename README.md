@@ -69,6 +69,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Fixed issue with listing dates in changelog</li>
 			<li>(MinitailDEF / RingtailHARD) 
 			Created MinitailDEF, a simple small version of Ringtail</li>
+			<li>(Images) 
+			Added sprites for other two planned minitails (Heavy and Shield)</li>
 		</ul>
 	</li>
 	<li>
