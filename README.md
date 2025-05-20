@@ -69,6 +69,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			MinitalHEAVY now shoots projectiles</li>
 			<li>(Oswald / Base Player) 
 			Now player code does completely nothing when game paused</li>
+			<li>(Base Mob) 
+			Base mob tracks main boss global position,
+			and 3 new actions centered around main boss pos (move_torward, orbit, observe)</li>
 		</ul>
 	</li>	
 	<li>

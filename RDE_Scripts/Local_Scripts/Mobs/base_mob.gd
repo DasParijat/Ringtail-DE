@@ -24,6 +24,7 @@ var mob_id : int # Unique id for mob
 var target_pos : Vector2 = Vector2(0, 0)
 var player_pos : Vector2 
 var player_global_pos : Vector2
+var main_boss_global_pos : Vector2
 
 var player_hp : float
 var is_near_player : bool = false
@@ -49,9 +50,11 @@ var process_enabled : bool = true
 
 var default_params = {
 	"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
+	"move_torward_mainB": {"offset": 1, "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"move_torward_point": {"target": Vector2(0, 0), "delay": 0, "speed": 50, "smooth": 50, "length": 1},
 	"orbit_point": {"target": Vector2(0, 0), "radius": 100, "speed": 10, "length": 1},
 	"orbit_player": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
+	"orbit_mainB": {"offset": 1, "radius": 100, "speed": 10, "length": 1},
 	"action_rotate": {"rotate": 90, "speed": 5, "length": 1},
 	"move": {"speed": 50, "rotate": 0, "length": 1},
 	"move_dir": {"speed": 50, "direction": 90, "length": 1},
@@ -218,7 +221,7 @@ func sprite_dir_handling() -> void:
 	# flip_v is so when heading in dir, it doesn't look upside-down
 
 func get_cur_stats() -> Dictionary:
-	## For the main boss to give stats globally that fight_ui can track
+	## For the main boss to give stats globally that fight_ui and other mobs can track
 	return {
 		"position": global_position,
 		"max_hp": health_res.max_hp,
@@ -408,6 +411,14 @@ func move_torward_player(params: Dictionary) -> void:
 	
 	move_torward((player_pos * offset), params)
 
+func move_torward_mainB(params: Dictionary) -> void:
+	## Move torward main boss
+	var offset = params["offset"] 
+	# If boss wants to move to a pos in relation to player
+	# Ex. Boss wants to go opp coords of player, offset = -1
+	
+	move_torward((main_boss_global_pos * offset), params)
+	
 func orbit(target : Vector2, params: Dictionary) -> void:
 	## Circle around a target, used as base for other orbit func
 	var radius = params["radius"]
@@ -431,9 +442,19 @@ func orbit_player(params : Dictionary) -> void:
 	var offset = params["offset"]
 	orbit((player_pos * offset), params)
 
+func orbit_mainB(params : Dictionary) -> void:
+	## Circle around the main boss
+	var offset = params["offset"]
+	orbit((player_pos * offset), params)
+	
 func observe_player(length : float) -> void:
 	## Look at player for a specified length
 	look_at(player_pos)
+	run(length)
+	
+func observe_mainB(length : float) -> void:
+	## Look at main boss for a specified length
+	look_at(main_boss_global_pos)
 	run(length)
 
 func teleport(target : Vector2) -> void:
@@ -466,6 +487,8 @@ func _on_get_cur_stats(type, stats):
 		
 		distance_to_player = player_pos.distance_to(global_position)
 		#print("distance to play: ", distance_to_player)
+	elif type == "MAIN_BOSS":
+		main_boss_global_pos = stats["position"]
 
 func get_rand_player_pos(from_x : float, to_x : float, from_y : float, to_y : float) -> Vector2:
 	## Returns a randomized position in relation to player_pos
