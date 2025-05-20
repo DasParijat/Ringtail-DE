@@ -19,7 +19,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position = base.position
-	
+	if GlobalTime.is_paused:
+		return
+		
 	#if not GlobalPlayer.power_activated:
 	#	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	

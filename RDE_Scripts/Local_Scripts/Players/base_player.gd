@@ -48,7 +48,10 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if GlobalTime.is_paused:
+		return
 	total_delta += delta
+	
 	# Constantly updating global player stats
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	# TODO make player invincible on gane won signal
@@ -59,15 +62,14 @@ func _process(delta: float) -> void:
 	player_res.cur_power = clampf(player_res.cur_power, 0, player_res.max_power)
 	
 	# Checks
-	if not GlobalTime.is_paused:
-		rest_check(delta)
-		death_check()
-		test_function()
-		
-		if GlobalTime.process_interval(0.3, total_delta, delta):
-			prev_hp = health_res.cur_hp
-		
-		is_hurting = prev_hp > health_res.cur_hp
+	rest_check(delta)
+	death_check()
+	test_function()
+	
+	# Updares is_hurting
+	if GlobalTime.process_interval(0.3, total_delta, delta):
+		prev_hp = health_res.cur_hp
+	is_hurting = prev_hp > health_res.cur_hp
 	
 func movement(cur_speed : float) -> void:
 	## Handles all movement of player

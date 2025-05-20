@@ -66,6 +66,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(5/19/25)
 			<li>(MinitailHEAVY) 
+			MinitalHEAVY now shoots projectiles</li>
+			<li>(Oswald / Base Player) 
+			Now player code does completely nothing when game paused</li>
+		</ul>
+	</li>	
+	<li>
+		<ul>
+			(5/19/25)
+			<li>(MinitailHEAVY) 
 			Created MinitailHEAVY</li>
 			<li>(MinitailSHIELD) 
 			Created MinitailSHIELD</li>

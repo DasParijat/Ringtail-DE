@@ -5,8 +5,14 @@ extends Node2D
 @export var base : BaseMob 
 @export var controller : MobController
 
+## Bullet related variables
+var projectile : ShootAttack
+var _bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
+var _bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
+
 func _ready() -> void:
 	controller.action_handling(1)
+	projectile = ShootAttack.new(base, _bullet_load, _bullet_res, get_parent().get_parent())
 	
 func _process(delta : float) -> void:
 	controller.action_handling(1)
@@ -21,8 +27,10 @@ func action1() -> void:
 		base.action("move_torward_point", {"target": base.get_rand_player_pos(600, 700, 600, 700), "delay": 0, "speed": 150, "length": 1})
 		await GlobalTime.local_wait(1)
 	
+	projectile.shoot()
+	print("shot projectile from heavy")
 	controller.hold(false)
 
 func _exit_tree() -> void:
-	# Player receives a free 3 cur_power when minitail dies
+	# Player receives a free 5 cur_power when minitail dies
 	GlobalSignal.emit_signal("update_power", 5)
