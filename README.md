@@ -6,7 +6,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Implement new chunk healing system across base player, fight ui, GlobalPlayer(?), and player res</li>
 	<li>Implement audio (Sound Effects and Music)</li>
 	<li>Ringtail fight moves</li>
 	<li>Fight UI / Boss Bar UI 
@@ -62,6 +61,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(5/21/25)
+			<li>(Pumpshot / SMG) 
+			Slight modifications to player shotgun and smg (along with their bullets)</li>
+		</ul>
+	</li>	
 	<li>
 		<ul>
 			(5/20/25)
