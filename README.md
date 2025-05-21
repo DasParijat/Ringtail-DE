@@ -74,6 +74,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			and 3 new actions centered around main boss pos (move_torward, orbit, observe)</li>
 			<li>(MinitailSHIELD) 
 			Using new actions, M-Shield hovers around boss and leaps at player if player nearby</li>
+			<li>(FightUI / MobRes) 
+			Num of bars (for main boss hp bar) is determined by mob res of main boss</li>
 		</ul>
 	</li>	
 	<li>

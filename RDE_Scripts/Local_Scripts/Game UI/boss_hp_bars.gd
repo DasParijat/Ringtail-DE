@@ -29,6 +29,7 @@ func _on_get_cur_stats(type, stats) -> void:
 			
 			max_hp = stats["max_hp"]
 			mob_res = stats["mob_res"]
+			num_of_bars = mob_res.num_of_bars
 			
 			set_boss_hp_bar()
 		"MAIN_BOSS":

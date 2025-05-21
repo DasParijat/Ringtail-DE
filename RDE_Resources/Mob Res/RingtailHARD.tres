@@ -8,7 +8,7 @@
 script = ExtResource("1_56ugl")
 HP_NAME = "RingtailHARD"
 is_player = false
-max_hp = 450
+max_hp = 600
 damage_rate = 1.0
 invicible = false
 
@@ -22,6 +22,7 @@ hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
 texture = ExtResource("3_yt8cx")
 base_sprtflip_enabled = true
 health_comp = SubResource("Resource_x6ded")
+num_of_bars = 6
 is_boss = true
 is_enemy = true
 is_hittable = true

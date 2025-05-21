@@ -12,6 +12,7 @@ class_name MobRes
 
 @export_category("Health")
 @export var health_comp : HealthRes
+@export var num_of_bars : int = 3 # For main boss hp bar
 
 @export_category("Mob Specific")
 @export var is_boss : bool = false
