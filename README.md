@@ -64,7 +64,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
-			(5/19/25)
+			(5/20/25)
 			<li>(MinitailHEAVY) 
 			MinitalHEAVY now shoots projectiles</li>
 			<li>(Oswald / Base Player) 
@@ -72,6 +72,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Base Mob) 
 			Base mob tracks main boss global position,
 			and 3 new actions centered around main boss pos (move_torward, orbit, observe)</li>
+			<li>(MinitailSHIELD) 
+			Using new actions, M-Shield hovers around boss and leaps at player if player nearby</li>
 		</ul>
 	</li>	
 	<li>
