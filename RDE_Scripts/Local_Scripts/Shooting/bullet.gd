@@ -26,9 +26,6 @@ var total_follow_time : float = 0.0
 var player_pos : Vector2
 var main_boss_pos : Vector2
 
-var wait_time : float = 0
-var aim_on_wait : bool = true
-
 var total_delta = 0
 
 func _ready():
@@ -61,8 +58,8 @@ func falloff_calc():
 		
 func _physics_process(delta):
 	total_delta += delta
-	if total_delta < wait_time:
-		if aim_on_wait: follow_target_handling() # works if there's target
+	if total_delta < bullet_res.wait_time:
+		if bullet_res.aim_on_wait: follow_target_handling() # works if there's target
 		return
 		
 	position += transform.x * bullet_speed * delta

@@ -12,6 +12,10 @@ class_name BulletRes
 @export var damage : float
 @export var is_piercing : bool
 
+@export_category("Wait Launch")
+@export var wait_time : float = 0.0
+@export var aim_on_wait : bool = true
+
 @export_category("Falloff")
 @export var falloff_point : float # distance until damage starts decreasing
 @export var falloff_rate : float # high falloff means it deals less damage as it travels farther

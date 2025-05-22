@@ -27,9 +27,8 @@ func phase1():
 		projectile.shoot_laser({"speed": 1000, "in_group": "NONE"}, 15)
 	
 	if GlobalTime.process_interval(1.0, total_delta, get_process_delta_time()):
-		spawner.spawn_mob(minitail_aim, base.get_rand_player_pos(0, 100, 0, 100))
-		#for i in range(phase * 2):
-		#	spawner.spawn_mob(minitail_default, base.global_position)
+		for i in range(phase * 2):
+			spawner.spawn_mob(minitail_default, base.global_position)
 
 func phase2():
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
