@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://i84hrff3ce4x"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_7moxx"]
+[ext_resource type="Texture2D" uid="uid://c5b2mjnohxul0" path="res://RDE_Images/RGT_hollow_bullet.png" id="2_udy4d"]
+
+[resource]
+script = ExtResource("1_7moxx")
+texture = ExtResource("2_udy4d")
+fade_on_exit = true
+damage = 10.0
+is_piercing = false
+wait_time = 4.0
+aim_on_wait = true
+falloff_point = 5000.0
+falloff_rate = 0.5

@@ -9,6 +9,7 @@ extends Node2D
 
 var _bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var _hollow_bullet_res = preload("res://RDE_Resources/Bullet Res/RGT_Hollow_Projectile.tres")
+var _target_bullet_res = preload("res://RDE_Resources/Bullet Res/RGT_Target_Projectile.tres")
 var _bullet_load = preload("uid://cy77mdk6wv3fp")
 
 var mob_load = preload("uid://dynvq35tw44w5") # tutorial boss
@@ -18,10 +19,10 @@ var minitail_default = preload("res://RDE_Scenes/Entities/Mobs/minitail_default.
 var minitail_speed = preload("res://RDE_Scenes/Entities/Mobs/minitail_speed.tscn")
 var minitail_heavy = preload("res://RDE_Scenes/Entities/Mobs/minitail_heavy.tscn")
 var minitail_shield = preload("res://RDE_Scenes/Entities/Mobs/minitail_shield.tscn")
-var minitail_aim = preload("res://RDE_Scenes/Entities/Mobs/minitail_aim.tscn")
 
 var projectile : ShootAttack
 var hollow_projectile : ShootAttack
+var target_projectile : ShootAttack
 
 var total_delta : float = 0.0
 var phase : int = 1
@@ -30,21 +31,8 @@ func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	projectile = ShootAttack.new(base, _bullet_load, _bullet_res, get_parent().get_parent())
 	hollow_projectile = ShootAttack.new(base, _bullet_load, _hollow_bullet_res, get_parent().get_parent())
-# ATTACK PLAN
-# PHYSICAL
-# Follow player DONE
-# Dash to last player position (0.2s~ distance) DONE
-# Dash to opposite of last player position DONE
-# Dash to random places DONE
-# Follow and teleport when hits player DONE
-# Point and launch towards player (then teleport somewhere else) DONE
+	target_projectile = ShootAttack.new(base, _bullet_load, _target_bullet_res, get_parent().get_parent())
 
-# MAGIC
-# Random triangle bullets (like with obignale and darius) DONE
-# Explosion thing
-# Tracking triangles (will follow player for a bit before just going straight) DONE
-# Chain explosion thing
-# Laser triangles (series of triangles towards player) DONE
 
 func phase_handler(num_of_phases : int) -> void:
 	## Handles changing phases based on hp

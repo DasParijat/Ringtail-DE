@@ -63,6 +63,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/22/25)
+			<li>(MinitailAIM) 
+			REMOVED MinitalAIM (replaced with target projectile doing the same thing)</li>
+			<li>(Target Projectile) 
+			Created RGT_target_projectile, replacing MinitailAIM</li>
+			<li>(Bullet Res / Bullet) 
+			Wait time and aim_on_wait is determined by bullet_res</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/21/25)
 			<li>(Pumpshot / SMG) 
 			Slight modifications to player shotgun and smg (along with their bullets)</li>
@@ -74,7 +85,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Bullets can now wait before launching self,
 			can also aim while on wait</li>
 		</ul>
-	</li>	
+	</li>
 	<li>
 		<ul>
 			(5/20/25)
@@ -90,7 +101,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(FightUI / MobRes) 
 			Num of bars (for main boss hp bar) is determined by mob res of main boss</li>
 		</ul>
-	</li>	
+	</li>
 	<li>
 		<ul>
 			(5/19/25)
@@ -101,7 +112,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Ringtail) 
 			Ringtail has variables for new minitails</li>
 		</ul>
-	</li>	
+	</li>
 	<li>
 		<ul>
 			(5/18/25)
