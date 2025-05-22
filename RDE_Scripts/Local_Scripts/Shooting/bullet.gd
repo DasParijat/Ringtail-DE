@@ -26,6 +26,11 @@ var total_follow_time : float = 0.0
 var player_pos : Vector2
 var main_boss_pos : Vector2
 
+var wait_time : float = 0
+var aim_on_wait : bool = true
+
+var total_delta = 0
+
 func _ready():
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
@@ -55,6 +60,11 @@ func falloff_calc():
 		#print("bulscript, falloff calc: ", damage)
 		
 func _physics_process(delta):
+	total_delta += delta
+	if total_delta < wait_time:
+		if aim_on_wait: follow_target_handling() # works if there's target
+		return
+		
 	position += transform.x * bullet_speed * delta
 	follow_target_handling()
 		

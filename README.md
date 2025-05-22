@@ -70,6 +70,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created MinitailAIM, looking at player is a bit iffy</li>
 			<li>(HealthRes) 
 			Created function to automatically end itself</li>
+			<li>(Bullet) 
+			Bullets can now wait before launching self,
+			can also aim while on wait</li>
 		</ul>
 	</li>	
 	<li>
