@@ -70,6 +70,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created RGT_target_projectile, replacing MinitailAIM</li>
 			<li>(Bullet Res / Bullet) 
 			Wait time and aim_on_wait is determined by bullet_res</li>
+			<li>(Bullet) 
+			Follow target accounts for wait time</li>
 		</ul>
 	</li>
 	<li>

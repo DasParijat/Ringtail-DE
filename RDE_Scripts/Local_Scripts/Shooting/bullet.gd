@@ -26,7 +26,7 @@ var total_follow_time : float = 0.0
 var player_pos : Vector2
 var main_boss_pos : Vector2
 
-var total_delta = 0
+var total_delta : float = 0
 
 func _ready():
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -76,7 +76,12 @@ func _physics_process(delta):
 			queue_free()
 
 func follow_target_handling() -> void:
-	if not follow_target or total_follow_time >= (follow_target_length / 10):
+	if (total_delta >= bullet_res.wait_time and
+			(
+			not follow_target 
+			or total_follow_time >= (follow_target_length / 10)
+			)
+		):
 		return
 	
 	if target_group == "Player" and player_pos.distance_to(global_position) > 100:

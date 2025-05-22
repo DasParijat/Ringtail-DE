@@ -21,12 +21,13 @@ func _process(delta : float) -> void:
 
 func phase1():
 	if GlobalTime.process_interval(2.0, total_delta, get_process_delta_time()):
-		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
-	
+		#hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
+		target_projectile.shoot({"speed": 1400})
+		
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
 		projectile.shoot_laser({"speed": 1000, "in_group": "NONE"}, 15)
 	
-	if GlobalTime.process_interval(1.0, total_delta, get_process_delta_time()):
+	if GlobalTime.process_interval(5.0, total_delta, get_process_delta_time()):
 		for i in range(phase * 2):
 			spawner.spawn_mob(minitail_default, base.global_position)
 
