@@ -18,6 +18,7 @@ var minitail_default = preload("res://RDE_Scenes/Entities/Mobs/minitail_default.
 var minitail_speed = preload("res://RDE_Scenes/Entities/Mobs/minitail_speed.tscn")
 var minitail_heavy = preload("res://RDE_Scenes/Entities/Mobs/minitail_heavy.tscn")
 var minitail_shield = preload("res://RDE_Scenes/Entities/Mobs/minitail_shield.tscn")
+var minitail_aim = preload("res://RDE_Scenes/Entities/Mobs/minitail_aim.tscn")
 
 var projectile : ShootAttack
 var hollow_projectile : ShootAttack

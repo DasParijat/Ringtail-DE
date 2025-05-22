@@ -67,7 +67,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Pumpshot / SMG) 
 			Slight modifications to player shotgun and smg (along with their bullets)</li>
 			<li>(MinitailAIM) 
-			Created MinitailAIM (no mob specific code yet)</li>
+			Created MinitailAIM, looking at player is a bit iffy</li>
+			<li>(HealthRes) 
+			Created function to automatically end itself</li>
 		</ul>
 	</li>	
 	<li>

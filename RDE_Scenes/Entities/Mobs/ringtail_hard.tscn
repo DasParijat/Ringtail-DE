@@ -13,12 +13,12 @@ base = NodePath("base_mob")
 controller = NodePath("MobController")
 spawner = NodePath("MobSpawner")
 
+[node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
+
 [node name="MobController" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_ei6ni")]
 base = NodePath("../base_mob")
 
 [node name="MobSpawner" parent="." instance=ExtResource("4_u45r0")]
-
-[node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
 
 [node name="AttackLabel" type="Label" parent="."]
 visible = false

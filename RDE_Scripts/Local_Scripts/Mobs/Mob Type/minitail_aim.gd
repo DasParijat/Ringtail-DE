@@ -6,20 +6,27 @@ extends Node2D
 @export var controller : MobController
 
 func _ready() -> void:
-	controller.action_handling(1)
+	#controller.action_handling(1)
+	mob_res.sprtflip_enabled = false
+	base.action("observe_player", 3)
+	await GlobalTime.local_wait(3)
+	
+	base.action("move", {"speed": 1500, "length": 1})
+	await GlobalTime.local_wait(1)
+	
+	base.health_res.kill_self()
 	
 func _process(delta : float) -> void:
-	controller.action_handling(1)
+	#controller.action_handling(1)
+	pass
 
 
 func action1() -> void:
-	## Dash near to player
-	for i in range(5): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 200, "length": 0.5})
-		await GlobalTime.local_wait(0.5)
+	## Observe player, then move forward
+	base.action("observe_player", 1)
+	await GlobalTime.local_wait(1)
+	
+	base.action("move", {"speed": 800, "rotate": 0, "length": 1})
+	await GlobalTime.local_wait(1)
 	
 	controller.hold(false)
-
-func _exit_tree() -> void:
-	# Player receives a free 3 cur_power when minitail dies
-	GlobalSignal.emit_signal("update_power", 3)

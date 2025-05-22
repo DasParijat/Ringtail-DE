@@ -46,6 +46,8 @@ func take_dmg(dmg_amount : float):
 		if iframe_len >= 0.1 and dmg_amount > 0.0:
 			iframe_timer.start(iframe_len)
 
+func kill_self() -> void:
+	cur_hp = -1
+	
 func is_dead() -> bool:
 	return cur_hp <= 0
-	
