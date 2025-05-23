@@ -70,6 +70,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RDE Fonts) 
 			Created folder to hold font/keyboard related stuff,
 			Added folder of keyboard icons by Gamedev-Lab (Might change it)</li>
+			<li>(Explosion) 
+			Implemented CPU Particle effects</li>
 		</ul>
 	</li>
 	<li>

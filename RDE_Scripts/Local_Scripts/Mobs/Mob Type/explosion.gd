@@ -2,6 +2,8 @@ extends Node2D
 
 @export var mob_res : MobRes
 
+@onready var cpu_particles_2d : CPUParticles2D = $CPUParticles2D
+
 @export var explosion_texture : Texture
 @export var flash1_texture : Texture
 @export var flash2_texture : Texture
@@ -20,11 +22,14 @@ extends Node2D
 func _ready() -> void:
 	#print("explosion spawned")
 	mob_res.collision_dmg = 0
+	cpu_particles_2d.position = base.position
 	explosion(sprite)
 	
 func explosion(node : Node):
 	scale = Vector2(explosion_init_size)
 	await warning_animation()
+	
+	cpu_particles_2d.emitting = true
 	
 	mob_res.collision_dmg = explosion_dmg
 	
@@ -34,7 +39,7 @@ func explosion(node : Node):
 	tween.tween_property(node, "scale", explosion_max_size, 1).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(node, "modulate", Color(1,1,1,0), 1).set_ease(Tween.EASE_IN_OUT)
 	
-	# Cutoff point where explosion boom stops dealing damage
+	#Cutoff point where explosion boom stops dealing damage
 	if modulate.a < 0.2:
 		mob_res.collision_dmg = 0
 		
