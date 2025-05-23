@@ -17,6 +17,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <strong>Asset Credits:</strong>
 <ul>
 	<li>Grass and Tree Tilesets: cainos.itch.io/pixel-art-top-down-basic</li>
+	<li>Keyboard Icons: https://gamedev-lab.itch.io/simple-flat-keys-lightdark</li>
 	<li>Ringtail (Raccoon Itself): commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
 </ul>
 
@@ -66,6 +67,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/23/25)
 			<li>(Fight UI) 
 			Setting up keyboard hints</li>
+			<li>(RDE Fonts) 
+			Created folder to hold font/keyboard related stuff,
+			Added folder of keyboard icons by Gamedev-Lab (Might change it)</li>
 		</ul>
 	</li>
 	<li>

@@ -1,7 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=25 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
+[ext_resource type="Texture2D" uid="uid://87ur0qciwwvm" path="res://RDE_Fonts/Keyboard Icons/F-Key.png" id="2_aux8e"]
+[ext_resource type="Texture2D" uid="uid://dvu2c0no1ctd6" path="res://RDE_Fonts/Keyboard Icons/Shift-Key.png" id="3_lw3rg"]
+[ext_resource type="Texture2D" uid="uid://bdhvp8cfb6yer" path="res://RDE_Fonts/Keyboard Icons/Space-Key.png" id="4_x5iuu"]
+[ext_resource type="Texture2D" uid="uid://bhb4wsgojfq6j" path="res://RDE_Fonts/Keyboard Icons/E-Key.png" id="5_bpwsd"]
+[ext_resource type="Texture2D" uid="uid://cs6l0r60jfk4b" path="res://RDE_Fonts/Keyboard Icons/R-Key.png" id="6_ru38q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
@@ -67,7 +72,7 @@ subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jrqkd"]
 font = SubResource("SystemFont_xxacr")
-font_size = 20
+font_size = 30
 
 [sub_resource type="SystemFont" id="SystemFont_dtrxk"]
 font_names = PackedStringArray("Bahnschrift")
@@ -331,6 +336,8 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Rest Hint"]
 layout_mode = 2
+texture = ExtResource("2_aux8e")
+expand_mode = 3
 
 [node name="Power Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
 layout_mode = 2
@@ -342,6 +349,8 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Power Hint"]
 layout_mode = 2
+texture = ExtResource("3_lw3rg")
+expand_mode = 3
 
 [node name="Shoot Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
 layout_mode = 2
@@ -353,9 +362,12 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
 layout_mode = 2
+expand_mode = 3
 
 [node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
 layout_mode = 2
+texture = ExtResource("4_x5iuu")
+expand_mode = 3
 
 [node name="Switch Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
 layout_mode = 2
@@ -370,6 +382,8 @@ layout_mode = 2
 
 [node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
 layout_mode = 2
+texture = ExtResource("5_bpwsd")
+expand_mode = 3
 
 [node name="Reload Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
 layout_mode = 2
@@ -382,9 +396,8 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Reload Hint"]
 layout_mode = 2
-
-[node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Reload Hint"]
-layout_mode = 2
+texture = ExtResource("6_ru38q")
+expand_mode = 3
 
 [node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]
 visible = true

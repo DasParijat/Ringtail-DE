@@ -80,6 +80,7 @@ enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
 folder_colors={
 "res://RDE_Audio/": "purple",
+"res://RDE_Fonts/": "purple",
 "res://RDE_Images/": "purple",
 "res://RDE_Resources/": "blue",
 "res://RDE_Scenes/": "yellow",
