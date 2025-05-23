@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 		pass
 		
 	if GlobalTime.process_interval(0.5, total_delta, get_process_delta_time()):
-		spawner.spawn_mob(explosion_load, base.player_pos)
+		#spawner.spawn_mob(explosion_load, base.player_pos)
+		pass

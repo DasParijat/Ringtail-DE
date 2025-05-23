@@ -9,6 +9,7 @@ extends Area2D
 
 @onready var sprite = $Sprite2D
 @onready var audio_stream : AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var cpu_particles_2d : CPUParticles2D = $CPUParticles2D
 
 var bullet_travelled : float
 var bullet_speed : float = 100
@@ -45,6 +46,7 @@ func _ready():
 	# Bullets can be used as projectiles from mobs
 	if gun_res:
 		bullet_speed = gun_res.bullet_speed
+	cpu_particles_2d.emitting = true
 	
 func set_bullet_res(res):
 	bullet_res = res
@@ -61,7 +63,8 @@ func _physics_process(delta):
 	if total_delta < bullet_res.wait_time:
 		if bullet_res.aim_on_wait: follow_target_handling() # works if there's target
 		return
-		
+	#cpu_particles_2d.emitting = true
+	
 	position += transform.x * bullet_speed * delta
 	follow_target_handling()
 		
