@@ -67,7 +67,7 @@ subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jrqkd"]
 font = SubResource("SystemFont_xxacr")
-font_size = 25
+font_size = 20
 
 [sub_resource type="SystemFont" id="SystemFont_dtrxk"]
 font_names = PackedStringArray("Bahnschrift")
@@ -306,6 +306,85 @@ libraries = {
 "": SubResource("AnimationLibrary_fuu3l")
 }
 speed_scale = 2.0
+
+[node name="Keyboard Hints" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="VBoxContainer" parent="Keyboard Hints"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -131.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.875, 0.875)
+
+[node name="Rest Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Rest Hint"]
+layout_mode = 2
+text = "Rest "
+label_settings = SubResource("LabelSettings_jrqkd")
+
+[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Rest Hint"]
+layout_mode = 2
+
+[node name="Power Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Power Hint"]
+layout_mode = 2
+text = "Power"
+label_settings = SubResource("LabelSettings_jrqkd")
+
+[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Power Hint"]
+layout_mode = 2
+
+[node name="Shoot Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
+layout_mode = 2
+text = "Shoot"
+label_settings = SubResource("LabelSettings_jrqkd")
+
+[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
+layout_mode = 2
+
+[node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
+layout_mode = 2
+
+[node name="Switch Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Switch Hint"]
+layout_mode = 2
+text = "Switch"
+label_settings = SubResource("LabelSettings_jrqkd")
+
+[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
+layout_mode = 2
+
+[node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
+layout_mode = 2
+
+[node name="Reload Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Reload Hint"]
+layout_mode = 2
+text = "Reload
+"
+label_settings = SubResource("LabelSettings_jrqkd")
+
+[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Reload Hint"]
+layout_mode = 2
+
+[node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Reload Hint"]
+layout_mode = 2
 
 [node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]
 visible = true

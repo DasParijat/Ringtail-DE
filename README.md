@@ -63,6 +63,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/23/25)
+			<li>(Fight UI) 
+			Setting up keyboard hints</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/22/25)
 			<li>(MinitailAIM) 
 			REMOVED MinitalAIM (replaced with target projectile doing the same thing)</li>
