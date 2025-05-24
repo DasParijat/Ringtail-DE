@@ -46,10 +46,27 @@ func _ready():
 	# Bullets can be used as projectiles from mobs
 	if gun_res:
 		bullet_speed = gun_res.bullet_speed
-	cpu_particles_2d.emitting = true
+	
+	set_particle_effects()
 	
 func set_bullet_res(res):
 	bullet_res = res
+	
+func set_particle_effects() -> void:
+	if not bullet_res.enable_particle:
+		return
+	
+	# Set each particle effect from bullet_res
+	if bullet_res.particle_texture: cpu_particles_2d.texture = bullet_res.particle_texture
+	cpu_particles_2d.color = bullet_res.particle_color
+	cpu_particles_2d.lifetime = bullet_res.particle_lifetime
+	cpu_particles_2d.amount = bullet_res.particle_amount
+	cpu_particles_2d.spread = bullet_res.particle_spread
+	cpu_particles_2d.gravity = bullet_res.particle_gravity
+	cpu_particles_2d.explosiveness = bullet_res.particle_explosiveness
+	
+	# Start particle effect (oneshot)
+	cpu_particles_2d.emitting = true
 	
 	
 func falloff_calc():

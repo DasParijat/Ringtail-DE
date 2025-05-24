@@ -22,6 +22,7 @@ hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
 texture = ExtResource("3_ips8g")
 base_sprtflip_enabled = true
 health_comp = SubResource("Resource_qt1js")
+num_of_bars = 3
 is_boss = true
 is_enemy = true
 is_hittable = true

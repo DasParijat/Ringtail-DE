@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 		#hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
 		pass
 		
-	if GlobalTime.process_interval(0.5, total_delta, get_process_delta_time()):
-		#spawner.spawn_mob(explosion_load, base.player_pos)
+	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
+		spawner.spawn_mob(explosion_load, base.player_pos)
 		pass

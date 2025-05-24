@@ -21,6 +21,7 @@ hp_bg_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_l0rrn")
 base_sprtflip_enabled = false
 health_comp = SubResource("Resource_ad0pf")
+num_of_bars = 3
 is_boss = false
 is_enemy = true
 is_hittable = false

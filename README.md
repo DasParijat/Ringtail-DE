@@ -72,8 +72,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Added folder of keyboard icons by Gamedev-Lab (Might change it)</li>
 			<li>(Explosion) 
 			Implemented CPU Particle effects</li>
-			<li>(Bullet) 
-			Testing particles with bullets</li>
+			<li>(Bullet / Bullet Res) 
+			Particles added to bullets, modifiable via bullet res</li>
 		</ul>
 	</li>
 	<li>

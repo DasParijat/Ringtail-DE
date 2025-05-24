@@ -19,3 +19,13 @@ class_name BulletRes
 @export_category("Falloff")
 @export var falloff_point : float # distance until damage starts decreasing
 @export var falloff_rate : float # high falloff means it deals less damage as it travels farther
+
+@export_category("Particle Effects")
+@export var enable_particle : bool = false
+@export var particle_color : Color = Color.WHITE
+@export var particle_texture : Texture2D
+@export var particle_lifetime : float = 0.5
+@export var particle_gravity : Vector2 = Vector2(-200, 0)
+@export var particle_explosiveness : float = 0.0
+@export var particle_amount : int = 8
+@export var particle_spread : float = 45.0
