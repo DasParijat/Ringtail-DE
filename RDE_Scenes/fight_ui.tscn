@@ -1,12 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=27 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
-[ext_resource type="Texture2D" uid="uid://87ur0qciwwvm" path="res://RDE_Fonts/Keyboard Icons/F-Key.png" id="2_aux8e"]
-[ext_resource type="Texture2D" uid="uid://dvu2c0no1ctd6" path="res://RDE_Fonts/Keyboard Icons/Shift-Key.png" id="3_lw3rg"]
-[ext_resource type="Texture2D" uid="uid://bdhvp8cfb6yer" path="res://RDE_Fonts/Keyboard Icons/Space-Key.png" id="4_x5iuu"]
-[ext_resource type="Texture2D" uid="uid://bhb4wsgojfq6j" path="res://RDE_Fonts/Keyboard Icons/E-Key.png" id="5_bpwsd"]
-[ext_resource type="Texture2D" uid="uid://cs6l0r60jfk4b" path="res://RDE_Fonts/Keyboard Icons/R-Key.png" id="6_ru38q"]
+[ext_resource type="Texture2D" uid="uid://dd3tgytn5lkr7" path="res://RDE_Fonts/Keyboard Icons V2/F_Key_Dark.png" id="2_pktw2"]
+[ext_resource type="Texture2D" uid="uid://cuc7avrn4x2eu" path="res://RDE_Fonts/Keyboard Icons V2/Shift_Key_Dark.png" id="3_fy8u5"]
+[ext_resource type="Texture2D" uid="uid://iioodcsoaw86" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Left_Key_Dark.png" id="4_ja52t"]
+[ext_resource type="Texture2D" uid="uid://05hdysrh24l8" path="res://RDE_Fonts/Keyboard Icons V2/Space_Key_Dark.png" id="5_dl7xu"]
+[ext_resource type="Texture2D" uid="uid://b1pmq1afkiw2e" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Middle_Key_Dark.png" id="6_prnx7"]
+[ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="7_cpoao"]
+[ext_resource type="Texture2D" uid="uid://qm6fccxpfa8t" path="res://RDE_Fonts/Keyboard Icons V2/R_Key_Dark.png" id="8_jeggs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
@@ -336,7 +338,7 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Rest Hint"]
 layout_mode = 2
-texture = ExtResource("2_aux8e")
+texture = ExtResource("2_pktw2")
 expand_mode = 3
 
 [node name="Power Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
@@ -349,7 +351,7 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Power Hint"]
 layout_mode = 2
-texture = ExtResource("3_lw3rg")
+texture = ExtResource("3_fy8u5")
 expand_mode = 3
 
 [node name="Shoot Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
@@ -362,11 +364,12 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
 layout_mode = 2
+texture = ExtResource("4_ja52t")
 expand_mode = 3
 
 [node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
 layout_mode = 2
-texture = ExtResource("4_x5iuu")
+texture = ExtResource("5_dl7xu")
 expand_mode = 3
 
 [node name="Switch Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
@@ -379,10 +382,12 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
 layout_mode = 2
+texture = ExtResource("6_prnx7")
+expand_mode = 3
 
 [node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
 layout_mode = 2
-texture = ExtResource("5_bpwsd")
+texture = ExtResource("7_cpoao")
 expand_mode = 3
 
 [node name="Reload Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
@@ -396,7 +401,7 @@ label_settings = SubResource("LabelSettings_jrqkd")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Reload Hint"]
 layout_mode = 2
-texture = ExtResource("6_ru38q")
+texture = ExtResource("8_jeggs")
 expand_mode = 3
 
 [node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]

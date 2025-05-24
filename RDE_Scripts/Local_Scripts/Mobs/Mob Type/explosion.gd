@@ -29,7 +29,7 @@ func explosion(node : Node):
 	scale = Vector2(explosion_init_size)
 	await warning_animation()
 	
-	cpu_particles_2d.emitting = true
+	#cpu_particles_2d.emitting = true
 	
 	mob_res.collision_dmg = explosion_dmg
 	
