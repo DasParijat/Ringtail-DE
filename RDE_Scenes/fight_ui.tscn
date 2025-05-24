@@ -330,6 +330,7 @@ speed_scale = 2.0
 script = ExtResource("2_va28n")
 
 [node name="CenterContainer" type="CenterContainer" parent="Keyboard Hints"]
+modulate = Color(0.89, 0.88377, 0.8277, 0.784314)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

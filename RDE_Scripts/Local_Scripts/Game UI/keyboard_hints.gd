@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var parent_container : Container = $CenterContainer
+
 @onready var rest_hint : HBoxContainer = $"CenterContainer/VboxContainer/Rest Hint"
 @onready var power_hint : HBoxContainer = $"CenterContainer/VboxContainer/Power Hint"
 @onready var shoot_hint : HBoxContainer = $"CenterContainer/VboxContainer/Shoot Hint"
@@ -9,14 +11,26 @@ extends CanvasLayer
 # Colors
 # NOTE - The colors used primarily work with Ringtail/Oswald Fight
 #		Could make it more flexible, but the scope of RDE doesn't require so
-var usable_color : Color = Color(1, 0.98, 0.86, 0.9)
-var in_use_color : Color = Color(1.5, 1.48, 1.26, 0.9)
-var disabled_color : Color = Color(1, 0.98, 0.86, 0.4)
+var usable_color : Color# = Color(1, 0.98, 0.86, 0.9)
+var in_use_color : Color# = Color(1.5, 1.48, 1.26, 0.9)
+var disabled_color : Color# = Color(1, 0.98, 0.86, 0.4)
+
+var alpha_deviation : float = 0.5
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
-	#GlobalPlayer.is_shooting
+	
+	# Setting colors based of parent_container modulate
+	usable_color = parent_container.modulate
+	in_use_color = Color(parent_container.modulate.r + alpha_deviation,
+							parent_container.modulate.g + alpha_deviation,
+							parent_container.modulate.b + alpha_deviation,
+							parent_container.modulate.a)
+	disabled_color = Color(parent_container.modulate.r,
+							parent_container.modulate.g,
+							parent_container.modulate.b,
+							parent_container.modulate.a - alpha_deviation)
 
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats 
