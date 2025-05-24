@@ -64,6 +64,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/24/25)
+			<li>(Fight UI) 
+			Setting up keyboard hint script,
+			Reload, Shoot, and Switch hints are responsive</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/23/25)
 			<li>(Fight UI) 
 			Setting up keyboard hints</li>

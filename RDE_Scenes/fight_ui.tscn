@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=28 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
 [ext_resource type="Texture2D" uid="uid://dd3tgytn5lkr7" path="res://RDE_Fonts/Keyboard Icons V2/F_Key_Dark.png" id="2_pktw2"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/keyboard_hints.gd" id="2_va28n"]
 [ext_resource type="Texture2D" uid="uid://cuc7avrn4x2eu" path="res://RDE_Fonts/Keyboard Icons V2/Shift_Key_Dark.png" id="3_fy8u5"]
 [ext_resource type="Texture2D" uid="uid://iioodcsoaw86" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Left_Key_Dark.png" id="4_ja52t"]
 [ext_resource type="Texture2D" uid="uid://05hdysrh24l8" path="res://RDE_Fonts/Keyboard Icons V2/Space_Key_Dark.png" id="5_dl7xu"]
@@ -315,6 +316,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Keyboard Hints" type="CanvasLayer" parent="."]
+script = ExtResource("2_va28n")
 
 [node name="PanelContainer" type="VBoxContainer" parent="Keyboard Hints"]
 anchors_preset = 3
