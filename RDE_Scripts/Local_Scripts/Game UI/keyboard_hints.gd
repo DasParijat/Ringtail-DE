@@ -1,15 +1,17 @@
 extends CanvasLayer
 
-@onready var rest_hint : HBoxContainer = $"PanelContainer/Rest Hint"
-@onready var power_hint : HBoxContainer = $"PanelContainer/Power Hint"
-@onready var shoot_hint : HBoxContainer = $"PanelContainer/Shoot Hint"
-@onready var switch_hint : HBoxContainer = $"PanelContainer/Switch Hint"
-@onready var reload_hint : HBoxContainer = $"PanelContainer/Reload Hint"
+@onready var rest_hint : HBoxContainer = $"CenterContainer/VboxContainer/Rest Hint"
+@onready var power_hint : HBoxContainer = $"CenterContainer/VboxContainer/Power Hint"
+@onready var shoot_hint : HBoxContainer = $"CenterContainer/VboxContainer/Shoot Hint"
+@onready var switch_hint : HBoxContainer = $"CenterContainer/VboxContainer/Switch Hint"
+@onready var reload_hint : HBoxContainer = $"CenterContainer/VboxContainer/Reload Hint"
 
 # Colors
-var usable_color : Color = Color(1,1,1)
-var in_use_color : Color = Color(1.5, 1.5, 1.5)
-var disabled_color : Color = Color(1,1,1, 0.3)
+# NOTE - The colors used primarily work with Ringtail/Oswald Fight
+#		Could make it more flexible, but the scope of RDE doesn't require so
+var usable_color : Color = Color(1, 0.98, 0.86, 0.9)
+var in_use_color : Color = Color(1.5, 1.48, 1.26, 0.9)
+var disabled_color : Color = Color(1, 0.98, 0.86, 0.4)
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))

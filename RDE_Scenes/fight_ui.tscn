@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=30 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
@@ -183,6 +183,17 @@ _data = {
 "RESET": SubResource("Animation_mk6c8")
 }
 
+[sub_resource type="SystemFont" id="SystemFont_frf42"]
+font_names = PackedStringArray("Bahnschrift")
+font_weight = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri3fb"]
+line_spacing = 1.0
+font = SubResource("SystemFont_frf42")
+font_size = 13
+font_color = Color(0.843184, 0.843184, 0.843184, 1)
+outline_size = 1
+
 [node name="fight_ui" type="CanvasLayer"]
 script = ExtResource("1_pahoy")
 
@@ -318,90 +329,106 @@ speed_scale = 2.0
 [node name="Keyboard Hints" type="CanvasLayer" parent="."]
 script = ExtResource("2_va28n")
 
-[node name="PanelContainer" type="VBoxContainer" parent="Keyboard Hints"]
+[node name="CenterContainer" type="CenterContainer" parent="Keyboard Hints"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -131.0
+offset_left = -161.0
+offset_top = -171.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.875, 0.875)
+scale = Vector2(0.85, 0.85)
 
-[node name="Rest Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+[node name="VboxContainer" type="VBoxContainer" parent="Keyboard Hints/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Rest Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Rest Hint"]
+[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Rest Hint"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Rest "
 label_settings = SubResource("LabelSettings_jrqkd")
 
-[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Rest Hint"]
+[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Rest Hint"]
 layout_mode = 2
 texture = ExtResource("2_pktw2")
 expand_mode = 3
 
-[node name="Power Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+[node name="Power Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Power Hint"]
+[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Power"
 label_settings = SubResource("LabelSettings_jrqkd")
 
-[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Power Hint"]
+[node name="KeyHint" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[Hold]"
+label_settings = SubResource("LabelSettings_ri3fb")
+horizontal_alignment = 2
+
+[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
 layout_mode = 2
 texture = ExtResource("3_fy8u5")
 expand_mode = 3
 
-[node name="Shoot Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+[node name="Shoot Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
+[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Shoot"
 label_settings = SubResource("LabelSettings_jrqkd")
 
-[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
+[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
 layout_mode = 2
 texture = ExtResource("4_ja52t")
 expand_mode = 3
 
-[node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Shoot Hint"]
+[node name="Key2" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
 layout_mode = 2
 texture = ExtResource("5_dl7xu")
 expand_mode = 3
 
-[node name="Switch Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+[node name="Switch Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Switch Hint"]
+[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Switch"
 label_settings = SubResource("LabelSettings_jrqkd")
 
-[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
+[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
 layout_mode = 2
 texture = ExtResource("6_prnx7")
 expand_mode = 3
 
-[node name="Key2" type="TextureRect" parent="Keyboard Hints/PanelContainer/Switch Hint"]
+[node name="Key2" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
 layout_mode = 2
 texture = ExtResource("7_cpoao")
 expand_mode = 3
 
-[node name="Reload Hint" type="HBoxContainer" parent="Keyboard Hints/PanelContainer"]
+[node name="Reload Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Keyboard Hints/PanelContainer/Reload Hint"]
+[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Reload Hint"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Reload
 "
 label_settings = SubResource("LabelSettings_jrqkd")
 
-[node name="Key" type="TextureRect" parent="Keyboard Hints/PanelContainer/Reload Hint"]
+[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Reload Hint"]
 layout_mode = 2
 texture = ExtResource("8_jeggs")
 expand_mode = 3
