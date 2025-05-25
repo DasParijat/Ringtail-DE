@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=31 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
 [ext_resource type="Texture2D" uid="uid://dd3tgytn5lkr7" path="res://RDE_Fonts/Keyboard Icons V2/F_Key_Dark.png" id="2_pktw2"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/keyboard_hints.gd" id="2_va28n"]
+[ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="3_cedcq"]
 [ext_resource type="Texture2D" uid="uid://cuc7avrn4x2eu" path="res://RDE_Fonts/Keyboard Icons V2/Shift_Key_Dark.png" id="3_fy8u5"]
 [ext_resource type="Texture2D" uid="uid://iioodcsoaw86" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Left_Key_Dark.png" id="4_ja52t"]
 [ext_resource type="Texture2D" uid="uid://05hdysrh24l8" path="res://RDE_Fonts/Keyboard Icons V2/Space_Key_Dark.png" id="5_dl7xu"]
@@ -190,7 +191,7 @@ font_weight = 100
 [sub_resource type="LabelSettings" id="LabelSettings_ri3fb"]
 line_spacing = 1.0
 font = SubResource("SystemFont_frf42")
-font_size = 13
+font_size = 10
 font_color = Color(0.843184, 0.843184, 0.843184, 1)
 outline_size = 1
 
@@ -330,21 +331,23 @@ speed_scale = 2.0
 script = ExtResource("2_va28n")
 
 [node name="CenterContainer" type="CenterContainer" parent="Keyboard Hints"]
-modulate = Color(0.89, 0.88377, 0.8277, 0.784314)
+modulate = Color(0.95, 0.9424, 0.874, 0.960784)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -161.0
-offset_top = -171.0
+offset_left = -157.845
+offset_top = -185.935
+offset_right = 3.15503
+offset_bottom = 9.065
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.85, 0.85)
+scale = Vector2(0.915, 0.915)
 
 [node name="VboxContainer" type="VBoxContainer" parent="Keyboard Hints/CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 10
 
 [node name="Rest Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
 layout_mode = 2
@@ -352,8 +355,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Rest Hint"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Rest "
-label_settings = SubResource("LabelSettings_jrqkd")
+text = "Heal"
+label_settings = ExtResource("3_cedcq")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Rest Hint"]
 layout_mode = 2
@@ -367,7 +370,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Power"
-label_settings = SubResource("LabelSettings_jrqkd")
+label_settings = ExtResource("3_cedcq")
 
 [node name="KeyHint" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
 layout_mode = 2
@@ -388,7 +391,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Shoot"
-label_settings = SubResource("LabelSettings_jrqkd")
+label_settings = ExtResource("3_cedcq")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
 layout_mode = 2
@@ -407,7 +410,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Switch"
-label_settings = SubResource("LabelSettings_jrqkd")
+label_settings = ExtResource("3_cedcq")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
 layout_mode = 2
@@ -427,7 +430,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Reload
 "
-label_settings = SubResource("LabelSettings_jrqkd")
+label_settings = ExtResource("3_cedcq")
 
 [node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Reload Hint"]
 layout_mode = 2

@@ -68,7 +68,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Fight UI) 
 			Setting up keyboard hint script,
 			Updated visuals of keyboard hints (Coloring based of modulate),
-			Reload, Shoot, and Switch hints are responsive</li>
+			all hints are responsive</li>
 		</ul>
 	</li>
 	<li>
