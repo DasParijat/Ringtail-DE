@@ -18,6 +18,7 @@ var rest_timeout : float = 0.0
 
 var is_near_enemy : bool = false
 var is_hurting : bool = false
+var cur_gun_weight : float
 
 var stored_hp : float = 0
 
@@ -83,7 +84,7 @@ func movement(cur_speed : float) -> void:
 	
 	# Input handling / Sets final speed
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
-	velocity = input_direction * (cur_speed * speed_modifier)
+	velocity = input_direction * ((cur_speed - cur_gun_weight) * speed_modifier)
 	
 	move_and_slide() # actual movement
 

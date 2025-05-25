@@ -14,6 +14,7 @@ class_name GunRes
 @export_enum("AUTO", "MANUAL") var reload_type : String = "AUTO"
 @export var reload_time : float = 2.0 # in seconds
 @export var is_automatic : bool = true             
+@export var weight : float = 2.0
 
 @export_category("Bullet")
 @export var bullet_res : BulletRes   

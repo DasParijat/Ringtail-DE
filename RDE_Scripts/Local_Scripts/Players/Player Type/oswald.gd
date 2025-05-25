@@ -28,6 +28,8 @@ func _process(delta: float) -> void:
 	cur_gun = gun_array[gun_index]
 	next_gun = gun_array[player_res.get_next_gun_index(gun_index)]
 	
+	base.cur_gun_weight = cur_gun.gun_res.weight
+	
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	
 	if (player_res.cur_power > player_res.power_ex_cutoff 

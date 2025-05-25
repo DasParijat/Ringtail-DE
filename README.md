@@ -64,6 +64,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/25/25)
+			<li>(Gun Res / Base Player) 
+			Added gun weights (each gun affects how fast the player moves)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/24/25)
 			<li>(Fight UI) 
 			Setting up keyboard hint script,
