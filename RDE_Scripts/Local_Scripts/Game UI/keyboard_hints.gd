@@ -17,7 +17,7 @@ var usable_color : Color# = Color(1, 0.98, 0.86, 0.9)
 var in_use_color : Color# = Color(1.5, 1.48, 1.26, 0.9)
 var disabled_color : Color# = Color(1, 0.98, 0.86, 0.4)
 
-var using_alpha_deviation : float = -0.2
+var using_alpha_deviation : float = 0.3
 var disabled_alpha_deviation : float = -0.5
 
 func _ready() -> void:

@@ -38,14 +38,14 @@ func _ready() -> void:
 	#global_position = base.global_position
 	#global_rotation = base.global_rotation
 
-func action_handling(next_action : int):
+func action_handling(next_action : int, action_id : String = "action"):
 	if base.can_change_action() and no_hold:
 		#cur_action += 1 
 		if attack_label:
 			attack_label.text = "ATTACK " + str(cur_action)
 		
 		base.mob_res.sprtflip_enabled = base.mob_res.base_sprtflip_enabled
-		var action_name = "action" + str(cur_action)
+		var action_name = action_id + str(cur_action)
 		if attack_node.has_method(action_name):
 			hold(true)
 			attack_node.call(action_name)

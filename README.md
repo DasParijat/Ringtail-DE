@@ -67,6 +67,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/25/25)
 			<li>(Gun Res / Base Player) 
 			Added gun weights (each gun affects how fast the player moves)</li>
+			<li>(RingtailHARD) 
+			Working on RingtailHARD fight sequence</li>
+			<li>(Mob Controller) 
+			action_handling handles functions with different naming conventions</li
 		</ul>
 	</li>
 	<li>
