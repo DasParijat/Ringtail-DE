@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="FightRes" load_steps=6 format=3 uid="uid://ds5x2eini1j0p"]
+[gd_resource type="Resource" script_class="FightRes" load_steps=8 format=3 uid="uid://ds5x2eini1j0p"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="1_77xtu"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/fightRes.gd" id="1_g67wl"]
 [ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="1_iqtjs"]
+[ext_resource type="Resource" uid="uid://djpokt8ejdsth" path="res://RDE_Resources/Gun Res/UltraSMG.tres" id="2_o5cqe"]
+[ext_resource type="Resource" uid="uid://bp54wtlywyi31" path="res://RDE_Resources/Gun Res/PumpShotgun.tres" id="3_dmmdt"]
 [ext_resource type="PackedScene" uid="uid://cja72mr27m4j3" path="res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn" id="3_syque"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="7_8wdhd"]
 
@@ -15,4 +17,4 @@ single_boss_spawn = Vector2(0, -200)
 game_modes = Array[String]([])
 player_scene = ExtResource("1_iqtjs")
 player_spawn = Vector2(100, 20)
-gun_array = Array[ExtResource("1_77xtu")]([])
+gun_array = Array[ExtResource("1_77xtu")]([ExtResource("2_o5cqe"), ExtResource("3_dmmdt")])

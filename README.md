@@ -70,7 +70,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(RingtailHARD) 
 			Working on RingtailHARD fight sequence</li>
 			<li>(Mob Controller) 
-			action_handling handles functions with different naming conventions</li
+			action_handling handles functions with different naming conventions</li>
+			<li>(UltraSMG) 
+			Created buffed version of SMG (used as test tool to beat boss quicker)</li>
 		</ul>
 	</li>
 	<li>

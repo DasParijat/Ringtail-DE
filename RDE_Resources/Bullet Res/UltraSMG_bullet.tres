@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="BulletRes" load_steps=4 format=3 uid="uid://b1p273yihtgqh"]
+
+[ext_resource type="AudioStream" uid="uid://bkp80sq43vtdq" path="res://RDE_Audio/base_ap_uzi_shoot_sound.mp3" id="1_65irw"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="2_4otdw"]
+[ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="3_m8v4l"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_4otdw")
+texture = ExtResource("3_m8v4l")
+gun_shot_sound = ExtResource("1_65irw")
+fade_on_exit = false
+damage = 5.0
+is_piercing = false
+wait_time = 0.0
+aim_on_wait = true
+falloff_point = 6000.0
+falloff_rate = 0.1
+enable_particle = true
+particle_color = Color(1, 0.823381, 0.413938, 1)
+particle_lifetime = 0.5
+particle_gravity = Vector2(-200, 0)
+particle_explosiveness = 0.0
+particle_amount = 15
+particle_spread = 45.0
