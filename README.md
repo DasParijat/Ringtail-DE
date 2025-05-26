@@ -62,6 +62,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/26/25)
+			<li>(RingtailHARD) 
+			Working on balancing RingtailHARD</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/25/25)
 			<li>(Gun Res / Base Player) 
 			Added gun weights (each gun affects how fast the player moves)</li>
