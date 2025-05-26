@@ -7,6 +7,7 @@ extends Node2D
 @export var base : BasePlayer 
 @export var gun_array : Array[PlayerGun]
 @export var switch_timer : Timer
+@export var auto_power_timer : Timer
 
 var cur_gun : PlayerGun
 var next_gun : PlayerGun
@@ -41,13 +42,33 @@ func _process(delta: float) -> void:
 
 func power_move() -> void:
 	## this power move logic is EXCLUSIVE to oswald
-	# Handling conditions for power_activated
-	GlobalPlayer.power_activated = (
+	GlobalPlayer.power_activated = is_power_activated()
+	
+	# power move itself
+	if GlobalPlayer.power_activated:
+		auto_power_timer.start()
+		base.set_speedmod(1.5) 
+		GlobalTime.cur_time_scale = 0.3 
+		
+		player_res.cur_power -= 0.1
+	else:
+		GlobalTime.cur_time_scale = 1
+		base.set_speedmod(1)
+
+func is_power_activated() -> bool:
+	## Handling conditions for power_activated
+	return (
+		(
+			player_res.cur_power > 3
+			or (GlobalPlayer.power_activated and player_res.cur_power > 0)
+		)
+			and
 		(
 		Input.is_action_pressed("sprint") 
 		or (base.is_near_enemy 
 			and player_res.cur_power > player_res.power_ex_cutoff 
-			and player_res.health_res.cur_hp < 15
+			and player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5
+			and auto_power_timer.is_stopped()
 			and GlobalPlayer.is_moving)
 		) 
 		or (base.is_near_enemy
@@ -55,20 +76,6 @@ func power_move() -> void:
 		and not GlobalTime.is_paused and player_res.cur_power > 1 
 	)
 	
-	# power move itself
-	if GlobalPlayer.power_activated:
-		base.set_speedmod(1.5) 
-		GlobalTime.cur_time_scale = 0.3 
-		
-		if 1 == 0: #cur_gun.cur_ammo <= 0:
-			print("!! auto-switch")
-			gun_index = 1 #player_res.get_next_gun_index(gun_index)
-			
-		player_res.cur_power -= 0.1
-	else:
-		GlobalTime.cur_time_scale = 1
-		base.set_speedmod(1)
-		
 func _on_tree_exiting() -> void:
 	#print("oswald exit")
 	pass

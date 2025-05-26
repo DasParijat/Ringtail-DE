@@ -67,6 +67,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Working on balancing RingtailHARD</li>
 			<li>(Minitails) 
 			Modified how many power minitails give when they die</li>
+			<li>(Oswald) 
+			Tweaked when power activates / how it activates 
+			(There is a grace period between when power can be acivated again(mainly for auto-switch)
+			and player can't activate power if cur_power < 3)</li>
 		</ul>
 	</li>
 	<li>

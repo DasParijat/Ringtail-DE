@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://b5yku1mrxehwp" path="res://RDE_Scenes/Base Entities/base_player.tscn" id="3_eqyry"]
 [ext_resource type="PackedScene" uid="uid://c74x71o74tua8" path="res://RDE_Scenes/Shooting/gun.tscn" id="4_7lspv"]
 
-[node name="Oswald" type="Node2D" node_paths=PackedStringArray("base", "gun_array", "switch_timer")]
+[node name="Oswald" type="Node2D" node_paths=PackedStringArray("base", "gun_array", "switch_timer", "auto_power_timer")]
 script = ExtResource("1_qoyxg")
 base = NodePath("base_player")
 gun_array = [NodePath("PrimaryGun"), NodePath("SecGun")]
 switch_timer = NodePath("GunSwitchTimer")
+auto_power_timer = NodePath("AutoPowerTimer")
 
 [node name="base_player" parent="." instance=ExtResource("3_eqyry")]
 
@@ -18,6 +19,10 @@ switch_timer = NodePath("GunSwitchTimer")
 gun_index = 1
 
 [node name="GunSwitchTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AutoPowerTimer" type="Timer" parent="."]
+wait_time = 0.7
 one_shot = true
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
