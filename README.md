@@ -65,6 +65,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/26/25)
 			<li>(RingtailHARD) 
 			Working on balancing RingtailHARD</li>
+			<li>(Minitails) 
+			Modified how many power minitails give when they die</li>
 		</ul>
 	</li>
 	<li>

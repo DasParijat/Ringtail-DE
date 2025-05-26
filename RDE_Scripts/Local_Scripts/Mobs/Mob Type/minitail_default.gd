@@ -21,5 +21,4 @@ func action1() -> void:
 	controller.hold(false)
 
 func _exit_tree() -> void:
-	# Player receives a free 3 cur_power when minitail dies
-	GlobalSignal.emit_signal("update_power", 3)
+	GlobalSignal.emit_signal("update_power", 1)
