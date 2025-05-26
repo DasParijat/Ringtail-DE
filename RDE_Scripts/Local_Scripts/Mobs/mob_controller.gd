@@ -14,6 +14,7 @@ var cur_magic : int = 1 # used for magic attacks
 var can_chain_magic : bool = false
 
 var no_hold : bool = true
+var sequence_index : int = -1
 
 func chain_action(next_attack : int) -> void:
 	base.action("action_buffer", 0)
@@ -37,23 +38,41 @@ func _ready() -> void:
 	#print("boss added")
 	#global_position = base.global_position
 	#global_rotation = base.global_rotation
-
+	
+func action_sequence(sequence : Array[int], action_id : String = "action"):
+	## Handles a set sequence of actions
+	if !(base.can_change_action() and no_hold):
+		# NOTE: Tried turning above condition into own function,
+		#		but for some reason that breaks it
+		return
+	
+	# Update index
+	sequence_index += 1
+	if sequence_index > sequence.size() - 1:
+		sequence_index = 0
+	
+	action_handling(sequence[sequence_index], action_id)
+	
 func action_handling(next_action : int, action_id : String = "action"):
-	if base.can_change_action() and no_hold:
-		#cur_action += 1 
-		if attack_label:
-			attack_label.text = "ATTACK " + str(cur_action)
+	## Handles mob action execution and chaining actions 
+	if !(base.can_change_action() and no_hold):
+		#print("tried ", next_action)
+		return
 		
-		base.mob_res.sprtflip_enabled = base.mob_res.base_sprtflip_enabled
-		var action_name = action_id + str(cur_action)
-		if attack_node.has_method(action_name):
-			hold(true)
-			attack_node.call(action_name)
-		else:
-			#print("false attack")
-			hold(false)
-				
-		if not can_chain_action:
-			cur_action = next_action 
-		else:
-			can_chain_action = false
+	#cur_action += 1 
+	if attack_label:
+		attack_label.text = "ATTACK " + str(cur_action)
+
+	base.mob_res.sprtflip_enabled = base.mob_res.base_sprtflip_enabled
+	var action_name = action_id + str(cur_action)
+	if attack_node.has_method(action_name):
+		hold(true)
+		attack_node.call(action_name)
+	else:
+		#printerr("false attack")
+		hold(false)
+			
+	if not can_chain_action:
+		cur_action = next_action 
+	else:
+		can_chain_action = false

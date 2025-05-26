@@ -113,3 +113,8 @@ func action6() -> void:
 
 	controller.hold(false)
 	
+func chain_explosion(num_of_explosions : int = 5, time_gap : float = 1.0) -> void:
+	for i in range(num_of_explosions):
+		spawner.spawn_mob(explosion_load, base.player_pos)
+		await GlobalTime.local_wait(time_gap)
+		

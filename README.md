@@ -8,8 +8,6 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>Implement audio (Sound Effects and Music)</li>
 	<li>Ringtail fight moves</li>
-	<li>Fight UI / Boss Bar UI 
-	(keyboard hints)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Stylize menu and buttons</li>
 </ul>
@@ -68,9 +66,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Gun Res / Base Player) 
 			Added gun weights (each gun affects how fast the player moves)</li>
 			<li>(RingtailHARD) 
-			Working on RingtailHARD fight sequence</li>
+			Working on RingtailHARD fight sequence,
+			now takes advantage of mob controller changes to have a set sequence of attacks</li>
 			<li>(Mob Controller) 
-			action_handling handles functions with different naming conventions</li>
+			action_handling handles functions with different naming conventions,
+			Added action_sequencing to handle a set sequence of attacks</li>
 			<li>(UltraSMG) 
 			Created buffed version of SMG (used as test tool to beat boss quicker)</li>
 		</ul>
