@@ -1,16 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=21 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
-[ext_resource type="Texture2D" uid="uid://dd3tgytn5lkr7" path="res://RDE_Fonts/Keyboard Icons V2/F_Key_Dark.png" id="2_pktw2"]
-[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/keyboard_hints.gd" id="2_va28n"]
-[ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="3_cedcq"]
-[ext_resource type="Texture2D" uid="uid://cuc7avrn4x2eu" path="res://RDE_Fonts/Keyboard Icons V2/Shift_Key_Dark.png" id="3_fy8u5"]
-[ext_resource type="Texture2D" uid="uid://iioodcsoaw86" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Left_Key_Dark.png" id="4_ja52t"]
-[ext_resource type="Texture2D" uid="uid://05hdysrh24l8" path="res://RDE_Fonts/Keyboard Icons V2/Space_Key_Dark.png" id="5_dl7xu"]
-[ext_resource type="Texture2D" uid="uid://b1pmq1afkiw2e" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Middle_Key_Dark.png" id="6_prnx7"]
-[ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="7_cpoao"]
-[ext_resource type="Texture2D" uid="uid://qm6fccxpfa8t" path="res://RDE_Fonts/Keyboard Icons V2/R_Key_Dark.png" id="8_jeggs"]
+[ext_resource type="PackedScene" uid="uid://bra8qovhkkhxm" path="res://RDE_Scenes/keyboard_hints.tscn" id="2_gqfdu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
 
@@ -184,17 +176,6 @@ _data = {
 "RESET": SubResource("Animation_mk6c8")
 }
 
-[sub_resource type="SystemFont" id="SystemFont_frf42"]
-font_names = PackedStringArray("Bahnschrift")
-font_weight = 100
-
-[sub_resource type="LabelSettings" id="LabelSettings_ri3fb"]
-line_spacing = 1.0
-font = SubResource("SystemFont_frf42")
-font_size = 10
-font_color = Color(0.843184, 0.843184, 0.843184, 1)
-outline_size = 1
-
 [node name="fight_ui" type="CanvasLayer"]
 script = ExtResource("1_pahoy")
 
@@ -327,115 +308,11 @@ libraries = {
 }
 speed_scale = 2.0
 
-[node name="Keyboard Hints" type="CanvasLayer" parent="."]
-script = ExtResource("2_va28n")
-
-[node name="CenterContainer" type="CenterContainer" parent="Keyboard Hints"]
-modulate = Color(0.95, 0.9424, 0.874, 0.960784)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -157.845
-offset_top = -185.935
-offset_right = 3.15503
-offset_bottom = 9.065
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.915, 0.915)
-
-[node name="VboxContainer" type="VBoxContainer" parent="Keyboard Hints/CenterContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Rest Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Rest Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Heal"
-label_settings = ExtResource("3_cedcq")
-
-[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Rest Hint"]
-layout_mode = 2
-texture = ExtResource("2_pktw2")
-expand_mode = 3
-
-[node name="Power Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Power"
-label_settings = ExtResource("3_cedcq")
-
-[node name="KeyHint" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "[Hold]"
-label_settings = SubResource("LabelSettings_ri3fb")
-horizontal_alignment = 2
-
-[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Power Hint"]
-layout_mode = 2
-texture = ExtResource("3_fy8u5")
-expand_mode = 3
-
-[node name="Shoot Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Shoot"
-label_settings = ExtResource("3_cedcq")
-
-[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
-layout_mode = 2
-texture = ExtResource("4_ja52t")
-expand_mode = 3
-
-[node name="Key2" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Shoot Hint"]
-layout_mode = 2
-texture = ExtResource("5_dl7xu")
-expand_mode = 3
-
-[node name="Switch Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Switch"
-label_settings = ExtResource("3_cedcq")
-
-[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
-layout_mode = 2
-texture = ExtResource("6_prnx7")
-expand_mode = 3
-
-[node name="Key2" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Switch Hint"]
-layout_mode = 2
-texture = ExtResource("7_cpoao")
-expand_mode = 3
-
-[node name="Reload Hint" type="HBoxContainer" parent="Keyboard Hints/CenterContainer/VboxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Keyboard Hints/CenterContainer/VboxContainer/Reload Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Reload
-"
-label_settings = ExtResource("3_cedcq")
-
-[node name="Key" type="TextureRect" parent="Keyboard Hints/CenterContainer/VboxContainer/Reload Hint"]
-layout_mode = 2
-texture = ExtResource("8_jeggs")
-expand_mode = 3
+[node name="Keyboard Hints" parent="." instance=ExtResource("2_gqfdu")]
 
 [node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]
 visible = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2

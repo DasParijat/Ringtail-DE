@@ -1,7 +1,4 @@
-extends CanvasLayer
-
-#@onready var base : CharacterBody2D = get_parent()
-#@onready var mob_res : MobRes = base.mob_res 
+extends Control
 
 var mob_res : MobRes
 
@@ -95,6 +92,14 @@ func update_bar(bar : ProgressBar, new_hp : float, rate : float) -> void:
 	
 func _on_game_won() -> void:
 	# TODO Possibly make it fade out/in instead of instantly showing/hiding
+	var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property($".", "modulate", Color(1,1,1,0), GlobalScene.victory_fade_rate)
+	await tween.finished
 	$".".hide()
+
 	await GlobalScene.off_victory
+
 	$".".show()
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($".", "modulate", Color(1,1,1,1), GlobalScene.victory_fade_rate)

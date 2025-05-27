@@ -63,6 +63,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/27/25)
+			<li>(FightUI / Keyboard Hints / BossHPBars / Victory Menu / GlobalScene) 
+			Added fade in and out tweens for all game ui</li>
 			<li>(GlobalScene) 
 			Added on_victory_screen boolean 
 			(Game Node doesn't use it since it needs to await signal off_victory)</li>
@@ -72,6 +74,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(FightUI) 
 			Power bar goes to value 0 if power under 3 
 			(player can't activate power at this point)</li>
+			<li>(Keyboard Hints) 
+			Made keyboard hints it's own scene</li>
 		</ul>
 	</li>
 	<li>

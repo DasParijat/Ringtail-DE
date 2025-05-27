@@ -73,3 +73,16 @@ func reload_ui(stats : Dictionary) -> void:
 	else:
 		if Input.is_action_pressed("reload"): reload_hint.modulate = in_use_color
 		else: reload_hint.modulate = usable_color 
+
+func _on_game_won() -> void:
+	var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property(parent_container, "modulate", Color(1,1,1,0), GlobalScene.victory_fade_rate)
+	await tween.finished
+	parent_container.hide()
+
+	await GlobalScene.off_victory
+
+	parent_container.show()
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(parent_container, "modulate", Color(1,1,1,1), GlobalScene.victory_fade_rate)

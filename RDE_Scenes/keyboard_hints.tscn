@@ -1,0 +1,132 @@
+[gd_scene load_steps=12 format=3 uid="uid://bra8qovhkkhxm"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/keyboard_hints.gd" id="1_gfh7f"]
+[ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="2_8eloj"]
+[ext_resource type="Texture2D" uid="uid://dd3tgytn5lkr7" path="res://RDE_Fonts/Keyboard Icons V2/F_Key_Dark.png" id="3_vttq6"]
+[ext_resource type="Texture2D" uid="uid://cuc7avrn4x2eu" path="res://RDE_Fonts/Keyboard Icons V2/Shift_Key_Dark.png" id="4_a4ymu"]
+[ext_resource type="Texture2D" uid="uid://iioodcsoaw86" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Left_Key_Dark.png" id="5_8bhhc"]
+[ext_resource type="Texture2D" uid="uid://05hdysrh24l8" path="res://RDE_Fonts/Keyboard Icons V2/Space_Key_Dark.png" id="6_khpkk"]
+[ext_resource type="Texture2D" uid="uid://b1pmq1afkiw2e" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Middle_Key_Dark.png" id="7_33y1g"]
+[ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="8_weajb"]
+[ext_resource type="Texture2D" uid="uid://qm6fccxpfa8t" path="res://RDE_Fonts/Keyboard Icons V2/R_Key_Dark.png" id="9_23c7b"]
+
+[sub_resource type="SystemFont" id="SystemFont_frf42"]
+font_names = PackedStringArray("Bahnschrift")
+font_weight = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri3fb"]
+line_spacing = 1.0
+font = SubResource("SystemFont_frf42")
+font_size = 10
+font_color = Color(0.843184, 0.843184, 0.843184, 1)
+outline_size = 1
+
+[node name="Keyboard Hints" type="CanvasLayer"]
+script = ExtResource("1_gfh7f")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+modulate = Color(0.95, 0.9424, 0.874, 0.960784)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -157.845
+offset_top = -185.935
+offset_right = 3.15503
+offset_bottom = 9.065
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.915, 0.915)
+
+[node name="VboxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Rest Hint" type="HBoxContainer" parent="CenterContainer/VboxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VboxContainer/Rest Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Heal"
+label_settings = ExtResource("2_8eloj")
+
+[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Rest Hint"]
+layout_mode = 2
+texture = ExtResource("3_vttq6")
+expand_mode = 3
+
+[node name="Power Hint" type="HBoxContainer" parent="CenterContainer/VboxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VboxContainer/Power Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Power"
+label_settings = ExtResource("2_8eloj")
+
+[node name="KeyHint" type="Label" parent="CenterContainer/VboxContainer/Power Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[Hold]"
+label_settings = SubResource("LabelSettings_ri3fb")
+horizontal_alignment = 2
+
+[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Power Hint"]
+layout_mode = 2
+texture = ExtResource("4_a4ymu")
+expand_mode = 3
+
+[node name="Shoot Hint" type="HBoxContainer" parent="CenterContainer/VboxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VboxContainer/Shoot Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shoot"
+label_settings = ExtResource("2_8eloj")
+
+[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Shoot Hint"]
+layout_mode = 2
+texture = ExtResource("5_8bhhc")
+expand_mode = 3
+
+[node name="Key2" type="TextureRect" parent="CenterContainer/VboxContainer/Shoot Hint"]
+layout_mode = 2
+texture = ExtResource("6_khpkk")
+expand_mode = 3
+
+[node name="Switch Hint" type="HBoxContainer" parent="CenterContainer/VboxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VboxContainer/Switch Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Switch"
+label_settings = ExtResource("2_8eloj")
+
+[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Switch Hint"]
+layout_mode = 2
+texture = ExtResource("7_33y1g")
+expand_mode = 3
+
+[node name="Key2" type="TextureRect" parent="CenterContainer/VboxContainer/Switch Hint"]
+layout_mode = 2
+texture = ExtResource("8_weajb")
+expand_mode = 3
+
+[node name="Reload Hint" type="HBoxContainer" parent="CenterContainer/VboxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VboxContainer/Reload Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reload
+"
+label_settings = ExtResource("2_8eloj")
+
+[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Reload Hint"]
+layout_mode = 2
+texture = ExtResource("9_23c7b")
+expand_mode = 3
