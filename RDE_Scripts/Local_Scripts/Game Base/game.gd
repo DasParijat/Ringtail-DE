@@ -100,6 +100,8 @@ func pause_game() -> void:
 func _on_game_won() -> void:
 	#print("game won on GAME end (printed from game scene script)")
 	
+	# Game Node doesn't use GlobalScene's on_victory_screen bool 
+	# since it needs to await signal off_victory anyways
 	GlobalScene.on_victory.emit()
 	on_victory_screen = true
 	await GlobalScene.off_victory

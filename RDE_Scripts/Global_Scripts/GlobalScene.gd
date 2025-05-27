@@ -25,7 +25,11 @@ var cam_border_y : float
 
 signal on_victory()  # Used to communicate to cam, victory menu, and fight that its on victory screen
 signal off_victory()
+var on_victory_screen : bool = false
 
+func _ready() -> void:
+	GlobalScene.connect("on_victory", Callable(self, "_on_victory"))
+	
 func set_next_level(new_level : String) -> void:
 	next_level = load(new_level)
 	
@@ -47,3 +51,10 @@ func load_next_scene(new_scene : String) -> void:
 	
 	set_next_scene(new_scene)
 	get_tree().change_scene_to_packed(LOAD_SCENE)
+
+func _on_victory() -> void:
+	print("on vicotur")
+	on_victory_screen = true
+	await GlobalScene.off_victory
+	on_victory_screen = false
+	

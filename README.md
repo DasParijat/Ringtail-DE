@@ -62,6 +62,20 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/27/25)
+			<li>(GlobalScene) 
+			Added on_victory_screen boolean 
+			(Game Node doesn't use it since it needs to await signal off_victory)</li>
+			<li>(Oswald) 
+			Fixed issue of power activating during victory screen, 
+			and rearranging power_activated conditions to be cleaner</li>
+			<li>(FightUI) 
+			Power bar goes to value 0 if power under 3 
+			(player can't activate power at this point)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/26/25)
 			<li>(RingtailHARD) 
 			RingtailHARD is mostly balanced,

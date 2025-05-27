@@ -7,6 +7,7 @@ var is_resting : bool = false
 var is_aiming : bool = false
 var is_moving : bool = false
 
+
 func input_handling() -> void:
 	## Handles Input keys to booleans
 	is_shooting = action_key("shoot")
@@ -19,4 +20,5 @@ func input_handling() -> void:
 				action_key("move_right"))
 
 func action_key(action_name : String) -> bool:
-	return Input.is_action_pressed(action_name) and not GlobalTime.is_paused
+	return (Input.is_action_pressed(action_name) 
+			and not GlobalTime.is_paused)

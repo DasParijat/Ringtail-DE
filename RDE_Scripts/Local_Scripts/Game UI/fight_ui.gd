@@ -103,8 +103,15 @@ func set_player_ui(stats : Dictionary) -> void:
 	
 	# Always updating
 	cur_player_hp = stats["cur_hp"]
-	update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
 	update_bar(PlayerHPBar, cur_player_hp, 0.5)
+	
+	# Power under 3 can't be activated, 
+	# this hides power so player isn't confused
+	# why the power button doesn't work
+	if stats["cur_power"] > 3 or GlobalPlayer.power_activated:
+		update_bar(PlayerPowerBar, stats["cur_power"], 0.3)
+	else:
+		update_bar(PlayerPowerBar, 0, 0.3)
 	
 	stored_hp_stylebox = StoredHpBar.get_theme_stylebox("fill").duplicate()
 

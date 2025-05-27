@@ -59,23 +59,31 @@ func is_power_activated() -> bool:
 	## Handling conditions for power_activated
 	return (
 		(
-			player_res.cur_power > 3
+			# Never do power under these cirumstances
+			not GlobalScene.on_victory_screen and not GlobalTime.is_paused
+		)
+			and
+		(
+			# Power can be activated and maintained under these condtions
+			player_res.cur_power > 3 
 			or (GlobalPlayer.power_activated and player_res.cur_power > 0)
 		)
 			and
 		(
+		# Input for turning on power manually
 		Input.is_action_pressed("sprint") 
-		or (base.is_near_enemy 
+		or (base.is_near_enemy # auto-power when low on health and near enemy
 			and player_res.cur_power > player_res.power_ex_cutoff 
 			and player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5
 			and auto_power_timer.is_stopped()
 			and GlobalPlayer.is_moving)
 		) 
-		or (base.is_near_enemy
+		or (base.is_near_enemy # If player stops holding power, keep power if near enemy
 			and GlobalPlayer.power_activated)
-		and not GlobalTime.is_paused and player_res.cur_power > 1 
-	)
+			and player_res.cur_power > 0
+	) 
 	
+
 func _on_tree_exiting() -> void:
 	#print("oswald exit")
 	pass
