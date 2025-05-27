@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://dbfpvap03ktni"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="2_kvi7e"]
-[ext_resource type="Texture2D" uid="uid://bhrd7w1g4y6q7" path="res://RDE_Images/RGT_bullet2.png" id="3_l7yso"]
+[ext_resource type="Texture2D" uid="uid://bfuiwq4y6k0v7" path="res://RDE_Images/MinitailHEAVY_bullet.png" id="2_ycmc1"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_kvi7e")
-texture = ExtResource("3_l7yso")
+texture = ExtResource("2_ycmc1")
 fade_on_exit = true
 damage = 3.0
 is_piercing = true

@@ -82,6 +82,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Nerfed MinitailSPEED</li>
 			<li>(MinitailHEAVY) 
 			Added custom projectile for MinitailHEAVY</li>
+			<li>(MinitailDEF) 
+			New texture for MinitailDEF, 
+			more colorful and contrasts better with Ringtail itself</li>
+			<li>(RingtailHARD / RingtailNORM / RingtailEASY) 
+			All Ringtails have the same hp bar color, 
+			as well as lowered health (multiple of 110 instead of 150)</li>
 		</ul>
 	</li>
 	<li>

@@ -55,7 +55,7 @@ func action1() -> void:
 	## Follow player
 	mob_res.sprtflip_enabled = false
 	for i in range(1 + phase):
-		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 1})
+		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 200), "length": 1})
 		await GlobalTime.local_wait(1)
 	#spawner.spawn_mob(mob_load, Vector2(0, 100))
 	#controller.chain_action(3)
@@ -80,7 +80,7 @@ func action3() -> void:
 func action4() -> void:
 	## Dash to random places near player
 	for i in randi_range(2, 4): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 200, "length": 0.5})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(50, 200, 50, 200), "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 
 	controller.hold(false)
