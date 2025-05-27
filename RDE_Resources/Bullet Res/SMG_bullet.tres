@@ -23,5 +23,3 @@ particle_gravity = Vector2(-200, 0)
 particle_explosiveness = 0.0
 particle_amount = 8
 particle_spread = 45.0
-particle_scale_a = 2
-particle_scale_b = 4

@@ -76,6 +76,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(player can't activate power at this point)</li>
 			<li>(Keyboard Hints) 
 			Made keyboard hints it's own scene</li>
+			<li>(Ringtail / RingtailHARD) 
+			Minor balancing changes</li>
+			<li>(MinitailSPEED) 
+			Nerfed MinitailSPEED</li>
+			<li>(MinitailHEAVY) 
+			Added custom projectile for MinitailHEAVY</li>
 		</ul>
 	</li>
 	<li>

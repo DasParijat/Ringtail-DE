@@ -1,9 +1,6 @@
 extends Ringtail
 # HARD
 
-@export var attack_min : int = 1
-@export var attack_max : int = 4
-
 @export var cur_sequence : Array[int] = [1,2,3,4]
 
 func _process(delta : float) -> void:
@@ -20,6 +17,9 @@ func _process(delta : float) -> void:
 		phase3()
 
 func phase1():
+	if total_delta < 5.0:
+		return
+		
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
 		if phase == 1:
 			target_projectile.shoot({"speed": 1400})
@@ -48,13 +48,13 @@ func phase2():
 			chain_explosion(randi_range(10, 20), 0.2)
 			
 	if GlobalTime.process_interval(((phase - 1) * 15.0), total_delta, get_process_delta_time()):
-		if randi_range(0,1) == 0:
-			for i in randi_range(1,phase):
-				spawner.spawn_mob(minitail_speed, base.global_position)
-		else:
+		if randi_range(0,2) == 0:
 			for i in randi_range(1,(phase - 1)):
 				spawner.spawn_mob(minitail_heavy, base.global_position)
-
+		else:
+			for i in randi_range(1,phase):
+				spawner.spawn_mob(minitail_speed, base.global_position)
+			
 func phase3():
 	cur_sequence = [1,2,3,4,6,5]
 	
@@ -65,6 +65,6 @@ func phase3():
 								"speed": 550}
 								, 7, 0.3)
 	
-	if GlobalTime.process_interval(20.0, total_delta, get_process_delta_time()):
+	if GlobalTime.process_interval(15.0, total_delta, get_process_delta_time()):
 		for i in randi_range(1,3):
 			spawner.spawn_mob(minitail_shield, base.global_position)

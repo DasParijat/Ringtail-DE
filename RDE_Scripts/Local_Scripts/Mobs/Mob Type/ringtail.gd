@@ -45,16 +45,16 @@ func phase_handler(num_of_phases : int) -> void:
 		)
 	
 	if phase != new_phase:
-		print("enter phase wait time: ", phase_wait_time)
+		#print("enter phase wait time: ", phase_wait_time)
 		phase = 0
 		GlobalTime.local_wait(phase_wait_time)
 		phase = new_phase
-		print("phase: ", phase)
+		#print("phase: ", phase)
 	
 func action1() -> void:
 	## Follow player
 	mob_res.sprtflip_enabled = false
-	for i in randi_range(1, 2):
+	for i in range(1 + phase):
 		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 300), "length": 1})
 		await GlobalTime.local_wait(1)
 	#spawner.spawn_mob(mob_load, Vector2(0, 100))
@@ -63,12 +63,10 @@ func action1() -> void:
 	
 func action2() -> void:
 	## Dash to player
-	for i in range(randi_range(2, 6)): 
+	for i in randi_range(2, 6): 
 		base.action("move_torward_point", {"target": base.player_global_pos, "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 	
-	#spawner.spawn_mob(mob_load, global_position)
-	#controller.chain_action(3)
 	controller.hold(false)
 	
 func action3() -> void:
@@ -81,7 +79,7 @@ func action3() -> void:
 
 func action4() -> void:
 	## Dash to random places near player
-	for i in range(randi_range(1, 3)): 
+	for i in randi_range(2, 4): 
 		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 200, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 
@@ -90,7 +88,7 @@ func action4() -> void:
 func action5() -> void:
 	## Follow player, if near player, teleport elsewhere
 	mob_res.sprtflip_enabled = false
-	for i in randi_range(3, 6):
+	for i in range(5):
 		base.action("move_torward_player", {"offset": 1, "speed": 600, "length": 0.4})
 		await GlobalTime.local_wait(0.4)
 		

@@ -8,7 +8,7 @@ extends Node2D
 ## Bullet related variables
 var projectile : ShootAttack
 var _bullet_load = preload("res://RDE_Scenes/Shooting/bullet.tscn")
-var _bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/RGT_Projectile.tres")
+var _bullet_res : BulletRes = preload("res://RDE_Resources/Bullet Res/MinitailHEAVY_Projectile.tres")
 
 func _ready() -> void:
 	controller.action_handling(1)
