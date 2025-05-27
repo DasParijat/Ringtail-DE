@@ -15,6 +15,7 @@ mob_res = ExtResource("2_opmw5")
 base = NodePath("base_mob")
 controller = NodePath("MobController")
 spawner = NodePath("MobSpawner")
+phase_wait_time = 60.0
 
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
 

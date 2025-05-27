@@ -10,7 +10,6 @@ func _process(delta : float) -> void:
 	phase_handler(3)
 	total_delta += delta
 	
-	#controller.action_handling(randi_range(attack_min, attack_max))
 	controller.action_sequence(cur_sequence)
 	# Wish there was a traditional switch statement
 	if phase >= 1:
@@ -30,8 +29,7 @@ func phase1():
 	if GlobalTime.process_interval(2.0, total_delta, get_process_delta_time()):
 		match(phase):
 			1: projectile.shoot_from_rand()
-			2: projectile.shoot_laser({"speed": 700},(5), 0.3)
-			3: projectile.shoot_laser({"follow_target": true, "follow_target_length": 7, "speed": 600},(10), 0.4)
+			2: projectile.shoot_laser({"speed": 700}, 3, 0.3)
 	
 	if GlobalTime.process_interval(4.0, total_delta, get_process_delta_time()):
 		for i in range(phase + 1):
@@ -50,16 +48,23 @@ func phase2():
 			chain_explosion(randi_range(10, 20), 0.2)
 			
 	if GlobalTime.process_interval(((phase - 1) * 15.0), total_delta, get_process_delta_time()):
-		for i in randi_range(2,6):
-			if randi_range(0,1) == 0:
+		if randi_range(0,1) == 0:
+			for i in randi_range(1,phase):
 				spawner.spawn_mob(minitail_speed, base.global_position)
-			else:
+		else:
+			for i in randi_range(1,(phase - 1)):
 				spawner.spawn_mob(minitail_heavy, base.global_position)
 
 func phase3():
 	cur_sequence = [1,2,3,4,6,5]
 	
-		
+	if GlobalTime.process_interval(18.0, total_delta, get_process_delta_time()):
+		projectile.shoot_laser({"follow_target": true, 
+								"follow_target_length": 3, 
+								"position": Vector2(0, 10), 
+								"speed": 550}
+								, 7, 0.3)
+	
 	if GlobalTime.process_interval(20.0, total_delta, get_process_delta_time()):
 		for i in randi_range(1,3):
 			spawner.spawn_mob(minitail_shield, base.global_position)

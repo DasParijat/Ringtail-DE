@@ -25,8 +25,10 @@ var hollow_projectile : ShootAttack
 var target_projectile : ShootAttack
 
 var total_delta : float = 0.0
-var phase : int = 1
 
+var phase : int = 1
+@export var phase_wait_time : float = 5.0
+ 
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	projectile = ShootAttack.new(base, _bullet_load, _bullet_res, get_parent().get_parent())
@@ -37,11 +39,18 @@ func _ready() -> void:
 func phase_handler(num_of_phases : int) -> void:
 	## Handles changing phases based on hp
 	#print("PHASE: ", phase, " hp: ", mob_res.health_comp.cur_hp)
-	phase = 1 + floor(
+	var new_phase = 1 + floor(
 		(mob_res.health_comp.max_hp - mob_res.health_comp.cur_hp) 
 		/ (mob_res.health_comp.max_hp / num_of_phases)
 		)
-		
+	
+	if phase != new_phase:
+		print("enter phase wait time: ", phase_wait_time)
+		phase = 0
+		GlobalTime.local_wait(phase_wait_time)
+		phase = new_phase
+		print("phase: ", phase)
+	
 func action1() -> void:
 	## Follow player
 	mob_res.sprtflip_enabled = false
@@ -85,7 +94,7 @@ func action5() -> void:
 		base.action("move_torward_player", {"offset": 1, "speed": 600, "length": 0.4})
 		await GlobalTime.local_wait(0.4)
 		
-		if base.distance_to_player < 2000:
+		if base.distance_to_player < 1000:
 			mob_res.sprtflip_enabled = true
 			base.action("move_torward_point", {"target": base.get_rand_player_pos(600, 1200, 600, 1200), "delay": 0, "speed": 750, "length": 0.3})
 			await GlobalTime.local_wait(0.3)

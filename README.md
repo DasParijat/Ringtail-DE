@@ -64,7 +64,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(5/26/25)
 			<li>(RingtailHARD) 
-			Working on balancing RingtailHARD</li>
+			RingtailHARD is mostly balanced,
+			just needs minor visual changes/indicators 
+			+ plus possible in-between phase downtime thing</li>
 			<li>(Minitails) 
 			Modified how many power minitails give when they die</li>
 			<li>(Oswald) 

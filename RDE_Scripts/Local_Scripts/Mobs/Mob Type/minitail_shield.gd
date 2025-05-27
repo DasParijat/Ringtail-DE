@@ -5,12 +5,19 @@ extends Node2D
 @export var base : BaseMob 
 @export var controller : MobController
 
+var total_time : float = 0.0
+
 func _ready() -> void:
 	controller.action_handling(1)
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 func _process(delta : float) -> void:
-	controller.action_handling(1)
+	total_time += delta
+	
+	if total_time < 20.0:
+		controller.action_handling(1)
+	else:
+		base.health_res.kill_self()
 
 
 func action1() -> void:
@@ -27,4 +34,4 @@ func action1() -> void:
 	controller.hold(false)
 
 func _exit_tree() -> void:
-	GlobalSignal.emit_signal("update_power", 3)
+	GlobalSignal.emit_signal("update_power", 5)

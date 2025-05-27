@@ -21,7 +21,7 @@ func _process(delta : float) -> void:
 func action1() -> void:
 	## Dash near to player
 	for i in range(5): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 700, "length": 0.3})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 450, "length": 0.3})
 		await GlobalTime.local_wait(0.3)
 	
 	controller.hold(false)
@@ -29,16 +29,16 @@ func action1() -> void:
 func action2() -> void:
 	## Dash to random places near player
 	for i in range(10): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 600, "length": 0.2})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 350, "length": 0.2})
 		await GlobalTime.local_wait(0.2)
 	
 	controller.hold(false)
 
 func action3() -> void:
 	## Go far from player then dash to them
-	base.action("move_torward_point", {"target": base.get_rand_player_pos(600, 700, 600, 700), "delay": 0, "speed": 600, "length": 0.5})
+	base.action("move_torward_point", {"target": base.get_rand_player_pos(600, 700, 600, 700), "delay": 0, "speed": 300, "length": 0.5})
 	await GlobalTime.local_wait(0.5)
-	base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 550, "length": 0.3})
+	base.action("move_torward_point", {"target": base.get_rand_player_pos(25, 75, 25, 75), "delay": 0, "speed": 250, "length": 0.3})
 	await GlobalTime.local_wait(0.3)
 	
 	controller.hold(false)
