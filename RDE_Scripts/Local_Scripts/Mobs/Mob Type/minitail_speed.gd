@@ -24,7 +24,7 @@ func action1() -> void:
 	
 func action2() -> void:
 	## Dash to random places near player
-	for i in range(10): 
+	for i in range(5): 
 		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 600, 100, 600), "delay": 0, "speed": 300, "length": 0.2})
 		await GlobalTime.local_wait(0.2)
 	

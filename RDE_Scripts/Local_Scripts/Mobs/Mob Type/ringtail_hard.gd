@@ -1,7 +1,7 @@
 extends Ringtail
 # HARD
 
-@export var cur_sequence : Array[int] = [1,2,3,4]
+@export var cur_sequence : Array[int] = [1,7,2,7,3,7,4,7]
 
 func _process(delta : float) -> void:
 	phase_handler(3)
@@ -36,7 +36,7 @@ func phase1():
 			spawner.spawn_mob(minitail_default, base.global_position)
 
 func phase2():
-	cur_sequence = [1,2,3,4,6]
+	cur_sequence = [1,7,2,7,3,7,4,7,6,7]
 	
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
 		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
@@ -48,7 +48,7 @@ func phase2():
 			chain_explosion(randi_range(10, 20), 0.2)
 			
 	if GlobalTime.process_interval(((phase - 1) * 15.0), total_delta, get_process_delta_time()):
-		if randi_range(0,2) == 0:
+		if randi_range(0,3) == 0:
 			for i in randi_range(1,(phase - 1)):
 				spawner.spawn_mob(minitail_heavy, base.global_position)
 		else:
@@ -56,7 +56,7 @@ func phase2():
 				spawner.spawn_mob(minitail_speed, base.global_position)
 			
 func phase3():
-	cur_sequence = [1,2,3,4,6,5]
+	cur_sequence = [1,7,2,7,3,7,4,7,6,7,5,7]
 	
 	if GlobalTime.process_interval(18.0, total_delta, get_process_delta_time()):
 		projectile.shoot_laser({"follow_target": true, 

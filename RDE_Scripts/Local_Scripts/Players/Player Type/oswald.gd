@@ -48,7 +48,7 @@ func power_move() -> void:
 	if GlobalPlayer.power_activated:
 		auto_power_timer.start()
 		base.set_speedmod(1.5) 
-		GlobalTime.cur_time_scale = 0.3 
+		GlobalTime.cur_time_scale = 0.2
 		
 		player_res.cur_power -= 0.1
 	else:

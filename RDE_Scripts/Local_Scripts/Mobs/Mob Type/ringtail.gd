@@ -57,8 +57,7 @@ func action1() -> void:
 	for i in range(1 + phase):
 		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 200), "length": 1})
 		await GlobalTime.local_wait(1)
-	#spawner.spawn_mob(mob_load, Vector2(0, 100))
-	#controller.chain_action(3)
+	
 	controller.hold(false)
 	
 func action2() -> void:
@@ -117,9 +116,20 @@ func action6() -> void:
 		#mob_res.sprtflip_enabled = true
 		base.action("move_torward_point", {"target": base.get_rand_player_pos(100, 250, 100, 250), "delay": 0, "speed": 750, "length": 0.3})
 		await GlobalTime.local_wait(0.3)
-
-	controller.hold(false)
 	
+	controller.hold(false)
+
+func action7() -> void:
+	## Passive action that's called between every other action
+	mob_res.sprtflip_enabled = false
+	for i in range(2 * phase):
+		base.action("move_torward_player", {"speed": randi_range(100, 150), "length": 0.5})
+		await GlobalTime.local_wait(0.5)
+		base.action("observe_player", 0.5)
+		await GlobalTime.local_wait(0.5)
+		
+	controller.hold(false)
+
 func chain_explosion(num_of_explosions : int = 5, time_gap : float = 1.0) -> void:
 	for i in range(num_of_explosions):
 		spawner.spawn_mob(explosion_load, base.player_pos)
