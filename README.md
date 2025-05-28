@@ -62,6 +62,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/28/25)
+			<li>(RingtailEASY) 
+			Implemented RingtailEASY attacks (based off 1st phase of RingtailHARD)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/27/25)
 			<li>(FightUI / Keyboard Hints / BossHPBars / Victory Menu / GlobalScene) 
 			Added fade in and out tweens for all game ui</li>

@@ -8,4 +8,4 @@
 script = ExtResource("3_5pg3w")
 LEVEL_NAME = "STORY_RGT_NORM"
 LEVEL_DESC = "This is ringtail norm"
-order = Array[Resource]([ExtResource("2_v11cc"), ExtResource("2_rw1cl")])
+order = Array[Resource]([ExtResource("2_rw1cl"), ExtResource("2_v11cc")])
