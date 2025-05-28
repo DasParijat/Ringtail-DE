@@ -65,6 +65,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/28/25)
 			<li>(RingtailEASY) 
 			Implemented RingtailEASY attacks (based off 1st phase of RingtailHARD)</li>
+			<li>(RingtailNORM) 
+			Implemented RingtailNORM attacks (based off 1st and 2nd phase of RingtailHARD)</li>
 		</ul>
 	</li>
 	<li>
