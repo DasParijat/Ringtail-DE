@@ -59,23 +59,27 @@ func _process(delta: float) -> void:
 			GlobalSignal.cur_gun.emit(gun_res) # For giving cam shake info to the Cam2D in Game scene
 		
 func is_selected() -> bool:
+	## Gets to parent node to see if player selected it's gun
 	if get_parent().gun_index == gun_index:
 		return true
 	return false
-		
+
 func can_shoot() -> bool:
+	## Gap between each shot
 	return shoot_timer.is_stopped()
 
 func not_reloading() -> bool:
+	## Reload timer is not active, hence not reloading
 	return reload_timer.is_stopped()
-
+	
 func reload_text_handling() -> void:
+	## This is for the reload text that appeares directly under player
 	if not_reloading():
 		reload_text.hide()
 		return
 	
-	# Sets text to semi transparent if gun not selected
-	# Not completely hidden so player is aware other gun is still reloading
+	## Sets text to semi transparent if gun not selected
+	## Not completely hidden so player is aware other gun is still reloading
 	if is_selected():
 		reload_text.self_modulate = Color(1, 1, 1)
 	else:
@@ -86,42 +90,46 @@ func reload_text_handling() -> void:
 	reload_text.rotation = -global_rotation # This makes it remain 0 degrees no matter what
 		
 func shoot() -> void:
-	if cur_ammo > 0 and not_reloading():
-		# bullet_spread equation
-		var max_spread = (gun_res.max_spread # Max spread is reduced when aiming and resting
-							- (int(Input.is_action_pressed("aim")) * gun_res.max_spread / 4)
-							- (int(Input.is_action_pressed("rest")) * gun_res.max_spread / 4))
-		bullet_spread += ((max_spread - bullet_spread) * gun_res.spread_rate) 
-		#print(bullet_spread)
+	## Handles creating and shooting a bullet
+	if cur_ammo <= 0 and not not_reloading():
+		return
+	
+	# bullet_spread equation
+	var max_spread = (gun_res.max_spread # Max spread is reduced when aiming and resting
+						- (int(Input.is_action_pressed("aim")) * gun_res.max_spread / 4)
+						- (int(Input.is_action_pressed("rest")) * gun_res.max_spread / 4))
+	bullet_spread += ((max_spread - bullet_spread) * gun_res.spread_rate) 
+	#print(bullet_spread)
+	
+	# for loop for bullets per SINGLE shot
+	for i in range(gun_res.bullets_per_shot):
+		var bullet = bullet_load.instantiate()
+		#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
+		# resources passed from gun to bullet
+		bullet.bullet_res = bullet_res
+		bullet.gun_res = gun_res
 		
-		# for loop for bullets per SINGLE shot
-		for i in range(gun_res.bullets_per_shot):
-			var bullet = bullet_load.instantiate()
-			#print("in shoot(): ",cur_ammo, " ", mag_size, " ", gun_res.fire_rate)
-			# resources passed from gun to bullet
-			bullet.bullet_res = bullet_res
-			bullet.gun_res = gun_res
-			
-			# bullet transformations			
-			bullet.global_transform = global_transform
-			bullet.global_rotation_degrees = (rotation_degrees 
-											+ randf_range(-bullet_spread, bullet_spread)
-											+ (gun_res.bps_spread + ((i-1) * gun_res.bps_spread))) #if i % 2 == 0 else -gun_res.bullets_per_shot_spread))
-			bullet.target_group = "Enemy"
-			
-			# putting bullet in fight scene
-			get_parent().get_parent().add_child(bullet)
-			
-			cur_ammo -= 1
-			GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
-		shoot_timer.start(gun_res.fire_rate)
+		# bullet transformations			
+		bullet.global_transform = global_transform
+		bullet.global_rotation_degrees = (rotation_degrees 
+										+ randf_range(-bullet_spread, bullet_spread)
+										+ (gun_res.bps_spread + ((i-1) * gun_res.bps_spread))) #if i % 2 == 0 else -gun_res.bullets_per_shot_spread))
+		bullet.target_group = "Enemy"
+		
+		# putting bullet in fight scene
+		get_parent().get_parent().add_child(bullet)
+		
+		cur_ammo -= 1
+		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
+	shoot_timer.start(gun_res.fire_rate)
 
 func update_ui() -> void:
+	## If selected, gun stats get the stats of current gun
 	if is_selected():
 		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 		
 func get_cur_stats() -> Dictionary:
-	# For giving stats globally the fight_ui can track
+	## For giving stats globally the fight_ui can track
 	return {
 		"cur_ammo": cur_ammo,
 		"mag_size": mag_size,
@@ -131,12 +139,15 @@ func get_cur_stats() -> Dictionary:
 	}
 
 func _on_game_won() -> void:
+	## Gun is unusable in victory screen
 	gun_usable = false
 	
 	await GlobalScene.off_victory
 	gun_usable = true
 	
 func reload() -> void:
+	## Reloading refills the ammo in the mag
+	## Either manually or automatically depending on gun_res
 	#print("reloading")
 	bullet_spread = 0.0
 	match(gun_res.reload_type):
@@ -150,8 +161,12 @@ func reload() -> void:
 		update_ui()
 		
 func auto_reload() -> void:
+	## Auto reload means it waits (reload_time) before mag full
 	#print("Auto reload started")
-	reload_timer.start(gun_res.reload_time)
+	for i in range(gun_res.reload_time * 2):
+		if not GlobalPlayer.power_activated: reload_timer.start(1)
+		else: reload_timer.start(0.15)
+	
 	update_ui()
 	await reload_timer.timeout
 	cur_ammo = mag_size
@@ -159,9 +174,13 @@ func auto_reload() -> void:
 	#print("check: ", cur_ammo, " ", mag_size)
 
 func manual_reload(manual_reload_time : float) -> void:
+	## Manual reload means it adds each bullet to mag one at a time
+	## (Visible in FightUI)
 	while cur_ammo < mag_size:
 		cur_ammo += 1
-		reload_timer.start(manual_reload_time)
+		
+		if not GlobalPlayer.power_activated: reload_timer.start(manual_reload_time)
+		else: reload_timer.start(manual_reload_time / 7)
 		update_ui()
 		await reload_timer.timeout
 		#print("Reloaded 1 bullet, current ammo:", cur_ammo)

@@ -71,6 +71,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Nerfed Oswald's HP and starting power, but slightly buffed slow-down in power mode</li>
 			<li>(Ringtail / RingtailHARD) 
 			Testing a new "passive" action to play between each action (cooldown effect)</li>
+			<li>(Gun) 
+			Reloading is now quicker when power activated,
+			also cleaned up gun.gd code</li>
 		</ul>
 	</li>
 	<li>
