@@ -62,6 +62,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/29/25)
+			<li>(EOTHS) 
+			Added EOTHS mob, 
+			spawns at the end of every phase to instantly heal/power up player</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/28/25)
 			<li>(RingtailEASY) 
 			Implemented RingtailEASY attacks (based off 1st phase of RingtailHARD)</li>

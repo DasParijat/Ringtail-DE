@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="MobRes" load_steps=4 format=3 uid="uid://pipbvxej5n7a"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ol587"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_aan44"]
+
+[sub_resource type="Resource" id="Resource_x6ded"]
+script = ExtResource("1_ol587")
+HP_NAME = "EOTHS"
+is_player = false
+max_hp = 15
+damage_rate = 1.0
+invicible = true
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_aan44")
+name = "EOTHS"
+display_name = "Embodiment Of The Human Spirit"
+color = Color(1, 1, 1, 1)
+hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+base_sprtflip_enabled = false
+health_comp = SubResource("Resource_x6ded")
+num_of_bars = 1
+is_boss = false
+is_enemy = false
+is_hittable = false
+collision_enabled = false
+player_detection_radius = 150.0
+mini_hp_visible = false
+pos_track_delay = 1.0
+mob_size = Vector2(1, 1)
+sprite_size = Vector2(1, 1)
+collision_size = Vector2(1, 1)
+hitbox_size = Vector2(4, 4)
+collision_dmg = 0.0
+collision_dmg_cooldown = 0.2

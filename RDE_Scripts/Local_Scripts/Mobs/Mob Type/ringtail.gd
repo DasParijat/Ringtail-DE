@@ -19,6 +19,7 @@ var minitail_default = preload("res://RDE_Scenes/Entities/Mobs/minitail_default.
 var minitail_speed = preload("res://RDE_Scenes/Entities/Mobs/minitail_speed.tscn")
 var minitail_heavy = preload("res://RDE_Scenes/Entities/Mobs/minitail_heavy.tscn")
 var minitail_shield = preload("res://RDE_Scenes/Entities/Mobs/minitail_shield.tscn")
+var eoths = preload("res://RDE_Scenes/Entities/Mobs/EOTHS.tscn")
 
 var projectile : ShootAttack
 var hollow_projectile : ShootAttack
@@ -46,8 +47,10 @@ func phase_handler(num_of_phases : int) -> void:
 	
 	if phase != new_phase:
 		#print("enter phase wait time: ", phase_wait_time)
+		#spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
 		phase = 0
 		GlobalTime.local_wait(phase_wait_time)
+		spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
 		phase = new_phase
 		#print("phase: ", phase)
 	

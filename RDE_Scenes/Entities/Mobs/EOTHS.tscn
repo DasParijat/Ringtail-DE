@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://fgxxgkig34w4"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/eoths.gd" id="1_p8vop"]
+[ext_resource type="Resource" uid="uid://pipbvxej5n7a" path="res://RDE_Resources/Mob Res/EOTHS.tres" id="2_0xopn"]
+[ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_ppnfg"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/mob_controller.gd" id="4_vlr7v"]
+
+[node name="EOTHS" type="Node2D" node_paths=PackedStringArray("base", "controller")]
+script = ExtResource("1_p8vop")
+mob_res = ExtResource("2_0xopn")
+base = NodePath("base_mob")
+controller = NodePath("MobController")
+
+[node name="base_mob" parent="." instance=ExtResource("3_ppnfg")]
+
+[node name="MobController" type="Node2D" parent="." node_paths=PackedStringArray("base")]
+script = ExtResource("4_vlr7v")
+base = NodePath("../base_mob")

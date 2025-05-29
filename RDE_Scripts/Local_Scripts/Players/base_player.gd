@@ -37,6 +37,7 @@ func _ready() -> void:
 	
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	GlobalSignal.connect("update_power", Callable(self, "_on_update_power"))
+	GlobalSignal.connect("update_player_hp", Callable(self, "_on_update_player_hp"))
 	
 	scale = player_res.player_size
 	collision.scale = player_res.collision_size
@@ -155,11 +156,16 @@ func _on_hostile_detection_area_exited(area: Area2D) -> void:
 		is_near_enemy = false
 
 func _on_update_power(power_update : float) -> void:
+	#print("power updated: ", power_update)
 	if is_near_enemy: 
 		# power given has (near_enemy_boost)% increase when near enemy
 		power_update += power_update * player_res.power_near_enemy_boost  
 	
 	player_res.cur_power += power_update
+
+func _on_update_player_hp(hp_update : float) -> void:
+	#print("hp updated: ", hp_update)
+	health_res.cur_hp += hp_update
 	
 func _on_game_over() -> void:
 	## Switches to game over scene
