@@ -12,6 +12,7 @@ mob_res = ExtResource("2_uqg03")
 base = NodePath("base_mob")
 controller = NodePath("MobController")
 spawner = NodePath("MobSpawner")
+reducaed_transition_dmg_rate = 0.8
 
 [node name="base_mob" parent="." instance=ExtResource("3_nydhe")]
 

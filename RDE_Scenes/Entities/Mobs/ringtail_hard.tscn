@@ -15,6 +15,7 @@ mob_res = ExtResource("2_opmw5")
 base = NodePath("base_mob")
 controller = NodePath("MobController")
 spawner = NodePath("MobSpawner")
+reducaed_transition_dmg_rate = 0.4
 phase_wait_time = 60.0
 
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
@@ -26,6 +27,7 @@ attack_label = NodePath("../AttackLabel")
 [node name="MobSpawner" parent="." instance=ExtResource("4_u45r0")]
 
 [node name="AttackLabel" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_acbnr")

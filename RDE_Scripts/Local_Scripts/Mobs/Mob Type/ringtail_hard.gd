@@ -56,7 +56,7 @@ func phase2():
 				spawner.spawn_mob(minitail_speed, base.global_position)
 			
 func phase3():
-	cur_sequence = [1,7,2,7,3,7,4,7,6,7,5,7]
+	cur_sequence = [1,1,7,2,2,7,3,3,7,4,7,6,7]
 	
 	if GlobalTime.process_interval(18.0, total_delta, get_process_delta_time()):
 		projectile.shoot_laser({"follow_target": true, 

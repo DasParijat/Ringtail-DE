@@ -7,6 +7,8 @@ extends Node2D
 @export var controller : MobController
 @export var spawner : MobSpawner
 
+@export var reducaed_transition_dmg_rate = 0.5
+
 var _bullet_res : BulletRes = preload("uid://bxff3trsofkhp")
 var _hollow_bullet_res = preload("res://RDE_Resources/Bullet Res/RGT_Hollow_Projectile.tres")
 var _target_bullet_res = preload("res://RDE_Resources/Bullet Res/RGT_Target_Projectile.tres")
@@ -49,7 +51,7 @@ func phase_handler(num_of_phases : int) -> void:
 		#print("enter phase wait time: ", phase_wait_time)
 		#spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
 		phase = 0
-		GlobalTime.local_wait(phase_wait_time)
+		await GlobalTime.local_wait(phase_wait_time)
 		spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
 		phase = new_phase
 		#print("phase: ", phase)
@@ -101,7 +103,9 @@ func action5() -> void:
 			mob_res.sprtflip_enabled = false
 		base.action("move_torward_player", {"offset": 1.5, "speed": randi_range(100, 200), "length": 1})
 		await GlobalTime.local_wait(1)
-		
+	
+	base.health_res.damage_rate = 1
+	base.sprite.modulate = Color(1,1,1)
 	controller.hold(false)
 
 func action6() -> void:
@@ -124,13 +128,22 @@ func action6() -> void:
 
 func action7() -> void:
 	## Passive action that's called between every other action
+	base.sprite.modulate = Color(0.8,0.8,0.8)
+	base.health_res.damage_rate = 0.7
+	if phase == 3 and randi_range(0,3) == 0:
+		action5()
+		return
+	
 	mob_res.sprtflip_enabled = false
 	for i in range(2 * phase):
-		base.action("move_torward_player", {"speed": randi_range(100, 150), "length": 0.5})
-		await GlobalTime.local_wait(0.5)
-		base.action("observe_player", 0.5)
-		await GlobalTime.local_wait(0.5)
-		
+		for j in range(3):
+			base.action("move_torward_player", {"speed": randi_range(110 * phase, 120 * phase), "length": 0.4})
+			await GlobalTime.local_wait(0.4)
+		base.action("observe_player", 0.2)
+		await GlobalTime.local_wait(0.2)
+	
+	base.health_res.damage_rate = 1
+	base.sprite.modulate = Color(1,1,1)
 	controller.hold(false)
 
 func chain_explosion(num_of_explosions : int = 5, time_gap : float = 1.0) -> void:

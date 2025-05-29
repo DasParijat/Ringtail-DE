@@ -66,6 +66,11 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(EOTHS) 
 			Added EOTHS mob, 
 			spawns at the end of every phase to instantly heal/power up player</li>
+			<li>(Ringtail) 
+			Applied and tweaked transition attack to all Ringtails, 
+			plus added visual indicater and lowered damage rate 
+			when in transition attack.
+			Also fixed phase wait time</li>
 		</ul>
 	</li>
 	<li>

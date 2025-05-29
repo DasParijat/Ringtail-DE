@@ -133,6 +133,7 @@ func _on_game_won() -> void:
 func _on_tree_exiting() -> void:
 	exiting()
 
+	
 func _on_area_entered(area : Area2D) -> void:
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):
 		var parent = area.get_parent()
