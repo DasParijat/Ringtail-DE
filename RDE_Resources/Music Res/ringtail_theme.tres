@@ -1,6 +1,12 @@
-[gd_resource type="Resource" script_class="MusicRes" load_steps=2 format=3 uid="uid://bclw4aun5xgj"]
+[gd_resource type="Resource" script_class="MusicRes" load_steps=5 format=3 uid="uid://bclw4aun5xgj"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/musicRes.gd" id="1_b7a11"]
+[ext_resource type="AudioStream" uid="uid://bkp80sq43vtdq" path="res://RDE_Audio/base_ap_uzi_shoot_sound.mp3" id="2_3onxc"]
+[ext_resource type="AudioStream" uid="uid://bm0kec7v0ucpy" path="res://RDE_Audio/pump_shotload1.mp3" id="3_pkb81"]
+[ext_resource type="AudioStream" uid="uid://ci3q5d1bcfiy2" path="res://RDE_Audio/running-in-grass base sound effect.mp3" id="4_qduuj"]
 
 [resource]
 script = ExtResource("1_b7a11")
+song_intro = ExtResource("3_pkb81")
+song_body = ExtResource("2_3onxc")
+song_outro = ExtResource("4_qduuj")

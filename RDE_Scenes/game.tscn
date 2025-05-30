@@ -65,6 +65,7 @@ autostart = true
 [connection signal="game_unpause" from="." to="pause_menu" method="_on_game_unpause"]
 [connection signal="game_unpause" from="." to="Background" method="_on_game_unpause"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_finished"]
 [connection signal="tree_exiting" from="Camera2D" to="Camera2D" method="_on_tree_exiting"]
 [connection signal="player_created" from="Fight" to="Camera2D" method="_on_fight_player_created"]
 [connection signal="timeout" from="Fight/FightTimeTracker" to="Fight" method="_on_fight_time_tracker_timeout"]

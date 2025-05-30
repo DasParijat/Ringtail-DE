@@ -65,6 +65,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/30/25)
 			<li>(Music Res) 
 			Created music resource, used in fight resource</li>
+			<li>(Game Music Player) 
+			Music is played in correct order from music res</li>
 		</ul>
 	</li>
 	<li>
