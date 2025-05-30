@@ -63,6 +63,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(5/29/25)
+			<li>(General) 
+			Set up audio busses</li>
+			<li>(Game) 
+			Setting up music player</li>
+			<li>(Pause Menu) 
+			Pause menu process always runs, even when game paused</li>
 			<li>(EOTHS) 
 			Added EOTHS mob, 
 			spawns at the end of every phase to instantly heal/power up player</li>

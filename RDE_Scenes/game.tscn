@@ -1,16 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=11 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
 [ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_163st"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/music_player.gd" id="3_btvjt"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="4_72mc8"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game World/game_background.gd" id="4_a1q2e"]
 [ext_resource type="PackedScene" uid="uid://nlpg0x3l8com" path="res://RDE_Scenes/victory_menu.tscn" id="4_b4hy0"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/fight.gd" id="6_b2j36"]
+[ext_resource type="AudioStream" uid="uid://dwccyciwstg8u" path="res://RDE_Audio/nf fight song 14.mp3" id="9_ikhpl"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_psimn")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ikhpl")
+volume_db = -10.0
+autoplay = true
+bus = &"Music Bus"
+script = ExtResource("3_btvjt")
 
 [node name="pause_menu" parent="." instance=ExtResource("3_mfvle")]
 
@@ -50,6 +59,7 @@ autostart = true
 
 [connection signal="fight_res_set" from="." to="Background" method="_on_game_fight_res_set"]
 [connection signal="fight_res_set" from="." to="Fight" method="_on_game_fight_res_set"]
+[connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]
 [connection signal="game_pause" from="." to="pause_menu" method="_on_game_pause"]
 [connection signal="game_pause" from="." to="Background" method="_on_game_pause"]
 [connection signal="game_unpause" from="." to="pause_menu" method="_on_game_unpause"]

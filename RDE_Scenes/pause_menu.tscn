@@ -18,6 +18,7 @@ default_font_size = 30
 [sub_resource type="Shortcut" id="Shortcut_barfy"]
 
 [node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_acbnt")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
