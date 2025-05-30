@@ -39,6 +39,7 @@ func _ready():
 	direction = Vector2.RIGHT.rotated(rotation).normalized()
 	
 	# Play gun shot sound when spawned
+	# TODO might move audio playing to gun itself
 	audio_stream.stream = bullet_res.gun_shot_sound
 	audio_stream.pitch_scale = randf_range(0.8, 1.2)
 	audio_stream.play()

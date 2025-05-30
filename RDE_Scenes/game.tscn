@@ -57,9 +57,9 @@ autostart = true
 
 [node name="Cutscene" type="Node2D" parent="."]
 
+[connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]
 [connection signal="fight_res_set" from="." to="Background" method="_on_game_fight_res_set"]
 [connection signal="fight_res_set" from="." to="Fight" method="_on_game_fight_res_set"]
-[connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]
 [connection signal="game_pause" from="." to="pause_menu" method="_on_game_pause"]
 [connection signal="game_pause" from="." to="Background" method="_on_game_pause"]
 [connection signal="game_unpause" from="." to="pause_menu" method="_on_game_unpause"]

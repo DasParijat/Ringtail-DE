@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://deonx3mfyyc1"]
+[gd_resource type="Resource" script_class="BulletRes" load_steps=4 format=3 uid="uid://deonx3mfyyc1"]
 
+[ext_resource type="AudioStream" uid="uid://sh8qv38oex7u" path="res://RDE_Audio/pump_shot1.mp3" id="1_objhy"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_uphi5"]
 [ext_resource type="Texture2D" uid="uid://capi8q674i86f" path="res://RDE_Images/pumpshot_bullet.png" id="2_tgli8"]
 
@@ -7,8 +8,18 @@
 resource_local_to_scene = true
 script = ExtResource("1_uphi5")
 texture = ExtResource("2_tgli8")
+gun_shot_sound = ExtResource("1_objhy")
 fade_on_exit = false
 damage = 4.0
 is_piercing = false
+wait_time = 0.0
+aim_on_wait = true
 falloff_point = 400.0
 falloff_rate = 0.2
+enable_particle = false
+particle_color = Color(1, 1, 1, 1)
+particle_lifetime = 0.5
+particle_gravity = Vector2(-200, 0)
+particle_explosiveness = 0.0
+particle_amount = 8
+particle_spread = 45.0

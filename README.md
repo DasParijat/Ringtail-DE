@@ -65,6 +65,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(5/29/25)
 			<li>(General) 
 			Set up audio busses</li>
+			<li>(Pump Shotgun) 
+			Added shotgun sound effects</li>
 			<li>(Game) 
 			Setting up music player</li>
 			<li>(Pause Menu) 
