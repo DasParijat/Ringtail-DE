@@ -1,6 +1,6 @@
 extends Resource
 class_name MobRes
-# PlayerRes is used to define the stats of each playable character
+# MobRes is used to define the stats of each mob
 
 # Changable Properties
 @export var name : String = "UNNAMED MOB"

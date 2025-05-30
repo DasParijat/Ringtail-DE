@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 # Music Player
 
-var fight_res
+var music_res
 
 var song_intro : AudioStream
 var song_body : AudioStream
@@ -12,5 +12,12 @@ func _ready() -> void:
 	
 func _on_game_fight_res_set() -> void:
 	# TODO Get songs from fight res here
-	fight_res = get_parent().fight_res
+	music_res = get_parent().music_res
+	
+	stream = music_res.song_intro
+	self.play()
+	
+	await self.finished
+	stream = music_res.song_body
+	self.play()
 	

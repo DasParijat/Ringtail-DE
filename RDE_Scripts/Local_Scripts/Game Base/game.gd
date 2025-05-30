@@ -4,6 +4,7 @@ extends Node2D
 @onready var level : LevelRes = GlobalScene.next_level
 
 @onready var fight_res : FightRes 
+var music_res : MusicRes
 
 signal fight_res_set
 
@@ -16,7 +17,9 @@ var on_victory_screen : bool = false
 func _ready() -> void:
 	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
 		level.index = 0
-		
+	
+	music_res = fight_res.music_res
+	
 	#print("LEVEL INDEX: ", level.index)
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))

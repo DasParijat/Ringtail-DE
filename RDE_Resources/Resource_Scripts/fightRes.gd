@@ -3,6 +3,7 @@ class_name FightRes
 # FightRes is used to define what's in the level
 
 @export var FIGHT_NAME : String = "UNNAMED FIGHT"
+@export var music_res : MusicRes
 
 @export var world_scene : PackedScene
 @export var mob_layout_scene : PackedScene # For Ringtail DE, this may not be used at all

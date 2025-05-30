@@ -62,6 +62,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/30/25)
+			<li>(Music Res) 
+			Created music resource, used in fight resource</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/29/25)
 			<li>(General) 
 			Set up audio busses</li>

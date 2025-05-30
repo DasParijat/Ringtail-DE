@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="MusicRes" load_steps=2 format=3 uid="uid://bclw4aun5xgj"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/musicRes.gd" id="1_b7a11"]
+
+[resource]
+script = ExtResource("1_b7a11")
