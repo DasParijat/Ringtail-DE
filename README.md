@@ -68,6 +68,12 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			changed transition attack</li>
 			<li>(EOTHS) 
 			EOTHS nerfed</li>
+			<li>(Audio) 
+			Added general mob death sound audio</li>
+			<li>(Mob Res) 
+			Hurt and death sound effects have been added</li>
+			<li>(Base Mob / Bullet) 
+			Death sounds are played in Base Mob, while hurt sounds are played in Bullet</li>
 		</ul>
 	</li>
 	<li>

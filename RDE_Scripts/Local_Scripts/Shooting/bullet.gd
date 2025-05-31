@@ -136,6 +136,7 @@ func _on_area_entered(area : Area2D) -> void:
 		if target_group != "Player":
 			# Allows player cur_power to update when hitting enemy
 			GlobalSignal.emit_signal("update_power", damage / 7)
+			if parent.mob_res.hurt_sound: AudioManager.play_audio_one_shot(parent.mob_res.hurt_sound)
 		
 		if not bullet_res.is_piercing:
 			exiting()

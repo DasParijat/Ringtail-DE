@@ -10,6 +10,10 @@ class_name MobRes
 @export var texture : Texture2D = preload("uid://5ry8kssatn11")
 @export var base_sprtflip_enabled = true
 
+@export_category("Audio")
+@export var hurt_sound : AudioStream = AudioStream.new()
+@export var death_sound : AudioStream = preload("uid://c0wbwydmhq84y")
+
 @export_category("Health")
 @export var health_comp : HealthRes
 @export var num_of_bars : int = 3 # For main boss hp bar
