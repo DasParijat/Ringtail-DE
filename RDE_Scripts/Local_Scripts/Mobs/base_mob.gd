@@ -150,7 +150,9 @@ func death_check() -> void:
 	## Check if mob health_res is dead, and respond accordingly
 	if health_res.is_dead():
 		#print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
-		if mob_res.death_sound: AudioManager.play_audio_one_shot(mob_res.death_sound)
+		if mob_res.death_sounds: 
+			var sound_index : int = randi_range(0, mob_res.death_sounds.size() - 1)
+			AudioManager.play_audio_one_shot(mob_res.death_sounds[sound_index])
 			
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
 			GlobalSignal.emit_signal("game_won")

@@ -17,7 +17,7 @@ func _process(delta : float) -> void:
 		phase3()
 
 func phase1():
-	if total_delta < 5.0:
+	if total_delta < 5.0 or base.health_res.cur_hp > 350:
 		return
 		
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):

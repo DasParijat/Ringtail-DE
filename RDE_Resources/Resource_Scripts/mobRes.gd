@@ -11,8 +11,8 @@ class_name MobRes
 @export var base_sprtflip_enabled = true
 
 @export_category("Audio")
-@export var hurt_sound : AudioStream = AudioStream.new()
-@export var death_sound : AudioStream = preload("uid://c0wbwydmhq84y")
+@export var hurt_sounds : Array[AudioStream]
+@export var death_sounds : Array[AudioStream] = [preload("uid://c0wbwydmhq84y")]
 
 @export_category("Health")
 @export var health_comp : HealthRes

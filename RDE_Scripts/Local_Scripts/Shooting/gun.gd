@@ -90,7 +90,8 @@ func reload_text_handling() -> void:
 	reload_text.rotation = -global_rotation # This makes it remain 0 degrees no matter what
 
 func shoot_sound_effect() -> void:
-	AudioManager.play_audio_one_shot(bullet_res.gun_shot_sound, 
+	var sound_index : int = randi_range(0, bullet_res.gun_shot_sounds.size() - 1)
+	AudioManager.play_audio_one_shot(bullet_res.gun_shot_sounds[sound_index], 
 									"Game SFX",
 									-5, 
 									randf_range(0.8, 1.2))

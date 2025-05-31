@@ -8,7 +8,7 @@
 resource_local_to_scene = true
 script = ExtResource("1_uphi5")
 texture = ExtResource("2_tgli8")
-gun_shot_sound = ExtResource("1_objhy")
+gun_shot_sounds = Array[AudioStream]([ExtResource("1_objhy")])
 fade_on_exit = false
 damage = 4.0
 is_piercing = false

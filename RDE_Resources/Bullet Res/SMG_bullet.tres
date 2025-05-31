@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="BulletRes" load_steps=4 format=3 uid="uid://ts0nwtwx6v6p"]
+[gd_resource type="Resource" script_class="BulletRes" load_steps=5 format=3 uid="uid://ts0nwtwx6v6p"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_bolxm"]
 [ext_resource type="AudioStream" uid="uid://bkp80sq43vtdq" path="res://RDE_Audio/base_ap_uzi_shoot_sound.mp3" id="1_fkhwd"]
+[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="2_8ocgv"]
 [ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_moiun"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_bolxm")
 texture = ExtResource("2_moiun")
-gun_shot_sound = ExtResource("1_fkhwd")
+gun_shot_sounds = Array[AudioStream]([ExtResource("1_fkhwd"), ExtResource("2_8ocgv")])
 fade_on_exit = false
 damage = 0.5
 is_piercing = false

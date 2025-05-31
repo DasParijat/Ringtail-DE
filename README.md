@@ -76,6 +76,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Death sounds are played in Base Mob, while hurt sounds are played in Bullet</li>
 			<li>(Gun Res / Gun / Player Res) 
 			Added reload and switch sound effects for guns</li>
+			<li>(RingtailNORM / RingtailHARD) 
+			Below certain hp, Ringtail will start using mob/bullet attacks</li>
+			<li>(Bullet Res / Mob Res) 
+			Now can handle multiple different gun shot, mob hurt, and mob death sounds</li>
 		</ul>
 	</li>
 	<li>

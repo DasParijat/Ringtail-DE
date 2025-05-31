@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=7 format=3 uid="uid://c8ri6vf360a65"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=8 format=3 uid="uid://c8ri6vf360a65"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_8a5f1"]
 [ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="1_55p76"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_56ugl"]
 [ext_resource type="AudioStream" uid="uid://bm0kec7v0ucpy" path="res://RDE_Audio/pump_shotload1.mp3" id="3_bilyi"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="3_yt8cx"]
+[ext_resource type="AudioStream" uid="uid://sh8qv38oex7u" path="res://RDE_Audio/pump_shot1.mp3" id="4_ly7c3"]
 
 [sub_resource type="Resource" id="Resource_x6ded"]
 script = ExtResource("1_56ugl")
@@ -23,8 +24,8 @@ color = Color(0.967964, 0.436217, 0.353092, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
 texture = ExtResource("3_yt8cx")
 base_sprtflip_enabled = true
-hurt_sound = ExtResource("3_bilyi")
-death_sound = ExtResource("1_55p76")
+hurt_sounds = Array[AudioStream]([ExtResource("3_bilyi"), ExtResource("4_ly7c3")])
+death_sounds = Array[AudioStream]([ExtResource("1_55p76")])
 health_comp = SubResource("Resource_x6ded")
 num_of_bars = 3
 is_boss = true
