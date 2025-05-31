@@ -74,6 +74,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Hurt and death sound effects have been added</li>
 			<li>(Base Mob / Bullet) 
 			Death sounds are played in Base Mob, while hurt sounds are played in Bullet</li>
+			<li>(Gun Res / Gun / Player Res) 
+			Added reload and switch sound effects for guns</li>
 		</ul>
 	</li>
 	<li>

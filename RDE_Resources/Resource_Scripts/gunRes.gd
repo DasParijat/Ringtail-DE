@@ -6,6 +6,8 @@ class_name GunRes
 @export_category("Qualitative Attributes")
 @export var name : String = "UNNAMED"  
 @export var texture : Texture2D   
+@export var reload_sound : AudioStream
+@export var switch_sound : AudioStream
 
 @export_category("Quantitative Attributes")
 @export var bullet_speed : int = 750

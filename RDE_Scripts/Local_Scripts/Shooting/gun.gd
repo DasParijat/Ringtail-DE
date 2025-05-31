@@ -170,6 +170,7 @@ func reload() -> void:
 func auto_reload() -> void:
 	## Auto reload means it waits (reload_time) before mag full
 	#print("Auto reload started")
+	AudioManager.play_audio_one_shot(gun_res.reload_sound)
 	for i in range(gun_res.reload_time * 2):
 		if not GlobalPlayer.power_activated: reload_timer.start(1)
 		else: reload_timer.start(0.15)
@@ -189,6 +190,7 @@ func manual_reload(manual_reload_time : float) -> void:
 		if not GlobalPlayer.power_activated: reload_timer.start(manual_reload_time)
 		else: reload_timer.start(manual_reload_time / 7)
 		update_ui()
+		AudioManager.play_audio_one_shot(gun_res.reload_sound)
 		await reload_timer.timeout
 		#print("Reloaded 1 bullet, current ammo:", cur_ammo)
 

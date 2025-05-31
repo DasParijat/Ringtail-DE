@@ -65,9 +65,10 @@ func get_next_gun_index(gun_index):
 	#print(gun_index)
 	return(gun_index)
 
-func handle_gun_switch(gun_index : int, timer : Timer) -> int:
+func handle_gun_switch(gun_index : int, timer : Timer, next_gun_switch_sound : AudioStream) -> int:
 	if timer.is_stopped() and Input.is_action_just_pressed("switch_weapon"):
 		gun_index = get_next_gun_index(gun_index)
+		AudioManager.play_audio_one_shot(next_gun_switch_sound)
 		timer.start(switch_cooldown)
 		
 	return(gun_index)

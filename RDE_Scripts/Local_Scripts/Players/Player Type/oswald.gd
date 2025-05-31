@@ -31,12 +31,13 @@ func _process(delta: float) -> void:
 	
 	base.cur_gun_weight = cur_gun.gun_res.weight
 	
-	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
+	gun_index = player_res.handle_gun_switch(gun_index, switch_timer, next_gun.gun_res.switch_sound)
 	
 	if (player_res.cur_power > player_res.power_ex_cutoff 
 			and not cur_gun.not_reloading()
 			and Input.is_action_just_pressed("shoot")):
 		gun_index = player_res.get_next_gun_index(gun_index)
+		AudioManager.play_audio_one_shot(next_gun.gun_res.switch_sound)
 			
 	power_move()
 
