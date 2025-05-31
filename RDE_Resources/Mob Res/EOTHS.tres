@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=4 format=3 uid="uid://pipbvxej5n7a"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://pipbvxej5n7a"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_ol587"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_aan44"]
+[ext_resource type="Texture2D" uid="uid://5ry8kssatn11" path="res://RDE_Images/rt_ringtail2.png" id="3_2p5g1"]
 
 [sub_resource type="Resource" id="Resource_x6ded"]
 script = ExtResource("1_ol587")
@@ -18,6 +19,7 @@ name = "EOTHS"
 display_name = "Embodiment Of The Human Spirit"
 color = Color(1, 1, 1, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+texture = ExtResource("3_2p5g1")
 base_sprtflip_enabled = false
 health_comp = SubResource("Resource_x6ded")
 num_of_bars = 1

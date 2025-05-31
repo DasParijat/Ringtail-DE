@@ -1,16 +1,14 @@
-[gd_resource type="Resource" script_class="FightRes" load_steps=7 format=3 uid="uid://ds5x2eini1j0p"]
+[gd_resource type="Resource" script_class="FightRes" load_steps=6 format=3 uid="uid://ds5x2eini1j0p"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="1_77xtu"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/fightRes.gd" id="1_g67wl"]
 [ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="1_iqtjs"]
-[ext_resource type="Resource" uid="uid://bclw4aun5xgj" path="res://RDE_Resources/Music Res/ringtail_theme.tres" id="2_fggce"]
 [ext_resource type="PackedScene" uid="uid://cja72mr27m4j3" path="res://RDE_Scenes/Entities/Mobs/ringtail_hard.tscn" id="3_syque"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="7_8wdhd"]
 
 [resource]
 script = ExtResource("1_g67wl")
 FIGHT_NAME = "RGT_HARD"
-music_res = ExtResource("2_fggce")
 world_scene = ExtResource("7_8wdhd")
 single_boss = ExtResource("3_syque")
 single_boss_spawn = Vector2(0, -200)

@@ -67,6 +67,10 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Created music resource, used in fight resource</li>
 			<li>(Game Music Player) 
 			Music is played in correct order from music res</li>
+			<li>(Bullet / Gun) 
+			Moved gun shot sound effect from bullet to gun</li>
+			<li>(AudioManager) 
+			Setting up an AudioManager (end goal is for gun shots)</li>
 		</ul>
 	</li>
 	<li>

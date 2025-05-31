@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=10 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
-[ext_resource type="AudioStream" uid="uid://dxrffalrjmi6x" path="res://RDE_Audio/ak47 base sound effect.mp3" id="2_lex1j"]
 [ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_163st"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/music_player.gd" id="3_btvjt"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
@@ -15,7 +14,6 @@
 script = ExtResource("1_psimn")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_lex1j")
 volume_db = -10.0
 autoplay = true
 bus = &"Music Bus"

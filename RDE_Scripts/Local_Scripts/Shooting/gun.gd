@@ -10,6 +10,7 @@ extends Node2D
 @onready var shoot_timer : Timer = $ShootTimer
 @onready var reload_timer : Timer = $ReloadTimer
 @onready var reload_text : Label = $ReloadText
+@onready var audio_player : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var mag_size : int = gun_res.mag_size
 @onready var cur_ammo : int = gun_res.cur_ammo
@@ -27,6 +28,7 @@ func _ready() -> void:
 	shoot_timer.wait_time = gun_res.fire_rate
 	reload_timer.wait_time = gun_res.reload_time
 	is_auto = gun_res.is_automatic
+	audio_player.stream = bullet_res.gun_shot_sound
 	
 	update_ui()
 	
@@ -88,7 +90,12 @@ func reload_text_handling() -> void:
 	reload_text.show()
 	reload_text.global_position = global_position + Vector2(-56, 35) # Specifc pos makes it centered
 	reload_text.rotation = -global_rotation # This makes it remain 0 degrees no matter what
-		
+
+func shoot_sound_effect() -> void:
+	audio_player.pitch_scale = randf_range(0.8, 1.2)
+	audio_player.play()
+	
+	
 func shoot() -> void:
 	## Handles creating and shooting a bullet
 	if cur_ammo <= 0 and not not_reloading():
@@ -119,6 +126,7 @@ func shoot() -> void:
 		# putting bullet in fight scene
 		get_parent().get_parent().add_child(bullet)
 		
+		shoot_sound_effect()
 		cur_ammo -= 1
 		GlobalSignal.emit_signal("get_cur_stats", "GUN", get_cur_stats())
 	shoot_timer.start(gun_res.fire_rate)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctiaonmti5ieg"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Global_Scripts/audio_manager.gd" id="1_vg58e"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_vg58e")
+
+[node name="Clips" type="Node" parent="."]
+
+[node name="One Shots" type="Node" parent="."]

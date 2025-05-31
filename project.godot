@@ -25,6 +25,7 @@ GlobalScene="*res://RDE_Scripts/Global_Scripts/GlobalScene.gd"
 GlobalFightStats="*res://RDE_Scripts/Global_Scripts/GlobalFightStats.gd"
 GlobalMenu="*res://RDE_Scripts/Global_Scripts/GlobalMenu.gd"
 GlobalPlayer="*res://RDE_Scripts/Global_Scripts/GlobalPlayer.gd"
+AudioManager="*res://RDE_Scenes/AudioManager.tscn"
 
 [dialogic]
 
