@@ -4,6 +4,7 @@ extends Node2D
 
 @export var base : BaseMob 
 @export var controller : MobController
+@export var give_rate : float = 4
 
 var power_give : float = 0
 var hp_give : float = 0
@@ -19,9 +20,9 @@ func _on_get_cur_stats(type : String, stats) -> void:
 	## Then stops trying to receive player stats to prevent overlap
 	if type == "PLAYER" and can_execute:
 		if stats["cur_hp"] != null:
-			hp_give = stats["cur_hp"] / 3
+			hp_give = stats["cur_hp"] / give_rate
 		if stats["cur_power"] != null:
-			power_give = stats["cur_power"] / 3
+			power_give = stats["cur_power"] / give_rate
 		
 		can_execute = false
 	

@@ -30,7 +30,6 @@ var target_projectile : ShootAttack
 var total_delta : float = 0.0
 
 var phase : int = 1
-@export var phase_wait_time : float = 5.0
  
 func _ready() -> void:
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
@@ -48,13 +47,8 @@ func phase_handler(num_of_phases : int) -> void:
 		)
 	
 	if phase != new_phase:
-		#print("enter phase wait time: ", phase_wait_time)
-		#spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
-		phase = 0
-		await GlobalTime.local_wait(phase_wait_time)
 		spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
 		phase = new_phase
-		#print("phase: ", phase)
 	
 func action1() -> void:
 	## Follow player
@@ -136,9 +130,9 @@ func action7() -> void:
 	
 	mob_res.sprtflip_enabled = false
 	for i in range(2 * phase):
-		for j in range(3):
-			base.action("move_torward_player", {"speed": randi_range(110 * phase, 120 * phase), "length": 0.4})
-			await GlobalTime.local_wait(0.4)
+		for j in range(2 + phase):
+			base.action("move_torward_player", {"speed": randi_range(350, 550), "length": 0.2})
+			await GlobalTime.local_wait(0.2)
 		base.action("observe_player", 0.2)
 		await GlobalTime.local_wait(0.2)
 	

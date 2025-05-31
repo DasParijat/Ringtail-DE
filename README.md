@@ -62,6 +62,16 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(5/31/25)
+			<li>(Ringtail) 
+			Got rid of phase wait time,
+			changed transition attack</li>
+			<li>(EOTHS) 
+			EOTHS nerfed</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/30/25)
 			<li>(Music Res) 
 			Created music resource, used in fight resource</li>
