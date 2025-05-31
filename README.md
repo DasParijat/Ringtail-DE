@@ -70,7 +70,7 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			<li>(Bullet / Gun) 
 			Moved gun shot sound effect from bullet to gun</li>
 			<li>(AudioManager) 
-			Setting up an AudioManager (end goal is for gun shots)</li>
+			Set up AudioManager to handle gun shots</li>
 		</ul>
 	</li>
 	<li>

@@ -33,7 +33,8 @@ func _on_finished() -> void:
 
 func _on_game_won() -> void:
 	## Stop song_body, and play song_outro ONCE
-	stop()
-	game_is_running = false
-	play_track(music_res.song_outro)
+	if get_parent().fight_res.music_res:
+		stop()
+		game_is_running = false
+		play_tracks(music_res.song_outro)
 	

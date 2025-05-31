@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctiaonmti5ieg"]
+[gd_scene load_steps=3 format=3 uid="uid://ctiaonmti5ieg"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Global_Scripts/audio_manager.gd" id="1_vg58e"]
+[ext_resource type="PackedScene" uid="uid://tugympycbq2a" path="res://RDE_Scenes/audio_one_shot.tscn" id="2_f8o7o"]
 
-[node name="AudioManager" type="Node"]
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("clips", "one_shots")]
 script = ExtResource("1_vg58e")
+audio_one_shot_scene = ExtResource("2_f8o7o")
+clips = NodePath("Clips")
+one_shots = NodePath("One Shots")
 
 [node name="Clips" type="Node" parent="."]
+
+[node name="Main" type="AudioStreamPlayer" parent="Clips"]
+volume_db = -10.0
 
 [node name="One Shots" type="Node" parent="."]

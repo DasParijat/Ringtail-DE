@@ -1,4 +1,7 @@
 extends Node
+## Took code from Skyvastern - https://youtu.be/xe5IJgggbVI?si=8hNfvhu67lULKTvD
+## AudioManager mainly used for SFX sounds (such as gun shots and ui stuff)
+## Basically any sound that would overlap with another
 
 var active_music_stream: AudioStreamPlayer
 
@@ -7,11 +10,9 @@ var active_music_stream: AudioStreamPlayer
 @export var clips: Node
 @export var one_shots: Node
 
-@export_group("Extras")
-@export var click_audio: AudioStream
-
-
 func play(audio_name: String, from_position: float = 0.0, skip_restart: bool = false) -> void:
+	# Probably not gonna use Clips
+	# TODO Possibly make AudioManager ONLY handle One Shots
 	if skip_restart and active_music_stream and active_music_stream.name == audio_name:
 		return
 	
@@ -19,15 +20,13 @@ func play(audio_name: String, from_position: float = 0.0, skip_restart: bool = f
 	active_music_stream.play(from_position)
 
 
-func play_audio_one_shot(audio_stream: AudioStream, volume_db: float = 0.0, from_position: float = 0.0) -> AudioOneShot:
+func play_audio_one_shot(audio_stream: AudioStream, bus : StringName = "Game SFX", volume_db: float = 0.0, pitch_scale : float = 0.0, from_position: float = 0.0) -> AudioOneShot:
 	var audio_one_shot : AudioOneShot = audio_one_shot_scene.instantiate()
 	audio_one_shot.stream = audio_stream
 	audio_one_shot.volume_db = volume_db
+	audio_one_shot.bus = bus
+	audio_one_shot.pitch_scale = pitch_scale
 	audio_one_shot.from_position = from_position
 	
 	one_shots.add_child(audio_one_shot)
 	return audio_one_shot
-
-
-func play_click_audio() -> void:
-	play_audio_one_shot(click_audio, 0, 0.015)
