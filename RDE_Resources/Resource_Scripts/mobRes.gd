@@ -7,6 +7,7 @@ class_name MobRes
 @export var display_name : String = "NO DISPLAY NAME GIVEN" # used for health bar
 @export var color : Color 
 @export var hp_bg_color : Color
+@export var blood_color : Color
 @export var texture : Texture2D = preload("uid://5ry8kssatn11")
 @export var base_sprtflip_enabled = true
 

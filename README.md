@@ -64,8 +64,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(6/1/25)
 			<li>(Bullet) 
-			"Blood" effect plays when bullet hits target entity 
-			(Might change color to keep it PG-13)</li>
+			"Blood" effect plays when bullet hits enemy mob</li>
+			<li>(TempCPUParticle) 
+			Created TempCPUParticle to spawn particles and delete once done 
+			(Used for previously mentioned blood effect, without it
+			the particles wouldn't be able to play when bullet deletes itself)</li>
+			<li>(Mob Res) 
+			The blood color of mobs can be modified</li>
 		</ul>
 	</li>
 	<li>

@@ -115,12 +115,20 @@ func _on_get_cur_stats(type, stats) -> void:
 		"MAIN_BOSS":
 			main_boss_pos = stats["position"]
 
-func play_hit_effect() -> void:
+func play_hit_effect(parent) -> void:
 	## Creates particle effect where it hits entity
 	var hit_effect : TempCPUParticle = _temp_cpu_load.instantiate()
 	hit_effect.global_transform = global_transform
 	hit_effect.global_rotation_degrees = global_rotation_degrees
 	get_parent().add_child(hit_effect)
+	
+	# Set blood color to mob blood color, 
+	# if no blood color, then set it to general mob color
+	if parent.mob_res.blood_color: 
+		hit_particles.color = parent.mob_res.blood_color
+	else:
+		hit_particles.color = parent.mob_res.color
+		
 	hit_effect.setup(hit_particles)
 		
 func exiting() -> void:
@@ -147,11 +155,10 @@ func _on_area_entered(area : Area2D) -> void:
 		if target_group != "Player":
 			# Allows player cur_power to update when hitting enemy
 			GlobalSignal.emit_signal("update_power", damage / 7)
+			play_hit_effect(parent)
 			if parent.mob_res.hurt_sounds: 
 				var sound_index : int = randi_range(0, parent.mob_res.hurt_sounds.size() - 1)
 				AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index])
-		
-		play_hit_effect()
 		
 		if not bullet_res.is_piercing:
 			#hit_particles.emitting = true
