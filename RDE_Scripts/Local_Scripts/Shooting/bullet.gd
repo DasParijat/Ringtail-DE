@@ -27,6 +27,8 @@ var total_follow_time : float = 0.0
 var player_pos : Vector2
 var main_boss_pos : Vector2
 
+var _temp_cpu_load : PackedScene = preload("res://RDE_Scenes/temp_cpu_particle.tscn")
+
 var total_delta : float = 0
 
 func _ready():
@@ -113,6 +115,14 @@ func _on_get_cur_stats(type, stats) -> void:
 		"MAIN_BOSS":
 			main_boss_pos = stats["position"]
 
+func play_hit_effect() -> void:
+	## Creates particle effect where it hits entity
+	var hit_effect : TempCPUParticle = _temp_cpu_load.instantiate()
+	hit_effect.global_transform = global_transform
+	hit_effect.global_rotation_degrees = global_rotation_degrees
+	get_parent().add_child(hit_effect)
+	hit_effect.setup(hit_particles)
+		
 func exiting() -> void:
 	## Handles how bullets exit
 	while modulate.a > 0 and bullet_res.fade_on_exit:
@@ -141,7 +151,9 @@ func _on_area_entered(area : Area2D) -> void:
 				var sound_index : int = randi_range(0, parent.mob_res.hurt_sounds.size() - 1)
 				AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index])
 		
+		play_hit_effect()
+		
 		if not bullet_res.is_piercing:
-			hit_particles.emitting = true
-			await GlobalTime.local_wait(hit_particles.lifetime)
+			#hit_particles.emitting = true
+			#await GlobalTime.local_wait(hit_particles.lifetime)
 			exiting()

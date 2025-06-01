@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqeheba63vqdu"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Shooting/temp_cpu_particle.gd" id="1_f7ev8"]
+
+[node name="TempCPUParticle" type="Node2D"]
+script = ExtResource("1_f7ev8")

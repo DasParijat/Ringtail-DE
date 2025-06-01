@@ -64,7 +64,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 		<ul>
 			(6/1/25)
 			<li>(Bullet) 
-			Trying to implement particle effects when hitting area</li>
+			"Blood" effect plays when bullet hits target entity 
+			(Might change color to keep it PG-13)</li>
 		</ul>
 	</li>
 	<li>
