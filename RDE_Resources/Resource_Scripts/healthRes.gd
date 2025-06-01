@@ -36,10 +36,8 @@ func take_dmg(dmg_amount : float):
 		dmg_amount = dmg_amount * damage_rate
 		
 		cur_hp = cur_hp - dmg_amount
-		if is_player: 
-			# Only a player's hp is considered for damage_taken
-			GlobalFightStats.fight_stats["damage_taken"] += dmg_amount
-			
+		if is_player: GlobalFightStats.fight_stats["damage_taken"] += dmg_amount
+		# Only a player's hp is considered for damage_taken
 		#print(HP_NAME, " took damage, CUR HP: ", cur_hp, 
 		#"	DMG AMOUNT: ", dmg_amount) # for debugging
 		

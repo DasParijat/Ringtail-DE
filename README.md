@@ -62,6 +62,13 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(6/1/25)
+			<li>(Bullet) 
+			Trying to implement particle effects when hitting area</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(5/31/25)
 			<li>(Ringtail) 
 			Got rid of phase wait time,

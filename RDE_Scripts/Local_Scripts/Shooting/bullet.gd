@@ -9,6 +9,7 @@ extends Area2D
 
 @onready var sprite = $Sprite2D
 @onready var cpu_particles_2d : CPUParticles2D = $CPUParticles2D
+@onready var hit_particles : CPUParticles2D =  $HitParticles
 
 var bullet_travelled : float
 var bullet_speed : float = 100
@@ -141,4 +142,6 @@ func _on_area_entered(area : Area2D) -> void:
 				AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index])
 		
 		if not bullet_res.is_piercing:
+			hit_particles.emitting = true
+			await GlobalTime.local_wait(hit_particles.lifetime)
 			exiting()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy77mdk6wv3fp"]
+[gd_scene load_steps=6 format=3 uid="uid://cy77mdk6wv3fp"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Shooting/bullet.gd" id="1_d7ju7"]
 [ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_0chfb"]
@@ -7,6 +7,10 @@
 
 [sub_resource type="Curve" id="Curve_f4xy5"]
 _data = [Vector2(0.00581394, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wlxij"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="bullet" type="Area2D"]
@@ -31,6 +35,23 @@ scale_amount_min = 2.0
 scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_f4xy5")
 color = Color(1, 1, 1, 0.313726)
+
+[node name="HitParticles" type="CPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+emitting = false
+amount = 60
+lifetime = 0.7
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.5
+direction = Vector2(-1, 0)
+spread = 100.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_wlxij")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
