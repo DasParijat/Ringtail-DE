@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var game = $".."
 @onready var panel_container: PanelContainer = $PanelContainer
 
-var tween : Tween = Tween.new()
+var tween : Tween
 
 func _ready() -> void:
 	## Set properties to hidden

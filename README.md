@@ -72,6 +72,8 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			(Might make it toggleable in the future)</li>
 			<li>(Oswald) 
 			Slight nerf to Oswald's HP and healing</li>
+			<li>(RGT_Plains / TileMap Info) 
+			Added walking sound as well as shrinked tilemap by 20%</li>
 		</ul>
 	</li>
 	<li>

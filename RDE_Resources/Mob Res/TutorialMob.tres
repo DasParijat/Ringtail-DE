@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://b16wpuisr77as"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://b16wpuisr77as"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_5xy4h"]
+[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="1_noofk"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_wqajs"]
 [ext_resource type="Texture2D" uid="uid://dk432aa6800jh" path="res://icon.svg" id="3_2e8yu"]
 
@@ -18,8 +19,11 @@ name = "TutorialMob"
 display_name = "TUTORIAL MOB"
 color = Color(0.289033, 0.587833, 0.820883, 1)
 hp_bg_color = Color(0, 0, 0, 1)
+blood_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_2e8yu")
 base_sprtflip_enabled = true
+hurt_sounds = Array[AudioStream]([])
+death_sounds = Array[AudioStream]([ExtResource("1_noofk")])
 health_comp = SubResource("Resource_dv48c")
 num_of_bars = 3
 is_boss = true

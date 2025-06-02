@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://ts0nwtwx6v6p" path="res://RDE_Resources/Bullet Res/SMG_bullet.tres" id="1_64ekl"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="2_4gh34"]
-[ext_resource type="AudioStream" uid="uid://ci3q5d1bcfiy2" path="res://RDE_Audio/running-in-grass base sound effect.mp3" id="2_c45os"]
+[ext_resource type="AudioStream" uid="uid://bm0kec7v0ucpy" path="res://RDE_Audio/pump_shotload1.mp3" id="2_bj6sx"]
 [ext_resource type="Texture2D" uid="uid://84l66vmm1e0y" path="res://RDE_Images/uzi_1.png" id="3_p3753"]
 [ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="4_5nhah"]
 
@@ -11,7 +11,7 @@ resource_local_to_scene = true
 script = ExtResource("2_4gh34")
 name = "SMG"
 texture = ExtResource("3_p3753")
-reload_sound = ExtResource("2_c45os")
+reload_sound = ExtResource("2_bj6sx")
 switch_sound = ExtResource("4_5nhah")
 bullet_speed = 1500
 mag_size = 30
