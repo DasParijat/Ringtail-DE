@@ -62,6 +62,14 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 <ul>
 	<li>
 		<ul>
+			(6/2/25)
+			<li>(Shaders / Game) 
+			Added and experimenting with VHS shaders to game scene 
+			(Might make it toggleable in the future)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/1/25)
 			<li>(Bullet) 
 			"Blood" effect plays when bullet hits enemy mob</li>
