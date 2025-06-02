@@ -76,7 +76,7 @@ func create_hp_bar(min : float, max : float) -> ProgressBar:
 	
 	return bar
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if cur_hp > -1:
 		for bar in hp_bars: 
 			update_bar(bar, cur_hp, 0.5)

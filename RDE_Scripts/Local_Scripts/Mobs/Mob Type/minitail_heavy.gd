@@ -14,7 +14,7 @@ func _ready() -> void:
 	controller.action_handling(1)
 	projectile = ShootAttack.new(base, _bullet_load, _bullet_res, get_parent().get_parent())
 	
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
 	controller.action_handling(1)
 
 

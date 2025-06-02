@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=7 format=3 uid="uid://c8wfq1r6fu21f"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://c8wfq1r6fu21f"]
 
 [ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="1_nxqbk"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_w5iru"]
-[ext_resource type="AudioStream" uid="uid://bkp80sq43vtdq" path="res://RDE_Audio/base_ap_uzi_shoot_sound.mp3" id="2_lsd6g"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_rwh2j"]
 [ext_resource type="Texture2D" uid="uid://ckslw2is24wvd" path="res://RDE_Images/rt_minitailDEF.png" id="3_jdcdk"]
 
@@ -21,10 +20,11 @@ name = "MinitailDEF"
 display_name = "Minitail"
 color = Color(1, 0.403278, 0.37104, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+blood_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_jdcdk")
 base_sprtflip_enabled = false
 hurt_sounds = Array[AudioStream]([])
-death_sounds = Array[AudioStream]([ExtResource("1_nxqbk"), ExtResource("2_lsd6g")])
+death_sounds = Array[AudioStream]([ExtResource("1_nxqbk")])
 health_comp = SubResource("Resource_4xssb")
 num_of_bars = 3
 is_boss = false

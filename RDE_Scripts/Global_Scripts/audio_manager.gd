@@ -25,8 +25,9 @@ func play_audio_one_shot(audio_stream: AudioStream, bus : StringName = "Game SFX
 	audio_one_shot.stream = audio_stream
 	audio_one_shot.volume_db = volume_db
 	audio_one_shot.bus = bus
-	audio_one_shot.pitch_scale = pitch_scale
 	audio_one_shot.from_position = from_position
-	
+	if pitch_scale > 0.0:
+		audio_one_shot.pitch_scale = pitch_scale
+		
 	one_shots.add_child(audio_one_shot)
 	return audio_one_shot

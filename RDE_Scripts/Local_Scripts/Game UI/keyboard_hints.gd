@@ -46,7 +46,7 @@ func _on_get_cur_stats(type, stats) -> void:
 			shoot_ui(stats)
 			reload_ui(stats)
 
-func rest_ui(stats : Dictionary) -> void:
+func rest_ui(_stats : Dictionary) -> void:
 	if GlobalPlayer.is_resting: rest_hint.modulate = in_use_color
 	else: rest_hint.modulate = usable_color 
 
@@ -63,7 +63,7 @@ func shoot_ui(stats : Dictionary) -> void:
 	else:
 		shoot_hint.modulate = usable_color 
 	
-func switch_ui(stats : Dictionary) -> void:
+func switch_ui(_stats : Dictionary) -> void:
 	if Input.is_action_just_pressed("switch_weapon"): switch_hint.modulate = in_use_color
 	else: switch_hint.modulate = usable_color 
 	

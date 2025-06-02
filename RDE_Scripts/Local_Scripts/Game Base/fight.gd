@@ -35,7 +35,7 @@ func _on_game_fight_res_set() -> void:
 	
 	create_fight()
 	
-func _process(delta: float) -> void:
+func _process(_delta : float) -> void:
 	if has_node(player_name):
 		player_pos = get_node(player_name).position 
 	# Gets and updates position of player for outside nodes to use (such as camera)

@@ -153,7 +153,11 @@ func death_check() -> void:
 		#print("NUM OF BOSSES: ", GMobHandler.num_of_bosses)
 		if mob_res.death_sounds: 
 			var sound_index : int = randi_range(0, mob_res.death_sounds.size() - 1)
-			AudioManager.play_audio_one_shot(mob_res.death_sounds[sound_index])
+			AudioManager.play_audio_one_shot(mob_res.death_sounds[sound_index], 
+									"Game SFX",
+									-5, 
+									randf_range(0.8, 1.2)
+									)
 			
 		if mob_res.is_boss and GMobHandler.num_of_bosses <= 1:
 			GlobalSignal.emit_signal("game_won")

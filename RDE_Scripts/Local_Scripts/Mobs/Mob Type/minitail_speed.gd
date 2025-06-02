@@ -8,7 +8,7 @@ extends Node2D
 func _ready() -> void:
 	controller.action_handling(2)
 	
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
 	for i in range(3):
 		controller.action_handling(1)
 	controller.action_handling(3)

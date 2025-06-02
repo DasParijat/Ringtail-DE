@@ -23,7 +23,7 @@ func _ready() -> void:
 	#level.index = level.order.size() - 1 # This code is for if I want to run last in order
 	next_in_order(0)
 
-func _process(delta: float) -> void:
+func _process(_delta : float) -> void:
 	if not GlobalTime.is_paused:
 		Engine.time_scale = GlobalTime.cur_time_scale
 

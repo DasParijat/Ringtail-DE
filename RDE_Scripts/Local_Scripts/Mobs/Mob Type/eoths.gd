@@ -4,7 +4,7 @@ extends Node2D
 
 @export var base : BaseMob 
 @export var controller : MobController
-@export var give_rate : float = 4
+@export var give_rate : float = 3
 
 var power_give : float = 0
 var hp_give : float = 0

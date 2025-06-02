@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=5 format=3 uid="uid://c20bjfluwired"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://c20bjfluwired"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_lvf4i"]
+[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="1_lvyec"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_7yiv7"]
 [ext_resource type="Texture2D" uid="uid://bsghmya2f5nxm" path="res://RDE_Images/rt_minitailHEAVY.png" id="3_yjfnw"]
 
@@ -19,8 +20,11 @@ name = "MinitailHEAVY"
 display_name = "Minitail Heavy"
 color = Color(0.761844, 0.497783, 0.898134, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+blood_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_yjfnw")
 base_sprtflip_enabled = true
+hurt_sounds = Array[AudioStream]([])
+death_sounds = Array[AudioStream]([ExtResource("1_lvyec")])
 health_comp = SubResource("Resource_4xssb")
 num_of_bars = 3
 is_boss = false

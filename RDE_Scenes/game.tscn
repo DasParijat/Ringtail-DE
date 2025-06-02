@@ -2,38 +2,34 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
+[ext_resource type="Shader" path="res://RDE_Images/RDE_Shaders/camcorder_shader.gdshader" id="3_1mukl"]
 [ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_163st"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/music_player.gd" id="3_btvjt"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
-[ext_resource type="Shader" path="res://RDE_Images/RDE_Shaders/vhs_shader.gdshader" id="4_34pea"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="4_72mc8"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game World/game_background.gd" id="4_a1q2e"]
 [ext_resource type="PackedScene" uid="uid://nlpg0x3l8com" path="res://RDE_Scenes/victory_menu.tscn" id="4_b4hy0"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/fight.gd" id="6_b2j36"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1pu3"]
-shader = ExtResource("4_34pea")
-shader_parameter/overlay = false
-shader_parameter/scanlines_opacity = 0.35
-shader_parameter/scanlines_width = 0.5
-shader_parameter/grille_opacity = 0.035
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = false
-shader_parameter/roll = false
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 0.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.0
-shader_parameter/noise_opacity = 0.0
-shader_parameter/noise_speed = 5.515
-shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = 4.75e-08
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2p84"]
+shader = ExtResource("3_1mukl")
+shader_parameter/color_bleed_enabled = true
+shader_parameter/chromatic_abberation_enabled = true
+shader_parameter/film_grain_enabled = true
+shader_parameter/sharpness_enabled = true
+shader_parameter/chromatic_abberation_seperation = 0.011
+shader_parameter/chromatic_abberation_intensity = 0.2
+shader_parameter/chromatic_abberation_blur_strength = 1.0
+shader_parameter/film_grain_intensity = 1.0
+shader_parameter/grain_size = 2.0
+shader_parameter/darkness_clamp = 0.28
+shader_parameter/sharpness_size = 1.0
+shader_parameter/sharpness_intensity = 0.7
+shader_parameter/color_bleed_seperation = 0.02
+shader_parameter/color_bleed_intensity = 0.2
+shader_parameter/anti_bleed_intensity = 1.8
+shader_parameter/color_bleed_blur_strength = 1.0
+shader_parameter/color_bleed_quality = 5
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_psimn")
@@ -47,7 +43,8 @@ script = ExtResource("3_btvjt")
 [node name="Shaders" type="CanvasLayer" parent="."]
 
 [node name="VHS Shader" type="ColorRect" parent="Shaders"]
-material = SubResource("ShaderMaterial_a1pu3")
+visible = false
+material = SubResource("ShaderMaterial_i2p84")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

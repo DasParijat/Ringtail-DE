@@ -34,7 +34,7 @@ func _ready() -> void:
 	if is_selected():
 		GlobalSignal.cur_gun.emit(gun_res)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	position = get_parent().position
 	

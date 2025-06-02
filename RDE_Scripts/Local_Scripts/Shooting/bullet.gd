@@ -159,8 +159,12 @@ func _on_area_entered(area : Area2D) -> void:
 			play_hit_effect(parent)
 			if parent.mob_res.hurt_sounds: 
 				var sound_index : int = randi_range(0, parent.mob_res.hurt_sounds.size() - 1)
-				AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index])
-		
+				AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index], 
+									"Game SFX",
+									-5, 
+									randf_range(0.9, 1.1)
+									)
+			
 		if not bullet_res.is_piercing:
 			#hit_particles.emitting = true
 			#await GlobalTime.local_wait(hit_particles.lifetime)

@@ -63,9 +63,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 	<li>
 		<ul>
 			(6/2/25)
+			<li>(General) 
+			Small changes with code to reduce debugger list errors thrown</li>
+			<li>(Base Mob / Bullet) 
+			Pitch variations with mob hurt and deaths sounds</li>
 			<li>(Shaders / Game) 
-			Added and experimenting with VHS shaders to game scene 
+			Added and experimenting with VHS/Camcorder shaders to game scene 
 			(Might make it toggleable in the future)</li>
+			<li>(Oswald) 
+			Slight nerf to Oswald's HP and healing</li>
 		</ul>
 	</li>
 	<li>

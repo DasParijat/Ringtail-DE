@@ -18,7 +18,7 @@ func _ready() -> void:
 	#print("oswald added")
 	GlobalSignal.cur_gun.emit(gun_array[0].gun_res) # makes sure camera gets primary gun_res first
 
-func _process(delta: float) -> void:
+func _process(_delta : float) -> void:
 	position = base.position
 	if GlobalTime.is_paused:
 		return

@@ -52,12 +52,12 @@ func clear_current_world() -> void:
 		if child_node is not CanvasModulate:
 			child_node.queue_free()
 	
-func has_same_world(world_scene: PackedScene) -> bool:
+func has_same_world(given_world_scene : PackedScene) -> bool:
 	#print("HAS SAME WORLD FUNC USED!!")
 	if get_child_count() == 0:
 		return false
 		
-	var world_name = world_scene.resource_path.get_file().get_basename()
+	var world_name = given_world_scene.resource_path.get_file().get_basename()
 	#print(get_child(1).name, "	packed scene name: ", world_name)
 	return get_child(1).name == world_name
 	

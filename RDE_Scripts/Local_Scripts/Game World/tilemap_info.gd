@@ -9,3 +9,7 @@ extends Node2D
 func _ready() -> void:
 	GlobalScene.cam_border_x = cam_border_x
 	GlobalScene.cam_border_y = cam_border_y
+
+func _input(event: InputEvent) -> void:
+	if GlobalPlayer.is_moving:
+		pass

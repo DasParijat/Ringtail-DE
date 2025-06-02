@@ -17,7 +17,7 @@ func _ready() -> void:
 	ResourceLoader.load_threaded_request(scene_name)
 
 
-func _process(delta : float) -> void:
+func _process(_delta : float) -> void:
 	scene_load_status = ResourceLoader.load_threaded_get_status(scene_name, progress)
 	progress_label.text = str(floor(progress[0]*100)) + "% loaded"
 	if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
