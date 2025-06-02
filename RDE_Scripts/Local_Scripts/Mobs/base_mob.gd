@@ -30,6 +30,7 @@ var player_hp : float
 var is_near_player : bool = false
 var distance_to_player : float = 0.0
 var sprite_flip_enabled : bool = true
+var is_taking_dmg : bool = false
 
 var player_in_hitbox : bool = false
 var damage_cooldown : float = 0.0
@@ -187,6 +188,20 @@ func deal_hitbox_dmg() -> void:
 			area.get_parent().health_res.take_dmg(mob_res.collision_dmg)
 	damage_cooldown = 0.0
 
+func take_dmg_flash() -> void:
+	## Plays red flash animation when hit
+	## Function used in bullet that collides with mob
+	if is_taking_dmg:
+		return
+		
+	var tween : Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	var cur_modulate : Color = sprite.modulate
+	is_taking_dmg = true
+	tween.tween_property(sprite, "modulate", Color(1.4,1,1), 0.1)
+	tween.tween_property(sprite, "modulate", cur_modulate, 0.1)
+	await tween.finished
+	is_taking_dmg = false
+	
 func health_bar_handling() -> void:
 	## Handles updating local hp bar
 	if mob_res.is_boss:

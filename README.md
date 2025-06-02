@@ -71,6 +71,9 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			the particles wouldn't be able to play when bullet deletes itself)</li>
 			<li>(Mob Res) 
 			The blood color of mobs can be modified</li>
+			<li>(Base Mob / Base Player / Bullet) 
+			Little red flash plays on entity sprite when hit by bullet 
+			(Doesn't really work with player, might remove it from player)</li>
 		</ul>
 	</li>
 	<li>

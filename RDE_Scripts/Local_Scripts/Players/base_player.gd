@@ -23,6 +23,7 @@ var cur_gun_weight : float
 var stored_hp : float = 0
 
 var prev_hp : float
+var is_taking_dmg : bool = false
 var total_delta : float
 
 func _ready() -> void:
@@ -116,6 +117,21 @@ func rest_check(delta):
 		):
 		health_res.cur_hp += stored_hp
 		stored_hp = 0
+
+func take_dmg_flash() -> void:
+	## Plays red flash animation when hit
+	## Function used in bullet that collides with player
+	if is_taking_dmg:
+		return
+		
+	var tween : Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	var cur_modulate : Color = sprite.modulate
+	
+	is_taking_dmg = true
+	tween.tween_property(sprite, "modulate", Color(1.4,1,1), 0.05)
+	tween.tween_property(sprite, "modulate", cur_modulate, 0.1)
+	await tween.finished
+	is_taking_dmg = false
 	
 func set_speedmod(new_val : float) -> void:
 	## Modify speed_modifier

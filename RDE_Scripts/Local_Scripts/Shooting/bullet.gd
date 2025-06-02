@@ -151,6 +151,7 @@ func _on_area_entered(area : Area2D) -> void:
 	if area.is_in_group("Hittable") and area.is_in_group(target_group):
 		var parent = area.get_parent()
 		parent.health_res.take_dmg(damage)
+		parent.take_dmg_flash()
 		
 		if target_group != "Player":
 			# Allows player cur_power to update when hitting enemy
