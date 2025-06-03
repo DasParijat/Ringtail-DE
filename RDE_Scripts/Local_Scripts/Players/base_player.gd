@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 @onready var hitbox : Area2D = $HitBox
 @onready var hostile_detect : Area2D = $HostileDetection
+@onready var heal_particles : CPUParticles2D = $HealParticles
 
 var speed_modifier : float = 1
 var rest_timeout : float = 0.0
@@ -44,6 +45,8 @@ func _ready() -> void:
 	collision.scale = player_res.collision_size
 	hitbox.scale = player_res.hitbox_size
 	hostile_detect.scale = player_res.hostile_detect_size
+	
+	heal_particles.color = player_res.primary_color
 	
 	position = get_parent().position
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
@@ -117,6 +120,8 @@ func rest_check(delta):
 		):
 		health_res.cur_hp += stored_hp
 		stored_hp = 0
+		heal_particles.emitting = true
+		AudioManager.play_audio_one_shot(player_res.regen_sound)
 
 func take_dmg_flash() -> void:
 	## Plays red flash animation when hit

@@ -20,7 +20,7 @@ func _process(delta : float) -> void:
 	if audio_player == null:
 		return
 	
-	var target_volume = max_volume if GlobalPlayer.is_moving else min_volume
+	var target_volume = max_volume if GlobalPlayer.is_moving and !GlobalTime.is_paused else min_volume
 	audio_player.volume_db = lerp(audio_player.volume_db, 
 									target_volume, 
 									delta * volume_transition_speed)

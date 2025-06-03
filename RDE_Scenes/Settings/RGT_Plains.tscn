@@ -525,7 +525,6 @@ base_canvas_mod = Color(0.972549, 0.74902, 0.647059, 1)
 stream = ExtResource("2_2qg4h")
 volume_db = -80.0
 autoplay = true
-stream_paused = true
 
 [node name="GrassLayer" type="TileMapLayer" parent="."]
 scale = Vector2(3.5, 3.577)
