@@ -2,14 +2,14 @@ extends Node2D
 
 @export var audio_player : AudioStreamPlayer
 
-@export var cam_border_x : float = 1500
-@export var cam_border_y : float = 1000
+@export var cam_border_x : float = 1700
+@export var cam_border_y : float = 1200
 
 @export var base_canvas_mod : Color = Color(255, 255, 255, 255)
 # RGT Plains canvas mod hex - f8bfa5
 
 @export var volume_transition_speed : float = 2.0 
-@export var max_volume : float = -14.0  
+@export var max_volume : float = -17.0  
 @export var min_volume : float = -80.0  
 
 func _ready() -> void:

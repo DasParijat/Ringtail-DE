@@ -29,6 +29,7 @@ var player_power_stylebox : StyleBoxFlat = StyleBoxFlat.new()
 var reload_text : String = ""
 var using_power : bool = false
 var is_recent_ouch : bool = false
+var entered_warning_point : bool = false
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
@@ -57,12 +58,6 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 	var HO_anim_player : AnimationPlayer = $CanvasLayer/HurtOverlay/AnimationPlayer
 	var warning_point : float = (stats["max_hp"] / 5) * 1.5
 	
-	## Check if cur_hp recovered past warning point
-	if stats["cur_hp"] >= warning_point:
-		if HurtOverlay.modulate.a > 0:
-			var tween = create_tween()
-			tween.tween_property(HurtOverlay, "modulate:a", 0.0, 0.5)
-		
 	if is_recent_ouch:
 		if !stats["is_hurting"]:
 			is_recent_ouch = false
@@ -70,10 +65,17 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 		is_recent_ouch = true
 		if HurtOverlay.modulate.a >= 0:
 			if stats["cur_hp"] < warning_point:
+				entered_warning_point = true
 				HO_anim_player.play("HO_ouch_(low)")
 			else:
 				HO_anim_player.play("HO_ouch")
 		
+	## Check if cur_hp recovered past warning point
+	if stats["cur_hp"] >= warning_point and entered_warning_point:
+		entered_warning_point = false
+		var tween = create_tween()
+		tween.tween_property(HurtOverlay, "modulate:a", 0.0, 0.5)
+	
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats / Is pretty much the _process func here
 	match(type):

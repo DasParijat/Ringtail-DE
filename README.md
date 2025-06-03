@@ -67,13 +67,15 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 			Small changes with code to reduce debugger list errors thrown</li>
 			<li>(Base Mob / Bullet) 
 			Pitch variations with mob hurt and deaths sounds</li>
+			<li>(FightUI) 
+			Fixed issue where hurt overlay wasn't showing up when hurt</li>
 			<li>(Shaders / Game) 
 			Added and experimenting with VHS/Camcorder shaders to game scene 
 			(Might make it toggleable in the future)</li>
 			<li>(Oswald) 
 			Slight nerf to Oswald's HP and healing</li>
 			<li>(RGT_Plains / TileMap Info) 
-			Added walking sound as well as shrinked tilemap by 20%</li>
+			Added walking sound to RGT_Plains</li>
 		</ul>
 	</li>
 	<li>

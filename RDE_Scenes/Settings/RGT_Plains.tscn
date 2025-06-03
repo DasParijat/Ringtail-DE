@@ -517,7 +517,6 @@ sources/1 = SubResource("TileSetAtlasSource_gb3hw")
 
 [node name="RGT_Plains" type="Node2D" node_paths=PackedStringArray("audio_player")]
 position = Vector2(-100, -250)
-scale = Vector2(0.8, 0.8)
 script = ExtResource("1_tm7va")
 audio_player = NodePath("GrassWalkSound")
 base_canvas_mod = Color(0.972549, 0.74902, 0.647059, 1)
@@ -526,6 +525,7 @@ base_canvas_mod = Color(0.972549, 0.74902, 0.647059, 1)
 stream = ExtResource("2_2qg4h")
 volume_db = -80.0
 autoplay = true
+stream_paused = true
 
 [node name="GrassLayer" type="TileMapLayer" parent="."]
 scale = Vector2(3.5, 3.577)
