@@ -30,6 +30,7 @@ shadow_offset = Vector2(2, 2)
 
 [node name="BossHPBars" type="Control"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cx8yl")

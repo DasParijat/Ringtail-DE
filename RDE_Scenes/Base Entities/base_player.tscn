@@ -27,6 +27,7 @@ z_index = 2
 wait_time = 0.5
 
 [node name="HealParticles" type="CPUParticles2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.392157)
 emitting = false
 amount = 100

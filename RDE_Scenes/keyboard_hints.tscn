@@ -13,6 +13,7 @@
 [sub_resource type="SystemFont" id="SystemFont_frf42"]
 font_names = PackedStringArray("Bahnschrift")
 font_weight = 100
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri3fb"]
 line_spacing = 1.0
@@ -22,6 +23,7 @@ font_color = Color(0.843184, 0.843184, 0.843184, 1)
 outline_size = 1
 
 [node name="Keyboard Hints" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_gfh7f")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

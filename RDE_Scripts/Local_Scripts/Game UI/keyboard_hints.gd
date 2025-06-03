@@ -35,6 +35,15 @@ func _ready() -> void:
 							parent_container.modulate.b,
 							parent_container.modulate.a + disabled_alpha_deviation)
 
+	game_start_anim(0.3)
+	
+func game_start_anim(duration : float) -> void:
+	parent_container.modulate.a = 0
+	var tween = create_tween()
+	
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(parent_container, "modulate:a", usable_color.a, duration)
+	
 func _on_get_cur_stats(type, stats) -> void:
 	## Always gets current stats 
 	match(type):

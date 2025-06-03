@@ -180,6 +180,7 @@ _data = {
 script = ExtResource("1_pahoy")
 
 [node name="PlayerUI" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -309,6 +310,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Keyboard Hints" parent="." instance=ExtResource("2_gqfdu")]
+visible = true
 
 [node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]
 visible = true

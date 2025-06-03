@@ -19,6 +19,8 @@ extends CanvasLayer
 @onready var PowerOverlay : ColorRect = $CanvasLayer/PowerOverlay
 @onready var HurtOverlay : ColorRect = $"CanvasLayer/HurtOverlay"
 
+@onready var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayerPO
+
 var cur_player_hp : float = 0.0
 var prev_player_hp : float = 101
 
@@ -34,14 +36,23 @@ var entered_warning_point : bool = false
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	
+	GlobalPlayer.connect("just_healed", Callable(self, "_on_player_just_healed"))
 	#print(get_viewport().get_visible_rect().size)
 	
 	player_hp_stylebox.set_corner_radius_all(4)
 	player_power_stylebox.set_corner_radius_all(4)
+	
+	game_start_anim(0.3)
 
+func game_start_anim(duration : float) -> void:
+	var tween = create_tween()
+	
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(PlayerUI, "modulate:a", 1, duration)
+	
 func power_overlay_handling() -> void:
-	var PO_anim_player : AnimationPlayer = $CanvasLayer/PowerOverlay/AnimationPlayerPO
-
+	## If power activated, power overlay is shown
 	if GlobalPlayer.power_activated:
 		## For fading in anim
 		using_power = true
@@ -53,8 +64,17 @@ func power_overlay_handling() -> void:
 		using_power = false
 		if PowerOverlay.modulate.a >= 0:
 			PO_anim_player.play("PO_fade_OUT")
-
+			
+func _on_player_just_healed(_stored_hp : float):
+	## When player heals AND not in power mode, flash power overlay
+	if not using_power:
+		# NOTE - Might make actual seperate animation instead of reusing
+		PO_anim_player.play("PO_fade_IN")
+		PO_anim_player.play("PO_fade_OUT")
+		
 func hurt_overlay_handling(stats : Dictionary) -> void:
+	## If player is hurt, flash red
+	## If player is below warning point, tint screen with red
 	var HO_anim_player : AnimationPlayer = $CanvasLayer/HurtOverlay/AnimationPlayer
 	var warning_point : float = (stats["max_hp"] / 5) * 1.5
 	

@@ -119,6 +119,7 @@ func rest_check(delta):
 			and stored_hp > player_res.stored_hp_threshold
 		):
 		health_res.cur_hp += stored_hp
+		GlobalPlayer.emit_signal("just_healed", stored_hp)
 		stored_hp = 0
 		heal_particles.emitting = true
 		AudioManager.play_audio_one_shot(player_res.regen_sound)

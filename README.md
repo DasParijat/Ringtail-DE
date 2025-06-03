@@ -68,8 +68,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			"Nerfed" blood effect slightly</li>
 			<li>(AudioOneShot) 
 			Changed it from an AudioStreamPlayer to an AudioStreamPlayer2D</li>
-			<li>(Base Player / Player Res) 
-			Player plays sound effect and emits particles when they heal</li>
+			<li>(GlobalPlayer) 
+			Added just_healed signal</li>
+			<li>(FightUI / Keyboard Hints / BoosHPBars) 
+			All game ui elements fade in at start of game</li>
+			<li>(Base Player / Player Res / FightUI) 
+			Player plays sound effect when they heal, 
+			alongside a yellow flash in FightUI.
+			(Coded particle effect too but hid it due to changes)</li>
 		</ul>
 	</li>
 	<li>

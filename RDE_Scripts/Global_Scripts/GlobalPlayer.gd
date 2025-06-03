@@ -1,5 +1,7 @@
 extends Node
 
+signal just_healed(heal_amt : float)
+
 var power_activated : bool = false # Handled in player specifc (Oswald)
 
 var is_shooting : bool = false

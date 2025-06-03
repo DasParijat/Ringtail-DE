@@ -16,6 +16,15 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	
+	#await GlobalTime.local_wait(0.1)
+	game_start_anim(0.3)
+	
+func game_start_anim(duration : float) -> void:
+	var tween = create_tween()
+	
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "modulate:a", 1, duration)
+	
 func _on_get_cur_stats(type, stats) -> void:
 	match(type):
 		"MAIN_BOSS_START":
