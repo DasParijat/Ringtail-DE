@@ -1,13 +1,12 @@
 <p>
 Ringtail Definitive Edition is a remake of an old but gold Scratch game I made back in 2022.
-It's a top down bullet hell shooter where you have to take down a nefarious evil and
-hyperrealistc raccoon (technically a monster in the form of a raccon but that's just lore stuff).
+It's a top down bullet hell shooter where you have to take down a nefarious, evil and
+hyper-realistic raccoon (technically a monster in the form of a raccoon but that's just lore stuff).
 </p>
 
 <strong>Agenda:</strong>
 <ul>
 	<li>Implement audio (Sound Effects and Music)</li>
-	<li>Ringtail fight moves</li>
 	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Stylize menu and buttons</li>
 </ul>
@@ -60,6 +59,17 @@ hyperrealistc raccoon (technically a monster in the form of a raccon but that's 
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(6/3/25)
+			<li>(Pump Shotgun) 
+			Added particle effects for Pump Shotgun</li>
+			<li>(Bullet) 
+			"Nerfed" blood effect slightly</li>
+			<li>(AudioOneShot) 
+			Changed it from an AudioStreamPlayer to an AudioStreamPlayer2D</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(6/2/25)

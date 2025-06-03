@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Global_Scripts/audio_one_shot.gd" id="1_2wcmq"]
 
-[node name="AudioOneShot" type="AudioStreamPlayer"]
+[node name="AudioOneShot" type="AudioStreamPlayer2D"]
 script = ExtResource("1_2wcmq")

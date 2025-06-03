@@ -6,8 +6,18 @@
 [resource]
 script = ExtResource("1_aryj6")
 texture = ExtResource("2_1baxj")
+gun_shot_sounds = Array[AudioStream]([])
 fade_on_exit = true
 damage = 1.5
 is_piercing = false
+wait_time = 0.0
+aim_on_wait = true
 falloff_point = 2000.0
 falloff_rate = 0.5
+enable_particle = false
+particle_color = Color(1, 1, 1, 1)
+particle_lifetime = 0.5
+particle_gravity = Vector2(-200, 0)
+particle_explosiveness = 0.0
+particle_amount = 8
+particle_spread = 45.0
