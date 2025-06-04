@@ -54,7 +54,7 @@ func action1() -> void:
 	## Follow player
 	mob_res.sprtflip_enabled = false
 	for i in range(1 + phase):
-		base.action("move_torward_player", {"offset": 1.2, "speed": randi_range(100, 200), "length": 1})
+		base.action("move_torward_player", {"offset": 1, "speed": randi_range(100, 200) * (phase / 1.5), "length": 1})
 		await GlobalTime.local_wait(1)
 	
 	controller.hold(false)
@@ -62,7 +62,7 @@ func action1() -> void:
 func action2() -> void:
 	## Dash to player
 	for i in randi_range(2, 6): 
-		base.action("move_torward_point", {"target": base.player_global_pos, "delay": 0, "speed": 200, "length": 0.5})
+		base.action("move_torward_point", {"target": base.player_global_pos, "delay": 0, "speed": 250, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 	
 	controller.hold(false)
@@ -78,7 +78,7 @@ func action3() -> void:
 func action4() -> void:
 	## Dash to random places near player
 	for i in randi_range(2, 4): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(50, 200, 50, 200), "delay": 0, "speed": 200, "length": 0.5})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(50, 200, 50, 200), "delay": 0, "speed": 350, "length": 0.5})
 		await GlobalTime.local_wait(0.5)
 
 	controller.hold(false)
@@ -95,7 +95,7 @@ func action5() -> void:
 			base.action("move_torward_point", {"target": base.get_rand_player_pos(600, 1200, 600, 1200), "delay": 0, "speed": 750, "length": 0.3})
 			await GlobalTime.local_wait(0.3)
 			mob_res.sprtflip_enabled = false
-		base.action("move_torward_player", {"offset": 1.5, "speed": randi_range(100, 200), "length": 1})
+		base.action("move_torward_player", {"offset": 1.5, "speed": randi_range(200, 400), "length": 1})
 		await GlobalTime.local_wait(1)
 	
 	base.health_res.damage_rate = 1
@@ -129,9 +129,9 @@ func action7() -> void:
 		return
 	
 	mob_res.sprtflip_enabled = false
-	for i in range(2 * phase):
+	for i in range(4 - phase):
 		for j in range(2 + phase):
-			base.action("move_torward_player", {"speed": randi_range(350, 550), "length": 0.2})
+			base.action("move_torward_player", {"speed": randi_range(350, 400), "length": 0.2})
 			await GlobalTime.local_wait(0.2)
 		base.action("observe_player", 0.2)
 		await GlobalTime.local_wait(0.2)

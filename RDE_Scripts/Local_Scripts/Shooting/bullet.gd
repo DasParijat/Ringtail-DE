@@ -148,24 +148,28 @@ func _on_tree_exiting() -> void:
 
 	
 func _on_area_entered(area : Area2D) -> void:
-	if area.is_in_group("Hittable") and area.is_in_group(target_group):
-		var parent = area.get_parent()
-		parent.health_res.take_dmg(damage)
-		parent.take_dmg_flash()
+	if not (area.is_in_group("Hittable") and area.is_in_group(target_group)):
+		return
+	
+	var parent = area.get_parent()
+	parent.health_res.take_dmg(damage)
+	parent.take_dmg_flash()
+	
+	if target_group != "Player":
+		## Allows player cur_power to update when hitting enemy
+		GlobalSignal.emit_signal("update_power", damage / 250)
 		
-		if target_group != "Player":
-			# Allows player cur_power to update when hitting enemy
-			GlobalSignal.emit_signal("update_power", damage / 300)
-			play_hit_effect(parent)
-			if parent.mob_res.hurt_sounds: 
-				var sound_index : int = randi_range(0, parent.mob_res.hurt_sounds.size() - 1)
-				AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index], 
-									"Game SFX",
-									-5, 
-									randf_range(0.9, 1.1)
-									)
-			
-		if not bullet_res.is_piercing:
-			#hit_particles.emitting = true
-			#await GlobalTime.local_wait(hit_particles.lifetime)
-			exiting()
+		## Also plays visual and audio affect of the enemy mob getting hit
+		play_hit_effect(parent)
+		if parent.mob_res.hurt_sounds: 
+			var sound_index : int = randi_range(0, parent.mob_res.hurt_sounds.size() - 1)
+			AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index], 
+								"Game SFX",
+								-5, 
+								randf_range(0.9, 1.1)
+								)
+		
+	if not bullet_res.is_piercing:
+		#hit_particles.emitting = true
+		#await GlobalTime.local_wait(hit_particles.lifetime)
+		exiting()

@@ -66,10 +66,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			WAY less power given when dealing damage 
 			(Force player to gain power via killing minitails)</li>
 			<li>(Oswald) 
-			Process function stops when on victory screen</li>
+			Process function stops when on victory screen,
+			reduced damage rate when in power mode,
+			and increased speed when in power mode</li>
 			<li>(EOTHS) 
 			Plays quick flash effect (just like heal) when it spawns, 
 			also gives more power</li>
+			<li>(Explosion) 
+			Increased explosion size</li>
+			<li>(Pump Shotgun) 
+			Nerfed shotgun to be more like a traditional one</li>
+			<li>(Ringtail) 
+			Buffed Ringtail's speed</li>
 		</ul>
 	</li>
 	<li>

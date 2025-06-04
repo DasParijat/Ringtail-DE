@@ -48,12 +48,14 @@ func power_move() -> void:
 	# power move itself
 	if GlobalPlayer.power_activated:
 		auto_power_timer.start()
-		base.set_speedmod(1.5) 
+		base.set_speedmod(2.5)
+		player_res.health_res.damage_rate = 0.3
 		GlobalTime.cur_time_scale = 0.2
 		
 		player_res.cur_power -= 0.1
 	else:
 		GlobalTime.cur_time_scale = 1
+		player_res.health_res.damage_rate = 1
 		base.set_speedmod(1)
 
 func is_power_activated() -> bool:
