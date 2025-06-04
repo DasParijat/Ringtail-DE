@@ -79,7 +79,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Ringtail) 
 			Buffed Ringtail's speed</li>
 			<li>(Adverts) 
-			Re-arranged RDE_Adverts folder for new teaser images</li>
+			Re-arranged RDE_Adverts folder for new teaser images,
+			also created 10 new screenshots of the game</li>
 		</ul>
 	</li>
 	<li>
