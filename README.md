@@ -61,6 +61,19 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/4/25)
+			<li>(Bullet) 
+			WAY less power given when dealing damage 
+			(Force player to gain power via killing minitails)</li>
+			<li>(Oswald) 
+			Process function stops when on victory screen</li>
+			<li>(EOTHS) 
+			Plays quick flash effect (just like heal) when it spawns, 
+			also gives more power</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/3/25)
 			<li>(Pump Shotgun) 
 			Added particle effects for Pump Shotgun, also nerfed it</li>

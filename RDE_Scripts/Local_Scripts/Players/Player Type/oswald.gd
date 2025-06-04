@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _process(_delta : float) -> void:
 	position = base.position
-	if GlobalTime.is_paused:
+	if GlobalTime.is_paused or GlobalScene.on_victory_screen:
 		return
 		
 	#if not GlobalPlayer.power_activated:

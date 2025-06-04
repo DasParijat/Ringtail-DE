@@ -1,5 +1,6 @@
 extends Node2D
 # Embodiment Of The Human Spirit
+
 @export var mob_res : MobRes
 
 @export var base : BaseMob 
@@ -20,7 +21,7 @@ func _on_get_cur_stats(type : String, stats) -> void:
 	## Then stops trying to receive player stats to prevent overlap
 	if type == "PLAYER" and can_execute:
 		if stats["cur_hp"] != null:
-			hp_give = stats["cur_hp"] / give_rate
+			hp_give = stats["cur_hp"] / give_rate - 1
 		if stats["cur_power"] != null:
 			power_give = stats["cur_power"] / give_rate
 		
@@ -30,6 +31,8 @@ func _on_get_cur_stats(type : String, stats) -> void:
 	
 func action1() -> void:
 	#print("EOTHS SPAWNED!!")
+	# TODO - Add some sorta victory sound for when this dies
 	GlobalSignal.emit_signal("update_power", power_give)
 	GlobalSignal.emit_signal("update_player_hp", hp_give)
+	GlobalPlayer.emit_signal("just_healed", hp_give) # plays flash effect
 	base.health_res.kill_self()
