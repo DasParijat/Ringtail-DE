@@ -15,7 +15,7 @@ func _process(delta : float) -> void:
 		phase2()
 
 func phase1():
-	if total_delta < 5.0 or base.health_res.cur_hp > 210:
+	if total_delta < 5.0 and base.health_res.cur_hp > 210:
 		return
 	
 	if GlobalTime.process_interval(2.0, total_delta, get_process_delta_time()):
@@ -36,7 +36,8 @@ func phase2():
 	cur_sequence = [1,7,2,7,3,7,4,7,6,7]
 	
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
-		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 8})
+		for i in range(3):
+			hollow_projectile.shoot_from_rand({"follow_target": true, "follow_target_length": 5})
 		
 	if GlobalTime.process_interval(10.0, total_delta, get_process_delta_time()):
 		spawner.spawn_mob(explosion_load, base.get_rand_player_pos(25, 50, 25, 50))

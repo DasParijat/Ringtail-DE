@@ -7,8 +7,9 @@
 resource_local_to_scene = true
 script = ExtResource("2_kvi7e")
 texture = ExtResource("2_ycmc1")
+gun_shot_sounds = Array[AudioStream]([])
 fade_on_exit = true
-damage = 3.0
+damage = 12.0
 is_piercing = true
 wait_time = 0.5
 aim_on_wait = false

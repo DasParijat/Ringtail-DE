@@ -34,4 +34,4 @@ func action1() -> void:
 	controller.hold(false)
 
 func _exit_tree() -> void:
-	GlobalSignal.emit_signal("update_power", 5)
+	GlobalSignal.emit_signal("update_power", 4)

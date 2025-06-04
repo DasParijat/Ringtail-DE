@@ -17,7 +17,7 @@ func _process(delta : float) -> void:
 		phase3()
 
 func phase1():
-	if total_delta < 5.0 or base.health_res.cur_hp > 350:
+	if total_delta < 3.0 and base.health_res.cur_hp > 350:
 		return
 		
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
@@ -39,7 +39,8 @@ func phase2():
 	cur_sequence = [1,7,2,7,3,7,4,7,6,7]
 	
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
-		hollow_projectile.shoot({"follow_target": true, "follow_target_length": 5})
+		for i in range(1 + phase):
+			hollow_projectile.shoot_from_rand({"follow_target": true, "follow_target_length": 5})
 		
 	if GlobalTime.process_interval(10.0, total_delta, get_process_delta_time()):
 		if phase == 2:

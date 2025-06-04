@@ -63,9 +63,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(6/3/25)
 			<li>(Pump Shotgun) 
-			Added particle effects for Pump Shotgun</li>
+			Added particle effects for Pump Shotgun, also nerfed it</li>
+			<li>(SMG) 
+			Increased magazine size of SMG from 30 to 50</li>
+			<li>(Ringtail General) 
+			Tweaking with Ringtails/Minitails/RGT_Projectiles to
+			make them a bit more harder/captivating 
+			(As in, trying to raise the stakes for the player)</li>
 			<li>(Bullet) 
 			"Nerfed" blood effect slightly</li>
+			<li>(Shaders) 
+			Removed shader files (not needed now + make launching game longer)</li>
 			<li>(AudioOneShot) 
 			Changed it from an AudioStreamPlayer to an AudioStreamPlayer2D</li>
 			<li>(GlobalPlayer) 
