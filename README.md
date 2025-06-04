@@ -78,6 +78,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Nerfed shotgun to be more like a traditional one</li>
 			<li>(Ringtail) 
 			Buffed Ringtail's speed</li>
+			<li>(Adverts) 
+			Re-arranged RDE_Adverts folder for new teaser images</li>
 		</ul>
 	</li>
 	<li>

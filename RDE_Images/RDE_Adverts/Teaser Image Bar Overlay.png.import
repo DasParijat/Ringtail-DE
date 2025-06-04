@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdcekuqvuhdj1"
-path="res://.godot/imported/3_28 teaser image 1.png-424df205e639978381f7e745aa8a94c3.ctex"
+uid="uid://bsokbi6a3rdg3"
+path="res://.godot/imported/Teaser Image Bar Overlay.png-c11a697441d5a93ac45fd8ae40be2e60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RDE_Images/RDE_Adverts/3_28 teaser image 1.png"
-dest_files=["res://.godot/imported/3_28 teaser image 1.png-424df205e639978381f7e745aa8a94c3.ctex"]
+source_file="res://RDE_Images/RDE_Adverts/Teaser Image Bar Overlay.png"
+dest_files=["res://.godot/imported/Teaser Image Bar Overlay.png-c11a697441d5a93ac45fd8ae40be2e60.ctex"]
 
 [params]
 

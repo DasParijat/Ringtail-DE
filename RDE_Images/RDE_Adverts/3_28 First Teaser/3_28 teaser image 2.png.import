@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq7vt77qkhqr7"
-path="res://.godot/imported/3_28 teaser image 4.png-7c914a7e330079dd5fcc4a104efd3990.ctex"
+uid="uid://o0du0ede34b2"
+path="res://.godot/imported/3_28 teaser image 2.png-09194ee6962715d1aef409ce0fefe417.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RDE_Images/RDE_Adverts/3_28 teaser image 4.png"
-dest_files=["res://.godot/imported/3_28 teaser image 4.png-7c914a7e330079dd5fcc4a104efd3990.ctex"]
+source_file="res://RDE_Images/RDE_Adverts/3_28 First Teaser/3_28 teaser image 2.png"
+dest_files=["res://.godot/imported/3_28 teaser image 2.png-09194ee6962715d1aef409ce0fefe417.ctex"]
 
 [params]
 
