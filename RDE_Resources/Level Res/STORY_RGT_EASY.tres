@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="LevelRes" load_steps=3 format=3 uid="uid://d38qi004rniap"]
+[gd_resource type="Resource" script_class="LevelRes" load_steps=4 format=3 uid="uid://d38qi004rniap"]
 
+[ext_resource type="Resource" uid="uid://2iis2jxe67vb" path="res://RDE_Resources/Fight Res/TUTORIAL.tres" id="1_4wg3f"]
 [ext_resource type="Resource" uid="uid://c0vmclnycaxp0" path="res://RDE_Resources/Fight Res/RGT_EASY.tres" id="1_k8og1"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="3_yn8li"]
 
@@ -7,4 +8,4 @@
 script = ExtResource("3_yn8li")
 LEVEL_NAME = "STORY_RGT_EASY"
 LEVEL_DESC = "This is ringtail easy"
-order = Array[Resource]([ExtResource("1_k8og1")])
+order = Array[Resource]([ExtResource("1_4wg3f"), ExtResource("1_k8og1")])

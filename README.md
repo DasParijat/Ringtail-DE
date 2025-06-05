@@ -61,6 +61,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/5/25)
+			<li>(SMG / Audio) 
+			Added audio for SMG (shooting, switching, and reloading) </li>
+			<li>(Audio) 
+			Recorded general audio that holds all mob sounds</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/4/25)
 			<li>(Bullet) 
 			WAY less power given when dealing damage 
