@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sh8qv38oex7u"
+path="res://.godot/imported/pump_shot1.mp3-8da466ee5693d05045da1da1a64367de.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3"
+dest_files=["res://.godot/imported/pump_shot1.mp3-8da466ee5693d05045da1da1a64367de.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

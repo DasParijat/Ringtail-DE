@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c0wbwydmhq84y"
-path="res://.godot/imported/mob_death1.wav-b860049719ba3ac7e4d0cd9ea291503f.sample"
+path="res://.godot/imported/mob_death1.wav-de58155f9ad727518f2a31aeb3eba744.sample"
 
 [deps]
 
-source_file="res://RDE_Audio/mob_death1.wav"
-dest_files=["res://.godot/imported/mob_death1.wav-b860049719ba3ac7e4d0cd9ea291503f.sample"]
+source_file="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav"
+dest_files=["res://.godot/imported/mob_death1.wav-de58155f9ad727518f2a31aeb3eba744.sample"]
 
 [params]
 

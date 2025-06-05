@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://corvcvjy3cxbn" path="res://RDE_Resources/Gun Res/SMG.tres" id="2_0s6dd"]
 [ext_resource type="Resource" uid="uid://bp54wtlywyi31" path="res://RDE_Resources/Gun Res/PumpShotgun.tres" id="2_3vifi"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/playerRes.gd" id="3_se43b"]
-[ext_resource type="AudioStream" uid="uid://dl1tcmjg74vyo" path="res://RDE_Audio/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3" id="4_wknd7"]
+[ext_resource type="AudioStream" uid="uid://dl1tcmjg74vyo" path="res://RDE_Audio/UI Sounds/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3" id="4_wknd7"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="5_rwotw"]
 
 [resource]

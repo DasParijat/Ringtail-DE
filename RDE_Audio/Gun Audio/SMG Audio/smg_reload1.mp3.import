@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcvkhpk4x6262"
+path="res://.godot/imported/smg_reload1.mp3-4af56abe482b657b44fa020da2a54d69.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Gun Audio/SMG Audio/smg_reload1.mp3"
+dest_files=["res://.godot/imported/smg_reload1.mp3-4af56abe482b657b44fa020da2a54d69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

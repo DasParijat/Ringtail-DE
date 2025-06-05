@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://cv8kae67i4y4j"]
 
-[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="1_d4mbv"]
+[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav" id="1_d4mbv"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_rqpie"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_crs40"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="3_a1i5t"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lglk30qw3so7"
+path="res://.godot/imported/smg_switch1.mp3-84099ffbc23f8b4b621abe55a0438411.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Gun Audio/SMG Audio/smg_switch1.mp3"
+dest_files=["res://.godot/imported/smg_switch1.mp3-84099ffbc23f8b4b621abe55a0438411.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

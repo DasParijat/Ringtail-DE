@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkp80sq43vtdq"
+path="res://.godot/imported/base_ap_uzi_shoot_sound.mp3-616f1bc24049e8fe13a9b9543e6cd267.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Gun Audio/base_ap_uzi_shoot_sound.mp3"
+dest_files=["res://.godot/imported/base_ap_uzi_shoot_sound.mp3-616f1bc24049e8fe13a9b9543e6cd267.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

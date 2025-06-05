@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eb2cpju1p7cd"
+path="res://.godot/imported/RDE_MobNoise_Sounds1.mp3-88225084d88a8c37a2a99f66c3561f1d.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Mob Sounds/RDE_MobNoise_Sounds1.mp3"
+dest_files=["res://.godot/imported/RDE_MobNoise_Sounds1.mp3-88225084d88a8c37a2a99f66c3561f1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

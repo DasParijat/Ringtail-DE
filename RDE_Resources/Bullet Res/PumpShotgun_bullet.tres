@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BulletRes" load_steps=4 format=3 uid="uid://deonx3mfyyc1"]
 
-[ext_resource type="AudioStream" uid="uid://sh8qv38oex7u" path="res://RDE_Audio/pump_shot1.mp3" id="1_objhy"]
+[ext_resource type="AudioStream" uid="uid://sh8qv38oex7u" path="res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3" id="1_objhy"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_uphi5"]
 [ext_resource type="Texture2D" uid="uid://capi8q674i86f" path="res://RDE_Images/pumpshot_bullet.png" id="2_tgli8"]
 

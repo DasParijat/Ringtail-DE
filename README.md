@@ -65,7 +65,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(SMG / Audio) 
 			Added audio for SMG (shooting, switching, and reloading) </li>
 			<li>(Audio) 
-			Recorded general audio that holds all mob sounds</li>
+			Recorded general audio that holds all mob sounds,
+			also organized all audio files into folders</li>
 		</ul>
 	</li>
 	<li>

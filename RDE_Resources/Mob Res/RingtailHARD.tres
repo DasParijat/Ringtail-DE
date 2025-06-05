@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="MobRes" load_steps=8 format=3 uid="uid://c8ri6vf360a65"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="1_8a5f1"]
-[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/mob_death1.wav" id="1_55p76"]
+[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav" id="1_55p76"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_56ugl"]
-[ext_resource type="AudioStream" uid="uid://bm0kec7v0ucpy" path="res://RDE_Audio/pump_shotload1.mp3" id="3_bilyi"]
+[ext_resource type="AudioStream" uid="uid://bm0kec7v0ucpy" path="res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shotload1.mp3" id="3_bilyi"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="3_yt8cx"]
-[ext_resource type="AudioStream" uid="uid://sh8qv38oex7u" path="res://RDE_Audio/pump_shot1.mp3" id="4_ly7c3"]
+[ext_resource type="AudioStream" uid="uid://sh8qv38oex7u" path="res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3" id="4_ly7c3"]
 
 [sub_resource type="Resource" id="Resource_x6ded"]
 script = ExtResource("1_56ugl")

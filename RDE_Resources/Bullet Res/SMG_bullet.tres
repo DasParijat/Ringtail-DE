@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BulletRes" load_steps=6 format=3 uid="uid://ts0nwtwx6v6p"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="1_bolxm"]
-[ext_resource type="AudioStream" uid="uid://cdx6g3sdpg811" path="res://RDE_Audio/smg_shot1.mp3" id="1_uc0sq"]
+[ext_resource type="AudioStream" uid="uid://cdx6g3sdpg811" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_shot1.mp3" id="1_uc0sq"]
 [ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="2_moiun"]
-[ext_resource type="AudioStream" uid="uid://bbmd7mtjodtno" path="res://RDE_Audio/smg_shot2.mp3" id="2_ns85k"]
-[ext_resource type="AudioStream" uid="uid://cfidvp45cp0fa" path="res://RDE_Audio/smg_shot3.mp3" id="3_jwflv"]
+[ext_resource type="AudioStream" uid="uid://bbmd7mtjodtno" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_shot2.mp3" id="2_ns85k"]
+[ext_resource type="AudioStream" uid="uid://cfidvp45cp0fa" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_shot3.mp3" id="3_jwflv"]
 
 [resource]
 resource_local_to_scene = true

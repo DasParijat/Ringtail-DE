@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl1tcmjg74vyo"
+path="res://.godot/imported/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3-47a9c6fbd9e4707c644dac38a6e3cb32.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/UI Sounds/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3"
+dest_files=["res://.godot/imported/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3-47a9c6fbd9e4707c644dac38a6e3cb32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
