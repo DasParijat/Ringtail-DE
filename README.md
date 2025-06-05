@@ -67,6 +67,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Audio) 
 			Recorded general audio that holds all mob sounds,
 			also organized all audio files into folders</li>
+			<li>(Mob Audio / Ringtail) 
+			Imported most of the hurt/death sounds for Ringtail and Minitails</li>
 		</ul>
 	</li>
 	<li>

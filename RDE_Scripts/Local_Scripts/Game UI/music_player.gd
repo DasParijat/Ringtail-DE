@@ -36,5 +36,5 @@ func _on_game_won() -> void:
 	if get_parent().fight_res.music_res:
 		stop()
 		game_is_running = false
-		play_tracks(music_res.song_outro)
+		play_track(music_res.song_outro)
 	

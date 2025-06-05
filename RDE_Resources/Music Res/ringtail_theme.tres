@@ -1,6 +1,10 @@
-[gd_resource type="Resource" script_class="MusicRes" load_steps=2 format=3 uid="uid://bclw4aun5xgj"]
+[gd_resource type="Resource" script_class="MusicRes" load_steps=3 format=3 uid="uid://bclw4aun5xgj"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/musicRes.gd" id="1_b7a11"]
+[ext_resource type="AudioStream" uid="uid://dwccyciwstg8u" path="res://RDE_Audio/Music/nf fight song 14.mp3" id="2_qomxo"]
 
 [resource]
 script = ExtResource("1_b7a11")
+song_intro = ExtResource("2_qomxo")
+song_body = ExtResource("2_qomxo")
+song_outro = ExtResource("2_qomxo")

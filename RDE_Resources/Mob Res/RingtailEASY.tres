@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://cv8kae67i4y4j"]
+[gd_resource type="Resource" script_class="MobRes" load_steps=10 format=3 uid="uid://cv8kae67i4y4j"]
 
 [ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav" id="1_d4mbv"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_rqpie"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_crs40"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="3_a1i5t"]
+[ext_resource type="AudioStream" uid="uid://hqnrt50h4pro" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt1.mp3" id="3_ly36q"]
+[ext_resource type="AudioStream" uid="uid://cc5fb84n2ud5j" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt2.mp3" id="4_0xny5"]
+[ext_resource type="AudioStream" uid="uid://cnvbipy1qxq5b" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt3.mp3" id="5_fo376"]
+[ext_resource type="AudioStream" uid="uid://b3odg37dupl5" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt4.mp3" id="6_rv1ni"]
 
 [sub_resource type="Resource" id="Resource_qt1js"]
 script = ExtResource("1_rqpie")
@@ -23,7 +27,7 @@ hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
 blood_color = Color(0.65098, 0.0901961, 0.101961, 0.901961)
 texture = ExtResource("3_a1i5t")
 base_sprtflip_enabled = true
-hurt_sounds = Array[AudioStream]([])
+hurt_sounds = Array[AudioStream]([ExtResource("3_ly36q"), ExtResource("4_0xny5"), ExtResource("5_fo376"), ExtResource("6_rv1ni")])
 death_sounds = Array[AudioStream]([ExtResource("1_d4mbv")])
 health_comp = SubResource("Resource_qt1js")
 num_of_bars = 1

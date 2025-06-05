@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hqnrt50h4pro"
+path="res://.godot/imported/ringtail_hurt1.mp3-cda20df3457364634fb608aad5461c2a.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt1.mp3"
+dest_files=["res://.godot/imported/ringtail_hurt1.mp3-cda20df3457364634fb608aad5461c2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
