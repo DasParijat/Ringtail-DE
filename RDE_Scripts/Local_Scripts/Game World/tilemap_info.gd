@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var bus_name : String = "Game SFX"
 @export var audio_player : AudioStreamPlayer
 
 @export var cam_border_x : float = 1700
@@ -13,6 +14,9 @@ extends Node2D
 @export var min_volume : float = -80.0  
 
 func _ready() -> void:
+	var bus_index = AudioServer.get_bus_index(bus_name)
+	max_volume = AudioServer.get_bus_volume_db(bus_index) - 7.0
+	
 	GlobalScene.cam_border_x = cam_border_x
 	GlobalScene.cam_border_y = cam_border_y
 	

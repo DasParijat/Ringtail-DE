@@ -1,5 +1,7 @@
 extends AudioStreamPlayer
 
+@export var bus_name : String = "Game SFX"
+
 @export var volume_transition_speed : float = 100.0 
 @export var max_volume : float = 0.0  
 @export var min_volume : float = -80.0  
@@ -9,6 +11,9 @@ var can_play : bool = false
 
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
+	var bus_index = AudioServer.get_bus_index(bus_name)
+	max_volume = AudioServer.get_bus_volume_db(bus_index)
+
 	volume_db = min_volume
 
 func _on_base_player_player_res_set() -> void:
