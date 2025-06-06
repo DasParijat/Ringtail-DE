@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var hitbox : Area2D = $HitBox
 @onready var hostile_detect : Area2D = $HostileDetection
 @onready var heal_particles : CPUParticles2D = $HealParticles
+@onready var power_audio_player : AudioStreamPlayer = $PowerAudioPlayer
 
 var speed_modifier : float = 1
 var rest_timeout : float = 0.0

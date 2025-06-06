@@ -69,6 +69,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			also organized all audio files into folders</li>
 			<li>(Mob Audio / Ringtail) 
 			Imported most of the hurt/death sounds for Ringtail and Minitails</li>
+			<li>(Base Player) 
+			Working on implementing audio that plays while power activated</li>
 		</ul>
 	</li>
 	<li>

@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5yku1mrxehwp"]
+[gd_scene load_steps=9 format=3 uid="uid://b5yku1mrxehwp"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/base_player.gd" id="1_ssgha"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_640n3"]
+[ext_resource type="AudioStream" uid="uid://dxrffalrjmi6x" path="res://RDE_Audio/Gun Audio/ak47 base sound effect.mp3" id="3_26ssd"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/power_audio_player.gd" id="4_uidep"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yiybb"]
 radius = 26.0768
@@ -46,6 +48,13 @@ scale_amount_min = 5.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_2884y")
 color = Color(0.88, 0.689333, 0, 1)
+
+[node name="PowerAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_26ssd")
+volume_db = -80.0
+autoplay = true
+bus = &"Game SFX"
+script = ExtResource("4_uidep")
 
 [node name="HitBox" type="Area2D" parent="." groups=["Hittable", "Player"]]
 

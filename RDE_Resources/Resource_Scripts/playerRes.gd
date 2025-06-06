@@ -7,6 +7,7 @@ class_name PlayerRes
 @export var primary_color : Color 
 @export var secondary_color : Color 
 @export var texture : Texture2D = preload("uid://c7klbsnbfmrvy")
+@export var power_audio : AudioStream
 
 @export_category("Health")
 @export var health_res : HealthRes
