@@ -2,6 +2,8 @@ class_name BasePlayer
 extends CharacterBody2D
 # Handles code that every playable character uses
 
+signal player_res_set()
+
 @onready var player_res : PlayerRes = get_parent().player_res
 @onready var health_res : HealthRes = player_res.health_res
 
@@ -48,6 +50,8 @@ func _ready() -> void:
 	hostile_detect.scale = player_res.hostile_detect_size
 	
 	heal_particles.color = player_res.primary_color
+	
+	player_res_set.emit()
 	
 	position = get_parent().position
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
@@ -164,6 +168,7 @@ func get_cur_stats() -> Dictionary:
 		"is_hurting": is_hurting, #or is_near_enemy, # For health bar
 		"max_power": player_res.max_power,
 		"cur_power": round(player_res.cur_power),
+		"power_audio": player_res.power_audio,
 		"player_pri_color": player_res.primary_color,
 		"player_sec_color": player_res.secondary_color
 	}

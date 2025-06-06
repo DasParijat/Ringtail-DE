@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://corvcvjy3cxbn" path="res://RDE_Resources/Gun Res/SMG.tres" id="2_0s6dd"]
 [ext_resource type="Resource" uid="uid://bp54wtlywyi31" path="res://RDE_Resources/Gun Res/PumpShotgun.tres" id="2_3vifi"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/playerRes.gd" id="3_se43b"]
-[ext_resource type="AudioStream" uid="uid://dxrffalrjmi6x" path="res://RDE_Audio/Gun Audio/ak47 base sound effect.mp3" id="4_7o2ab"]
+[ext_resource type="AudioStream" uid="uid://dwccyciwstg8u" path="res://RDE_Audio/Music/nf fight song 14.mp3" id="4_ly3c4"]
 [ext_resource type="AudioStream" uid="uid://dl1tcmjg74vyo" path="res://RDE_Audio/UI Sounds/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3" id="4_wknd7"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="5_rwotw"]
 
@@ -14,7 +14,7 @@ name = "Oswald"
 primary_color = Color(1, 0.854902, 0.462745, 1)
 secondary_color = Color(0.864355, 0.683398, 0, 1)
 texture = ExtResource("5_rwotw")
-power_audio = ExtResource("4_7o2ab")
+power_audio = ExtResource("4_ly3c4")
 health_res = ExtResource("1_6a0bh")
 regen_rate = 1.0
 regen_amt = 0.3

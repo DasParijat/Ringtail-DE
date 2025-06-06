@@ -61,6 +61,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/6/25)
+			<li>(Base Player) 
+			Implemented audio that plays while power activated</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/5/25)
 			<li>(SMG / Audio) 
 			Added audio for SMG (shooting, switching, and reloading) </li>
