@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=6 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="1_rtoss"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
 
 [node name="Home Menu" type="CanvasLayer"]
 script = ExtResource("1_rhmab")
@@ -24,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_yrxxt")
 
 [node name="Title" type="TextureRect" parent="Main Menu"]
 layout_mode = 1
@@ -82,3 +84,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="Main Menu/HBoxContainer/playB" to="Main Menu" method="_on_play_b_pressed"]
+[connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]
+[connection signal="pressed" from="Main Menu/HBoxContainer/creditsB" to="Main Menu" method="_on_credits_b_pressed"]
+[connection signal="pressed" from="Main Menu/HBoxContainer/quitB" to="Main Menu" method="_on_quit_b_pressed"]

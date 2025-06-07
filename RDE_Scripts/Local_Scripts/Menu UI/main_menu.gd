@@ -14,6 +14,11 @@ func _ready() -> void:
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.MAIN_MENU
 	GlobalFightStats.reset_fight_stats()
 	
+func _input(event : InputEvent) -> void:
+	# Temp input to handle going to new menu from old menu
+	if event.is_action_pressed("test"): 
+		GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
+
 # front_menu buttons
 func _on_play_b_pressed() -> void:
 	var tween = create_tween()

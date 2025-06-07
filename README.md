@@ -68,6 +68,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Home Menu [Main]) 
 			Created home menu scene, will be recreating menu from top down. 
 			So far recreated the main (front) menu.</li>
+			<li>(OLD Main Menu) 
+			Added temporary input code to handle going from old to new menu</li>
+			<li>(GlobalScene) 
+			Home menu added to GlobalScene Code</li>
 		</ul>
 	</li>
 	<li>

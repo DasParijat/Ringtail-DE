@@ -2,6 +2,7 @@ extends Node
 
 const GAME = "uid://bi38sacvfy6xa" 
 const MAIN_MENU = "uid://dgynnt6h5g1vk"
+const HOME_MENU = "uid://dfwvndhpp8eyr"
 const GAME_OVER = "uid://dd4jbqa68fpne"
 const SETTINGS = "uid://rfijw7j5g1v2"
 
@@ -10,7 +11,7 @@ const LOAD_SCENE : PackedScene = preload("uid://b7ky1sqwiq4tv")
 var next_scene : String
 var next_level : LevelRes 
 
-enum SceneType {FIGHT, CSCENE, MAIN_MENU}
+enum SceneType {FIGHT, CSCENE, HOME_MENU, MAIN_MENU}
 var cur_scene_type : SceneType
 
 var prev_scene 
