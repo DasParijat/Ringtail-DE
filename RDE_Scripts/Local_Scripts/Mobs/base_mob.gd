@@ -201,8 +201,8 @@ func take_dmg_flash() -> void:
 	var tween : Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	var cur_modulate : Color = sprite.modulate
 	is_taking_dmg = true
-	tween.tween_property(sprite, "modulate", Color(1.4,1,1), 0.1)
-	tween.tween_property(sprite, "modulate", cur_modulate, 0.1)
+	tween.tween_property(sprite, "modulate:r", 1.7, 0.1)
+	tween.tween_property(sprite, "modulate:r", cur_modulate.r, 0.1)
 	await tween.finished
 	is_taking_dmg = false
 	

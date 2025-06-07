@@ -76,7 +76,7 @@ func is_power_activated() -> bool:
 		# Input for turning on power manually
 		Input.is_action_pressed("sprint") 
 		or (base.is_near_enemy # auto-power when low on health and near enemy
-			and player_res.cur_power > player_res.power_ex_cutoff 
+			#and player_res.cur_power > player_res.power_ex_cutoff 
 			and player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5
 			and auto_power_timer.is_stopped()
 			and GlobalPlayer.is_moving)

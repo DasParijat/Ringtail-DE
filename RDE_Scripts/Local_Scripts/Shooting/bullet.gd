@@ -153,7 +153,6 @@ func _on_area_entered(area : Area2D) -> void:
 	
 	var parent = area.get_parent()
 	parent.health_res.take_dmg(damage)
-	parent.take_dmg_flash()
 	
 	if target_group != "Player":
 		## Allows player cur_power to update when hitting enemy
@@ -161,6 +160,7 @@ func _on_area_entered(area : Area2D) -> void:
 		
 		## Also plays visual and audio affect of the enemy mob getting hit
 		play_hit_effect(parent)
+		parent.take_dmg_flash()
 		if parent.mob_res.hurt_sounds: 
 			var sound_index : int = randi_range(0, parent.mob_res.hurt_sounds.size() - 1)
 			AudioManager.play_audio_one_shot(parent.mob_res.hurt_sounds[sound_index], 

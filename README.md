@@ -66,6 +66,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Implemented audio that plays while power activated</li>
 			<li>(Audio) 
 			Added droning sound for power audio</li>
+			<li>(Oswald) 
+			Power activating near enemies now happens regardless of power level,
+			also near_enemy detection area doubled in size</li>
+			<li>(RingtailHARD) 
+			Chain explosion is more spaced out</li>
+			<li>(Base Mob) 
+			Hurt flash for base mob is brighter</li>
+			<li>(Bullet / Base Player) 
+			take_dmg_flash is not applied to base player anymore</li>
 			<li>(Base Player / RGT_Plains) 
 			Max volume for power audio and walking audio are retrieved from Game SFX</li>
 			<li>(Cutscene / Textbox) 
