@@ -73,10 +73,6 @@ window/stretch/aspect="keep_height"
 
 movie_writer/movie_file="C:/Users/pizza/Pictures/2GameDev/GodotDev/Ringtail-DE/movie_maker.avi"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
-
 [file_customization]
 
 folder_colors={

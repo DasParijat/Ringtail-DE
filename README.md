@@ -61,6 +61,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/7/25)
+			<li>(Cutscene Textbox) 
+			Updated code to fit with Godot 4.3,
+			and put it under Game Cutscene</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/6/25)
 			<li>(Base Player) 
 			Implemented audio that plays while power activated</li>
