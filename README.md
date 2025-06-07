@@ -65,6 +65,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Cutscene Textbox) 
 			Updated code to fit with Godot 4.3,
 			and put it under Game Cutscene</li>
+			<li>(Home Menu [Main]) 
+			Created home menu scene, will be recreating menu from top down. 
+			So far recreated the main (front) menu.</li>
 		</ul>
 	</li>
 	<li>
