@@ -65,9 +65,12 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Base Player) 
 			Implemented audio that plays while power activated</li>
 			<li>(Audio) 
-			IAdded droning sound for power audio</li>
+			Added droning sound for power audio</li>
 			<li>(Base Player / RGT_Plains) 
 			Max volume for power audio and walking audio are retrieved from Game SFX</li>
+			<li>(Cutscene / Textbox) 
+			Took textbox code/scene from jontopielski as base for cutscenes,
+			as well as created cutscenes folder in local scripts</li>
 		</ul>
 	</li>
 	<li>
