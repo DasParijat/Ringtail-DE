@@ -62,6 +62,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/8/25)
+			<li>(General / Buttons) 
+			Created default styling of menu buttons</li>
 			<li>(Home Menu [Fight]) 
 			Working on remaking fight menu</li>
 		</ul>

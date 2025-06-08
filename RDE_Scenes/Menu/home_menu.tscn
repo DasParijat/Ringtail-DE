@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=16 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -7,6 +7,83 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_fight_menu.gd" id="6_5qig2"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="7_4ujhj"]
+[ext_resource type="StyleBox" uid="uid://cy1320dwp485f" path="res://RDE_Images/StyleBoxFlats/fight_select_button1.tres" id="7_lsrqf"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="7_wokig"]
+
+[sub_resource type="SystemFont" id="SystemFont_aelly"]
+font_names = PackedStringArray("OldNewspaperTypes")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12rjp"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm51s"]
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl06b"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atiyc"]
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_imtrs"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(1, 0.854902, 0.462745, 1)
+Button/colors/font_hover_color = Color(1, 0.930294, 0.749338, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 15
+Button/fonts/font = SubResource("SystemFont_aelly")
+Button/styles/disabled = SubResource("StyleBoxFlat_12rjp")
+Button/styles/focus = SubResource("StyleBoxFlat_hm51s")
+Button/styles/hover = SubResource("StyleBoxFlat_nl06b")
+Button/styles/normal = ExtResource("7_lsrqf")
+Button/styles/pressed = SubResource("StyleBoxFlat_atiyc")
 
 [node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "fight_menu")]
 script = ExtResource("1_rhmab")
@@ -120,21 +197,40 @@ theme_override_constants/separation = 20
 
 [node name="RgEASY" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
+theme = SubResource("Theme_imtrs")
 theme_override_font_sizes/font_size = 75
 text = "EASY"
+script = ExtResource("7_wokig")
+fight_type = "STORY_RGT_EASY"
 
 [node name="RgNORM" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
+theme = SubResource("Theme_imtrs")
 theme_override_font_sizes/font_size = 75
 text = "NORMAL"
+script = ExtResource("7_wokig")
+fight_type = "STORY_RGT_NORM"
 
 [node name="RgHARD" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
+theme = SubResource("Theme_imtrs")
 theme_override_font_sizes/font_size = 75
 text = "HARD"
+script = ExtResource("7_wokig")
+fight_type = "STORY_RGT_HARD"
+
+[node name="RgTRUE" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
+layout_mode = 2
+theme = SubResource("Theme_imtrs")
+theme_override_font_sizes/font_size = 75
+disabled = true
+text = "TRUE"
+script = ExtResource("7_wokig")
+is_locked = true
 
 [node name="FightDesc Container" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container"]
 layout_mode = 2
@@ -163,14 +259,17 @@ layout_mode = 2
 [node name="Back" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "BACK"
+script = ExtResource("1_k7wod")
 
 [node name="ChnagePanelB" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "MODE"
+script = ExtResource("1_k7wod")
 
 [node name="Play" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "PLAY"
+script = ExtResource("1_k7wod")
 
 [connection signal="pressed" from="Main Menu/HBoxContainer/playB" to="Main Menu" method="_on_play_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]
