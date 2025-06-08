@@ -67,7 +67,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			and put it under Game Cutscene</li>
 			<li>(Home Menu [Main]) 
 			Created home menu scene, will be recreating menu from top down. 
-			So far recreated the main (front) menu.</li>
+			So far recreated the main (front) menu with new enter and exit animations.</li>
 			<li>(OLD Main Menu) 
 			Added temporary input code to handle going from old to new menu</li>
 			<li>(GlobalScene) 

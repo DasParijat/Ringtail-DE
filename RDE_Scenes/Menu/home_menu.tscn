@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="1_rtoss"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
 
-[node name="Home Menu" type="CanvasLayer"]
+[node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu")]
 script = ExtResource("1_rhmab")
+main_menu = NodePath("Main Menu")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
