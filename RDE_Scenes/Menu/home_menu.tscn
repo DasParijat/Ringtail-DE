@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=8 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="1_rtoss"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_fight_menu.gd" id="6_5qig2"]
+[ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="7_4ujhj"]
 
-[node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu")]
+[node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "fight_menu")]
 script = ExtResource("1_rhmab")
 main_menu = NodePath("Main Menu")
+fight_menu = NodePath("Fight Menu")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -20,6 +23,7 @@ texture = ExtResource("1_ks66d")
 stretch_mode = 6
 
 [node name="Main Menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,13 +82,95 @@ text = "Quit"
 script = ExtResource("1_k7wod")
 
 [node name="Fight Menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_5qig2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Fight Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="FightB Container" type="ScrollContainer" parent="Fight Menu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="Button Container" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="RgEASY" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "EASY"
+
+[node name="RgNORM" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "NORMAL"
+
+[node name="RgHARD" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "HARD"
+
+[node name="FightDesc Container" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container"]
+layout_mode = 2
+
+[node name="Desc" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/Desc"]
+layout_mode = 2
+texture = ExtResource("7_4ujhj")
+
+[node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/Desc"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/Desc/PanelContainer"]
+layout_mode = 2
+text = "this is the description text for inrgfjfowerhjr s sd STOP STRECHING GRAAAAHHH"
+autowrap_mode = 3
+
+[node name="Mode" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "BACK"
+
+[node name="ChnagePanelB" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "MODE"
+
+[node name="Play" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "PLAY"
 
 [connection signal="pressed" from="Main Menu/HBoxContainer/playB" to="Main Menu" method="_on_play_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]

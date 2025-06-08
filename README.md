@@ -61,6 +61,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/8/25)
+			<li>(Home Menu [Fight]) 
+			Working on remaking fight menu</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/7/25)
 			<li>(Cutscene Textbox) 
 			Updated code to fit with Godot 4.3,

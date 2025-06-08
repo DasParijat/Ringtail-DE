@@ -3,6 +3,7 @@ extends CanvasLayer
 # TODO - Possibly create some sort of state machine to handle opening menus
 
 @export var main_menu : MainMenu
+@export var fight_menu : FightMenu
 
 var cur_menu : Control
 
@@ -12,7 +13,7 @@ func _ready() -> void:
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.MAIN_MENU
 	GlobalFightStats.reset_fight_stats()
 	
-	cur_menu = main_menu
+	cur_menu = fight_menu
 	cur_menu.enter_animation()
 	
 	
