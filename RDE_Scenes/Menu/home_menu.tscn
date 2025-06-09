@@ -272,30 +272,30 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_fugve")
 tab_alignment = 1
 current_tab = 1
 
-[node name="Desc" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
+[node name="Description" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="TextureRect" type="TextureRect" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc"]
+[node name="TextureRect" type="TextureRect" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description"]
 layout_mode = 2
 texture = ExtResource("7_4ujhj")
 
-[node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc"]
+[node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Header" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Header" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 text = "Ringtail - Easy"
@@ -303,7 +303,7 @@ label_settings = SubResource("LabelSettings_okxal")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "

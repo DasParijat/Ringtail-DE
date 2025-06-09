@@ -18,6 +18,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>Ringtail (Raccoon Itself): commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
 </ul>
 
+<strong>General Credits:</strong>
+<ul>
+	<li>Parijat Das (Developer / Programmer / Designer / VA (Hurt/Death Noises))</li>
+	<li>Alex King (Composer / Playtester)</li>
+	<li>Matt Brana (Playtester)</li>
+	<li>Jackson O'Brien (Playtester)</li>
+	<li>April Melendez (Playtester)</li>
+	<li>Dylan Kelly (Playtester)</li>
+	<li>Faded0cean (Playtester)</li>
+</ul>
+
 <strong>Playtesters (Date's are last time they played):</strong>
 <ul>
 	<li>Matt Brana (5/7) - Liked the camera and gameplay, Ideas: </li>
@@ -64,6 +75,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/9/25)
 			<li>(Home Menu [Fight]) 
 			Working on Fight Menu, mainly the description/mode side (right)</li>
+			<li>(Credits) 
+			Added a general credits to README 
+			(Will be put in credits menu in final game)</li>
 		</ul>
 	</li>
 	<li>
