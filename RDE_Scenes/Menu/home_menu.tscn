@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=22 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -7,8 +7,26 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_fight_menu.gd" id="6_5qig2"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="7_4ujhj"]
-[ext_resource type="StyleBox" uid="uid://cy1320dwp485f" path="res://RDE_Images/StyleBoxFlats/fight_select_button1.tres" id="7_lsrqf"]
+[ext_resource type="Theme" uid="uid://cdr0sac8dilf2" path="res://RDE_Images/StyleBoxFlats/fight_select_button1_theme.tres" id="7_a3nps"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="7_wokig"]
+
+[sub_resource type="SystemFont" id="SystemFont_1t3ws"]
+font_names = PackedStringArray("Bahnschrift")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fugve"]
+
+[sub_resource type="SystemFont" id="SystemFont_q41wo"]
+font_names = PackedStringArray("Bahnschrift")
+
+[sub_resource type="LabelSettings" id="LabelSettings_okxal"]
+line_spacing = 5.0
+font = SubResource("SystemFont_q41wo")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_m6cyt"]
+line_spacing = 10.0
+font = SubResource("SystemFont_q41wo")
+font_size = 24
 
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
@@ -16,10 +34,10 @@ font_names = PackedStringArray("OldNewspaperTypes")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12rjp"]
 bg_color = Color(0, 0, 0, 0.431373)
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm51s"]
 content_margin_top = 4.0
@@ -31,10 +49,10 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 corner_detail = 5
 expand_margin_top = 2.0
 expand_margin_bottom = 2.0
@@ -42,10 +60,18 @@ expand_margin_bottom = 2.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl06b"]
 bg_color = Color(0, 0, 0, 0.431373)
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atiyc"]
 content_margin_top = 4.0
@@ -53,13 +79,13 @@ content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 0.6)
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 corner_detail = 5
 
-[sub_resource type="Theme" id="Theme_imtrs"]
+[sub_resource type="Theme" id="Theme_icv0m"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(1, 0.854902, 0.462745, 1)
@@ -82,7 +108,7 @@ Button/fonts/font = SubResource("SystemFont_aelly")
 Button/styles/disabled = SubResource("StyleBoxFlat_12rjp")
 Button/styles/focus = SubResource("StyleBoxFlat_hm51s")
 Button/styles/hover = SubResource("StyleBoxFlat_nl06b")
-Button/styles/normal = ExtResource("7_lsrqf")
+Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_atiyc")
 
 [node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "fight_menu")]
@@ -193,11 +219,11 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 
 [node name="RgEASY" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
-theme = SubResource("Theme_imtrs")
+theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
 text = "EASY"
 script = ExtResource("7_wokig")
@@ -205,7 +231,7 @@ fight_type = "STORY_RGT_EASY"
 
 [node name="RgNORM" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
-theme = SubResource("Theme_imtrs")
+theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
 text = "NORMAL"
 script = ExtResource("7_wokig")
@@ -213,7 +239,7 @@ fight_type = "STORY_RGT_NORM"
 
 [node name="RgHARD" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
-theme = SubResource("Theme_imtrs")
+theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
 text = "HARD"
 script = ExtResource("7_wokig")
@@ -221,7 +247,7 @@ fight_type = "STORY_RGT_HARD"
 
 [node name="RgTRUE" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
-theme = SubResource("Theme_imtrs")
+theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
 disabled = true
 text = "TRUE"
@@ -232,42 +258,95 @@ is_locked = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container"]
+[node name="VBoxContainer" type="VSplitContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container"]
 layout_mode = 2
+theme_override_constants/separation = 5
+dragger_visibility = 2
 
-[node name="Desc" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_1t3ws")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fugve")
+tab_alignment = 1
+current_tab = 1
 
-[node name="TextureRect" type="TextureRect" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/Desc"]
+[node name="Desc" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="TextureRect" type="TextureRect" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc"]
 layout_mode = 2
 texture = ExtResource("7_4ujhj")
 
-[node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/Desc"]
+[node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc"]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/Desc/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer"]
 layout_mode = 2
-text = "this is the description text for inrgfjfowerhjr s sd STOP STRECHING GRAAAAHHH"
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Header" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+text = "Ringtail - Easy"
+label_settings = SubResource("LabelSettings_okxal")
+horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Mode" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
+[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Desc/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
+label_settings = SubResource("LabelSettings_m6cyt")
+autowrap_mode = 3
+
+[node name="Mode" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode"]
+layout_mode = 2
+
+[node name="ModeCheckItem" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer/ModeCheckItem"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer/ModeCheckItem/HBoxContainer"]
+layout_mode = 2
+text = "Half Health"
+
+[node name="Desc" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer/ModeCheckItem/HBoxContainer"]
+layout_mode = 2
+text = "half health in the name yo"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
 
 [node name="Back" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_icv0m")
+theme_override_font_sizes/font_size = 30
 text = "BACK"
-script = ExtResource("1_k7wod")
-
-[node name="ChnagePanelB" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "MODE"
 script = ExtResource("1_k7wod")
 
 [node name="Play" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("7_a3nps")
 text = "PLAY"
 script = ExtResource("1_k7wod")
 
