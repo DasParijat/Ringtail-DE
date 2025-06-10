@@ -77,6 +77,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Working on Fight Menu, mainly the description/mode side (right),
 			refined button styling,
 			brought in code from old fight (story) menu into here (works)</li>
+			<li>(GlobalMenu / Home Menu) 
+			Now able to go between new menus via buttons
+			(Using GlobalMenu signals)</li>
 			<li>(Credits) 
 			Added a general credits to README 
 			(Will be put in credits menu in final game)</li>

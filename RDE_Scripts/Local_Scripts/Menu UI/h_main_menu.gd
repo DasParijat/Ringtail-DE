@@ -44,6 +44,7 @@ func exit_animation() -> void:
 
 func _on_play_b_pressed() -> void:
 	## Close main menu, opens fight menu
+	GlobalMenu.emit_signal("menu_change", "FIGHT")
 	await exit_animation()
 
 

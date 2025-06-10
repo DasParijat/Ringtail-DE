@@ -66,4 +66,5 @@ func _on_playB_pressed() -> void:
 
 
 func _on_backB_pressed() -> void:
+	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()
