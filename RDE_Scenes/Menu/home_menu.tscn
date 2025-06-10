@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=20 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="7_4ujhj"]
 [ext_resource type="Theme" uid="uid://cdr0sac8dilf2" path="res://RDE_Images/StyleBoxFlats/fight_select_button1_theme.tres" id="7_a3nps"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="7_wokig"]
+[ext_resource type="PackedScene" uid="uid://dnyif5jradpwq" path="res://RDE_Scenes/Menu/mode_check_item.tscn" id="10_fs5vg"]
 
 [sub_resource type="SystemFont" id="SystemFont_1t3ws"]
 font_names = PackedStringArray("Bahnschrift")
@@ -39,32 +40,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm51s"]
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
-expand_margin_top = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl06b"]
-bg_color = Color(0, 0, 0, 0.431373)
-border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
 bg_color = Color(0, 0, 0, 0.431373)
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
@@ -72,18 +47,10 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atiyc"]
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
+expand_margin_left = 20.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="Theme" id="Theme_icv0m"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -100,16 +67,16 @@ Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 4
+Button/constants/h_separation = 8
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 15
+Button/font_sizes/font_size = 30
 Button/fonts/font = SubResource("SystemFont_aelly")
 Button/styles/disabled = SubResource("StyleBoxFlat_12rjp")
-Button/styles/focus = SubResource("StyleBoxFlat_hm51s")
-Button/styles/hover = SubResource("StyleBoxFlat_nl06b")
+Button/styles/focus = SubResource("StyleBoxFlat_554ne")
+Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
-Button/styles/pressed = SubResource("StyleBoxFlat_atiyc")
+Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
 [node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "fight_menu")]
 script = ExtResource("1_rhmab")
@@ -270,10 +237,9 @@ theme_override_fonts/font = SubResource("SystemFont_1t3ws")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fugve")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Description" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -311,42 +277,32 @@ label_settings = SubResource("LabelSettings_m6cyt")
 autowrap_mode = 3
 
 [node name="Mode" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode"]
 layout_mode = 2
 
-[node name="ModeCheckItem" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer"]
+[node name="ModeCheckItem" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer/ModeCheckItem"]
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer/ModeCheckItem/HBoxContainer"]
-layout_mode = 2
-text = "Half Health"
-
-[node name="Desc" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/VBoxContainer/ModeCheckItem/HBoxContainer"]
-layout_mode = 2
-text = "half health in the name yo"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 20
+theme_override_constants/separation = 60
 alignment = 2
 
 [node name="Back" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_icv0m")
-theme_override_font_sizes/font_size = 30
 text = "BACK"
+icon_alignment = 1
 script = ExtResource("1_k7wod")
 
 [node name="Play" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("7_a3nps")
+theme = SubResource("Theme_icv0m")
 text = "PLAY"
 script = ExtResource("1_k7wod")
 

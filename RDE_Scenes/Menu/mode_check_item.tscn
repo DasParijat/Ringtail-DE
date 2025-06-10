@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dnyif5jradpwq"]
+
+[node name="ModeCheckItem" type="PanelContainer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+text = "Half Health"
+
+[node name="Desc" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "half health in the name yo"

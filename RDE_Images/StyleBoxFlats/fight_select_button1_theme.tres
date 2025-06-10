@@ -1,7 +1,5 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://cdr0sac8dilf2"]
 
-[ext_resource type="StyleBox" uid="uid://cy1320dwp485f" path="res://RDE_Images/StyleBoxFlats/fight_select_button1.tres" id="1_h0gyo"]
-
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
 
@@ -13,43 +11,37 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm51s"]
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
-expand_margin_top = 2.0
-expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl06b"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y814h"]
 bg_color = Color(0, 0, 0, 0.431373)
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atiyc"]
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qt68j"]
+bg_color = Color(0, 0, 0, 0.431373)
 border_color = Color(0.581033, 0.581033, 0.581033, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brl6a"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwniw"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -72,7 +64,7 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 15
 Button/fonts/font = SubResource("SystemFont_aelly")
 Button/styles/disabled = SubResource("StyleBoxFlat_bu78y")
-Button/styles/focus = SubResource("StyleBoxFlat_hm51s")
-Button/styles/hover = SubResource("StyleBoxFlat_nl06b")
-Button/styles/normal = ExtResource("1_h0gyo")
-Button/styles/pressed = SubResource("StyleBoxFlat_atiyc")
+Button/styles/focus = SubResource("StyleBoxFlat_y814h")
+Button/styles/hover = SubResource("StyleBoxFlat_qt68j")
+Button/styles/normal = SubResource("StyleBoxFlat_brl6a")
+Button/styles/pressed = SubResource("StyleBoxFlat_pwniw")

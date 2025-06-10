@@ -74,7 +74,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(6/9/25)
 			<li>(Home Menu [Fight]) 
-			Working on Fight Menu, mainly the description/mode side (right)</li>
+			Working on Fight Menu, mainly the description/mode side (right),
+			refined button styling</li>
 			<li>(Credits) 
 			Added a general credits to README 
 			(Will be put in credits menu in final game)</li>
