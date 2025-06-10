@@ -2,7 +2,7 @@ class_name FightMenu
 extends Control
 
 @export var FightDescText : Label
-@export var fight_buttons : Node
+@export var fight_buttons : Container
 
 var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
 var fight_res_path : String = ""
@@ -56,9 +56,14 @@ func _on_fight_selected_pressed(fight_type) -> void:
 		loaded_selected_fight = new_selected_fight
 		FightDescText.text = loaded_selected_fight.LEVEL_DESC
 		
-func _on_playfight_b_pressed() -> void:
+func _on_playB_pressed() -> void:
 	if selected_fight:
 		GlobalScene.set_next_level(fight_res_path)
+		await exit_animation()
 		GlobalScene.load_next_scene(GlobalScene.GAME)
 	else:
 		printerr("STORY MENU ERR: SELECTED FIGHT IS BLANK")
+
+
+func _on_backB_pressed() -> void:
+	await exit_animation()
