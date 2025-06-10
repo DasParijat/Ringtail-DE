@@ -42,7 +42,7 @@ func _on_settings_b_pressed() -> void:
 func _on_quit_b_pressed() -> void:
 	_leave_pause_state()
 	#GlobalScene.emit_signal("quit_to_menu")
-	GlobalScene.load_next_scene(GlobalScene.MAIN_MENU)
+	GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
 
 func _on_reset_b_pressed() -> void:
 	# temp button for debugging

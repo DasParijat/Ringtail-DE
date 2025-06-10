@@ -73,10 +73,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/9/25)
+			<li>(General) 
+			The new home menu is set to be the first scene to open, 
+			instead of the old main menu. Old menu is effectivelu not
+			in use, but keeping it around for a bit just in case I missed
+			something from it.</li>
+			<li>(Game / Pause Menu / Game Over) 
+			All code going to menu now redirects to new menu</li>
 			<li>(Home Menu [Fight]) 
 			Working on Fight Menu, mainly the description/mode side (right),
 			refined button styling,
-			brought in code from old fight (story) menu into here (works)</li>
+			brought in code from old fight (story) menu into here (works),
+			and play button is disabled until player clicks on valid fight type</li>
 			<li>(GlobalMenu / Home Menu) 
 			Now able to go between new menus via buttons
 			(Using GlobalMenu signals)</li>

@@ -3,6 +3,7 @@ extends Control
 
 @export var FightDescText : Label
 @export var fight_buttons : Container
+@export var PlayButton : Button
 
 var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
 var fight_res_path : String = ""
@@ -17,6 +18,8 @@ var anim_rate : float = 0.2
 func _ready() -> void:
 	GlobalMenu.connect("fight_selected_pressed", Callable(self, "_on_fight_selected_pressed"))
 	load_all_fight_resources()
+	PlayButton.disabled = true
+	
 	hide()
 	modulate.a = 0
 
@@ -48,6 +51,8 @@ func load_all_fight_resources() -> void:
 
 func _on_fight_selected_pressed(fight_type) -> void:
 	if fight_type in loaded_fights:
+		PlayButton.disabled = false # undisable play button when valid fight type
+		
 		new_selected_fight = loaded_fights[fight_type]
 		selected_fight = fight_type
 		fight_res_path = "res://RDE_Resources/Level Res/" + fight_type + ".tres"
@@ -55,7 +60,7 @@ func _on_fight_selected_pressed(fight_type) -> void:
 	if new_selected_fight != loaded_selected_fight:
 		loaded_selected_fight = new_selected_fight
 		FightDescText.text = loaded_selected_fight.LEVEL_DESC
-		
+
 func _on_playB_pressed() -> void:
 	if selected_fight:
 		GlobalScene.set_next_level(fight_res_path)
@@ -63,7 +68,6 @@ func _on_playB_pressed() -> void:
 		GlobalScene.load_next_scene(GlobalScene.GAME)
 	else:
 		printerr("STORY MENU ERR: SELECTED FIGHT IS BLANK")
-
 
 func _on_backB_pressed() -> void:
 	GlobalMenu.emit_signal("menu_change", "MAIN")
