@@ -1,9 +1,12 @@
 class_name FightMenu
 extends Control
 
-@export var FightDescText : Label
 @export var fight_buttons : Container
 @export var PlayButton : Button
+
+@export var fight_thumbnail : TextureRect
+@export var fight_header : Label
+@export var fight_desc : Label
 
 var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
 var fight_res_path : String = ""
@@ -59,7 +62,10 @@ func _on_fight_selected_pressed(fight_type) -> void:
 
 	if new_selected_fight != loaded_selected_fight:
 		loaded_selected_fight = new_selected_fight
-		FightDescText.text = loaded_selected_fight.LEVEL_DESC
+		
+		fight_desc.text = loaded_selected_fight.LEVEL_DESC
+		fight_header.text = loaded_selected_fight.DISPLAY_NAME
+		fight_thumbnail.texture = loaded_selected_fight.THUMBNAIL
 
 func _on_playB_pressed() -> void:
 	if selected_fight:

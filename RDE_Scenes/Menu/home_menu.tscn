@@ -143,7 +143,7 @@ layout_mode = 2
 text = "Quit"
 script = ExtResource("1_k7wod")
 
-[node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("FightDescText", "fight_buttons", "PlayButton")]
+[node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -151,9 +151,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_5qig2")
-FightDescText = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Text")
 fight_buttons = NodePath("MarginContainer/HBoxContainer/FightB Container/Button Container")
 PlayButton = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/PlayB")
+fight_thumbnail = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/TextureRect")
+fight_header = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Header")
+fight_desc = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Text")
 
 [node name="MarginContainer" type="MarginContainer" parent="Fight Menu"]
 layout_mode = 1
@@ -233,14 +235,17 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fugve")
 tab_alignment = 1
 current_tab = 0
+tabs_position = 1
 
 [node name="Description" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="TextureRect" type="TextureRect" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description"]
+custom_minimum_size = Vector2(600, 175)
 layout_mode = 2
 texture = ExtResource("7_4ujhj")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description"]
 layout_mode = 2
@@ -259,20 +264,20 @@ theme_override_constants/separation = 5
 [node name="Header" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
-text = "Ringtail - Easy"
+text = "Select a Difficulty Level"
 label_settings = SubResource("LabelSettings_okxal")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
 label_settings = SubResource("LabelSettings_m6cyt")
 autowrap_mode = 3
 
 [node name="Mode" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer"]
 visible = false
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 metadata/_tab_index = 1
 

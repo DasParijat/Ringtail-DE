@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnyif5jradpwq"]
 
 [node name="ModeCheckItem" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 75)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -9,6 +10,14 @@ layout_mode = 2
 layout_mode = 2
 text = "Half Health"
 
+[node name="Break" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "     "
+
 [node name="Desc" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "half health in the name yo"
+
+[node name="Break2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "     "

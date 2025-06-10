@@ -72,6 +72,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/10/25)
+			<li>(Home Menu [Fight] / Level Res) 
+			Level Res now gives display (header) name and thumbnail for fight in menu,
+			also adjusted spacing of the right side of fight menu</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/9/25)
 			<li>(General) 
 			The new home menu is set to be the first scene to open, 
