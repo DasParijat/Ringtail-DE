@@ -19,6 +19,7 @@ signal player_created()
 
 func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res
+	print("MODES ENABLED: ", fight_res.modes_enabled)
 	
 	# Getting player
 	player_scene = fight_res.player_scene

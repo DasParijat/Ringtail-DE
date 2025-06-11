@@ -12,7 +12,7 @@ class_name FightRes
 @export var single_boss_spawn : Vector2 = Vector2(0, -100) 
 # Can't be (0, 0), or else bug where it spawns elsewhere occurs
 
-@export var game_modes : Array[String]
+#@export var game_modes : Array[String]
 
 @export var player_scene : PackedScene #= "res://RDE_Scenes/Entities/oswald.tscn"
 @export var player_spawn : Vector2 = Vector2(0, 10) 
@@ -20,3 +20,5 @@ class_name FightRes
 
 @export var gun_array : Array[GunRes] = [] 
 # If empty, player uses it's default gun array
+
+var modes_enabled : Array # modified in Game node

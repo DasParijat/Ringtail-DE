@@ -62,6 +62,7 @@ func next_in_order(increment : int) -> void:
 	if level.order[level.index] is FightRes:
 		GlobalScene.cur_scene_type = GlobalScene.SceneType.FIGHT
 		fight_res = level.order[level.index]
+		fight_res.modes_enabled = level.modes_enabled
 		#print("LEVEL INDEX: ", level.index)
 		
 		fight_res_set.emit()

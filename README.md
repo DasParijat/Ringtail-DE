@@ -79,6 +79,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Background darkens when on any menu besides main</li>
 			<li>(Home Menu Settings / Credits) 
 			Created base menus for settings and credits</li>
+			<li>(Global Scene / Game Fight) 
+			Able to pass modes enabled from GlobalScene to the fight itself 
+			(Useful for allowing player to enable modes in menu, and have
+			the fight itself read that)</li>
 		</ul>
 	</li>
 	<li>
