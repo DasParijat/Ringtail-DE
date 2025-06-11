@@ -3,8 +3,8 @@ extends CanvasLayer
 # TODO - Possibly create some sort of state machine to handle opening menus
 
 @export var main_menu : MainMenu
-@export var credits_menu : FightMenu
-@export var settings_menu : FightMenu
+@export var credits_menu : CreditsMenu
+@export var settings_menu : SettingsMenu
 @export var fight_menu : FightMenu
 
 @export var background : TextureRect
@@ -21,6 +21,7 @@ func _ready() -> void:
 
 func set_cur_menu(new_menu) -> void:
 	cur_menu = new_menu
+	print(cur_menu)
 	darken_anim()
 	cur_menu.enter_animation()
 
@@ -29,9 +30,9 @@ func _on_menu_change(new_menu) -> void:
 		"MAIN":
 			set_cur_menu(main_menu)
 		"SETTINGS":
-			pass
+			set_cur_menu(settings_menu)
 		"CREDITS":
-			pass
+			set_cur_menu(credits_menu)
 		"FIGHT":
 			set_cur_menu(fight_menu)
 

@@ -50,11 +50,13 @@ func _on_play_b_pressed() -> void:
 
 func _on_settings_b_pressed() -> void:
 	## Close mani menu, opens settings
+	GlobalMenu.emit_signal("menu_change", "SETTINGS")
 	await exit_animation()
 
 
 func _on_credits_b_pressed() -> void:
 	## Close main menu, opens credits
+	GlobalMenu.emit_signal("menu_change", "CREDITS")
 	await exit_animation()
 
 

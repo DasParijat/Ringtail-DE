@@ -77,6 +77,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Made right side panel elements darker</li>
 			<li>(Home Menu) 
 			Background darkens when on any menu besides main</li>
+			<li>(Home Menu Settings / Credits) 
+			Created base menus for settings and credits</li>
 		</ul>
 	</li>
 	<li>
