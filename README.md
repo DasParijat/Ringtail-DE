@@ -82,7 +82,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Global Scene / Game Fight) 
 			Able to pass modes enabled from GlobalScene to the fight itself 
 			(Useful for allowing player to enable modes in menu, and have
-			the fight itself read that)</li>
+			the fight itself read that)
+			(MIGHT REMOVE DUE TO REDUDANCY)</li>
+			<li>(Mode Check Item / Home Menu [Fight]) 
+			Added code to ModeCheckItem scene, and home fight menu is able to read off it</li>
 		</ul>
 	</li>
 	<li>

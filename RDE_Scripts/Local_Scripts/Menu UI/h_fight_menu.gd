@@ -8,6 +8,8 @@ extends Control
 @export var fight_header : Label
 @export var fight_desc : Label
 
+@export var mode_container : Container
+
 var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
 var fight_res_path : String = ""
 
@@ -67,8 +69,19 @@ func _on_fight_selected_pressed(fight_type) -> void:
 		fight_header.text = loaded_selected_fight.DISPLAY_NAME
 		fight_thumbnail.texture = loaded_selected_fight.THUMBNAIL
 
+func set_level_modes() -> void:
+	GlobalScene.next_level_modes = []
+	
+	for child in range(mode_container.get_child_count()):
+		var cur_checkbox = mode_container.get_child(child)
+		if cur_checkbox is ModeCheck:
+			GlobalScene.next_level_modes.append(
+				cur_checkbox.get_mode_name()
+			)
+	
 func _on_playB_pressed() -> void:
 	if selected_fight:
+		set_level_modes() 
 		GlobalScene.set_next_level(fight_res_path)
 		await exit_animation()
 		GlobalScene.load_next_scene(GlobalScene.GAME)

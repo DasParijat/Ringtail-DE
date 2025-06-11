@@ -51,6 +51,7 @@ corner_radius_bottom_left = 30
 
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
 bg_color = Color(0, 0, 0, 0.431373)
@@ -214,7 +215,7 @@ text = "yyoooo"
 [node name="ScrollContainer" type="ScrollContainer" parent="Credits/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc")]
+[node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -228,6 +229,7 @@ PlayButton = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxCon
 fight_thumbnail = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/Thumbnail Holder/TextureRect")
 fight_header = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Header")
 fight_desc = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Text")
+mode_container = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="Fight Menu"]
 layout_mode = 1
@@ -370,15 +372,27 @@ theme_override_constants/separation = 35
 
 [node name="ModeCheckItem" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
+mode_name = "half_hp"
+mode_display_name = "Half Health"
+mode_desc = "Your HP is cut in half"
 
 [node name="ModeCheckItem2" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
+mode_name = "no_power"
+mode_display_name = "No Power"
+mode_desc = "You cannot use or generate power"
 
 [node name="ModeCheckItem3" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
+mode_name = "no_heal"
+mode_display_name = "No Healing"
+mode_desc = "You cannot heal"
 
 [node name="ModeCheckItem4" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
+mode_name = "timed"
+mode_display_name = "Timed"
+mode_desc = "If you don't beat a fight within a certain time, you insta die"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
 layout_mode = 2

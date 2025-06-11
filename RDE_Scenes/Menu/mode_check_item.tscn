@@ -1,7 +1,14 @@
-[gd_scene format=3 uid="uid://dnyif5jradpwq"]
+[gd_scene load_steps=3 format=3 uid="uid://dnyif5jradpwq"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/mode_check_item.gd" id="1_lysvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5iny"]
+bg_color = Color(0.25, 0.229167, 0, 0.705882)
 
 [node name="ModeCheckItem" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 75)
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5iny")
+script = ExtResource("1_lysvt")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
