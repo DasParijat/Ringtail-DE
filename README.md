@@ -72,6 +72,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/11/25)
+			<li>(Home Menu [Fight]) 
+			Made right side panel elements darker</li>
+			<li>(Home Menu) 
+			Background darkens when on any menu besides main</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/10/25)
 			<li>(Home Menu [Fight] / Level Res) 
 			Level Res now gives display (header) name and thumbnail for fight in menu,

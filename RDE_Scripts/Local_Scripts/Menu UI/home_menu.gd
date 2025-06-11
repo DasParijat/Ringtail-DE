@@ -7,6 +7,8 @@ extends CanvasLayer
 @export var settings_menu : FightMenu
 @export var fight_menu : FightMenu
 
+@export var background : TextureRect
+
 var cur_menu : Control
 
 func _ready() -> void:
@@ -19,6 +21,7 @@ func _ready() -> void:
 
 func set_cur_menu(new_menu) -> void:
 	cur_menu = new_menu
+	darken_anim()
 	cur_menu.enter_animation()
 
 func _on_menu_change(new_menu) -> void:
@@ -35,4 +38,9 @@ func _on_menu_change(new_menu) -> void:
 func darken_anim() -> void:
 	## The background goes dark when not on main
 	var tween : Tween = create_tween()
-	# TODO - add code
+	
+	var new_modulate : Color = Color(0.4, 0.4, 0.4)
+	if cur_menu == main_menu:
+		new_modulate = Color(1, 1, 1)
+		
+	tween.tween_property(background, "modulate", new_modulate, 0.25)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=21 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -16,6 +16,9 @@ font_names = PackedStringArray("Bahnschrift")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fugve"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rsck"]
+bg_color = Color(0, 0, 0, 0.431373)
+
 [sub_resource type="SystemFont" id="SystemFont_q41wo"]
 font_names = PackedStringArray("Bahnschrift")
 
@@ -28,6 +31,9 @@ font_size = 40
 line_spacing = 10.0
 font = SubResource("SystemFont_q41wo")
 font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62v7s"]
+bg_color = Color(0, 0, 0, 0.431373)
 
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
@@ -70,10 +76,11 @@ Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
-[node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "fight_menu")]
+[node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "fight_menu", "background")]
 script = ExtResource("1_rhmab")
 main_menu = NodePath("Main Menu")
 fight_menu = NodePath("Fight Menu")
+background = NodePath("Background")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -249,6 +256,7 @@ expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8rsck")
 
 [node name="MarginContainer" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer"]
 layout_mode = 2
@@ -279,6 +287,7 @@ autowrap_mode = 3
 visible = false
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62v7s")
 metadata/_tab_index = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode"]
