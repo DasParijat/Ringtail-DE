@@ -1,7 +1,7 @@
 extends Ringtail
 # EASY
 
-@export var cur_sequence : Array[int] = [1,7,2,7,3,7]
+@export var cur_sequence : Array[int] = [1,2,3,7]
 
 func _process(delta : float) -> void:
 	total_delta += delta

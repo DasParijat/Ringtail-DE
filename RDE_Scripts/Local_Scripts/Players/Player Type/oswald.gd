@@ -49,8 +49,15 @@ func power_move() -> void:
 	if GlobalPlayer.power_activated:
 		auto_power_timer.start()
 		base.set_speedmod(2.5)
-		player_res.health_res.damage_rate = 0.3
+		player_res.health_res.damage_rate = 0.2
 		GlobalTime.cur_time_scale = 0.2
+		
+		if player_res.health_res.cur_hp < 1.5:
+			## When in power, prevents player from dying during so
+			player_res.health_res.cur_hp = 1.5
+		
+		if GlobalScene.on_victory_screen:
+			GlobalPlayer.power_activated = false
 		
 		player_res.cur_power -= 0.1
 	else:

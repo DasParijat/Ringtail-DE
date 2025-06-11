@@ -1,7 +1,7 @@
 extends Ringtail
 # NORMAL
 
-@export var cur_sequence : Array[int] = [1,7,2,7,3,7]
+@export var cur_sequence : Array[int] = [1,2,3,7]
 
 func _process(delta : float) -> void:
 	phase_handler(2)
@@ -33,7 +33,7 @@ func phase1():
 			spawner.spawn_mob(minitail_default, base.global_position)
 
 func phase2():
-	cur_sequence = [1,7,2,7,3,7,4,7,6,7]
+	cur_sequence = [1,2,3,4,6,7]
 	
 	if GlobalTime.process_interval(3.0, total_delta, get_process_delta_time()):
 		for i in range(3):

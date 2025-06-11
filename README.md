@@ -76,6 +76,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Home Menu [Fight] / Level Res) 
 			Level Res now gives display (header) name and thumbnail for fight in menu,
 			also adjusted spacing of the right side of fight menu</li>
+			<li>(Oswald) 
+			Made it so player can't die while power activated</li>
+			<li>(Ringtail / RingtailHARD / RingtailNORM / RingtailEASY) 
+			All modes of Ringtail don't use transition attacks as much</li>
+			<li>(Base Mob) 
+			Resolved weird bug with debug_action_queue
+			(Idk what happened exactly, but Godot set the value to null
+			for all mobs, I just removed that from the internal scene code itself)</li>
 		</ul>
 	</li>
 	<li>

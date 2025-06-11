@@ -15,7 +15,7 @@ extends CharacterBody2D
 @onready var mob_collision : CollisionShape2D = $MobCollisionShape
 @onready var hitbox : Area2D = $HitBox
 
-@export var debug_action_queue = false
+@export var debug_action_queue : bool = false
 
 signal health_res_set
 
