@@ -9,7 +9,7 @@
 script = ExtResource("1_xmwl6")
 HP_NAME = "MinitailSPEED"
 is_player = false
-max_hp = 15
+MAX_HP = 15
 damage_rate = 1.0
 invicible = false
 

@@ -9,7 +9,7 @@
 script = ExtResource("1_w5iru")
 HP_NAME = "Minitail"
 is_player = false
-max_hp = 20
+MAX_HP = 20
 damage_rate = 1.0
 invicible = false
 

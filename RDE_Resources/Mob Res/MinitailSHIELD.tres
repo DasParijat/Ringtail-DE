@@ -9,7 +9,7 @@
 script = ExtResource("1_esclb")
 HP_NAME = "MinitailSHIELD"
 is_player = false
-max_hp = 35
+MAX_HP = 35
 damage_rate = 1.0
 invicible = false
 

@@ -9,7 +9,7 @@
 script = ExtResource("1_lvf4i")
 HP_NAME = "MinitailHEAVY"
 is_player = false
-max_hp = 30
+MAX_HP = 30
 damage_rate = 1.0
 invicible = false
 
