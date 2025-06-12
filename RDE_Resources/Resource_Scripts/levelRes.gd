@@ -11,7 +11,6 @@ class_name LevelRes
 
 var index = 0
 var sequence_end : bool = false
-var modes_enabled : Array = []
 
 func next_sequence() -> void:
 	var continue_sequence = index < order.size() - 1

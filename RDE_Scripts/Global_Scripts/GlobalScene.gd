@@ -36,7 +36,6 @@ func _ready() -> void:
 	
 func set_next_level(new_level : String) -> void:
 	next_level = load(new_level)
-	next_level.modes_enabled = next_level_modes
 	
 func set_next_scene(new_scene : String) -> void:
 	next_scene = new_scene

@@ -72,6 +72,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/12/25)
+			<li>(Home Menu [Fight] / Mode Check Item) 
+			The checkboxes now determine if a mode is enabled or not</li>
+			<li>(Modes) 
+			Added "No Power" mode</li>
+			<li>(GlobalScene / Game Fight) 
+			REMOVED passing modes through level and fight res
+			(As it is already globally accessible)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/11/25)
 			<li>(Home Menu [Fight]) 
 			Made right side panel elements darker</li>

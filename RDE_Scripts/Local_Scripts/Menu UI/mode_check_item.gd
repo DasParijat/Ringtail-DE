@@ -14,3 +14,6 @@ func _ready() -> void:
 
 func get_mode_name() -> String:
 	return mode_name
+
+func is_checked() -> bool:
+	return check_box.button_pressed

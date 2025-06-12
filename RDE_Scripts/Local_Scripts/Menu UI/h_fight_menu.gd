@@ -74,7 +74,8 @@ func set_level_modes() -> void:
 	
 	for child in range(mode_container.get_child_count()):
 		var cur_checkbox = mode_container.get_child(child)
-		if cur_checkbox is ModeCheck:
+		
+		if cur_checkbox is ModeCheck and cur_checkbox.is_checked():
 			GlobalScene.next_level_modes.append(
 				cur_checkbox.get_mode_name()
 			)

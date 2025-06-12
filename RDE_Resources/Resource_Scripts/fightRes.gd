@@ -20,5 +20,3 @@ class_name FightRes
 
 @export var gun_array : Array[GunRes] = [] 
 # If empty, player uses it's default gun array
-
-var modes_enabled : Array # modified in Game node

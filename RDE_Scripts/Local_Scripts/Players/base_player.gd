@@ -62,6 +62,9 @@ func _process(delta: float) -> void:
 		return
 	total_delta += delta
 	
+	if "no_power" in GlobalScene.next_level_modes:
+		player_res.cur_power = 0
+		
 	# Constantly updating global player stats
 	GlobalSignal.emit_signal("get_cur_stats", "PLAYER", get_cur_stats())
 	# TODO make player invincible on gane won signal
