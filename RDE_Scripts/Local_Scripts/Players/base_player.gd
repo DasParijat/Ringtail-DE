@@ -35,7 +35,7 @@ func _ready() -> void:
 	player_res.cur_power = player_res.starting_power
 	player_res.reset_speed()
 	player_res.reset_power_rate()
-	
+
 	health_res.set_health_res(iframe_timer)
 	prev_hp = health_res.cur_hp
 	
@@ -105,7 +105,9 @@ func rest_check(delta):
 	# NOTE: Doesn't run when hp is max, 
 	#	else player can increase rest_timeout to an unintended value 
 	#	and possibly cheese game. 
-	
+	if "no_heal" in GlobalScene.next_level_modes:
+		return
+		
 	#print("stored hp: ", stored_hp)
 	var no_overflow : bool = ((health_res.cur_hp + stored_hp) <= health_res.max_hp
 								and health_res.cur_hp < health_res.max_hp)

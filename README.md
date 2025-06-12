@@ -76,7 +76,11 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Home Menu [Fight] / Mode Check Item) 
 			The checkboxes now determine if a mode is enabled or not</li>
 			<li>(Modes) 
-			Added "No Power" mode</li>
+			Added working no_power, no_healing, and half_hp modes</li>
+			<li>(HealthRes) 
+			Made two different max hp variables
+			(MAX_HP is the default max hp,
+			while max_hp is MAX_HP except it can be modified externally (Like with modes))</li>
 			<li>(GlobalScene / Game Fight) 
 			REMOVED passing modes through level and fight res
 			(As it is already globally accessible)</li>
