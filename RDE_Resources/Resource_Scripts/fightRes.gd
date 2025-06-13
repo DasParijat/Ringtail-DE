@@ -12,11 +12,11 @@ class_name FightRes
 @export var single_boss_spawn : Vector2 = Vector2(0, -100) 
 # Can't be (0, 0), or else bug where it spawns elsewhere occurs
 
-#@export var game_modes : Array[String]
+@export var min_win_time : int = 60 # For timed mode, what is the minimum time to win
 
 @export var player_scene : PackedScene #= "res://RDE_Scenes/Entities/oswald.tscn"
 @export var player_spawn : Vector2 = Vector2(0, 10) 
-#Can't be (0, 0), or else bug where it spawns elsewhere occurs
+# Can't be (0, 0), or else bug where it spawns elsewhere occurs
 
 @export var gun_array : Array[GunRes] = [] 
 # If empty, player uses it's default gun array

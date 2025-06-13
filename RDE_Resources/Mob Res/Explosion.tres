@@ -9,7 +9,7 @@
 script = ExtResource("1_ybj5t")
 HP_NAME = "BOOM BOOM"
 is_player = false
-max_hp = 10
+MAX_HP = 10
 damage_rate = 1.0
 invicible = true
 

@@ -9,7 +9,7 @@
 script = ExtResource("1_ol587")
 HP_NAME = "EOTHS"
 is_player = false
-max_hp = 15
+MAX_HP = 10
 damage_rate = 1.0
 invicible = true
 

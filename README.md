@@ -72,6 +72,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/13/25)
+			<li>(Fight UI / Timer UI) 
+			Created design for timer UI</li>
+			<li>(FightRes) 
+			Added min_win_time variable
+			(For Timed mode, each fight has it's own time to beat)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/12/25)
 			<li>(Home Menu [Fight] / Mode Check Item) 
 			The checkboxes now determine if a mode is enabled or not</li>
