@@ -75,6 +75,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/12/25)
 			<li>(Home Menu [Fight] / Mode Check Item) 
 			The checkboxes now determine if a mode is enabled or not</li>
+			<li>(Home Menu [Fight]) 
+			Stylized home menu buttons</li>
 			<li>(Modes) 
 			Added working no_power, no_healing, and half_hp modes</li>
 			<li>(HealthRes) 
