@@ -8,9 +8,16 @@ var minutes : int = floor(cur_time / 60)
 var seconds : int = cur_time % 60
 	
 func _ready() -> void:
-	pass # Replace with function body.
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	
+	game_start_anim(0.3)
 
-
+func game_start_anim(duration : float) -> void:
+	var tween = create_tween()
+	
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "modulate:a", 1, duration)
+	
 func _process(delta: float) -> void:
 	cur_time = floor(GlobalFightStats.fight_stats["time"])
 	
@@ -18,3 +25,16 @@ func _process(delta: float) -> void:
 	seconds = cur_time % 60
 
 	time_label.text = "%d:%02d" % [minutes, seconds]
+
+func _on_game_won() -> void:
+	var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property($".", "modulate:a", 0, GlobalScene.victory_fade_rate)
+	await tween.finished
+	$".".hide()
+
+	await GlobalScene.off_victory
+
+	$".".show()
+	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($".", "modulate:a", 1, GlobalScene.victory_fade_rate)

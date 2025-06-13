@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
+[ext_resource type="StyleBox" uid="uid://csqq1l0qo2aqe" path="res://RDE_Images/StyleBoxFlats/old_gun_ui_stylebox.tres" id="2_3igty"]
 [ext_resource type="PackedScene" uid="uid://bra8qovhkkhxm" path="res://RDE_Scenes/keyboard_hints.tscn" id="2_gqfdu"]
 [ext_resource type="PackedScene" uid="uid://dnhwxsvsufdaw" path="res://RDE_Scenes/timer_ui.tscn" id="4_c0wro"]
 
@@ -47,19 +48,6 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_color = Color(0.866667, 0.494118, 0, 1)
 shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q1gu"]
-bg_color = Color(0, 0, 0, 0.352941)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-expand_margin_left = 3.0
-expand_margin_top = 3.0
-expand_margin_right = 5.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 0.0784314)
-shadow_size = 2
 
 [sub_resource type="SystemFont" id="SystemFont_xxacr"]
 font_names = PackedStringArray("Bahnschrift")
@@ -241,7 +229,7 @@ offset_left = 3.0
 offset_top = -58.0
 offset_right = 65.0
 offset_bottom = -18.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3q1gu")
+theme_override_styles/panel = ExtResource("2_3igty")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/GunUI"]
 layout_mode = 2
@@ -321,3 +309,4 @@ anchor_right = 0.5
 grow_horizontal = 2
 
 [node name="TimerUI" parent="." instance=ExtResource("4_c0wro")]
+modulate = Color(1, 1, 1, 0)
