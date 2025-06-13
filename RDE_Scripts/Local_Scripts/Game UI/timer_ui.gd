@@ -18,13 +18,12 @@ func game_start_anim(duration : float) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "modulate:a", 1, duration)
 	
-func _process(delta: float) -> void:
-	cur_time = floor(GlobalFightStats.fight_stats["time"])
+func _process(_delta : float) -> void:
+	# TODO add code to handle Timed mode
+	# Timer goes down instead of up, gets time from fight res, and goes red at under 10 seconds
+	cur_time = GlobalFightStats.fight_stats["time"]
 	
-	minutes = floor(cur_time / 60)
-	seconds = cur_time % 60
-
-	time_label.text = "%d:%02d" % [minutes, seconds]
+	time_label.text = GlobalTime.get_time_format(cur_time)
 
 func _on_game_won() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)

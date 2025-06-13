@@ -76,6 +76,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Fight UI / Timer UI) 
 			Created design and fade in/out tweens for timer UI,
 			TimerUI displays current fight time</li>
+			<li>(GlobalTime / FightStats / Timer UI) 
+			Created get_time_format function which returns
+			seconds in "minute:second" format. 
+			Used in FightStats and Timer UI</li>
 			<li>(FightRes) 
 			Added min_win_time variable
 			(For Timed mode, each fight has it's own time to beat)</li>
