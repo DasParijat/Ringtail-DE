@@ -74,7 +74,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(6/13/25)
 			<li>(Fight UI / Timer UI) 
-			Created design for timer UI</li>
+			Created design for timer UI,
+			TimerUI displays current fight time</li>
 			<li>(FightRes) 
 			Added min_win_time variable
 			(For Timed mode, each fight has it's own time to beat)</li>

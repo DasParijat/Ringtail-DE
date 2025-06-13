@@ -2,16 +2,18 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/timer_ui.gd" id="1_en08s"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5na77"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5hs"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
-bg_color = Color(0, 0, 0, 0.431373)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+bg_color = Color(0, 0, 0, 0.352941)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.0784314)
+shadow_size = 2
 
 [sub_resource type="SystemFont" id="SystemFont_lxji3"]
 font_names = PackedStringArray("Bahnschrift")
@@ -43,7 +45,7 @@ offset_top = -33.0
 offset_right = 101.0
 offset_bottom = 33.0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5na77")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pk5hs")
 
 [node name="TimeLabel" type="Label" parent="PanelContainer"]
 layout_mode = 2
