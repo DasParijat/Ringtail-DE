@@ -19,9 +19,17 @@ func game_start_anim(duration : float) -> void:
 	tween.tween_property(self, "modulate:a", 1, duration)
 	
 func _process(_delta : float) -> void:
-	# TODO add code to handle Timed mode
 	# Timer goes down instead of up, gets time from fight res, and goes red at under 10 seconds
-	cur_time = GlobalFightStats.fight_stats["time"]
+	if "timed" in GlobalScene.next_level_modes:
+		# TODO add code to access time for specific fight
+		cur_time = 15 - GlobalFightStats.fight_stats["time"]
+		if cur_time <= 10:
+			time_label.modulate = Color(1,0.5,0.5)
+			
+		if cur_time <= 0:
+			GlobalSignal.emit_signal("update_player_hp", -1000)
+	else:
+		cur_time = GlobalFightStats.fight_stats["time"]
 	
 	time_label.text = GlobalTime.get_time_format(cur_time)
 

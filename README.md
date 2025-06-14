@@ -72,6 +72,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/14/25)
+			<li>(Timer UI) 
+			Timer UI handles counting down and intsa-killing player when time out
+			(For Timed mode)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/13/25)
 			<li>(Fight UI / Timer UI) 
 			Created design and fade in/out tweens for timer UI,

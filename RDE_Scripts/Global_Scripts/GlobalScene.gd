@@ -10,7 +10,7 @@ const LOAD_SCENE : PackedScene = preload("uid://b7ky1sqwiq4tv")
 
 var next_scene : String
 var next_level : LevelRes 
-var next_level_modes : Array = ["packgod"]
+var next_level_modes : Array = []
 
 enum SceneType {FIGHT, CSCENE, HOME_MENU, MAIN_MENU}
 var cur_scene_type : SceneType
