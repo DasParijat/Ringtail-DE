@@ -74,8 +74,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(6/14/25)
 			<li>(Timer UI) 
-			Timer UI handles counting down and intsa-killing player when time out
-			(For Timed mode)</li>
+			Timer UI handles timed mode (including killing player when time out), 
+			and is able to retrieve min_win_time for fight</li>
 		</ul>
 	</li>
 	<li>

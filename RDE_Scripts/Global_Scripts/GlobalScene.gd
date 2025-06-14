@@ -57,7 +57,6 @@ func load_next_scene(new_scene : String) -> void:
 	get_tree().change_scene_to_packed(LOAD_SCENE)
 
 func _on_victory() -> void:
-	print("on vicotur")
 	on_victory_screen = true
 	await GlobalScene.off_victory
 	on_victory_screen = false

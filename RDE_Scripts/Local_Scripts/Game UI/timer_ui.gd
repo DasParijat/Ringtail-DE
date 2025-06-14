@@ -9,6 +9,7 @@ var seconds : int = cur_time % 60
 	
 func _ready() -> void:
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	time_label.modulate = Color(1,1,1)
 	
 	game_start_anim(0.3)
 
@@ -19,12 +20,10 @@ func game_start_anim(duration : float) -> void:
 	tween.tween_property(self, "modulate:a", 1, duration)
 	
 func _process(_delta : float) -> void:
-	# Timer goes down instead of up, gets time from fight res, and goes red at under 10 seconds
 	if "timed" in GlobalScene.next_level_modes:
-		# TODO add code to access time for specific fight
-		cur_time = 15 - GlobalFightStats.fight_stats["time"]
+		cur_time = get_time_to_beat() - GlobalFightStats.fight_stats["time"]
 		if cur_time <= 10:
-			time_label.modulate = Color(1,0.5,0.5)
+			time_label.modulate = Color(1,0.3,0.3)
 			
 		if cur_time <= 0:
 			GlobalSignal.emit_signal("update_player_hp", -1000)
@@ -32,6 +31,12 @@ func _process(_delta : float) -> void:
 		cur_time = GlobalFightStats.fight_stats["time"]
 	
 	time_label.text = GlobalTime.get_time_format(cur_time)
+
+func get_time_to_beat() -> int:
+	if GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
+		var cur_level : LevelRes = GlobalScene.next_level
+		return cur_level.order[cur_level.index].min_win_time
+	return 10 # default min win time
 
 func _on_game_won() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
@@ -41,7 +46,8 @@ func _on_game_won() -> void:
 	$".".hide()
 
 	await GlobalScene.off_victory
-
+	
+	time_label.modulate = Color(1,1,1)
 	$".".show()
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property($".", "modulate:a", 1, GlobalScene.victory_fade_rate)
