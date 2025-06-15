@@ -20,6 +20,13 @@ func process_interval(interval_time : float, total_delta : float, delta : float)
 
 func get_time_format(f_seconds : float) -> String:
 	## Returns given float-type seconds in 0:00 format
-	# DOES NOT HANDLE HOURS (yet)
 	var i_second : int = floor(f_seconds)
-	return "%d:%02d" % [floor(i_second / 60), i_second % 60]
+
+	var hours = floor(i_second / 3600)
+	var minutes = floor((i_second % 3600) / 60)
+	var seconds = i_second % 60
+
+	if hours > 0:
+		return "%d:%02d:%02d" % [hours, minutes, seconds]
+	else:
+		return "%d:%02d" % [minutes, seconds]

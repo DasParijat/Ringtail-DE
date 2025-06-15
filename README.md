@@ -72,6 +72,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/15/25)
+			<li>(GlobalTime) 
+			get_time_format handles hours now</li>
+			<li>(Ringtails) 
+			Changed min_win_time (made them factors of 60 seconds)</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/14/25)
 			<li>(Timer UI) 
 			Timer UI handles timed mode (including killing player when time out), 
