@@ -34,5 +34,4 @@ func action1() -> void:
 	# TODO - Add some sorta victory sound for when this dies
 	GlobalSignal.emit_signal("update_power", power_give)
 	GlobalSignal.emit_signal("update_player_hp", hp_give)
-	GlobalPlayer.emit_signal("just_healed", hp_give) # plays flash effect
 	base.health_res.kill_self()

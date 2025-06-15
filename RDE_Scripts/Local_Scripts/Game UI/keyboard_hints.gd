@@ -56,10 +56,18 @@ func _on_get_cur_stats(type, stats) -> void:
 			reload_ui(stats)
 
 func rest_ui(_stats : Dictionary) -> void:
+	if "no_heal" in GlobalScene.next_level_modes: 
+		rest_hint.hide()
+		return
+	
 	if GlobalPlayer.is_resting: rest_hint.modulate = in_use_color
 	else: rest_hint.modulate = usable_color 
 
 func power_ui(stats : Dictionary) -> void:
+	if "no_power" in GlobalScene.next_level_modes: 
+		power_hint.hide()
+		return
+	
 	if stats["cur_power"] <= 1:
 		power_hint.modulate = disabled_color
 	else:

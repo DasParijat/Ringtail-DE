@@ -76,7 +76,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(GlobalTime) 
 			get_time_format handles hours now</li>
 			<li>(Ringtails) 
-			Changed min_win_time (made them factors of 60 seconds)</li>
+			Changed min_win_time (made them factors of 60 seconds),
+			also they don't turn darker when in transition attack</li>
+			<li>(Base Player / Global Player) 
+			Base player is solely responsible for the yellow flash effect 
+			that indicates the player has healed</li>
+			<li>(Keyboard Hints) 
+			Depending on modes enabled, certain hints are hidden</li>
 		</ul>
 	</li>
 	<li>

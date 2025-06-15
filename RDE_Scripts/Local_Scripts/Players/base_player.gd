@@ -127,8 +127,7 @@ func rest_check(delta):
 			) 
 			and stored_hp > player_res.stored_hp_threshold
 		):
-		health_res.cur_hp += stored_hp
-		GlobalPlayer.emit_signal("just_healed", stored_hp)
+		_on_update_player_hp(stored_hp)
 		stored_hp = 0
 		heal_particles.emitting = true
 		AudioManager.play_audio_one_shot(player_res.regen_sound)
@@ -182,9 +181,12 @@ func _on_update_power(power_update : float) -> void:
 
 func _on_update_player_hp(hp_update : float) -> void:
 	#print("hp updated: ", hp_update)
-	if "no_heal" in GlobalScene.next_level_modes and hp_update > 0:
-		return
-	
+	if hp_update > 0:
+		if "no_heal" in GlobalScene.next_level_modes: 
+			return
+		
+		GlobalPlayer.emit_signal("just_healed", hp_update)
+		
 	health_res.cur_hp += hp_update
 	
 func _on_game_over() -> void:

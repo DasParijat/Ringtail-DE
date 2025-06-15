@@ -122,22 +122,22 @@ func action6() -> void:
 
 func action7() -> void:
 	## Passive action that's called between every other action
-	base.sprite.modulate = Color(0.8,0.8,0.8)
+	#base.sprite.modulate = Color(0.8,0.8,0.8)
 	base.health_res.damage_rate = 0.7
 	if phase == 3 and randi_range(0,3) == 0:
 		action5()
 		return
 	
 	mob_res.sprtflip_enabled = false
-	for i in range(4 - phase):
-		for j in range(2 + phase):
+	for i in randi_range(1,2):
+		for j in range(1 + phase):
 			base.action("move_torward_player", {"speed": randi_range(350, 400), "length": 0.2})
 			await GlobalTime.local_wait(0.2)
 		base.action("observe_player", 0.2)
 		await GlobalTime.local_wait(0.2)
 	
 	base.health_res.damage_rate = 1
-	base.sprite.modulate = Color(1,1,1)
+	#base.sprite.modulate = Color(1,1,1)
 	controller.hold(false)
 
 func chain_explosion(num_of_explosions : int = 5, time_gap : float = 1.0) -> void:
