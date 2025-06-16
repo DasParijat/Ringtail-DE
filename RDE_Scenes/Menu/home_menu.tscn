@@ -256,11 +256,16 @@ bus_name = "Music Bus"
 layout_mode = 2
 label_text = "Game SFX"
 bus_name = "Game SFX"
+audio_scaling = 0.5
 
 [node name="UI Audio" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer" instance=ExtResource("8_ubgdy")]
 layout_mode = 2
 label_text = "UI SFX"
 bus_name = "UI SFX"
+
+[node name="ResetAudioB" type="Button" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reset Audio"
 
 [node name="SettingsBackB" type="Button" parent="Settings/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -504,6 +509,7 @@ script = ExtResource("1_k7wod")
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/creditsB" to="Main Menu" method="_on_credits_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/quitB" to="Main Menu" method="_on_quit_b_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/ResetAudioB" to="Settings" method="_on_reset_audio_b_pressed"]
 [connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/SettingsBackB" to="Settings" method="_on_settings_back_b_pressed"]
 [connection signal="pressed" from="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/PlayB" to="Fight Menu" method="_on_playB_pressed"]
 [connection signal="pressed" from="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/BackB" to="Fight Menu" method="_on_backB_pressed"]

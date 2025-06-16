@@ -26,3 +26,8 @@ func exit_animation() -> void:
 func _on_settings_back_b_pressed() -> void:
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()
+
+
+func _on_reset_audio_b_pressed() -> void:
+	var bus_index : int = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(100))
