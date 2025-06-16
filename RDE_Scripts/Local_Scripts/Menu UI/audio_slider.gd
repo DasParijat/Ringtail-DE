@@ -24,3 +24,8 @@ func update_text() -> void:
 func _on_slider_value_changed(value : float) -> void:
 	update_text()
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value) / audio_scaling)
+
+
+func _on_settings_audio_reset() -> void:
+	slider.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index) * audio_scaling)
+	update_text()

@@ -189,6 +189,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00141, 1)
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 100
@@ -199,7 +200,7 @@ layout_mode = 2
 theme_override_constants/separation = 50
 
 [node name="TabContainer" type="TabContainer" parent="Settings/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 500)
+custom_minimum_size = Vector2(0, 550)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_1t3ws")
 theme_override_font_sizes/font_size = 20
@@ -263,9 +264,23 @@ layout_mode = 2
 label_text = "UI SFX"
 bus_name = "UI SFX"
 
-[node name="ResetAudioB" type="Button" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Reset Audio"
+size_flags_vertical = 6
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ResetAudioB" type="Button" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_icv0m")
+text = "Reset All"
+script = ExtResource("1_k7wod")
+
+[node name="MuteB" type="Button" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_icv0m")
+text = "Mute All"
+script = ExtResource("1_k7wod")
 
 [node name="SettingsBackB" type="Button" parent="Settings/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -509,7 +524,12 @@ script = ExtResource("1_k7wod")
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/creditsB" to="Main Menu" method="_on_credits_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/quitB" to="Main Menu" method="_on_quit_b_pressed"]
-[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/ResetAudioB" to="Settings" method="_on_reset_audio_b_pressed"]
+[connection signal="audio_reset" from="Settings" to="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/Master Audio" method="_on_settings_audio_reset"]
+[connection signal="audio_reset" from="Settings" to="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/Music Audio" method="_on_settings_audio_reset"]
+[connection signal="audio_reset" from="Settings" to="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/Game Audio" method="_on_settings_audio_reset"]
+[connection signal="audio_reset" from="Settings" to="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/UI Audio" method="_on_settings_audio_reset"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetAudioB" to="Settings" method="_on_reset_audio_b_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/MuteB" to="Settings" method="_on_mute_b_pressed"]
 [connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/SettingsBackB" to="Settings" method="_on_settings_back_b_pressed"]
 [connection signal="pressed" from="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/PlayB" to="Fight Menu" method="_on_playB_pressed"]
 [connection signal="pressed" from="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/BackB" to="Fight Menu" method="_on_backB_pressed"]

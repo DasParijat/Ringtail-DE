@@ -75,7 +75,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/16/25)
 			<li>(Audio Slider) 
 			Created audio slider which displays slider, label, and percentage, 
-			as well as actual modifies audio busses</li>
+			as well as actually modifies audio busses</li>
+			<li>(Home Menu [Settings]) 
+			Added buttons to reset (back to default) and mute all audios, 
+			Audio section of Settings pretty much finalized</li>
 		</ul>
 	</li>
 	<li>

@@ -1,6 +1,8 @@
 class_name SettingsMenu
 extends Control
 
+signal audio_reset
+
 var anim_rate : float = 0.2
 
 func _ready() -> void:
@@ -27,7 +29,20 @@ func _on_settings_back_b_pressed() -> void:
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()
 
+func set_default_volume(bus_name : String, default_volume : float) -> void:
+	var bus_index : int = AudioServer.get_bus_index(bus_name)
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(default_volume))
 
 func _on_reset_audio_b_pressed() -> void:
-	var bus_index : int = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus_index, linear_to_db(100))
+	set_default_volume("Master", 1)
+	set_default_volume("Music Bus", 1)
+	set_default_volume("Game SFX", 0.5)
+	set_default_volume("UI SFX", 1)
+	audio_reset.emit()
+
+func _on_mute_b_pressed() -> void:
+	set_default_volume("Master", 0)
+	set_default_volume("Music Bus", 0)
+	set_default_volume("Game SFX", 0)
+	set_default_volume("UI SFX", 0)
+	audio_reset.emit()
