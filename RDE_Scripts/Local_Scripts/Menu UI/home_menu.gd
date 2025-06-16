@@ -15,7 +15,7 @@ func _ready() -> void:
 	Engine.time_scale = 1 # Ensures time scale is normal when menu loads
 	
 	GlobalMenu.connect("menu_change", Callable(self, "_on_menu_change"))
-	GlobalScene.cur_scene_type = GlobalScene.SceneType.MAIN_MENU
+	GlobalScene.cur_scene_type = GlobalScene.SceneType.HOME_MENU
 	GlobalFightStats.reset_fight_stats()
 	
 	set_cur_menu(main_menu)

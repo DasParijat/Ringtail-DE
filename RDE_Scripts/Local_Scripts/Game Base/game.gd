@@ -14,7 +14,7 @@ var pause_transition : bool = false
 var on_victory_screen : bool = false
 
 func _ready() -> void:
-	if GlobalScene.prev_scene == GlobalScene.MAIN_MENU:
+	if GlobalScene.prev_scene == GlobalScene.HOME_MENU:
 		level.index = 0
 	
 	#print("LEVEL INDEX: ", level.index)

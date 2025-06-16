@@ -83,6 +83,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			that indicates the player has healed</li>
 			<li>(Keyboard Hints) 
 			Depending on modes enabled, certain hints are hidden</li>
+			<li>(Game / Home Meny / GlobalScene) 
+			Fixed issue of Game not resetting level index 
+			(This was due to it still relying on the old main menu)</li>
 		</ul>
 	</li>
 	<li>

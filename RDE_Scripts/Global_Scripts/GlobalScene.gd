@@ -16,7 +16,7 @@ enum SceneType {FIGHT, CSCENE, HOME_MENU, MAIN_MENU}
 var cur_scene_type : SceneType
 
 var prev_scene 
-var cur_scene = MAIN_MENU
+var cur_scene = HOME_MENU
 
 var world_scene_history : Array[PackedScene]
 # possible future vars
