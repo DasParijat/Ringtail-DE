@@ -73,6 +73,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/15/25)
+			<li>(Home Menu [Settings]) 
+			Creating base design for settings menu, similar looks to fight select menu</li>
 			<li>(GlobalTime) 
 			get_time_format handles hours now</li>
 			<li>(Ringtails) 

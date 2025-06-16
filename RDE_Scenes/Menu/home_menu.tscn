@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=25 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="7_4ujhj"]
 [ext_resource type="Theme" uid="uid://cdr0sac8dilf2" path="res://RDE_Images/StyleBoxFlats/fight_select_button1_theme.tres" id="7_a3nps"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_credits.gd" id="7_edg5u"]
-[ext_resource type="Texture2D" uid="uid://bsghmya2f5nxm" path="res://RDE_Images/rt_minitailHEAVY.png" id="7_i12ut"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="7_wokig"]
 [ext_resource type="PackedScene" uid="uid://dnyif5jradpwq" path="res://RDE_Scenes/Menu/mode_check_item.tscn" id="10_fs5vg"]
 
@@ -19,29 +18,6 @@
 font_names = PackedStringArray("Bahnschrift")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fugve"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx0w5"]
-bg_color = Color(0, 0, 0, 0.431373)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rsck"]
-bg_color = Color(0, 0, 0, 0.431373)
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="SystemFont" id="SystemFont_q41wo"]
-font_names = PackedStringArray("Bahnschrift")
-
-[sub_resource type="LabelSettings" id="LabelSettings_okxal"]
-line_spacing = 5.0
-font = SubResource("SystemFont_q41wo")
-font_size = 40
-
-[sub_resource type="LabelSettings" id="LabelSettings_m6cyt"]
-line_spacing = 10.0
-font = SubResource("SystemFont_q41wo")
-font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62v7s"]
 bg_color = Color(0, 0, 0, 0.431373)
@@ -93,6 +69,29 @@ Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx0w5"]
+bg_color = Color(0, 0, 0, 0.431373)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rsck"]
+bg_color = Color(0, 0, 0, 0.431373)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="SystemFont" id="SystemFont_q41wo"]
+font_names = PackedStringArray("Bahnschrift")
+
+[sub_resource type="LabelSettings" id="LabelSettings_okxal"]
+line_spacing = 5.0
+font = SubResource("SystemFont_q41wo")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_m6cyt"]
+line_spacing = 10.0
+font = SubResource("SystemFont_q41wo")
+font_size = 24
+
 [node name="Home Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "credits_menu", "settings_menu", "fight_menu", "background")]
 script = ExtResource("1_rhmab")
 main_menu = NodePath("Main Menu")
@@ -111,6 +110,7 @@ texture = ExtResource("1_ks66d")
 stretch_mode = 6
 
 [node name="Main Menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,6 +160,7 @@ text = "Settings"
 script = ExtResource("1_k7wod")
 
 [node name="creditsB" type="Button" parent="Main Menu/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Credits"
@@ -172,7 +173,6 @@ text = "Quit"
 script = ExtResource("1_k7wod")
 
 [node name="Settings" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,11 +181,86 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_cq8do")
 
-[node name="TextureRect" type="TextureRect" parent="Settings"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("7_i12ut")
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TabContainer" type="TabContainer" parent="Settings/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_1t3ws")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fugve")
+tab_alignment = 1
+current_tab = 1
+
+[node name="Visuals" type="PanelContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62v7s")
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Audio" type="PanelContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62v7s")
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Control" type="VBoxContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+
+[node name="Master Audio" type="HSlider" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+
+[node name="SettingsBackB" type="Button" parent="Settings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_icv0m")
+text = "BACK"
+icon_alignment = 1
+script = ExtResource("1_k7wod")
 
 [node name="Credits" type="Control" parent="."]
 visible = false
@@ -421,5 +496,6 @@ script = ExtResource("1_k7wod")
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/creditsB" to="Main Menu" method="_on_credits_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/quitB" to="Main Menu" method="_on_quit_b_pressed"]
+[connection signal="pressed" from="Settings/MarginContainer/VBoxContainer/SettingsBackB" to="Settings" method="_on_settings_back_b_pressed"]
 [connection signal="pressed" from="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/PlayB" to="Fight Menu" method="_on_playB_pressed"]
 [connection signal="pressed" from="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/BackB" to="Fight Menu" method="_on_backB_pressed"]
