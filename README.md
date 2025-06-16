@@ -72,6 +72,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/16/25)
+			<li>(Audio Slider) 
+			Created audio slider which displays slider, label, and percentage, 
+			as well as actual modifies audio busses</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/15/25)
 			<li>(Home Menu [Settings]) 
 			Creating base design for settings menu, similar looks to fight select menu</li>
