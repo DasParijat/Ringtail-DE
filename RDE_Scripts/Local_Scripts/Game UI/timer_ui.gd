@@ -8,6 +8,10 @@ var minutes : int = floor(cur_time / 60)
 var seconds : int = cur_time % 60
 	
 func _ready() -> void:
+	if not (GlobalSettings.visible_timer or "timed" in GlobalScene.next_level_modes):
+		hide()
+		return
+		
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	time_label.modulate = Color(1,1,1)
 	

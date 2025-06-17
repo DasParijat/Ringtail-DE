@@ -21,6 +21,10 @@ var using_alpha_deviation : float = 0.3
 var disabled_alpha_deviation : float = -0.5
 
 func _ready() -> void:
+	if not GlobalSettings.visible_hints:
+		hide()
+		return
+	
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	

@@ -3,11 +3,17 @@ extends Control
 
 signal audio_reset
 
+@onready var show_timer : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowTimer
+@onready var show_hints : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowHints
+
 var anim_rate : float = 0.2
 
 func _ready() -> void:
 	hide()
 	modulate.a = 0
+	
+	show_timer.button_pressed = GlobalSettings.visible_timer
+	show_hints.button_pressed = GlobalSettings.visible_hints
 
 func enter_animation() -> void:
 	show()
@@ -26,6 +32,10 @@ func exit_animation() -> void:
 
 
 func _on_settings_back_b_pressed() -> void:
+	# When user leaves settings, update values they changed in Visual Tab
+	GlobalSettings.visible_timer = show_timer.button_pressed
+	GlobalSettings.visible_hints = show_hints.button_pressed
+	
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()
 

@@ -77,6 +77,12 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Changed button styling to be similar to home menu buttons</li>
 			<li>(OLD Settings Menu) 
 			Removed old unused settings menu</li>
+			<li>(Home Menu [Settings] / GlobalSettings) 
+			Added check buttons for timer and keyboard hint visibility,
+			which update GlobalSettings when player leaves setting menu</li>
+			<li>(Keyboard Hints / Timer UI) 
+			Both stop themselves from running and showing depending on GlobalSettings 
+			(Though with Timer UI, it still shows if on Timed mode)</li>
 		</ul>
 	</li>
 	<li>
