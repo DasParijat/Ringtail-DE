@@ -42,12 +42,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -33.0
-offset_right = 117.0
+offset_right = 101.0
 offset_bottom = 33.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pk5hs")
 
 [node name="TimeLabel" type="Label" parent="PanelContainer"]
 layout_mode = 2
-text = "11:00"
+text = "1:00"
 label_settings = SubResource("LabelSettings_qd7ci")

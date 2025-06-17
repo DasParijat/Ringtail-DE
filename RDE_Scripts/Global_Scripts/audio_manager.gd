@@ -21,6 +21,10 @@ func play(audio_name: String, from_position: float = 0.0, skip_restart: bool = f
 
 
 func play_audio_one_shot(audio_stream: AudioStream, bus : StringName = "Game SFX", volume_db: float = 0.0, pitch_scale : float = 0.0, from_position: float = 0.0) -> AudioOneShot:
+	if is_audio_hearable(bus):
+		# If volume is 0, no point in creating audio one shot
+		return
+		
 	var audio_one_shot : AudioOneShot = audio_one_shot_scene.instantiate()
 	audio_one_shot.stream = audio_stream
 	audio_one_shot.volume_db = volume_db
@@ -31,3 +35,6 @@ func play_audio_one_shot(audio_stream: AudioStream, bus : StringName = "Game SFX
 		
 	one_shots.add_child(audio_one_shot)
 	return audio_one_shot
+
+func is_audio_hearable(bus_name : String) -> bool:
+	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))) <= 0

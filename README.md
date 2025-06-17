@@ -79,6 +79,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Home Menu [Settings]) 
 			Added buttons to reset (back to default) and mute all audios, 
 			Audio section of Settings pretty much finalized</li>
+			<li>(GlobalSettings) 
+			Created GlobalSettings Autoload</li>
+			<li>(Timer UI) 
+			Slight changes to size, 
+			timer goes red much earlier in timed mode (varies based on time_to_beat), 
+			and fixed bug of timer still killing even after winning</li>
+			<li>(Game Camera) 
+			Disabled aiming, might be cut in final version</li>
+			<li>(Loading Screen) 
+			Changed loadings creen from text to progress bar</li>
 		</ul>
 	</li>
 	<li>

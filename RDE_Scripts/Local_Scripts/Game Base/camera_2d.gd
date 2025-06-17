@@ -87,6 +87,8 @@ func lean_cam() -> Vector2:
 	return dir_to_mouse * clampf(dist_to_mouse * scale_lean, -max_lean_distance, max_lean_distance) # lean calculation
 
 func gun_aim(aim_lean) -> void:
+	return # Cutting aim for now
+	
 	if Input.is_action_pressed("aim"):
 		scale_lean = aim_lean
 	else:

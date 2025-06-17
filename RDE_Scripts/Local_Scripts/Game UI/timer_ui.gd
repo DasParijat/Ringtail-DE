@@ -22,10 +22,10 @@ func game_start_anim(duration : float) -> void:
 func _process(_delta : float) -> void:
 	if "timed" in GlobalScene.next_level_modes:
 		cur_time = get_time_to_beat() - GlobalFightStats.fight_stats["time"]
-		if cur_time <= 10:
+		if cur_time <= floor(get_time_to_beat() / 3):
 			time_label.modulate = Color(1,0.3,0.3)
 			
-		if cur_time <= 0:
+		if cur_time <= 0 and !GlobalScene.on_victory_screen:
 			GlobalSignal.emit_signal("update_player_hp", -1000)
 	else:
 		cur_time = GlobalFightStats.fight_stats["time"]
