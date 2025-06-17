@@ -72,6 +72,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/17/25)
+			<li>(Game Over / Pause Menu) 
+			Changed button styling to be similar to home menu buttons</li>
+			<li>(OLD Settings Menu) 
+			Removed old unused settings menu</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/16/25)
 			<li>(Audio Slider) 
 			Created audio slider which displays slider, label, and percentage, 
