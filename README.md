@@ -82,7 +82,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(README) 
 			Updated AGENDA with last tasks needed to complete game</li>
 			<li>(Game Over) 
-			Created base for game over menu styling</li>
+			Stylized game over menu, with an initial red transition fade playing at the start
+			(To match with the hurt effect in-game), 
+			as well as tween animation for both the header and buttons, 
+			and also adding a death sound effect that immediatly plays</li>
 		</ul>
 	</li>
 	<li>
