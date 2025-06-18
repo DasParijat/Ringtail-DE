@@ -6,9 +6,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Agenda:</strong>
 <ul>
-	<li>Implement audio (Sound Effects and Music)</li>
+	<li>Create cutscene system and create normal intro/outro cutscenes</li>
+	<li>Finish Implement audio (Music, UI SFX, mob hurt/death sounds)</li>
 	<li>Create new assets for world (modified version of tileset)</li>
-	<li>Stylize menu and buttons</li>
+	<li>Add ability to save data (Saves settings and if fight beaten)</li>
+	<li>Stylize game over and loading screen</li>
+	<li>Create credits menu (either sub menu in settings or own menu)</li>
+	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
+	<li>MAYBE Add little cool animation for main menu</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -70,6 +75,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(6/18/25)
+			<li>(README) 
+			Updated AGENDA with last tasks needed to complete game</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(6/17/25)
