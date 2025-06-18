@@ -51,21 +51,24 @@ Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
-[node name="game_over" type="Node2D" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade", "death_sound_player")]
+[node name="game_over" type="CanvasLayer" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade", "death_sound_player")]
 script = ExtResource("1_c6p7h")
-background = NodePath("UI/Background")
-heading_text = NodePath("UI/GameOverText")
-button_container = NodePath("UI/MarginContainer")
-transition_fade = NodePath("UI/TransitionFade")
+background = NodePath("Background")
+heading_text = NodePath("GameOverText")
+button_container = NodePath("MarginContainer")
+transition_fade = NodePath("TransitionFade")
 death_sound_player = NodePath("DeathSound")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4f1rc")
+autoplay = true
+bus = &"UI SFX"
 
-[node name="Background" type="TextureRect" parent="UI"]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GameOverText" type="Label" parent="UI"]
+[node name="GameOverText" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -80,7 +83,7 @@ label_settings = SubResource("LabelSettings_jrlnw")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -95,24 +98,24 @@ grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="HBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Retry" type="Button" parent="UI/MarginContainer/HBoxContainer"]
+[node name="Retry" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_luhx3")
 text = "Retry"
 script = ExtResource("2_wsu6o")
 
-[node name="Quit" type="Button" parent="UI/MarginContainer/HBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_luhx3")
 text = "Quit
 "
 script = ExtResource("2_wsu6o")
 
-[node name="TransitionFade" type="ColorRect" parent="UI"]
+[node name="TransitionFade" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -120,10 +123,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.75, 0.1875, 0, 1)
 
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_4f1rc")
-autoplay = true
-bus = &"UI SFX"
-
-[connection signal="pressed" from="UI/MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="UI/MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

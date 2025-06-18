@@ -26,12 +26,16 @@ func game_start_anim(duration : float) -> void:
 func _process(_delta : float) -> void:
 	if "timed" in GlobalScene.next_level_modes:
 		cur_time = get_time_to_beat() - GlobalFightStats.fight_stats["time"]
+		
 		if cur_time <= floor(get_time_to_beat() / 3):
+			# Set text to red when under 1/3rd of tiem to beat
 			time_label.modulate = Color(1,0.3,0.3)
-			
+		
 		if cur_time <= 0 and !GlobalScene.on_victory_screen:
+			# Insta kill player on timeout
 			GlobalSignal.emit_signal("update_player_hp", -1000)
 	else:
+		# How timer is without timed mode
 		cur_time = GlobalFightStats.fight_stats["time"]
 	
 	time_label.text = GlobalTime.get_time_format(cur_time)

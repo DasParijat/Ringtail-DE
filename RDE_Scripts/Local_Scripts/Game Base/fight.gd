@@ -76,8 +76,8 @@ func clear_fight() -> void:
 		child_node.queue_free()
 
 func _on_fight_time_tracker_timeout() -> void:
-	# Increment fight stat time every 1 second
-	GlobalFightStats.fight_stats["time"] += 1.0
-	GlobalFightStats.fight_stats["total_time"] += 1.0
+	## Increment fight stat time every 1 second (Accounts for Engine time scale)
+	GlobalFightStats.fight_stats["time"] += 1.0 * (2.0 - Engine.time_scale)
+	GlobalFightStats.fight_stats["total_time"] += 1.0 * (2.0 - Engine.time_scale)
 	
 	#GlobalFightStats.print_fight_stats()

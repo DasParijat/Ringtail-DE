@@ -86,6 +86,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(To match with the hurt effect in-game), 
 			as well as tween animation for both the header and buttons, 
 			and also adding a death sound effect that immediatly plays</li>
+			<li>(Game Fight) 
+			Fight time accounts for engine time scale changing 
+			(So slowing down time scale doesn't slow down the fight time itself)</li>
 		</ul>
 	</li>
 	<li>

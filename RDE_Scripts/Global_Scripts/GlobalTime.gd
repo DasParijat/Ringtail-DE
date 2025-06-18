@@ -4,7 +4,7 @@ var is_paused : bool = false
 var photo_enabled : bool = false # For photo mode
 
 var game_time_scale : float = 1 
-# game_time_scale is what determines the pace of every game object (including pausing)	
+# game_time_scale is what determines the pace of every game object (including pausing)
 var cur_time_scale : float = 1
 # cur_time_scale is used so in-game slow motion effects don't affect pausing
 
