@@ -6,11 +6,13 @@ extends CanvasLayer
 @export var button_container : Container
 @export var transition_fade : Control
 
-@export var death_sound_player : AudioStreamPlayer
+@export var scene_transition_fade : SceneTransitionFade
 
 var init_ui_y_diff : float = 50
 
 func _ready() -> void:
+	scene_transition_fade.set_enter_state()
+	
 	heading_text.position.y -= init_ui_y_diff
 	button_container.position.y += init_ui_y_diff
 	
@@ -26,7 +28,9 @@ func _ready() -> void:
 	transition_fade.hide()
 	
 func _on_retry_pressed() -> void:
+	await scene_transition_fade.exit_anim()
 	GlobalScene.load_next_scene(GlobalScene.GAME)
 
 func _on_quit_pressed() -> void:
+	await scene_transition_fade.exit_anim()
 	GlobalScene.load_next_scene(GlobalScene.HOME_MENU)

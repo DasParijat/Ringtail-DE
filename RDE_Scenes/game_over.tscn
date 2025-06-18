@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd4jbqa68fpne"]
+[gd_scene load_steps=9 format=3 uid="uid://dd4jbqa68fpne"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/game_over.gd" id="1_c6p7h"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_wsu6o"]
 [ext_resource type="AudioStream" uid="uid://bwjuqd6jxna3f" path="res://RDE_Audio/Mob Sounds/Mob Death/minitail_death4.mp3" id="3_4f1rc"]
+[ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="4_el73u"]
 
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
@@ -51,13 +52,12 @@ Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
-[node name="game_over" type="CanvasLayer" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade", "death_sound_player")]
+[node name="game_over" type="CanvasLayer" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade")]
 script = ExtResource("1_c6p7h")
 background = NodePath("Background")
 heading_text = NodePath("GameOverText")
 button_container = NodePath("MarginContainer")
-transition_fade = NodePath("TransitionFade")
-death_sound_player = NodePath("DeathSound")
+transition_fade = NodePath("DeathTransitionFade")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4f1rc")
@@ -115,13 +115,16 @@ text = "Quit
 "
 script = ExtResource("2_wsu6o")
 
-[node name="TransitionFade" type="ColorRect" parent="."]
+[node name="DeathTransitionFade" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.75, 0.1875, 0, 1)
+
+[node name="SceneTransitionFade" parent="." instance=ExtResource("4_el73u")]
+transition_rate = 0.2
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
