@@ -14,6 +14,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>Create credits menu (either sub menu in settings or own menu)</li>
 	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
 	<li>MAYBE Add little cool animation for main menu</li>
+	<li>MAYBE Add object pooling for spawning stuff in game</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -80,6 +81,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/18/25)
 			<li>(README) 
 			Updated AGENDA with last tasks needed to complete game</li>
+			<li>(Game Over) 
+			Created base for game over menu styling</li>
 		</ul>
 	</li>
 	<li>

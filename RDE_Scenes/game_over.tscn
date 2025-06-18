@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd4jbqa68fpne"]
+[gd_scene load_steps=7 format=3 uid="uid://dd4jbqa68fpne"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/game_over.gd" id="1_c6p7h"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_wsu6o"]
@@ -6,6 +6,10 @@
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
 subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrlnw"]
+font = SubResource("SystemFont_aelly")
+font_size = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
 content_margin_left = 20.0
@@ -46,50 +50,73 @@ Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
-[node name="game_over" type="Node2D"]
+[node name="game_over" type="Node2D" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade")]
 script = ExtResource("1_c6p7h")
+background = NodePath("UI/Background")
+heading_text = NodePath("UI/GameOverText")
+button_container = NodePath("UI/MarginContainer")
+transition_fade = NodePath("")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="GameOverText" type="Label" parent="UI"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -59.5
-offset_right = 65.895
-offset_bottom = 23.0
+offset_left = -330.802
+offset_right = 337.198
+offset_bottom = 200.0
 grow_horizontal = 2
 pivot_offset = Vector2(59.07, -5.42)
 theme_override_font_sizes/font_size = 100
-text = "GAME OVER !!!!!"
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_jrlnw")
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="HBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -156.5
-offset_top = -162.0
-offset_right = 156.5
-offset_bottom = 162.0
+offset_left = -165.5
+offset_top = -60.0
+offset_right = 165.5
+offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(43.085, 28.38)
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Retry" type="Button" parent="UI/HBoxContainer"]
+[node name="Retry" type="Button" parent="UI/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_luhx3")
 text = "Retry"
 script = ExtResource("2_wsu6o")
 
-[node name="Quit" type="Button" parent="UI/HBoxContainer"]
+[node name="Quit" type="Button" parent="UI/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_luhx3")
 text = "Quit
 "
 script = ExtResource("2_wsu6o")
 
-[connection signal="pressed" from="UI/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="UI/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="TransitionFade" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.75, 0.1875, 0, 1)
+
+[connection signal="pressed" from="UI/MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
