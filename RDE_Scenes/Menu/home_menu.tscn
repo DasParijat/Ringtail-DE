@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=53 format=4 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="7_wokig"]
 [ext_resource type="PackedScene" uid="uid://cenrgdsilaox1" path="res://RDE_Scenes/Menu/audio_slider.tscn" id="8_ubgdy"]
 [ext_resource type="PackedScene" uid="uid://dnyif5jradpwq" path="res://RDE_Scenes/Menu/mode_check_item.tscn" id="10_fs5vg"]
+[ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="15_reypx"]
 
 [sub_resource type="SystemFont" id="SystemFont_1t3ws"]
 font_names = PackedStringArray("Bahnschrift")
@@ -2240,7 +2241,7 @@ text = "yyoooo"
 [node name="ScrollContainer" type="ScrollContainer" parent="Credits/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container")]
+[node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container", "scene_transition")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -2255,6 +2256,7 @@ fight_thumbnail = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VB
 fight_header = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Header")
 fight_desc = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Text")
 mode_container = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer")
+scene_transition = NodePath("../SceneTransitionFade")
 
 [node name="MarginContainer" type="MarginContainer" parent="Fight Menu"]
 layout_mode = 1
@@ -2437,6 +2439,8 @@ theme = SubResource("Theme_icv0m")
 text = "BACK"
 icon_alignment = 1
 script = ExtResource("1_k7wod")
+
+[node name="SceneTransitionFade" parent="." instance=ExtResource("15_reypx")]
 
 [connection signal="pressed" from="Main Menu/HBoxContainer/playB" to="Main Menu" method="_on_play_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]

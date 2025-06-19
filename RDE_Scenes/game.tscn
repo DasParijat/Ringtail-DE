@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=12 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://nlpg0x3l8com" path="res://RDE_Scenes/victory_menu.tscn" id="4_b4hy0"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/fight.gd" id="6_b2j36"]
 [ext_resource type="PackedScene" uid="uid://chmgqrrxxdgml" path="res://RDE_Scenes/Cutscenes/Textbox.tscn" id="10_qu40j"]
+[ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="11_ao51x"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("scene_transiton")]
 script = ExtResource("1_psimn")
+scene_transiton = NodePath("TopCanvasLayer/SceneTransitionFade")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
@@ -70,6 +72,11 @@ autostart = true
 visible = false
 offset = Vector2(0, -100)
 transform = Transform2D(1, 0, 0, 1, 0, -100)
+
+[node name="TopCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SceneTransitionFade" parent="TopCanvasLayer" instance=ExtResource("11_ao51x")]
+transition_rate = 0.3
 
 [connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]
 [connection signal="fight_res_set" from="." to="Background" method="_on_game_fight_res_set"]

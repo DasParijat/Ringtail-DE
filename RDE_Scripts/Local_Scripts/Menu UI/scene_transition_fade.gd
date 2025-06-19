@@ -17,15 +17,17 @@ func set_exit_state() -> void:
 	
 func enter_anim() -> void:
 	## Fade out anim, used for entering scene (use await)
+	set_exit_state()
 	var tween : Tween = create_tween().set_ease(Tween.EASE_IN)
 	
 	tween.tween_property(self, "modulate:a", 0, transition_rate)
-	hide()
 	
 	await tween.finished
-	
+	hide()
+
 func exit_anim() -> void:
 	## Fade in anim, used for exiting scene (use await)
+	set_enter_state()
 	var tween : Tween = create_tween().set_ease(Tween.EASE_IN)
 	
 	show()

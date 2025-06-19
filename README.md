@@ -83,11 +83,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Updated AGENDA with last tasks needed to complete game</li>
 			<li>(Game Over) 
 			Stylized game over menu, with an initial red transition fade playing at the start
-			(To match with the hurt effect in-game), 
+			(To match with the hurt effect in-game),
 			as well as tween animation for both the header and buttons, 
 			and also adding a death sound effect that immediatly plays</li>
 			<li>(SceneTransitionFade) 
 			Created SceneTransitionFade, to be used for exit/enter anims for between loading scenes</li>
+			<li>(Game / Home Menu / Load Screen / SceneTransitionFade) 
+			Added SceneTransitionFade to home menu, game, and loading screen</li>
+			<li>(Base Player) 
+			When game over, it goes directly into game over scene, without loading screen 
+			(For making a seamless transition)</li>
 			<li>(Game Fight) 
 			Fight time accounts for engine time scale changing 
 			(So slowing down time scale doesn't slow down the fight time itself)</li>

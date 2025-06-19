@@ -5,6 +5,8 @@ extends Node2D
 
 @onready var fight_res : FightRes 
 
+@export var scene_transiton : SceneTransitionFade
+
 signal fight_res_set
 
 signal game_pause
@@ -54,6 +56,7 @@ func next_in_order(increment : int) -> void:
 		level.sequence_end = false
 		
 		#GlobalScene.emit_signal("quit_to_menu")
+		await scene_transiton.exit_anim()
 		GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
 		
 		#print("LEVEL INDEX: ", level.index)
@@ -65,10 +68,12 @@ func next_in_order(increment : int) -> void:
 		#print("LEVEL INDEX: ", level.index)
 		
 		fight_res_set.emit()
+		await scene_transiton.enter_anim()
 		return
 	
 	if level.order[level.index] is CutsceneRes:
 		GlobalScene.cur_scene_type = GlobalScene.SceneType.CSCENE
+		await scene_transiton.enter_anim()
 		return
 	
 func pause_game() -> void:

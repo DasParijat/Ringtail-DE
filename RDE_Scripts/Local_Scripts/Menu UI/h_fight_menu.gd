@@ -10,6 +10,8 @@ extends Control
 
 @export var mode_container : Container
 
+@export var scene_transition : SceneTransitionFade
+
 var selected_fight : String = "" # Get info on what fight the player is looking at from the fight buttons
 var fight_res_path : String = ""
 
@@ -21,6 +23,8 @@ var loaded_fights : Dictionary = {}
 var anim_rate : float = 0.2
 
 func _ready() -> void:
+	scene_transition.set_enter_state()
+	
 	GlobalMenu.connect("fight_selected_pressed", Callable(self, "_on_fight_selected_pressed"))
 	load_all_fight_resources()
 	PlayButton.disabled = true
@@ -85,6 +89,7 @@ func _on_playB_pressed() -> void:
 		set_level_modes() 
 		GlobalScene.set_next_level(fight_res_path)
 		await exit_animation()
+		await scene_transition.exit_anim()
 		GlobalScene.load_next_scene(GlobalScene.GAME)
 	else:
 		printerr("STORY MENU ERR: SELECTED FIGHT IS BLANK")

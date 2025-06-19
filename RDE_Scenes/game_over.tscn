@@ -52,12 +52,13 @@ Button/styles/hover = SubResource("StyleBoxFlat_554ne")
 Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
-[node name="game_over" type="CanvasLayer" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade")]
+[node name="game_over" type="CanvasLayer" node_paths=PackedStringArray("background", "heading_text", "button_container", "transition_fade", "scene_transition_fade")]
 script = ExtResource("1_c6p7h")
 background = NodePath("Background")
 heading_text = NodePath("GameOverText")
 button_container = NodePath("MarginContainer")
 transition_fade = NodePath("DeathTransitionFade")
+scene_transition_fade = NodePath("SceneTransitionFade")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4f1rc")

@@ -191,8 +191,11 @@ func _on_update_player_hp(hp_update : float) -> void:
 	
 func _on_game_over() -> void:
 	## Switches to game over scene
+	## Doesn't use loading screen, goes directly to game over scene (for seamless transition)
 	#health_res.reset_health()
-	GlobalScene.load_next_scene(GlobalScene.GAME_OVER)
+	
+	#GlobalScene.load_next_scene(GlobalScene.GAME_OVER)
+	get_tree().change_scene_to_packed(preload(GlobalScene.GAME_OVER))
 	
 func test_function() -> void:
 	## If test button pressed, something happens
