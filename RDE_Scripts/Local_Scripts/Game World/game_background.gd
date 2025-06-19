@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var canvas_mod : CanvasModulate = get_child(0)
 
+@export var scene_transiton : SceneTransitionFade
+
 var fight_res : FightRes
 var world_scene : PackedScene
 

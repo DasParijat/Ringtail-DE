@@ -33,4 +33,6 @@ func _process(_delta : float) -> void:
 		
 		await GlobalTime.local_wait(0.2) # artificially extending load time
 		await scene_transition.exit_anim()
+		scene_transition.set_exit_state()
+		
 		get_tree().change_scene_to_packed(loaded_scene)

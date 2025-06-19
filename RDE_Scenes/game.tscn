@@ -50,8 +50,9 @@ max_lean_distance = 250.0
 
 [node name="VictoryMenu" parent="Camera2D" instance=ExtResource("4_b4hy0")]
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." node_paths=PackedStringArray("scene_transiton")]
 script = ExtResource("4_a1q2e")
+scene_transiton = NodePath("../TopCanvasLayer/SceneTransitionFade")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Background"]
 color = Color(0.691453, 0.342539, 0.161267, 1)
@@ -77,7 +78,7 @@ transform = Transform2D(1, 0, 0, 1, 0, -100)
 [node name="TopCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SceneTransitionFade" parent="TopCanvasLayer" instance=ExtResource("11_ao51x")]
-transition_rate = 0.3
+transition_rate = 0.6
 
 [connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]
 [connection signal="fight_res_set" from="." to="Background" method="_on_game_fight_res_set"]

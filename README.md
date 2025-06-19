@@ -72,6 +72,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>(4/?) - Pause menu doesn't show up  when rapidly pausing</li>
 	<li>(5/7) - Player can get stuck in wall (RARE BUG)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
+	<li>(6/19) - Flash of blank grey after loading anything (loading screen)</li>
 </ul>
 
 <strong>Changelog:</strong>
@@ -79,14 +80,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/19/25)
-			<li>(Game Over / Load Screen) 
-			Added gradient background to both scenes</li>
+			<li>(Game Over) 
+			Added gradient background</li>
 			<li>(Pause Menu) 
 			Added SceneTransitionFade to pause menu (For quit and reset)</li>
 			<li>(SceneTransitionFade) 
 			Made SceneTransitionFade more flexible</li>
 			<li>(Load Screen) 
-			Stylized loading screen (loading label and progress bar)</li>
+			Stylized loading screen (loading label and progress bar), 
+			added custom background for loading screen</li>
 		</ul>
 	</li>
 	<li>
