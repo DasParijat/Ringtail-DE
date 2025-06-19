@@ -85,6 +85,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Added SceneTransitionFade to pause menu (For quit and reset)</li>
 			<li>(SceneTransitionFade) 
 			Made SceneTransitionFade more flexible</li>
+			<li>(Load Screen) 
+			Stylized loading screen (loading label and progress bar)</li>
 		</ul>
 	</li>
 	<li>

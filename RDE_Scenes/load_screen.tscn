@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7ky1sqwiq4tv"]
+[gd_scene load_steps=13 format=3 uid="uid://b7ky1sqwiq4tv"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/load_screen.gd" id="1_af250"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="2_tp7ds"]
@@ -22,16 +22,22 @@ font_size = 100
 font_names = PackedStringArray("OldNewspaperTypes")
 subpixel_positioning = 0
 
+[sub_resource type="LabelSettings" id="LabelSettings_qurv7"]
+font = SubResource("SystemFont_ftld4")
+font_size = 60
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ton35"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp1y2"]
 content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+bg_color = Color(0.1, 0.1, 0.1, 0.627451)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueu7w"]
@@ -39,11 +45,11 @@ content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(0.50483, 0.57, 0.2907, 0.254902)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+bg_color = Color(0.88, 0.75328, 0.4048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 corner_detail = 6
 
 [sub_resource type="Theme" id="Theme_ospqw"]
@@ -55,8 +61,10 @@ ProgressBar/fonts/font = SubResource("SystemFont_ftld4")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_bp1y2")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_ueu7w")
 
-[node name="load_screen" type="CanvasLayer" node_paths=PackedStringArray("scene_transition")]
+[node name="load_screen" type="CanvasLayer" node_paths=PackedStringArray("progress_label", "load_progress_bar", "scene_transition")]
 script = ExtResource("1_af250")
+progress_label = NodePath("OldLoadProgress")
+load_progress_bar = NodePath("MarginContainer/VBoxContainer/LoadProgressBar")
 scene_transition = NodePath("SceneTransitionFade")
 
 [node name="Background" type="Panel" parent="."]
@@ -67,7 +75,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_sjdmh")
 
-[node name="LoadProgress" type="Label" parent="."]
+[node name="OldLoadProgress" type="Label" parent="."]
 visible = false
 offset_left = 451.0
 offset_top = 150.0
@@ -77,14 +85,36 @@ label_settings = SubResource("LabelSettings_x2wty")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LoadProgressBar" type="ProgressBar" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -132.0
+offset_right = 352.0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Load Text" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Loading..."
+label_settings = SubResource("LabelSettings_qurv7")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ton35")
+
+[node name="LoadProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 20)
+layout_mode = 2
 size_flags_vertical = 1
 theme = SubResource("Theme_ospqw")
+value = 100.0
+show_percentage = false
 
 [node name="SceneTransitionFade" parent="." instance=ExtResource("2_tp7ds")]
 visible = false
