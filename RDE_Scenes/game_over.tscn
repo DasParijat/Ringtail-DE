@@ -1,9 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd4jbqa68fpne"]
+[gd_scene load_steps=12 format=3 uid="uid://dd4jbqa68fpne"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/game_over.gd" id="1_c6p7h"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_wsu6o"]
 [ext_resource type="AudioStream" uid="uid://bwjuqd6jxna3f" path="res://RDE_Audio/Mob Sounds/Mob Death/minitail_death4.mp3" id="3_4f1rc"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="4_el73u"]
+
+[sub_resource type="Gradient" id="Gradient_uueep"]
+offsets = PackedFloat32Array(0, 0.508621, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.140355, 0.177141, 0.0912383, 1, 0.0798, 0.12, 0.0396, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8o1gt"]
+gradient = SubResource("Gradient_uueep")
+fill_from = Vector2(0.533333, 1)
+fill_to = Vector2(0.533333, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt8w7"]
+texture = SubResource("GradientTexture2D_8o1gt")
 
 [sub_resource type="SystemFont" id="SystemFont_aelly"]
 font_names = PackedStringArray("OldNewspaperTypes")
@@ -65,9 +77,13 @@ stream = ExtResource("3_4f1rc")
 autoplay = true
 bus = &"UI SFX"
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tt8w7")
 
 [node name="GameOverText" type="Label" parent="."]
 anchors_preset = 5
@@ -117,6 +133,7 @@ text = "Quit
 script = ExtResource("2_wsu6o")
 
 [node name="DeathTransitionFade" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -125,6 +142,7 @@ grow_vertical = 2
 color = Color(0.75, 0.1875, 0, 1)
 
 [node name="SceneTransitionFade" parent="." instance=ExtResource("4_el73u")]
+visible = false
 transition_rate = 0.2
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]

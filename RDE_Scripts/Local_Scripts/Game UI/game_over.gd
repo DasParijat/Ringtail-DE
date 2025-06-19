@@ -12,6 +12,7 @@ var init_ui_y_diff : float = 50
 
 func _ready() -> void:
 	scene_transition_fade.set_enter_state()
+	transition_fade.show()
 	
 	heading_text.position.y -= init_ui_y_diff
 	button_container.position.y += init_ui_y_diff

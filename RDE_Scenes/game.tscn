@@ -32,7 +32,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="pause_menu" parent="." instance=ExtResource("3_mfvle")]
+[node name="pause_menu" parent="." node_paths=PackedStringArray("scene_transition") instance=ExtResource("3_mfvle")]
+scene_transition = NodePath("../TopCanvasLayer/SceneTransitionFade")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -1600

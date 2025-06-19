@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var game = $".."
 @onready var panel_container: PanelContainer = $PanelContainer
 
+@export var scene_transition : SceneTransitionFade
+
 var tween : Tween
 
 func _ready() -> void:
@@ -29,7 +31,9 @@ func slide_menu(x_pos : float, modulate : float, rate : float = 0.1) -> void:
 func _leave_pause_state() -> void:
 	# Need to unpause so the Engine time scale isn't 0 when going to menu / resetting game
 	GlobalSignal.quit_game.emit()
-	game.pause_game() 
+	#scene_transition.exit_anim(1)
+	game.pause_game()
+	await scene_transition.exit_anim(0.2)
 	
 func _on_resume_b_pressed() -> void:
 	#await slide_menu_out(-400, 0)

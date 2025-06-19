@@ -15,22 +15,22 @@ func set_exit_state() -> void:
 	self.modulate.a = 1
 	show()
 	
-func enter_anim() -> void:
+func enter_anim(rate : float = transition_rate) -> void:
 	## Fade out anim, used for entering scene (use await)
 	set_exit_state()
 	var tween : Tween = create_tween().set_ease(Tween.EASE_IN)
 	
-	tween.tween_property(self, "modulate:a", 0, transition_rate)
+	tween.tween_property(self, "modulate:a", 0, rate)
 	
 	await tween.finished
 	hide()
 
-func exit_anim() -> void:
+func exit_anim(rate : float = transition_rate) -> void:
 	## Fade in anim, used for exiting scene (use await)
 	set_enter_state()
 	var tween : Tween = create_tween().set_ease(Tween.EASE_IN)
 	
 	show()
-	tween.tween_property(self, "modulate:a", 1, transition_rate)
+	tween.tween_property(self, "modulate:a", 1, rate)
 	
 	await tween.finished

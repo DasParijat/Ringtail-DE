@@ -78,6 +78,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/19/25)
+			<li>(Game Over / Load Screen) 
+			Added gradient background to both scenes</li>
+			<li>(Pause Menu) 
+			Added SceneTransitionFade to pause menu (For quit and reset)</li>
+			<li>(SceneTransitionFade) 
+			Made SceneTransitionFade more flexible</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/18/25)
 			<li>(README) 
 			Updated AGENDA with last tasks needed to complete game</li>

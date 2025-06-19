@@ -1,16 +1,71 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7ky1sqwiq4tv"]
+[gd_scene load_steps=11 format=3 uid="uid://b7ky1sqwiq4tv"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/load_screen.gd" id="1_af250"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="2_tp7ds"]
 
+[sub_resource type="Gradient" id="Gradient_uueep"]
+offsets = PackedFloat32Array(0, 0.508621, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.140355, 0.177141, 0.0912383, 1, 0.0798, 0.12, 0.0396, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8o1gt"]
+gradient = SubResource("Gradient_uueep")
+fill_from = Vector2(0.533333, 1)
+fill_to = Vector2(0.533333, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjdmh"]
+texture = SubResource("GradientTexture2D_8o1gt")
+
 [sub_resource type="LabelSettings" id="LabelSettings_x2wty"]
 font_size = 100
 
+[sub_resource type="SystemFont" id="SystemFont_ftld4"]
+font_names = PackedStringArray("OldNewspaperTypes")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp1y2"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueu7w"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.50483, 0.57, 0.2907, 0.254902)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [sub_resource type="Theme" id="Theme_ospqw"]
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 75
+ProgressBar/fonts/font = SubResource("SystemFont_ftld4")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_bp1y2")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ueu7w")
 
 [node name="load_screen" type="CanvasLayer" node_paths=PackedStringArray("scene_transition")]
 script = ExtResource("1_af250")
 scene_transition = NodePath("SceneTransitionFade")
+
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sjdmh")
 
 [node name="LoadProgress" type="Label" parent="."]
 visible = false
@@ -32,4 +87,5 @@ size_flags_vertical = 1
 theme = SubResource("Theme_ospqw")
 
 [node name="SceneTransitionFade" parent="." instance=ExtResource("2_tp7ds")]
+visible = false
 transition_rate = 0.2
