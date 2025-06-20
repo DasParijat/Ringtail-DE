@@ -1,42 +1,101 @@
-[gd_scene load_steps=2 format=3 uid="uid://chmgqrrxxdgml"]
+[gd_scene load_steps=8 format=3 uid="uid://chmgqrrxxdgml"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Textbox.gd" id="1_smhd3"]
 
-[node name="Textbox" type="CanvasLayer"]
+[sub_resource type="Gradient" id="Gradient_6ag0q"]
+offsets = PackedFloat32Array(0, 0.698276, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.34902, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8l5wl"]
+gradient = SubResource("Gradient_6ag0q")
+fill_from = Vector2(0.538889, 1)
+fill_to = Vector2(0.555556, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ywrp"]
+texture = SubResource("GradientTexture2D_8l5wl")
+
+[sub_resource type="SystemFont" id="SystemFont_ewhls"]
+font_names = PackedStringArray("Bahnschrift")
+font_weight = 475
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ee4wo"]
+font = SubResource("SystemFont_ewhls")
+font_size = 30
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s2w80"]
+font = SubResource("SystemFont_ewhls")
+font_size = 25
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(2, 2)
+
+[node name="Textbox" type="CanvasLayer" node_paths=PackedStringArray("textbox_container", "speaker_name", "dialog_text", "start_symbol", "end_symbol")]
 script = ExtResource("1_smhd3")
+textbox_container = NodePath("TextboxContainer")
+speaker_name = NodePath("TextboxContainer/MarginContainer/VBoxContainer/Name")
+dialog_text = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText")
+start_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start")
+end_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -136.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Panel" type="Panel" parent="TextboxContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ywrp")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
 visible = false
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextboxContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+[node name="Name" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Name"
+label_settings = SubResource("LabelSettings_ee4wo")
+horizontal_alignment = 1
+clip_text = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 text = "*"
 
-[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+[node name="DialogText" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Placeholder text! The quick brown sddddd"
+label_settings = SubResource("LabelSettings_s2w80")
+horizontal_alignment = 1
 clip_text = true
 
-[node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+[node name="End" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 text = "v"

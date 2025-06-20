@@ -4,10 +4,12 @@ extends CanvasLayer
 
 const CHAR_READ_RATE = 0.05
 
-@onready var textbox_container = $TextboxContainer
-@onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
-@onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
-@onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label
+@export var textbox_container : Container
+@export var speaker_name : Label
+@export var dialog_text : Label
+
+@export var start_symbol : Label
+@export var end_symbol : Label
 
 enum State {
 	READY,
@@ -31,7 +33,7 @@ func _process(delta):
 				display_text()
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
-				label.visible_ratio = 1.0
+				dialog_text.visible_ratio = 1.0
 
 				var tweens = get_tree().get_root().get_children()
 				for tween in tweens:
@@ -51,7 +53,7 @@ func queue_text(next_text):
 func hide_textbox():
 	start_symbol.text = ""
 	end_symbol.text = ""
-	label.text = ""
+	dialog_text.text = ""
 	textbox_container.hide()
 
 func show_textbox():
@@ -60,13 +62,13 @@ func show_textbox():
 
 func display_text():
 	var next_text = text_queue.pop_front()
-	label.text = next_text
-	label.visible_ratio = 0.0
+	dialog_text.text = next_text
+	dialog_text.visible_ratio = 0.0
 	change_state(State.READING)
 	show_textbox()
 
 	var tween = create_tween()
-	tween.tween_property(label, "visible_ratio", 1.0, len(next_text) * CHAR_READ_RATE)
+	tween.tween_property(dialog_text, "visible_ratio", 1.0, len(next_text) * CHAR_READ_RATE)
 	tween.finished.connect(_on_tween_completed)
 
 func change_state(next_state):

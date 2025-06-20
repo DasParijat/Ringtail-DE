@@ -82,6 +82,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/19/25)
 			<li>(Game Over) 
 			Added gradient background</li>
+			<li>(Textbox) 
+			Started restyling textbox for cutscenes</li>
 			<li>(Pause Menu) 
 			Added SceneTransitionFade to pause menu (For quit and reset)</li>
 			<li>(SceneTransitionFade) 
