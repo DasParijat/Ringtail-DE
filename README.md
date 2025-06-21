@@ -90,10 +90,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>(5/7) - Player can get stuck in wall (RARE BUG, possibly caused by lag)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
 	<li>(6/19) - Flash of blank grey after loading anything (loading screen)</li>
+	<li>(6/20) - Loud noise that occurs while playing (RARE, how do playtesters find these but not me?)</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(6/21/25)
+			<li>(Timer UI / Game Fight) 
+			Time stops counting when on victory screen, fixes bug of timed mode giving game over when leaving victory screen.</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(6/20/25)

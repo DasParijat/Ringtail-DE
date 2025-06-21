@@ -25,12 +25,16 @@ func game_start_anim(duration : float) -> void:
 	
 func _process(_delta : float) -> void:
 	if "timed" in GlobalScene.next_level_modes:
-		cur_time = get_time_to_beat() - GlobalFightStats.fight_stats["time"]
+		if not GlobalScene.on_victory_screen:
+			cur_time = get_time_to_beat() - GlobalFightStats.fight_stats["time"]
 		
 		if cur_time <= floor(get_time_to_beat() / 3):
 			# Set text to red when under 1/3rd of tiem to beat
 			time_label.modulate = Color(1,0.3,0.3)
-		
+			
+		#if GlobalScene.on_victory_screen:
+		#	cur_time = get_time_to_beat() + 100
+			
 		if cur_time <= 0 and !GlobalScene.on_victory_screen:
 			# Insta kill player on timeout
 			GlobalSignal.emit_signal("update_player_hp", -1000)
@@ -40,6 +44,11 @@ func _process(_delta : float) -> void:
 	
 	time_label.text = GlobalTime.get_time_format(cur_time)
 
+func get_cur_time() -> int:
+	if !GlobalScene.on_victory_screen:
+		return GlobalFightStats.fight_stats["time"]
+	return get_time_to_beat() + 100
+		
 func get_time_to_beat() -> int:
 	if GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
 		var cur_level : LevelRes = GlobalScene.next_level

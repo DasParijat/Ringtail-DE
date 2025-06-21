@@ -17,6 +17,9 @@ var player_name = "NO PLAYER NAME"
 var player_pos : Vector2
 signal player_created()
 
+func _ready() -> void:
+	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
+	
 func _on_game_fight_res_set() -> void:
 	fight_res = get_parent().fight_res
 	#print("MODES ENABLED: ", GlobalScene.next_level_modes)
@@ -77,7 +80,13 @@ func clear_fight() -> void:
 
 func _on_fight_time_tracker_timeout() -> void:
 	## Increment fight stat time every 1 second (Accounts for Engine time scale)
+	if GlobalScene.on_victory_screen: return
+	
 	GlobalFightStats.fight_stats["time"] += 1.0 * (2.0 - Engine.time_scale)
 	GlobalFightStats.fight_stats["total_time"] += 1.0 * (2.0 - Engine.time_scale)
 	
 	#GlobalFightStats.print_fight_stats()
+func _on_game_won() -> void:
+	#return
+	
+	GlobalFightStats.reset_inround_fight_stats()
