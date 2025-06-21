@@ -7,9 +7,9 @@ var is_on_victory : bool = false
 func _ready() -> void:
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	
-func spawn_mob(mob : PackedScene, mob_pos : Vector2) -> void:
+func spawn_mob(mob : PackedScene, mob_pos : Vector2, override_limit : bool = false) -> void:
 	#print("spawn mob pos: ", mob_pos)
-	if GMobHandler.num_of_mobs >= GMobHandler.MOB_LIMIT or is_on_victory:
+	if (GMobHandler.num_of_mobs >= GMobHandler.MOB_LIMIT and not override_limit) or is_on_victory:
 		#print("BREAKING MOB LIMIT")
 		return
 		

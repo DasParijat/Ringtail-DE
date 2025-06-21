@@ -44,7 +44,7 @@ func phase2():
 		
 	if GlobalTime.process_interval(10.0, total_delta, get_process_delta_time()):
 		if phase == 2:
-			spawner.spawn_mob(explosion_load, base.get_rand_player_pos(20, 40, 20, 40))
+			spawner.spawn_mob(explosion_load, base.get_rand_player_pos(20, 40, 20, 40), true)
 		else:
 			chain_explosion(randi_range(10, 20), 0.4)
 			

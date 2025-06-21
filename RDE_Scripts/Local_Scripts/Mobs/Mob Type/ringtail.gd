@@ -47,7 +47,7 @@ func phase_handler(num_of_phases : int) -> void:
 		)
 	
 	if phase != new_phase:
-		spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0))
+		spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0), true)
 		phase = new_phase
 	
 func action1() -> void:
@@ -142,6 +142,6 @@ func action7() -> void:
 
 func chain_explosion(num_of_explosions : int = 5, time_gap : float = 1.0) -> void:
 	for i in range(num_of_explosions):
-		spawner.spawn_mob(explosion_load, base.player_pos)
+		spawner.spawn_mob(explosion_load, base.player_pos, true)
 		await GlobalTime.local_wait(time_gap)
 		

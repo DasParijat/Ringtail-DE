@@ -25,5 +25,5 @@ bullets_per_shot = 1
 bps_spread = 0.0
 max_spread = 4.0
 spread_rate = 0.4
-shake_strength = 30.0
-shake_fade = 1.5
+shake_strength = 12.0
+shake_fade = 0.6

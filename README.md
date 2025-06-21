@@ -107,6 +107,12 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Player can now turn off camera shake (reduces lag torwards end game)</li>
 			<li>(Game / SceneTransitionFade) 
 			Scene transition fade now only plays at very first fight, not in between fights</li>
+			<li>(SMG / Pump Shotgun) 
+			Updated gun shake for less lag</li>
+			<li>(GlobalMobHandler / Mob Spawner) 
+			Reduced mob limit, as well as added the ability for a mob to spawn despite the limit (override)</li>
+			<li>(Explosion / EOTHS / Ringtails) 
+			Explosion and EOTHS mobs can override mob limit from Ringtail spawning them</li>
 		</ul>
 	</li>
 	<li>
