@@ -65,18 +65,44 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Great game!</li>
 		</ol>
 	</li>
+	<li>Alexander King (6/20) - 
+		<ol>
+			<li>Bass boosted sound.</li>
+			<li>I liked the particle effects with blood and stuff.</li>
+			<li>Colors are good. The enemies stick out properly and I can tell them apart from each other despite
+			them all being the same jpeg lol.</li> 
+			<li>Maybe adjust the controls on the side. Like how we said, maybe
+			make it so the controls pulsate or are bigger for the first few seconds or even add the load screen
+			thing we spoke about.</li> 
+			<li>It seemed like there were too many of Ringtail's
+			small minions on screen, especially for the second round, but now after finding out I can rush him in
+			close combat, this will possibly make this less of an issue. That could be a cool loading screen tip.</li> 
+			<li>Change the power button to Q. Shift is too far away and Q is right there. Or make power both shift and Q.</li>
+			<li>DEV NOTE: Fix issue of timed still giving game over after win</li>
+			<li>DEV NOTE: Add option to turn off camera shake</li>
+		</ol>
+	</li>
 </ul>
 
 <strong>Bug List:</strong>
 <ul>
 	<li>(4/?) - Pause menu doesn't show up  when rapidly pausing</li>
-	<li>(5/7) - Player can get stuck in wall (RARE BUG)</li>
+	<li>(5/7) - Player can get stuck in wall (RARE BUG, possibly caused by lag)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
 	<li>(6/19) - Flash of blank grey after loading anything (loading screen)</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(6/20/25)
+			<li>(Playtesters) 
+			Got recent playtester, gave insightful feedback</li>
+			<li>(General) 
+			Added Q key as input for power mode (Like in feedback)</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(6/19/25)
