@@ -2142,6 +2142,15 @@ text = "Show Keyboard Hints
 icon_alignment = 2
 vertical_icon_alignment = 2
 
+[node name="ShakeCam" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_wfq2x")
+theme_override_fonts/font = SubResource("SystemFont_1t3ws")
+theme_override_font_sizes/font_size = 30
+text = "Camera Shake"
+icon_alignment = 2
+vertical_icon_alignment = 2
+
 [node name="Audio" type="PanelContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 custom_minimum_size = Vector2(600, 0)
@@ -2441,6 +2450,7 @@ icon_alignment = 1
 script = ExtResource("1_k7wod")
 
 [node name="SceneTransitionFade" parent="." instance=ExtResource("15_reypx")]
+visible = false
 
 [connection signal="pressed" from="Main Menu/HBoxContainer/playB" to="Main Menu" method="_on_play_b_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/settingsB" to="Main Menu" method="_on_settings_b_pressed"]

@@ -95,6 +95,9 @@ func gun_aim(aim_lean) -> void:
 		scale_lean = 0.2
 
 func gun_shake(delta : float) -> void:
+	if not GlobalSettings.cam_shake_enabled:
+		return
+		
 	if GlobalPlayer.is_shooting and not is_reloading and not GlobalTime.is_paused:
 		shake_range = shake_strength 
 		

@@ -103,6 +103,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Got recent playtester, gave insightful feedback</li>
 			<li>(Keyboard Hints) 
 			Updated hints to reflect new keybinds + make it more visible</li>
+			<li>(GlobalSettings / Game Camera) 
+			Player can now turn off camera shake (reduces lag torwards end game)</li>
+			<li>(Game / SceneTransitionFade) 
+			Scene transition fade now only plays at very first fight, not in between fights</li>
 		</ul>
 	</li>
 	<li>

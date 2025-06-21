@@ -5,6 +5,7 @@ signal audio_reset
 
 @onready var show_timer : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowTimer
 @onready var show_hints : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowHints
+@onready var shake_cam : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShakeCam
 
 var anim_rate : float = 0.2
 
@@ -14,6 +15,7 @@ func _ready() -> void:
 	
 	show_timer.button_pressed = GlobalSettings.visible_timer
 	show_hints.button_pressed = GlobalSettings.visible_hints
+	shake_cam.button_pressed = GlobalSettings.cam_shake_enabled
 
 func enter_animation() -> void:
 	show()
@@ -30,11 +32,14 @@ func exit_animation() -> void:
 	await tween.finished
 	hide()
 
-
-func _on_settings_back_b_pressed() -> void:
-	# When user leaves settings, update values they changed in Visual Tab
+func save_visual_settings() -> void:
+	## When user leaves settings, update values they changed in Visual Tab
 	GlobalSettings.visible_timer = show_timer.button_pressed
 	GlobalSettings.visible_hints = show_hints.button_pressed
+	GlobalSettings.cam_shake_enabled = shake_cam.button_pressed
+	
+func _on_settings_back_b_pressed() -> void:
+	save_visual_settings()
 	
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()

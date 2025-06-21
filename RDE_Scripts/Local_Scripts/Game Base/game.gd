@@ -68,7 +68,8 @@ func next_in_order(increment : int) -> void:
 		#print("LEVEL INDEX: ", level.index)
 		
 		fight_res_set.emit()
-		await scene_transiton.enter_anim()
+		if level.index == 0:
+			await scene_transiton.enter_anim()
 		return
 	
 	if level.order[level.index] is CutsceneRes:
