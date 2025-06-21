@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HealthRes" load_steps=2 format=3 uid="uid://dpnpirdiwnel6"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_co5qx"]
+
+[resource]
+script = ExtResource("1_co5qx")
+HP_NAME = "INVINCIBLE"
+is_player = true
+MAX_HP = 1000
+damage_rate = 1.0
+invicible = true

@@ -55,8 +55,7 @@ func next_in_order(increment : int) -> void:
 		#print("sequence end")
 		level.sequence_end = false
 		
-		#GlobalScene.emit_signal("quit_to_menu")
-		await scene_transiton.exit_anim()
+		#await scene_transiton.exit_anim()
 		GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
 		
 		#print("LEVEL INDEX: ", level.index)

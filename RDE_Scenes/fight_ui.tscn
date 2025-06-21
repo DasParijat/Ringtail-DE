@@ -299,7 +299,6 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Keyboard Hints" parent="." instance=ExtResource("2_gqfdu")]
-visible = true
 
 [node name="BossHPBars" parent="." instance=ExtResource("2_2r4lq")]
 visible = true
