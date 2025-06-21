@@ -97,10 +97,12 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/20/25)
+			<li>(General) 
+			Added Q Key and Right Click as input for power mode (Like in feedback)</li>
 			<li>(Playtesters) 
 			Got recent playtester, gave insightful feedback</li>
-			<li>(General) 
-			Added Q key as input for power mode (Like in feedback)</li>
+			<li>(Keyboard Hints) 
+			Updated hints to reflect new keybinds + make it more visible</li>
 		</ul>
 	</li>
 	<li>

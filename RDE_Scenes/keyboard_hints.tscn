@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bra8qovhkkhxm"]
+[gd_scene load_steps=13 format=3 uid="uid://bra8qovhkkhxm"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/keyboard_hints.gd" id="1_gfh7f"]
 [ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="2_8eloj"]
 [ext_resource type="Texture2D" uid="uid://dd3tgytn5lkr7" path="res://RDE_Fonts/Keyboard Icons V2/F_Key_Dark.png" id="3_vttq6"]
-[ext_resource type="Texture2D" uid="uid://cuc7avrn4x2eu" path="res://RDE_Fonts/Keyboard Icons V2/Shift_Key_Dark.png" id="4_a4ymu"]
+[ext_resource type="Texture2D" uid="uid://vkdlcr6dmfcb" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Right_Key_Dark.png" id="4_64jcf"]
 [ext_resource type="Texture2D" uid="uid://iioodcsoaw86" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Left_Key_Dark.png" id="5_8bhhc"]
+[ext_resource type="Texture2D" uid="uid://dc61daim8tx4n" path="res://RDE_Fonts/Keyboard Icons V2/Q_Key_Dark.png" id="5_2031p"]
 [ext_resource type="Texture2D" uid="uid://05hdysrh24l8" path="res://RDE_Fonts/Keyboard Icons V2/Space_Key_Dark.png" id="6_khpkk"]
 [ext_resource type="Texture2D" uid="uid://b1pmq1afkiw2e" path="res://RDE_Fonts/Keyboard Icons V2/Mouse_Middle_Key_Dark.png" id="7_33y1g"]
 [ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="8_weajb"]
@@ -15,7 +16,7 @@ font_names = PackedStringArray("Bahnschrift")
 font_weight = 100
 subpixel_positioning = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_ri3fb"]
+[sub_resource type="LabelSettings" id="LabelSettings_xp751"]
 line_spacing = 1.0
 font = SubResource("SystemFont_frf42")
 font_size = 10
@@ -23,7 +24,6 @@ font_color = Color(0.843184, 0.843184, 0.843184, 1)
 outline_size = 1
 
 [node name="Keyboard Hints" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_gfh7f")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -33,13 +33,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -157.845
-offset_top = -185.935
-offset_right = 3.15503
-offset_bottom = 9.065
+offset_left = -224.0
+offset_top = -255.0
+offset_right = -54.0
+offset_bottom = -60.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.915, 0.915)
+scale = Vector2(1.2, 1.2)
 
 [node name="VboxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -68,17 +68,36 @@ size_flags_horizontal = 3
 text = "Power"
 label_settings = ExtResource("2_8eloj")
 
-[node name="KeyHint" type="Label" parent="CenterContainer/VboxContainer/Power Hint"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VboxContainer/Power Hint"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Power Hint/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_64jcf")
+expand_mode = 5
+
+[node name="HoldHint" type="Label" parent="CenterContainer/VboxContainer/Power Hint/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "[Hold]"
-label_settings = SubResource("LabelSettings_ri3fb")
+label_settings = SubResource("LabelSettings_xp751")
 horizontal_alignment = 2
 
-[node name="Key" type="TextureRect" parent="CenterContainer/VboxContainer/Power Hint"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VboxContainer/Power Hint"]
 layout_mode = 2
-texture = ExtResource("4_a4ymu")
-expand_mode = 3
+
+[node name="Key2" type="TextureRect" parent="CenterContainer/VboxContainer/Power Hint/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_2031p")
+expand_mode = 5
+
+[node name="HoldHint2" type="Label" parent="CenterContainer/VboxContainer/Power Hint/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[Hold]"
+label_settings = SubResource("LabelSettings_xp751")
+horizontal_alignment = 2
 
 [node name="Shoot Hint" type="HBoxContainer" parent="CenterContainer/VboxContainer"]
 layout_mode = 2
