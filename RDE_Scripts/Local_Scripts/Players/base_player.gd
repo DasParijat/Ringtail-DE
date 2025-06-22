@@ -198,6 +198,7 @@ func _on_game_over() -> void:
 	get_tree().change_scene_to_packed(preload(GlobalScene.GAME_OVER))
 	
 func test_function() -> void:
+	return
 	## If test button pressed, something happens
 	if Input.is_action_pressed("test"):
 		player_res.health_res.take_dmg(10)

@@ -99,6 +99,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Base Cutscene) 
 			Reworked how tweens are handled, which now allow both actions and text to be skipped at once, 
 			now able to skip directly to next text without having to skip it twice if text/action already finished,
+			Added ability to skip cutscene, as well as base cutscene hiding itself when done
 			</li>
 		</ul>
 	</li>

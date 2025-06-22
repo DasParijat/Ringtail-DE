@@ -8,6 +8,8 @@ const CHAR_READ_RATE = 0.05
 
 @onready var fake_actor : Sprite2D = $FakeActor
 
+@export var max_index : int = 4
+
 @export var textbox_container : Container
 @export var speaker_name : Label
 @export var dialog_text : Label
@@ -19,11 +21,11 @@ enum State {
 	READY,
 	READING,
 	FINISHED,
-	PROCESS
+	PROCESS,
+	COMPLETE
 }
 
 var c_index : int = 0
-var can_proceed : bool = false
 
 var current_state = State.READY
 
@@ -76,20 +78,25 @@ func skip_all_tweens():
 func _process(delta):
 	match current_state:
 		State.READY:
-			can_proceed = true
 			c_index += 1
 			c_index_handler()
 		State.READING:
-			if Input.is_action_just_pressed("ui_accept"):
+			if Input.is_action_just_pressed("ui_accept") or c_index > max_index:
 				skip_all_tweens()
-
+				
 				change_state(State.FINISHED)
 		State.FINISHED:
+			if c_index > max_index:
+				change_state(State.COMPLETE)
+			
 			if Input.is_action_just_pressed("ui_accept"):
 				change_state(State.PROCESS)
 		State.PROCESS:
 			change_state(State.READY)
 			hide_textbox()
+		State.COMPLETE:
+			hide_textbox()
+			self.hide() # MAYBE replace with fade out anim
 
 func c_index_handler() -> void:
 	# This index handler code would not be in cutscenes extending this class
@@ -103,7 +110,13 @@ func c_index_handler() -> void:
 			display_text("yello3", ringtail_name)
 		4:
 			display_text("yello4yello4yello4yello4yello4yello4", blank_name)
+		_:
+			change_state(State.COMPLETE)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("test"):
+		c_index = max_index + 1
+		
 func hide_textbox():
 	start_symbol.text = ""
 	end_symbol.text = ""
