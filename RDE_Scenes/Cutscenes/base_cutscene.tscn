@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://chmgqrrxxdgml"]
+[gd_scene load_steps=9 format=3 uid="uid://chmgqrrxxdgml"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/base_cutscene.gd" id="1_micxl"]
+[ext_resource type="Texture2D" uid="uid://djl1livyvdd5n" path="res://RDE_Images/rt_minitailSPEED.png" id="2_1ibwt"]
 
 [sub_resource type="Gradient" id="Gradient_6ag0q"]
 offsets = PackedFloat32Array(0, 0.689655, 1)
@@ -40,6 +41,10 @@ speaker_name = NodePath("TextboxContainer/MarginContainer/VBoxContainer/Name")
 dialog_text = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText")
 start_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start")
 end_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End")
+
+[node name="FakeActor" type="Sprite2D" parent="."]
+position = Vector2(644, 287)
+texture = ExtResource("2_1ibwt")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 anchors_preset = 12

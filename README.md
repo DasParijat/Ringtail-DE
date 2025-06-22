@@ -95,6 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/22/25)
+			<li>(Base Cutscene) 
+			Reworking how tweens are handled</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/21/25)
 			<li>(Timer UI / Game Fight) 
 			Time stops counting when on victory screen, 
