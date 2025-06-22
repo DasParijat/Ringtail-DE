@@ -78,8 +78,6 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			small minions on screen, especially for the second round, but now after finding out I can rush him in
 			close combat, this will possibly make this less of an issue. That could be a cool loading screen tip.</li> 
 			<li>Change the power button to Q. Shift is too far away and Q is right there. Or make power both shift and Q.</li>
-			<li>DEV NOTE: Fix issue of timed still giving game over after win</li>
-			<li>DEV NOTE: Add option to turn off camera shake</li>
 		</ol>
 	</li>
 </ul>
@@ -106,6 +104,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(Somewhat messed with victory menu in a visual sense)</li>
 			<li>(Player Power Audio) 
 			Trying to fix bass boost bug by changing it from lerp to lerpf</li>
+			<li>(Textbox) 
+			Changed way dialog is added and displayed, 
+			instead of queuing texts, it displays them based on a match statement 
+			(This is done so tweening of other stuff can be done alongside this)</li>
 		</ul>
 	</li>
 	<li>

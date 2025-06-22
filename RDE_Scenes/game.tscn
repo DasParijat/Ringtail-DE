@@ -71,13 +71,13 @@ autostart = true
 [node name="Cutscene" type="Node2D" parent="."]
 
 [node name="Textbox" parent="Cutscene" instance=ExtResource("10_qu40j")]
-visible = false
 offset = Vector2(0, -100)
 transform = Transform2D(1, 0, 0, 1, 0, -100)
 
 [node name="TopCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SceneTransitionFade" parent="TopCanvasLayer" instance=ExtResource("11_ao51x")]
+visible = false
 transition_rate = 0.6
 
 [connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]

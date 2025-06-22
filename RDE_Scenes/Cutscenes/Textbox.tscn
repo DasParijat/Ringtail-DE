@@ -33,13 +33,13 @@ shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.588235)
 shadow_offset = Vector2(2, 2)
 
-[node name="Textbox" type="CanvasLayer" node_paths=PackedStringArray("textbox_container", "speaker_name", "dialog_text", "start_symbol", "end_symbol")]
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("textbox_container", "speaker_name", "dialog_text", "start_symbol", "end_symbol")]
 script = ExtResource("1_smhd3")
 textbox_container = NodePath("TextboxContainer")
 speaker_name = NodePath("TextboxContainer/MarginContainer/VBoxContainer/Name")
 dialog_text = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText")
 start_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start")
-end_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText")
+end_symbol = NodePath("TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 anchors_preset = 12
