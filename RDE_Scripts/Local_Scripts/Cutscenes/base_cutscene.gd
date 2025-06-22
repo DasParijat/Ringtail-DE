@@ -1,4 +1,4 @@
-class_name Cutscene
+class_name BaseCutscene
 extends CanvasLayer
 # Credit - jontopielski
 # TODO - Change styling so it's compatible with Ringtail DE
@@ -8,14 +8,14 @@ const CHAR_READ_RATE = 0.05
 
 @onready var fake_actor : Sprite2D = $FakeActor
 
+@onready var textbox_container : Container = $TextboxContainer
+@onready var speaker_name : Label = $TextboxContainer/MarginContainer/VBoxContainer/Name
+@onready var dialog_text : Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText
+
+@onready var start_symbol : Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start
+@onready var end_symbol : Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End
+
 @export var max_index : int = 4
-
-@export var textbox_container : Container
-@export var speaker_name : Label
-@export var dialog_text : Label
-
-@export var start_symbol : Label
-@export var end_symbol : Label
 
 enum State {
 	READY,
@@ -26,6 +26,7 @@ enum State {
 }
 
 var c_index : int = 0
+var cutscene_manager_func : StringName = "c_index_handler"
 
 var current_state = State.READY
 
@@ -35,9 +36,6 @@ var blank_name : SpeakerName = SpeakerName.new("")
 
 var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
 var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
-
-func _ready():
-	pass
 
 func start_tween(target : Object, property : String, final_value, duration : float) -> Tween:
 	var tween : Tween = create_tween()
@@ -79,7 +77,7 @@ func _process(delta):
 	match current_state:
 		State.READY:
 			c_index += 1
-			c_index_handler()
+			call(cutscene_manager_func)
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept") or c_index > max_index:
 				skip_all_tweens()

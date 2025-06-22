@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fc0o2aqpmhw4"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_def_intro.gd" id="1_fdp6n"]
+
+[node name="RGT_DEF_INTRO" type="CanvasLayer"]
+script = ExtResource("1_fdp6n")

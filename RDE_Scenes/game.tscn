@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game World/game_background.gd" id="4_a1q2e"]
 [ext_resource type="PackedScene" uid="uid://nlpg0x3l8com" path="res://RDE_Scenes/victory_menu.tscn" id="4_b4hy0"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/fight.gd" id="6_b2j36"]
-[ext_resource type="PackedScene" uid="uid://chmgqrrxxdgml" path="res://RDE_Scenes/Cutscenes/base_cutscene.tscn" id="10_qu40j"]
+[ext_resource type="PackedScene" uid="uid://fc0o2aqpmhw4" path="res://RDE_Scenes/Cutscenes/Specific Cutscenes/rgt_def_intro.tscn" id="10_787my"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="11_ao51x"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("scene_transiton")]
@@ -70,7 +70,7 @@ autostart = true
 
 [node name="Cutscene" type="Node2D" parent="."]
 
-[node name="Textbox" parent="Cutscene" instance=ExtResource("10_qu40j")]
+[node name="RGT_DEF_INTRO" parent="Cutscene" instance=ExtResource("10_787my")]
 
 [node name="TopCanvasLayer" type="CanvasLayer" parent="."]
 
