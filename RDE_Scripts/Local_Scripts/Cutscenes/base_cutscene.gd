@@ -6,16 +6,15 @@ extends CanvasLayer
 
 const CHAR_READ_RATE = 0.05
 
-@onready var fake_actor : Sprite2D = $FakeActor
-
-@onready var textbox_container : Container = $TextboxContainer
-@onready var speaker_name : Label = $TextboxContainer/MarginContainer/VBoxContainer/Name
-@onready var dialog_text : Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText
-
-@onready var start_symbol : Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start
-@onready var end_symbol : Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End
-
 @export var max_index : int = 4
+@export var textbox_scene : Textbox
+
+@onready var textbox_container : Container = textbox_scene
+@onready var speaker_name : Label = textbox_scene.speaker_name
+@onready var dialog_text : Label = textbox_scene.dialog_text
+
+@onready var start_symbol : Label = textbox_scene.start
+@onready var end_symbol : Label = textbox_scene.end
 
 enum State {
 	READY,
@@ -103,7 +102,6 @@ func c_index_handler() -> void:
 			display_text("yello1")
 		2:
 			display_text("yello2", oswald_name)
-			start_tween(fake_actor, "position", Vector2(0, 300), 1.0)
 		3:
 			display_text("yello3", ringtail_name)
 		4:

@@ -101,6 +101,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			now able to skip directly to next text without having to skip it twice if text/action already finished,
 			Added ability to skip cutscene, as well as base cutscene hiding itself when done
 			</li>
+			<li>(Base Cutscene / RGT_DEF_INTRO / Textbox) 
+			Created RGT_DEF_INTRO cutscene, and made base cutscene
+			flexible, which involved seperating the textbox into it's own scene</li>
 		</ul>
 	</li>
 	<li>

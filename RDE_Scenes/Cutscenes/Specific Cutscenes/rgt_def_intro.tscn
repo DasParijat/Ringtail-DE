@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://fc0o2aqpmhw4"]
+[gd_scene load_steps=3 format=3 uid="uid://fc0o2aqpmhw4"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_def_intro.gd" id="1_fdp6n"]
+[ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="2_kqqn2"]
 
-[node name="RGT_DEF_INTRO" type="CanvasLayer"]
+[node name="RGT_DEF_INTRO" type="CanvasLayer" node_paths=PackedStringArray("textbox_scene")]
 script = ExtResource("1_fdp6n")
+textbox_scene = NodePath("Textbox")
+
+[node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
