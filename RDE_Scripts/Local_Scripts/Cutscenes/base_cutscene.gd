@@ -1,6 +1,8 @@
+class_name Cutscene
 extends CanvasLayer
 # Credit - jontopielski
 # TODO - Change styling so it's compatible with Ringtail DE
+# TODO - Set this up as a base cutscene class
 
 const CHAR_READ_RATE = 0.05
 
@@ -23,6 +25,11 @@ var c_index : int = 0
 var current_state = State.READY
 var text_queue = []
 var header_queue = []
+
+var blank_name : SpeakerName = SpeakerName.new("")
+
+var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
+var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
 
 func _ready():
 	#print("Starting state: State.READY")
@@ -60,15 +67,16 @@ func _process(delta):
 			hide_textbox()
 
 func c_index_handler() -> void:
+	# This index handler code would not be in cutscenes extending this class
 	match c_index:
 		1:
 			display_text("yello1")
 		2:
-			display_text("yello2")
+			display_text("yello2", oswald_name)
 		3:
-			display_text("yello3")
+			display_text("yello3", ringtail_name)
 		4:
-			display_text("yello4")
+			display_text("yello4yello4yello4yello4yello4yello4", blank_name)
 	
 func queue_text(next_text):
 	text_queue.push_back(next_text)
@@ -80,18 +88,21 @@ func hide_textbox():
 	textbox_container.hide()
 
 func show_textbox():
-	start_symbol.text = "*"
+	#start_symbol.text = "*"
 	textbox_container.show()
 
-func display_text(text : String):
-	var next_text = text #text_queue.pop_front()
-	dialog_text.text = next_text
+func display_text(text : String, speaker : SpeakerName = blank_name):
+	speaker_name.text = speaker.text
+	speaker_name.modulate = speaker.color
+	#var next_text = text #text_queue.pop_front()
+	
+	dialog_text.text = text
 	dialog_text.visible_ratio = 0.0
 	change_state(State.READING)
 	show_textbox()
 
 	var tween = create_tween()
-	tween.tween_property(dialog_text, "visible_ratio", 1.0, len(next_text) * CHAR_READ_RATE)
+	tween.tween_property(dialog_text, "visible_ratio", 1.0, len(text) * CHAR_READ_RATE)
 	tween.finished.connect(_on_tween_completed)
 
 func change_state(next_state):

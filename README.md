@@ -104,10 +104,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(Somewhat messed with victory menu in a visual sense)</li>
 			<li>(Player Power Audio) 
 			Trying to fix bass boost bug by changing it from lerp to lerpf</li>
-			<li>(Textbox) 
+			<li>(Base Cutscene) 
+			Renamed Textbox scene into Base Cutscene 
+			(This will be the base for all cutscenes)</li>
+			<li>(Base Cutscene) 
 			Changed way dialog is added and displayed, 
 			instead of queuing texts, it displays them based on a match statement 
 			(This is done so tweening of other stuff can be done alongside this)</li>
+			<li>(SpeakerName / Base Cutscene) 
+			Created SpeakerName class to handle data (name and color) 
+			for the speaker_name label in Base Cutscene</li>
 		</ul>
 	</li>
 	<li>
