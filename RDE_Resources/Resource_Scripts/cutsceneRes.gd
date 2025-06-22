@@ -8,5 +8,6 @@ class_name CutsceneRes
 
 @export var CSCENE_NAME : String = "UNNAMED CUTSCENE"
 
+@export var base_cutscene : PackedScene
 @export var world_scene : PackedScene
 @export var is_skippable : bool = true

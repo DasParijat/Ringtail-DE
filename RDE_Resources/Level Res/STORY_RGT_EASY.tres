@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="LevelRes" load_steps=5 format=3 uid="uid://d38qi004rniap"]
+[gd_resource type="Resource" script_class="LevelRes" load_steps=6 format=3 uid="uid://d38qi004rniap"]
 
 [ext_resource type="Resource" uid="uid://2iis2jxe67vb" path="res://RDE_Resources/Fight Res/TUTORIAL.tres" id="1_4wg3f"]
 [ext_resource type="Texture2D" uid="uid://b7r5q02t3ru24" path="res://RDE_Images/rt_ringtail1.png" id="1_55os8"]
 [ext_resource type="Resource" uid="uid://c0vmclnycaxp0" path="res://RDE_Resources/Fight Res/RGT_EASY.tres" id="1_k8og1"]
+[ext_resource type="Resource" uid="uid://bo04vgmtwy7b0" path="res://RDE_Resources/Cutscene Res/RGT_DEF_INTRO.tres" id="2_s6135"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="3_yn8li"]
 
 [resource]
@@ -11,4 +12,4 @@ LEVEL_NAME = "STORY_RGT_EASY"
 DISPLAY_NAME = "Ringtail - Easy"
 LEVEL_DESC = "This is ringtail easy"
 THUMBNAIL = ExtResource("1_55os8")
-order = Array[Resource]([ExtResource("1_4wg3f"), ExtResource("1_k8og1")])
+order = Array[Resource]([ExtResource("2_s6135"), ExtResource("1_4wg3f"), ExtResource("1_k8og1")])

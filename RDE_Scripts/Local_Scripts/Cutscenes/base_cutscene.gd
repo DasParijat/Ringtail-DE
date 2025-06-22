@@ -16,6 +16,8 @@ const CHAR_READ_RATE = 0.05
 @onready var start_symbol : Label = textbox_scene.start
 @onready var end_symbol : Label = textbox_scene.end
 
+var camera_2d : Camera2D # To be given in Game Scene
+
 enum State {
 	READY,
 	READING,
@@ -93,6 +95,7 @@ func _process(delta):
 			hide_textbox()
 		State.COMPLETE:
 			hide_textbox()
+			GlobalSignal.cutscene_over.emit()
 			self.hide() # MAYBE replace with fade out anim
 
 func c_index_handler() -> void:

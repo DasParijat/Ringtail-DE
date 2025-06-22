@@ -1,13 +1,18 @@
 extends Node2D
 
 @onready var pause_menu = $pause_menu
+@onready var fight_node = $Fight
+@onready var cutscene_node = $Cutscene
+
 @onready var level : LevelRes = GlobalScene.next_level
 
 @onready var fight_res : FightRes 
+@onready var cutscene_res : CutsceneRes
 
 @export var scene_transiton : SceneTransitionFade
 
 signal fight_res_set
+signal cutscene_res_set
 
 signal game_pause
 signal game_unpause
@@ -22,6 +27,7 @@ func _ready() -> void:
 	#print("LEVEL INDEX: ", level.index)
 	GlobalSignal.connect("game_won", Callable(self, "_on_game_won"))
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
+	GlobalSignal.connect("cutscene_over", Callable(self, "_on_cutscene_over"))
 	#level.index = level.order.size() - 1 # This code is for if I want to run last in order
 	next_in_order(0)
 
@@ -65,6 +71,8 @@ func next_in_order(increment : int) -> void:
 		GlobalScene.cur_scene_type = GlobalScene.SceneType.FIGHT
 		fight_res = level.order[level.index]
 		#print("LEVEL INDEX: ", level.index)
+		fight_node.show()
+		cutscene_node.hide()
 		
 		fight_res_set.emit()
 		if level.index == 0:
@@ -73,7 +81,13 @@ func next_in_order(increment : int) -> void:
 	
 	if level.order[level.index] is CutsceneRes:
 		GlobalScene.cur_scene_type = GlobalScene.SceneType.CSCENE
-		await scene_transiton.enter_anim()
+		cutscene_res = level.order[level.index]
+		cutscene_node.show()
+		fight_node.hide()
+		
+		cutscene_res_set.emit()
+		if level.index == 0:
+			await scene_transiton.enter_anim()
 		return
 	
 func pause_game() -> void:
@@ -118,3 +132,6 @@ func _on_game_won() -> void:
 
 func _on_game_over() -> void:
 	GlobalFightStats.fight_stats["num_of_deaths"] += 1
+
+func _on_cutscene_over() -> void:
+	next_in_order(1)

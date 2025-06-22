@@ -8,5 +8,6 @@ signal update_player_hp(hp_update : float)
 
 signal game_over()
 signal game_won()
+signal cutscene_over()
 
 signal quit_game()

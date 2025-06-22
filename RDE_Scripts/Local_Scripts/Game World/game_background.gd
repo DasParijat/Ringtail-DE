@@ -5,6 +5,8 @@ extends Node2D
 @export var scene_transiton : SceneTransitionFade
 
 var fight_res : FightRes
+var cutscene_res : CutsceneRes
+
 var world_scene : PackedScene
 
 ## Stores world's canvas color, for when canvas color needs to be changed temporarily
@@ -77,3 +79,16 @@ func _on_game_won() -> void:
 	canvas_mod.color = Color(0.4, 0.4, 0.4, 1)
 	await GlobalScene.off_victory
 	canvas_mod.color = default_canvas_mod
+
+
+func _on_game_cutscene_res_set() -> void:
+	cutscene_res = get_parent().cutscene_res
+	world_scene = cutscene_res.world_scene
+	
+	# If no world scene in first part of level, have blank world
+	# Else, load the given world or keep / reload the previous world
+	if world_scene:
+		create_world()
+	elif GlobalScene.world_scene_history.size() > 0:
+		world_scene = GlobalScene.world_scene_history[0]
+		create_world()

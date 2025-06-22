@@ -104,6 +104,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Base Cutscene / RGT_DEF_INTRO / Textbox) 
 			Created RGT_DEF_INTRO cutscene, and made base cutscene
 			flexible, which involved seperating the textbox into it's own scene</li>
+			<li>(Base Cutscene / CutsceneRes / Game Cutscene) 
+			Working on having cutscenes work with Game Scene</li>
 		</ul>
 	</li>
 	<li>
