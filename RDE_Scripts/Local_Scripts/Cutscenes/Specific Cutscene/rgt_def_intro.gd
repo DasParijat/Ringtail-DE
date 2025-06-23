@@ -6,6 +6,7 @@ extends BaseCutscene
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"
+	#enter_animation()
 
 func cutscene_handler() -> void:
 	match c_index:

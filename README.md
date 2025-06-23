@@ -95,6 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/23/25)
+			<li>(Base Cutscene / CutsceneRes / Game Cutscene) 
+			Cutscenes properly work with Game Scene</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/22/25)
 			<li>(Base Cutscene) 
 			Reworked how tweens are handled, which now allow both actions and text to be skipped at once, 

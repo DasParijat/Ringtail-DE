@@ -134,4 +134,6 @@ func _on_game_over() -> void:
 	GlobalFightStats.fight_stats["num_of_deaths"] += 1
 
 func _on_cutscene_over() -> void:
+	#print("pre next order cutscene: ", level.sequence_end)
 	next_in_order(1)
+	#print("post next order cutscene: ", level.sequence_end)

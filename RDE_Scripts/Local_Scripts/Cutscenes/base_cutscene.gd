@@ -96,7 +96,8 @@ func _process(delta):
 		State.COMPLETE:
 			hide_textbox()
 			GlobalSignal.cutscene_over.emit()
-			self.hide() # MAYBE replace with fade out anim
+			#await exit_animation()
+			self.queue_free()
 
 func c_index_handler() -> void:
 	# This index handler code would not be in cutscenes extending this class
@@ -143,3 +144,15 @@ func change_state(next_state):
 func _on_tween_completed(object, key):
 	#end_symbol.text = "v"
 	change_state(State.FINISHED)
+
+func enter_animation() -> void:
+	show()
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1, 0.5)
+
+func exit_animation() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0, 0.5)
+		
+	await tween.finished
+	hide()
