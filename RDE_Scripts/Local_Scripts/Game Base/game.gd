@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var pause_menu = $pause_menu
 @onready var fight_node = $Fight
+@onready var fight_ui : CanvasLayer = $Fight/fight_ui
 @onready var cutscene_node = $Cutscene
 
 @onready var level : LevelRes = GlobalScene.next_level
@@ -136,4 +137,5 @@ func _on_game_over() -> void:
 func _on_cutscene_over() -> void:
 	#print("pre next order cutscene: ", level.sequence_end)
 	next_in_order(1)
+	GlobalScene.off_victory.emit()
 	#print("post next order cutscene: ", level.sequence_end)

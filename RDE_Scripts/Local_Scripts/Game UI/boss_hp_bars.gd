@@ -107,6 +107,8 @@ func _on_game_won() -> void:
 	$".".hide()
 
 	await GlobalScene.off_victory
+	if not GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
+		await GlobalScene.off_victory
 
 	$".".show()
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)

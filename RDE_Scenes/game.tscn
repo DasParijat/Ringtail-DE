@@ -68,8 +68,9 @@ script = ExtResource("6_b2j36")
 [node name="FightTimeTracker" type="Timer" parent="Fight"]
 autostart = true
 
-[node name="Cutscene" type="Node2D" parent="."]
+[node name="Cutscene" type="Node2D" parent="." node_paths=PackedStringArray("camera_2d")]
 script = ExtResource("10_ecgkc")
+camera_2d = NodePath("../Camera2D")
 
 [node name="TopCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -77,7 +78,9 @@ script = ExtResource("10_ecgkc")
 visible = false
 transition_rate = 0.6
 
+[connection signal="cutscene_res_set" from="." to="Camera2D" method="_on_game_cutscene_res_set"]
 [connection signal="cutscene_res_set" from="." to="Background" method="_on_game_cutscene_res_set"]
+[connection signal="cutscene_res_set" from="." to="Fight" method="_on_game_cutscene_res_set"]
 [connection signal="cutscene_res_set" from="." to="Cutscene" method="_on_game_cutscene_res_set"]
 [connection signal="fight_res_set" from="." to="MusicPlayer" method="_on_game_fight_res_set"]
 [connection signal="fight_res_set" from="." to="Background" method="_on_game_fight_res_set"]

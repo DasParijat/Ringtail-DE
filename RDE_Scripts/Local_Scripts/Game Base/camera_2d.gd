@@ -133,3 +133,7 @@ func _on_victory() -> void:
 	
 	track_player = true
 	track_boss = false
+
+func _on_game_cutscene_res_set() -> void:
+	track_player = false
+	track_boss = false

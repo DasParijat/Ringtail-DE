@@ -194,7 +194,9 @@ func _on_game_won() -> void:
 	PlayerUI.hide()
 
 	await GlobalScene.off_victory
-
+	if not GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
+		await GlobalScene.off_victory
+		
 	PlayerUI.show()
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(PlayerUI, "modulate", Color(1,1,1,1), GlobalScene.victory_fade_rate)

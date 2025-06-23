@@ -75,8 +75,9 @@ func create_fight() -> void:
 	fight_time_tracker.start()
 
 func clear_fight() -> void:
-	for child_node in get_children():
-		child_node.queue_free()
+	var children = get_children()
+	for i in range(2, children.size()):
+		children[i].queue_free()
 
 func _on_fight_time_tracker_timeout() -> void:
 	## Increment fight stat time every 1 second (Accounts for Engine time scale)
@@ -90,3 +91,7 @@ func _on_game_won() -> void:
 	#return
 	
 	GlobalFightStats.reset_inround_fight_stats()
+
+
+func _on_game_cutscene_res_set() -> void:
+	clear_fight()

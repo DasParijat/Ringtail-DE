@@ -1,16 +1,8 @@
 extends Node2D
 
+@export var camera_2d : Camera2D
+
 var cutscene_res : CutsceneRes
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func _on_game_cutscene_res_set() -> void:
 	cutscene_res = get_parent().cutscene_res

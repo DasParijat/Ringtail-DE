@@ -16,7 +16,7 @@ const CHAR_READ_RATE = 0.05
 @onready var start_symbol : Label = textbox_scene.start
 @onready var end_symbol : Label = textbox_scene.end
 
-var camera_2d : Camera2D # To be given in Game Scene
+@onready var camera_2d : Camera2D = get_parent().camera_2d # To be given in Game Scene
 
 enum State {
 	READY,

@@ -98,6 +98,12 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/23/25)
 			<li>(Base Cutscene / CutsceneRes / Game Cutscene) 
 			Cutscenes properly work with Game Scene</li>
+			<li>(Base Cutscene / Game Cutscene / Fight UI) 
+			The things loaded from fight res are unloaded on cutscene,
+			alongside FightUI hiding itself</li>
+			<li>(Base Cutscene / Game Camera) 
+			Base Cutscene has access to Game Camera in code,
+			and camera during cutscene tracks no one</li>
 		</ul>
 	</li>
 	<li>
