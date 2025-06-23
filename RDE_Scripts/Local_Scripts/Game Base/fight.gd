@@ -10,6 +10,7 @@ extends Node2D
 var fight_res : FightRes
 var player_scene : PackedScene
 var boss_scene : PackedScene 
+var fight_ui_scene : PackedScene = preload("res://RDE_Scenes/fight_ui.tscn")
 
 var boss_name = "NO BOSS NAME"
 
@@ -53,6 +54,12 @@ func create_fight() -> void:
 	var player_instance = player_scene.instantiate()
 	var boss_instance = boss_scene.instantiate()
 	
+	if has_node("fight_ui"):
+		print("UI instance already exists!")
+	else:
+		var ui_instance = fight_ui_scene.instantiate()
+		add_child(ui_instance)
+
 	# If not given a specified gun_array, keep array player default
 	if fight_res.gun_array.size() > 0:
 		player_instance.player_res.gun_array = fight_res.gun_array
@@ -76,7 +83,7 @@ func create_fight() -> void:
 
 func clear_fight() -> void:
 	var children = get_children()
-	for i in range(2, children.size()):
+	for i in range(1, children.size()):
 		children[i].queue_free()
 
 func _on_fight_time_tracker_timeout() -> void:

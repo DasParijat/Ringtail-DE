@@ -104,6 +104,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Base Cutscene / Game Camera) 
 			Base Cutscene has access to Game Camera in code,
 			and camera during cutscene tracks no one</li>
+			<li>(Base Cutscene / Game Cutscene / FightUI) 
+			FightUI is now loaded in on first fight in level</li>
+			<li>(Keyboard Hints) 
+			Parent changed from CanvasLayer to Control node</li>
 		</ul>
 	</li>
 	<li>

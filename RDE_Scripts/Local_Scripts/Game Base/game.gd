@@ -30,6 +30,7 @@ func _ready() -> void:
 	GlobalSignal.connect("game_over", Callable(self, "_on_game_over"))
 	GlobalSignal.connect("cutscene_over", Callable(self, "_on_cutscene_over"))
 	#level.index = level.order.size() - 1 # This code is for if I want to run last in order
+	#fight_ui.hide()
 	next_in_order(0)
 
 func _process(_delta : float) -> void:
@@ -73,6 +74,7 @@ func next_in_order(increment : int) -> void:
 		fight_res = level.order[level.index]
 		#print("LEVEL INDEX: ", level.index)
 		fight_node.show()
+		#fight_ui.show()
 		cutscene_node.hide()
 		
 		fight_res_set.emit()
@@ -85,6 +87,7 @@ func next_in_order(increment : int) -> void:
 		cutscene_res = level.order[level.index]
 		cutscene_node.show()
 		fight_node.hide()
+		GlobalScene.off_victory.emit()
 		
 		cutscene_res_set.emit()
 		if level.index == 0:
@@ -137,5 +140,6 @@ func _on_game_over() -> void:
 func _on_cutscene_over() -> void:
 	#print("pre next order cutscene: ", level.sequence_end)
 	next_in_order(1)
-	GlobalScene.off_victory.emit()
+	if level.order[level.index] is FightRes:
+		GlobalScene.off_victory.emit()
 	#print("post next order cutscene: ", level.sequence_end)

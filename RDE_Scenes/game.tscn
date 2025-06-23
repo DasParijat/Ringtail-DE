@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi38sacvfy6xa"]
+[gd_scene load_steps=11 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
-[ext_resource type="PackedScene" uid="uid://cpiu3tcragd52" path="res://RDE_Scenes/fight_ui.tscn" id="3_163st"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/music_player.gd" id="3_btvjt"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
 [ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="4_72mc8"]
@@ -62,8 +61,6 @@ visible = false
 
 [node name="Fight" type="Node2D" parent="."]
 script = ExtResource("6_b2j36")
-
-[node name="fight_ui" parent="Fight" instance=ExtResource("3_163st")]
 
 [node name="FightTimeTracker" type="Timer" parent="Fight"]
 autostart = true

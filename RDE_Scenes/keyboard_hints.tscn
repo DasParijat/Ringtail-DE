@@ -23,11 +23,20 @@ font_size = 10
 font_color = Color(0.843184, 0.843184, 0.843184, 1)
 outline_size = 1
 
-[node name="Keyboard Hints" type="CanvasLayer"]
+[node name="Keyboard Hints" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("1_gfh7f")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 modulate = Color(0.95, 0.9424, 0.874, 0.960784)
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

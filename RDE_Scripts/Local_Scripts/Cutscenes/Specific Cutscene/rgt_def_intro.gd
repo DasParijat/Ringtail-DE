@@ -16,6 +16,7 @@ func cutscene_handler() -> void:
 			display_text("yesssllo2", oswald_name)
 		3:
 			display_text("yelsadslo3", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, 100), 1)
 		4:
 			display_text("yello4yadadasdadasdello4yello4yello4yello4yello4", blank_name)
 		_:
