@@ -5,24 +5,31 @@
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="3_gjubk"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="4_ydwhu"]
 
-[node name="RGT_DEF_INTRO" type="CanvasLayer" node_paths=PackedStringArray("textbox_scene", "cutscene_holder")]
+[node name="RGT_DEF_INTRO" type="Node2D" node_paths=PackedStringArray("textbox_scene")]
 script = ExtResource("1_fdp6n")
-textbox_scene = NodePath("CutsceneContainer/Textbox")
-cutscene_holder = NodePath("CutsceneContainer")
+textbox_scene = NodePath("Textbox")
 
-[node name="CutsceneContainer" type="Control" parent="."]
-layout_mode = 3
+[node name="ControlContainer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" type="ColorRect" parent="ControlContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="Textbox" parent="CutsceneContainer" instance=ExtResource("2_kqqn2")]
-layout_mode = 1
+[node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
 
-[node name="Oswald" type="Sprite2D" parent="CutsceneContainer"]
+[node name="ActorContainer" type="Node" parent="."]
+
+[node name="Oswald" type="Sprite2D" parent="ActorContainer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(620, 340)
+rotation = -1.5708
 texture = ExtResource("3_gjubk")
 
-[node name="Ringtail" type="Sprite2D" parent="CutsceneContainer"]
+[node name="Ringtail" type="Sprite2D" parent="ActorContainer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(620, 340)
 texture = ExtResource("4_ydwhu")

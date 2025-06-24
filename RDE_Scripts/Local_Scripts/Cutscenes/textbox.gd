@@ -1,8 +1,10 @@
 class_name Textbox
-extends MarginContainer
+extends CanvasLayer
 
-@onready var speaker_name: Label = $MarginContainer/VBoxContainer/Name
-@onready var dialog_text: Label = $MarginContainer/VBoxContainer/HBoxContainer/DialogText
+@onready var textbox_container : Container = $TextboxContainer
 
-@onready var start: Label = $MarginContainer/VBoxContainer/HBoxContainer/Start
-@onready var end: Label = $MarginContainer/VBoxContainer/HBoxContainer/End
+@onready var speaker_name: Label = $TextboxContainer/MarginContainer/VBoxContainer/Name
+@onready var dialog_text: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/DialogText
+
+@onready var start: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start
+@onready var end: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End

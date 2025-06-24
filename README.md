@@ -100,6 +100,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			General fixes to reduce errors and other minor stuff, 
 			mainly that game won't register click input when unpausing
 			within the game scene itself no more</li>
+			<li>(Base Cutscene / RGT_DEF_INTRO) 
+			Changed the node organization, less reliant on control nodes, 
+			and uses more Node2D's, CanvasLayers, and a default Node</li>
+			<li>(Base Cutscene) 
+			Cutscene holder removed, due to Base Cutscene being a Node2D instead</li>
+			<li>(RGT_DEF_INTRO) 
+			Moved speaker names from base cutscene to RGT_DEF_INTRO, and positioned actors/camera</li>
+			<li>(Textbox) 
+			Turned textbox scene into a CanvasLayer node</li>
 		</ul>
 	</li>
 	<li>

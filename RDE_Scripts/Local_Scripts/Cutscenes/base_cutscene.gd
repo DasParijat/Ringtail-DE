@@ -1,5 +1,5 @@
 class_name BaseCutscene
-extends CanvasLayer
+extends Node2D
 # Credit - jontopielski
 # TODO - Change styling so it's compatible with Ringtail DE
 # TODO - Set this up as a base cutscene class
@@ -8,9 +8,9 @@ const CHAR_READ_RATE = 0.05
 
 @export var max_index : int = 4
 @export var textbox_scene : Textbox
-@export var cutscene_holder : Control
+#@export var cutscene_holder : Node
 
-@onready var textbox_container : Container = textbox_scene
+@onready var textbox_container : Container = textbox_scene.textbox_container
 @onready var speaker_name : Label = textbox_scene.speaker_name
 @onready var dialog_text : Label = textbox_scene.dialog_text
 
@@ -25,7 +25,7 @@ func _ready() -> void:
 func _base_ready() -> void:
 	## Call from extended cutscene
 	GlobalScene.connect("skip_cutscene", Callable(self, "_on_skip_cutscene"))
-	enter_animation()
+	#enter_animation()
 	
 enum State {
 	READY,
@@ -44,9 +44,6 @@ var current_state = State.READY
 var active_tweens : Array = []
 
 var blank_name : SpeakerName = SpeakerName.new("")
-
-var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
-var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
 
 func start_tween(target : Object, property : String, final_value, duration : float) -> Tween:
 	var tween : Tween = create_tween()
@@ -104,25 +101,11 @@ func _process(_delta):
 			change_state(State.READY)
 			#hide_textbox()
 		State.COMPLETE:
-			#hide_textbox()
+			hide_textbox()
 			change_state(State.NONE)
 			GlobalSignal.cutscene_over.emit()
 			await exit_animation()
 			self.queue_free()
-
-func c_index_handler() -> void:
-	# This index handler code would not be in cutscenes extending this class
-	match c_index:
-		1:
-			display_text("yello1")
-		2:
-			display_text("yello2", oswald_name)
-		3:
-			display_text("yello3", ringtail_name)
-		4:
-			display_text("yello4yello4yello4yello4yello4yello4", blank_name)
-		_:
-			change_state(State.COMPLETE)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
@@ -169,15 +152,15 @@ func _on_skip_cutscene() -> void:
 	c_index = max_index + 1
 	
 func enter_animation() -> void:
-	cutscene_holder.modulate.a = 0
-	cutscene_holder.show()
+	self.modulate.a = 0
+	self.show()
 	var tween = create_tween()
-	tween.tween_property(cutscene_holder, "modulate:a", 1, 0.5)
+	tween.tween_property(self, "modulate:a", 1, 0.5)
 
 func exit_animation() -> void:
-	cutscene_holder.modulate.a = 1
+	self.modulate.a = 1
 	var tween = create_tween()
-	tween.tween_property(cutscene_holder, "modulate:a", 0, 0.5)
+	tween.tween_property(self, "modulate:a", 0, 0.5)
 		
 	await tween.finished
-	cutscene_holder.hide()
+	self.hide()

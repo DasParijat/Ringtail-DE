@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djl1livyvdd5n" path="res://RDE_Images/rt_minitailSPEED.png" id="2_1ibwt"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="3_u6ixa"]
 
-[node name="Base Cutscene" type="CanvasLayer" node_paths=PackedStringArray("textbox_scene")]
+[node name="Base Cutscene" type="Node2D" node_paths=PackedStringArray("textbox_scene")]
 script = ExtResource("1_micxl")
 textbox_scene = NodePath("Textbox")
 
