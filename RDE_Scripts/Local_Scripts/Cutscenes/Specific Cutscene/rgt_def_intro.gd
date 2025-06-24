@@ -1,8 +1,8 @@
 extends BaseCutscene
 
 # Actors
-@onready var oswald: Sprite2D = $Oswald
-@onready var ringtail: Sprite2D = $Ringtail
+@onready var oswald: Sprite2D = $CutsceneContainer/Oswald
+@onready var ringtail: Sprite2D = $CutsceneContainer/Ringtail
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"

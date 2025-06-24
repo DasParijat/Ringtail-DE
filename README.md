@@ -95,6 +95,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/24/25)
+			<li>(General) 
+			General fixes to reduce errors and other minor stuff, 
+			mainly that game won't register click input when unpausing
+			within the game scene itself no more</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/23/25)
 			<li>(Base Cutscene / CutsceneRes / Game Cutscene) 
 			Cutscenes properly work with Game Scene</li>

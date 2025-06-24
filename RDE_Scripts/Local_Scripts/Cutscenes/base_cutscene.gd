@@ -75,22 +75,21 @@ func skip_all_tweens():
 		var property = tween_info["property"]
 		var final_value = tween_info["final_value"]
 		
-		# Set property to final value
 		target.set(property, final_value)
-		print(target.position.x)
 		
 		# Kill the tween if still running
 		if tween and tween.is_running():
 			tween.kill()
 	active_tweens.clear()
 
-func _process(delta):
+func _process(_delta):
 	match current_state:
 		State.READY:
 			c_index += 1
 			call(cutscene_manager_func)
 		State.READING:
-			if Input.is_action_just_pressed("ui_accept") or c_index > max_index:
+			if (Input.is_action_just_pressed("cont_cscene") or c_index > max_index 
+			and not GlobalTime.is_paused):
 				skip_all_tweens()
 				
 				change_state(State.FINISHED)
@@ -98,7 +97,8 @@ func _process(delta):
 			if c_index > max_index:
 				change_state(State.COMPLETE)
 			
-			if Input.is_action_just_pressed("ui_accept"):
+			if (Input.is_action_just_pressed("cont_cscene") 
+			and not GlobalTime.is_paused):
 				change_state(State.PROCESS)
 		State.PROCESS:
 			change_state(State.READY)
@@ -161,7 +161,7 @@ func display_text(text : String, speaker : SpeakerName = blank_name):
 func change_state(next_state):
 	current_state = next_state
 
-func _on_tween_completed(object, key):
+func _on_tween_completed(_object, _key):
 	#end_symbol.text = "v"
 	change_state(State.FINISHED)
 

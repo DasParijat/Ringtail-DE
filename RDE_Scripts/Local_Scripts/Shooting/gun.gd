@@ -98,7 +98,8 @@ func shoot_sound_effect() -> void:
 	
 func shoot() -> void:
 	## Handles creating and shooting a bullet
-	if cur_ammo <= 0 and not not_reloading():
+	if (cur_ammo <= 0 and not not_reloading() 
+	or GlobalTime.is_paused):
 		return
 	
 	# bullet_spread equation

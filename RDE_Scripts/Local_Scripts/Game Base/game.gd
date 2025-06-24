@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var pause_menu = $pause_menu
 @onready var fight_node = $Fight
-@onready var fight_ui : CanvasLayer = $Fight/fight_ui
 @onready var cutscene_node = $Cutscene
 
 @onready var level : LevelRes = GlobalScene.next_level

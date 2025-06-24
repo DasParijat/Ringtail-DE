@@ -54,9 +54,7 @@ func create_fight() -> void:
 	var player_instance = player_scene.instantiate()
 	var boss_instance = boss_scene.instantiate()
 	
-	if has_node("fight_ui"):
-		print("UI instance already exists!")
-	else:
+	if not has_node("fight_ui"):
 		var ui_instance = fight_ui_scene.instantiate()
 		add_child(ui_instance)
 

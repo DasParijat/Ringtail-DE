@@ -30,8 +30,9 @@ func _on_get_cur_stats(type, stats) -> void:
 		"MAIN_BOSS_START":
 			## Setup only
 			# Remove previous bar if any
-			for i in range(num_of_bars):
-				remove_child(get_child(i + 2))
+			if get_child_count() > 2:
+				for i in range(num_of_bars):
+					remove_child(get_child(i + 2))
 			
 			max_hp = stats["max_hp"]
 			mob_res = stats["mob_res"]

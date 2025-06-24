@@ -86,7 +86,7 @@ func shoot_from_rand(bullet_params : Dictionary = base_bullet_params, from_x : f
 
 func shoot_laser(bullet_params : Dictionary =  base_bullet_params, num_of_bullets : int = 10, time_difference : float = 0.2) -> void:
 	# So each bullet has the same start pos and target
-	var start_pos : Vector2 = base.get_rand_player_pos(500, 1000, 500, 1000)
+	#var start_pos : Vector2 = base.get_rand_player_pos(500, 1000, 500, 1000)
 	
 	for i in range(num_of_bullets):
 		_shoot(bullet_params)
