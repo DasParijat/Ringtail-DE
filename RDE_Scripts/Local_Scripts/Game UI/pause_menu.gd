@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var game = $".."
 @onready var panel_container: PanelContainer = $PanelContainer
+@onready var reset_b : navButton = $PanelContainer/HBoxContainer/resetB
 
 @export var scene_transition : SceneTransitionFade
 
@@ -49,14 +50,22 @@ func _on_quit_b_pressed() -> void:
 	GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
 
 func _on_reset_b_pressed() -> void:
-	# temp button for debugging
-	_leave_pause_state()
-	GlobalScene.load_next_scene(GlobalScene.GAME)
+	if GlobalScene.cur_scene_type == GlobalScene.SceneType.CSCENE:
+		game.pause_game()
+		GlobalScene.skip_cutscene.emit()
+	else:
+		_leave_pause_state()
+		GlobalScene.load_next_scene(GlobalScene.GAME)
 
 func _on_game_pause() -> void:
 	if GlobalTime.photo_enabled:
 		return
 	GlobalTime.photo_enabled = false
+	
+	if GlobalScene.cur_scene_type == GlobalScene.SceneType.CSCENE:
+		reset_b.text = "Skip"
+	else:
+		reset_b.text = "Reset"
 	
 	$".".show()
 	await slide_menu(0, 1, 0.1)

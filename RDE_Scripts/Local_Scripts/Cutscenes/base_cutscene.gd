@@ -19,6 +19,14 @@ const CHAR_READ_RATE = 0.05
 
 @onready var camera_2d : Camera2D = get_parent().camera_2d # To be given in Game Scene
 
+func _ready() -> void:
+	_base_ready()
+	
+func _base_ready() -> void:
+	## Call from extended cutscene
+	GlobalScene.connect("skip_cutscene", Callable(self, "_on_skip_cutscene"))
+	enter_animation()
+	
 enum State {
 	READY,
 	READING,
@@ -157,6 +165,9 @@ func _on_tween_completed(object, key):
 	#end_symbol.text = "v"
 	change_state(State.FINISHED)
 
+func _on_skip_cutscene() -> void:
+	c_index = max_index + 1
+	
 func enter_animation() -> void:
 	cutscene_holder.modulate.a = 0
 	cutscene_holder.show()

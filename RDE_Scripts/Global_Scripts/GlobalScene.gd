@@ -27,6 +27,7 @@ var cam_border_y : float
 
 signal on_victory()  # Used to communicate to cam, victory menu, and fight that its on victory screen
 signal off_victory()
+signal skip_cutscene()
 
 var on_victory_screen : bool = false
 var victory_fade_rate : float = 0.15

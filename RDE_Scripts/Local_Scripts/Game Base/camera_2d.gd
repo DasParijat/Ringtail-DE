@@ -46,10 +46,11 @@ func _ready() -> void:
 	#$".".position_smoothing_speed = 5
 	 
 func _process(delta : float) -> void:
-	if GlobalTime.is_paused and not GlobalTime.photo_enabled:
-		zoom = zoom.lerp(Vector2(3, 3), delta * 3)
-	else:
-		zoom = zoom.lerp(Vector2(1, 1), delta * 3)
+	if GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
+		if GlobalTime.is_paused and not GlobalTime.photo_enabled:
+			zoom = zoom.lerp(Vector2(3, 3), delta * 3)
+		else:
+			zoom = zoom.lerp(Vector2(1, 1), delta * 3)
 		
 	if track_player:
 		set_position(fight_node.player_pos * player_tracking_speed)

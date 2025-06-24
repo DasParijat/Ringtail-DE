@@ -111,6 +111,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Base Cutscene) 
 			Cutscene now fades out/in when starting/ending,
 			hide and show textbox function also has fade in/out</li>
+			<li>(Base Cutscene / Pause Menu / GlobalScene) 
+			Pause menu works with cutscene, as well as it replacing 
+			the reset button with a skip button. GlobalScene handles 
+			a skip cutscene signal</li>
 		</ul>
 	</li>
 	<li>

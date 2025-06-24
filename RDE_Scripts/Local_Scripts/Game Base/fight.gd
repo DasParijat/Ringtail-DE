@@ -88,7 +88,7 @@ func clear_fight() -> void:
 
 func _on_fight_time_tracker_timeout() -> void:
 	## Increment fight stat time every 1 second (Accounts for Engine time scale)
-	if GlobalScene.on_victory_screen: return
+	if GlobalScene.on_victory_screen or GlobalScene.cur_scene_type != GlobalScene.SceneType.FIGHT: return
 	
 	GlobalFightStats.fight_stats["time"] += 1.0 * (2.0 - Engine.time_scale)
 	GlobalFightStats.fight_stats["total_time"] += 1.0 * (2.0 - Engine.time_scale)
