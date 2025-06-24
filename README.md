@@ -109,6 +109,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Moved speaker names from base cutscene to RGT_DEF_INTRO, and positioned actors/camera</li>
 			<li>(Textbox) 
 			Turned textbox scene into a CanvasLayer node</li>
+			<li>(Game) 
+			Game scene now has default level to load in case no level given, 
+			is useful for when wanting to run this specific scene from Godot</li>
 		</ul>
 	</li>
 	<li>

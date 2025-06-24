@@ -9,6 +9,7 @@ extends Node2D
 @onready var fight_res : FightRes 
 @onready var cutscene_res : CutsceneRes
 
+@export var default_level : LevelRes
 @export var scene_transiton : SceneTransitionFade
 
 signal fight_res_set
@@ -21,6 +22,12 @@ var pause_transition : bool = false
 var on_victory_screen : bool = false
 
 func _ready() -> void:
+	if level == null:
+		# This allows Game Scene to be run on it's own (For Dev Purposes)
+		# level is usually selected from Home Menu
+		level = default_level
+		printerr("GAME: LOADED DEFAULT LEVEL")
+	
 	if GlobalScene.prev_scene == GlobalScene.HOME_MENU:
 		level.index = 0
 	
