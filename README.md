@@ -108,6 +108,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			FightUI is now loaded in on first fight in level</li>
 			<li>(Keyboard Hints) 
 			Parent changed from CanvasLayer to Control node</li>
+			<li>(Base Cutscene) 
+			Cutscene now fades out/in when starting/ending,
+			hide and show textbox function also has fade in/out</li>
 		</ul>
 	</li>
 	<li>

@@ -8,6 +8,7 @@ const CHAR_READ_RATE = 0.05
 
 @export var max_index : int = 4
 @export var textbox_scene : Textbox
+@export var cutscene_holder : Control
 
 @onready var textbox_container : Container = textbox_scene
 @onready var speaker_name : Label = textbox_scene.speaker_name
@@ -23,7 +24,8 @@ enum State {
 	READING,
 	FINISHED,
 	PROCESS,
-	COMPLETE
+	COMPLETE,
+	NONE
 }
 
 var c_index : int = 0
@@ -92,11 +94,12 @@ func _process(delta):
 				change_state(State.PROCESS)
 		State.PROCESS:
 			change_state(State.READY)
-			hide_textbox()
+			#hide_textbox()
 		State.COMPLETE:
-			hide_textbox()
+			#hide_textbox()
+			change_state(State.NONE)
 			GlobalSignal.cutscene_over.emit()
-			#await exit_animation()
+			await exit_animation()
 			self.queue_free()
 
 func c_index_handler() -> void:
@@ -118,14 +121,23 @@ func _unhandled_input(event: InputEvent) -> void:
 		c_index = max_index + 1
 		
 func hide_textbox():
+	speaker_name.text = ""
 	start_symbol.text = ""
 	end_symbol.text = ""
 	dialog_text.text = ""
+	
+	if textbox_container.modulate.a > 0:
+		var tween = create_tween()
+		tween.tween_property(textbox_container, "modulate:a", 0, 0.2)
+		await tween.finished
 	textbox_container.hide()
 
 func show_textbox():
 	#start_symbol.text = "*"
 	textbox_container.show()
+	if textbox_container.modulate.a < 1:
+		var tween = create_tween()
+		tween.tween_property(textbox_container, "modulate:a", 1, 0.2)
 
 func display_text(text : String, speaker : SpeakerName = blank_name):
 	speaker_name.text = speaker.text
@@ -146,13 +158,15 @@ func _on_tween_completed(object, key):
 	change_state(State.FINISHED)
 
 func enter_animation() -> void:
-	show()
+	cutscene_holder.modulate.a = 0
+	cutscene_holder.show()
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1, 0.5)
+	tween.tween_property(cutscene_holder, "modulate:a", 1, 0.5)
 
 func exit_animation() -> void:
+	cutscene_holder.modulate.a = 1
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0, 0.5)
+	tween.tween_property(cutscene_holder, "modulate:a", 0, 0.5)
 		
 	await tween.finished
-	hide()
+	cutscene_holder.hide()

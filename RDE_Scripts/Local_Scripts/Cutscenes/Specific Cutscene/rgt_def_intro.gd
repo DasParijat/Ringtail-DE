@@ -6,7 +6,7 @@ extends BaseCutscene
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"
-	#enter_animation()
+	enter_animation()
 
 func cutscene_handler() -> void:
 	match c_index:
@@ -14,7 +14,9 @@ func cutscene_handler() -> void:
 			display_text("yel3ecececlo1")
 		2:
 			display_text("yesssllo2", oswald_name)
+			hide_textbox()
 		3:
+			show_textbox()
 			display_text("yelsadslo3", ringtail_name)
 			start_tween(camera_2d, "position", Vector2(0, 100), 1)
 		4:
