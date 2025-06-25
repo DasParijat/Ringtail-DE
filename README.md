@@ -96,16 +96,19 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/25/25)
+			<li>(General) 
+			Added VS Code gitignore</li>
 			<li>(Game Camera) 
 			Added set_cam_limit function, that changes the limit 
-			depending on if it's a fight or not (if not, than "infinite" limit)</li>
+			depending on if it's a fight or not (if not, than "infinite" limit), 
+			also power handling and gun_shake only checked if scene type if FIGHT</li>
 			<li>(Base Cutscene) 
 			Made default text read rate quicker, 
 			hide_textbox func works better,
 			Added start_index so cutscene don't always have to start at c_index 1, 
 			Can now modify read rate from display_text func</li>
 			<li>(RGT_DEF_INTRO) 
-			Started work on actual cutscene itself</li>
+			Work on the actual dialogue/action of the cutscene itself</li>
 		</ul>
 	</li>
 	<li>

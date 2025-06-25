@@ -41,11 +41,15 @@ func _ready() -> void:
 		printerr("FIGHT NODE UNASSIGNED")
 	 
 func _process(delta : float) -> void:
+	#print(GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT)
 	if GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
 		if GlobalTime.is_paused and not GlobalTime.photo_enabled:
 			zoom = zoom.lerp(Vector2(3, 3), delta * 3)
 		else:
 			zoom = zoom.lerp(Vector2(1, 1), delta * 3)
+
+		player_power_handling(1.2, 10)
+		gun_shake(delta)
 		
 	if track_player:
 		set_position(fight_node.player_pos * player_tracking_speed)
@@ -53,12 +57,12 @@ func _process(delta : float) -> void:
 		
 		gun_aim(1)
 	elif track_boss:
-		set_position(main_boss_pos) #* player_tracking_speed)
+		set_position(main_boss_pos)
 		offset = Vector2(-200, 0) 
 		zoom = zoom.lerp(Vector2(4, 4), delta * 10)
 		
-	player_power_handling(1.2, 10)
-	gun_shake(delta)
+	#player_power_handling(1.2, 10)
+	#gun_shake(delta)
 	
 	# TODO make camera flexible so it can be used for cutscenes or such
 	# TODO have camera stop tracking player when player node is removed/dead
