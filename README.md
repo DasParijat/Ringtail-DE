@@ -37,7 +37,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Playtesters (Date's are last time they played):</strong>
 <ul>
-	<li>Matt Brana (5/7) - Liked the camera and gameplay, Ideas: </li>
+	<li>Matt Brana (5/7) - Liked the camera and gameplay</li>
 	<li>Jackson O'Brien (3/13) - Complained about Boss HP bar contrast (FIXED)</li>
 	<li>April Melendez (5/1) - healing should use a chunk of power instead of slowly draining. 
 	maybe it has its own cooldown like reloading? Also have it heal more when at higher hp and vice versa</li>
@@ -84,7 +84,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Bug List:</strong>
 <ul>
-	<li>(4/?) - Pause menu doesn't show up  when rapidly pausing</li>
+	<li>(4/?) - Pause menu doesn't show up soemtimes when rapidly pausing</li>
 	<li>(5/7) - Player can get stuck in wall (RARE BUG, possibly caused by lag)</li>
 	<li>(5/5) - Player still takes damage during victory screen</li>
 	<li>(6/19) - Flash of blank grey after loading anything (loading screen)</li>
@@ -93,6 +93,21 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(6/25/25)
+			<li>(Game Camera) 
+			Added set_cam_limit function, that changes the limit 
+			depending on if it's a fight or not (if not, than "infinite" limit)</li>
+			<li>(Base Cutscene) 
+			Made default text read rate quicker, 
+			hide_textbox func works better,
+			Added start_index so cutscene don't always have to start at c_index 1, 
+			Can now modify read rate from display_text func</li>
+			<li>(RGT_DEF_INTRO) 
+			Started work on actual cutscene itself</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(6/24/25)

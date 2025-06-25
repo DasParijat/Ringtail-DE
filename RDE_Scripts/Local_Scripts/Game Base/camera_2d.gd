@@ -35,15 +35,10 @@ func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	
 	GlobalScene.connect("on_victory", Callable(self, "_on_victory"))
-	if GlobalScene.cam_border_x and GlobalScene.cam_border_y:
-		$".".limit_left = -GlobalScene.cam_border_x
-		$".".limit_right = GlobalScene.cam_border_x
-		$".".limit_top = -GlobalScene.cam_border_y
-		$".".limit_bottom = GlobalScene.cam_border_y
+	set_cam_limit()
 		
 	if fight_node == null:
 		printerr("FIGHT NODE UNASSIGNED")
-	#$".".position_smoothing_speed = 5
 	 
 func _process(delta : float) -> void:
 	if GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
@@ -110,6 +105,19 @@ func get_randshake_offset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_range, shake_range), # x axis rand shake
 	rng.randf_range(-shake_range, shake_range)) # y axis rand shake
 
+func set_cam_limit() -> void:
+	if (GlobalScene.cam_border_x and GlobalScene.cam_border_y 
+	and GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT):
+		set_limit(SIDE_LEFT, -GlobalScene.cam_border_x)
+		set_limit(SIDE_RIGHT, GlobalScene.cam_border_x)
+		set_limit(SIDE_TOP, -GlobalScene.cam_border_y)
+		set_limit(SIDE_BOTTOM, GlobalScene.cam_border_y)
+	else:
+		set_limit(SIDE_LEFT, -10000000)
+		set_limit(SIDE_RIGHT, 10000000)
+		set_limit(SIDE_TOP, -10000000)
+		set_limit(SIDE_BOTTOM, 10000000)
+	
 func _on_cur_gun(gun_res):
 	cur_gun = gun_res
 	shake_strength = cur_gun.shake_strength
@@ -123,6 +131,7 @@ func _on_get_cur_stats(type, stats) -> void:
 		main_boss_pos = stats["position"]
 		
 func _on_fight_player_created() -> void:
+	set_cam_limit()
 	track_player = true
 	track_boss = false
 
@@ -136,6 +145,7 @@ func _on_victory() -> void:
 	track_boss = false
 
 func _on_game_cutscene_res_set() -> void:
+	set_cam_limit()
 	offset = Vector2(0, 0)
 	track_player = false
 	track_boss = false
