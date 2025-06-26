@@ -103,7 +103,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Base Cutscene) 
 			Camera resets itself to normal zoom in base cutscene, 
 			added auto skip (func used to instantly skip action when done), 
-			and made action skip automatically after a certain amount of time</li>
+			and made action skip automatically after a certain amount of time,
+			Auto Skip can be enabled or disabled through keybind,
+			and time waited till it automatically skips is adjustable via function</li>
 		</ul>
 	</li>
 	<li>

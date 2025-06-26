@@ -35,7 +35,10 @@ var cutscene_manager_func : StringName = "c_index_handler"
 var current_state = State.READY
 
 var active_tweens : Array = []
+
 var auto_skip : bool = false
+var askip_wait_time : float = 5.0
+var can_auto_skip : bool = true
 
 var blank_name : SpeakerName = SpeakerName.new("")
 
@@ -119,7 +122,13 @@ func _process(_delta):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
+		# Skip cutscene keybind
 		c_index = end_index + 1
+		
+	if event.is_action_pressed("can_auto_skip"):
+		# Enable/Disable auto_skip keybind
+		can_auto_skip = not can_auto_skip
+		print("Auto Skip is ", can_auto_skip)
 
 func enable_auto_skip() -> void:
 	## Used primarily for actions with no dialogue
@@ -127,9 +136,19 @@ func enable_auto_skip() -> void:
 	## or watch the action scene, then have it automatically go to the next index
 	auto_skip = true
 
-func start_auto_skip_timeout(time_wait : float = 5) -> void:
-	await GlobalTime.local_wait(time_wait)
-	enable_auto_skip()
+func set_auto_skip_wait(new_wait : float) -> void:
+	askip_wait_time = new_wait
+	
+func start_auto_skip_timeout() -> void:
+	## After askip_wait_time seconds, cutscene automatically skips to next action
+	## Difference between doing start_auto_skip_timeout(0) and just enable_auto_skip()
+	##	is that this func can't happen if can_auto_skip disabled, 
+	##	while enable_auto_skip happens regardless of this bool's state.
+	if not can_auto_skip: return
+	
+	if askip_wait_time > 0: await GlobalTime.local_wait(askip_wait_time)
+	await GlobalTime.is_paused == true
+	if can_auto_skip: enable_auto_skip()
 	
 func hide_textbox():
 	display_text("")
