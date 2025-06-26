@@ -101,7 +101,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(RGT_DEF_INTRO) 
 			Work on the actual dialogue/action of the cutscene itself</li>
 			<li>(Base Cutscene) 
-			Camera resets itself to normal zoom in base cutscene</li>
+			Camera resets itself to normal zoom in base cutscene, 
+			added auto skip (func used to instantly skip action when done), 
+			and made action skip automatically after a certain amount of time</li>
 		</ul>
 	</li>
 	<li>

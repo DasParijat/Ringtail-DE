@@ -8,7 +8,7 @@
 [node name="RGT_DEF_INTRO" type="Node2D" node_paths=PackedStringArray("textbox_scene")]
 script = ExtResource("1_fdp6n")
 start_index = 0
-end_index = 16
+end_index = 17
 textbox_scene = NodePath("Textbox")
 
 [node name="ControlContainer" type="CanvasLayer" parent="."]

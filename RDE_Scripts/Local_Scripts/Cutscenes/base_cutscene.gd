@@ -35,6 +35,7 @@ var cutscene_manager_func : StringName = "c_index_handler"
 var current_state = State.READY
 
 var active_tweens : Array = []
+var auto_skip : bool = false
 
 var blank_name : SpeakerName = SpeakerName.new("")
 
@@ -59,6 +60,7 @@ func start_tween(target : Object, property : String, final_value, duration : flo
 		"property": property,
 		"final_value": final_value
 	})
+	change_state(State.READING)
 	return tween
 
 func _on_any_tween_finished(finished_tween : Tween) -> void:
@@ -66,6 +68,7 @@ func _on_any_tween_finished(finished_tween : Tween) -> void:
 	active_tweens = active_tweens.filter(func(info): return info["tween"] != finished_tween)
 	if active_tweens.is_empty() and current_state == State.READING:
 		change_state(State.FINISHED)
+		start_auto_skip_timeout()
 		
 func skip_all_tweens():
 	for tween_info in active_tweens:
@@ -96,10 +99,15 @@ func _process(_delta):
 			if c_index > end_index:
 				change_state(State.COMPLETE)
 			
-			if (Input.is_action_just_pressed("cont_cscene") 
+			if (
+			(
+				Input.is_action_just_pressed("cont_cscene")
+				or auto_skip
+			) 
 			and not GlobalTime.is_paused):
 				change_state(State.PROCESS)
 		State.PROCESS:
+			auto_skip = false
 			change_state(State.READY)
 			#hide_textbox()
 		State.COMPLETE:
@@ -112,7 +120,17 @@ func _process(_delta):
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
 		c_index = end_index + 1
-		
+
+func enable_auto_skip() -> void:
+	## Used primarily for actions with no dialogue
+	## So either the player can skip the action entirely
+	## or watch the action scene, then have it automatically go to the next index
+	auto_skip = true
+
+func start_auto_skip_timeout(time_wait : float = 5) -> void:
+	await GlobalTime.local_wait(time_wait)
+	enable_auto_skip()
+	
 func hide_textbox():
 	display_text("")
 	speaker_name.text = ""

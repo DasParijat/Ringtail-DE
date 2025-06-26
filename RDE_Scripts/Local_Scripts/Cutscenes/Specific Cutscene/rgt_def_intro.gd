@@ -39,6 +39,7 @@ func cutscene_handler() -> void:
 			display_text("…now it’s time to stop this nefarious beast!", oswald_name)
 		7:
 			hide_textbox()
+			enable_auto_skip()
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.4)
 			start_tween(oswald, "global_position", Vector2(0, 800), 0.8)
 		8:
@@ -65,6 +66,7 @@ func cutscene_handler() -> void:
 			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.2)
 		15:
 			hide_textbox()
+			enable_auto_skip()
 			start_tween(camera_2d, "position", Vector2(0, 0), 0.3)
 			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.9)
 			start_tween(oswald, "modulate", Color(1,1,1,1), 0.5)
@@ -73,7 +75,7 @@ func cutscene_handler() -> void:
 			start_tween(oswald, "global_position", Vector2(0, 20), 0.5)
 			display_text("It's over! No more games now!", oswald_name)
 		17:
-			pass
+			display_text("I’m ending you here once and for all!", oswald_name)
 		18:
 			pass
 		19:
