@@ -12,4 +12,4 @@ LEVEL_NAME = "STORY_RGT_EASY"
 DISPLAY_NAME = "Ringtail - Easy"
 LEVEL_DESC = "This is ringtail easy"
 THUMBNAIL = ExtResource("1_55os8")
-order = Array[Resource]([ExtResource("2_s6135"), ExtResource("1_4wg3f"), ExtResource("1_k8og1"), ExtResource("2_s6135")])
+order = Array[Resource]([ExtResource("2_s6135"), ExtResource("1_k8og1"), ExtResource("1_4wg3f"), ExtResource("2_s6135")])

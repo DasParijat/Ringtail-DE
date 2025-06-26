@@ -95,6 +95,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/26/25)
+			<li>(Ringtail Fight Res) 
+			Fixed spawn point so both boss and player are at x = 0</li>
+			<li>(RGT_DEF_INTRO) 
+			Work on the actual dialogue/action of the cutscene itself</li>
+			<li>(Base Cutscene) 
+			Camera resets itself to normal zoom in base cutscene</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/25/25)
 			<li>(General) 
 			Added VS Code gitignore</li>

@@ -44,6 +44,7 @@ func _ready() -> void:
 func _base_ready() -> void:
 	## Call from extended cutscene
 	GlobalScene.connect("skip_cutscene", Callable(self, "_on_skip_cutscene"))
+	camera_2d.zoom = Vector2(1, 1)
 	c_index = start_index - 1
 	
 func start_tween(target : Object, property : String, final_value, duration : float) -> Tween:

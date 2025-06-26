@@ -14,5 +14,5 @@ single_boss = ExtResource("4_eiouy")
 single_boss_spawn = Vector2(0, -200)
 min_win_time = 60
 player_scene = ExtResource("2_iwg70")
-player_spawn = Vector2(100, 20)
+player_spawn = Vector2(0, 20)
 gun_array = Array[ExtResource("1_2pkhf")]([])
