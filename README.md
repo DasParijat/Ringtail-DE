@@ -105,11 +105,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Started work on RGT_DEF_OUTRO cutscene</li>
 			<li>(Audio) 
 			Added menu music theme, might change in future</li>
+			<li>(Images) 
+			Added new modified tilesets for RGT_Plains (Grass 2 and Flowers)</li>
 			<li>(Game Camera / Modes) 
 			Added a "Fixed Cam" mode, that keeps the camera zoomed out 
 			and fixed on the center of the screen</li>
 			<li>(RGT_Plains / World Scenes) 
 			No longer plays walking audio if cur_scene_type is not FIGHT</li>
+			<li>(RGT_Plains) 
+			Changed tile map design, 
+			added flower layer, more seamless border tile (denser grass),
+			and in general made grass beyond the border more denser</li>
 			<li>(Load Screen) 
 			Load screen now resets engine time scale to 1</li>
 		</ul>

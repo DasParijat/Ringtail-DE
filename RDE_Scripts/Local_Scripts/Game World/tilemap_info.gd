@@ -30,4 +30,4 @@ func _process(delta : float) -> void:
 										target_volume, 
 										delta * volume_transition_speed)
 	else:
-		audio_player.volume_db = 0.0
+		audio_player.volume_db = -80.0
