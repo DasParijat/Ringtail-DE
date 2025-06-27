@@ -24,7 +24,10 @@ func _process(delta : float) -> void:
 	if audio_player == null:
 		return
 	
-	var target_volume = max_volume if GlobalPlayer.is_moving and !GlobalTime.is_paused else min_volume
-	audio_player.volume_db = lerp(audio_player.volume_db, 
-									target_volume, 
-									delta * volume_transition_speed)
+	if GlobalScene.cur_scene_type == GlobalScene.SceneType.FIGHT:
+		var target_volume = max_volume if GlobalPlayer.is_moving and !GlobalTime.is_paused else min_volume
+		audio_player.volume_db = lerp(audio_player.volume_db, 
+										target_volume, 
+										delta * volume_transition_speed)
+	else:
+		audio_player.volume_db = 0.0

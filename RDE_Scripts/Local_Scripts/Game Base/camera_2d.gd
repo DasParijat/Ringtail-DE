@@ -50,10 +50,14 @@ func _process(delta : float) -> void:
 
 		player_power_handling(1.2, 10)
 		gun_shake(delta)
-		
+	
 	if track_player:
-		set_position(fight_node.player_pos * player_tracking_speed)
-		offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
+		if "fixed_cam" in GlobalScene.next_level_modes:
+			set_position(Vector2(0, 0))
+			zoom = zoom.lerp(Vector2(0.4, 0.4), delta * 10)
+		else:
+			set_position(fight_node.player_pos * player_tracking_speed)
+			offset = lerp(offset, (lean_cam() + shake_offset), delta * smooth_offset)
 		
 		gun_aim(1)
 	elif track_boss:

@@ -14,6 +14,7 @@ var scene_name : String = GlobalScene.HOME_MENU
 # if not working, scene loads to main menu
 
 func _ready() -> void:
+	Engine.time_scale = 1 # Ensures time scale is normal when loading next scene
 	await scene_transition.enter_anim()
 	
 	if GlobalScene.next_scene:
