@@ -13,7 +13,7 @@
 script = ExtResource("1_rqpie")
 HP_NAME = "Ringtail EASY"
 is_player = false
-MAX_HP = 120
+MAX_HP = 20
 damage_rate = 1.0
 invicible = false
 

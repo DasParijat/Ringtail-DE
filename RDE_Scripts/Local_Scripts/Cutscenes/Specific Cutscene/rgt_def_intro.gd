@@ -10,7 +10,6 @@ extends BaseCutscene
 # Speaker names
 var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
 var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
-var date_name : SpeakerName = SpeakerName.new("September 1996", Color.WHITE_SMOKE)
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"

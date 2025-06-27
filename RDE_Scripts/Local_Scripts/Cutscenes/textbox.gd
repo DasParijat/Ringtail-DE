@@ -9,6 +9,9 @@ extends CanvasLayer
 @onready var start: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start
 @onready var end: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End
 
+func _ready() -> void:
+	set_font_size() # Reset font size
+
 func set_font_size(new_size : int = 25):
 	## Sets font size of label text
 	## Default size is 25
