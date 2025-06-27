@@ -38,7 +38,7 @@ var active_tweens : Array = []
 
 var auto_skip : bool = false
 var askip_wait_time : float = 5.0
-var can_auto_skip : bool = true
+var can_auto_skip : bool = false
 
 var blank_name : SpeakerName = SpeakerName.new("")
 

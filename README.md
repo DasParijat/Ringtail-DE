@@ -95,6 +95,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/27/25)
+			<li>(Textbox) 
+			Added func to modify dialog text font size</li>
+			<li>(RGT_DEF_INTRO) 
+			Mostly finished cutscene</li>
+			<li>(Audio) 
+			Added menu music theme, might change in future</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/26/25)
 			<li>(Ringtail Fight Res) 
 			Fixed spawn point so both boss and player are at x = 0</li>
