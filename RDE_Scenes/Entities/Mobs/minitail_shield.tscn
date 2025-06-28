@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqg46hvjh5kim"]
+[gd_scene load_steps=6 format=3 uid="uid://bqg46hvjh5kim"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/minitail_shield.gd" id="1_kpgt2"]
 [ext_resource type="Resource" uid="uid://c3l8dxjdu4611" path="res://RDE_Resources/Mob Res/MinitailSHIELD.tres" id="2_2usdi"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="3_pd22j"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/mob_controller.gd" id="4_5r341"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0sn7r"]
+cull_mode = 1
+polygon = PackedVector2Array(-1.03359, 22.2222, 6.20155, 23.2558, 14.4703, 22.739, 22.739, 18.0879, 26.3566, 14.9871, 29.9742, 8.78553, 31.0078, 2.06718, 30.491, -3.10078, 26.3566, -10.3359, 20.6718, -18.0879, 11.3695, -22.739, 0, -22, -9, -20, -12.9199, -16.5375, -17.0543, -10.3359, -20.155, -4.13437, -19.6382, 3.61757, -17.5711, 9.81912, -14, 15, -8, 19)
 
 [node name="Minitail_Shield" type="Node2D" node_paths=PackedStringArray("base", "controller")]
 script = ExtResource("1_kpgt2")
@@ -12,6 +16,11 @@ base = NodePath("base_mob")
 controller = NodePath("MobController")
 
 [node name="base_mob" parent="." instance=ExtResource("3_pd22j")]
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="base_mob"]
+modulate = Color(1, 1, 1, 0.196078)
+scale = Vector2(1.8, 1.8)
+occluder = SubResource("OccluderPolygon2D_0sn7r")
 
 [node name="MobController" type="Node2D" parent="." node_paths=PackedStringArray("base")]
 script = ExtResource("4_5r341")

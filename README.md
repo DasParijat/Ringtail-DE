@@ -95,6 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/28/25)
+			<li>(General) 
+			Toning down the lighting and shadows</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/27/25)
 			<li>(General) 
 			Experimenting with lights and shadows</li>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://43ajotxx3qd3"]
+[gd_scene load_steps=7 format=3 uid="uid://43ajotxx3qd3"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/base_mob.gd" id="1_2vok1"]
 [ext_resource type="Texture2D" uid="uid://tfmw6jtjwy2m" path="res://RDE_Images/explosion1.png" id="2_eg004"]
@@ -10,10 +10,6 @@
 bg_color = Color(0, 0, 0, 0.568627)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i0y3"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vu5pt"]
-cull_mode = 1
-polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
 
 [node name="base_mob" type="CharacterBody2D"]
 z_index = 2
@@ -52,10 +48,6 @@ scale = Vector2(4, 4)
 [node name="HitboxCollision" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_6i0y3")
 debug_color = Color(0.652427, 0.51261, 0.223088, 0.42)
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-scale = Vector2(1.935, 1.935)
-occluder = SubResource("OccluderPolygon2D_vu5pt")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

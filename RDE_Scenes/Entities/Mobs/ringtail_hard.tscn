@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cja72mr27m4j3"]
+[gd_scene load_steps=11 format=3 uid="uid://cja72mr27m4j3"]
 
 [ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="2_ei6ni"]
 [ext_resource type="Resource" uid="uid://c8ri6vf360a65" path="res://RDE_Resources/Mob Res/RingtailHARD.tres" id="2_opmw5"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="2_rfnyv"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/ringtail_hard.gd" id="3_i4b22"]
 [ext_resource type="PackedScene" uid="uid://dvady2m7qh3xl" path="res://RDE_Scenes/Base Entities/mob_spawner.tscn" id="4_u45r0"]
+[ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="6_hq8q1"]
 
 [sub_resource type="Gradient" id="Gradient_j8dim"]
 interpolation_color_space = 2
@@ -15,6 +16,10 @@ colors = PackedColorArray(1, 1, 1, 0.509804, 0.0318836, 0.0318836, 0.0318836, 1,
 gradient = SubResource("Gradient_j8dim")
 fill = 1
 fill_from = Vector2(0.518868, 0.509434)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m08eb"]
+cull_mode = 1
+polygon = PackedVector2Array(-1.03359, 22.2222, 6.20155, 23.2558, 14.4703, 22.739, 22.739, 18.0879, 26.3566, 14.9871, 29.9742, 8.78553, 31.0078, 2.06718, 30.491, -3.10078, 26.3566, -10.3359, 20.6718, -18.0879, 11.3695, -22.739, 0, -22, -9, -20, -12.9199, -16.5375, -17.0543, -10.3359, -20.155, -4.13437, -19.6382, 3.61757, -17.5711, 9.81912, -14, 15, -8, 19)
 
 [sub_resource type="LabelSettings" id="LabelSettings_acbnr"]
 font_size = 50
@@ -30,12 +35,21 @@ reducaed_transition_dmg_rate = 0.4
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
 
 [node name="PointLight2D" type="PointLight2D" parent="base_mob"]
-visible = false
 scale = Vector2(2, 2)
 color = Color(0.92, 0.61364, 0.2392, 1)
+energy = 1.05
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.239216)
 texture = SubResource("GradientTexture2D_6whia")
+
+[node name="Sprite2D2" type="Sprite2D" parent="base_mob"]
+visible = false
+texture = ExtResource("6_hq8q1")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="base_mob"]
+modulate = Color(1, 1, 1, 0.196078)
+scale = Vector2(1.8, 1.8)
+occluder = SubResource("OccluderPolygon2D_m08eb")
 
 [node name="MobController" parent="." node_paths=PackedStringArray("base", "attack_label") instance=ExtResource("2_ei6ni")]
 base = NodePath("../base_mob")
