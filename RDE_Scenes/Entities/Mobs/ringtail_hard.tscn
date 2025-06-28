@@ -1,10 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cja72mr27m4j3"]
+[gd_scene load_steps=9 format=3 uid="uid://cja72mr27m4j3"]
 
 [ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="2_ei6ni"]
 [ext_resource type="Resource" uid="uid://c8ri6vf360a65" path="res://RDE_Resources/Mob Res/RingtailHARD.tres" id="2_opmw5"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="2_rfnyv"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/ringtail_hard.gd" id="3_i4b22"]
 [ext_resource type="PackedScene" uid="uid://dvady2m7qh3xl" path="res://RDE_Scenes/Base Entities/mob_spawner.tscn" id="4_u45r0"]
+
+[sub_resource type="Gradient" id="Gradient_j8dim"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.743243, 1)
+colors = PackedColorArray(1, 1, 1, 0.509804, 0.0318836, 0.0318836, 0.0318836, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6whia"]
+gradient = SubResource("Gradient_j8dim")
+fill = 1
+fill_from = Vector2(0.518868, 0.509434)
 
 [sub_resource type="LabelSettings" id="LabelSettings_acbnr"]
 font_size = 50
@@ -18,6 +28,14 @@ spawner = NodePath("MobSpawner")
 reducaed_transition_dmg_rate = 0.4
 
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
+
+[node name="PointLight2D" type="PointLight2D" parent="base_mob"]
+visible = false
+scale = Vector2(2, 2)
+color = Color(0.92, 0.61364, 0.2392, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.239216)
+texture = SubResource("GradientTexture2D_6whia")
 
 [node name="MobController" parent="." node_paths=PackedStringArray("base", "attack_label") instance=ExtResource("2_ei6ni")]
 base = NodePath("../base_mob")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5yku1mrxehwp"]
+[gd_scene load_steps=11 format=3 uid="uid://b5yku1mrxehwp"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/base_player.gd" id="1_ssgha"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_640n3"]
+[ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="2_yhe0l"]
 [ext_resource type="AudioStream" uid="uid://dxrffalrjmi6x" path="res://RDE_Audio/Gun Audio/ak47 base sound effect.mp3" id="3_26ssd"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/power_audio_player.gd" id="4_uidep"]
 
@@ -16,6 +17,10 @@ point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ftfls"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pfr3s"]
+cull_mode = 1
+polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
+
 [node name="base_player" type="CharacterBody2D" groups=["Hittable", "Player"]]
 script = ExtResource("1_ssgha")
 
@@ -24,6 +29,7 @@ shape = SubResource("CircleShape2D_yiybb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
+texture = ExtResource("2_yhe0l")
 
 [node name="IFrameTimer" parent="." instance=ExtResource("2_640n3")]
 wait_time = 0.5
@@ -67,6 +73,10 @@ shape = SubResource("CircleShape2D_bt7uj")
 [node name="HostileDetectCollision" type="CollisionShape2D" parent="HostileDetection"]
 scale = Vector2(12, 12)
 shape = SubResource("CircleShape2D_ftfls")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_pfr3s")
+sdf_collision = false
 
 [connection signal="player_res_set" from="." to="PowerAudioPlayer" method="_on_base_player_player_res_set"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

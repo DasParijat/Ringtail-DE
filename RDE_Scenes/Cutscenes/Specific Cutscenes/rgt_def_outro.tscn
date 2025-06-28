@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://rnutankl4tao"]
+[gd_scene load_steps=6 format=3 uid="uid://rnutankl4tao"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_def_outro.gd" id="1_rms58"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="2_4f121"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="3_8x0mn"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="4_qikk6"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tyfbt"]
+cull_mode = 1
+polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
 
 [node name="RGT_DEF_OUTRO" type="Node2D" node_paths=PackedStringArray("textbox_scene")]
 script = ExtResource("1_rms58")
@@ -38,8 +42,14 @@ position = Vector2(620, 340)
 rotation = -1.5708
 texture = ExtResource("3_8x0mn")
 
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="ActorContainer/Oswald"]
+occluder = SubResource("OccluderPolygon2D_tyfbt")
+
 [node name="Ringtail" type="Sprite2D" parent="ActorContainer"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(620, 340)
 texture = ExtResource("4_qikk6")
 flip_v = true
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="ActorContainer/Ringtail"]
+occluder = SubResource("OccluderPolygon2D_tyfbt")

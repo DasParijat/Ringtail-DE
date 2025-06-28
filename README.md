@@ -96,6 +96,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(6/27/25)
+			<li>(General) 
+			Experimenting with lights and shadows</li>
 			<li>(Textbox) 
 			Added func to modify dialog text font size,
 			font size resets everytime Textbox is initialized</li>
@@ -115,7 +117,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(RGT_Plains) 
 			Changed tile map design, 
 			added flower layer, more seamless border tile (denser grass),
-			and in general made grass beyond the border more denser</li>
+			and in general made grass beyond the border more denser,
+			Added a point light 2d to create a sunset vibe</li>
 			<li>(Load Screen) 
 			Load screen now resets engine time scale to 1</li>
 		</ul>
