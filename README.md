@@ -95,6 +95,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/29/25)
+			<li>(Ringtails / Ringtail Fight Res) 
+			Added action0 that plays in beginning of fight,
+			also changed spawn point of Ringtail to be closer to player</li>
+			<li>(Fight UI) 
+			Made the Hurt Overlay slightly less transparent</li>
+			<li>(RGT_DEF_INTRO) 
+			Adjusted camera work for intro scene</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/28/25)
 			<li>(General) 
 			Toning down the lighting and shadows</li>

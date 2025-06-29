@@ -35,6 +35,7 @@ reducaed_transition_dmg_rate = 0.4
 [node name="base_mob" parent="." instance=ExtResource("2_rfnyv")]
 
 [node name="PointLight2D" type="PointLight2D" parent="base_mob"]
+visible = false
 scale = Vector2(2, 2)
 color = Color(0.92, 0.61364, 0.2392, 1)
 energy = 1.05

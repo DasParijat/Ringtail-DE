@@ -182,7 +182,6 @@ func change_state(next_state):
 	current_state = next_state
 
 func _on_tween_completed(_object, _key):
-	#end_symbol.text = "v"
 	change_state(State.FINISHED)
 
 func _on_skip_cutscene() -> void:

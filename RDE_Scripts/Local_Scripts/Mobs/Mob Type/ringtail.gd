@@ -50,10 +50,18 @@ func phase_handler(num_of_phases : int) -> void:
 	if phase != new_phase:
 		spawner.spawn_mob(eoths, base.get_rand_player_pos(0,0,0,0), true)
 		phase = new_phase
+
+func action0() -> void:
+	## Initial action
+	base.action("observe_player", 0.5)
+	await GlobalTime.local_wait(0.5)
+	base.action("move_torward_point", {"target": base.get_rand_player_pos(200, 600, 200, 600), "delay": 0, "speed": 350, "length": 0.5})
+	await GlobalTime.local_wait(0.5)
+	
+	controller.hold(false)
 	
 func action1() -> void:
 	## Follow player
-	mob_res.sprtflip_enabled = false
 	for i in range(1 + phase):
 		base.action("move_torward_player", {"offset": 1, "speed": randi_range(100, 200) * (phase / 1.5), "length": 1})
 		await GlobalTime.local_wait(1)

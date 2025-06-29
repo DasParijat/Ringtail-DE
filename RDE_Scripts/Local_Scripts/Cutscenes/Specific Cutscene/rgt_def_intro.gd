@@ -69,7 +69,7 @@ func cutscene_handler() -> void:
 		15:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(camera_2d, "position", Vector2(0, 0), 0.3)
+			start_tween(camera_2d, "position", Vector2(0, -20), 0.2)
 			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.9)
 			start_tween(oswald, "modulate", Color(1,1,1,1), 0.5)
 		16:
@@ -106,7 +106,9 @@ func cutscene_handler() -> void:
 		27:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(ringtail, "global_position", Vector2(0, -200), 0.3)
+			start_tween(ringtail, "global_position", Vector2(0, -200), 0.2)
+			start_tween(camera_2d, "position", Vector2(0, -150), 0.3)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.3)
 		28:
 			show_textbox()
 			display_text("Very well then", ringtail_name)
@@ -114,9 +116,12 @@ func cutscene_handler() -> void:
 			display_text("If you wanna die here, who am I to decline?", ringtail_name)
 		30:
 			start_tween(oswald, "global_position", Vector2(0, 20), 0.4)
+			start_tween(camera_2d, "position", Vector2(0, 20), 0.4)
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.5)
 			display_text("You’re the one dying here…", oswald_name)
 		31:
 			display_text("…Ringtail", oswald_name, 0.07)
+			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.5)
 		_:
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
 			start_tween(oswald, "modulate", Color(1,1,1,0), 0.2)

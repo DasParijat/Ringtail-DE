@@ -1,16 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://chmgqrrxxdgml"]
+[gd_scene load_steps=3 format=3 uid="uid://chmgqrrxxdgml"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/base_cutscene.gd" id="1_micxl"]
-[ext_resource type="Texture2D" uid="uid://djl1livyvdd5n" path="res://RDE_Images/rt_minitailSPEED.png" id="2_1ibwt"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="3_u6ixa"]
 
 [node name="Base Cutscene" type="Node2D" node_paths=PackedStringArray("textbox_scene")]
 script = ExtResource("1_micxl")
 textbox_scene = NodePath("Textbox")
-
-[node name="FakeActor" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(644, 287)
-texture = ExtResource("2_1ibwt")
 
 [node name="Textbox" parent="." instance=ExtResource("3_u6ixa")]

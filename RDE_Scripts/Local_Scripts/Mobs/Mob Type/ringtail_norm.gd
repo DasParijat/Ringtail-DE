@@ -1,13 +1,14 @@
 extends Ringtail
 # NORMAL
 
-@export var cur_sequence : Array[int] = [1,2,3,7]
+@export var cur_sequence : Array[int] = [0,1,2,3,7]
 
 func _process(delta : float) -> void:
 	phase_handler(2)
 	total_delta += delta
 	
 	controller.action_sequence(cur_sequence)
+	
 	# Wish there was a traditional switch statement
 	if phase >= 1:
 		phase1()
