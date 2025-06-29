@@ -19,7 +19,7 @@ func _ready() -> void:
 	
 	ringtail.global_position = Vector2(0, -210)
 	oswald.global_position = Vector2(0, 40)
-	camera_2d.global_position = Vector2(0, -85)
+	camera_2d.global_position = Vector2(0, -70)
 	
 	_base_ready()
 
@@ -27,9 +27,10 @@ func cutscene_handler() -> void:
 	match c_index:
 		1:
 			hide_textbox()
-			#enable_auto_skip()
+			enable_auto_skip()
 			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.1)
 			start_tween(oswald, "modulate", Color(1,1,1,1), 0.1)
+			start_tween(camera_2d, "global_position", Vector2(0,-85), 2)
 		2:
 			show_textbox()
 			display_text("*breathing heavily*", oswald_name)

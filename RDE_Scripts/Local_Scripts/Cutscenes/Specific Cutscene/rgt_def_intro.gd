@@ -37,7 +37,7 @@ func cutscene_handler() -> void:
 			display_text("People are moving out, stores shutting down, 
 						and the cops have barely made a dent", oswald_name)
 		4:
-			display_text("But I refuse to cower to it", oswald_name, 0.03)
+			display_text("But I refuse to cower to it", oswald_name, 0.04)
 		5:
 			display_text("I studied it, I trained for it, and now…", oswald_name)
 		6:
@@ -59,12 +59,12 @@ func cutscene_handler() -> void:
 		11:
 			display_text("...No", oswald_name, 0.05)
 		12:
-			display_text("... I’ve made my decision already", oswald_name, 0.03)
+			display_text("... I’ve made my decision already", oswald_name, 0.04)
 		13:
 			display_text("*Hangs up phone*", oswald_name)
 		14:
 			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.3)
-			display_text("Look who we have here", ringtail_name, 0.03)
+			display_text("Look who we have here", ringtail_name, 0.04)
 			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.2)
 		15:
 			hide_textbox()

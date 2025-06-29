@@ -98,6 +98,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(6/28/25)
 			<li>(General) 
 			Toning down the lighting and shadows</li>
+			<li>(Base Cutscene) 
+			Textbox will always show if text is being displayed (Solved bug with textbox visibility),
+			Show and Hide func's use start_tween instead of built in tween property,
+			Common read rate increase from 0.02 to 0.03</li>
+			<li>(RGT_DEF_OUTRO) 
+			Cutscene starts off with no text longer,
+			fixed issue of auto skip not working on first index</li>
 		</ul>
 	</li>
 	<li>

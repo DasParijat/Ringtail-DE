@@ -4,7 +4,7 @@ extends Node2D
 # TODO - Change styling so it's compatible with Ringtail DE
 # TODO - Set this up as a base cutscene class
 
-const CHAR_READ_RATE = 0.02
+const CHAR_READ_RATE = 0.03
 
 @export var start_index : int = 1
 @export var end_index : int = 4
@@ -111,6 +111,7 @@ func _process(_delta):
 				change_state(State.PROCESS)
 		State.PROCESS:
 			auto_skip = false
+			active_tweens = []
 			change_state(State.READY)
 			#hide_textbox()
 		State.COMPLETE:
@@ -152,25 +153,22 @@ func start_auto_skip_timeout() -> void:
 	
 func hide_textbox():
 	display_text("")
-	speaker_name.text = ""
-	start_symbol.text = ""
-	end_symbol.text = ""
-	dialog_text.text = ""
 	
 	if textbox_container.modulate.a > 0:
-		var tween = create_tween()
-		tween.tween_property(textbox_container, "modulate:a", 0, 0.2)
-		await tween.finished
+		start_tween(textbox_container, "modulate", Color(1,1,1,0), 0.2)
+		await GlobalTime.local_wait(0.2)
 	textbox_container.hide()
 
 func show_textbox():
-	#start_symbol.text = "*"
 	textbox_container.show()
 	if textbox_container.modulate.a < 1:
-		var tween = create_tween()
-		tween.tween_property(textbox_container, "modulate:a", 1, 0.2)
+		start_tween(textbox_container, "modulate", Color(1,1,1,1), 0.2)
 
 func display_text(text : String, speaker : SpeakerName = blank_name, read_rate : float = CHAR_READ_RATE):
+	if text != "":
+		# Ensures textbox is always visible when there is given text
+		show_textbox()
+	
 	speaker_name.text = speaker.text
 	speaker_name.modulate = speaker.color
 	

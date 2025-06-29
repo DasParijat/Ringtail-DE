@@ -642,9 +642,9 @@ volume_db = -80.0
 autoplay = true
 
 [node name="SunLight" type="PointLight2D" parent="."]
-position = Vector2(-3000, -2000)
-scale = Vector2(200, 200)
-color = Color(1, 0.31, 0.08, 0.505882)
+position = Vector2(-1973, -1312)
+scale = Vector2(52.6665, 52.6665)
+color = Color(1, 0.31, 0.08, 0.352941)
 shadow_color = Color(0.42126, 0.2142, 0.51, 0.0627451)
 texture = SubResource("GradientTexture2D_rr3xp")
 height = 1000.0
