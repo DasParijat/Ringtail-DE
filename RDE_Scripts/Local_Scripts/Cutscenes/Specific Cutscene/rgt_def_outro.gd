@@ -1,6 +1,6 @@
 extends BaseCutscene
 
-@onready var textbox : Textbox = $Textbox
+@onready var textbox : TextBox = $Textbox
 
 # Actors
 @onready var oswald : Sprite2D = $ActorContainer/Oswald
@@ -35,31 +35,38 @@ func cutscene_handler() -> void:
 			show_textbox()
 			display_text("*breathing heavily*", oswald_name)
 		3:
-			display_text("*cough* It seems I underestimated you.", ringtail_name)
+			display_text("*cough* It seems I underestimated you", ringtail_name)
 		4:
-			pass
+			display_text("*cough*", ringtail_name)
 		5:
-			pass
+			display_text("That’s right", oswald_name)
 		6:
-			pass
+			display_text("All that training, and now…", oswald_name)
+			start_tween(oswald, "global_position", Vector2(0, -100), 0.5)
+			start_tween(camera_2d, "global_position", Vector2(0, -150), 0.5)
+			start_tween(camera_2d, "zoom", Vector2(1.1, 1.1), 0.5)
 		7:
-			pass
+			display_text("…now it’s over", oswald_name)
 		8:
-			pass
+			display_text("I, Oswald Jones, have brought justice to Plankwood!", oswald_name)
 		9:
-			pass
+			display_text("Maybe even the world!", oswald_name)
 		10:
-			pass
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(camera_2d, "global_position", Vector2(0, -160), 1)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 1)
 		11:
-			pass
+			display_text("Ha…", ringtail_name)
 		12:
-			pass
+			display_text("What?", oswald_name)
+			start_tween(oswald, "global_position", Vector2(0, -80), 0.3)
 		13:
-			pass
+			display_text("*cough* It seems I underestimated you.", ringtail_name)
 		14:
-			pass
+			display_text("*cough* It seems I underestimated you.", ringtail_name)
 		15:
-			pass
+			display_text("*cough* It seems I underestimated you.", ringtail_name)
 		16:
 			pass
 		17:

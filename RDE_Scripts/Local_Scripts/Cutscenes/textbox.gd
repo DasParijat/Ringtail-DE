@@ -1,4 +1,4 @@
-class_name Textbox
+class_name TextBox
 extends CanvasLayer
 
 @onready var textbox_container : Container = $TextboxContainer

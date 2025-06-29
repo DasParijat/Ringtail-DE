@@ -8,7 +8,7 @@ const CHAR_READ_RATE = 0.03
 
 @export var start_index : int = 1
 @export var end_index : int = 4
-@export var textbox_scene : Textbox
+@export var textbox_scene : TextBox
 #@export var cutscene_holder : Node
 
 @onready var textbox_container : Container = textbox_scene.textbox_container
