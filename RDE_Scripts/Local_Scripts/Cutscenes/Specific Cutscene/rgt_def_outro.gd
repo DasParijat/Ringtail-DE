@@ -26,12 +26,16 @@ func _ready() -> void:
 func cutscene_handler() -> void:
 	match c_index:
 		1:
-			hide_textbox()
+			textbox_container.hide()
+			textbox_container.modulate.a = 0
+			key_hint_scene.hide()
+			#hide_textbox()
 			enable_auto_skip()
 			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.1)
 			start_tween(oswald, "modulate", Color(1,1,1,1), 0.1)
 			start_tween(camera_2d, "global_position", Vector2(0,-85), 2)
 		2:
+			if GlobalSettings.visible_hints: key_hint_scene.show()
 			show_textbox()
 			display_text("*breathing heavily*", oswald_name)
 		3:

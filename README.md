@@ -95,6 +95,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(6/30/25)
+			<li>(RGT_DEF_INTRO) 
+			Added code to make hiding cutscene elements in the beginning better</li>
+			<li>(CSceneKeyHint) 
+			Key Hint fades when exiting tree (cutscene ends),
+			also not visible if visible hints disabled in settings</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(6/29/25)
 			<li>(Ringtails / Ringtail Fight Res) 
 			Added action0 that plays in beginning of fight,
