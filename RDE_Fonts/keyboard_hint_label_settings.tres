@@ -6,4 +6,4 @@ font_names = PackedStringArray("Bahnschrift")
 [resource]
 line_spacing = 1.0
 font = SubResource("SystemFont_lxji3")
-font_size = 27
+font_size = 25

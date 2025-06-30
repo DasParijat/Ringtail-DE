@@ -103,6 +103,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Made the Hurt Overlay slightly less transparent</li>
 			<li>(RGT_DEF_INTRO) 
 			Adjusted camera work for intro scene</li>
+			<li>(Base Cutscene / Textbox) 
+			Added key hint for continuing cutscene</li>
 		</ul>
 	</li>
 	<li>

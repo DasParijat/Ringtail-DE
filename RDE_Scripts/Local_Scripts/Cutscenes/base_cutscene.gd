@@ -15,6 +15,9 @@ const CHAR_READ_RATE = 0.03
 @onready var speaker_name : Label = textbox_scene.speaker_name
 @onready var dialog_text : Label = textbox_scene.dialog_text
 
+@onready var cont_hint : Container = textbox_scene.cont_hint
+@onready var cont_hint_label : Label = textbox_scene.cont_label
+
 @onready var start_symbol : Label = textbox_scene.start
 @onready var end_symbol : Label = textbox_scene.end
 
@@ -70,6 +73,7 @@ func _on_any_tween_finished(finished_tween : Tween) -> void:
 	# Remove the finished tween from the array
 	active_tweens = active_tweens.filter(func(info): return info["tween"] != finished_tween)
 	if active_tweens.is_empty() and current_state == State.READING:
+		start_tween(cont_hint, "modulate", Color(1,1,1,1), 0.1)
 		change_state(State.FINISHED)
 		start_auto_skip_timeout()
 		
@@ -85,12 +89,14 @@ func skip_all_tweens():
 		# Kill the tween if still running
 		if tween and tween.is_running():
 			tween.kill()
+	start_tween(cont_hint, "modulate", Color(1,1,1,1), 0.1)
 	active_tweens.clear()
 
 func _process(_delta):
 	match current_state:
 		State.READY:
 			c_index += 1
+			start_tween(cont_hint, "modulate", Color(1,1,1,0), 0.1)
 			call(cutscene_manager_func)
 		State.READING:
 			if (Input.is_action_just_pressed("cont_cscene") or c_index > end_index 
@@ -99,6 +105,7 @@ func _process(_delta):
 				
 				change_state(State.FINISHED)
 		State.FINISHED:
+			cont_hint_label.text = "Continue"
 			if c_index > end_index:
 				change_state(State.COMPLETE)
 			
