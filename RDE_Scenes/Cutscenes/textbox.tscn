@@ -1,8 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr6fmxbctycup"]
+[gd_scene load_steps=8 format=3 uid="uid://dr6fmxbctycup"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/textbox.gd" id="1_7hiao"]
-[ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="2_um773"]
-[ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="2_vvcuq"]
 
 [sub_resource type="Gradient" id="Gradient_6ag0q"]
 offsets = PackedFloat32Array(0, 0.689655, 1)
@@ -92,30 +90,3 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 8
 text = "v"
-
-[node name="KeyHintContainer" type="MarginContainer" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -151.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 20
-
-[node name="Cont Hint" type="HBoxContainer" parent="KeyHintContainer"]
-layout_mode = 2
-
-[node name="ContLabel" type="Label" parent="KeyHintContainer/Cont Hint"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Continue"
-label_settings = ExtResource("2_um773")
-
-[node name="Key" type="TextureRect" parent="KeyHintContainer/Cont Hint"]
-layout_mode = 2
-texture = ExtResource("2_vvcuq")
-expand_mode = 3

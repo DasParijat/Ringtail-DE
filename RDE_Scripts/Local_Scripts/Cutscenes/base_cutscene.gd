@@ -9,14 +9,14 @@ const CHAR_READ_RATE = 0.03
 @export var start_index : int = 1
 @export var end_index : int = 4
 @export var textbox_scene : TextBox
-#@export var cutscene_holder : Node
+@export var key_hint_scene : CSceneKeyHint
 
 @onready var textbox_container : Container = textbox_scene.textbox_container
 @onready var speaker_name : Label = textbox_scene.speaker_name
 @onready var dialog_text : Label = textbox_scene.dialog_text
 
-@onready var cont_hint : Container = textbox_scene.cont_hint
-@onready var cont_hint_label : Label = textbox_scene.cont_label
+@onready var cont_hint : Container = key_hint_scene.cont_hint
+@onready var cont_hint_label : Label = key_hint_scene.cont_label
 
 @onready var start_symbol : Label = textbox_scene.start
 @onready var end_symbol : Label = textbox_scene.end
@@ -73,7 +73,7 @@ func _on_any_tween_finished(finished_tween : Tween) -> void:
 	# Remove the finished tween from the array
 	active_tweens = active_tweens.filter(func(info): return info["tween"] != finished_tween)
 	if active_tweens.is_empty() and current_state == State.READING:
-		start_tween(cont_hint, "modulate", Color(1,1,1,1), 0.1)
+		if dialog_text.text != "": key_hint_scene.fade_in()
 		change_state(State.FINISHED)
 		start_auto_skip_timeout()
 		
@@ -96,7 +96,7 @@ func _process(_delta):
 	match current_state:
 		State.READY:
 			c_index += 1
-			start_tween(cont_hint, "modulate", Color(1,1,1,0), 0.1)
+			key_hint_scene.fade_out()
 			call(cutscene_manager_func)
 		State.READING:
 			if (Input.is_action_just_pressed("cont_cscene") or c_index > end_index 
@@ -165,9 +165,11 @@ func hide_textbox():
 		start_tween(textbox_container, "modulate", Color(1,1,1,0), 0.2)
 		await GlobalTime.local_wait(0.2)
 	textbox_container.hide()
-
+	cont_hint.hide()
+	
 func show_textbox():
 	textbox_container.show()
+	if key_hint_scene.enable_anim: cont_hint.show()
 	if textbox_container.modulate.a < 1:
 		start_tween(textbox_container, "modulate", Color(1,1,1,1), 0.2)
 

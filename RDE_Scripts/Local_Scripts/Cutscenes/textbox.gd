@@ -9,9 +9,6 @@ extends CanvasLayer
 @onready var start: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/Start
 @onready var end: Label = $TextboxContainer/MarginContainer/VBoxContainer/HBoxContainer/End
 
-@onready var cont_hint : HBoxContainer = $"KeyHintContainer/Cont Hint"
-@onready var cont_label : Label = $"KeyHintContainer/Cont Hint/ContLabel"
-
 func _ready() -> void:
 	set_font_size() # Reset font size
 

@@ -32,7 +32,7 @@ var total_delta : float = 0.0
 var phase : int = 1
  
 func _ready() -> void:
-	print("global pos: ", global_position, "	pos: ", position)
+	#print("global pos: ", global_position, "	pos: ", position)
 	base.set_default_params({"move_torward_player": {"offset": 1, "delay": 0, "speed": 50, "smooth": 100, "length": 1}})
 	projectile = ShootAttack.new(base, _bullet_load, _bullet_res, get_parent().get_parent())
 	hollow_projectile = ShootAttack.new(base, _bullet_load, _hollow_bullet_res, get_parent().get_parent())

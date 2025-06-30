@@ -16,7 +16,7 @@ var gun_index : int = 0
 
 func _ready() -> void:
 	#print("oswald added")
-	print("global pos: ", global_position, "	pos: ", position)
+	#print("global pos: ", global_position, "	pos: ", position)
 	GlobalSignal.cur_gun.emit(gun_array[0].gun_res) # makes sure camera gets primary gun_res first
 
 func _process(_delta : float) -> void:

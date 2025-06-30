@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://chmgqrrxxdgml"]
+[gd_scene load_steps=4 format=3 uid="uid://chmgqrrxxdgml"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/base_cutscene.gd" id="1_micxl"]
+[ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="3_cknc5"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="3_u6ixa"]
 
-[node name="Base Cutscene" type="Node2D" node_paths=PackedStringArray("textbox_scene")]
+[node name="Base Cutscene" type="Node2D" node_paths=PackedStringArray("textbox_scene", "key_hint_scene")]
 script = ExtResource("1_micxl")
 textbox_scene = NodePath("Textbox")
+key_hint_scene = NodePath("cscene_key_hint")
 
 [node name="Textbox" parent="." instance=ExtResource("3_u6ixa")]
+
+[node name="cscene_key_hint" parent="." instance=ExtResource("3_cknc5")]
