@@ -40,6 +40,7 @@ func explosion(node : Node):
 	tween.tween_property(node, "scale", explosion_max_size, 1).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(point_light_2d, "scale", explosion_max_size, 1).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(node, "modulate", Color(1,1,1,0), 1).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(point_light_2d, "modulate", Color(1,1,1,0), 1).set_ease(Tween.EASE_IN_OUT)
 	
 	#Cutoff point where explosion boom stops dealing damage
 	if modulate.a < 0.2:
