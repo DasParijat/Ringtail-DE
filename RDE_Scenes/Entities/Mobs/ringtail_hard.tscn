@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dvady2m7qh3xl" path="res://RDE_Scenes/Base Entities/mob_spawner.tscn" id="4_u45r0"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="6_hq8q1"]
 
-[sub_resource type="Gradient" id="Gradient_j8dim"]
+[sub_resource type="Gradient" id="Gradient_hoa1l"]
 interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.743243, 1)
 colors = PackedColorArray(1, 1, 1, 0.509804, 0.0318836, 0.0318836, 0.0318836, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6whia"]
-gradient = SubResource("Gradient_j8dim")
+gradient = SubResource("Gradient_hoa1l")
 fill = 1
 fill_from = Vector2(0.518868, 0.509434)
 
@@ -37,9 +37,7 @@ reducaed_transition_dmg_rate = 0.4
 [node name="PointLight2D" type="PointLight2D" parent="base_mob"]
 visible = false
 scale = Vector2(2, 2)
-color = Color(0.92, 0.61364, 0.2392, 1)
-energy = 1.05
-shadow_enabled = true
+color = Color(0.600163, 0.379541, 0.0861177, 1)
 shadow_color = Color(0, 0, 0, 0.239216)
 texture = SubResource("GradientTexture2D_6whia")
 

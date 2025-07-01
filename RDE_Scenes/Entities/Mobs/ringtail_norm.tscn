@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbrq72pdye12d"]
+[gd_scene load_steps=9 format=3 uid="uid://bbrq72pdye12d"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/ringtail_norm.gd" id="1_mxqsq"]
 [ext_resource type="PackedScene" uid="uid://43ajotxx3qd3" path="res://RDE_Scenes/Base Entities/base_mob.tscn" id="2_8t2ox"]
@@ -9,6 +9,16 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yhw4h"]
 cull_mode = 1
 polygon = PackedVector2Array(-1.03359, 22.2222, 6.20155, 23.2558, 14.4703, 22.739, 22.739, 18.0879, 26.3566, 14.9871, 29.9742, 8.78553, 31.0078, 2.06718, 30.491, -3.10078, 26.3566, -10.3359, 20.6718, -18.0879, 11.3695, -22.739, 0, -22, -9, -20, -12.9199, -16.5375, -17.0543, -10.3359, -20.155, -4.13437, -19.6382, 3.61757, -17.5711, 9.81912, -14, 15, -8, 19)
+
+[sub_resource type="Gradient" id="Gradient_awunj"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.743243, 1)
+colors = PackedColorArray(1, 1, 1, 0.509804, 0.0318836, 0.0318836, 0.0318836, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ogooe"]
+gradient = SubResource("Gradient_awunj")
+fill = 1
+fill_from = Vector2(0.518868, 0.509434)
 
 [node name="RingtailNORM" type="Node2D" node_paths=PackedStringArray("base", "controller", "spawner")]
 script = ExtResource("1_mxqsq")
@@ -23,6 +33,14 @@ reducaed_transition_dmg_rate = 0.6
 [node name="LightOccluder2D" type="LightOccluder2D" parent="base_mob"]
 scale = Vector2(1.8, 1.8)
 occluder = SubResource("OccluderPolygon2D_yhw4h")
+
+[node name="PointLight2D" type="PointLight2D" parent="base_mob"]
+visible = false
+scale = Vector2(2, 2)
+color = Color(0.600163, 0.379541, 0.0861177, 1)
+energy = 1.05
+shadow_color = Color(0, 0, 0, 0.239216)
+texture = SubResource("GradientTexture2D_ogooe")
 
 [node name="MobSpawner" type="Node2D" parent="."]
 script = ExtResource("3_p5vyq")

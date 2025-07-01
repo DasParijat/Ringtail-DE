@@ -1871,26 +1871,7 @@ content_margin_top = 4.0
 content_margin_right = 6.0
 content_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajijq"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me1ks"]
 
 [sub_resource type="Theme" id="Theme_wfq2x"]
 CheckButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -1914,7 +1895,7 @@ CheckButton/icons/unchecked_disabled = SubResource("ImageTexture_y63ht")
 CheckButton/icons/unchecked_disabled_mirrored = SubResource("ImageTexture_4cawf")
 CheckButton/icons/unchecked_mirrored = SubResource("ImageTexture_gs5d8")
 CheckButton/styles/disabled = SubResource("StyleBoxEmpty_o07xk")
-CheckButton/styles/focus = SubResource("StyleBoxFlat_ajijq")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_me1ks")
 CheckButton/styles/hover = SubResource("StyleBoxEmpty_o07xk")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_o07xk")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_o07xk")

@@ -3,6 +3,7 @@ extends Node2D
 @export var mob_res : MobRes
 
 @onready var cpu_particles_2d : CPUParticles2D = $CPUParticles2D
+@onready var point_light_2d : PointLight2D = $base_mob/PointLight2D
 
 @export var explosion_texture : Texture
 @export var flash1_texture : Texture
@@ -37,6 +38,7 @@ func explosion(node : Node):
 	tween.set_parallel(true)
 	
 	tween.tween_property(node, "scale", explosion_max_size, 1).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(point_light_2d, "scale", explosion_max_size, 1).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(node, "modulate", Color(1,1,1,0), 1).set_ease(Tween.EASE_IN_OUT)
 	
 	#Cutoff point where explosion boom stops dealing damage
@@ -55,4 +57,5 @@ func warning_animation() -> void:
 			sprite.texture = flash2_texture
 			
 		await GlobalTime.local_wait(explosion_wait / flash_amt)
+	point_light_2d.color = Color(1,1,1)
 	sprite.texture = explosion_texture

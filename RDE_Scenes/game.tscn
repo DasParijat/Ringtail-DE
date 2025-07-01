@@ -37,9 +37,6 @@ grow_vertical = 2
 script = ExtResource("10_ecgkc")
 camera_2d = NodePath("../Camera2D")
 
-[node name="pause_menu" parent="." node_paths=PackedStringArray("scene_transition") instance=ExtResource("3_mfvle")]
-scene_transition = NodePath("../TopCanvasLayer/SceneTransitionFade")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -1600
 limit_top = -1100
@@ -76,6 +73,9 @@ autostart = true
 [node name="SceneTransitionFade" parent="TopCanvasLayer" instance=ExtResource("11_ao51x")]
 visible = false
 transition_rate = 0.6
+
+[node name="pause_menu" parent="." node_paths=PackedStringArray("scene_transition") instance=ExtResource("3_mfvle")]
+scene_transition = NodePath("../TopCanvasLayer/SceneTransitionFade")
 
 [connection signal="cutscene_res_set" from="." to="Cutscene" method="_on_game_cutscene_res_set"]
 [connection signal="cutscene_res_set" from="." to="Camera2D" method="_on_game_cutscene_res_set"]

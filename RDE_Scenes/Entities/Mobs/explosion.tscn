@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs3h8plo2l7ka"]
+[gd_scene load_steps=11 format=3 uid="uid://bs3h8plo2l7ka"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Mobs/Mob Type/explosion.gd" id="1_4ij6d"]
 [ext_resource type="Resource" uid="uid://4jruqmed2nmm" path="res://RDE_Resources/Mob Res/Explosion.tres" id="2_odcpl"]
@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dgoxeq1dd2u4h" path="res://RDE_Scenes/Base Entities/mob_controller.tscn" id="4_3dpm1"]
 [ext_resource type="Texture2D" uid="uid://tfmw6jtjwy2m" path="res://RDE_Images/explosion1.png" id="4_yj4fw"]
 [ext_resource type="Texture2D" uid="uid://bnxl1sthqsiyf" path="res://RDE_Images/explosion2.png" id="5_stwfg"]
+
+[sub_resource type="Gradient" id="Gradient_rhvdm"]
+offsets = PackedFloat32Array(0, 0.75)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qfcl4"]
+gradient = SubResource("Gradient_rhvdm")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Curve" id="Curve_j0v2h"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -20,6 +29,10 @@ flash1_texture = ExtResource("4_yj4fw")
 flash2_texture = ExtResource("5_stwfg")
 
 [node name="base_mob" parent="." instance=ExtResource("3_kudxo")]
+
+[node name="PointLight2D" type="PointLight2D" parent="base_mob"]
+color = Color(0.843, 0.052, 0.029, 0.5)
+texture = SubResource("GradientTexture2D_qfcl4")
 
 [node name="MobController" parent="." node_paths=PackedStringArray("base") instance=ExtResource("4_3dpm1")]
 base = NodePath("../base_mob")

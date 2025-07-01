@@ -105,6 +105,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Removed focus outline from ModeCheckItem</li>
 			<li>(Home Menu [Fight]) 
 			Put mode check items in a scroll container</li>
+			<li>(Home Menu [Settings]) 
+			Removed focus outline from check buttons</li>
+			<li>(Base Player) 
+			Changed how volume is adjusted with power audio,
+			no longer goes by delta, and transition value is a lot lower</li>
+			<li>(Minitails / Explosion) 
+			Added glowing effect to certain mobs</li>
+			<li>(GlobalSettings) 
+			Camera shake set to false by default</li>
+			<li>(Game)  
+			Pause menu is above SceneTransitionFade, 
+			this way buttons still clickable when scene transition fade is showing</li>
 		</ul>
 	</li>
 	<li>
