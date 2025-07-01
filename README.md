@@ -101,6 +101,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(CSceneKeyHint) 
 			Key Hint fades when exiting tree (cutscene ends),
 			also not visible if visible hints disabled in settings</li>
+			<li>(ModeCheckItem) 
+			Removed focus outline from ModeCheckItem</li>
+			<li>(Home Menu [Fight]) 
+			Put mode check items in a scroll container</li>
 		</ul>
 	</li>
 	<li>

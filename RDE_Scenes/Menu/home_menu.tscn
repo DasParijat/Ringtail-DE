@@ -2265,7 +2265,7 @@ PlayButton = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxCon
 fight_thumbnail = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/Thumbnail Holder/TextureRect")
 fight_header = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Header")
 fight_desc = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Text")
-mode_container = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer")
+mode_container = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer")
 scene_transition = NodePath("../SceneTransitionFade")
 
 [node name="MarginContainer" type="MarginContainer" parent="Fight Menu"]
@@ -2289,6 +2289,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
 [node name="Button Container" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container"]
 layout_mode = 2
@@ -2403,35 +2404,41 @@ layout_mode = 2
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 7
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="ModeCheckItem" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
+[node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="ModeCheckItem" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
 mode_name = "half_hp"
 mode_display_name = "Half Health"
 mode_desc = "Your HP is cut in half"
 
-[node name="ModeCheckItem2" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
+[node name="ModeCheckItem2" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
 mode_name = "no_power"
 mode_display_name = "No Power"
 mode_desc = "You cannot use or generate power"
 
-[node name="ModeCheckItem3" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
+[node name="ModeCheckItem3" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
 mode_name = "no_heal"
 mode_display_name = "No Healing"
 mode_desc = "You cannot heal"
 
-[node name="ModeCheckItem4" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
+[node name="ModeCheckItem4" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
 mode_name = "timed"
 mode_display_name = "Timed"
 mode_desc = "If you don't beat a fight within a certain time, you insta die"
 
-[node name="ModeCheckItem5" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
+[node name="ModeCheckItem5" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
 mode_name = "fixed_cam"
 mode_display_name = "Fixed Camera"

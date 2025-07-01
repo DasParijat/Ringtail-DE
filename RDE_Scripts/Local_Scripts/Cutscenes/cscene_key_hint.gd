@@ -18,7 +18,7 @@ func fade_in() -> void:
 		hide()
 		return
 	
-	if cont_hint.modulate.a < 0.7 and enable_anim:
+	if cont_hint.modulate.a < 0.7 and enable_anim and visible:
 		anim_player.play("fade in")
 
 func fade_out() -> void:
