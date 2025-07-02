@@ -69,10 +69,9 @@ func cutscene_handler() -> void:
 			display_text("Nothing, just…", ringtail_name)
 		14:
 			display_text("You humans...", ringtail_name)
-			start_tween(camera_2d, "zoom", Vector2(1.1, 1.1), 1)
+			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.4)
 		15:
 			display_text("...are quite fascinating creatures.", ringtail_name)
-			start_tween(camera_2d, "zoom", Vector2(1, 1), 1)
 		16:
 			hide_textbox()
 			enable_auto_skip()
@@ -102,7 +101,7 @@ func cutscene_handler() -> void:
 		26:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 2)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 1)
 		27:
 			show_textbox()
 			display_text("Well..", ringtail_name)
@@ -111,6 +110,7 @@ func cutscene_handler() -> void:
 			enable_auto_skip()
 			ringtail.flip_v = false
 			start_tween(ringtail, "global_position", Vector2(0, -210), 0.3)
+			start_tween(oswald, "global_position", Vector2(0, -50), 0.2)
 		29:
 			display_text("What!? How'd you-", oswald_name)
 		30:
@@ -122,8 +122,9 @@ func cutscene_handler() -> void:
 			enable_auto_skip()
 			start_tween(ringtail, "global_position", Vector2(0, -250), 0.3)
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.5)
-			start_tween(camera_2d, "zoom", Vector2(1, 1), 2)
+			start_tween(camera_2d, "zoom", Vector2(1, 1), 1)
 		33:
+			ringtail.global_position = Vector2(0, 500)
 			show_textbox()
 			display_text("You're good at keeping up Oswald", ringtail_name)
 		34:
@@ -158,22 +159,21 @@ func cutscene_handler() -> void:
 			display_text("I ain't one to back down!", oswald_name)
 			start_tween(oswald, "global_position", Vector2(0, -20), 0.4)
 		44:
-			display_text("I ain't one to back down!", oswald_name)
+			display_text("SO STEP UP AND-", oswald_name)
 			start_tween(oswald, "global_position", Vector2(0, -10), 0.3)
 		45:
 			enable_auto_skip()
 			ringtail.global_position = Vector2(0, 500)
 			ringtail.modulate = Color(1, 1, 1, 1)
-			display_text("SO STEP UP AND-", oswald_name)
 			start_tween(oswald, "global_position", Vector2(0, -7), 0.3)
-			start_tween(ringtail, "modulate", Vector2(0, -7), 0.3)
+			start_tween(ringtail, "global_position", Vector2(0, -7), 0.3)
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.3)
 		46:
 			hide_textbox()
 			enable_auto_skip()
-			white_overlay.modulate.a = 1
-			black_overlay.modulate.a = 1
-			start_tween(white_overlay, "modulate", Color(1, 1, 1, 0), 2)
+			white_overlay.color.a = 1
+			black_overlay.color.a = 1
+			start_tween(white_overlay, "color", Color(1, 1, 1, 0), 1)
 		47:
 			show_textbox()
 			display_text("Not satisfied?")

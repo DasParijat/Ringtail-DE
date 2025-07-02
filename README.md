@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(7/1/25)
+			<li>(RGT_DEF_OUTRO) 
+			Refined cutscene issues</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			(7/1/25)
 			<li>(Adverts) 
 			Added several new teaser images for advetising, along with it's cover</li>
 			<li>(RGT_DEF_OUTRO) 
