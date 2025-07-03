@@ -73,7 +73,7 @@ func _on_any_tween_finished(finished_tween : Tween) -> void:
 	# Remove the finished tween from the array
 	active_tweens = active_tweens.filter(func(info): return info["tween"] != finished_tween)
 	if active_tweens.is_empty() and current_state == State.READING:
-		if dialog_text.text != "": key_hint_scene.fade_in()
+		if dialog_text.text != "" and !auto_skip: key_hint_scene.fade_in()
 		change_state(State.FINISHED)
 		start_auto_skip_timeout()
 		
@@ -96,7 +96,7 @@ func _process(_delta):
 	match current_state:
 		State.READY:
 			c_index += 1
-			key_hint_scene.fade_out()
+			if key_hint_scene.visible: key_hint_scene.fade_out()
 			call(cutscene_manager_func)
 		State.READING:
 			if (Input.is_action_just_pressed("cont_cscene") or c_index > end_index 

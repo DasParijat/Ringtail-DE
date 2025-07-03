@@ -95,9 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
-			(7/1/25)
+			(7/2/25)
 			<li>(RGT_DEF_OUTRO) 
-			Refined cutscene issues</li>
+			Refined and polished cutscene</li>
+			<li>(Base Cutscene) 
+			Key Hint now properly shows and hides at the right times</li>
+			<li>(Ringtail Normal / Hard) 
+			Added cutscenes to level res's of ringtail normal and hard</li>
 		</ul>
 	</li>
 	<li>
