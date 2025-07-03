@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/game_over.gd" id="1_c6p7h"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_wsu6o"]
 [ext_resource type="AudioStream" uid="uid://bwjuqd6jxna3f" path="res://RDE_Audio/Mob Sounds/Mob Death/minitail_death4.mp3" id="3_4f1rc"]
+[ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="3_ruy16"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="4_el73u"]
 
 [sub_resource type="Gradient" id="Gradient_uueep"]
@@ -17,12 +18,8 @@ fill_to = Vector2(0.533333, 0)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt8w7"]
 texture = SubResource("GradientTexture2D_8o1gt")
 
-[sub_resource type="SystemFont" id="SystemFont_aelly"]
-font_names = PackedStringArray("OldNewspaperTypes")
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_jrlnw"]
-font = SubResource("SystemFont_aelly")
+font = ExtResource("3_ruy16")
 font_size = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
@@ -57,7 +54,7 @@ Button/constants/h_separation = 8
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 70
-Button/fonts/font = SubResource("SystemFont_aelly")
+Button/fonts/font = ExtResource("3_ruy16")
 Button/styles/disabled = SubResource("StyleBoxFlat_554ne")
 Button/styles/focus = SubResource("StyleBoxFlat_554ne")
 Button/styles/hover = SubResource("StyleBoxFlat_554ne")

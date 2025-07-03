@@ -1,8 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://bn4dixjn8yjtx"]
 
-[sub_resource type="SystemFont" id="SystemFont_aelly"]
-font_names = PackedStringArray("OldNewspaperTypes")
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="1_icn22"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
 content_margin_left = 20.0
@@ -37,7 +35,7 @@ Button/constants/h_separation = 8
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 60
-Button/fonts/font = SubResource("SystemFont_aelly")
+Button/fonts/font = ExtResource("1_icn22")
 Button/styles/disabled = SubResource("StyleBoxFlat_554ne")
 Button/styles/focus = SubResource("StyleBoxFlat_554ne")
 Button/styles/hover = SubResource("StyleBoxFlat_554ne")

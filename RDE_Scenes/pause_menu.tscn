@@ -1,16 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh6wxwjtwfcwq"]
+[gd_scene load_steps=10 format=3 uid="uid://bh6wxwjtwfcwq"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_82tdh"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/pause_menu.gd" id="1_acbnt"]
+[ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="2_khl81"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7iwrl"]
 content_margin_left = 9.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
-
-[sub_resource type="SystemFont" id="SystemFont_aelly"]
-font_names = PackedStringArray("OldNewspaperTypes")
-subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_554ne"]
 content_margin_left = 20.0
@@ -44,7 +41,7 @@ Button/constants/h_separation = 8
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 90
-Button/fonts/font = SubResource("SystemFont_aelly")
+Button/fonts/font = ExtResource("2_khl81")
 Button/styles/disabled = SubResource("StyleBoxFlat_554ne")
 Button/styles/focus = SubResource("StyleBoxFlat_554ne")
 Button/styles/hover = SubResource("StyleBoxFlat_554ne")
@@ -52,6 +49,10 @@ Button/styles/normal = SubResource("StyleBoxFlat_554ne")
 Button/styles/pressed = SubResource("StyleBoxFlat_554ne")
 
 [sub_resource type="Shortcut" id="Shortcut_barfy"]
+
+[sub_resource type="SystemFont" id="SystemFont_aelly"]
+font_names = PackedStringArray("OldNewspaperTypes")
+subpixel_positioning = 0
 
 [sub_resource type="Theme" id="Theme_c0snv"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)

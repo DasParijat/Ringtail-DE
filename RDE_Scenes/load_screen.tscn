@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7ky1sqwiq4tv"]
+[gd_scene load_steps=13 format=3 uid="uid://b7ky1sqwiq4tv"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/load_screen.gd" id="1_af250"]
 [ext_resource type="Texture2D" uid="uid://c4mrj7owqnyb8" path="res://RDE_Images/loading_screen_image1.png" id="2_h5n6i"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="2_tp7ds"]
+[ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="3_xbrh2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ornk"]
 texture = ExtResource("2_h5n6i")
@@ -10,15 +11,15 @@ texture = ExtResource("2_h5n6i")
 [sub_resource type="LabelSettings" id="LabelSettings_x2wty"]
 font_size = 100
 
-[sub_resource type="SystemFont" id="SystemFont_ftld4"]
-font_names = PackedStringArray("OldNewspaperTypes")
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_qurv7"]
-font = SubResource("SystemFont_ftld4")
+font = ExtResource("3_xbrh2")
 font_size = 60
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ton35"]
+
+[sub_resource type="SystemFont" id="SystemFont_ftld4"]
+font_names = PackedStringArray("OldNewspaperTypes")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp1y2"]
 content_margin_left = 2.0

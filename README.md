@@ -21,6 +21,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>Grass and Tree Tilesets: cainos.itch.io/pixel-art-top-down-basic</li>
 	<li>Keyboard Icons: thoseawesomeguys.com/prompts/</li>
+	<li>Old Newspaper Types Font: https://www.dafont.com/oldnewspapertypes.font</li>
 	<li>Ringtail (Raccoon Itself): commons.wikimedia.org/wiki/File:Racoon_Ragunan_Zoo.jpg</li>
 </ul>
 
@@ -93,6 +94,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(7/3/25)
+			<li>(Fonts) 
+			Imported Old Newspaper Types font directly, intsead of relying on system fonts,
+			updated all text that used that font with the imported one</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(7/2/25)
