@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckpl4qd6tkar4"]
+[gd_scene load_steps=9 format=3 uid="uid://ckpl4qd6tkar4"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/tutorial_pop_up.gd" id="1_3yf2e"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="1_t1bn7"]
+[ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="3_pxncf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6k43"]
 content_margin_left = 10.0
@@ -91,3 +92,5 @@ text = "\"But I must explain to you how all this mistaken idea of denouncing ple
 "
 label_settings = SubResource("LabelSettings_cypvp")
 autowrap_mode = 2
+
+[node name="cscene_key_hint" parent="." instance=ExtResource("3_pxncf")]

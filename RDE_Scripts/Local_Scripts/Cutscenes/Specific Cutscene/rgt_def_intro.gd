@@ -7,6 +7,10 @@ extends BaseCutscene
 @onready var ringtail : Sprite2D = $ActorContainer/Ringtail
 @onready var overlay : ColorRect = $ControlContainer/Overlay
 
+@onready var hp_tutorial : TutorialPopUp = $ControlContainer/HPTutorial
+@onready var power_tutorial : TutorialPopUp = $ControlContainer/PowerTutorial
+@onready var minitail_tutorial : TutorialPopUp = $ControlContainer/MinitailTutorial
+
 # Speaker names
 var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
 var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
@@ -91,15 +95,25 @@ func cutscene_handler() -> void:
 		23:
 			hide_textbox()
 			start_tween(overlay, "modulate", Color(1,1,1,0.5), 0.2)
-			# insert tutorial 1
-			# Have tutorial actors fade appear and dissapear tweens
+			
+			hp_tutorial.modulate.a = 0
+			hp_tutorial.show()
+			start_tween(hp_tutorial, "modulate", Color(1,1,1,1), 0.2)
 		24:
-			# insert tutorial 2
-			pass
+			hp_tutorial.hide_tutorial()
+			
+			power_tutorial.modulate.a = 0
+			power_tutorial.show()
+			start_tween(power_tutorial, "modulate", Color(1,1,1,1), 0.2)
 		25:
-			# insert tutorial 3
-			pass
+			power_tutorial.hide_tutorial()
+			
+			minitail_tutorial.modulate.a = 0
+			minitail_tutorial.show()
+			start_tween(minitail_tutorial, "modulate", Color(1,1,1,1), 0.2)
 		26:
+			minitail_tutorial.hide_tutorial()
+			
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.2)
 			show_textbox()
 			display_text("Yeah I’ve done my homework on you", oswald_name)

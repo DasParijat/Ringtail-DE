@@ -32,6 +32,21 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="HPTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+visible = false
+header_text = "HP"
+desc_text = "yo heal using the key thing ya"
+
+[node name="PowerTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+visible = false
+header_text = "Power"
+desc_text = "use the power to go slow mo"
+
+[node name="MinitailTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+visible = false
+header_text = "minitail"
+desc_text = "minitail"
+
 [node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
 
 [node name="cscene_key_hint" parent="." instance=ExtResource("5_8xl27")]
@@ -57,12 +72,3 @@ texture = ExtResource("4_ydwhu")
 modulate = Color(1, 1, 1, 0.196078)
 scale = Vector2(1.8, 1.8)
 occluder = SubResource("OccluderPolygon2D_8dpou")
-
-[node name="PowerTutorial" parent="ActorContainer" instance=ExtResource("6_ii8s3")]
-visible = false
-
-[node name="HPTutorial" parent="ActorContainer" instance=ExtResource("6_ii8s3")]
-visible = false
-
-[node name="MinitailTutorial" parent="ActorContainer" instance=ExtResource("6_ii8s3")]
-visible = false
