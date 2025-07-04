@@ -97,6 +97,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(7/3/25)
+			<li>(General) 
+			Changed enviroment background color to black, 
+			which makes loading look smoother. 
+			(Instead of a flash of grey of the empty enviroment, 
+			it now shows black, just like how the loading screen ends)</li>
+			<li>(Home Menu) 
+			Scene transition eneter animation plays when home menu loaded, 
+			reload button added to main menu for debugging purposes</li>
 			<li>(Fonts) 
 			Imported Old Newspaper Types font directly, intsead of relying on system fonts,
 			updated all text that used that font with the imported one</li>

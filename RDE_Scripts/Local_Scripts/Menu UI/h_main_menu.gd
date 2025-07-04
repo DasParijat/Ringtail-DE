@@ -4,6 +4,8 @@ extends Control
 @onready var title : TextureRect = $Title
 @onready var button_container : Container = $HBoxContainer
 
+@export var scene_transition : SceneTransitionFade
+
 var anim_rate : float = 0.15
 var unopened_dist_away : float = 100
 
@@ -64,3 +66,9 @@ func _on_quit_b_pressed() -> void:
 	## Quits game entirely
 	await exit_animation()
 	get_tree().quit()
+
+func _on_reload_b_pressed() -> void:
+	## Reloads home menu itself (for debugging only)
+	await exit_animation()
+	await scene_transition.exit_anim()
+	GlobalScene.load_next_scene(GlobalScene.HOME_MENU)

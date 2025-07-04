@@ -8,6 +8,7 @@ extends CanvasLayer
 @export var fight_menu : FightMenu
 
 @export var background : TextureRect
+@export var scene_transition : SceneTransitionFade
 
 var cur_menu : Control
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	GlobalFightStats.reset_fight_stats()
 	
 	set_cur_menu(main_menu)
+	scene_transition.enter_anim(0.25)
 
 func set_cur_menu(new_menu) -> void:
 	cur_menu = new_menu
