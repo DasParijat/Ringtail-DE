@@ -156,7 +156,7 @@ func _on_area_entered(area : Area2D) -> void:
 	
 	if target_group != "Player":
 		## Allows player cur_power to update when hitting enemy
-		GlobalSignal.emit_signal("update_power", damage / 250)
+		GlobalSignal.emit_signal("update_power", damage / 300)
 		
 		## Also plays visual and audio affect of the enemy mob getting hit
 		play_hit_effect(parent)

@@ -175,9 +175,9 @@ func _on_update_power(power_update : float) -> void:
 	#print("power updated: ", power_update)
 	if is_near_enemy: 
 		# power given has (near_enemy_boost)% increase when near enemy
-		power_update += power_update * player_res.power_near_enemy_boost  
+		power_update += (power_update * player_res.power_near_enemy_boost) * player_res.base_power_rate
 	
-	player_res.cur_power += power_update
+	player_res.cur_power += power_update * player_res.base_power_rate
 
 func _on_update_player_hp(hp_update : float) -> void:
 	#print("hp updated: ", hp_update)

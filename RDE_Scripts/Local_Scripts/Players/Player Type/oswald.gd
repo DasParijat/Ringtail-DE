@@ -23,9 +23,6 @@ func _process(_delta : float) -> void:
 	position = base.position
 	if GlobalTime.is_paused or GlobalScene.on_victory_screen:
 		return
-		
-	#if not GlobalPlayer.power_activated:
-	#	gun_index = player_res.handle_gun_switch(gun_index, switch_timer)
 	
 	cur_gun = gun_array[gun_index]
 	next_gun = gun_array[player_res.get_next_gun_index(gun_index)]
@@ -34,7 +31,7 @@ func _process(_delta : float) -> void:
 	
 	gun_index = player_res.handle_gun_switch(gun_index, switch_timer, next_gun.gun_res.switch_sound)
 	
-	if (player_res.cur_power > player_res.power_ex_cutoff 
+	if (player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5 #player_res.cur_power > player_res.power_ex_cutoff 
 			and not cur_gun.not_reloading()
 			and Input.is_action_just_pressed("shoot")):
 		gun_index = player_res.get_next_gun_index(gun_index)

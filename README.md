@@ -100,6 +100,11 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(TutorialPopUp) 
 			Manually added cscene key hint instead of relying on
 			the actual cscene_key_hint scene itself</li>
+			<li>(Oswald / Fight UI / Base Player) 
+			Buffed power gain slightly, also moved ability to insta-switch 
+			to when player is at low hp instead of when at power ex mode.
+			Probably going to ditch the power ex idea in favor of giving
+			those abilities to the player when they are low on health</li>
 		</ul>
 	</li>
 	<li>
