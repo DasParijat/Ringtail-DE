@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckpl4qd6tkar4"]
+[gd_scene load_steps=10 format=3 uid="uid://ckpl4qd6tkar4"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/tutorial_pop_up.gd" id="1_3yf2e"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="1_t1bn7"]
-[ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="3_pxncf"]
+[ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="3_f300v"]
+[ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="4_umvb2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6k43"]
 content_margin_left = 10.0
@@ -93,4 +94,31 @@ text = "\"But I must explain to you how all this mistaken idea of denouncing ple
 label_settings = SubResource("LabelSettings_cypvp")
 autowrap_mode = 2
 
-[node name="cscene_key_hint" parent="." instance=ExtResource("3_pxncf")]
+[node name="cscene_key_hint" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -46.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="Cont Hint" type="HBoxContainer" parent="cscene_key_hint"]
+modulate = Color(1, 1, 1, 0.7)
+layout_mode = 2
+
+[node name="ContLabel" type="Label" parent="cscene_key_hint/Cont Hint"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Continue"
+label_settings = ExtResource("3_f300v")
+
+[node name="Key" type="TextureRect" parent="cscene_key_hint/Cont Hint"]
+layout_mode = 2
+texture = ExtResource("4_umvb2")
+expand_mode = 3

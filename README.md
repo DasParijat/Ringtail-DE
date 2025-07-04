@@ -96,6 +96,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/4/25)
+			<li>(TutorialPopUp) 
+			Manually added cscene key hint instead of relying on
+			the actual cscene_key_hint scene itself</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/3/25)
 			<li>(General) 
 			Changed enviroment background color to black, 

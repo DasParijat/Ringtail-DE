@@ -11,14 +11,14 @@ const TRANSITION_TIME = 0.3
 @onready var texture_rect : TextureRect = $MarginContainer/Visuals/MarginContainer/VBoxContainer/MarginContainer/TextureRect
 @onready var desc : Label = $MarginContainer/Visuals/MarginContainer/VBoxContainer/Desc
 
-@onready var cscene_key_hint : CSceneKeyHint = $cscene_key_hint
+@onready var cscene_key_hint = $cscene_key_hint
 
 func _ready() -> void:
 	header.text = header_text
 	texture_rect.texture = texture
 	desc.text = desc_text
 	
-	cscene_key_hint.fade_in()
+	if not GlobalSettings.visible_hints: cscene_key_hint.hide()
 
 func show_tutorial(rate : float = TRANSITION_TIME):
 	var tween : Tween = create_tween()
@@ -28,7 +28,6 @@ func show_tutorial(rate : float = TRANSITION_TIME):
 
 func hide_tutorial(rate : float = TRANSITION_TIME):
 	var tween : Tween = create_tween()
-	await cscene_key_hint.fade_out()
 	if self.modulate.a > 0:
 		tween.tween_property(self, "modulate:a", 0, rate)
 	await tween.finished
