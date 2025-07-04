@@ -2046,7 +2046,6 @@ text = "Quit"
 script = ExtResource("1_k7wod")
 
 [node name="Settings" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2062,7 +2061,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.00141, 1)
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 100
@@ -2231,6 +2229,7 @@ text = "yyoooo"
 layout_mode = 2
 
 [node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container", "scene_transition")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

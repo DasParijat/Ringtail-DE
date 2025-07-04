@@ -100,6 +100,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Fonts) 
 			Imported Old Newspaper Types font directly, intsead of relying on system fonts,
 			updated all text that used that font with the imported one</li>
+			<li>(TutorialPopUp / RGT_DEF_INTRO) 
+			Created base UI for tutorial pop ups that appear in intro cutscene</li>
 		</ul>
 	</li>
 	<li>

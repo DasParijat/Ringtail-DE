@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckpl4qd6tkar4"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/tutorial_pop_up.gd" id="1_3yf2e"]
+[ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="1_t1bn7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6k43"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.431373)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_586a5"]
+font = ExtResource("1_t1bn7")
+font_size = 50
+
+[sub_resource type="Gradient" id="Gradient_yar7i"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_56tyg"]
+gradient = SubResource("Gradient_yar7i")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cypvp"]
+line_spacing = 5.0
+font_size = 30
+
+[node name="TutorialPopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3yf2e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 110
+
+[node name="Visuals" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6k43")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Visuals"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Visuals/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Header" type="Label" parent="MarginContainer/Visuals/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "TUTORIAL"
+label_settings = SubResource("LabelSettings_586a5")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Visuals/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Visuals/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_56tyg")
+
+[node name="Desc" type="Label" parent="MarginContainer/Visuals/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "\"But I must explain to you how all this mistaken idea of denouncing pleasure a
+
+"
+label_settings = SubResource("LabelSettings_cypvp")
+autowrap_mode = 2
