@@ -39,8 +39,8 @@ desc_text = "yo heal using the key thing ya"
 
 [node name="PowerTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
-header_text = "Power"
-desc_text = "use the power to go slow mo"
+header_text = "Power Bar"
+desc_text = "When using up the power bar, it will slow down time and increase damage resistance"
 
 [node name="MinitailTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
