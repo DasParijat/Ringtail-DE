@@ -34,8 +34,8 @@ color = Color(0, 0, 0, 1)
 
 [node name="HPTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
-header_text = "HP"
-desc_text = "yo heal using the key thing ya"
+header_text = "Healing"
+desc_text = "You will generate stored HP (in white) while your HP is down, to which you will use when you heal. Stored HP generates faster when you have more power"
 
 [node name="PowerTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
