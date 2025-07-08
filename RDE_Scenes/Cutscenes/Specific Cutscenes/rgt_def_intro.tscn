@@ -44,8 +44,8 @@ desc_text = "When using up the power bar, it will slow down time and increase da
 
 [node name="MinitailTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
-header_text = "minitail"
-desc_text = "minitail"
+header_text = "Minitails"
+desc_text = "The most effective way to gain power is by taking down these minitails, which is any raccoon that is not Ringtail himself"
 
 [node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
 
