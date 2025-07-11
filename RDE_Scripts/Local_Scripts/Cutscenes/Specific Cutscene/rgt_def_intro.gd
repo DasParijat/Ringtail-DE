@@ -116,7 +116,13 @@ func cutscene_handler() -> void:
 			
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.2)
 			show_textbox()
-			display_text("Yeah I’ve done my homework on you", oswald_name) # TODO - add extra indexs 27 to 29
+			display_text("Yeah I’ve done my homework on you", oswald_name)
+		27:
+			pass
+		28:
+			pass
+		29:
+			pass
 		30:
 			hide_textbox()
 			enable_auto_skip()
@@ -133,7 +139,7 @@ func cutscene_handler() -> void:
 			start_tween(camera_2d, "position", Vector2(0, 20), 0.4)
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.5)
 			display_text("You’re the one dying here…", oswald_name)
-		31:
+		34:
 			display_text("…Ringtail", oswald_name, 0.07)
 			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.5)
 		_:

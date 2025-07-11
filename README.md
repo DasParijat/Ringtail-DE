@@ -96,6 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/(6 - 9)/25)
+			<li>(RGT_DEF_INTRO / TutorialPopUp) 
+			Added proper descriptions to each Tutorial Pop Up, 
+			as well as made space for more in the cutscene 
+			match statement</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/4/25)
 			<li>(TutorialPopUp) 
 			Manually added cscene key hint instead of relying on
