@@ -96,6 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/11/25)
+			<li>(RGT_DEF_INTRO) 
+			Added Low HP tutorial pop up</li>
+			<li>(Base Player) 
+			Player's speed is slightly increased when on low HP</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/(6 - 9)/25)
 			<li>(RGT_DEF_INTRO / TutorialPopUp) 
 			Added proper descriptions to each Tutorial Pop Up, 

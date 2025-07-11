@@ -94,6 +94,9 @@ func movement(cur_speed : float) -> void:
 	if GlobalPlayer.is_resting:
 		cur_speed = player_res.rest_speed
 	
+	if (player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5):
+		cur_speed = cur_speed * 1.2
+		
 	# Input handling / Sets final speed
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
 	velocity = input_direction * ((cur_speed - cur_gun_weight) * speed_modifier)

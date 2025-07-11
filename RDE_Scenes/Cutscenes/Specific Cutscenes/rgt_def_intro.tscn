@@ -47,6 +47,11 @@ visible = false
 header_text = "Minitails"
 desc_text = "The most effective way to gain power is by taking down these minitails, which is any raccoon that is not Ringtail himself"
 
+[node name="LowHPTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+visible = false
+header_text = "Low HP"
+desc_text = "When low on HP, you will gain several abilities, including automatic power activation near enemies, auto-switch guns when out of ammo, and faster speed"
+
 [node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
 
 [node name="cscene_key_hint" parent="." instance=ExtResource("5_8xl27")]
