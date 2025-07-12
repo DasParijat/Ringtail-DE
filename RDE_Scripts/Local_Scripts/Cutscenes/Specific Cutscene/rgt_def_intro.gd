@@ -7,7 +7,8 @@ extends BaseCutscene
 @onready var ringtail : Sprite2D = $ActorContainer/Ringtail
 @onready var overlay : ColorRect = $ControlContainer/Overlay
 
-@onready var hp_tutorial : TutorialPopUp = $ControlContainer/HPTutorial
+@onready var hp_1_tutorial : TutorialPopUp = $ControlContainer/HP1Tutorial
+@onready var hp_2_tutorial : TutorialPopUp = $ControlContainer/HP2Tutorial
 @onready var power_tutorial : TutorialPopUp = $ControlContainer/PowerTutorial
 @onready var minitail_tutorial : TutorialPopUp = $ControlContainer/MinitailTutorial
 @onready var low_hp_tutorial : TutorialPopUp = $ControlContainer/LowHPTutorial
@@ -97,35 +98,22 @@ func cutscene_handler() -> void:
 			hide_textbox()
 			start_tween(overlay, "modulate", Color(1,1,1,0.5), 0.2)
 			
-			hp_tutorial.modulate.a = 0
-			hp_tutorial.show()
-			start_tween(hp_tutorial, "modulate", Color(1,1,1,1), 0.2)
+			next_tutorial_pop_up(null, power_tutorial)
 		24:
-			hp_tutorial.hide_tutorial()
-			
-			power_tutorial.modulate.a = 0
-			power_tutorial.show()
-			start_tween(power_tutorial, "modulate", Color(1,1,1,1), 0.2)
+			next_tutorial_pop_up(power_tutorial, minitail_tutorial)
 		25:
-			power_tutorial.hide_tutorial()
-			
-			minitail_tutorial.modulate.a = 0
-			minitail_tutorial.show()
-			start_tween(minitail_tutorial, "modulate", Color(1,1,1,1), 0.2)
+			next_tutorial_pop_up(minitail_tutorial, hp_1_tutorial)
 		26:
-			minitail_tutorial.hide_tutorial()
-			
-			low_hp_tutorial.modulate.a = 0
-			low_hp_tutorial.show()
-			start_tween(low_hp_tutorial, "modulate", Color(1,1,1,1), 0.2)
+			next_tutorial_pop_up(hp_1_tutorial, hp_2_tutorial)
 		27:
-			low_hp_tutorial.hide_tutorial()
+			next_tutorial_pop_up(hp_2_tutorial, low_hp_tutorial)
+		28:
+			#low_hp_tutorial.hide_tutorial()
+			next_tutorial_pop_up(low_hp_tutorial)
 			
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.2)
 			show_textbox()
 			display_text("Yeah I’ve done my homework on you", oswald_name)
-		28:
-			pass
 		29:
 			pass
 		30:
@@ -151,3 +139,12 @@ func cutscene_handler() -> void:
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
 			start_tween(oswald, "modulate", Color(1,1,1,0), 0.2)
 			change_state(State.COMPLETE)
+
+func next_tutorial_pop_up(prev : TutorialPopUp = null, next : TutorialPopUp = null) -> void:
+	if prev != null: prev.hide_tutorial()
+	
+	if next == null: return
+	
+	next.modulate.a = 0
+	next.show()
+	start_tween(next, "modulate", Color(1,1,1,1), 0.2)

@@ -98,7 +98,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(7/11/25)
 			<li>(RGT_DEF_INTRO) 
-			Added Low HP tutorial pop up</li>
+			Added Low HP tutorial pop up,
+			split HP tutorial pop up into two seperate ones, 
+			updated tutorial text for all pop ups, 
+			and made function to handle showing/hiding pop ups</li>
 			<li>(Base Player) 
 			Player's speed is slightly increased when on low HP</li>
 			<li>(PlayerRes / FightUI / Base Player / Oswald) 

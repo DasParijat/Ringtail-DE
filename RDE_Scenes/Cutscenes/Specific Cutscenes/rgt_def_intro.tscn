@@ -32,25 +32,30 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="HPTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+[node name="HP1Tutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
-header_text = "Healing"
-desc_text = "You will generate stored HP (in white) while your HP is down, to which you will use when you heal. Stored HP generates faster when you have more power"
+header_text = "Healing with Stored HP"
+desc_text = "You will automatically generate Stored HP, and when the Stored HP bar is white and you press [F], stored HP is instantly added onto your current HP."
+
+[node name="HP2Tutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+visible = false
+header_text = "Generating Stored HP"
+desc_text = "Stored HP generates faster when you have more power, and if it’s unusable (grey colored), you could also hold [F] to generate faster, but at the cost of your movement speed."
 
 [node name="PowerTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
 header_text = "Power Bar"
-desc_text = "When using up the power bar, it will slow down time and increase damage resistance"
+desc_text = "When using up the power bar, it will slow down time and increase damage resistance, which is useful for tight situations."
 
 [node name="MinitailTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
 header_text = "Minitails"
-desc_text = "The most effective way to gain power is by taking down these minitails, which is any raccoon that is not Ringtail himself"
+desc_text = "The most effective way to gain power is by taking down these minitails, which is any raccoon that is not Ringtail himself. The harder the minitail, the more power it gives upon its death."
 
 [node name="LowHPTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
 visible = false
 header_text = "Low HP"
-desc_text = "When low on HP, you will gain several abilities, including automatic power activation near enemies, auto-switch guns when out of ammo, and faster speed"
+desc_text = "When low on HP, you will gain several abilities, including automatic power activation near enemies, auto-switching guns when out of ammo, and faster movement speed."
 
 [node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
 
