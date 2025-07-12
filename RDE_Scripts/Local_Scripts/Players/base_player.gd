@@ -94,7 +94,8 @@ func movement(cur_speed : float) -> void:
 	if GlobalPlayer.is_resting:
 		cur_speed = player_res.rest_speed
 	
-	if (player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5):
+	 #player_res.health_res.cur_hp < (player_res.health_res.max_hp / 5) * 1.5):
+	if player_res.is_under_low_hp_threshold():
 		cur_speed = cur_speed * 1.2
 		
 	# Input handling / Sets final speed

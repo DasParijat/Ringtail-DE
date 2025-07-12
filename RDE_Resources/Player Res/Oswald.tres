@@ -20,6 +20,7 @@ regen_rate = 1.0
 regen_amt = 0.3
 max_stored_hp = 15.0
 stored_hp_threshold = 7.0
+low_hp_threshold = 15.0
 regen_sound = ExtResource("4_wknd7")
 base_speed = 500.0
 rest_speed = 250.0

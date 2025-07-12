@@ -15,6 +15,7 @@ class_name PlayerRes
 @export var regen_amt : float = 2
 @export var max_stored_hp : float = 5 # max limit stored hp can go
 @export var stored_hp_threshold : float = 5 # when stored hp reaches this, it can be used
+@export var low_hp_threshold : float = 15 # when hp gets under this value, player enters low hp mode
 @export var regen_sound : AudioStream
 
 @export_category("Speed")
@@ -59,6 +60,10 @@ func reset_speed():
 func reset_power_rate():
 	cur_power_rate = base_power_rate
 
+func is_under_low_hp_threshold() -> bool:
+	#print("is under lht: ", health_res.cur_hp < low_hp_threshold)
+	return health_res.cur_hp < low_hp_threshold
+	
 func get_next_gun_index(gun_index):
 	#print("switch")
 	if gun_index >= gun_array.size() - 1:

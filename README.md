@@ -101,6 +101,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Added Low HP tutorial pop up</li>
 			<li>(Base Player) 
 			Player's speed is slightly increased when on low HP</li>
+			<li>(PlayerRes / FightUI / Base Player / Oswald) 
+			Created low_hp_threshold var in player res to keep 
+			consistency for low hp mode across scripts</li>
 		</ul>
 	</li>
 	<li>

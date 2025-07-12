@@ -75,7 +75,7 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 	## If player is hurt, flash red
 	## If player is below warning point, tint screen with red
 	var HO_anim_player : AnimationPlayer = $CanvasLayer/HurtOverlay/AnimationPlayer
-	var warning_point : float = (stats["max_hp"] / 5) * 1.5
+	#var warning_point : float = stats["player_res"].is_under_low_hp_threshold()
 	
 	if is_recent_ouch:
 		if !stats["is_hurting"]:
@@ -83,15 +83,16 @@ func hurt_overlay_handling(stats : Dictionary) -> void:
 	elif stats["is_hurting"]:
 		is_recent_ouch = true
 		if HurtOverlay.modulate.a >= 0:
-			if stats["cur_hp"] < warning_point:
+			if stats["player_res"].is_under_low_hp_threshold():
 				entered_warning_point = true
 				HO_anim_player.play("HO_ouch_(low)")
 			else:
 				HO_anim_player.play("HO_ouch")
 		
 	## Check if cur_hp recovered past warning point
-	if stats["cur_hp"] >= warning_point and entered_warning_point:
+	if !(stats["player_res"].is_under_low_hp_threshold()) and entered_warning_point:
 		entered_warning_point = false
+		
 		var tween = create_tween()
 		tween.tween_property(HurtOverlay, "modulate:a", 0.0, 0.5)
 	
