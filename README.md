@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/12/25)
+			<li>(Home Menu) 
+			Added MenuThemePlayer (music player) that fades in when Home Menu opens</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/11/25)
 			<li>(RGT_DEF_INTRO) 
 			Added Low HP tutorial pop up,

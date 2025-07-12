@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=54 format=4 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="9_bj674"]
 [ext_resource type="PackedScene" uid="uid://dnyif5jradpwq" path="res://RDE_Scenes/Menu/mode_check_item.tscn" id="10_fs5vg"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="15_reypx"]
+[ext_resource type="AudioStream" uid="uid://dwccyciwstg8u" path="res://RDE_Audio/Music/nf fight song 14.mp3" id="17_y1l4v"]
 
 [sub_resource type="SystemFont" id="SystemFont_1t3ws"]
 font_names = PackedStringArray("Bahnschrift")
@@ -1973,6 +1974,12 @@ settings_menu = NodePath("Settings")
 fight_menu = NodePath("Fight Menu")
 background = NodePath("Background")
 scene_transition = NodePath("SceneTransitionFade")
+
+[node name="MenuThemePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_y1l4v")
+volume_db = -80.0
+autoplay = true
+bus = &"Music Bus"
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

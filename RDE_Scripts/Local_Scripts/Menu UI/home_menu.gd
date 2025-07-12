@@ -10,6 +10,8 @@ extends CanvasLayer
 @export var background : TextureRect
 @export var scene_transition : SceneTransitionFade
 
+@onready var menu_theme_player : AudioStreamPlayer = $MenuThemePlayer
+
 var cur_menu : Control
 
 func _ready() -> void:
@@ -18,6 +20,9 @@ func _ready() -> void:
 	GlobalMenu.connect("menu_change", Callable(self, "_on_menu_change"))
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.HOME_MENU
 	GlobalFightStats.reset_fight_stats()
+	
+	var tween : Tween = create_tween().set_ease(Tween.EASE_OUT)
+	tween.tween_property(menu_theme_player, "volume_db", 0, 1)
 	
 	set_cur_menu(main_menu)
 	scene_transition.enter_anim(0.25)
