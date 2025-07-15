@@ -53,11 +53,19 @@ func _on_reset_audio_b_pressed() -> void:
 	set_default_volume("Music Bus", 1)
 	set_default_volume("Game SFX", 0.5)
 	set_default_volume("UI SFX", 1)
+	set_default_volume("CScene Bus", 1)
 	audio_reset.emit()
 
 func _on_mute_b_pressed() -> void:
-	set_default_volume("Master", 0)
-	set_default_volume("Music Bus", 0)
-	set_default_volume("Game SFX", 0)
-	set_default_volume("UI SFX", 0)
+	var bus_array : Array[String] = [
+		"Master", 
+		"Music Bus", 
+		"Game SFX", 
+		"UI SFX", 
+		"CScene Bus"
+		]
+	
+	for bus in bus_array:
+		set_default_volume(bus, 0)
+	
 	audio_reset.emit()

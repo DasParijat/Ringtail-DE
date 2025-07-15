@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/15/25)
+			<li>(Default Bus Layout / Home Menu [Settings]) 
+			Created cutscene audio bus, reflected in audio settings</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/12/25)
 			<li>(Home Menu) 
 			Added MenuThemePlayer (music player) that fades in when Home Menu opens</li>
