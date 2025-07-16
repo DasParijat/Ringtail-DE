@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3xbfx5c6bib2"
+path="res://.godot/imported/enter_01.wav-62c88d443b2d38f82bc5dea545b25dd6.sample"
+
+[deps]
+
+source_file="res://RDE_Audio/UI Sounds/Mini Crunch/enter_01.wav"
+dest_files=["res://.godot/imported/enter_01.wav-62c88d443b2d38f82bc5dea545b25dd6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

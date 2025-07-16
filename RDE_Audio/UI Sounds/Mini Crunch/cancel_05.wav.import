@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf6rps4iuafw0"
+path="res://.godot/imported/cancel_05.wav-6c4a9b8afefaa9ce95157aaa2cc480de.sample"
+
+[deps]
+
+source_file="res://RDE_Audio/UI Sounds/Mini Crunch/cancel_05.wav"
+dest_files=["res://.godot/imported/cancel_05.wav-6c4a9b8afefaa9ce95157aaa2cc480de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

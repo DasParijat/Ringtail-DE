@@ -110,16 +110,18 @@ func _process(_delta):
 			if c_index > end_index:
 				change_state(State.COMPLETE)
 			
+			if Input.is_action_just_pressed("cont_cscene"): 
+				AudioManager.play_audio_one_shot(continue_sound, "UI SFX")
+				
 			if (
 			(
 				Input.is_action_just_pressed("cont_cscene")
 				or auto_skip
 			) 
 			and not GlobalTime.is_paused):
-				if Input.is_action_just_pressed("cont_cscene"): 
-					AudioManager.play_audio_one_shot(continue_sound, "CScene Bus")
 			
 				change_state(State.PROCESS)
+				
 		State.PROCESS:
 			auto_skip = false
 			active_tweens = []

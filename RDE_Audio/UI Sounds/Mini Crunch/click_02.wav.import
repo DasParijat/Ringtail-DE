@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b38l1m5ocm3n0"
+path="res://.godot/imported/click_02.wav-05cba3071daa56c2fa0ffdd0ca180500.sample"
+
+[deps]
+
+source_file="res://RDE_Audio/UI Sounds/Mini Crunch/click_02.wav"
+dest_files=["res://.godot/imported/click_02.wav-05cba3071daa56c2fa0ffdd0ca180500.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

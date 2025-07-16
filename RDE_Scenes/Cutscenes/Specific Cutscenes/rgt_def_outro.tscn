@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rnutankl4tao"]
+[gd_scene load_steps=10 format=3 uid="uid://rnutankl4tao"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_def_outro.gd" id="1_rms58"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="2_4f121"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="3_8x0mn"]
 [ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="3_54yq0"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="4_qikk6"]
+[ext_resource type="AudioStream" uid="uid://cog6cst52ldfj" path="res://RDE_Audio/bbc_wind-atmos_nhu9295991.mp3" id="7_typuv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tyfbt"]
 cull_mode = 1
@@ -68,5 +69,7 @@ scale = Vector2(1.8, 1.8)
 occluder = SubResource("OccluderPolygon2D_ci2a2")
 
 [node name="AmbianceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_typuv")
+volume_db = -10.0
 autoplay = true
 bus = &"CScene Bus"
