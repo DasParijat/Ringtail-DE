@@ -10,6 +10,7 @@ const CHAR_READ_RATE = 0.03
 @export var end_index : int = 4
 @export var textbox_scene : TextBox
 @export var key_hint_scene : CSceneKeyHint
+@export var continue_sound : AudioStream
 
 @onready var textbox_container : Container = textbox_scene.textbox_container
 @onready var speaker_name : Label = textbox_scene.speaker_name
@@ -115,6 +116,9 @@ func _process(_delta):
 				or auto_skip
 			) 
 			and not GlobalTime.is_paused):
+				if Input.is_action_just_pressed("cont_cscene"): 
+					AudioManager.play_audio_one_shot(continue_sound, "CScene Bus")
+			
 				change_state(State.PROCESS)
 		State.PROCESS:
 			auto_skip = false

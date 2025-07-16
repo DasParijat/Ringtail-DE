@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://rnutankl4tao"]
+[gd_scene load_steps=9 format=3 uid="uid://rnutankl4tao"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_def_outro.gd" id="1_rms58"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="2_4f121"]
+[ext_resource type="AudioStream" uid="uid://lglk30qw3so7" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_switch1.mp3" id="2_sltkd"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="3_8x0mn"]
 [ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="3_54yq0"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="4_qikk6"]
@@ -19,6 +20,7 @@ script = ExtResource("1_rms58")
 end_index = 50
 textbox_scene = NodePath("Textbox")
 key_hint_scene = NodePath("cscene_key_hint")
+continue_sound = ExtResource("2_sltkd")
 
 [node name="ControlContainer" type="CanvasLayer" parent="."]
 
@@ -64,3 +66,7 @@ flip_v = true
 modulate = Color(1, 1, 1, 0.196078)
 scale = Vector2(1.8, 1.8)
 occluder = SubResource("OccluderPolygon2D_ci2a2")
+
+[node name="AmbianceSound" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"CScene Bus"

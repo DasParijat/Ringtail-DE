@@ -99,6 +99,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(7/15/25)
 			<li>(Default Bus Layout / Home Menu [Settings]) 
 			Created cutscene audio bus, reflected in audio settings</li>
+			<li>(Base Cutscene) 
+			Audio one shot plays whenever user continues dialogue</li>
+			<li>(RGT_DEF_INTRO / RGT_DEF_OUTRO) 
+			Added audiostreams to play ambiance for whole scene</li>
 		</ul>
 	</li>
 	<li>
