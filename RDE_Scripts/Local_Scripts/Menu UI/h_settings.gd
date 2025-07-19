@@ -7,6 +7,8 @@ signal audio_reset
 @onready var show_hints : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowHints
 @onready var shake_cam : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShakeCam
 
+@onready var reset_audio : AudioStream = preload("res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3")
+
 var anim_rate : float = 0.2
 
 func _ready() -> void:
@@ -54,6 +56,8 @@ func _on_reset_audio_b_pressed() -> void:
 	set_default_volume("Game SFX", 0.5)
 	set_default_volume("UI SFX", 1)
 	set_default_volume("CScene Bus", 1)
+	
+	AudioManager.play_audio_one_shot(reset_audio, "Game SFX")
 	audio_reset.emit()
 
 func _on_mute_b_pressed() -> void:

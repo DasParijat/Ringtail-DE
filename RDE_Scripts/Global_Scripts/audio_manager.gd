@@ -18,8 +18,7 @@ func play(audio_name: String, from_position: float = 0.0, skip_restart: bool = f
 	
 	active_music_stream = clips.get_node(audio_name)
 	active_music_stream.play(from_position)
-
-
+	
 func play_audio_one_shot(audio_stream: AudioStream, bus : StringName = "Game SFX", volume_db: float = 0.0, pitch_scale : float = 0.0, from_position: float = 0.0) -> AudioOneShot:
 	if is_audio_hearable(bus):
 		# If volume is 0, no point in creating audio one shot

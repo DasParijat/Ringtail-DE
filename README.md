@@ -96,6 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/18/25)
+			<li>(NavButton) 
+			All navbuttons now play UI sound when pressed</li>
+			<li>(ome Menu [Settings]) 
+			Reset audio button plays gun shot sound</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/15/25)
 			<li>(Audio) 
 			Added "mini-crunch" UI sound effects, 
