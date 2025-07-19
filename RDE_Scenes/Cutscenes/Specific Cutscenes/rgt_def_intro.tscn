@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://fc0o2aqpmhw4"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_def_intro.gd" id="1_fdp6n"]
-[ext_resource type="AudioStream" uid="uid://bcvkhpk4x6262" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_reload1.mp3" id="2_0qqlm"]
 [ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="2_kqqn2"]
+[ext_resource type="AudioStream" uid="uid://b38l1m5ocm3n0" path="res://RDE_Audio/UI Sounds/Mini Crunch/click_02.wav" id="2_tsa7t"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="3_gjubk"]
 [ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="4_ydwhu"]
 [ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="5_8xl27"]
@@ -23,7 +23,7 @@ start_index = 0
 end_index = 34
 textbox_scene = NodePath("Textbox")
 key_hint_scene = NodePath("cscene_key_hint")
-continue_sound = ExtResource("2_0qqlm")
+continue_sound = ExtResource("2_tsa7t")
 
 [node name="ControlContainer" type="CanvasLayer" parent="."]
 

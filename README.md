@@ -4,6 +4,8 @@ It's a top down bullet hell shooter where you have to take down a nefarious, evi
 hyper-realistic raccoon (technically a monster in the form of a raccoon but that's just lore stuff).
 </p>
 
+<strong>Website link: www.insertwebsitewhenican.com</strong>
+
 <strong>Agenda:</strong>
 <ul>
 	<li>Create cutscene system and create normal intro/outro cutscenes</li>
@@ -99,8 +101,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(7/18/25)
 			<li>(NavButton) 
 			All navbuttons now play UI sound when pressed</li>
-			<li>(ome Menu [Settings]) 
+			<li>(Home Menu [Settings]) 
 			Reset audio button plays gun shot sound</li>
+			<li>(RGT_DEF_INTRO / RGT_DEF_OUTRO) 
+			Updated continue sounds</li>
 		</ul>
 	</li>
 	<li>
