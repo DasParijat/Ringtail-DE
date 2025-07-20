@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5yku1mrxehwp"]
+[gd_scene load_steps=12 format=3 uid="uid://b5yku1mrxehwp"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/base_player.gd" id="1_ssgha"]
 [ext_resource type="PackedScene" uid="uid://d2ty2wiyymcwh" path="res://RDE_Scenes/Base Entities/i_frame_timer.tscn" id="2_640n3"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="2_yhe0l"]
 [ext_resource type="AudioStream" uid="uid://dxrffalrjmi6x" path="res://RDE_Audio/Gun Audio/ak47 base sound effect.mp3" id="3_26ssd"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/power_audio_player.gd" id="4_uidep"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Players/movement_timer.gd" id="6_ogkyq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yiybb"]
 radius = 26.0768
@@ -80,9 +81,14 @@ scale = Vector2(0.9, 0.9)
 occluder = SubResource("OccluderPolygon2D_pfr3s")
 sdf_collision = false
 
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 5.0
+script = ExtResource("6_ogkyq")
+
 [connection signal="player_res_set" from="." to="PowerAudioPlayer" method="_on_base_player_player_res_set"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
 [connection signal="area_entered" from="HostileDetection" to="." method="_on_hostile_detection_area_entered"]
 [connection signal="area_exited" from="HostileDetection" to="." method="_on_hostile_detection_area_exited"]
+[connection signal="timeout" from="MovementTimer" to="MovementTimer" method="_on_timeout"]

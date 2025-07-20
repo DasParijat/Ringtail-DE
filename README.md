@@ -98,6 +98,19 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/19/25)
+			<li>(Base Player) 
+			Added movement timer, which checks every few seconds 
+			if player is pressing movement input, but the game
+			isn't actually moving the player. There's a bug where 
+			when the game is laggy, the collision check doesn't work 
+			and the player gets stuck in the wall, so this check 
+			allows the player to respawn at the center so they
+			aren't stuck until they die.</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/18/25)
 			<li>(NavButton) 
 			All navbuttons now play UI sound when pressed</li>
