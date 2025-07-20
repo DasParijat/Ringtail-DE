@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="2_4kb1p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5iny"]
-bg_color = Color(0.25, 0.229167, 0, 0.705882)
+bg_color = Color(0.431, 0.322, 0.067, 0.7)
 
 [sub_resource type="Image" id="Image_7mfjt"]
 data = {

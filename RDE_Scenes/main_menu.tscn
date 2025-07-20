@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dgynnt6h5g1vk"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/main_menu.gd" id="1_notiw"]
+[ext_resource type="Texture2D" uid="uid://djj1pq0sphvck" path="res://RDE_Images/menu_background3.png" id="2_2u53u"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_br78j"]
-[ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="2_t31j8"]
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="3_snekp"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="3_v6pk2"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/story_menu.gd" id="4_bakqm"]
@@ -83,7 +83,7 @@ offset_left = -56.0
 offset_top = -38.0
 offset_right = 1383.0
 offset_bottom = 1548.0
-texture = ExtResource("2_t31j8")
+texture = ExtResource("2_2u53u")
 expand_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="front_menu/Background"]

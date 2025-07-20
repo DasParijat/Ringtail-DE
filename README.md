@@ -98,6 +98,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/20/25)
+			<li>(Home Menu) 
+			Changed background to be more orange-tinted (like in the game)</li>
+			<li>(ModeCheckItem / Game Over) 
+			Changed color to be more orange tinted</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/19/25)
 			<li>(Base Player) 
 			Added movement timer, which checks every few seconds 

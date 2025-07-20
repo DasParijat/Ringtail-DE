@@ -1,9 +1,9 @@
 [gd_scene load_steps=56 format=4 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
-[ext_resource type="Texture2D" uid="uid://dknk1c1wxlrd0" path="res://RDE_Images/menu_background1.png" id="1_ks66d"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="1_rtoss"]
+[ext_resource type="Texture2D" uid="uid://djj1pq0sphvck" path="res://RDE_Images/menu_background3.png" id="3_bq8by"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
 [ext_resource type="Theme" uid="uid://bn4dixjn8yjtx" path="res://RDE_Images/StyleBoxFlats/home_menu_button_theme.tres" id="5_nv7n1"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_fight_menu.gd" id="6_5qig2"]
@@ -1989,7 +1989,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ks66d")
+texture = ExtResource("3_bq8by")
 stretch_mode = 6
 
 [node name="Main Menu" type="Control" parent="." node_paths=PackedStringArray("scene_transition")]
