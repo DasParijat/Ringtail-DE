@@ -107,12 +107,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			and the player gets stuck in the wall, so this check 
 			allows the player to respawn at the center so they
 			aren't stuck until they die.</li>
-			<li>(Minitails) 
+			<li>(Minitails / Explosion) 
 			Removed shadows from all minitails, added glowing effect to 
-			minitail sheild and heavy</li>
+			minitail sheild and heavy, removed glowing effect from Explosion</li>
 			<li>(RingtailHARD) 
 			Reduced number of explosions in chain explosion 
 			(From 10 to 20, now 3 to 6)</li>
+			<li>(Ringtail Fights) 
+			Removed tutorial mob from levels</li>
+			<li>(Home Menu / Game) 
+			Turned down volume of music players to -15 db</li>
 		</ul>
 	</li>
 	<li>

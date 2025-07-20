@@ -18,6 +18,7 @@ default_level = ExtResource("2_5lhl0")
 scene_transiton = NodePath("TopCanvasLayer/SceneTransitionFade")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
 autoplay = true
 bus = &"Music Bus"
 script = ExtResource("3_btvjt")

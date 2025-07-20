@@ -1,13 +1,16 @@
-[gd_resource type="Resource" script_class="BulletRes" load_steps=3 format=3 uid="uid://b1p273yihtgqh"]
+[gd_resource type="Resource" script_class="BulletRes" load_steps=6 format=3 uid="uid://b1p273yihtgqh"]
 
+[ext_resource type="AudioStream" uid="uid://cdx6g3sdpg811" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_shot1.mp3" id="1_j5noi"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/bulletRes.gd" id="2_4otdw"]
+[ext_resource type="AudioStream" uid="uid://bbmd7mtjodtno" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_shot2.mp3" id="2_lbj7l"]
 [ext_resource type="Texture2D" uid="uid://dqpq6unqud4qy" path="res://RDE_Images/test_bullet.png" id="3_m8v4l"]
+[ext_resource type="AudioStream" uid="uid://cfidvp45cp0fa" path="res://RDE_Audio/Gun Audio/SMG Audio/smg_shot3.mp3" id="3_s16o2"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_4otdw")
 texture = ExtResource("3_m8v4l")
-gun_shot_sounds = Array[AudioStream]([])
+gun_shot_sounds = Array[AudioStream]([ExtResource("1_j5noi"), ExtResource("2_lbj7l"), ExtResource("3_s16o2")])
 fade_on_exit = false
 damage = 5.0
 is_piercing = false

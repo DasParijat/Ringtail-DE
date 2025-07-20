@@ -13,7 +13,7 @@ func has_moved() -> bool:
 
 func _on_timeout() -> void:
 	cur_pos = get_parent().global_position
-	print("is triggered: ", !(has_moved()) and GlobalPlayer.is_moving, " cur pos: ", cur_pos, " prev_pos: ", prev_pos)
+	#print("is triggered: ", !(has_moved()) and GlobalPlayer.is_moving, " cur pos: ", cur_pos, " prev_pos: ", prev_pos)
 	
 	if !(has_moved()) and GlobalPlayer.is_moving:
 		get_parent().global_position = Vector2(0, 20)

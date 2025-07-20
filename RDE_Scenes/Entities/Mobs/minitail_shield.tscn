@@ -36,9 +36,9 @@ occluder = SubResource("OccluderPolygon2D_0sn7r")
 [node name="PointLight2D" type="PointLight2D" parent="base_mob"]
 scale = Vector2(2, 2)
 color = Color(0.788235, 0.784314, 0.701961, 1)
+energy = 0.3
 shadow_color = Color(0, 0, 0, 0.239216)
 texture = SubResource("GradientTexture2D_5ysti")
-texture_scale = 1.2
 
 [node name="MobController" type="Node2D" parent="." node_paths=PackedStringArray("base")]
 script = ExtResource("4_5r341")

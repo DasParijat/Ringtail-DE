@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://tfmw6jtjwy2m" path="res://RDE_Images/explosion1.png" id="4_yj4fw"]
 [ext_resource type="Texture2D" uid="uid://bnxl1sthqsiyf" path="res://RDE_Images/explosion2.png" id="5_stwfg"]
 
-[sub_resource type="Gradient" id="Gradient_rhvdm"]
-offsets = PackedFloat32Array(0, 0.837838)
+[sub_resource type="Gradient" id="Gradient_5w2qs"]
+colors = PackedColorArray(1, 1, 1, 0.897, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qfcl4"]
-gradient = SubResource("Gradient_rhvdm")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7aqht"]
+gradient = SubResource("Gradient_5w2qs")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.825472, 0.132075)
 
 [sub_resource type="Curve" id="Curve_j0v2h"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -31,7 +32,7 @@ flash2_texture = ExtResource("5_stwfg")
 
 [node name="PointLight2D" type="PointLight2D" parent="base_mob"]
 color = Color(0.843, 0.052, 0.029, 0.5)
-texture = SubResource("GradientTexture2D_qfcl4")
+texture = SubResource("GradientTexture2D_7aqht")
 
 [node name="MobController" parent="." node_paths=PackedStringArray("base") instance=ExtResource("4_3dpm1")]
 base = NodePath("../base_mob")

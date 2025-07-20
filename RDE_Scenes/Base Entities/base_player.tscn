@@ -82,7 +82,7 @@ occluder = SubResource("OccluderPolygon2D_pfr3s")
 sdf_collision = false
 
 [node name="MovementTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 script = ExtResource("6_ogkyq")
 
 [connection signal="player_res_set" from="." to="PowerAudioPlayer" method="_on_base_player_player_res_set"]
