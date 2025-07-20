@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bnxl1sthqsiyf" path="res://RDE_Images/explosion2.png" id="5_stwfg"]
 
 [sub_resource type="Gradient" id="Gradient_rhvdm"]
-offsets = PackedFloat32Array(0, 0.75)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.837838)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qfcl4"]
 gradient = SubResource("Gradient_rhvdm")

@@ -18,6 +18,7 @@ controller = NodePath("MobController")
 [node name="base_mob" parent="." instance=ExtResource("3_5yuc1")]
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="base_mob"]
+visible = false
 modulate = Color(1, 1, 1, 0.196078)
 scale = Vector2(1.8, 1.8)
 occluder = SubResource("OccluderPolygon2D_o88tg")
