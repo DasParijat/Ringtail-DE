@@ -31,8 +31,8 @@ func phase1():
 			1: projectile.shoot_from_rand()
 			2: projectile.shoot_laser({"speed": 700}, 3, 0.3)
 	
-	if GlobalTime.process_interval(4.0, total_delta, get_process_delta_time()):
-		for i in range(clampi(phase + 1, 2, 3)):
+	if GlobalTime.process_interval(5.0, total_delta, get_process_delta_time()):
+		for i in range(phase + randi_range(0, 1)):
 			spawner.spawn_mob(minitail_default, base.global_position)
 
 func phase2():

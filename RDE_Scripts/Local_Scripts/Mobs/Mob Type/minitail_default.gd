@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta : float) -> void:
 	total_delta += delta
 	
-	if randi_range(0,9) == 0 or total_delta < 3.0:
+	if randi_range(0,7) == 0 or total_delta < 5.0:
 		controller.action_handling(1)
 	else:
 		controller.action_handling(2)
@@ -29,7 +29,7 @@ func action1() -> void:
 func action2() -> void:
 	## Dash near to random places
 	for i in range(3): 
-		base.action("move_torward_point", {"target": base.get_rand_player_pos(350, 550, 350, 550), "speed": 180, "length": 0.4})
+		base.action("move_torward_point", {"target": base.get_rand_player_pos(250, 450, 250, 450), "speed": 180, "length": 0.4})
 		await GlobalTime.local_wait(0.4)
 	
 	controller.hold(false)

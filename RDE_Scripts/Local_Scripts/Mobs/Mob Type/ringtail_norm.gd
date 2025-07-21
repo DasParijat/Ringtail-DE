@@ -29,8 +29,8 @@ func phase1():
 			1: target_projectile.shoot({"speed": 1400})
 			2: target_projectile.shoot({"speed": 2100})
 	
-	if GlobalTime.process_interval(4.0, total_delta, get_process_delta_time()):
-		for i in range(phase + 1):
+	if GlobalTime.process_interval(5.0, total_delta, get_process_delta_time()):
+		for i in range(phase + randi_range(0, 1)):
 			spawner.spawn_mob(minitail_default, base.global_position)
 
 func phase2():

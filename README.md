@@ -103,6 +103,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Slightly nerfed final phase of fight</li>
 			<li>(RGT_DEF_OUTRO) 
 			Intro cam pan is a lot quicker</li>
+			<li>(Minitails / Ringtails) 
+			Found and fixed issue of all minitails of the same type 
+			sharing a single health value. Due to fixing the bug, 
+			several gameplay stuff has to be nerfed to adjust to 
+			the new fixed health of minitails.</li>
+			<li>(Pump Shotgun) 
+			The shotgun has been buffed, having a further off falloff point 
+			and piercing bullets</li>
 		</ul>
 	</li>
 	<li>
