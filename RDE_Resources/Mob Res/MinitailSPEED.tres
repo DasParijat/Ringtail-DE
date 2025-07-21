@@ -10,7 +10,7 @@ resource_local_to_scene = true
 script = ExtResource("1_xmwl6")
 HP_NAME = "MinitailSPEED"
 is_player = false
-MAX_HP = 10
+MAX_HP = 14
 damage_rate = 1.0
 invicible = false
 

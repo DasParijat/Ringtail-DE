@@ -23,8 +23,8 @@ func phase1():
 			target_projectile.shoot({"speed": 1500})
 	
 	if GlobalTime.process_interval(5.0, total_delta, get_process_delta_time()):
-		if GMobHandler.num_of_mobs > 5:
+		if GMobHandler.num_of_mobs > 6:
 			return
 		
-		for i in randi_range(1,2):
+		for i in randi_range(1,3):
 			spawner.spawn_mob(minitail_default, base.global_position)

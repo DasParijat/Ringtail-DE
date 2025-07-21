@@ -32,7 +32,7 @@ func phase1():
 			2: projectile.shoot_laser({"speed": 700}, 3, 0.3)
 	
 	if GlobalTime.process_interval(5.0, total_delta, get_process_delta_time()):
-		for i in range(phase + randi_range(0, 1)):
+		for i in range(phase + 1):
 			spawner.spawn_mob(minitail_default, base.global_position)
 
 func phase2():
@@ -48,7 +48,7 @@ func phase2():
 		else:
 			chain_explosion(randi_range(3, 5), 0.4)
 			
-	if GlobalTime.process_interval(((phase - 1) * 15.0), total_delta, get_process_delta_time()):
+	if GlobalTime.process_interval(((phase - 1) * 10.0), total_delta, get_process_delta_time()):
 		if randi_range(0,3) == 0:
 			for i in randi_range(1,(phase - 1)):
 				spawner.spawn_mob(minitail_heavy, base.global_position)
@@ -66,6 +66,6 @@ func phase3():
 								"speed": 550}
 								, 6, 0.3)
 	
-	if GlobalTime.process_interval(25.0, total_delta, get_process_delta_time()):
-		for i in randi_range(2,3):
+	if GlobalTime.process_interval(21.0, total_delta, get_process_delta_time()):
+		for i in randi_range(1,3):
 			spawner.spawn_mob(minitail_shield, base.global_position)

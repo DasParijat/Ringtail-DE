@@ -43,7 +43,7 @@ func phase2():
 	if GlobalTime.process_interval(10.0, total_delta, get_process_delta_time()):
 		spawner.spawn_mob(explosion_load, base.get_rand_player_pos(25, 50, 25, 50))
 	
-	if GlobalTime.process_interval(((phase - 1) * 15.0), total_delta, get_process_delta_time()):
+	if GlobalTime.process_interval(((phase - 1) * 10.0), total_delta, get_process_delta_time()):
 		if randi_range(0,4) == 0:
 			for i in randi_range(1,3):
 				spawner.spawn_mob(minitail_heavy, base.global_position)

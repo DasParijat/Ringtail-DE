@@ -60,6 +60,11 @@ visible = false
 header_text = "Low HP"
 desc_text = "When low on HP, you will gain several abilities, including automatic power activation near enemies, auto-switching guns when out of ammo, and faster movement speed."
 
+[node name="GunTutorial" parent="ControlContainer" instance=ExtResource("6_ii8s3")]
+visible = false
+header_text = "Guns"
+desc_text = "You can switch between two guns, SMG for long-range and precise shots, and a shotgun for short-range and crowd control"
+
 [node name="Textbox" parent="." instance=ExtResource("2_kqqn2")]
 
 [node name="cscene_key_hint" parent="." instance=ExtResource("5_8xl27")]

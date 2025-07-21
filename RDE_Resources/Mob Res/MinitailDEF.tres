@@ -10,7 +10,7 @@ resource_local_to_scene = true
 script = ExtResource("1_w5iru")
 HP_NAME = "Minitail"
 is_player = false
-MAX_HP = 12
+MAX_HP = 16
 damage_rate = 1.0
 invicible = false
 

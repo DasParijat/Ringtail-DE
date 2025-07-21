@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqkyuqbyx4a56" path="res://RDE_Images/rt_minitailSHIELD.png" id="3_snt8u"]
 
 [sub_resource type="Resource" id="Resource_4xssb"]
+resource_local_to_scene = true
 script = ExtResource("1_esclb")
 HP_NAME = "MinitailSHIELD"
 is_player = false

@@ -12,6 +12,7 @@ extends BaseCutscene
 @onready var power_tutorial : TutorialPopUp = $ControlContainer/PowerTutorial
 @onready var minitail_tutorial : TutorialPopUp = $ControlContainer/MinitailTutorial
 @onready var low_hp_tutorial : TutorialPopUp = $ControlContainer/LowHPTutorial
+@onready var gun_tutorial : TutorialPopUp = $ControlContainer/GunTutorial
 
 # Speaker names
 var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
@@ -108,14 +109,13 @@ func cutscene_handler() -> void:
 		27:
 			next_tutorial_pop_up(hp_2_tutorial, low_hp_tutorial)
 		28:
-			#low_hp_tutorial.hide_tutorial()
-			next_tutorial_pop_up(low_hp_tutorial)
+			next_tutorial_pop_up(low_hp_tutorial, gun_tutorial)
+		29:
+			next_tutorial_pop_up(gun_tutorial)
 			
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.2)
 			show_textbox()
 			display_text("Yeah I’ve done my homework on you", oswald_name)
-		29:
-			pass
 		30:
 			hide_textbox()
 			enable_auto_skip()

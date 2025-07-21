@@ -111,6 +111,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Pump Shotgun) 
 			The shotgun has been buffed, having a further off falloff point 
 			and piercing bullets</li>
+			<li>(RGT_DEF_INTRO) 
+			Added a new TutorialPopUp for guns</li>
 		</ul>
 	</li>
 	<li>
