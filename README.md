@@ -98,6 +98,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/21/25)
+			<li>(RingtailHARD) 
+			Slightly nerfed final phase of fight</li>
+			<li>(RGT_DEF_OUTRO) 
+			Intro cam pan is a lot quicker</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/20/25)
 			<li>(Home Menu) 
 			Changed background to be more orange-tinted (like in the game)</li>
