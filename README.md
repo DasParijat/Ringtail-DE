@@ -103,6 +103,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Changed background to be more orange-tinted (like in the game)</li>
 			<li>(ModeCheckItem / Game Over) 
 			Changed color to be more orange tinted</li>
+			<li>(Home Menu [Fight]) 
+			Added proper fight thumbnail for RingtailEASY, 
+			also allowed thumbnails to have the same corners as 
+			it's panel parent.</li>
 		</ul>
 	</li>
 	<li>
