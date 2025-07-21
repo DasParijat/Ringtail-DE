@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelRes" load_steps=6 format=3 uid="uid://bkggmld6fufgd"]
 
-[ext_resource type="Texture2D" uid="uid://djl1livyvdd5n" path="res://RDE_Images/rt_minitailSPEED.png" id="1_0oev4"]
+[ext_resource type="Texture2D" uid="uid://oam3b6i1iur2" path="res://RDE_Images/RGT_norm_thumbnail.png" id="1_dplpp"]
 [ext_resource type="Resource" uid="uid://bo04vgmtwy7b0" path="res://RDE_Resources/Cutscene Res/RGT_DEF_INTRO.tres" id="2_iaovs"]
 [ext_resource type="Resource" uid="uid://dyxlbkuw0veyo" path="res://RDE_Resources/Fight Res/RGT_NORM.tres" id="2_rw1cl"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="3_5pg3w"]
@@ -11,5 +11,5 @@ script = ExtResource("3_5pg3w")
 LEVEL_NAME = "STORY_RGT_NORM"
 DISPLAY_NAME = "Ringtail - Normal"
 LEVEL_DESC = "This is ringtail norm"
-THUMBNAIL = ExtResource("1_0oev4")
+THUMBNAIL = ExtResource("1_dplpp")
 order = Array[Resource]([ExtResource("2_iaovs"), ExtResource("2_rw1cl"), ExtResource("5_lexm8")])
