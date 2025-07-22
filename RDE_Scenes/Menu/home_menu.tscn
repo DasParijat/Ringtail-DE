@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=55 format=4 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
@@ -11,7 +11,6 @@
 [ext_resource type="Theme" uid="uid://cdr0sac8dilf2" path="res://RDE_Images/StyleBoxFlats/fight_select_button1_theme.tres" id="7_a3nps"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_credits.gd" id="7_edg5u"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/fight_select_button.gd" id="7_wokig"]
-[ext_resource type="AudioStream" uid="uid://3xbfx5c6bib2" path="res://RDE_Audio/UI Sounds/Mini Crunch/enter_01.wav" id="8_svx4k"]
 [ext_resource type="PackedScene" uid="uid://cenrgdsilaox1" path="res://RDE_Scenes/Menu/audio_slider.tscn" id="8_ubgdy"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="9_bj674"]
 [ext_resource type="PackedScene" uid="uid://dnyif5jradpwq" path="res://RDE_Scenes/Menu/mode_check_item.tscn" id="10_fs5vg"]
@@ -2036,14 +2035,12 @@ layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Play"
 script = ExtResource("1_k7wod")
-button_sound = ExtResource("8_svx4k")
 
 [node name="settingsB" type="Button" parent="Main Menu/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Settings"
 script = ExtResource("1_k7wod")
-button_sound = ExtResource("8_svx4k")
 
 [node name="creditsB" type="Button" parent="Main Menu/HBoxContainer"]
 visible = false
@@ -2051,14 +2048,12 @@ layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Credits"
 script = ExtResource("1_k7wod")
-button_sound = ExtResource("8_svx4k")
 
 [node name="quitB" type="Button" parent="Main Menu/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Quit"
 script = ExtResource("1_k7wod")
-button_sound = ExtResource("8_svx4k")
 
 [node name="reloadB" type="Button" parent="Main Menu/HBoxContainer"]
 visible = false

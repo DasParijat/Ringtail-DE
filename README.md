@@ -112,7 +112,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			The shotgun has been buffed, having a further off falloff point 
 			and piercing bullets</li>
 			<li>(RGT_DEF_INTRO) 
-			Added a new TutorialPopUp for guns</li>
+			Added a new TutorialPopUp for guns, changed date from September to October</li>
+			<li>(Load Screen) 
+			Added new loading screen image, to match color palette</li>
+			<li>(Ringtails) 
+			Changed the color of the health bars to be more brownish-orange, 
+			as well as made blood color slightly more orange</li>
+			<li>(Audio) 
+			Turned up the volume of UI sounds being used</li>
 		</ul>
 	</li>
 	<li>

@@ -35,7 +35,7 @@ func cutscene_handler() -> void:
 			start_tween(oswald, "modulate", Color(1,1,1,1), 0.2)
 			textbox.offset = Vector2(0, -300)
 			textbox.set_font_size(50)
-			display_text("September 1996, Plankwood USA", blank_name, 0.09)
+			display_text("October 1996, Plankwood USA", blank_name, 0.09)
 		2:
 			textbox.offset = Vector2(0, 0)
 			textbox.set_font_size()

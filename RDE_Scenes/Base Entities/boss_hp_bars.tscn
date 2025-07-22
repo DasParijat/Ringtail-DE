@@ -2,13 +2,11 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/boss_hp_bars.gd" id="1_cx8yl"]
 
-[sub_resource type="SystemFont" id="SystemFont_ewhls"]
+[sub_resource type="SystemFont" id="SystemFont_mhc6c"]
 font_names = PackedStringArray("Bahnschrift")
-font_weight = 475
-subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbuce"]
-font = SubResource("SystemFont_ewhls")
+font = SubResource("SystemFont_mhc6c")
 font_size = 20
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.588235)
