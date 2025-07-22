@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be562axha0n3e"
+path="res://.godot/imported/rde_game_over4.mp3-07eaba546e8c12325dc5229fd8955f3c.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3"
+dest_files=["res://.godot/imported/rde_game_over4.mp3-07eaba546e8c12325dc5229fd8955f3c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

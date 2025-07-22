@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd4jbqa68fpne"]
+[gd_scene load_steps=16 format=3 uid="uid://dd4jbqa68fpne"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/game_over.gd" id="1_c6p7h"]
+[ext_resource type="AudioStream" uid="uid://bmeh8ssckvapd" path="res://RDE_Audio/Game Over Sounds/rde_game_over1.mp3" id="2_c3b6y"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="2_wsu6o"]
 [ext_resource type="AudioStream" uid="uid://bwjuqd6jxna3f" path="res://RDE_Audio/Mob Sounds/Mob Death/minitail_death4.mp3" id="3_4f1rc"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="3_ruy16"]
+[ext_resource type="AudioStream" uid="uid://dl45meg0ocktr" path="res://RDE_Audio/Game Over Sounds/rde_game_over2.mp3" id="3_s7h1v"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="4_el73u"]
+[ext_resource type="AudioStream" uid="uid://c5eyokdvvlkaj" path="res://RDE_Audio/Game Over Sounds/rde_game_over3.mp3" id="4_j2pdn"]
+[ext_resource type="AudioStream" uid="uid://be562axha0n3e" path="res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3" id="5_ioasm"]
 
 [sub_resource type="Gradient" id="Gradient_uueep"]
 offsets = PackedFloat32Array(0, 0.508621, 1)
@@ -67,12 +71,13 @@ background = NodePath("Background")
 heading_text = NodePath("GameOverText")
 button_container = NodePath("MarginContainer")
 transition_fade = NodePath("DeathTransitionFade")
+game_over_sounds = Array[AudioStream]([ExtResource("2_c3b6y"), ExtResource("3_s7h1v"), ExtResource("4_j2pdn"), ExtResource("5_ioasm")])
 scene_transition_fade = NodePath("SceneTransitionFade")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4f1rc")
-autoplay = true
-bus = &"UI SFX"
+volume_db = -15.0
+bus = &"Music Bus"
 
 [node name="Background" type="Panel" parent="."]
 anchors_preset = 15

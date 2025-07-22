@@ -6,11 +6,18 @@ extends CanvasLayer
 @export var button_container : Container
 @export var transition_fade : Control
 
+@export var game_over_sounds : Array[AudioStream]
 @export var scene_transition_fade : SceneTransitionFade
+
+@onready var death_sound_player : AudioStreamPlayer = $DeathSound
 
 var init_ui_y_diff : float = 50
 
 func _ready() -> void:
+	if not game_over_sounds.is_empty():
+		death_sound_player.stream = game_over_sounds.pick_random()
+		death_sound_player.play()
+	
 	scene_transition_fade.set_enter_state()
 	transition_fade.show()
 	

@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_mhc6c"]
 font_names = PackedStringArray("Bahnschrift")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbuce"]
 font = SubResource("SystemFont_mhc6c")

@@ -101,6 +101,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(7/22/25)
 			<li>(Ringtails / Audio) 
 			Added ringtail fight theme and applied them to all ringtails</li>
+			<li>(Game Over / Audio) 
+			Added 4 different game over sounds, that are randomly selected. 
+			Game Over audio is also now connected with the Music Audio Bus</li>
 		</ul>
 	</li>
 	<li>
