@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/rg_theme_full.mp3-3b24a56a1ddd9818f72684c9ee0
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

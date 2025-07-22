@@ -37,4 +37,8 @@ func _on_game_won() -> void:
 		stop()
 		game_is_running = false
 		play_track(music_res.song_outro)
+		
+	await GlobalScene.off_victory
+	stop()
+	
 	

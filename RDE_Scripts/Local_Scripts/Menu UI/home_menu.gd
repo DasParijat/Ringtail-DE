@@ -1,6 +1,4 @@
 extends CanvasLayer
-# TODO - Create a new menu
-# TODO - Possibly create some sort of state machine to handle opening menus
 
 @export var main_menu : MainMenu
 @export var credits_menu : CreditsMenu
@@ -22,7 +20,7 @@ func _ready() -> void:
 	GlobalFightStats.reset_fight_stats()
 	
 	var tween : Tween = create_tween().set_ease(Tween.EASE_OUT)
-	tween.tween_property(menu_theme_player, "volume_db", -15, 1)
+	tween.tween_property(menu_theme_player, "volume_db", -15, 0.7)
 	
 	set_cur_menu(main_menu)
 	scene_transition.enter_anim(0.25)

@@ -76,7 +76,7 @@ scene_transition_fade = NodePath("SceneTransitionFade")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4f1rc")
-volume_db = -15.0
+volume_db = -12.0
 bus = &"Music Bus"
 
 [node name="Background" type="Panel" parent="."]

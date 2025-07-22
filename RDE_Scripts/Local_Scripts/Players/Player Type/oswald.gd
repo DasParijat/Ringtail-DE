@@ -87,9 +87,9 @@ func is_power_activated() -> bool:
 			and auto_power_timer.is_stopped()
 			and GlobalPlayer.is_moving)
 		) 
-		or (base.is_near_enemy # If player stops holding power, keep power if near enemy
-			and GlobalPlayer.power_activated)
-			and player_res.cur_power > 0
+		#or (base.is_near_enemy # If player stops holding power, keep power if near enemy
+		#	and GlobalPlayer.power_activated)
+		#	and player_res.cur_power > 0
 	) 
 	
 

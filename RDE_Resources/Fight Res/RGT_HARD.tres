@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("1_g67wl")
-FIGHT_NAME = "RGT_HARD"
+FIGHT_NAME = "HARD"
 music_res = ExtResource("2_o3k6k")
 world_scene = ExtResource("7_8wdhd")
 single_boss = ExtResource("3_syque")

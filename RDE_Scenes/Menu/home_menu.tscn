@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
 [ext_resource type="Texture2D" uid="uid://pqj8avqrkuop" path="res://RDE_Images/RDE_Logo2.png" id="1_rtoss"]
+[ext_resource type="AudioStream" uid="uid://dapuvwpmwddvn" path="res://RDE_Audio/Music/rde_menu_theme.mp3" id="2_5mv0o"]
 [ext_resource type="Texture2D" uid="uid://djj1pq0sphvck" path="res://RDE_Images/menu_background3.png" id="3_bq8by"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/h_main_menu.gd" id="3_yrxxt"]
 [ext_resource type="Theme" uid="uid://bn4dixjn8yjtx" path="res://RDE_Images/StyleBoxFlats/home_menu_button_theme.tres" id="5_nv7n1"]
@@ -16,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dnyif5jradpwq" path="res://RDE_Scenes/Menu/mode_check_item.tscn" id="10_fs5vg"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="15_reypx"]
 [ext_resource type="Texture2D" uid="uid://dnwoqit31dx75" path="res://RDE_Images/RGT_easy_thumbnail.png" id="16_kinjh"]
-[ext_resource type="AudioStream" uid="uid://dwccyciwstg8u" path="res://RDE_Audio/Music/nf fight song 14.mp3" id="17_y1l4v"]
 [ext_resource type="AudioStream" uid="uid://cdkx57r2cq48q" path="res://RDE_Audio/UI Sounds/Mini Crunch/select_01.wav" id="18_mff3c"]
 
 [sub_resource type="SystemFont" id="SystemFont_1t3ws"]
@@ -1977,7 +1977,7 @@ background = NodePath("Background")
 scene_transition = NodePath("SceneTransitionFade")
 
 [node name="MenuThemePlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_y1l4v")
+stream = ExtResource("2_5mv0o")
 volume_db = -80.0
 autoplay = true
 bus = &"Music Bus"

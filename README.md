@@ -102,8 +102,18 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Ringtails / Audio) 
 			Added ringtail fight theme and applied them to all ringtails</li>
 			<li>(Game Over / Audio) 
-			Added 4 different game over sounds, that are randomly selected. 
+			Added 4 different game over sounds, that are randomly selected, 
 			Game Over audio is also now connected with the Music Audio Bus</li>
+			<li>(Home Menu / Audio) 
+			Added menu theme to home menu</li>
+			<li>(Game / MusicPlayer) 
+			Outro music stops playing when leaving victory screen</li>
+			<li>(Oswald) 
+			Power mode no longer remains active if player is still near enemy 
+			even after it's activated the power manually</li>
+			<li>(Ringtails) 
+			The display name for all Ringtail fights have been changed to 
+			just what difficulty they are</li>
 		</ul>
 	</li>
 	<li>
