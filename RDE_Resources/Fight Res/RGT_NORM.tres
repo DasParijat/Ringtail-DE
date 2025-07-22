@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="FightRes" load_steps=6 format=3 uid="uid://dyxlbkuw0veyo"]
+[gd_resource type="Resource" script_class="FightRes" load_steps=7 format=3 uid="uid://dyxlbkuw0veyo"]
 
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/gunRes.gd" id="1_mkdym"]
+[ext_resource type="Resource" uid="uid://bclw4aun5xgj" path="res://RDE_Resources/Music Res/ringtail_theme.tres" id="2_3qy06"]
 [ext_resource type="PackedScene" uid="uid://t3n8e0fyn57u" path="res://RDE_Scenes/Entities/oswald.tscn" id="2_6wnpo"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/fightRes.gd" id="3_e8yek"]
 [ext_resource type="PackedScene" uid="uid://bbrq72pdye12d" path="res://RDE_Scenes/Entities/Mobs/ringtail_norm.tscn" id="4_aijre"]
@@ -9,6 +10,7 @@
 [resource]
 script = ExtResource("3_e8yek")
 FIGHT_NAME = "RGT_NORM"
+music_res = ExtResource("2_3qy06")
 world_scene = ExtResource("5_78dcm")
 single_boss = ExtResource("4_aijre")
 single_boss_spawn = Vector2(0, -87)

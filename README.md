@@ -98,6 +98,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/22/25)
+			<li>(Ringtails / Audio) 
+			Added ringtail fight theme and applied them to all ringtails</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/21/25)
 			<li>(RingtailHARD) 
 			Slightly nerfed final phase of fight</li>
