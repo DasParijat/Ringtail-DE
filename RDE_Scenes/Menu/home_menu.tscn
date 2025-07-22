@@ -2144,7 +2144,7 @@ layout_mode = 2
 theme = SubResource("Theme_wfq2x")
 theme_override_fonts/font = SubResource("SystemFont_1t3ws")
 theme_override_font_sizes/font_size = 30
-text = "Camera Shake"
+text = "Gun Camera Shake"
 icon_alignment = 2
 vertical_icon_alignment = 2
 
@@ -2264,7 +2264,7 @@ fight_buttons = NodePath("MarginContainer/HBoxContainer/FightB Container/Button 
 PlayButton = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/HBoxContainer/PlayB")
 fight_thumbnail = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/Thumbnail Holder/TextureRect")
 fight_header = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Header")
-fight_desc = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/Text")
+fight_desc = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/Text")
 mode_container = NodePath("MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer")
 scene_transition = NodePath("../SceneTransitionFade")
 
@@ -2387,9 +2387,17 @@ label_settings = SubResource("LabelSettings_okxal")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = -10
+
+[node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
+text = "Ringtail is a nefarious creature who’s been torturing the town of Plankwood for months now. Using his tricky movement, endless minitails, and much more magical abilities, he has been able to evade justice."
 label_settings = SubResource("LabelSettings_m6cyt")
 autowrap_mode = 3
 

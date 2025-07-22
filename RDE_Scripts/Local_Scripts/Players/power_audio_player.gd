@@ -12,7 +12,7 @@ var can_play : bool = false
 func _ready() -> void:
 	GlobalSignal.connect("get_cur_stats", Callable(self, "_on_get_cur_stats"))
 	var bus_index = AudioServer.get_bus_index(bus_name)
-	max_volume = AudioServer.get_bus_volume_db(bus_index)
+	#max_volume = AudioServer.get_bus_volume_db(bus_index)
 
 	volume_db = min_volume
 
@@ -26,4 +26,4 @@ func _process(delta : float) -> void:
 	self.volume_db = lerpf(self.volume_db, 
 							target_volume, 
 							volume_transition_speed)
-	#print(self.volume_db)
+	#print(self.volume_db, target_volume)

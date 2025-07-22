@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://corvcvjy3cxbn" path="res://RDE_Resources/Gun Res/SMG.tres" id="2_0s6dd"]
 [ext_resource type="Resource" uid="uid://bp54wtlywyi31" path="res://RDE_Resources/Gun Res/PumpShotgun.tres" id="2_3vifi"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/playerRes.gd" id="3_se43b"]
-[ext_resource type="AudioStream" uid="uid://cbw8l2cwal5vo" path="res://RDE_Audio/rumbling-drone-59370.mp3" id="4_lo472"]
+[ext_resource type="AudioStream" uid="uid://ci1m2j5iqmwc" path="res://RDE_Audio/heartbeat-89bpm-34936.mp3" id="4_cva3c"]
 [ext_resource type="AudioStream" uid="uid://dl1tcmjg74vyo" path="res://RDE_Audio/UI Sounds/zapsplat_medicine_vitamin_c_tablets_plastic_jar_movement_shake_001_17416.mp3" id="4_wknd7"]
 [ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="5_rwotw"]
 
@@ -14,7 +14,7 @@ name = "Oswald"
 primary_color = Color(1, 0.854902, 0.462745, 1)
 secondary_color = Color(0.864355, 0.683398, 0, 1)
 texture = ExtResource("5_rwotw")
-power_audio = ExtResource("4_lo472")
+power_audio = ExtResource("4_cva3c")
 health_res = ExtResource("1_6a0bh")
 regen_rate = 1.0
 regen_amt = 0.3

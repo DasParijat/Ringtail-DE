@@ -10,6 +10,6 @@
 script = ExtResource("3_5pg3w")
 LEVEL_NAME = "STORY_RGT_NORM"
 DISPLAY_NAME = "Ringtail - Normal"
-LEVEL_DESC = "This is ringtail norm"
+LEVEL_DESC = "Ringtail is a nefarious creature who’s been torturing the town of Plankwood for months now. Using his tricky movement, endless minitails, and much more magical abilities, he has been able to evade justice."
 THUMBNAIL = ExtResource("1_dplpp")
 order = Array[Resource]([ExtResource("2_iaovs"), ExtResource("2_rw1cl"), ExtResource("5_lexm8")])

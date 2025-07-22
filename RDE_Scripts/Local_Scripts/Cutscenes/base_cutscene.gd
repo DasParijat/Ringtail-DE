@@ -138,6 +138,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test"):
 		# Skip cutscene keybind
 		c_index = end_index + 1
+		AudioManager.play_audio_one_shot(preload("res://RDE_Audio/UI Sounds/Mini Crunch/click_02.wav"), "UI SFX")
 		
 	if event.is_action_pressed("can_auto_skip"):
 		# Enable/Disable auto_skip keybind

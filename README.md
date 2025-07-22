@@ -110,10 +110,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Outro music stops playing when leaving victory screen</li>
 			<li>(Oswald) 
 			Power mode no longer remains active if player is still near enemy 
-			even after it's activated the power manually</li>
+			even after it's activated the power manually, 
+			and a new heartbeat sound plays when power activated</li>
 			<li>(Ringtails) 
 			The display name for all Ringtail fights have been changed to 
-			just what difficulty they are</li>
+			just what difficulty they are, as well as all ringtail levels 
+			have a proper description now</li>
+			<li>(Base Player) 
+			Power Audio is now louder</li>
+			<li>(Base Cutscene) 
+			UI sound effect plays when skipping cutscene</li>
 		</ul>
 	</li>
 	<li>
