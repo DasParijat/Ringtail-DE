@@ -20,7 +20,7 @@ func _ready() -> void:
 	GlobalFightStats.reset_fight_stats()
 	
 	var tween : Tween = create_tween().set_ease(Tween.EASE_OUT)
-	tween.tween_property(menu_theme_player, "volume_db", -15, 0.7)
+	tween.tween_property(menu_theme_player, "volume_db", -10, 0.7)
 	
 	set_cur_menu(main_menu)
 	scene_transition.enter_anim(0.25)

@@ -154,9 +154,9 @@ func cutscene_handler() -> void:
 			show_textbox()
 			enable_auto_skip()
 			display_text("But…", ringtail_name, 0.02)
-			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 1)
 		36:
 			display_text("You really thought it would be that easy?", ringtail_name)
+			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 0.8)
 		37:
 			display_text("No…I-...Ringtail", oswald_name)
 		38:

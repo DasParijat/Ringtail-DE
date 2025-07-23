@@ -53,7 +53,7 @@ func set_default_volume(bus_name : String, default_volume : float) -> void:
 func _on_reset_audio_b_pressed() -> void:
 	set_default_volume("Master", 1)
 	set_default_volume("Music Bus", 1)
-	set_default_volume("Game SFX", 0.5)
+	set_default_volume("Game SFX", 0.3)
 	set_default_volume("UI SFX", 1)
 	set_default_volume("CScene Bus", 1)
 	

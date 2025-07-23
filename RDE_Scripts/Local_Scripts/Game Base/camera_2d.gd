@@ -63,7 +63,7 @@ func _process(delta : float) -> void:
 	elif track_boss:
 		set_position(main_boss_pos)
 		offset = Vector2(-200, 0) 
-		zoom = zoom.lerp(Vector2(4, 4), delta * 10)
+		zoom = clamp(zoom.lerp(Vector2(2, 2), delta * 10), Vector2(2,2), Vector2(2,2))
 		
 	#player_power_handling(1.2, 10)
 	#gun_shake(delta)

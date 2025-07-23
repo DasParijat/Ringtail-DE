@@ -6,13 +6,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Website link: www.insertwebsitewhenican.com</strong>
 
-<strong>Agenda:</strong>
+<strong>Agenda / Possible Goals:</strong>
 <ul>
-	<li>Create cutscene system and create normal intro/outro cutscenes</li>
-	<li>Finish Implement audio (Music, UI SFX, mob hurt/death sounds)</li>
-	<li>Create new assets for world (modified version of tileset)</li>
 	<li>Add ability to save data (Saves settings and if fight beaten)</li>
-	<li>Stylize game over and loading screen</li>
 	<li>Create credits menu (either sub menu in settings or own menu)</li>
 	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
 	<li>MAYBE Add little cool animation for main menu</li>
@@ -99,13 +95,19 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(7/22/25)
+			<li>(General / Main Menu) 
+			Finally removed old main menu scene and script 
+			(It wasn't being used but it was still in the project)</li>
+			<li>(Game Camera) 
+			Fixed issue of game camera jittering when tracking boss</li>
 			<li>(Ringtails / Audio) 
 			Added ringtail fight theme and applied them to all ringtails</li>
 			<li>(Game Over / Audio) 
 			Added 4 different game over sounds, that are randomly selected, 
 			Game Over audio is also now connected with the Music Audio Bus</li>
 			<li>(Home Menu / Audio) 
-			Added menu theme to home menu</li>
+			Added menu theme to home menu, 
+			made home menu audio player slightly louder</li>
 			<li>(Game / MusicPlayer) 
 			Outro music stops playing when leaving victory screen</li>
 			<li>(Oswald) 
@@ -117,7 +119,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			just what difficulty they are, as well as all ringtail levels 
 			have a proper description now</li>
 			<li>(Base Player) 
-			Power Audio is now louder</li>
+			Power Audio is now louder, 
+			movement timer plays sound effect when teleporting player</li>
 			<li>(Base Cutscene) 
 			UI sound effect plays when skipping cutscene</li>
 			<li>(RGT_DEF_OUTRO) 

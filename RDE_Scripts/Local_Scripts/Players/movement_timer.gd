@@ -17,6 +17,7 @@ func _on_timeout() -> void:
 	
 	if !(has_moved()) and GlobalPlayer.is_moving:
 		get_parent().global_position = Vector2(0, 20)
+		AudioManager.play_audio_one_shot(preload("res://RDE_Audio/UI Sounds/Mini Crunch/click_02.wav"), "UI SFX")
 	
 	prev_pos = cur_pos
 	start()
