@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx3ilvmdiwcse"
-path="res://.godot/imported/index.png-39d2b863f59743f2943c69e53788fe57.ctex"
+path="res://.godot/imported/index.png-467d1c4dd89b50bca14329fbbf2a1e11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Builds/Web/index.png"
-dest_files=["res://.godot/imported/index.png-39d2b863f59743f2943c69e53788fe57.ctex"]
+source_file="res://Builds/Web/RingtailDEv1.0.0/index.png"
+dest_files=["res://.godot/imported/index.png-467d1c4dd89b50bca14329fbbf2a1e11.ctex"]
 
 [params]
 

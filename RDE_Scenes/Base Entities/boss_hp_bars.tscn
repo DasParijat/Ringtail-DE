@@ -1,13 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://2dqex8m25wb0"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/boss_hp_bars.gd" id="1_cx8yl"]
-
-[sub_resource type="SystemFont" id="SystemFont_mhc6c"]
-font_names = PackedStringArray("Bahnschrift")
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_m5j7w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbuce"]
-font = SubResource("SystemFont_mhc6c")
+font = ExtResource("2_m5j7w")
 font_size = 20
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.588235)

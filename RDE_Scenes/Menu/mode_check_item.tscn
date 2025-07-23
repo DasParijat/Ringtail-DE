@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/mode_check_item.gd" id="1_lysvt"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="2_4kb1p"]
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="3_4jlfa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5iny"]
 bg_color = Color(0.431, 0.322, 0.067, 0.7)
@@ -138,11 +139,8 @@ CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_wu1u7")
 CheckBox/styles/normal = SubResource("StyleBoxEmpty_wu1u7")
 CheckBox/styles/pressed = SubResource("StyleBoxEmpty_wu1u7")
 
-[sub_resource type="SystemFont" id="SystemFont_q5seb"]
-font_names = PackedStringArray("Bahnschrift")
-
 [sub_resource type="LabelSettings" id="LabelSettings_sps41"]
-font = SubResource("SystemFont_q5seb")
+font = ExtResource("3_4jlfa")
 
 [node name="ModeCheckItem" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 75)

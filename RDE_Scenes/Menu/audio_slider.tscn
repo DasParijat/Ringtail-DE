@@ -1,14 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://cenrgdsilaox1"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/audio_slider.gd" id="1_7jkbj"]
-
-[sub_resource type="SystemFont" id="SystemFont_lxji3"]
-font_names = PackedStringArray("Bahnschrift")
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_u1mko"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_epk5g"]
 line_spacing = 1.0
-font = SubResource("SystemFont_lxji3")
+font = ExtResource("2_u1mko")
 font_size = 35
 
 [sub_resource type="Image" id="Image_4y7nx"]

@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnhwxsvsufdaw"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/timer_ui.gd" id="1_en08s"]
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_gjouy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5hs"]
 content_margin_left = 10.0
@@ -15,13 +16,9 @@ corner_radius_bottom_left = 6
 shadow_color = Color(0, 0, 0, 0.0784314)
 shadow_size = 2
 
-[sub_resource type="SystemFont" id="SystemFont_lxji3"]
-font_names = PackedStringArray("Bahnschrift")
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_qd7ci"]
 line_spacing = 1.0
-font = SubResource("SystemFont_lxji3")
+font = ExtResource("2_gjouy")
 font_size = 50
 
 [node name="TimerUI" type="Control"]

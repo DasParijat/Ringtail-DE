@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dr6fmxbctycup"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/textbox.gd" id="1_7hiao"]
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_ic6rg"]
 
 [sub_resource type="Gradient" id="Gradient_6ag0q"]
 offsets = PackedFloat32Array(0, 0.689655, 1)
@@ -14,20 +15,15 @@ fill_to = Vector2(0.555556, 0)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ywrp"]
 texture = SubResource("GradientTexture2D_8l5wl")
 
-[sub_resource type="SystemFont" id="SystemFont_ewhls"]
-font_names = PackedStringArray("Bahnschrift")
-font_weight = 475
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_ee4wo"]
-font = SubResource("SystemFont_ewhls")
+font = ExtResource("2_ic6rg")
 font_size = 30
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.588235)
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qkf0u"]
-font = SubResource("SystemFont_ewhls")
+font = ExtResource("2_ic6rg")
 font_size = 25
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.588235)

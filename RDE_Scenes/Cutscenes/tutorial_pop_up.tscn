@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckpl4qd6tkar4"]
+[gd_scene load_steps=11 format=3 uid="uid://ckpl4qd6tkar4"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/tutorial_pop_up.gd" id="1_3yf2e"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="1_t1bn7"]
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="3_evduc"]
 [ext_resource type="LabelSettings" uid="uid://c4be2teek4j3i" path="res://RDE_Fonts/keyboard_hint_label_settings.tres" id="3_f300v"]
 [ext_resource type="Texture2D" uid="uid://2mf2b4oxsbc" path="res://RDE_Fonts/Keyboard Icons V2/E_Key_Dark.png" id="4_umvb2"]
 
@@ -29,6 +30,7 @@ fill_from = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cypvp"]
 line_spacing = 5.0
+font = ExtResource("3_evduc")
 font_size = 30
 
 [node name="TutorialPopUp" type="Control"]

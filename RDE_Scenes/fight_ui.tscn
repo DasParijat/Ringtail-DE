@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://cpiu3tcragd52"]
+[gd_scene load_steps=21 format=3 uid="uid://cpiu3tcragd52"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_ui.gd" id="1_pahoy"]
 [ext_resource type="PackedScene" uid="uid://2dqex8m25wb0" path="res://RDE_Scenes/Base Entities/boss_hp_bars.tscn" id="2_2r4lq"]
 [ext_resource type="StyleBox" uid="uid://csqq1l0qo2aqe" path="res://RDE_Images/StyleBoxFlats/old_gun_ui_stylebox.tres" id="2_3igty"]
 [ext_resource type="PackedScene" uid="uid://bra8qovhkkhxm" path="res://RDE_Scenes/keyboard_hints.tscn" id="2_gqfdu"]
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="3_1oflg"]
 [ext_resource type="PackedScene" uid="uid://dnhwxsvsufdaw" path="res://RDE_Scenes/timer_ui.tscn" id="4_c0wro"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72i1f"]
@@ -49,24 +50,13 @@ corner_radius_bottom_left = 4
 shadow_color = Color(0.866667, 0.494118, 0, 1)
 shadow_size = 5
 
-[sub_resource type="SystemFont" id="SystemFont_xxacr"]
-font_names = PackedStringArray("Bahnschrift")
-font_weight = 500
-font_stretch = 200
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_jrqkd"]
-font = SubResource("SystemFont_xxacr")
+font = ExtResource("3_1oflg")
 font_size = 30
-
-[sub_resource type="SystemFont" id="SystemFont_dtrxk"]
-font_names = PackedStringArray("Bahnschrift")
-font_italic = true
-subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_sqe4i"]
 line_spacing = 5.0
-font = SubResource("SystemFont_dtrxk")
+font = ExtResource("3_1oflg")
 font_size = 10
 
 [sub_resource type="Animation" id="Animation_cnosd"]

@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://f2i0ysltk7fr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/fight_stats.gd" id="1_iwqbc"]
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_oramh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsfhx"]
 bg_color = Color(0.00566115, 0.00566115, 0.00566115, 0.545098)
@@ -13,14 +14,9 @@ expand_margin_top = 50.0
 expand_margin_right = 50.0
 expand_margin_bottom = 50.0
 
-[sub_resource type="SystemFont" id="SystemFont_xsfor"]
-font_names = PackedStringArray("Bahnschrift")
-font_italic = true
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_n5jun"]
 line_spacing = 5.0
-font = SubResource("SystemFont_xsfor")
+font = ExtResource("2_oramh")
 font_size = 75
 
 [node name="fight_stats" type="Control" node_paths=PackedStringArray("FightTime", "TotalTime", "DamageTaken", "NumOfDeaths", "FightType")]
