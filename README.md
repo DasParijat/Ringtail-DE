@@ -96,7 +96,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(7/23/25)
 			<li>(General) 
-			Set up Windows export presets, alongside creating an icon for the game</li>
+			Set up Windows export presets, alongside creating an icon for the game,
+			also got rid of all addons (Wasn't being used but was still in the project folder)</li>
 			<li>(Base Player) 
 			Minor tweak on how power audio volume is calculated</li>
 			<li>(Explosion) 

@@ -78,12 +78,14 @@ movie_writer/movie_file="C:/Users/pizza/Pictures/2GameDev/GodotDev/Ringtail-DE/m
 [file_customization]
 
 folder_colors={
+"res://Builds/": "gray",
 "res://RDE_Audio/": "purple",
 "res://RDE_Fonts/": "purple",
 "res://RDE_Images/": "purple",
 "res://RDE_Resources/": "blue",
 "res://RDE_Scenes/": "yellow",
-"res://RDE_Scripts/": "red"
+"res://RDE_Scripts/": "red",
+"res://addons/": "gray"
 }
 
 [global_group]
