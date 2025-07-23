@@ -120,6 +120,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Power Audio is now louder</li>
 			<li>(Base Cutscene) 
 			UI sound effect plays when skipping cutscene</li>
+			<li>(RGT_DEF_OUTRO) 
+			Changed some dialogue and camera work, finalized cutscene</li>
+			<li>(RGT_DEF_INTRO / RGT_DEF_OUTRO) 
+			Changed colors of Oswald and Ringtail's speaker text</li>
 		</ul>
 	</li>
 	<li>

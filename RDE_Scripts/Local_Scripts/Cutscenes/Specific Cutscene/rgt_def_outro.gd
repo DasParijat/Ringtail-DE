@@ -11,8 +11,8 @@ extends BaseCutscene
 
 
 # Speaker names
-var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
-var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
+var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color8(181, 191, 0))
+var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color8(249, 208, 96))
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"
@@ -58,8 +58,8 @@ func cutscene_handler() -> void:
 		10:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(camera_2d, "global_position", Vector2(0, -160), 1)
-			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 1)
+			start_tween(camera_2d, "global_position", Vector2(0, -160), 0.5)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.5)
 		11:
 			display_text("Ha…", ringtail_name)
 		12:
@@ -68,45 +68,55 @@ func cutscene_handler() -> void:
 		13:
 			display_text("Nothing, just…", ringtail_name)
 		14:
-			display_text("You humans...", ringtail_name)
-			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.4)
+			display_text("Oswald Jones?", ringtail_name)
+			start_tween(camera_2d, "global_position", ringtail.global_position, 0.3)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.4)
 		15:
-			display_text("...are quite fascinating creatures", ringtail_name)
+			display_text("That's really your name?", ringtail_name)
 		16:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(oswald, "global_position", Vector2(0, -10), 0.8)
-			start_tween(camera_2d, "global_position", Vector2(0, -80), 0.8)
+			start_tween(oswald, "global_position", Vector2(0, -10), 0.4)
+			start_tween(camera_2d, "global_position", Vector2(0, -80), 0.4)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.4)
 		17:
 			show_textbox()
-			display_text("Y'know in all the research I've done,", oswald_name)
+			display_text("Are you serious right now?", oswald_name)
 		18:
-			display_text("I never figured what kind of beast you are", oswald_name)
+			display_text("You're one shot away from death, and you wanna crack jokes?", oswald_name)
 		19:
-			display_text("Well that don't matter now does it?", ringtail_name)
+			start_tween(camera_2d, "global_position", ringtail.global_position, 0.4)
+			display_text("What? You want me to beg for my life?", ringtail_name)
 		20:
-			display_text("You got your moment", ringtail_name)
+			display_text("'Oh please, Oswald, spare me the horror!'", ringtail_name)
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.4)
 		21:
-			display_text(" …You're right", oswald_name)
+			display_text("'I promise I will undo all my wrong doings! Please!'", ringtail_name, 0.04)
+			start_tween(camera_2d, "zoom", Vector2(1.8, 1.8), 0.4)
 		22:
-			display_text("Who gives a damn if you're an alien or whatever", oswald_name)
+			start_tween(camera_2d, "global_position", oswald.global_position, 0.4)
+			display_text("...", oswald_name)
 		23:
-			display_text("I could care less now", oswald_name)
+			start_tween(camera_2d, "global_position", ringtail.global_position, 0.4)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.4)
+			display_text("Is your hero fantasy fulfilled now?", ringtail_name, 0.04)
 		24:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(camera_2d, "global_position", Vector2(0, -90), 0.3)
-			start_tween(oswald, "global_position", Vector2(0, -70), 0.3)
+			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.5)
+			start_tween(camera_2d, "global_position", Vector2(0, -90), 0.5)
+			start_tween(oswald, "global_position", Vector2(0, -70), 0.5)
 		25:
 			show_textbox()
-			display_text("Any last words…Ringtail?", oswald_name)
+			display_text("...any other last words?", oswald_name)
 		26:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 1)
+			start_tween(camera_2d, "global_position", ringtail.global_position, 0.5)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.5)
 		27:
 			show_textbox()
-			display_text("Well..", ringtail_name)
+			display_text("Last words? Well...", ringtail_name)
 		28:
 			hide_textbox()
 			enable_auto_skip()
@@ -143,8 +153,8 @@ func cutscene_handler() -> void:
 		35:
 			show_textbox()
 			enable_auto_skip()
-			display_text("But…", ringtail_name, 0.05)
-			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 0.7)
+			display_text("But…", ringtail_name, 0.02)
+			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 1)
 		36:
 			display_text("You really thought it would be that easy?", ringtail_name)
 		37:
@@ -155,13 +165,16 @@ func cutscene_handler() -> void:
 			display_text("Relax…don't try fighting now", ringtail_name)
 		40:
 			display_text("Ha, this…", oswald_name)
-			start_tween(oswald, "global_position", Vector2(20, 0), 0.2)
+			start_tween(oswald, "rotation_degrees", -40, 0.2)
+			start_tween(oswald, "global_position", Vector2(30, 0), 0.2)
 		41:
 			display_text("You think imma give up? Huh?", oswald_name)
-			start_tween(oswald, "global_position", Vector2(-20, 0), 0.2)
+			start_tween(oswald, "rotation_degrees", -140, 0.2)
+			start_tween(oswald, "global_position", Vector2(-30, 0), 0.2)
 		42:
-			enable_auto_skip()
+			#enable_auto_skip()
 			display_text("HUH!?", oswald_name)
+			start_tween(oswald, "rotation_degrees", -90, 0.2)
 			start_tween(oswald, "global_position", Vector2(0, -30), 0.2)
 			start_tween(camera_2d, "zoom", Vector2(0.7, 0.7), 0.7)
 		43:
@@ -180,6 +193,7 @@ func cutscene_handler() -> void:
 			start_tween(ringtail, "global_position", Vector2(0, -7), 0.3)
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.3)
 		46:
+			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3"), "CScene Bus")
 			hide_textbox()
 			enable_auto_skip()
 			white_overlay.color.a = 1

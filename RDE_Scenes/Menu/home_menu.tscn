@@ -2397,7 +2397,10 @@ theme_override_constants/margin_bottom = -10
 [node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
-text = "Ringtail is a nefarious creature who’s been torturing the town of Plankwood for months now. Using his tricky movement, endless minitails, and much more magical abilities, he has been able to evade justice."
+text = "- TRUE mode is currently unavaliable
+
+- All current modes have the same cutscenes
+"
 label_settings = SubResource("LabelSettings_m6cyt")
 autowrap_mode = 3
 

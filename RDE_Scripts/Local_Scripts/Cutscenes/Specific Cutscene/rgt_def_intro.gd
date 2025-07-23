@@ -15,8 +15,8 @@ extends BaseCutscene
 @onready var gun_tutorial : TutorialPopUp = $ControlContainer/GunTutorial
 
 # Speaker names
-var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color.YELLOW_GREEN)
-var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color.YELLOW)
+var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color8(181, 191, 0))
+var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color8(249, 208, 96))
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"
