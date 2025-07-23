@@ -31,6 +31,7 @@ flash2_texture = ExtResource("5_stwfg")
 [node name="base_mob" parent="." instance=ExtResource("3_kudxo")]
 
 [node name="PointLight2D" type="PointLight2D" parent="base_mob"]
+visible = false
 color = Color(0.843, 0.052, 0.029, 0.5)
 texture = SubResource("GradientTexture2D_7aqht")
 

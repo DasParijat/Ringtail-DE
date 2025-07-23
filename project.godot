@@ -14,7 +14,7 @@ config/name="Ringtail DE"
 run/main_scene="res://RDE_Scenes/Menu/home_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="res://RDE_Images/rt_ringtail1.png"
+config/icon="res://RDE_Images/RDE_Adverts/ringtail_icon1.png"
 
 [autoload]
 

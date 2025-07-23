@@ -61,7 +61,7 @@ stream = ExtResource("3_26ssd")
 autoplay = true
 bus = &"Game SFX"
 script = ExtResource("4_uidep")
-max_volume = 7.0
+max_volume = 25.0
 
 [node name="HitBox" type="Area2D" parent="." groups=["Hittable", "Player"]]
 

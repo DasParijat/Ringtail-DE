@@ -94,6 +94,19 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/23/25)
+			<li>(General) 
+			Set up Windows export presets, alongside creating an icon for the game</li>
+			<li>(Base Player) 
+			Minor tweak on how power audio volume is calculated</li>
+			<li>(Explosion) 
+			It's lighting is hidden</li>
+			<li>(Home Menu) 
+			Added small text in corner with version number of game</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/22/25)
 			<li>(General / Main Menu) 
 			Finally removed old main menu scene and script 
