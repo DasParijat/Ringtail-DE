@@ -16,6 +16,7 @@ extends CharacterBody2D
 @onready var hitbox : Area2D = $HitBox
 
 @export var debug_action_queue : bool = false
+@export var spawn_cooldown_time : float = 1.0
 
 signal health_res_set
 
@@ -37,6 +38,7 @@ var damage_cooldown : float = 0.0
 
 var cur_action_time : float = 0.0
 var cur_delta : float
+var total_delta : float
 
 var orbit_angle : float = 0.0 # for orbit actions
 var rotation_finished : bool = false # for rotation actions
@@ -123,6 +125,7 @@ func _physics_process(delta: float) -> void:
 	
 	## Delta updaters
 	queue_timer += delta # used to track when actions happen
+	total_delta += delta # used to track total time mob has existed
 	cur_delta = delta
 	
 	## Constant handling
@@ -177,8 +180,9 @@ func death_check() -> void:
 
 func deal_hitbox_dmg() -> void:
 	## Handles dealing damage to player when in hitbox
-	# Breaking when player not in hitbox
-	if not player_in_hitbox:
+	# Breaking when player not in hitbox 
+	# or mob has existed for less than (spawn_cooldown_time) seconds
+	if not player_in_hitbox or total_delta < spawn_cooldown_time:
 		return
 	
 	# Increasing cooldown timer and breaking if not yet reach cooldown point

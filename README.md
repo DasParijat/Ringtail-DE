@@ -97,7 +97,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(7/23/25)
 			<li>(General) 
 			Set up Windows and Web export presets, alongside creating an icon for the game,
-			also got rid of all addons (Wasn't being used but was still in the project folder)</li>
+			also got rid of all addons (Wasn't being used but was still in the project folder), 
+			as well as removed images that weren't being used</li>
 			<li>(Fonts) 
 			Manually added Bahnschrift font into project, applied it to 
 			all labels that relied on the system font version of it</li>
@@ -105,6 +106,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Minor tweak on how power audio volume is calculated</li>
 			<li>(Explosion) 
 			It's lighting is hidden</li>
+			<li>(Base Mob) 
+			Mobs have a spawn cooldown so they don't 
+			instantly deal damage upon spawning in</li>
 			<li>(Home Menu) 
 			Added small text in corner with version number of game</li>
 		</ul>

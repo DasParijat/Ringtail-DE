@@ -680,6 +680,8 @@ layout_mode = 2
 text = "- TRUE mode is currently unavaliable
 
 - All current modes have the same cutscenes
+
+- Web version experiences longer loading
 "
 label_settings = SubResource("LabelSettings_m6cyt")
 autowrap_mode = 3
