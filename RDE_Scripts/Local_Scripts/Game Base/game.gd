@@ -59,6 +59,7 @@ func _unhandled_input(event : InputEvent) -> void:
 # Menu Tutorial: https://youtu.be/JEQR4ALlwVU?si=3ryPHdJG3ungIi0M 
 
 func next_in_order(increment : int) -> void:
+	GlobalTime.cur_time_scale = 1
 	if increment > 0:
 		for i in range(increment):
 			level.next_sequence()
@@ -131,6 +132,7 @@ func _on_game_won() -> void:
 	
 	# Game Node doesn't use GlobalScene's on_victory_screen bool 
 	# since it needs to await signal off_victory anyways
+	GlobalTime.cur_time_scale = 1
 	GlobalScene.on_victory.emit()
 	on_victory_screen = true
 	await GlobalScene.off_victory
