@@ -96,7 +96,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(7/25/25)
 			<li>(General) 
-			Resetting up windows and html exports for public release</li>
+			Setting up proper windows, linux and html exports for public release</li>
 			<li>(Game) 
 			Made it so cur_time_scale resets to normal on game won 
 			(Fixed issue of time still being slow even after game won)</li>
