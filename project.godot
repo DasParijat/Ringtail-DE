@@ -13,7 +13,8 @@ config_version=5
 config/name="Ringtail DE"
 run/main_scene="res://RDE_Scenes/Menu/home_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/show_image=false
+boot_splash/bg_color=Color(0.372549, 0.27451, 0.0509804, 1)
+boot_splash/image="res://Builds/Web/loading_splash_screen.png"
 config/icon="res://RDE_Images/RDE_Adverts/ringtail_icon1.png"
 
 [autoload]

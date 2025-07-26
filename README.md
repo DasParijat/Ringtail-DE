@@ -94,6 +94,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(7/26/25)
+			<li>(General) 
+			Created loading splash screen, used in web exports and boot splash</li>
+			<li>(Base Player / Audio) 
+			Made the heartbeat audio loop</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(7/25/25)
 			<li>(General) 
 			Setting up proper windows, linux and html exports for public release</li>
