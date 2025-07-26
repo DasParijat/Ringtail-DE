@@ -4,7 +4,7 @@ It's a top down bullet hell shooter where you have to take down a nefarious, evi
 hyper-realistic raccoon (technically a monster in the form of a raccoon but that's just lore stuff).
 </p>
 
-<strong>Website link: www.insertwebsitewhenican.com</strong>
+<strong>Website link: dasparijat.github.io/RingtailDE-Website/</strong>
 
 <strong>Agenda / Possible Goals:</strong>
 <ul>
@@ -95,7 +95,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(7/26/25)
-			<li>(General) 
+			<li>(General / README) 
+			Added link to official Ringtail DE Website, 
+			this day marks the first public release of Ringtail DE</li>
+			<li>(Builds) 
 			Created loading splash screen, used in web exports and boot splash</li>
 			<li>(Base Player / Audio) 
 			Made the heartbeat audio loop</li>

@@ -269,7 +269,7 @@ theme_override_constants/margin_right = 5
 
 [node name="VersionLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
-text = "Ringtail DE v1.0.0
+text = "Ringtail DE Web v1.0.0
 "
 label_settings = SubResource("LabelSettings_qoden")
 
@@ -331,13 +331,13 @@ text = "Credits"
 script = ExtResource("1_k7wod")
 
 [node name="quitB" type="Button" parent="Main Menu/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Quit"
 script = ExtResource("1_k7wod")
 
 [node name="reloadB" type="Button" parent="Main Menu/HBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("5_nv7n1")
 text = "Reload"
