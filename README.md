@@ -84,14 +84,22 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <strong>Bug List:</strong>
 <ul>
 	<li>(4/?) - Pause menu doesn't show up soemtimes when rapidly pausing</li>
-	<li>(5/7) - Player can get stuck in wall (RARE BUG, possibly caused by lag)</li>
-	<li>(5/5) - Player still takes damage during victory screen</li>
-	<li>(6/19) - Flash of blank grey after loading anything (loading screen)</li>
-	<li>(6/20) - Loud noise that occurs while playing, assume to be due to power audio (RARE, how do playtesters find these but not me?)</li>
+	<li>(5/7) - Player can get stuck in wall 
+	(Bug caused by lag, not directly fixed but player teleports after being stuck for a while)</li>
+	<li>(7/31) - Web version has longer pause after loading cutscene initially</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(7/31/25)
+			<li>(Images) 
+			Added more advert related images</li>
+			<li>(README) 
+			Updated bug list to reflect current bugs</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(7/26/25)
