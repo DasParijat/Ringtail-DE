@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LevelRes" load_steps=5 format=3 uid="uid://ck2ckrdovluiu"]
+
+[ext_resource type="Texture2D" uid="uid://3ombu4mpiiyt" path="res://RDE_Images/RGT_hard_thumbnail.png" id="1_gmihd"]
+[ext_resource type="Resource" uid="uid://cujmjnb2db5w2" path="res://RDE_Resources/Cutscene Res/RGT_TRUE_INTRO.tres" id="2_ql024"]
+[ext_resource type="Resource" uid="uid://chl62o6k8tixv" path="res://RDE_Resources/Fight Res/RGT_TRUE.tres" id="3_buffc"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="5_ru57g"]
+
+[resource]
+script = ExtResource("5_ru57g")
+LEVEL_NAME = "STORY_RGT_TRUE"
+DISPLAY_NAME = "Ringtail - True"
+LEVEL_DESC = "Ringtail is a nefarious creature who’s been torturing the town of Plankwood for months now. Using his tricky movement, endless minitails, and much more magical abilities, he has been able to evade justice."
+THUMBNAIL = ExtResource("1_gmihd")
+order = Array[Resource]([ExtResource("2_ql024"), ExtResource("3_buffc")])

@@ -7,6 +7,7 @@ extends BaseCutscene
 @onready var ringtail : Sprite2D = $ActorContainer/Ringtail
 @onready var overlay : ColorRect = $ControlContainer/Overlay
 
+# Tutorial Pop Ups
 @onready var hp_1_tutorial : TutorialPopUp = $ControlContainer/HP1Tutorial
 @onready var hp_2_tutorial : TutorialPopUp = $ControlContainer/HP2Tutorial
 @onready var power_tutorial : TutorialPopUp = $ControlContainer/PowerTutorial

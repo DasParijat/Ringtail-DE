@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CutsceneRes" load_steps=3 format=3 uid="uid://ouwv7mnly5ie"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/cutsceneRes.gd" id="2_7yqu4"]
+[ext_resource type="PackedScene" uid="uid://sv71npsv8bdn" path="res://RDE_Scenes/Settings/RGT_Plains.tscn" id="3_6spxi"]
+
+[resource]
+script = ExtResource("2_7yqu4")
+CSCENE_NAME = "RGT_TRUE_OUTRO"
+world_scene = ExtResource("3_6spxi")
+is_skippable = true

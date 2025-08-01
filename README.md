@@ -94,6 +94,11 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(7/31/25)
+			<li>(RingtailTRUE) 
+			Created mob scene, fight res, level res, cutscene res, and intro scene 
+			for RingtailTRUE (outro scene still need to be created)</li>
+			<li>(Home Menu) 
+			True mode is no longer disabled</li>
 			<li>(Images) 
 			Added more advert related images</li>
 			<li>(README) 

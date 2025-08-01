@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="MobRes" load_steps=10 format=3 uid="uid://buw8gf7ptts0b"]
+
+[ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav" id="1_iof4d"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="2_yauhp"]
+[ext_resource type="AudioStream" uid="uid://hqnrt50h4pro" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt1.mp3" id="3_cfdsk"]
+[ext_resource type="AudioStream" uid="uid://cc5fb84n2ud5j" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt2.mp3" id="4_lq2bf"]
+[ext_resource type="AudioStream" uid="uid://cnvbipy1qxq5b" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt3.mp3" id="5_w12cq"]
+[ext_resource type="AudioStream" uid="uid://b3odg37dupl5" path="res://RDE_Audio/Mob Sounds/Mob Hurt/ringtail_hurt4.mp3" id="6_vjw4e"]
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="7_q00tj"]
+[ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="8_ricxc"]
+
+[sub_resource type="Resource" id="Resource_81sva"]
+script = ExtResource("2_yauhp")
+HP_NAME = "RingtailTRUE"
+is_player = false
+MAX_HP = 360
+damage_rate = 1.0
+invicible = false
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("7_q00tj")
+name = "RingtailHARD"
+display_name = "RINGTAIL"
+color = Color(0.597325, 0.461267, 0.817048, 1)
+hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
+blood_color = Color(0.516574, 0.0871284, 0.450193, 0.901961)
+texture = ExtResource("8_ricxc")
+base_sprtflip_enabled = true
+hurt_sounds = Array[AudioStream]([ExtResource("3_cfdsk"), ExtResource("4_lq2bf"), ExtResource("5_w12cq"), ExtResource("6_vjw4e")])
+death_sounds = Array[AudioStream]([ExtResource("1_iof4d")])
+health_comp = SubResource("Resource_81sva")
+num_of_bars = 3
+is_boss = true
+is_enemy = true
+is_hittable = true
+collision_enabled = false
+player_detection_radius = 150.0
+mini_hp_visible = true
+pos_track_delay = 1.2
+mob_size = Vector2(1.2, 1.2)
+sprite_size = Vector2(1, 1)
+collision_size = Vector2(1, 1)
+hitbox_size = Vector2(4, 4)
+collision_dmg = 9.0
+collision_dmg_cooldown = 0.3

@@ -274,6 +274,7 @@ text = "Ringtail DE v1.0.0
 label_settings = SubResource("LabelSettings_qoden")
 
 [node name="Main Menu" type="Control" parent="." node_paths=PackedStringArray("scene_transition")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -534,7 +535,6 @@ text = "yyoooo"
 layout_mode = 2
 
 [node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container", "scene_transition")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -607,10 +607,9 @@ fight_type = "STORY_RGT_HARD"
 layout_mode = 2
 theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
-disabled = true
 text = "TRUE"
 script = ExtResource("7_wokig")
-is_locked = true
+fight_type = "STORY_RGT_TRUE"
 
 [node name="FightDesc Container" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer"]
 layout_mode = 2
