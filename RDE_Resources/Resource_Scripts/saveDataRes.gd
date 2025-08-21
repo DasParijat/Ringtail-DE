@@ -10,6 +10,7 @@ class_name SaveDataRes
 	"UI SFX": 1,
 	"CScene Bus": 1
 }
+
 @export var visual_settings_dict : Dictionary = {
 	"show_timer": false,
 	"show_hints": true,
@@ -17,11 +18,11 @@ class_name SaveDataRes
 }
 
 var bus_name_array : Array[String] = [
-		"Master", 
-		"Music Bus", 
-		"Game SFX", 
-		"UI SFX", 
-		"CScene Bus"
+	"Master", 
+	"Music Bus", 
+	"Game SFX", 
+	"UI SFX", 
+	"CScene Bus"
 ]
 	
 func set_default_volume(bus_name : String, default_volume : float) -> void:
@@ -54,7 +55,11 @@ func load_audio() -> void:
 	)
 
 func save_visual_settings() -> void:
-	pass
+	visual_settings_dict["show_timer"] = GlobalSettings.visible_timer
+	visual_settings_dict["show_hints"] = GlobalSettings.visible_hints
+	visual_settings_dict["shake_cam"] = GlobalSettings.cam_shake_enabled
 	
 func load_visual_settings() -> void:
-	pass
+	GlobalSettings.visible_timer = visual_settings_dict["show_timer"] 
+	GlobalSettings.visible_hints = visual_settings_dict["show_hints"] 
+	GlobalSettings.cam_shake_enabled = visual_settings_dict["shake_cam"] 

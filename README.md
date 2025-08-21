@@ -93,6 +93,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(8/21/25)
+			<li>(Saved Data Res) 
+			Fixed typo in file name, 
+			added code to save and load visual settings</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/2/25)
 			<li>(Saved Data Res) 
 			Created save data resource script that will be used to 
