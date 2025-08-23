@@ -34,8 +34,22 @@ func exit_animation() -> void:
 	await tween.finished
 	hide()
 
+func _save_data() -> void:
+	## When user leaves settings, auto save data
+	var data : SaveDataRes = SaveDataRes.new()
+	save_visual_settings()
+	
+	data.save_audio()
+	data.save_visual_settings()
+	#save_data.true_mode_locked =
+	
+	ResourceSaver.save(data, "user://save_file.tres")
+	print("SETTINGS MENU: SAVED", data)
+	# NOTE: tres is readable file, res is unreadable
+	# use res for final launch
+	
 func save_visual_settings() -> void:
-	## When user leaves settings, update values they changed in Visual Tab
+	## Update values they changed in Visual Tab
 	GlobalSettings.visible_timer = show_timer.button_pressed
 	GlobalSettings.visible_hints = show_hints.button_pressed
 	GlobalSettings.cam_shake_enabled = shake_cam.button_pressed

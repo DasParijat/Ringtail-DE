@@ -93,6 +93,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(8/23/25)
+			<li>(Home Menu [Settings]) 
+			Created _save_data function to create 
+			save data resource and update it with correct values</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/21/25)
 			<li>(Saved Data Res) 
 			Fixed typo in file name, 
