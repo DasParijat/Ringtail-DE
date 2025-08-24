@@ -15,6 +15,7 @@ func _ready() -> void:
 	hide()
 	modulate.a = 0
 	
+	_load_save()
 	show_timer.button_pressed = GlobalSettings.visible_timer
 	show_hints.button_pressed = GlobalSettings.visible_hints
 	shake_cam.button_pressed = GlobalSettings.cam_shake_enabled
@@ -47,6 +48,13 @@ func _save_data() -> void:
 	print("SETTINGS MENU: SAVED", data)
 	# NOTE: tres is readable file, res is unreadable
 	# use res for final launch
+
+func _load_save() -> void:
+	var data : SaveDataRes = ResourceLoader.load("user://save_file.tres") as SaveDataRes
+	
+	data.load_audio()
+	data.load_visual_settings()
+	print("SETTINGS MENU: LOADED", data)
 	
 func save_visual_settings() -> void:
 	## Update values they changed in Visual Tab
@@ -55,7 +63,7 @@ func save_visual_settings() -> void:
 	GlobalSettings.cam_shake_enabled = shake_cam.button_pressed
 	
 func _on_settings_back_b_pressed() -> void:
-	save_visual_settings()
+	_save_data()
 	
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()

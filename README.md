@@ -93,6 +93,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(8/24/25)
+			<li>(Home Menu [Settings]) 
+			Created _load_data function to load the save file 
+			when the home menu starts</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/23/25)
 			<li>(Home Menu [Settings]) 
 			Created _save_data function to create 
