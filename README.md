@@ -96,7 +96,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(8/24/25)
 			<li>(Home Menu [Settings]) 
 			Created _load_data function to load the save file 
-			when the home menu starts</li>
+			when the home menu starts, 
+			working on having it properly save and load the audio</li>
 		</ul>
 	</li>
 	<li>
