@@ -14,9 +14,12 @@ func _ready() -> void:
 	bus_index = AudioServer.get_bus_index(bus_name)
 	
 	slider.step = audio_step
-	slider.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index) * audio_scaling)
+	
+	var save_data : SaveDataRes = GlobalSave.get_save_data()
+	var volume = save_data.volumes_dict[bus_name]
+	slider.value = db_to_linear(volume * audio_scaling)
+	
 	update_text()
-	#print(AudioServer.get_bus_volume_db(bus_index))
 
 func update_text() -> void:
 	label.text = (label_text + " - " + str(slider.value * 100) + "%")

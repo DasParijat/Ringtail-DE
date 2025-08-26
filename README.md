@@ -93,6 +93,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(8/26/25)
+			<li>(Audio Slider) 
+			Loads save file to get volume value initially</li>
+			<li>(Home Menu [Settings] / GlobalSave) 
+			Made use of GlobalSave in settings menu</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/25/25)
 			<li>(Home Menu [Settings] / Save Data Res) 
 			Fixed issue of audio not saving/loading properly</li>

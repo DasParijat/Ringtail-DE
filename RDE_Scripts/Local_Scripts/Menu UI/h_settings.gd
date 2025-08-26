@@ -46,7 +46,7 @@ func _save_data() -> void:
 	save_data.save_visual_settings()
 	#save_data.true_mode_locked =
 	
-	ResourceSaver.save(save_data, "user://save_file.tres")
+	GlobalSave.set_save_data(save_data)
 	print("SETTINGS MENU: SAVED", save_data)
 	# NOTE: tres is readable file, res is unreadable
 	# use res for final launch
