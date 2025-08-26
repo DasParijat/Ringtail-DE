@@ -3,6 +3,10 @@ class_name SaveDataRes
 
 @export var true_mode_locked : bool = true
 
+@export var flags : Dictionary = {
+	"true_mode_unlocked": false
+}
+
 @export var volumes_dict : Dictionary = {
 	"Master": 1,
 	"Music Bus": 1,

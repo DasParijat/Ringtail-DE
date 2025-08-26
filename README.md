@@ -98,6 +98,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Loads save file to get volume value initially</li>
 			<li>(Home Menu [Settings] / GlobalSave) 
 			Made use of GlobalSave in settings menu</li>
+			<li>(GlobalSave / SaveDataRes) 
+			Reworking GlobalSave to hold all save data of the current game, 
+			then be responsible for updating/getting the save file, 
+			Created save_flags dictionary to handle multiple events</li>
 		</ul>
 	</li>
 	<li>

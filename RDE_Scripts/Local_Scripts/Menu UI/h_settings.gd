@@ -16,7 +16,7 @@ func _ready() -> void:
 	hide()
 	modulate.a = 0
 	
-	_load_save()
+	load_saved_settings()
 	show_timer.button_pressed = GlobalSettings.visible_timer
 	show_hints.button_pressed = GlobalSettings.visible_hints
 	shake_cam.button_pressed = GlobalSettings.cam_shake_enabled
@@ -37,26 +37,21 @@ func exit_animation() -> void:
 	await tween.finished
 	hide()
 
-func _save_data() -> void:
+func save_settings() -> void:
 	## When user leaves settings, auto save data
 	save_audio_settings()
 	save_visual_settings()
 	
 	save_data.save_audio()
 	save_data.save_visual_settings()
-	#save_data.true_mode_locked =
 	
-	GlobalSave.set_save_data(save_data)
-	print("SETTINGS MENU: SAVED", save_data)
-	# NOTE: tres is readable file, res is unreadable
-	# use res for final launch
+	GlobalSave.set_settings(save_data)
 
-func _load_save() -> void:
-	var data : SaveDataRes = ResourceLoader.load("user://save_file.tres") as SaveDataRes
+func load_saved_settings() -> void:
+	var data : SaveDataRes = GlobalSave.get_save_data()
 	
 	data.load_audio()
 	data.load_visual_settings()
-	print("SETTINGS MENU: LOADED", data)
 	
 func save_visual_settings() -> void:
 	## Update values they changed in Visual Tab
@@ -74,7 +69,7 @@ func save_audio_settings() -> void:
 	)
 
 func _on_settings_back_b_pressed() -> void:
-	_save_data()
+	save_settings()
 	
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()
