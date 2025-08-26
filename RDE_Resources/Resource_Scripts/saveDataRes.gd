@@ -47,11 +47,11 @@ func save_audio() -> void:
 	
 func load_audio() -> void:
 	set_audio(
-		volumes_dict["Master"],
-		volumes_dict["Music Bus"],
-		volumes_dict["Game SFX"],
-		volumes_dict["UI SFX"],
-		volumes_dict["CScene Bus"]
+		db_to_linear(volumes_dict["Master"]),
+		db_to_linear(volumes_dict["Music Bus"]),
+		db_to_linear(volumes_dict["Game SFX"]),
+		db_to_linear(volumes_dict["UI SFX"]),
+		db_to_linear(volumes_dict["CScene Bus"])
 	)
 
 func save_visual_settings() -> void:

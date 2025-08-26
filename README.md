@@ -93,6 +93,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(8/25/25)
+			<li>(Home Menu [Settings] / Save Data Res) 
+			Fixed issue of audio not saving/loading properly</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/24/25)
 			<li>(Home Menu [Settings]) 
 			Created _load_data function to load the save file 

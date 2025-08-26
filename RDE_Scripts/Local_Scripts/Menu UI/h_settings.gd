@@ -39,7 +39,7 @@ func exit_animation() -> void:
 
 func _save_data() -> void:
 	## When user leaves settings, auto save data
-	save_data.set_audio()
+	save_audio_settings()
 	save_visual_settings()
 	
 	save_data.save_audio()
@@ -72,6 +72,7 @@ func save_audio_settings() -> void:
 		get_volume("UI SFX"),
 		get_volume("CScene Bus")
 	)
+
 func _on_settings_back_b_pressed() -> void:
 	_save_data()
 	
@@ -84,7 +85,9 @@ func set_default_volume(bus_name : String, default_volume : float) -> void:
 
 func get_volume(bus_name : String) -> float:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
-	return AudioServer.get_bus_volume_db(bus_index)
+	var volume : float = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+	print("get_volume, ", bus_name, ", returns ", volume)
+	return volume
 	
 func _on_reset_audio_b_pressed() -> void:
 	set_default_volume("Master", 1)
