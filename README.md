@@ -96,6 +96,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(8/25/25)
 			<li>(Home Menu [Settings] / Save Data Res) 
 			Fixed issue of audio not saving/loading properly</li>
+			<li>(GlobalSave) 
+			Created GlobalSlave autoload script</li>
 		</ul>
 	</li>
 	<li>

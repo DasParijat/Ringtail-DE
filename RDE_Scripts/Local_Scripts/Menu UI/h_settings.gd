@@ -86,7 +86,7 @@ func set_default_volume(bus_name : String, default_volume : float) -> void:
 func get_volume(bus_name : String) -> float:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
 	var volume : float = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
-	print("get_volume, ", bus_name, ", returns ", volume)
+	#print("get_volume, ", bus_name, ", returns ", volume)
 	return volume
 	
 func _on_reset_audio_b_pressed() -> void:
