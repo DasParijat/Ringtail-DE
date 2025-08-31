@@ -57,7 +57,7 @@ func _ready() -> void:
 	#print("player: ", global_position, "\nplayer: ", position)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if GlobalTime.is_paused:
 		return
 	total_delta += delta

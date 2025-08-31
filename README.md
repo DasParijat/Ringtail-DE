@@ -93,6 +93,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(8/31/25)
+			<li>(Base Player) 
+			Replaced _process function with _physics_process,
+			this should make collision with enemies and world border
+			smoother no matter the frame rate</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/26/25)
 			<li>(Audio Slider) 
 			Loads save file to get volume value initially</li>
