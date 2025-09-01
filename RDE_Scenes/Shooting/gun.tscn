@@ -1,15 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://c74x71o74tua8"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Shooting/gun.gd" id="1_45twv"]
-
-[sub_resource type="SystemFont" id="SystemFont_dtrxk"]
-font_names = PackedStringArray("Bahnschrift")
-font_italic = true
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_us5sp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ssb7"]
 line_spacing = 5.0
-font = SubResource("SystemFont_dtrxk")
+font = ExtResource("2_us5sp")
 font_size = 20
 
 [node name="gun" type="Node2D"]

@@ -93,6 +93,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(9/1/25)
+			<li>(Gun) 
+			Reload text label now gets font from font file rather than the system itself</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(8/31/25)
 			<li>(Base Player) 
 			Replaced _process function with _physics_process,
