@@ -25,7 +25,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>General Credits:</strong>
 <ul>
-	<li>Parijat Das (Developer / Programmer / Designer / VA (Hurt/Death Noises))</li>
+	<li>Parijat Das (Developer / Programmer / Designer / VA (Hurt/Death SFX))</li>
 	<li>Alex King (Composer / Playtester)</li>
 	<li>Matt Brana (Playtester)</li>
 	<li>Jackson O'Brien (Playtester)</li>
