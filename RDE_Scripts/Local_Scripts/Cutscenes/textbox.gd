@@ -16,3 +16,6 @@ func set_font_size(new_size : int = 25):
 	## Sets font size of label text
 	## Default size is 25
 	dialog_text.label_settings.font_size = new_size
+
+
+
