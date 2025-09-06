@@ -5,7 +5,10 @@ const SAVE_FILE_PATH : String = "user://save_file.tres"
 # use res for final launch
 
 var save_flags : Dictionary = {
-	"true_mode_locked": true
+	"true_mode_locked": true,
+	"beat_easy": false,
+	"beat_normal": false,
+	"beat_hard": false
 }
 
 var volumes_dict : Dictionary = {

@@ -14,6 +14,7 @@ music_res = ExtResource("2_i2hgy")
 world_scene = ExtResource("6_vi84m")
 single_boss = ExtResource("5_3fy0k")
 single_boss_spawn = Vector2(0, -87)
+flags_on_win = Array[String](["beat_true"])
 min_win_time = 240
 player_scene = ExtResource("3_g5540")
 player_spawn = Vector2(0, 20)

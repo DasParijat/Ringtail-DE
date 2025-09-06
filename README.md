@@ -93,6 +93,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(9/5/25)
+			<li>(GlobalSave / SaveDataRes / FightRes) 
+			Added more save flags, one for beating each fight, 
+			FightRes comes with property to add flags that turn true upon beating fight</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(9/1/25)
 			<li>(Gun) 
 			Reload text label now gets font from font file rather than the system itself</li>

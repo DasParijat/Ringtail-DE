@@ -12,6 +12,7 @@ class_name FightRes
 @export var single_boss_spawn : Vector2 = Vector2(0, -100) 
 # Can't be (0, 0), or else bug where it spawns elsewhere occurs
 
+@export var flags_on_win : Array[String]
 @export var min_win_time : int = 60 # For timed mode, what is the minimum time to win
 
 @export var player_scene : PackedScene #= "res://RDE_Scenes/Entities/oswald.tscn"

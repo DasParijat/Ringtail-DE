@@ -126,9 +126,16 @@ func pause_game() -> void:
 		
 	#GlobalTime.is_paused = not GlobalTime.is_paused
 	#print(GlobalTime.is_paused)
+
+func set_flags_on_win() -> void:
+	var flags_on_win = fight_res.flags_on_win
+	for flag in flags_on_win:
+		if flag in GlobalSave.save_flags:
+			GlobalSave.save_flags[flag] = true
 	
 func _on_game_won() -> void:
 	#print("game won on GAME end (printed from game scene script)")
+	set_flags_on_win() 
 	
 	# Game Node doesn't use GlobalScene's on_victory_screen bool 
 	# since it needs to await signal off_victory anyways
