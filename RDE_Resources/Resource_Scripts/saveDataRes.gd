@@ -1,12 +1,10 @@
 extends Resource
 class_name SaveDataRes
 
-@export var true_mode_locked : bool = true
-
 @export var flags : Dictionary = {
-	"true_mode_unlocked": false,
+	"true_mode_locked": true,
 	"beat_easy": false,
-	"beat_normal": false,
+	"beat_norm": false,
 	"beat_hard": false
 }
 

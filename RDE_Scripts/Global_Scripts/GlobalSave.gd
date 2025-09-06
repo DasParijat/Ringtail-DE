@@ -7,7 +7,7 @@ const SAVE_FILE_PATH : String = "user://save_file.tres"
 var save_flags : Dictionary = {
 	"true_mode_locked": true,
 	"beat_easy": false,
-	"beat_normal": false,
+	"beat_norm": false,
 	"beat_hard": false
 }
 

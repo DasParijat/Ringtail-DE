@@ -133,6 +133,15 @@ func set_flags_on_win() -> void:
 		if flag in GlobalSave.save_flags:
 			GlobalSave.save_flags[flag] = true
 	
+	if ["beat_easy", "beat_norm", "beat_hard"] in flags_on_win:
+		GlobalSave.save_flags["true_mode_locked"] = false
+	print(GlobalSave.save_flags)
+	
+	var save_data = SaveDataRes.new()
+	save_data.flags = GlobalSave.save_flags
+	print(save_data.flags)
+	GlobalSave.set_flags(save_data)
+	
 func _on_game_won() -> void:
 	#print("game won on GAME end (printed from game scene script)")
 	set_flags_on_win() 
