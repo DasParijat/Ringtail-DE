@@ -1,6 +1,6 @@
 extends BaseCutscene
 
-@onready var textbox : TextBox = $Textbox
+@onready var textbox : CTextBox = $Textbox
 
 # Actors
 @onready var oswald : Sprite2D = $ActorContainer/Oswald

@@ -8,7 +8,7 @@ const CHAR_READ_RATE = 0.03
 
 @export var start_index : int = 1
 @export var end_index : int = 4
-@export var textbox_scene : TextBox
+@export var textbox_scene : CTextBox
 @export var key_hint_scene : CSceneKeyHint
 @export var continue_sound : AudioStream
 

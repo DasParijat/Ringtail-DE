@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dr6fmxbctycup"]
 
-[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/textbox.gd" id="1_7hiao"]
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/c_textbox.gd" id="1_7hiao"]
 [ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_ic6rg"]
 
 [sub_resource type="Gradient" id="Gradient_6ag0q"]
