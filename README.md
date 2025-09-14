@@ -93,6 +93,17 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(9/14/25)
+			<li>(Textbox) 
+			Renamed Textbox class to CTextbox, to avoid 
+			weird IDE glitch of it trying to load two different
+			but same textbox classes.</li>
+			<li>(GlobalSave / SaveDataRes / FightRes) 
+			Game now properly creates new save file when one doesn't exist</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(9/5/25)
 			<li>(General) 
 			Working on having flags update and save properly</li>

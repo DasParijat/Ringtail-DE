@@ -43,4 +43,9 @@ func set_flags(data : SaveDataRes) -> void:
 	print("GLOBAL SAVE: SAVED", data)
 
 func get_save_data() -> SaveDataRes:
+	if not FileAccess.file_exists(SAVE_FILE_PATH):
+		var new_data = SaveDataRes.new()
+		ResourceSaver.save(new_data, SAVE_FILE_PATH)
+		return new_data
+	
 	return ResourceLoader.load(SAVE_FILE_PATH) as SaveDataRes
