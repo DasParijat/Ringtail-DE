@@ -10,6 +10,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>Add ability to save data (Saves settings and if fight beaten)</li>
 	<li>Create credits menu (either sub menu in settings or own menu)</li>
+	<li>Add true cutscenes onto hard mode, might tweak hard mode to be slightly harder
+		(Scrapping True mode idea due to length of development)</li>
 	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
 	<li>MAYBE Add little cool animation for main menu</li>
 	<li>MAYBE Add object pooling for spawning stuff in game</li>
@@ -91,6 +93,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(9/15/25)
+			<li>(Agenda) 
+			Updated Agenda to reflect scale back on plans</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(9/14/25)
