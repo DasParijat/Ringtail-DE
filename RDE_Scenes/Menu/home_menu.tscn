@@ -577,7 +577,8 @@ vertical_scroll_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 50
+theme_override_constants/separation = 120
+alignment = 1
 
 [node name="RgEASY" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 layout_mode = 2
@@ -604,6 +605,7 @@ script = ExtResource("7_wokig")
 fight_type = "STORY_RGT_HARD"
 
 [node name="RgTRUE" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
+visible = false
 layout_mode = 2
 theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
@@ -678,11 +680,7 @@ theme_override_constants/margin_bottom = -10
 [node name="Text" type="Label" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Description/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
-text = "- TRUE mode is currently unavaliable
-
-- All current modes have the same cutscenes
-
-- Web version experiences longer loading
+text = "- Web version experiences longer loading
 "
 label_settings = SubResource("LabelSettings_m6cyt")
 autowrap_mode = 3

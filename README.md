@@ -98,6 +98,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(9/15/25)
 			<li>(Agenda) 
 			Updated Agenda to reflect scale back on plans</li>
+			<li>(Home Menu [Fight]) 
+			Got rid of true mode button, and restylized the current
+			fight selection buttons</li>
 		</ul>
 	</li>
 	<li>
