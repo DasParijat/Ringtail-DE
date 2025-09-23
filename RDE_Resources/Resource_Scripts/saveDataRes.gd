@@ -9,7 +9,9 @@ class_name SaveDataRes
 	"beat_half_hp": false,
 	"beat_no_power": false,
 	"beat_no_heal": false,
-	"beat_fixed_cam": false
+	"beat_fixed_cam": false,
+	"three_modes": false,
+	"all_modes": false
 }
 
 @export var volumes_dict : Dictionary = {

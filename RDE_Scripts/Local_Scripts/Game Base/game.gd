@@ -128,13 +128,35 @@ func pause_game() -> void:
 	#print(GlobalTime.is_paused)
 
 func set_flags_on_win() -> void:
-	var flags_on_win = fight_res.flags_on_win
+	var flags_on_win : Array[String] = fight_res.flags_on_win
+	var num_of_modes : int = 0
+	
+	# Add flags for each mode
+	if "timed" in GlobalScene.next_level_modes:
+		flags_on_win.append("beat_timed")
+		num_of_modes += 1
+	if "fixed_cam" in GlobalScene.next_level_modes:
+		flags_on_win.append("beat_fixed_cam")
+		num_of_modes += 1
+	if "no_heal" in GlobalScene.next_level_modes:
+		flags_on_win.append("beat_no_heal")
+		num_of_modes += 1
+	if "no_power" in GlobalScene.next_level_modes:
+		flags_on_win.append("beat_no_power")
+		num_of_modes += 1
+	if "half_hp" in GlobalScene.next_level_modes:
+		flags_on_win.append("beat_half_hp")
+		num_of_modes += 1
+	
+	if num_of_modes >= 3:
+		flags_on_win.append("three_modes")
+	if num_of_modes >= 5:
+		flags_on_win.append("all_modes")
+		
 	for flag in flags_on_win:
 		if flag in GlobalSave.save_flags:
 			GlobalSave.save_flags[flag] = true
 	
-	if ["beat_easy", "beat_norm", "beat_hard"] in flags_on_win:
-		GlobalSave.save_flags["true_mode_locked"] = false
 	print(GlobalSave.save_flags)
 	
 	var save_data = SaveDataRes.new()

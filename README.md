@@ -95,6 +95,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(9/23/25)
+			<li>(Game) 
+			Mode related flags are updated on game won</li>
+			<li>(GlobalSave / SaveDataRes) 
+			Added new flags for how much modes were beat at once</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(9/22/25)
 			<li>(SaveDataRes / GlobalSave) 
 			Changed save flags, takes in if beaten
