@@ -2,10 +2,14 @@ extends Resource
 class_name SaveDataRes
 
 @export var flags : Dictionary = {
-	"true_mode_locked": true,
 	"beat_easy": false,
 	"beat_norm": false,
-	"beat_hard": false
+	"beat_hard": false,
+	"beat_timed": false,
+	"beat_half_hp": false,
+	"beat_no_power": false,
+	"beat_no_heal": false,
+	"beat_fixed_cam": false
 }
 
 @export var volumes_dict : Dictionary = {

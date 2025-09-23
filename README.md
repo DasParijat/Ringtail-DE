@@ -95,6 +95,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(9/22/25)
+			<li>(SaveDataRes / GlobalSave) 
+			Changed save flags, takes in if beaten
+			all fights and all modes</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(9/15/25)
 			<li>(Agenda) 
 			Updated Agenda to reflect scale back on plans</li>
