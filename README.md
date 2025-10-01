@@ -89,6 +89,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>(5/7) - Player can get stuck in wall 
 	(Bug caused by lag, not directly fixed but player teleports after being stuck for a while)</li>
 	<li>(7/31) - Web version has longer pause after loading cutscene initially</li>
+	<li>(9/30) - When win game, previous settings save overrides current settings</li>
 </ul>
 
 <strong>Changelog:</strong>
