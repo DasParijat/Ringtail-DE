@@ -38,16 +38,25 @@ func _ready() -> void:
 	visual_settings_dict = data.visual_settings_dict
 	
 func set_settings(data : SaveDataRes) -> void:
+	# Saving settings into global save
+	volumes_dict = data.volumes_dict
+	visual_settings_dict = data.visual_settings_dict
+	
+	# Saving settings into save file itself (along with flags)
 	data.flags = save_flags
 	ResourceSaver.save(data, SAVE_FILE_PATH)
 	print("GLOBAL SAVE: SAVED", data)
 
 func set_flags(data : SaveDataRes) -> void:
+	# Saving flags into global save
+	save_flags = data.flags
+	
+	# Saving flags into save file itself (along with settings)
 	data.volumes_dict = volumes_dict
 	data.visual_settings_dict = visual_settings_dict
 	ResourceSaver.save(data, SAVE_FILE_PATH)
 	print("GLOBAL SAVE: SAVED", data)
-
+	
 func get_save_data() -> SaveDataRes:
 	if not FileAccess.file_exists(SAVE_FILE_PATH):
 		var new_data = SaveDataRes.new()
