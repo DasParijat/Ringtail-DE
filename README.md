@@ -95,6 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(10/6/25)
+			<li>(RGT_DEF_OUTRO) 
+			Outro now tells players to play hard mode to find the real ending</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(10/4/25)
 			<li>(GlobalSave) 
 			Fixed issue of when winning game, previous settings save overrides current settings, and vice versa</li>

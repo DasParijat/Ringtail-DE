@@ -205,9 +205,7 @@ func cutscene_handler() -> void:
 		48:
 			display_text("Me neither")
 		49:
-			display_text("Wait for later in the year")
-		50:
-			display_text("And try the TRUE difficulty to find out what really went down")
+			display_text("Try the HARD difficulty to find out what really went down")
 		_:
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
