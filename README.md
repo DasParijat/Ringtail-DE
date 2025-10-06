@@ -98,6 +98,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(10/6/25)
 			<li>(RGT_DEF_OUTRO) 
 			Outro now tells players to play hard mode to find the real ending</li>
+			<li>(RingtailHARD) 
+			RingtailHARD level now uses rgt_true_intro cutscene instead of def,
+			outro will be created and added later</li>
 		</ul>
 	</li>
 	<li>
