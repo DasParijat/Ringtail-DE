@@ -34,29 +34,32 @@ func cutscene_handler() -> void:
 			textbox.set_font_size()
 			display_text("That damn raccoon has been terrorizing us for months", oswald_name)
 		3:
-			display_text("People are moving out, stores shutting down, 
-						and the cops have barely made a dent", oswald_name)
+			display_text("I’m tired of sitting around and watching him suck the life out this town", oswald_name)
 		4:
-			display_text("But I refuse to cower to it", oswald_name, 0.04)
+			display_text("In both senses...", oswald_name, 0.04)
 		5:
-			display_text("I studied it, I trained for it, and now…", oswald_name)
+			display_text("…", oswald_name)
 		6:
-			display_text("…now it’s time to stop this nefarious beast!", oswald_name)
+			display_text("All this research, training, and what not,", oswald_name)
 		7:
+			display_text("I just hope it's enough to stop him.", oswald_name)
+		8:
+			display_text("Put an end to his terror", oswald_name)
+		9:
 			hide_textbox()
 			enable_auto_skip()
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.4)
 			start_tween(oswald, "global_position", Vector2(0, 720), 0.8)
 			start_tween(camera_2d, "position", Vector2(0, 720), 0.8)
-		8:
+		10:
 			show_textbox()
 			display_text("That raccoon should be here any moment now", oswald_name)
-		9:
+		11:
 			start_tween(camera_2d, "zoom", Vector2(1.7, 1.7), 0.4)
 			display_text("*phone ringing*", blank_name)
-		10:
+		12:
 			display_text("What? He’s seriously calling me NOW!?", oswald_name)
-		11:
+		13:
 			pass
 		_:
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
