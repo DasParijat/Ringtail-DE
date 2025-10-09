@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=48 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
@@ -166,9 +166,6 @@ CheckButton/styles/hover = SubResource("StyleBoxEmpty_q4kmc")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_q4kmc")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_q4kmc")
 CheckButton/styles/pressed = SubResource("StyleBoxEmpty_q4kmc")
-
-[sub_resource type="SystemFont" id="SystemFont_1t3ws"]
-font_names = PackedStringArray("Bahnschrift")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n8fw"]
 content_margin_left = 20.0
@@ -404,7 +401,6 @@ theme_override_constants/separation = 35
 [node name="ShowTimer" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_wfq2x")
-theme_override_fonts/font = SubResource("SystemFont_1t3ws")
 theme_override_font_sizes/font_size = 30
 text = "Show Timer"
 icon_alignment = 2
@@ -413,7 +409,6 @@ vertical_icon_alignment = 2
 [node name="ShowHints" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_wfq2x")
-theme_override_fonts/font = SubResource("SystemFont_1t3ws")
 theme_override_font_sizes/font_size = 30
 text = "Show Keyboard Hints
 "
@@ -423,7 +418,6 @@ vertical_icon_alignment = 2
 [node name="ShakeCam" type="CheckButton" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_wfq2x")
-theme_override_fonts/font = SubResource("SystemFont_1t3ws")
 theme_override_font_sizes/font_size = 30
 text = "Gun Camera Shake"
 icon_alignment = 2
