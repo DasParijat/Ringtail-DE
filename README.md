@@ -95,6 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(10/8/25)
+			<li>(RGT_TRUE_INTRO) 
+			Started adding dialogue, including Tommy's speakername object</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(10/6/25)
 			<li>(RGT_DEF_OUTRO) 
 			Outro now tells players to play hard mode to find the real ending</li>
