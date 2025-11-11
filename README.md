@@ -95,6 +95,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(11/11/25)
+			<li>(RGT_DEF_INTRO) 
+			Removed phone call part from cutscene</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(10/9/25)
 			<li>(Home Menu [Settings]) 
 			Fixed issue of visual setting buttons still relying on system font</li>

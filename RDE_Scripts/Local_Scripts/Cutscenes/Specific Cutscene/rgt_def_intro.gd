@@ -60,16 +60,23 @@ func cutscene_handler() -> void:
 			show_textbox()
 			display_text("That raccoon should be here any moment now", oswald_name)
 		9:
-			start_tween(camera_2d, "zoom", Vector2(1.7, 1.7), 0.4)
-			display_text("*phone ringing*", blank_name)
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(50, 920), 0.9)
+			hide_textbox()
 		10:
-			display_text("What? He’s seriously calling me NOW!?", oswald_name)
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(-50, 520), 0.9)
 		11:
-			display_text("...No", oswald_name, 0.05)
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(0, 520), 0.7)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.7)
 		12:
-			display_text("... I’ve made my decision already", oswald_name, 0.04)
+			show_textbox()
+			display_text("It's getting cold...", oswald_name, 0.04)
 		13:
-			display_text("*Hangs up phone*", oswald_name)
+			enable_auto_skip()
+			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.3)
+			display_text("Maybe I should come back another-", oswald_name, 0.06)
 		14:
 			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.3)
 			display_text("Look who we have here", ringtail_name, 0.04)
