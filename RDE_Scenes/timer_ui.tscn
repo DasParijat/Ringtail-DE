@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/timer_ui.gd" id="1_en08s"]
 [ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="2_gjouy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk5hs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbnjf"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
@@ -42,7 +42,7 @@ offset_top = -33.0
 offset_right = 101.0
 offset_bottom = 33.0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pk5hs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qbnjf")
 
 [node name="TimeLabel" type="Label" parent="PanelContainer"]
 layout_mode = 2

@@ -100,6 +100,10 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Agenda) 
 			Modified agenda. 
 			Gonna get back to work on game now that the school semester is over</li>
+			<li>(Fight UI) 
+			Redoing PlayerUI, making bars scaled up via size rather than scale</li>
+			<li>(RGT_DEF_OUTRO) 
+			Removed an autoskip dialogue from Ringtail ("But...")</li>
 		</ul>
 	</li>
 	<li>

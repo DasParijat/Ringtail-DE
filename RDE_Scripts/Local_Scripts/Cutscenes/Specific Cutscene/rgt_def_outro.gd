@@ -152,7 +152,7 @@ func cutscene_handler() -> void:
 			start_tween(camera_2d, "global_position", Vector2(0, 0), 0.5)
 		35:
 			show_textbox()
-			enable_auto_skip()
+			# enable_auto_skip()
 			display_text("But…", ringtail_name, 0.02)
 		36:
 			display_text("You really thought it would be that easy?", ringtail_name)
