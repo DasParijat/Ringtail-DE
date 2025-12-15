@@ -7,14 +7,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <strong>Website link: dasparijat.github.io/RingtailDE-Website/</strong>
 
 <strong>Agenda / Possible Goals:</strong>
+<p>Listed from highest to lowest priority</p>
 <ul>
-	<li>Add ability to save data (Saves settings and if fight beaten)</li>
-	<li>Create credits menu (either sub menu in settings or own menu)</li>
+	<li>Add ability to save data (Saves settings and if fight beaten) (DONE)</li>
 	<li>Add true cutscenes onto hard mode, might tweak hard mode to be slightly harder
 		(Scrapping True mode idea due to length of development)</li>
+	<li>Enhance in-game UI (Don't rely on scaling)</li>
+	<li>MAYBE Create credits menu (either sub menu in settings or own menu)</li>
 	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
 	<li>MAYBE Add little cool animation for main menu</li>
-	<li>MAYBE Add object pooling for spawning stuff in game</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -93,6 +94,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(12/15/25)
+			<li>(Agenda) 
+			Modified agenda. 
+			Gonna get back to work on game now that the school semester is over</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(11/11/25)
