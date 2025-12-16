@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://f2i0ysltk7fr" path="res://RDE_Scenes/fight_stats.tscn" id="1_4tjlq"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/victory_menu.gd" id="1_sdjne"]
-[ext_resource type="FontFile" uid="uid://ci44dfas6b863" path="res://RDE_Fonts/bahnschrift.ttf" id="3_1hk4j"]
+[ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="3_sov2u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cl45v"]
 content_margin_left = 275.0
@@ -34,7 +34,7 @@ theme_override_constants/margin_top = 300
 
 [node name="Continue" type="Button" parent="HSplitContainer/ButtonContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1hk4j")
+theme_override_fonts/font = ExtResource("3_sov2u")
 text = "CONTINUE"
 
 [connection signal="pressed" from="HSplitContainer/ButtonContainer/Continue" to="." method="_on_continue_pressed"]

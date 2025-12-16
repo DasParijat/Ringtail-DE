@@ -96,6 +96,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/16/25)
+			<li>(Victory Menu) 
+			Changed font of continue button to OldNewspaperTypes, 
+			the font used for all other buttons in the game</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/15/25)
 			<li>(Agenda) 
 			Modified agenda. 
