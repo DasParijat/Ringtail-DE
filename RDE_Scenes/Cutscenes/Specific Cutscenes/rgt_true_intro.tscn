@@ -18,7 +18,7 @@ polygon = PackedVector2Array(-1.03359, 22.2222, 6.20155, 23.2558, 14.4703, 22.73
 
 [node name="RGT_TRUE_INTRO" type="Node2D" node_paths=PackedStringArray("textbox_scene", "key_hint_scene")]
 script = ExtResource("1_ddw5r")
-end_index = 23
+end_index = 61
 textbox_scene = NodePath("Textbox")
 key_hint_scene = NodePath("cscene_key_hint")
 continue_sound = ExtResource("2_c30db")

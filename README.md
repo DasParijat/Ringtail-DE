@@ -97,8 +97,11 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(12/18/25)
-			<li>(RGT_DEF_INTRO / RGT_DEF_OUTRO) 
+			<li>(RGT_DEF_INTRO / RGT_TRUE_INTRO) 
 			Fixed and adjusted moment in cutscene when Oswald says it's cold</li>
+			<li>(RGT_TRUE_INTRO) 
+			Added all dialogue for true intro cutscene, 
+			still need to add "animations"</li>
 		</ul>
 	</li>
 	<li>
