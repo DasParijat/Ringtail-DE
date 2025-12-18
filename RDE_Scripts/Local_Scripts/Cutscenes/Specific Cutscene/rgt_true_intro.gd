@@ -47,29 +47,58 @@ func cutscene_handler() -> void:
 		8:
 			pass
 		9:
+			pass
+		10:
 			hide_textbox()
 			enable_auto_skip()
 			start_tween(overlay, "modulate", Color(1,1,1,0), 0.4)
 			start_tween(oswald, "global_position", Vector2(0, 720), 0.8)
 			start_tween(camera_2d, "position", Vector2(0, 720), 0.8)
-		10:
+		11:
 			show_textbox()
 			display_text("That raccoon should be here any moment now", oswald_name)
-		11:
-			start_tween(camera_2d, "zoom", Vector2(1.7, 1.7), 0.4)
-			display_text("*phone ringing*", blank_name)
 		12:
-			display_text("What? Now of all times!?", oswald_name)
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(0, 620), 0.5)
+			start_tween(oswald, "rotation_degrees", -40, 1.0)
+			hide_textbox()
 		13:
-			display_text("*phone still ringing*", blank_name)
+			enable_auto_skip()
+			start_tween(oswald, "rotation_degrees", -140, 1.0)
 		14:
-			display_text("Tommy, I thought I made myself clear", oswald_name)
+			enable_auto_skip()
+			start_tween(oswald, "rotation_degrees", -90, 1.0)
+			start_tween(camera_2d, "position", Vector2(0, 720), 0.7)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.7)
 		15:
-			display_text("stupid fool", tommy_name)
-			start_tween(camera_2d, "position", Vector2(100, 720), 0.2)
+			show_textbox()
+			display_text("It's getting cold...", oswald_name, 0.04)
 		16:
-			display_text("stupid wefwffool", oswald_name)
-			start_tween(camera_2d, "position", Vector2(0, 720), 0.2)
+			enable_auto_skip()
+			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.3)
+			display_text("Maybe I should come back another-", oswald_name, 0.08)
+		17:
+			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.3)
+			display_text("Look who we have here", ringtail_name, 0.04)
+			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.2)
+		18:
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(0, -20), 0.2)
+			start_tween(ringtail, "modulate", Color(1,1,1,1), 0.9)
+			start_tween(oswald, "modulate", Color(1,1,1,1), 0.5)
+		19:
+			show_textbox()
+			start_tween(oswald, "global_position", Vector2(0, 10), 0.7)
+			display_text("It's over! No more games now!", oswald_name)
+		20:
+			display_text("I’m ending you here once and for all!", oswald_name)
+		21:
+			display_text("You alone!?", ringtail_name)
+		22:
+			display_text("I’ve put far stronger men 6 feet under", ringtail_name)
+		23:
+			display_text("And you’ll be joining them soon", oswald_name)
 		_:
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
 			start_tween(oswald, "modulate", Color(1,1,1,0), 0.2)

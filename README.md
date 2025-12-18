@@ -12,7 +12,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>Add ability to save data (Saves settings and if fight beaten) (DONE)</li>
 	<li>Add true cutscenes onto hard mode, might tweak hard mode to be slightly harder
 		(Scrapping True mode idea due to length of development)</li>
-	<li>Enhance in-game UI (Don't rely on scaling)</li>
+	<li>Enhance in-game UI (Don't rely on scaling)(DONE)</li>
 	<li>MAYBE Create credits menu (either sub menu in settings or own menu)</li>
 	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
 	<li>MAYBE Add little cool animation for main menu</li>
@@ -94,6 +94,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(12/18/25)
+			<li>(RGT_DEF_INTRO / RGT_DEF_OUTRO) 
+			Fixed and adjusted moment in cutscene when Oswald says it's cold</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(12/16/25)

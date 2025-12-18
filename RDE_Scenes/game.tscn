@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bi38sacvfy6xa"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/game.gd" id="1_psimn"]
-[ext_resource type="Resource" uid="uid://d38qi004rniap" path="res://RDE_Resources/Level Res/STORY_RGT_EASY.tres" id="2_5lhl0"]
+[ext_resource type="Resource" uid="uid://dyx3hy23y2m81" path="res://RDE_Resources/Level Res/STORY_RGT_HARD.tres" id="2_5jbjf"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game Base/camera_2d.gd" id="2_85jn5"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/music_player.gd" id="3_btvjt"]
 [ext_resource type="PackedScene" uid="uid://bh6wxwjtwfcwq" path="res://RDE_Scenes/pause_menu.tscn" id="3_mfvle"]
@@ -14,7 +14,7 @@
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("scene_transiton")]
 script = ExtResource("1_psimn")
-default_level = ExtResource("2_5lhl0")
+default_level = ExtResource("2_5jbjf")
 scene_transiton = NodePath("TopCanvasLayer/SceneTransitionFade")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]

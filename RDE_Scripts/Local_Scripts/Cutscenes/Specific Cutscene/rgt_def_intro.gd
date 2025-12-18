@@ -61,14 +61,17 @@ func cutscene_handler() -> void:
 			display_text("That raccoon should be here any moment now", oswald_name)
 		9:
 			enable_auto_skip()
-			start_tween(camera_2d, "position", Vector2(50, 920), 0.9)
+			start_tween(camera_2d, "position", Vector2(0, 620), 0.5)
+			start_tween(oswald, "rotation_degrees", -40, 1.0)
 			hide_textbox()
 		10:
 			enable_auto_skip()
-			start_tween(camera_2d, "position", Vector2(-50, 520), 0.9)
+			start_tween(oswald, "rotation_degrees", -90, 1.0)
+			start_tween(camera_2d, "position", Vector2(0, 720), 0.7)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.7)
 		11:
 			enable_auto_skip()
-			start_tween(camera_2d, "position", Vector2(0, 520), 0.7)
+			start_tween(camera_2d, "position", Vector2(0, 720), 0.7)
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.7)
 		12:
 			show_textbox()
@@ -76,7 +79,7 @@ func cutscene_handler() -> void:
 		13:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.3)
-			display_text("Maybe I should come back another-", oswald_name, 0.06)
+			display_text("Maybe I should come back another-", oswald_name, 0.08)
 		14:
 			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.3)
 			display_text("Look who we have here", ringtail_name, 0.04)
