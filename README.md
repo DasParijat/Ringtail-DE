@@ -100,6 +100,11 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(RGT_TRUE_INTRO) 
 			Refined beginning of cutscene, 
 			including warning of what hard mode cutscenes contain</li>
+			<li>(RGT_TRUE_OUTRO) 
+			Set up RGT_TRUE_OUTRO scene and script</li>
+			<li>(RingtailHARD) 
+			HP reduced for testing (to get to ending quicker)
+			also now has ending cutscene</li>
 		</ul>
 	</li>
 	<li>

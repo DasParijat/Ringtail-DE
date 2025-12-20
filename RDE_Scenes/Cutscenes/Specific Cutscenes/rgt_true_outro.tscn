@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://xsgo37awvtji"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_true_outro.gd" id="1_uuhfg"]
+[ext_resource type="AudioStream" uid="uid://b38l1m5ocm3n0" path="res://RDE_Audio/UI Sounds/Mini Crunch/click_02.wav" id="2_4h46l"]
+[ext_resource type="PackedScene" uid="uid://dr6fmxbctycup" path="res://RDE_Scenes/Cutscenes/textbox.tscn" id="3_pjtso"]
+[ext_resource type="PackedScene" uid="uid://c6yyfqodhydb5" path="res://RDE_Scenes/Cutscenes/cscene_key_hint.tscn" id="4_nr3dg"]
+[ext_resource type="Texture2D" uid="uid://0hgp27qde0sh" path="res://RDE_Images/oswald1.png" id="5_rgnvt"]
+[ext_resource type="Texture2D" uid="uid://dq1u0bk36p7ji" path="res://RDE_Images/rt_ringtail3.png" id="6_isdeg"]
+[ext_resource type="AudioStream" uid="uid://cog6cst52ldfj" path="res://RDE_Audio/bbc_wind-atmos_nhu9295991.mp3" id="7_frke3"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tyfbt"]
+cull_mode = 1
+polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ci2a2"]
+cull_mode = 1
+polygon = PackedVector2Array(-1.03359, 22.2222, 6.20155, 23.2558, 14.4703, 22.739, 22.739, 18.0879, 26.3566, 14.9871, 29.9742, 8.78553, 31.0078, 2.06718, 30.491, -3.10078, 26.3566, -10.3359, 20.6718, -18.0879, 11.3695, -22.739, 0, -22, -9, -20, -12.9199, -16.5375, -17.0543, -10.3359, -20.155, -4.13437, -19.6382, 3.61757, -17.5711, 9.81912, -14, 15, -8, 19)
+
+[node name="RGT_TRUE_OUTRO" type="Node2D" node_paths=PackedStringArray("textbox_scene", "key_hint_scene")]
+script = ExtResource("1_uuhfg")
+textbox_scene = NodePath("Textbox")
+key_hint_scene = NodePath("cscene_key_hint")
+continue_sound = ExtResource("2_4h46l")
+
+[node name="ControlContainer" type="CanvasLayer" parent="."]
+
+[node name="BlackOverlay" type="ColorRect" parent="ControlContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="WhiteOverlay" type="ColorRect" parent="ControlContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Textbox" parent="." instance=ExtResource("3_pjtso")]
+
+[node name="cscene_key_hint" parent="." instance=ExtResource("4_nr3dg")]
+
+[node name="ActorContainer" type="Node" parent="."]
+
+[node name="Oswald" type="Sprite2D" parent="ActorContainer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(620, 340)
+rotation = -1.5708
+texture = ExtResource("5_rgnvt")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="ActorContainer/Oswald"]
+scale = Vector2(0.9, 0.9)
+occluder = SubResource("OccluderPolygon2D_tyfbt")
+
+[node name="Ringtail" type="Sprite2D" parent="ActorContainer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(620, 340)
+texture = ExtResource("6_isdeg")
+flip_v = true
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="ActorContainer/Ringtail"]
+modulate = Color(1, 1, 1, 0.196078)
+scale = Vector2(1.8, 1.8)
+occluder = SubResource("OccluderPolygon2D_ci2a2")
+
+[node name="AmbianceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_frke3")
+volume_db = -10.0
+autoplay = true
+bus = &"CScene Bus"
