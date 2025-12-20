@@ -96,6 +96,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/20/25)
+			<li>(RGT_TRUE_INTRO) 
+			Refined beginning of cutscene, 
+			including warning of what hard mode cutscenes contain</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/19/25)
 			<li>(RGT_TRUE_INTRO) 
 			Added more camera animations to cutscene</li>

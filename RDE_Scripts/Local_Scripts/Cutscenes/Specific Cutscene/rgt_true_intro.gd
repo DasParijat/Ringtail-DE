@@ -24,28 +24,28 @@ func _ready() -> void:
 func cutscene_handler() -> void:
 	match c_index:
 		0:
-			display_text("Press ESC to access pause menu. Press T to skip cutscene")
+			display_text("Hard Mode features LONGER cutscenes, and NO tutorial pop ups")
 		1:
+			display_text("Press ESC to access pause menu. Press T to skip cutscene")
+		2:
 			start_tween(oswald, "modulate", Color(1,1,1,1), 0.2)
 			textbox.offset = Vector2(0, -300)
 			textbox.set_font_size(50)
 			display_text("October 1996, Plankwood USA", blank_name, 0.09)
-		2:
+		3:
 			textbox.offset = Vector2(0, 0)
 			textbox.set_font_size()
 			display_text("That damn raccoon has been terrorizing us for months", oswald_name)
-		3:
-			display_text("I’m tired of sitting around and watching him suck the life out this town", oswald_name)
 		4:
-			display_text("In both senses...", oswald_name, 0.04)
+			display_text("I’m tired of sitting around and watching him suck the life out of this town", oswald_name)
 		5:
-			display_text("…", oswald_name)
+			display_text("In both senses...", oswald_name, 0.04)
 		6:
-			display_text("All this research, training, and what not,", oswald_name)
+			display_text("…", oswald_name)
 		7:
-			display_text("I just hope it's enough to stop him.", oswald_name)
+			display_text("All this research, training, and what not,", oswald_name)
 		8:
-			pass
+			display_text("I just hope it's enough to stop him.", oswald_name)
 		9:
 			pass
 		10:
@@ -69,13 +69,12 @@ func cutscene_handler() -> void:
 			enable_auto_skip()
 			start_tween(oswald, "rotation_degrees", -90, 1.0)
 			start_tween(camera_2d, "position", Vector2(0, 720), 0.7)
-			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.7)
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.7)
 		15:
-			show_textbox()
-			display_text("He should be here...", oswald_name, 0.04)
+			pass
 		16:
 			enable_auto_skip()
-			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.3)
+			show_textbox()
 			display_text("Maybe I got the wrong-", oswald_name, 0.08)
 		17:
 			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.3)
@@ -92,11 +91,12 @@ func cutscene_handler() -> void:
 			start_tween(oswald, "global_position", Vector2(0, 10), 0.7)
 			display_text("Anyone tell you hunting alone is dangerous?", ringtail_name)
 		20:
-			display_text("It's time you face your end!", oswald_name)
+			display_text("Ringtail! It's time you face your end!", oswald_name)
 		21:
-			display_text("Ringtail", oswald_name)
+			pass
 		22:
 			display_text("My end?", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -160), 0.8)
 		23:
 			enable_auto_skip()
 			display_text("Ha ha ha ha", ringtail_name, 0.085)
@@ -104,16 +104,19 @@ func cutscene_handler() -> void:
 			display_text("Clearly you haven't been watching the news", ringtail_name)
 		25:
 			display_text("I did my research", oswald_name)
+			start_tween(camera_2d, "position", Vector2(0, 10), 0.8)
 		26:
 			display_text("How else could I have found you here?", oswald_name)
 		27:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(ringtail, "global_position", Vector2(0,-170), 1.2)
+			start_tween(ringtail, "global_position", Vector2(0,-190), 1.2)
+			start_tween(camera_2d, "position", Vector2(0, -190), 0.6)
 		28:
 			display_text("Good point...", ringtail_name)
 		29:
 			start_tween(ringtail, "global_position", Vector2(0,-160), 0.8)
+			start_tween(camera_2d, "position", Vector2(0, -160), 0.4)
 			display_text("But still, a couple of guns?", ringtail_name)
 		30:
 			display_text("I wiped a whole SWAT team a week ago", ringtail_name)
@@ -144,7 +147,7 @@ func cutscene_handler() -> void:
 		39:
 			display_text("And now my world is being turned upside-down...", oswald_name)
 		40:
-			display_text("By some stupid raccoon none the less!", oswald_name)
+			display_text("By some stupid raccoon nonetheless!", oswald_name)
 			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.4)
 		41:
 			display_text("...", ringtail_name)
@@ -188,7 +191,7 @@ func cutscene_handler() -> void:
 			start_tween(ringtail, "global_position", Vector2(0, -165), 0.6)
 			start_tween(camera_2d, "position", Vector2(0, -165), 0.7)
 		52:
-			display_text("I'd rather that then for me to see his",  oswald_name)
+			display_text("I'd rather that than for me to see his",  oswald_name)
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.4)
 			start_tween(camera_2d, "position", Vector2(0, 15), 0.4)
 		53:
@@ -219,7 +222,7 @@ func cutscene_handler() -> void:
 			display_text("...for the most diehard man",  ringtail_name)
 		61:
 			enable_auto_skip()
-			display_text("Shut up and start-", oswald_name, 0.08)
+			display_text("Just shut up and fight-", oswald_name, 0.08)
 		_:
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
 			start_tween(oswald, "modulate", Color(1,1,1,0), 0.2)
