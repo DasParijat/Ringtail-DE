@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/21/25)
+			<li>(RGT_TRUE_OUTRO) 
+			Wrote the beginning of the cutscene script</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/20/25)
 			<li>(RGT_TRUE_INTRO) 
 			Refined beginning of cutscene, 

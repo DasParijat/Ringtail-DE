@@ -39,152 +39,95 @@ func cutscene_handler() -> void:
 			show_textbox()
 			display_text("*breathing heavily*", oswald_name)
 		3:
-			display_text("That was a good fight", ringtail_name)
+			display_text("You did good", ringtail_name)
 		4:
 			display_text("*cough*", ringtail_name)
 		5:
-			display_text("That’s right", oswald_name)
+			pass
 		6:
-			display_text("All that training, and now…", oswald_name)
+			hide_textbox()
+			enable_auto_skip()
 			start_tween(oswald, "global_position", Vector2(0, -100), 0.5)
 			start_tween(camera_2d, "global_position", Vector2(0, -150), 0.5)
 			start_tween(camera_2d, "zoom", Vector2(1.1, 1.1), 0.5)
 		7:
-			display_text("…now it’s over", oswald_name)
+			show_textbox()
+			display_text("You gonna shoot me or what?", ringtail_name)
 		8:
-			display_text("I, Oswald Jones, have brought justice to Plankwood!", oswald_name)
-		9:
-			display_text("Maybe even the world!", oswald_name)
-		10:
-			hide_textbox()
-			enable_auto_skip()
-			start_tween(camera_2d, "global_position", Vector2(0, -160), 0.5)
-			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.5)
-		11:
-			display_text("Ha…", ringtail_name)
-		12:
-			display_text("What?", oswald_name)
-			start_tween(oswald, "global_position", Vector2(0, -80), 0.3)
-		13:
-			display_text("Nothing, just…", ringtail_name)
-		14:
-			display_text("Oswald Jones?", ringtail_name)
-			start_tween(camera_2d, "global_position", ringtail.global_position, 0.3)
-			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.4)
-		15:
-			display_text("That's really your name?", ringtail_name)
-		16:
-			hide_textbox()
-			enable_auto_skip()
-			start_tween(oswald, "global_position", Vector2(0, -10), 0.4)
-			start_tween(camera_2d, "global_position", Vector2(0, -80), 0.4)
-			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.4)
-		17:
-			show_textbox()
-			display_text("Are you serious right now?", oswald_name)
-		18:
-			display_text("You're one shot away from death, and you wanna crack jokes?", oswald_name)
-		19:
-			start_tween(camera_2d, "global_position", ringtail.global_position, 0.4)
-			display_text("What? You want me to beg for my life?", ringtail_name)
-		20:
-			display_text("'Oh please, Oswald, spare me the horror!'", ringtail_name)
-			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.4)
-		21:
-			display_text("'I promise I will undo all my wrong doings! Please!'", ringtail_name, 0.04)
-			start_tween(camera_2d, "zoom", Vector2(1.8, 1.8), 0.4)
-		22:
-			start_tween(camera_2d, "global_position", oswald.global_position, 0.4)
 			display_text("...", oswald_name)
-		23:
-			start_tween(camera_2d, "global_position", ringtail.global_position, 0.4)
-			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.4)
-			display_text("Is your hero fantasy fulfilled now?", ringtail_name, 0.04)
-		24:
+			start_tween(camera_2d, "global_position", Vector2(0, -150), 0.5)
+		9:
+			display_text("...Why?", oswald_name)
+		10:
+			display_text("Excuse me?", ringtail_name)
+		11:
+			display_text("In all my time researching you", oswald_name)
+		12:
+			display_text("I never figured out why you do what you do", oswald_name)
+		13:
+			display_text("Why terrorize an innocent town?", oswald_name)
+		14:
+			display_text("Ha...innocent...", ringtail_name, 0.07)
+		15:
 			hide_textbox()
 			enable_auto_skip()
-			start_tween(camera_2d, "zoom", Vector2(1, 1), 0.5)
-			start_tween(camera_2d, "global_position", Vector2(0, -90), 0.5)
-			start_tween(oswald, "global_position", Vector2(0, -70), 0.5)
-		25:
+			start_tween(oswald, "global_position", Vector2(0,-50), 0.5)
+		16:
 			show_textbox()
-			display_text("...any other last words?", oswald_name)
-		26:
-			hide_textbox()
-			enable_auto_skip()
-			start_tween(camera_2d, "global_position", ringtail.global_position, 0.5)
+			display_text("This town is full of bullies", ringtail_name)
+		17:
+			display_text("Bullies?", oswald_name)
+			start_tween(oswald, "global_position", Vector2(0,-30), 0.3)
+		18:
+			display_text("Calling her names...", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.4)
 			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.5)
+		19:
+			display_text("...stealing her lunch...", ringtail_name)
+			start_tween(camera_2d, "zoom", Vector2(1.3, 1.3), 0.5)
+		20:
+			display_text("...dressing up as her for Halloween...", ringtail_name)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.5)
+		21:
+			display_text("Her?", oswald_name)
+			start_tween(oswald, "gloabl_position", Vector2(0, -30), 0.4)
+			start_tween(camera_2d, "position", Vector2(0, -30), 0.5)
+		22:
+			display_text("...My sister", ringtail_name, 0.08)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.5)
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.5)
+		23:
+			display_text("You have a sister?", oswald_name)
+			start_tween(camera_2d, "position", Vector2(0, -30), 0.5)
+			start_tween(camera_2d, "zoom", Vector2(1.3, 1.3), 0.5)
+		24:
+			display_text("Well...more complicated than that", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.5)
+		25:
+			display_text("But in essence, a sister", ringtail_name)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.4)
+		26:
+			display_text("Huh...", oswald_name)
+			start_tween(camera_2d, "position", Vector2(0, -30), 0.4)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.4)
 		27:
-			show_textbox()
-			display_text("Last words? Well...", ringtail_name)
+			display_text("I don't recall seeing another raccoon like you before", oswald_name)
 		28:
-			hide_textbox()
-			enable_auto_skip()
-			ringtail.flip_v = false
-			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.3)
-			start_tween(camera_2d, "global_position", Vector2(0, -250), 0.3)
-			start_tween(ringtail, "global_position", Vector2(0, -250), 0.3)
-			start_tween(oswald, "global_position", Vector2(0, -50), 0.2)
+			display_text("Of course you haven't you dumb fool", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.3)
 		29:
-			display_text("What!? How'd you-", oswald_name)
+			display_text("That's cause she's human", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.5)
 		30:
-			start_tween(camera_2d, "global_position", Vector2(0, -80), 0.3)
-			display_text("No…", oswald_name)
+			display_text("...like you", ringtail_name, 0.06)
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.3)
 		31:
-			display_text("You have to be-", oswald_name)
+			display_text("But because of her father,", ringtail_name)
+			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.3)
 		32:
-			hide_textbox()
-			enable_auto_skip()
-			start_tween(camera_2d, "global_position", Vector2(0, -250), 0.3)
-			start_tween(ringtail, "global_position", Vector2(0, -250), 0.3)
-			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.5)
-			await GlobalTime.local_wait(0.5)
-			ringtail.global_position = Vector2(0, 500)
+			display_text("...my creator...", ringtail_name, 0.06)
 		33:
-			show_textbox()
-			start_tween(camera_2d, "global_position", Vector2(0, -50), 0.4)
-			start_tween(camera_2d, "zoom", Vector2(0.8, 0.8), 0.6)
-			display_text("You're good at keeping up Oswald", ringtail_name)
-		34:
-			hide_textbox()
-			enable_auto_skip()
-			start_tween(oswald, "global_position", Vector2(0, 0), 0.2)
-			start_tween(camera_2d, "global_position", Vector2(0, 0), 0.5)
-		35:
-			show_textbox()
-			# enable_auto_skip()
-			display_text("But…", ringtail_name, 0.02)
-		36:
-			display_text("You really thought it would be that easy?", ringtail_name)
-			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 0.8)
-		37:
-			display_text("No…I-...Ringtail", oswald_name)
-		38:
-			display_text("Shhhh", ringtail_name, 0.05)
-		39:
-			display_text("Relax…don't try fighting now", ringtail_name)
-		40:
-			display_text("Ha, this…", oswald_name)
-			start_tween(oswald, "rotation_degrees", -40, 0.2)
-			start_tween(oswald, "global_position", Vector2(30, 0), 0.2)
-		41:
-			display_text("You think imma give up? Huh?", oswald_name)
-			start_tween(oswald, "rotation_degrees", -140, 0.2)
-			start_tween(oswald, "global_position", Vector2(-30, 0), 0.2)
-		42:
-			#enable_auto_skip()
-			display_text("HUH!?", oswald_name)
-			start_tween(oswald, "rotation_degrees", -90, 0.2)
-			start_tween(oswald, "global_position", Vector2(0, -30), 0.2)
-			start_tween(camera_2d, "zoom", Vector2(0.7, 0.7), 0.7)
-		43:
-			display_text("I ain't one to back down!", oswald_name)
-			start_tween(oswald, "global_position", Vector2(0, -20), 0.4)
-		44:
-			enable_auto_skip()
-			display_text("SO STEP UP AND-", oswald_name)
-			start_tween(oswald, "global_position", Vector2(0, -10), 0.3)
-			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 0.7)
+			display_text("She got an undeserving bad reputation among you town folk", ringtail_name, 0.06)
 		45:
 			enable_auto_skip()
 			ringtail.global_position = Vector2(0, 500)

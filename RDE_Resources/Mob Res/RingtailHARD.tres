@@ -13,7 +13,7 @@
 script = ExtResource("1_56ugl")
 HP_NAME = "RingtailHARD"
 is_player = false
-MAX_HP = 10
+MAX_HP = 360
 damage_rate = 1.0
 invicible = false
 
