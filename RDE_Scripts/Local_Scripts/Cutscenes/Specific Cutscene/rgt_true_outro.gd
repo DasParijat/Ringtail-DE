@@ -86,11 +86,11 @@ func cutscene_handler() -> void:
 			display_text("...stealing her lunch...", ringtail_name)
 			start_tween(camera_2d, "zoom", Vector2(1.3, 1.3), 0.5)
 		20:
-			display_text("...dressing up as her for Halloween...", ringtail_name)
+			display_text("...pushing her around...", ringtail_name)
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.5)
 		21:
 			display_text("Her?", oswald_name)
-			start_tween(oswald, "gloabl_position", Vector2(0, -30), 0.4)
+			start_tween(oswald, "global_position", Vector2(0, -30), 0.4)
 			start_tween(camera_2d, "position", Vector2(0, -30), 0.5)
 		22:
 			display_text("...My sister", ringtail_name, 0.08)
@@ -122,33 +122,113 @@ func cutscene_handler() -> void:
 			display_text("...like you", ringtail_name, 0.06)
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.3)
 		31:
-			display_text("But because of her father,", ringtail_name)
+			display_text("But because of her father...", ringtail_name)
 			start_tween(camera_2d, "zoom", Vector2(1.2, 1.2), 0.3)
 		32:
 			display_text("...my creator...", ringtail_name, 0.06)
 		33:
-			display_text("She got an undeserving bad reputation among you town folk", ringtail_name, 0.06)
+			display_text("...she was bullied", ringtail_name, 0.05)
+		34:
+			start_tween(oswald, "global_position", Vector2(0, -20), 0.5)
+			display_text("It's not her fault my creator was that way", ringtail_name)
+		35:
+			enable_auto_skip()
+			display_text("So I had to-", ringtail_name, 0.08)
+		36:
+			display_text("You think that justifies what you did?", oswald_name)
+			start_tween(camera_2d, "position", Vector2(0, -25), 0.5)
+		37:
+			display_text("You think terrorizing a town is gonna help her?", oswald_name)
+			start_tween(oswald, "global_position", Vector2(0, -30), 0.3)
+		38:
+			display_text("And what? Let them get away with it?", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.5)
+		39:
+			display_text("You folk needed to face the consequences", ringtail_name)
+		40:
+			display_text("Consequences for crap most of us weren't involved with?", oswald_name)
+			start_tween(camera_2d, "position", Vector2(0, -30), 0.5)
+		41:
+			display_text("...", ringtail_name, 0.09)
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.5)
+		42:
+			display_text("I'm not gonna die this easy...", ringtail_name, 0.06)
+		43:
+			display_text("Excuse me?", oswald_name)
+			start_tween(camera_2d, "position", Vector2(0, -30), 0.5)
+		44:
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(0, -210), 0.4)
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.8)
 		45:
+			ringtail.flip_v = false
+		46:
+			show_textbox()
+			display_text("...not for Evelyn", ringtail_name, 0.08)
+		47:
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(oswald, "global_position", Vector2(0, -5), 1.0)
+			start_tween(camera_2d, "position", Vector2(0, -5), 0.5)
+		48:
+			show_textbox()
+			display_text("I'm not gonna let you tell ME", ringtail_name)
+			start_tween(camera_2d, "position", Vector2(0, -200), 0.5)
+			start_tween(ringtail, "global_position", Vector2(0, -200), 0.7)
+		49:
+			display_text("That MY family's struggles...", ringtail_name, 0.05)
+			start_tween(camera_2d, "position", Vector2(0, -190), 0.4)
+			start_tween(ringtail, "global_position", Vector2(0, -190), 0.3)
+		50:
+			display_text("And MY family's idea of justice...", ringtail_name, 0.05)
+			start_tween(camera_2d, "position", Vector2(0, -180), 0.4)
+			start_tween(ringtail, "global_position", Vector2(0, -180), 0.3)
+		51:
+			display_text("Are any less than YOURS", ringtail_name, 0.05)
+			start_tween(camera_2d, "position", Vector2(0, -170), 0.4)
+			start_tween(ringtail, "global_position", Vector2(0, -170), 0.3)
+		52:
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(camera_2d, "position", Vector2(0, -50), 0.5)
+			start_tween(oswald, "global_position", Vector2(0, -50), 1.0)
+		53:
+			show_textbox()
+			start_tween(ringtail, "global_position", Vector2(0, -165), 0.8)
+			start_tween(camera_2d, "position", Vector2(0, -165), 0.5)
+			display_text("Only one of us will leave this forest", ringtail_name, 0.07)
+			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.8)
+		54:
+			enable_auto_skip()
+			display_text("And that will be-", ringtail_name, 0.09)
+		55:
+			hide_textbox()
+			enable_auto_skip()
+			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3"), "CScene Bus")
+			white_overlay.color.a = 1
+			start_tween(ringtail, "modulate", Color(1,1,1,0), 1.0)
+			start_tween(camera_2d, "zoom", Vector2(1,1), 0.5)
+			start_tween(camera_2d, "position", Vector2(0,0), 0.5)
+			start_tween(oswald, "global_position", Vector2(0, 0), 0.5)
+			ringtail.hide()
+		56:
+			enable_auto_skip()
+			start_tween(white_overlay, "color", Color(1, 1, 1, 0), 2.0)
+		100:
 			enable_auto_skip()
 			ringtail.global_position = Vector2(0, 500)
 			ringtail.modulate = Color(1, 1, 1, 1)
 			start_tween(oswald, "global_position", Vector2(0, -7), 0.3)
 			start_tween(ringtail, "global_position", Vector2(0, -7), 0.3)
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.3)
-		46:
+		101:
 			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3"), "CScene Bus")
 			hide_textbox()
 			enable_auto_skip()
 			white_overlay.color.a = 1
 			black_overlay.color.a = 1
 			start_tween(white_overlay, "color", Color(1, 1, 1, 0), 1)
-		47:
-			show_textbox()
-			display_text("Not satisfied?")
-		48:
-			display_text("Me neither")
-		49:
-			display_text("Try the HARD difficulty to find out what really went down")
 		_:
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
