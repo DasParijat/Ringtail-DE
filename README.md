@@ -96,6 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/24/25)
+			<li>(RGT_TRUE_OUTRO) 
+			Continued writing script, just need to write very end of it</li>
+			<li>(STORY_RGT_HARD) 
+			Added in description that it's recommended to play easy/normal before hard mode</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/23/25)
 			<li>(RGT_TRUE_OUTRO) 
 			Continued writing script, up until Ringtail is finally shot dead</li>

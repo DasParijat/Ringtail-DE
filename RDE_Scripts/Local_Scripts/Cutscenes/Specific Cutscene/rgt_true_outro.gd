@@ -210,11 +210,71 @@ func cutscene_handler() -> void:
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 1.0)
 			start_tween(camera_2d, "zoom", Vector2(1,1), 0.5)
 			start_tween(camera_2d, "position", Vector2(0,0), 0.5)
-			start_tween(oswald, "global_position", Vector2(0, 0), 0.5)
+			start_tween(oswald, "global_position", Vector2(0, -10), 0.5)
 			ringtail.hide()
 		56:
 			enable_auto_skip()
 			start_tween(white_overlay, "color", Color(1, 1, 1, 0), 2.0)
+		57:
+			enable_auto_skip()
+			start_tween(oswald, "global_position", Vector2(0, 0), 1.0)
+			start_tween(camera_2d, "position", Vector2(0,0), 0.8)
+		58:
+			show_textbox()
+			display_text("So thats it then?", oswald_name)
+		59:
+			display_text("Ringtail is dead", oswald_name)
+		60:
+			display_text("The town is saved...", oswald_name)
+		61:
+			enable_auto_skip()
+			hide_textbox()
+			start_tween(camera_2d, "zoom", Vector2(1.7, 1.7), 1.5)
+		62:
+			show_textbox()
+			display_text("...hopefully", oswald_name)
+		63:
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(oswald, "rotation_degrees",-270, 0.8)
+			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.8)
+		64:
+			enable_auto_skip()
+			start_tween(oswald, "global_position", Vector2(0, 500), 2.0)
+			start_tween(camera_2d, "position", Vector2(0, 500), 2.5)
+			start_tween(black_overlay, "color", Color(0, 0, 0, 1), 2.0)
+		65:
+			show_textbox()
+			display_text("It's been a few weeks since I killed Ringtail", oswald_name)
+		66:
+			display_text("The whole town celebrated", oswald_name)
+		67:
+			display_text("And my brother got the whole force to do a parade", oswald_name)
+		68:
+			display_text("Just for me", oswald_name)
+		69:
+			display_text("But...", oswald_name, 0.07)
+		70:
+			display_text("I don't think it's truly over", oswald_name)
+		71:
+			display_text("Ringtail's sister....Evelyn", oswald_name)
+		72:
+			display_text("She's still out there", oswald_name)
+		73:
+			display_text("And she must've known I've killed her brother by now", oswald_name)
+		74:
+			display_text("...", oswald_name, 0.06)
+		75:
+			display_text("...I saw it again, at the cafe", oswald_name, 0.06)
+		76:
+			display_text("The silhouette...", oswald_name, 0.07)
+		77:
+			display_text("Someone's stalking me", oswald_name, 0.06)
+		78:
+			display_text("I know it's my nephew's birthday tomorrow", oswald_name)
+		79:
+			display_text("But I don't think it's safe to go", oswald_name)
+		# TODO - Decide whether to introduce Darius/Obignale or not
 		100:
 			enable_auto_skip()
 			ringtail.global_position = Vector2(0, 500)
