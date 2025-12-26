@@ -96,6 +96,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/25/25)
+			<li>(RGT_TRUE_OUTRO) 
+			Finished writing script, just need to add assets/tweak animations,
+			Added logo for the end</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/24/25)
 			<li>(RGT_TRUE_OUTRO) 
 			Continued writing script, just need to write very end of it</li>

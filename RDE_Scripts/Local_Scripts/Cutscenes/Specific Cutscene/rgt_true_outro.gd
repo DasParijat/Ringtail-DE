@@ -5,6 +5,7 @@ extends BaseCutscene
 # Actors
 @onready var oswald : Sprite2D = $ActorContainer/Oswald
 @onready var ringtail : Sprite2D = $ActorContainer/Ringtail
+@onready var title_drop : Sprite2D = $ControlContainer/RDE_Title
 
 @onready var black_overlay : ColorRect = $ControlContainer/BlackOverlay
 @onready var white_overlay : ColorRect = $ControlContainer/WhiteOverlay
@@ -19,6 +20,9 @@ func _ready() -> void:
 	
 	ringtail.global_position = Vector2(0, -210)
 	oswald.global_position = Vector2(0, 40)
+	title_drop.global_position = Vector2(0, 0)
+	title_drop.hide()
+	
 	camera_2d.global_position = Vector2(0, -70)
 	
 	_base_ready()
@@ -274,7 +278,45 @@ func cutscene_handler() -> void:
 			display_text("I know it's my nephew's birthday tomorrow", oswald_name)
 		79:
 			display_text("But I don't think it's safe to go", oswald_name)
-		# TODO - Decide whether to introduce Darius/Obignale or not
+		80:
+			display_text(".....", oswald_name, 0.07)
+		81:
+			display_text("I'm sorry I can't make it, Theodore", oswald_name, 0.06)
+		82:
+			hide_textbox()
+			enable_auto_skip()
+			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.5)
+		83:
+			show_textbox()
+			textbox.offset = Vector2(0, -300)
+			textbox.set_font_size(50)
+			display_text("On 11/19/96, Oswald was reported missing", blank_name, 0.08)
+		84:
+			display_text("The suspects at large are unknown", blank_name, 0.08)
+		85:
+			hide_textbox()
+			enable_auto_skip()
+			camera_2d.global_position = Vector2(0, 1000)
+			start_tween(black_overlay, "color", Color(0, 0, 0, 0), 2.0)
+			start_tween(oswald, "global_position", Vector2(0, 750), 2.0)
+		86:
+			enable_auto_skip()
+			start_tween(oswald, "global_position", Vector2(0, 1500), 2.0)
+		87:
+			enable_auto_skip()
+			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.8)
+			start_tween(camera_2d, "position", Vector2(0, -200), 1.5)
+			# Show darius and Obignale
+		88:
+			enable_auto_skip()
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 2.0)
+		89:
+			black_overlay.color = Color(0,0,0,1)
+			title_drop.show()
+			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3"), "CScene Bus")
+			start_tween(ringtail, "modulate", Color(1,1,1,0), 1.0)
+		90:
+			pass
 		100:
 			enable_auto_skip()
 			ringtail.global_position = Vector2(0, 500)
