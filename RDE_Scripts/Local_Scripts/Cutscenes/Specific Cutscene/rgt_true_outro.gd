@@ -5,6 +5,9 @@ extends BaseCutscene
 # Actors
 @onready var oswald : Sprite2D = $ActorContainer/Oswald
 @onready var ringtail : Sprite2D = $ActorContainer/Ringtail
+@onready var darius : Sprite2D = $ActorContainer/Darius
+@onready var obignale : Sprite2D = $ActorContainer/Obignale
+
 
 @onready var title_drop : TextureRect = $ControlContainer/RDE_Title
 @onready var black_overlay : ColorRect = $ControlContainer/BlackOverlay
@@ -20,8 +23,10 @@ func _ready() -> void:
 	
 	ringtail.global_position = Vector2(0, -210)
 	oswald.global_position = Vector2(0, 40)
-	#title_drop.global_position = Vector2(0, 0)
+	
 	title_drop.hide()
+	darius.hide()
+	obignale.hide()
 	
 	camera_2d.global_position = Vector2(0, -70)
 	
@@ -300,11 +305,14 @@ func cutscene_handler() -> void:
 		86:
 			enable_auto_skip()
 			start_tween(oswald, "global_position", Vector2(0, 1500), 2.0)
+			
+			# Show darius and Obignale
+			darius.show()
+			obignale.show()
 		87:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.8)
 			start_tween(camera_2d, "position", Vector2(0, -200), 1.5)
-			# Show darius and Obignale
 		88:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 2.0)

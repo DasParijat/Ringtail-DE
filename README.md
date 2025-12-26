@@ -98,7 +98,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(12/26/25)
 			<li>(RGT_TRUE_OUTRO) 
-			Fixed ending title drop</li>
+			Fixed ending title drop,
+			Added assets for Darius and Obignale</li>
 		</ul>
 	</li>
 	<li>
