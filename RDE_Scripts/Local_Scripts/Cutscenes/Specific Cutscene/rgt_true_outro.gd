@@ -5,8 +5,8 @@ extends BaseCutscene
 # Actors
 @onready var oswald : Sprite2D = $ActorContainer/Oswald
 @onready var ringtail : Sprite2D = $ActorContainer/Ringtail
-@onready var title_drop : Sprite2D = $ControlContainer/RDE_Title
 
+@onready var title_drop : TextureRect = $ControlContainer/RDE_Title
 @onready var black_overlay : ColorRect = $ControlContainer/BlackOverlay
 @onready var white_overlay : ColorRect = $ControlContainer/WhiteOverlay
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 	ringtail.global_position = Vector2(0, -210)
 	oswald.global_position = Vector2(0, 40)
-	title_drop.global_position = Vector2(0, 0)
+	#title_drop.global_position = Vector2(0, 0)
 	title_drop.hide()
 	
 	camera_2d.global_position = Vector2(0, -70)
@@ -281,11 +281,9 @@ func cutscene_handler() -> void:
 		80:
 			display_text(".....", oswald_name, 0.07)
 		81:
-			display_text("I'm sorry I can't make it, Theodore", oswald_name, 0.06)
+			display_text("I'm sorry I can't make it", oswald_name, 0.06)
 		82:
-			hide_textbox()
-			enable_auto_skip()
-			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.5)
+			display_text("...Theodore", oswald_name, 0.07)
 		83:
 			show_textbox()
 			textbox.offset = Vector2(0, -300)
@@ -313,24 +311,8 @@ func cutscene_handler() -> void:
 		89:
 			black_overlay.color = Color(0,0,0,1)
 			title_drop.show()
-			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3"), "CScene Bus")
-			start_tween(ringtail, "modulate", Color(1,1,1,0), 1.0)
-		90:
-			pass
-		100:
-			enable_auto_skip()
-			ringtail.global_position = Vector2(0, 500)
-			ringtail.modulate = Color(1, 1, 1, 1)
-			start_tween(oswald, "global_position", Vector2(0, -7), 0.3)
-			start_tween(ringtail, "global_position", Vector2(0, -7), 0.3)
-			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 0.3)
-		101:
-			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over4.mp3"), "CScene Bus")
-			hide_textbox()
-			enable_auto_skip()
-			white_overlay.color.a = 1
-			black_overlay.color.a = 1
-			start_tween(white_overlay, "color", Color(1, 1, 1, 0), 1)
+			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over3.mp3"), "CScene Bus")
+			start_tween(ringtail, "global_position", Vector2(0, 0), 1.0)
 		_:
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)

@@ -19,16 +19,12 @@ polygon = PackedVector2Array(-1.03359, 22.2222, 6.20155, 23.2558, 14.4703, 22.73
 
 [node name="RGT_TRUE_OUTRO" type="Node2D" node_paths=PackedStringArray("textbox_scene", "key_hint_scene")]
 script = ExtResource("1_uuhfg")
-end_index = 90
+end_index = 89
 textbox_scene = NodePath("Textbox")
 key_hint_scene = NodePath("cscene_key_hint")
 continue_sound = ExtResource("2_4h46l")
 
 [node name="ControlContainer" type="CanvasLayer" parent="."]
-
-[node name="RDE_Title" type="Sprite2D" parent="ControlContainer"]
-position = Vector2(620, 245)
-texture = ExtResource("5_p5ayw")
 
 [node name="BlackOverlay" type="ColorRect" parent="ControlContainer"]
 anchors_preset = 15
@@ -45,6 +41,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="RDE_Title" type="TextureRect" parent="ControlContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.5
+offset_top = -160.0
+offset_right = 376.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_p5ayw")
 
 [node name="Textbox" parent="." instance=ExtResource("3_pjtso")]
 

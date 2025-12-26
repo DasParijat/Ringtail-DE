@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/26/25)
+			<li>(RGT_TRUE_OUTRO) 
+			Fixed ending title drop</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/25/25)
 			<li>(RGT_TRUE_OUTRO) 
 			Finished writing script, just need to add assets/tweak animations,
