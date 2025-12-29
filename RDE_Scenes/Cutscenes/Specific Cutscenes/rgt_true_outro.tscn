@@ -11,15 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://1xhvfr7gk6ks" path="res://RDE_Images/darius nefarions.png" id="8_ywd4c"]
 [ext_resource type="Texture2D" uid="uid://chmvv8ffojpf8" path="res://RDE_Images/obignale nefarions.png" id="9_hxoix"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dqxw5"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rtgcw"]
 cull_mode = 1
-polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
+polygon = PackedVector2Array(185.312, 87.2737, 197.36, -93.4484, 156.626, -210.842, 113.023, -286.219, 66.2648, -331.324, 10.6143, -358.507, -36.1444, -349.396, -73.7227, -328.387, -138.554, -204.818, -182.156, -69.3521, -168.674, 60.2407, -127.939, 153.538, -97.819, 183.659, -115.891, 213.779, -152.036, 213.779, -180.722, 349.396, -61.6746, 358.357, -43.6024, 195.707, -7.45789, 111.37, 22.6624, 111.37, 52.7828, 183.659, 70.855, 286.068, 155.192, 280.044, 167.24, 213.779, 106.999, 189.683, 94.9513, 147.514, 106.999, 117.394, 125.072, 141.49)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3ogqo"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j0d21"]
 cull_mode = 1
-polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
+polygon = PackedVector2Array(-75.2546, -62.8711, -106.651, 12.4801, -87.8132, 37.5972, -75.2546, 106.669, -75.2546, 150.624, -94.0925, 194.579, -125.489, 219.696, -188.282, 238.534, -263.633, 225.975, -295.029, 251.093, -238.516, 295.047, -219.678, 339.002, 18.9344, 357.84, 106.844, 295.047, 169.637, 301.327, 175.916, 269.93, 138.241, 232.255, 144.52, 144.345, 194.754, 100.39, 213.592, 68.9935, 244.988, 56.4351, 238.709, 18.7594, 175.916, -62.8711, 150.799, -113.105, 125.682, -138.222, 119.403, -175.898, 144.52, -188.457, 157.078, -213.574, 144.52, -326.601, 106.844, -364.276, 31.493, -345.438, 6.37592, -288.925, -6.18268, -226.132, 18.9344, -175.898, 25.2137, -138.222, -25.0204, -81.709)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tyfbt"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ni360"]
 cull_mode = 1
 polygon = PackedVector2Array(0, 20, 8, 19, 15, 15, 20, 8, 22, 0, 20, -8, 15, -16, 8, -21, 0, -22, -9, -20, -15, -16, -20, -8, -21, 0, -19, 8, -14, 15, -8, 19)
 
@@ -80,7 +80,7 @@ flip_h = true
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="ActorContainer/Obignale"]
 scale = Vector2(0.9, 0.9)
-occluder = SubResource("OccluderPolygon2D_dqxw5")
+occluder = SubResource("OccluderPolygon2D_rtgcw")
 
 [node name="Darius" type="Sprite2D" parent="ActorContainer"]
 position = Vector2(117.985, -204.988)
@@ -89,7 +89,7 @@ texture = ExtResource("8_ywd4c")
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="ActorContainer/Darius"]
 scale = Vector2(0.9, 0.9)
-occluder = SubResource("OccluderPolygon2D_3ogqo")
+occluder = SubResource("OccluderPolygon2D_j0d21")
 
 [node name="Oswald" type="Sprite2D" parent="ActorContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -99,7 +99,7 @@ texture = ExtResource("5_rgnvt")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="ActorContainer/Oswald"]
 scale = Vector2(0.9, 0.9)
-occluder = SubResource("OccluderPolygon2D_tyfbt")
+occluder = SubResource("OccluderPolygon2D_ni360")
 
 [node name="Ringtail" type="Sprite2D" parent="ActorContainer"]
 modulate = Color(1, 1, 1, 0)

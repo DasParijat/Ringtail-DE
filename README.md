@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/28/25)
+			<li>(RGT_TRUE_OUTRO) 
+			Set up shadows/LightOccluders for Obignale and Darius</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/27/25)
 			<li>(RGT_TRUE_OUTRO) 
 			Made assets for Obignale and Darius show</li>
