@@ -98,7 +98,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(12/29/25)
 			<li>(RGT_TRUE_OUTRO) 
-			Finished cutscene</li>
+			Finished story bulk of cutscene, including adding
+			music to play at the end</li>
 			<li>(STORY_RGT_HARD) 
 			Added back fight and intro cutscene to LevelRes</li>
 		</ul>

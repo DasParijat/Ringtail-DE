@@ -300,36 +300,44 @@ func cutscene_handler() -> void:
 		84:
 			display_text("The suspects at large are unknown", blank_name, 0.08)
 		85:
+			ambiance_sound.stop()
+			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Music/brothers music.mp3"), "CScene Bus")
 			hide_textbox()
 			enable_auto_skip()
 			camera_2d.global_position = Vector2(0, 1000)
-			start_tween(black_overlay, "color", Color(0, 0, 0, 0), 2.0)
-			start_tween(oswald, "global_position", Vector2(0, 750), 2.0)
+			start_tween(black_overlay, "color", Color(0, 0, 0, 0), 3.0)
+			start_tween(oswald, "global_position", Vector2(0, 750), 3.0)
 		86:
 			enable_auto_skip()
-			start_tween(oswald, "global_position", Vector2(0, 1500), 2.0)
+			start_tween(oswald, "global_position", Vector2(0, 1500), 3.0)
 			
 			darius.show()
 			obignale.show()
 		87:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.8)
-			start_tween(camera_2d, "position", Vector2(0, -200), 1.5)
+			start_tween(camera_2d, "position", Vector2(0, -200), 2.0)
 		88:
 			enable_auto_skip()
-			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 2.0)
+			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 4.0)
 		89:
-			ambiance_sound.stop()
+			#ambiance_sound.stop()
 			enable_auto_skip()
 			black_overlay.color = Color(0,0,0,1)
 			title_drop.show()
-			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over3.mp3"), "CScene Bus")
-			start_tween(ringtail, "global_position", Vector2(0, 0), 5.0)
+			#AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Music/brothers music.mp3"), "CScene Bus")
+			start_tween(ringtail, "global_position", Vector2(0, 0), 3.0)
 		90:
 			show_textbox()
 			textbox.offset = Vector2(0, 0)
 			textbox.set_font_size()
 			display_text("Thank you for playing Ringtail Definitive Edition", blank_name)
+		91:
+			# TODO - Add if condition if already 100% then game, then different message
+			display_text("You can unlock a new menu theme by playing 
+						all difficulties, all modes, and beating Ringtail with all modes enabled", blank_name)
+		92:
+			display_text("Good Luck!", blank_name)
 		_:
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
