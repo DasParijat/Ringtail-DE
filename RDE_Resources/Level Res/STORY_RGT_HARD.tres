@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="LevelRes" load_steps=4 format=3 uid="uid://dyx3hy23y2m81"]
+[gd_resource type="Resource" script_class="LevelRes" load_steps=6 format=3 uid="uid://dyx3hy23y2m81"]
 
 [ext_resource type="Texture2D" uid="uid://3ombu4mpiiyt" path="res://RDE_Images/RGT_hard_thumbnail.png" id="1_22g3i"]
+[ext_resource type="Resource" uid="uid://ds5x2eini1j0p" path="res://RDE_Resources/Fight Res/RGT_HARD.tres" id="1_34e2t"]
 [ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="1_oh108"]
+[ext_resource type="Resource" uid="uid://cujmjnb2db5w2" path="res://RDE_Resources/Cutscene Res/RGT_TRUE_INTRO.tres" id="2_tkef8"]
 [ext_resource type="Resource" uid="uid://ouwv7mnly5ie" path="res://RDE_Resources/Cutscene Res/RGT_TRUE_OUTRO.tres" id="4_l3ooa"]
 
 [resource]
@@ -12,4 +14,4 @@ LEVEL_DESC = "Ringtail is a nefarious creature who’s been torturing the town o
 
 Reccomend playing after easy/normal mode."
 THUMBNAIL = ExtResource("1_22g3i")
-order = Array[Resource]([ExtResource("4_l3ooa")])
+order = Array[Resource]([ExtResource("2_tkef8"), ExtResource("1_34e2t"), ExtResource("4_l3ooa")])

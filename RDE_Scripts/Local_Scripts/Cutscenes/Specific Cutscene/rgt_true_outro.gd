@@ -18,6 +18,9 @@ extends BaseCutscene
 var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color8(181, 191, 0))
 var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color8(249, 208, 96))
 
+# Plays wind sound
+@onready var ambiance_sound : AudioStreamPlayer = $AmbianceSound
+
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"
 	
@@ -306,7 +309,6 @@ func cutscene_handler() -> void:
 			enable_auto_skip()
 			start_tween(oswald, "global_position", Vector2(0, 1500), 2.0)
 			
-			# Show darius and Obignale
 			darius.show()
 			obignale.show()
 		87:
@@ -317,10 +319,17 @@ func cutscene_handler() -> void:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.5, 1.5), 2.0)
 		89:
+			ambiance_sound.stop()
+			enable_auto_skip()
 			black_overlay.color = Color(0,0,0,1)
 			title_drop.show()
 			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Game Over Sounds/rde_game_over3.mp3"), "CScene Bus")
-			start_tween(ringtail, "global_position", Vector2(0, 0), 1.0)
+			start_tween(ringtail, "global_position", Vector2(0, 0), 5.0)
+		90:
+			show_textbox()
+			textbox.offset = Vector2(0, 0)
+			textbox.set_font_size()
+			display_text("Thank you for playing Ringtail Definitive Edition", blank_name)
 		_:
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)

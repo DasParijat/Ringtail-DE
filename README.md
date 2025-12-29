@@ -96,6 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/29/25)
+			<li>(RGT_TRUE_OUTRO) 
+			Finished cutscene</li>
+			<li>(STORY_RGT_HARD) 
+			Added back fight and intro cutscene to LevelRes</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/28/25)
 			<li>(RGT_TRUE_OUTRO) 
 			Set up shadows/LightOccluders for Obignale and Darius</li>
