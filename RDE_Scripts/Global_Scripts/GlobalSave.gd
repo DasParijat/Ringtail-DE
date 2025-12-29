@@ -64,3 +64,10 @@ func get_save_data() -> SaveDataRes:
 		return new_data
 	
 	return ResourceLoader.load(SAVE_FILE_PATH) as SaveDataRes
+
+func all_flags_true() -> bool:
+	## Check if all flags are true, for 100% completion
+	for flag in save_flags.values():
+		if not flag:
+			return false
+	return true

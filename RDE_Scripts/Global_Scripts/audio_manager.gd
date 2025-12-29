@@ -37,3 +37,7 @@ func play_audio_one_shot(audio_stream: AudioStream, bus : StringName = "Game SFX
 
 func is_audio_hearable(bus_name : String) -> bool:
 	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))) <= 0
+
+func clear_one_shots() -> void:
+	for one_shot in one_shots.get_children():
+		one_shot.queue_free()

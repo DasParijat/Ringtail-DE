@@ -99,9 +99,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(12/29/25)
 			<li>(RGT_TRUE_OUTRO) 
 			Finished story bulk of cutscene, including adding
-			music to play at the end</li>
+			music to play at the end, and dialogue at end 
+			checking to see if player 100% completed the game</li>
 			<li>(STORY_RGT_HARD) 
 			Added back fight and intro cutscene to LevelRes</li>
+			<li>(GlobalSave) 
+			Added function to check for 100% completion (all save flags true)</li>
+			<li>(AudioManager) 
+			Added function to clear all audio one shots, 
+			used at end of true outro to clear ending music</li>
 		</ul>
 	</li>
 	<li>

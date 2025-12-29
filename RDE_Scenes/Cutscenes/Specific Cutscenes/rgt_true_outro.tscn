@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xsgo37awvtji"]
+[gd_scene load_steps=16 format=3 uid="uid://xsgo37awvtji"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Cutscenes/Specific Cutscene/rgt_true_outro.gd" id="1_uuhfg"]
 [ext_resource type="AudioStream" uid="uid://b38l1m5ocm3n0" path="res://RDE_Audio/UI Sounds/Mini Crunch/click_02.wav" id="2_4h46l"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cog6cst52ldfj" path="res://RDE_Audio/bbc_wind-atmos_nhu9295991.mp3" id="7_frke3"]
 [ext_resource type="Texture2D" uid="uid://1xhvfr7gk6ks" path="res://RDE_Images/darius nefarions.png" id="8_ywd4c"]
 [ext_resource type="Texture2D" uid="uid://chmvv8ffojpf8" path="res://RDE_Images/obignale nefarions.png" id="9_hxoix"]
+[ext_resource type="AudioStream" uid="uid://dbodghct25kc2" path="res://RDE_Audio/Music/brothers music.mp3" id="11_k2hog"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rtgcw"]
 cull_mode = 1
@@ -116,4 +117,9 @@ occluder = SubResource("OccluderPolygon2D_ci2a2")
 stream = ExtResource("7_frke3")
 volume_db = -10.0
 autoplay = true
+bus = &"CScene Bus"
+
+[node name="EndingSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -206.488)
+stream = ExtResource("11_k2hog")
 bus = &"CScene Bus"

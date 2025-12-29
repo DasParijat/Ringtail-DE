@@ -18,8 +18,9 @@ extends BaseCutscene
 var ringtail_name : SpeakerName = SpeakerName.new("Ringtail", Color8(181, 191, 0))
 var oswald_name : SpeakerName = SpeakerName.new("Oswald", Color8(249, 208, 96))
 
-# Plays wind sound
+# Sounds
 @onready var ambiance_sound : AudioStreamPlayer = $AmbianceSound
+@onready var ending_sound : AudioStreamPlayer2D = $EndingSound
 
 func _ready() -> void:
 	cutscene_manager_func = "cutscene_handler"
@@ -301,7 +302,9 @@ func cutscene_handler() -> void:
 			display_text("The suspects at large are unknown", blank_name, 0.08)
 		85:
 			ambiance_sound.stop()
+			#ending_sound.play()
 			AudioManager.play_audio_one_shot(preload("res://RDE_Audio/Music/brothers music.mp3"), "CScene Bus")
+			
 			hide_textbox()
 			enable_auto_skip()
 			camera_2d.global_position = Vector2(0, 1000)
@@ -333,12 +336,19 @@ func cutscene_handler() -> void:
 			textbox.set_font_size()
 			display_text("Thank you for playing Ringtail Definitive Edition", blank_name)
 		91:
-			# TODO - Add if condition if already 100% then game, then different message
-			display_text("You can unlock a new menu theme by playing 
-						all difficulties, all modes, and beating Ringtail with all modes enabled", blank_name)
+			if GlobalSave.all_flags_true():
+				display_text("And thank you for 100% completing the game!", blank_name)
+			else:
+				display_text("You can unlock a new menu theme by playing 
+							all difficulties, all modes, and beating Ringtail with all modes enabled", blank_name)
 		92:
-			display_text("Good Luck!", blank_name)
+			if GlobalSave.all_flags_true():
+				display_text("Enjoy your day!", blank_name)
+			else:
+				display_text("Good Luck!", blank_name)
 		_:
+			#ending_sound.stop()
+			AudioManager.clear_one_shots()
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)
 			start_tween(oswald, "modulate", Color(1,1,1,0), 0.2)
