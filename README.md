@@ -98,7 +98,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 		<ul>
 			(12/30/25)
 			<li>(Home Menu) 
-			Different background image if all save flags are true</li>
+			Different background image if all save flags are true, 
+			Different music plays as well</li>
 		</ul>
 	</li>
 	<li>

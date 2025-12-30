@@ -15,16 +15,19 @@ var cur_menu : Control
 func _ready() -> void:
 	Engine.time_scale = 1 # Ensures time scale is normal when menu loads
 	
+	# If player 100% completed the game, change menu theme
+	if GlobalSave.all_flags_true():
+		background.texture = preload("res://RDE_Images/menu_background4_100.png")
+		menu_theme_player.stream = preload("res://RDE_Audio/Music/nf_main_menu_theme.mp3")
+		menu_theme_player.play()
+		
 	GlobalMenu.connect("menu_change", Callable(self, "_on_menu_change"))
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.HOME_MENU
 	GlobalFightStats.reset_fight_stats()
 	
 	var tween : Tween = create_tween().set_ease(Tween.EASE_OUT)
 	tween.tween_property(menu_theme_player, "volume_db", -10, 0.7)
-	
-	if GlobalSave.all_flags_true():
-		background.texture = preload("res://RDE_Images/menu_background4_100.png")
-	
+		
 	set_cur_menu(main_menu)
 	scene_transition.enter_anim(0.25)
 	

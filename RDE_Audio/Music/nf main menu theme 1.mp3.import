@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ut6x6dmqqt07"
+path="res://.godot/imported/nf main menu theme 1.mp3-ea4664a0cfafe5f7d55d32345bdbfd10.mp3str"
+
+[deps]
+
+source_file="res://RDE_Audio/Music/nf main menu theme 1.mp3"
+dest_files=["res://.godot/imported/nf main menu theme 1.mp3-ea4664a0cfafe5f7d55d32345bdbfd10.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
