@@ -100,6 +100,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Home Menu) 
 			Different background image if all save flags are true, 
 			Different music plays as well</li>
+			<li>(Load Screen) 
+			Added secret loading screen (Of Obignale and Darius) that has a chance to appear,
+			the chance increases if hard mode is beaten, and increases further if 100% completion</li>
 		</ul>
 	</li>
 	<li>

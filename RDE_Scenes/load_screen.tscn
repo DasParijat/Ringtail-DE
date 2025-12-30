@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7ky1sqwiq4tv"]
+[gd_scene load_steps=12 format=3 uid="uid://b7ky1sqwiq4tv"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/load_screen.gd" id="1_af250"]
 [ext_resource type="Texture2D" uid="uid://b73e4w0bbne17" path="res://RDE_Images/loading_screen_image2.png" id="2_4slvk"]
 [ext_resource type="PackedScene" uid="uid://b2ch241pykkdu" path="res://RDE_Scenes/scene_transition_fade.tscn" id="2_tp7ds"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="3_xbrh2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ornk"]
-texture = ExtResource("2_4slvk")
 
 [sub_resource type="LabelSettings" id="LabelSettings_x2wty"]
 font_size = 100
@@ -61,13 +58,19 @@ progress_label = NodePath("OldLoadProgress")
 load_progress_bar = NodePath("MarginContainer/VBoxContainer/LoadProgressBar")
 scene_transition = NodePath("SceneTransitionFade")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -172.0
+offset_right = 302.0
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_5ornk")
+scale = Vector2(0.669553, 0.669553)
+pivot_offset = Vector2(1023, 518)
+texture = ExtResource("2_4slvk")
 
 [node name="OldLoadProgress" type="Label" parent="."]
 visible = false
