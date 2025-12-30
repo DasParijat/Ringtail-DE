@@ -22,6 +22,9 @@ func _ready() -> void:
 	var tween : Tween = create_tween().set_ease(Tween.EASE_OUT)
 	tween.tween_property(menu_theme_player, "volume_db", -10, 0.7)
 	
+	if GlobalSave.all_flags_true():
+		background.texture = preload("res://RDE_Images/menu_background4_100.png")
+	
 	set_cur_menu(main_menu)
 	scene_transition.enter_anim(0.25)
 	
