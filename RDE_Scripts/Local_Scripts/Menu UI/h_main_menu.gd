@@ -17,6 +17,10 @@ func _ready() -> void:
 	title_start_pos = title.position
 	bcontain_start_pos = button_container.position
 	
+	if GlobalSettings.PLATFORM == GlobalSettings.VersionType.WEB:
+		$HBoxContainer/quitB.hide()
+		$HBoxContainer/reloadB.show()
+		
 	# Set qualitative properties to that of when it's closed
 	hide()
 	modulate.a = 0

@@ -99,6 +99,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			(12/31/25)
 			<li>(RGT_DEF_INTRO) 
 			Made dialogue more dynamic, based on modes enabled and save flags</li>
+			<li>(GlobalSettings / Home Menu) 
+			Set up global variables that hold data about game version (version number and platform), 
+			due to this, it's easier to modify game for web or exe exports</li>
 		</ul>
 	</li>
 	<li>

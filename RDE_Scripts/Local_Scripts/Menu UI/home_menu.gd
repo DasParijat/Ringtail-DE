@@ -5,6 +5,8 @@ extends CanvasLayer
 @export var settings_menu : SettingsMenu
 @export var fight_menu : FightMenu
 
+@onready var version_label : Label = $MarginContainer/VersionLabel
+
 @export var background : TextureRect
 @export var scene_transition : SceneTransitionFade
 
@@ -20,7 +22,13 @@ func _ready() -> void:
 		background.texture = preload("res://RDE_Images/menu_background4_100.png")
 		menu_theme_player.stream = preload("res://RDE_Audio/Music/nf_main_menu_theme.mp3")
 		menu_theme_player.play()
-		
+	
+	# Set up version label text
+	version_label.text = "Ringtail DE "
+	if GlobalSettings.PLATFORM == GlobalSettings.VersionType.WEB:
+		version_label.text += "Web "
+	version_label.text += "v" + str(GlobalSettings.VERSION_NUMBER)
+	
 	GlobalMenu.connect("menu_change", Callable(self, "_on_menu_change"))
 	GlobalScene.cur_scene_type = GlobalScene.SceneType.HOME_MENU
 	GlobalFightStats.reset_fight_stats()

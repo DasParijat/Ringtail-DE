@@ -266,9 +266,10 @@ theme_override_constants/margin_right = 5
 
 [node name="VersionLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
-text = "Ringtail DE v1.0.0
+text = "Ringtail DE v1.0
 "
 label_settings = SubResource("LabelSettings_qoden")
+horizontal_alignment = 2
 
 [node name="Main Menu" type="Control" parent="." node_paths=PackedStringArray("scene_transition")]
 visible = false
