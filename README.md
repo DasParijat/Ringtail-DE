@@ -96,6 +96,13 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(12/31/25)
+			<li>(RGT_DEF_INTRO) 
+			Made dialogue more dynamic, based on modes enabled and save flags</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(12/30/25)
 			<li>(Home Menu) 
 			Different background image if all save flags are true, 

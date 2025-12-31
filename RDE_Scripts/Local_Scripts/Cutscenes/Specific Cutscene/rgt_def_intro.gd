@@ -75,7 +75,12 @@ func cutscene_handler() -> void:
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.7)
 		12:
 			show_textbox()
-			display_text("It's getting cold...", oswald_name, 0.04)
+			if "timed" in GlobalScene.next_level_modes:
+				display_text("I can't keep waiting here...", oswald_name, 0.04)
+			elif "half_hp" in GlobalScene.next_level_modes:
+				display_text("I feel cold...", oswald_name, 0.04)
+			else:
+				display_text("It's getting cold...", oswald_name, 0.04)
 		13:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.6, 1.6), 0.3)
@@ -93,11 +98,19 @@ func cutscene_handler() -> void:
 		16:
 			show_textbox()
 			start_tween(oswald, "global_position", Vector2(0, 10), 0.7)
-			display_text("It's over! No more games now!", oswald_name)
+			if "timed" in GlobalScene.next_level_modes:
+				display_text("It's over! Your time's up!", oswald_name)
+			else:	
+				display_text("It's over! No more games now!", oswald_name)
 		17:
 			display_text("I’m ending you here once and for all!", oswald_name)
 		18:
-			display_text("You alone!?", ringtail_name)
+			if "half_hp" in GlobalScene.next_level_modes:
+				display_text("But you look weak!?", ringtail_name)
+			elif "no_power" in GlobalScene.next_level_modes or "no_heal" in GlobalScene.next_level_modes:
+				display_text("But you look tired!?", ringtail_name)
+			else:
+				display_text("You alone!?", ringtail_name)
 		19:
 			display_text("I’ve put far stronger men 6 feet under", ringtail_name)
 		20:
@@ -105,7 +118,10 @@ func cutscene_handler() -> void:
 		21:
 			display_text("Do you even know what you’re doing fool?", ringtail_name)
 		22:
-			display_text("(Do I?)", oswald_name)
+			if GlobalSave.save_flags["beat_hard"]:
+				display_text("(I hope by now I do)", oswald_name)
+			else:
+				display_text("(Do I?)", oswald_name)
 		23:
 			hide_textbox()
 			start_tween(overlay, "modulate", Color(1,1,1,0.5), 0.2)
