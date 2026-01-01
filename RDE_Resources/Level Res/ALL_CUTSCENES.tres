@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LevelRes" load_steps=7 format=3 uid="uid://cs8myymr55ptj"]
+
+[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/levelRes.gd" id="1_4n6ww"]
+[ext_resource type="Resource" uid="uid://bo04vgmtwy7b0" path="res://RDE_Resources/Cutscene Res/RGT_DEF_INTRO.tres" id="1_h2lhp"]
+[ext_resource type="Texture2D" uid="uid://oam3b6i1iur2" path="res://RDE_Images/RGT_norm_thumbnail.png" id="1_ku6ht"]
+[ext_resource type="Resource" uid="uid://cuhdm8d2kf7h" path="res://RDE_Resources/Cutscene Res/RGT_DEF_OUTRO.tres" id="2_ufvok"]
+[ext_resource type="Resource" uid="uid://cujmjnb2db5w2" path="res://RDE_Resources/Cutscene Res/RGT_TRUE_INTRO.tres" id="3_712cr"]
+[ext_resource type="Resource" uid="uid://ouwv7mnly5ie" path="res://RDE_Resources/Cutscene Res/RGT_TRUE_OUTRO.tres" id="4_nxvo3"]
+
+[resource]
+script = ExtResource("1_4n6ww")
+LEVEL_NAME = "ALL_CUTSCENES"
+DISPLAY_NAME = "All Cutscenes"
+LEVEL_DESC = "This holds all four cutscenes"
+THUMBNAIL = ExtResource("1_ku6ht")
+order = Array[Resource]([ExtResource("1_h2lhp"), ExtResource("2_ufvok"), ExtResource("3_712cr"), ExtResource("4_nxvo3")])

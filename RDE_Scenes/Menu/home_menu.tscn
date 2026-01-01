@@ -599,14 +599,14 @@ text = "HARD"
 script = ExtResource("7_wokig")
 fight_type = "STORY_RGT_HARD"
 
-[node name="RgTRUE" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
+[node name="AllCutscenes" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
 visible = false
 layout_mode = 2
 theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75
-text = "TRUE"
+text = "SCENES"
 script = ExtResource("7_wokig")
-fight_type = "STORY_RGT_TRUE"
+fight_type = "ALL_CUTSCENES"
 
 [node name="FightDesc Container" type="MarginContainer" parent="Fight Menu/MarginContainer/HBoxContainer"]
 layout_mode = 2
