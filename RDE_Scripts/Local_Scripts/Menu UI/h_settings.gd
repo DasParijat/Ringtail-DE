@@ -9,6 +9,8 @@ signal audio_reset
 
 @onready var reset_audio : AudioStream = preload("res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3")
 
+@onready var runtime_text : Label = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/Runtime
+
 var save_data : SaveDataRes
 var anim_rate : float = 0.2
 
@@ -46,6 +48,10 @@ func save_settings() -> void:
 	save_data.save_visual_settings()
 	
 	GlobalSave.set_settings(save_data)
+
+func _process(delta : float) -> void:
+	# Always update runtime text with current runtime
+	runtime_text.text = "Total Runtime: " + TotalRuntimeTimer.total_runtime_string
 
 func load_saved_settings() -> void:
 	var data : SaveDataRes = GlobalSave.get_save_data()

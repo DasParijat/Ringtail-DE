@@ -96,6 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(1/2/26)
+			<li>(GlobalSave / SaveDataRes / TotalRuntimeTimer) 
+			Total runtime is now completely tracked and saved</li>
+			<li>(Home Menu [Settings]) 
+			Total runtime is viewable from visual settings</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/1/26)
 			<li>Happy New Years!</li>
 			<li>(ALL_CUTSCENES / Home Menu) 

@@ -35,7 +35,9 @@ var bus_name_array : Array[String] = [
 	"UI SFX", 
 	"CScene Bus"
 ]
-	
+
+@export var total_runtime : float = 0.0 # in seconds
+
 func set_default_volume(bus_name : String, default_volume : float) -> void:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(default_volume))

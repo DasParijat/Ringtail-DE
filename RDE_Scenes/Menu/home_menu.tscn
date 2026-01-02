@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dfwvndhpp8eyr"]
+[gd_scene load_steps=49 format=3 uid="uid://dfwvndhpp8eyr"]
 
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/navButton.gd" id="1_k7wod"]
 [ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Menu UI/home_menu.gd" id="1_rhmab"]
@@ -166,6 +166,11 @@ CheckButton/styles/hover = SubResource("StyleBoxEmpty_q4kmc")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_q4kmc")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_q4kmc")
 CheckButton/styles/pressed = SubResource("StyleBoxEmpty_q4kmc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dgcm"]
+font = ExtResource("9_44nqn")
+font_size = 30
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n8fw"]
 content_margin_left = 20.0
@@ -343,7 +348,6 @@ text = "Reload"
 script = ExtResource("1_k7wod")
 
 [node name="Settings" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -423,6 +427,12 @@ theme_override_font_sizes/font_size = 30
 text = "Gun Camera Shake"
 icon_alignment = 2
 vertical_icon_alignment = 2
+
+[node name="Runtime" type="Label" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Total Runtime: 0:01:10"
+label_settings = SubResource("LabelSettings_0dgcm")
+horizontal_alignment = 1
 
 [node name="Audio" type="PanelContainer" parent="Settings/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -530,6 +540,7 @@ text = "yyoooo"
 layout_mode = 2
 
 [node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container", "scene_transition")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

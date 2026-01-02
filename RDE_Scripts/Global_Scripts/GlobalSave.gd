@@ -36,11 +36,15 @@ func _ready() -> void:
 	save_flags = data.flags
 	volumes_dict = data.volumes_dict
 	visual_settings_dict = data.visual_settings_dict
+	TotalRuntimeTimer.total_runtime_seconds = data.total_runtime
 	
 func set_settings(data : SaveDataRes) -> void:
 	# Saving settings into global save
 	volumes_dict = data.volumes_dict
 	visual_settings_dict = data.visual_settings_dict
+	
+	# Save runtime (While running, occasionally save runtime in case of crash)
+	data.total_runtime = TotalRuntimeTimer.total_runtime_seconds
 	
 	# Saving settings into save file itself (along with flags)
 	data.flags = save_flags
@@ -51,9 +55,24 @@ func set_flags(data : SaveDataRes) -> void:
 	# Saving flags into global save
 	save_flags = data.flags
 	
+	# Save runtime (While running, occasionally save runtime in case of crash)
+	data.total_runtime = TotalRuntimeTimer.total_runtime_seconds
+	
 	# Saving flags into save file itself (along with settings)
 	data.volumes_dict = volumes_dict
 	data.visual_settings_dict = visual_settings_dict
+	ResourceSaver.save(data, SAVE_FILE_PATH)
+	print("GLOBAL SAVE: SAVED", data)
+
+func set_runtime(data : SaveDataRes = SaveDataRes.new()) -> void:
+	# Fill out data with current save stats
+	data.flags = save_flags
+	data.volumes_dict = volumes_dict
+	data.visual_settings_dict = visual_settings_dict
+	
+	# Update total_runtime with latest
+	data.total_runtime = TotalRuntimeTimer.total_runtime_seconds
+	
 	ResourceSaver.save(data, SAVE_FILE_PATH)
 	print("GLOBAL SAVE: SAVED", data)
 	
