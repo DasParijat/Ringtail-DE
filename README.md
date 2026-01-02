@@ -104,6 +104,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(GlobalSave / SaveDataRes) 
 			Fixed default volumes values for save data, 
 			now reflects default shown when resetting volumes in settings</li>
+			<li>(TotalRuntimeTimer) 
+			Created autoload to track time played</li>
 		</ul>
 	</li>
 	<li>

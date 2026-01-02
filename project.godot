@@ -29,6 +29,7 @@ GlobalPlayer="*res://RDE_Scripts/Global_Scripts/GlobalPlayer.gd"
 AudioManager="*res://RDE_Scenes/AudioManager.tscn"
 GlobalSettings="*res://RDE_Scripts/Global_Scripts/GlobalSettings.gd"
 GlobalSave="*res://RDE_Scripts/Global_Scripts/GlobalSave.gd"
+TotalRuntimeTimer="*res://RDE_Scenes/total_runtime_timer.tscn"
 
 [dialogic]
 

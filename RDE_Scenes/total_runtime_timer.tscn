@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bisvwofuhg16l"]
+
+[ext_resource type="Script" path="res://RDE_Scripts/Global_Scripts/total_runtime_timer.gd" id="1_yrwuy"]
+
+[node name="TotalRuntimeTimer" type="Timer"]
+autostart = true
+script = ExtResource("1_yrwuy")
+print_runtime = true
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

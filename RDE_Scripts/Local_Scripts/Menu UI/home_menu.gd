@@ -38,7 +38,7 @@ func _ready() -> void:
 		
 	set_cur_menu(main_menu)
 	scene_transition.enter_anim(0.25)
-	
+
 func set_cur_menu(new_menu) -> void:
 	cur_menu = new_menu
 	#print(cur_menu)
