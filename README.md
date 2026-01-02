@@ -11,7 +11,7 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>Add ability to save data (Saves settings and if fight beaten) (DONE)</li>
 	<li>Add true cutscenes onto hard mode, might tweak hard mode to be slightly harder
-		(Scrapping True mode idea due to length of development)</li>
+		(Scrapping True mode idea due to length of development)(DONE)</li>
 	<li>Enhance in-game UI (Don't rely on scaling)(DONE)</li>
 	<li>MAYBE Create credits menu (either sub menu in settings or own menu)</li>
 	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
@@ -101,6 +101,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(ALL_CUTSCENES / Home Menu) 
 			Added level with all cutscenes, 
 			not normally accesible by player, used for testing/showcase</li>
+			<li>(GlobalSave / SaveDataRes) 
+			Fixed default volumes values for save data, 
+			now reflects default shown when resetting volumes in settings</li>
 		</ul>
 	</li>
 	<li>

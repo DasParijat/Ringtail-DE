@@ -18,11 +18,11 @@ var save_flags : Dictionary = {
 }
 
 var volumes_dict : Dictionary = {
-	"Master": 1,
-	"Music Bus": 1,
-	"Game SFX": 0.4,
-	"UI SFX": 1,
-	"CScene Bus": 1
+	"Master": 0,
+	"Music Bus": 0,
+	"Game SFX": -8.02638,
+	"UI SFX": 0,
+	"CScene Bus": 0
 }
 
 var visual_settings_dict : Dictionary = {
