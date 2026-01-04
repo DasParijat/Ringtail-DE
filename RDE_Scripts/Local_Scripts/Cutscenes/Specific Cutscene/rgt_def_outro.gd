@@ -37,9 +37,15 @@ func cutscene_handler() -> void:
 		2:
 			if GlobalSettings.visible_hints: key_hint_scene.show()
 			show_textbox()
-			display_text("*breathing heavily*", oswald_name)
+			if "no_heal" in GlobalScene.next_level_modes:
+				display_text("(Am I bleeding?)", oswald_name)
+			else:
+				display_text("*breathing heavily*", oswald_name)
 		3:
-			display_text("*cough* It seems I underestimated you", ringtail_name)
+			if "no_power" in GlobalScene.next_level_modes:
+				display_text("It seems I underestimated you", ringtail_name)
+			else:
+				display_text("*cough* It seems I underestimated you", ringtail_name)
 		4:
 			display_text("*cough*", ringtail_name)
 		5:
@@ -50,7 +56,7 @@ func cutscene_handler() -> void:
 			start_tween(camera_2d, "global_position", Vector2(0, -150), 0.5)
 			start_tween(camera_2d, "zoom", Vector2(1.1, 1.1), 0.5)
 		7:
-			display_text("…now it’s over", oswald_name)
+			display_text("...now it’s over", oswald_name)
 		8:
 			display_text("I, Oswald Jones, have brought justice to Plankwood!", oswald_name)
 		9:
@@ -66,7 +72,7 @@ func cutscene_handler() -> void:
 			display_text("What?", oswald_name)
 			start_tween(oswald, "global_position", Vector2(0, -80), 0.3)
 		13:
-			display_text("Nothing, just…", ringtail_name)
+			display_text("Nothing, just...", ringtail_name)
 		14:
 			display_text("Oswald Jones?", ringtail_name)
 			start_tween(camera_2d, "global_position", ringtail.global_position, 0.3)
@@ -129,7 +135,7 @@ func cutscene_handler() -> void:
 			display_text("What!? How'd you-", oswald_name)
 		30:
 			start_tween(camera_2d, "global_position", Vector2(0, -80), 0.3)
-			display_text("No…", oswald_name)
+			display_text("No...", oswald_name)
 		31:
 			display_text("You have to be-", oswald_name)
 		32:
@@ -158,13 +164,13 @@ func cutscene_handler() -> void:
 			display_text("You really thought it would be that easy?", ringtail_name)
 			start_tween(camera_2d, "zoom", Vector2(0.9, 0.9), 0.8)
 		37:
-			display_text("No…I-...Ringtail", oswald_name)
+			display_text("No...I-...Ringtail", oswald_name)
 		38:
 			display_text("Shhhh", ringtail_name, 0.05)
 		39:
-			display_text("Relax…don't try fighting now", ringtail_name)
+			display_text("Relax...don't try fighting now", ringtail_name)
 		40:
-			display_text("Ha, this…", oswald_name)
+			display_text("Ha, this...", oswald_name)
 			start_tween(oswald, "rotation_degrees", -40, 0.2)
 			start_tween(oswald, "global_position", Vector2(30, 0), 0.2)
 		41:
@@ -203,9 +209,19 @@ func cutscene_handler() -> void:
 			show_textbox()
 			display_text("Not satisfied?")
 		48:
-			display_text("Me neither")
+			if GlobalSave.save_flags["beat_hard"]:
+				display_text("Well you know how it truly ends already")
+			elif GlobalSave.one_fight_beaten():
+				display_text("Then clearly you didn't listen to my previous advice")
+			else:
+				display_text("Me neither")
 		49:
-			display_text("Try the HARD difficulty to find out what really went down")
+			if GlobalSave.all_flags_true():
+				display_text("Anyways, congrats on 100% completion")
+			elif GlobalSave.save_flags["beat_hard"]:
+				display_text("You're probably here for 100% completion anyways")
+			else:
+				display_text("Try the HARD difficulty to find out what really went down")
 		_:
 			show_textbox()
 			start_tween(ringtail, "modulate", Color(1,1,1,0), 0.2)

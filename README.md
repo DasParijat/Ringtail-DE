@@ -100,6 +100,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(GlobalSave / SaveDataRes / Home Menu [Settings]) 
 			The total runtime when the player reaches 100% completion is now 
 			saved and displayed in the settings</li>
+			<li>(RGT_DEF_OUTRO) 
+			Added dynamic dialogue to default outro cutscene</li>
 		</ul>
 	</li>
 	<li>
