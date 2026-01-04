@@ -31,12 +31,15 @@ var visual_settings_dict : Dictionary = {
 	"shake_cam": false
 }
 
+var runtime_at_completion : float = 0.0
+
 func _ready() -> void:
 	var data : SaveDataRes = get_save_data()
 	save_flags = data.flags
 	volumes_dict = data.volumes_dict
 	visual_settings_dict = data.visual_settings_dict
 	TotalRuntimeTimer.total_runtime_seconds = data.total_runtime
+	runtime_at_completion = data.runtime_at_completion
 	
 func set_settings(data : SaveDataRes) -> void:
 	# Saving settings into global save
@@ -45,6 +48,7 @@ func set_settings(data : SaveDataRes) -> void:
 	
 	# Save runtime (While running, occasionally save runtime in case of crash)
 	data.total_runtime = TotalRuntimeTimer.total_runtime_seconds
+	data.runtime_at_completion = runtime_at_completion
 	
 	# Saving settings into save file itself (along with flags)
 	data.flags = save_flags
@@ -57,6 +61,11 @@ func set_flags(data : SaveDataRes) -> void:
 	
 	# Save runtime (While running, occasionally save runtime in case of crash)
 	data.total_runtime = TotalRuntimeTimer.total_runtime_seconds
+	
+	# RAC is updated upon the player getting 100%, doesn't update afterwards
+	if all_flags_true() and runtime_at_completion == 0.0:
+		runtime_at_completion = TotalRuntimeTimer.total_runtime_seconds
+		data.runtime_at_completion = TotalRuntimeTimer.total_runtime_seconds
 	
 	# Saving flags into save file itself (along with settings)
 	data.volumes_dict = volumes_dict
@@ -72,6 +81,7 @@ func set_runtime(data : SaveDataRes = SaveDataRes.new()) -> void:
 	
 	# Update total_runtime with latest
 	data.total_runtime = TotalRuntimeTimer.total_runtime_seconds
+	data.runtime_at_completion = runtime_at_completion
 	
 	ResourceSaver.save(data, SAVE_FILE_PATH)
 	print("GLOBAL SAVE: SAVED", data)

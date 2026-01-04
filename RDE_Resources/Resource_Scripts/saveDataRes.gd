@@ -37,6 +37,7 @@ var bus_name_array : Array[String] = [
 ]
 
 @export var total_runtime : float = 0.0 # in seconds
+@export var runtime_at_completion : float = 0.0 # in seconds, updated when player has 100% completion
 
 func set_default_volume(bus_name : String, default_volume : float) -> void:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)

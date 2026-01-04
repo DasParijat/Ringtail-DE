@@ -24,7 +24,10 @@ func _ready() -> void:
 	show_hints.button_pressed = GlobalSettings.visible_hints
 	shake_cam.button_pressed = GlobalSettings.cam_shake_enabled
 	
-	completion_text.text = "Completion: " + str(GlobalSave.get_completion_percentage()) + "%"
+	if GlobalSave.all_flags_true():
+		completion_text.text = "100% completion at " + GlobalTime.get_time_format(GlobalSave.runtime_at_completion)
+	else:
+		completion_text.text = "Completion: " + str(GlobalSave.get_completion_percentage()) + "%"
 
 func enter_animation() -> void:
 	show()

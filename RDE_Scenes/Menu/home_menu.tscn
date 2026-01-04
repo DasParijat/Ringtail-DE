@@ -617,7 +617,6 @@ script = ExtResource("7_wokig")
 fight_type = "STORY_RGT_HARD"
 
 [node name="AllCutscenes" type="Button" parent="Fight Menu/MarginContainer/HBoxContainer/FightB Container/Button Container"]
-visible = false
 layout_mode = 2
 theme = ExtResource("7_a3nps")
 theme_override_font_sizes/font_size = 75

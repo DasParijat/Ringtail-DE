@@ -96,7 +96,15 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
-			(1/2/26)
+			(1/4/26)
+			<li>(GlobalSave / SaveDataRes / Home Menu [Settings]) 
+			The total runtime when the player reaches 100% completion is now 
+			saved and displayed in the settings</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			(1/3/26)
 			<li>(GlobalSave) 
 			Created functions to track completion, 
 			as well as checking if at least one fight was beaten</li>
