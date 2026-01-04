@@ -102,6 +102,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			saved and displayed in the settings</li>
 			<li>(RGT_DEF_OUTRO) 
 			Added dynamic dialogue to default outro cutscene</li>
+			<li>(Home Menu [Settings] / GlobalSave) 
+			Added way to reset save data from settings</li>
 		</ul>
 	</li>
 	<li>

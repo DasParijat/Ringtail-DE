@@ -85,6 +85,20 @@ func set_runtime(data : SaveDataRes = SaveDataRes.new()) -> void:
 	
 	ResourceSaver.save(data, SAVE_FILE_PATH)
 	print("GLOBAL SAVE: SAVED", data)
+
+func reset_save_data() -> void:
+	# Reset ALL saved data
+	var data : SaveDataRes = SaveDataRes.new()
+	
+	# Make sure GlobalSave values are using resetted save values
+	save_flags = data.flags
+	volumes_dict = data.volumes_dict
+	visual_settings_dict = data.visual_settings_dict
+	TotalRuntimeTimer.total_runtime_seconds = data.total_runtime
+	runtime_at_completion = data.runtime_at_completion
+	
+	ResourceSaver.save(data, SAVE_FILE_PATH)
+	print("GLOBAL SAVE: SAVED", data)
 	
 func get_save_data() -> SaveDataRes:
 	if not FileAccess.file_exists(SAVE_FILE_PATH):

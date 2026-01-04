@@ -3,14 +3,15 @@ extends Control
 
 signal audio_reset
 
-@onready var show_timer : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowTimer
-@onready var show_hints : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShowHints
-@onready var shake_cam : CheckButton = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/ShakeCam
+@onready var show_timer : CheckButton = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/ShowTimer
+@onready var show_hints : CheckButton = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/ShowHints
+@onready var shake_cam : CheckButton = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/ShakeCam
 
 @onready var reset_audio : AudioStream = preload("res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3")
 
-@onready var runtime_text : Label = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/Runtime
-@onready var completion_text : Label = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/Completion
+@onready var runtime_text : Label = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Runtime
+@onready var completion_text : Label = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Completion
+
 
 var save_data : SaveDataRes
 var anim_rate : float = 0.2
@@ -121,3 +122,11 @@ func _on_mute_b_pressed() -> void:
 	
 	save_data.mute_audio()
 	audio_reset.emit()
+
+
+func _on_reset_save_pressed() -> void:
+	# Reset data and reload home menu
+	GlobalSave.reset_save_data()
+	
+	await exit_animation()
+	GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
