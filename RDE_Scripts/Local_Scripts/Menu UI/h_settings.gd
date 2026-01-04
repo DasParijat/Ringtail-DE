@@ -12,12 +12,16 @@ signal audio_reset
 @onready var runtime_text : Label = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Runtime
 @onready var completion_text : Label = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/Completion
 
+@onready var reset_save : Button = $MarginContainer/VBoxContainer/TabContainer/General/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/ResetSave
+var reset_data_confirmation : bool = false
 
 var save_data : SaveDataRes
 var anim_rate : float = 0.2
 
 func _ready() -> void:
 	hide()
+	reset_data_confirmation = false
+	reset_save.text = "RESET DATA"
 	modulate.a = 0
 	
 	load_saved_settings()
@@ -83,6 +87,8 @@ func save_audio_settings() -> void:
 
 func _on_settings_back_b_pressed() -> void:
 	save_settings()
+	reset_data_confirmation = false
+	reset_save.text = "RESET DATA"
 	
 	GlobalMenu.emit_signal("menu_change", "MAIN")
 	await exit_animation()
@@ -126,7 +132,11 @@ func _on_mute_b_pressed() -> void:
 
 func _on_reset_save_pressed() -> void:
 	# Reset data and reload home menu
-	GlobalSave.reset_save_data()
-	
-	await exit_animation()
-	GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
+	if reset_data_confirmation:
+		GlobalSave.reset_save_data()
+		
+		await exit_animation()
+		GlobalScene.load_next_scene(GlobalScene.HOME_MENU)
+	else:
+		reset_data_confirmation = true
+		reset_save.text = "Are you sure?"
