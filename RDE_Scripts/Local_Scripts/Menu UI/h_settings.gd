@@ -10,6 +10,7 @@ signal audio_reset
 @onready var reset_audio : AudioStream = preload("res://RDE_Audio/Gun Audio/PumpShotgun Audio/pump_shot1.mp3")
 
 @onready var runtime_text : Label = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/Runtime
+@onready var completion_text : Label = $MarginContainer/VBoxContainer/TabContainer/Visuals/MarginContainer/MarginContainer/VBoxContainer/Completion
 
 var save_data : SaveDataRes
 var anim_rate : float = 0.2
@@ -22,6 +23,8 @@ func _ready() -> void:
 	show_timer.button_pressed = GlobalSettings.visible_timer
 	show_hints.button_pressed = GlobalSettings.visible_hints
 	shake_cam.button_pressed = GlobalSettings.cam_shake_enabled
+	
+	completion_text.text = "Completion: " + str(GlobalSave.get_completion_percentage()) + "%"
 
 func enter_animation() -> void:
 	show()

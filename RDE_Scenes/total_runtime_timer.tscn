@@ -5,7 +5,6 @@
 [node name="TotalRuntimeTimer" type="Timer"]
 autostart = true
 script = ExtResource("1_yrwuy")
-print_runtime = true
 
 [connection signal="timeout" from="." to="." method="_on_timeout"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

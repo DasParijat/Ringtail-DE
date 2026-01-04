@@ -84,9 +84,22 @@ func get_save_data() -> SaveDataRes:
 	
 	return ResourceLoader.load(SAVE_FILE_PATH) as SaveDataRes
 
+func get_completion_percentage(multiplier : float = 100) -> float:
+	# Get number of true flags
+	var completed : float = 0
+	for flag in save_flags.values():
+		if flag: completed += 1
+	
+	# Get percentage, and multiplier moves the decimal
+	return (completed / save_flags.size()) * multiplier
+	
 func all_flags_true() -> bool:
 	## Check if all flags are true, for 100% completion
 	for flag in save_flags.values():
 		if not flag:
 			return false
 	return true
+
+func one_fight_beaten() -> bool:
+	## If the player has beaten at least one fight
+	return save_flags["beat_easy"] or save_flags["beat_norm"] or save_flags["beat_hard"]
