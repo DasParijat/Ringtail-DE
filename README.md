@@ -100,6 +100,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			<li>(Load Screen) 
 			Reverted background to using panel instead of TextureRect, 
 			also secret loading screen doesn't pop up under a minute of runtime</li>
+			<li>(Git) 
+			Updated gitignore to account for Rider IDE (and other IDE's as well)</li>
 		</ul>
 	</li>
 	<li>
