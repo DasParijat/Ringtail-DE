@@ -6,7 +6,7 @@ extends CanvasLayer
 @export var load_progress_bar : ProgressBar
 
 @export var scene_transition : SceneTransitionFade
-@onready var background : TextureRect = $Background
+@onready var panel_background : Panel = $Background
 
 var progress : Array[float] = []
 var scene_load_status : int
@@ -26,8 +26,11 @@ func _ready() -> void:
 		# 50% chance of secret screen
 		secret_screen_chance = 1
 		
-	if (randi_range(0, secret_screen_chance) == 0):
-		background.texture = preload("res://RDE_Images/loading_secret_screen_image1.png")
+	if (randi_range(0, secret_screen_chance) == 0) and TotalRuntimeTimer.total_runtime_seconds > 60:
+		var new_stylebox = StyleBoxTexture.new()
+		new_stylebox.texture = preload("res://RDE_Images/loading_secret_screen_image1.png")
+		
+		panel_background.add_theme_stylebox_override("panel", new_stylebox)
 	
 	await scene_transition.enter_anim()
 	

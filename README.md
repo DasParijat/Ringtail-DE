@@ -97,6 +97,14 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(1/4/26)
+			<li>(Load Screen) 
+			Reverted background to using panel instead of TextureRect, 
+			also secret loading screen doesn't pop up under a minute of runtime</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
+			(1/4/26)
 			<li>(GlobalSave / SaveDataRes / Home Menu [Settings]) 
 			The total runtime when the player reaches 100% completion is now 
 			saved and displayed in the settings</li>
