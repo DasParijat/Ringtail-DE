@@ -211,8 +211,6 @@ func cutscene_handler() -> void:
 		48:
 			if GlobalSave.save_flags["beat_hard"]:
 				display_text("Well you know how it truly ends already")
-			elif GlobalSave.one_fight_beaten():
-				display_text("Then clearly you didn't listen to my previous advice")
 			else:
 				display_text("Me neither")
 		49:

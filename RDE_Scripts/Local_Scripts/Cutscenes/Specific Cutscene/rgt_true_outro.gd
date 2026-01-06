@@ -126,7 +126,7 @@ func cutscene_handler() -> void:
 		27:
 			display_text("I don't recall seeing another raccoon like you before", oswald_name)
 		28:
-			display_text("Of course you haven't you dumb fool", ringtail_name)
+			display_text("Of course you haven't you idiot", ringtail_name)
 			start_tween(camera_2d, "position", Vector2(0, -210), 0.3)
 		29:
 			display_text("That's cause she's human", ringtail_name)
@@ -270,7 +270,7 @@ func cutscene_handler() -> void:
 		70:
 			display_text("I don't think it's truly over", oswald_name)
 		71:
-			display_text("Ringtail's sister....Evelyn", oswald_name)
+			display_text("His sister....Evelyn", oswald_name)
 		72:
 			display_text("She's still out there", oswald_name)
 		73:

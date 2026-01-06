@@ -2,7 +2,7 @@ extends Node
 
 const SAVE_FILE_PATH : String = "user://save_file.tres"
 # NOTE: tres is readable file, res is unreadable
-# use res for final launch
+# Leave it as tres for flexibility / cause its cool to see the background
 
 var save_flags : Dictionary = {
 	"beat_easy": false,

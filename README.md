@@ -96,12 +96,16 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
-			(1/4/26)
+			(1/5/26)
 			<li>(Load Screen) 
 			Reverted background to using panel instead of TextureRect, 
 			also secret loading screen doesn't pop up under a minute of runtime</li>
 			<li>(Git) 
 			Updated gitignore to account for Rider IDE (and other IDE's as well)</li>
+			<li>(RGT_TRUE_OUTRO / RGT_DEF_OUTRO) 
+			Slightly modified dialogue</li>
+			<li>(Audio / Oswald / Base Player) 
+			Reduced noise of oswald's power noise</li>
 		</ul>
 	</li>
 	<li>
