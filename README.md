@@ -97,6 +97,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 	<li>
 		<ul>
 			(1/6/26)
+			<li>(General) 
+			Exported windows, web, and linux builds of game at this point</li>
 			<li>(Load Screen) 
 			Reduced chance of secret screen showing in early game</li>
 			<li>(Home Menu [Settings] / SaveDataRes / GlobalSave) 
