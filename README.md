@@ -121,6 +121,9 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Reduced noise of oswald's power noise</li>
 			<li>(RGT_TRUE_OUTRO / RGT_DEF_OUTRO) 
 			Slightly modified dialogue</li>
+			<li>(RGT_Plains) 
+			Cleaned up flowers on bottom part of tileset, 
+			to avoid weird looking ones showing in the cutscenes</li>
 		</ul>
 	</li>
 	<li>

@@ -310,12 +310,12 @@ func cutscene_handler() -> void:
 			camera_2d.global_position = Vector2(0, 1000)
 			start_tween(black_overlay, "color", Color(0, 0, 0, 0), 3.0)
 			start_tween(oswald, "global_position", Vector2(0, 750), 3.0)
-		86:
-			enable_auto_skip()
-			start_tween(oswald, "global_position", Vector2(0, 1500), 3.0)
 			
 			darius.show()
 			obignale.show()
+		86:
+			enable_auto_skip()
+			start_tween(oswald, "global_position", Vector2(0, 1500), 3.0)
 		87:
 			enable_auto_skip()
 			start_tween(camera_2d, "zoom", Vector2(1.4, 1.4), 0.8)
