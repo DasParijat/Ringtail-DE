@@ -10,14 +10,14 @@ class_name SaveDataRes
 	"beat_no_power": false,
 	"beat_no_heal": false,
 	"beat_fixed_cam": false,
-	"three_modes": false,
+	"beat_no_ui": false,
 	"all_modes": false
 }
 
 @export var volumes_dict : Dictionary = {
 	"Master": 0,
 	"Music Bus": 0,
-	"Game SFX": -8.02638,
+	"Game SFX": 0,
 	"UI SFX": 0,
 	"CScene Bus": 0
 }
@@ -43,7 +43,7 @@ func set_default_volume(bus_name : String, default_volume : float) -> void:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(default_volume))
 
-func set_audio(master_vol : float = 1, music_vol : float = 1, game_vol : float = 0.4, ui_vol : float = 1, cscene_vol : float = 1) -> void:
+func set_audio(master_vol : float = 1, music_vol : float = 1, game_vol : float = 1, ui_vol : float = 1, cscene_vol : float = 1) -> void:
 	set_default_volume("Master", master_vol)
 	set_default_volume("Music Bus", music_vol)
 	set_default_volume("Game SFX", game_vol)

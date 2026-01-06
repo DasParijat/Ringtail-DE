@@ -13,14 +13,14 @@ var save_flags : Dictionary = {
 	"beat_no_power": false,
 	"beat_no_heal": false,
 	"beat_fixed_cam": false,
-	"three_modes": false,
+	"beat_no_ui": false,
 	"all_modes": false
 }
 
 var volumes_dict : Dictionary = {
 	"Master": 0,
 	"Music Bus": 0,
-	"Game SFX": -8.02638,
+	"Game SFX": 0,
 	"UI SFX": 0,
 	"CScene Bus": 0
 }

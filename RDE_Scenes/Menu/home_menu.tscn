@@ -439,6 +439,7 @@ text = "Reload"
 script = ExtResource("1_k7wod")
 
 [node name="Settings" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -582,7 +583,6 @@ bus_name = "Music Bus"
 layout_mode = 2
 label_text = "Game SFX"
 bus_name = "Game SFX"
-audio_scaling = 0.5
 
 [node name="UI Audio" parent="Settings/MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/MarginContainer/VBoxContainer" instance=ExtResource("8_ubgdy")]
 layout_mode = 2
@@ -653,7 +653,6 @@ text = "yyoooo"
 layout_mode = 2
 
 [node name="Fight Menu" type="Control" parent="." node_paths=PackedStringArray("fight_buttons", "PlayButton", "fight_thumbnail", "fight_header", "fight_desc", "mode_container", "scene_transition")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -824,7 +823,7 @@ vertical_scroll_mode = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 
 [node name="ModeCheckItem" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
 layout_mode = 2
@@ -855,6 +854,12 @@ layout_mode = 2
 mode_name = "fixed_cam"
 mode_display_name = "Fixed Camera"
 mode_desc = "The camera is fixed to the center of the stage"
+
+[node name="ModeCheckItem6" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer/TabContainer/Mode/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_fs5vg")]
+layout_mode = 2
+mode_name = "no_ui"
+mode_display_name = "No UI"
+mode_desc = "All UI is removed (except pause menu)"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Fight Menu/MarginContainer/HBoxContainer/FightDesc Container/VBoxContainer"]
 layout_mode = 2

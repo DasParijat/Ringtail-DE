@@ -10,7 +10,7 @@ extends CanvasLayer
 
 var progress : Array[float] = []
 var scene_load_status : int
-var secret_screen_chance : int = 5
+var secret_screen_chance : int = 12
 
 var scene_name : String = GlobalScene.HOME_MENU
 # if not working, scene loads to main menu
@@ -18,7 +18,7 @@ var scene_name : String = GlobalScene.HOME_MENU
 func _ready() -> void:
 	Engine.time_scale = 1 # Ensures time scale is normal when loading next scene
 	
-	# Starts at 12.5% chance of secret screen
+	# Starts at 8.34% chance of secret screen
 	if GlobalSave.save_flags["beat_hard"]:
 		# 25% chance of secret screen
 		secret_screen_chance = 3

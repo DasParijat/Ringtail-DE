@@ -138,6 +138,9 @@ func set_flags_on_win() -> void:
 	if "fixed_cam" in GlobalScene.next_level_modes:
 		flags_on_win.append("beat_fixed_cam")
 		num_of_modes += 1
+	if "no_ui" in GlobalScene.next_level_modes:
+		flags_on_win.append("beat_no_ui")
+		num_of_modes += 1
 	if "no_heal" in GlobalScene.next_level_modes:
 		flags_on_win.append("beat_no_heal")
 		num_of_modes += 1
@@ -147,10 +150,8 @@ func set_flags_on_win() -> void:
 	if "half_hp" in GlobalScene.next_level_modes:
 		flags_on_win.append("beat_half_hp")
 		num_of_modes += 1
-	
-	if num_of_modes >= 3:
-		flags_on_win.append("three_modes")
-	if num_of_modes >= 5:
+		
+	if num_of_modes >= 6:
 		flags_on_win.append("all_modes")
 		
 	for flag in flags_on_win:

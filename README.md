@@ -96,6 +96,19 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <ul>
 	<li>
 		<ul>
+			(1/6/26)
+			<li>(Load Screen) 
+			Reduced chance of secret screen showing in early game</li>
+			<li>(Home Menu [Settings] / SaveDataRes / GlobalSave) 
+			Default game SFX volume is now 100% like the rest</li>
+			<li>(FightUI / Game / Modes) 
+			Added new mode 'no_ui'</li>
+			<li>(GlobalSave / SaveDataRes) 
+			Replaced 'three_modes' flag with 'beat_no_ui'</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/5/26)
 			<li>(Load Screen) 
 			Reverted background to using panel instead of TextureRect, 
@@ -106,6 +119,8 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 			Slightly modified dialogue</li>
 			<li>(Audio / Oswald / Base Player) 
 			Reduced noise of oswald's power noise</li>
+			<li>(RGT_TRUE_OUTRO / RGT_DEF_OUTRO) 
+			Slightly modified dialogue</li>
 		</ul>
 	</li>
 	<li>

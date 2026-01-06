@@ -39,6 +39,11 @@ func _ready() -> void:
 	GlobalPlayer.connect("just_healed", Callable(self, "_on_player_just_healed"))
 	#print(get_viewport().get_visible_rect().size)
 	
+	if "no_ui" in GlobalScene.next_level_modes:
+		hide()
+	else:
+		show()
+		
 	player_hp_stylebox.set_corner_radius_all(4)
 	player_power_stylebox.set_corner_radius_all(4)
 	
