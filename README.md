@@ -1,21 +1,28 @@
 <p>
 Ringtail Definitive Edition is a remake of an old but gold Scratch game I made back in 2022.
 It's a top down bullet hell shooter where you have to take down a nefarious, evil and
-hyper-realistic raccoon (technically a monster in the form of a raccoon but that's just lore stuff).
+hyper-realistic raccoon (technically a monster in the form of a raccoon but that's just lore stuff). 
+The game is available to play on the web (in the link and itch.io), and downloadable on Windows and Linux.
 </p>
 
 <strong>Website link: dasparijat.github.io/RingtailDE-Website/</strong>
 
-<strong>Agenda / Possible Goals:</strong>
-<p>Listed from highest to lowest priority</p>
+<strong>General History</strong>
 <ul>
-	<li>Add ability to save data (Saves settings and if fight beaten) (DONE)</li>
-	<li>Add true cutscenes onto hard mode, might tweak hard mode to be slightly harder
-		(Scrapping True mode idea due to length of development)(DONE)</li>
-	<li>Enhance in-game UI (Don't rely on scaling)(DONE)</li>
-	<li>MAYBE Create credits menu (either sub menu in settings or own menu)</li>
-	<li>MAYBE Add other saved stuff (Fight logs / Acheivements)</li>
-	<li>MAYBE Add little cool animation for main menu</li>
+	<li>The idea of the remake came up in early 2024, though I was unsure which engine to use</li>
+	<li>In Summer 2024, I settled on using Godot, and started doing slow progress on a build of Ringtail</li>
+	<li>However when the fall semester started, I would end up not working on it as much</li>
+	<li>By Winter 2024, I decided to toss away that initial build and put more effort torwards a new build, 
+	which resulted in the start of this repository.</li>
+	<li>From then on until May, I would build up the game's core mechanics, such as how 
+	levels were loaded, fights worked, how the player worked, etc.</li>
+	<li>By May 2025, aka the end of the spring semester, I started work on the scripting of the fight, the cutscenes, and the overall aesthetics of the game</li>
+	<li>In July, I would take a break from working on the game to work on the webpage to hold and promote the game</li>
+	<li>On July 26, I would make the game playable to the public, though it lacked the true ending</li>
+	<li>Over the next few months, I wouldn't work on it as much due to school work, but I did slowly build up the saving system</li>
+	<li>In December 2025, I would work mostly on scripting the true intro/outro cutscenes</li>
+	<li>After I finished the cutscenes, I would make a lot of tweaks to the game, which primarily involved the use of the saved stats</li>
+	<li>On Janaury 6th 2026, Ringtail DE v1.1 would be released, with the new save system and true cutscenes</li>
 </ul>
 
 <strong>Asset Credits:</strong>
@@ -87,13 +94,21 @@ hyper-realistic raccoon (technically a monster in the form of a raccoon but that
 <strong>Bug List:</strong>
 <ul>
 	<li>(4/?) - Pause menu doesn't show up soemtimes when rapidly pausing</li>
-	<li>(5/7) - Player can get stuck in wall 
-	(Bug caused by lag, not directly fixed but player teleports after being stuck for a while)</li>
 	<li>(7/31) - Web version has longer pause after loading cutscene initially</li>
 </ul>
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(1/7/26)
+			<li>(README) 
+			Updated README with general history of the project</li>
+			<li>(General) 
+			For future projects, I will most likely ditch the changelog system I've had for this project, 
+			due to the redundancy with git commit messages, as well as creating a long README</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(1/6/26)
