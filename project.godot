@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Ringtail DE"
 run/main_scene="res://RDE_Scenes/Menu/home_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.372549, 0.27451, 0.0509804, 1)
 boot_splash/image="res://Builds/Web/loading_splash_screen.png"
 config/icon="res://RDE_Images/RDE_Adverts/ringtail_icon1.png"
@@ -73,6 +73,10 @@ window/size/viewport_height=720
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
+
+[dotnet]
+
+project/assembly_name="Ringtail DE"
 
 [editor]
 

@@ -1,18 +1,15 @@
 [gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://c3l8dxjdu4611"]
 
-[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_esclb"]
+[ext_resource type="Script" uid="uid://dtv2ayos1yc04" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_esclb"]
 [ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav" id="1_hdncm"]
-[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_ep8v2"]
+[ext_resource type="Script" uid="uid://cpj5kdv0pt1sc" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_ep8v2"]
 [ext_resource type="Texture2D" uid="uid://dqkyuqbyx4a56" path="res://RDE_Images/rt_minitailSHIELD.png" id="3_snt8u"]
 
 [sub_resource type="Resource" id="Resource_4xssb"]
 resource_local_to_scene = true
 script = ExtResource("1_esclb")
 HP_NAME = "MinitailSHIELD"
-is_player = false
 MAX_HP = 35
-damage_rate = 1.0
-invicible = false
 
 [resource]
 resource_local_to_scene = true
@@ -21,23 +18,11 @@ name = "MinitailSHIELD"
 display_name = "Minitail Shield"
 color = Color(0.79, 0.782758, 0.7031, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
-blood_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_snt8u")
 base_sprtflip_enabled = false
-hurt_sounds = Array[AudioStream]([])
-death_sounds = Array[AudioStream]([ExtResource("1_hdncm")])
 health_comp = SubResource("Resource_4xssb")
-num_of_bars = 3
-is_boss = false
-is_enemy = true
-is_hittable = true
-collision_enabled = false
 player_detection_radius = 200.0
-mini_hp_visible = true
 pos_track_delay = 1.0
 mob_size = Vector2(0.9, 0.9)
-sprite_size = Vector2(1, 1)
-collision_size = Vector2(1, 1)
-hitbox_size = Vector2(4, 4)
 collision_dmg = 5.0
 collision_dmg_cooldown = 0.3

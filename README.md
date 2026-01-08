@@ -2,7 +2,7 @@
 Ringtail Definitive Edition is a remake of an old but gold Scratch game I made back in 2022.
 It's a top down bullet hell shooter where you have to take down a nefarious, evil and
 hyper-realistic raccoon (technically a monster in the form of a raccoon but that's just lore stuff). 
-It was created using Godot 4.3 and GDScript.
+It was created using Godot 4.3 and GDScript, but on 1/8/26 it has upgraded to use Godot 4.5.
 The game is available to play on the web (in the link and itch.io), and downloadable on Windows and Linux.
 </p>
 
@@ -100,6 +100,13 @@ The game is available to play on the web (in the link and itch.io), and download
 
 <strong>Changelog:</strong>
 <ul>
+	<li>
+		<ul>
+			(1/8/26)
+			<li>(General) 
+			Upgraded Ringtail DE to use Godot 4.5</li>
+		</ul>
+	</li>
 	<li>
 		<ul>
 			(1/7/26)

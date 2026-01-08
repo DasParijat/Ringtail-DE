@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://nlpg0x3l8com"]
 
 [ext_resource type="PackedScene" uid="uid://f2i0ysltk7fr" path="res://RDE_Scenes/fight_stats.tscn" id="1_4tjlq"]
-[ext_resource type="Script" path="res://RDE_Scripts/Local_Scripts/Game UI/victory_menu.gd" id="1_sdjne"]
+[ext_resource type="Script" uid="uid://c7ia43shdiy55" path="res://RDE_Scripts/Local_Scripts/Game UI/victory_menu.gd" id="1_sdjne"]
 [ext_resource type="FontFile" uid="uid://cymfd6j5gajfm" path="res://RDE_Fonts/OldNewspaperTypes.ttf" id="3_sov2u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cl45v"]
@@ -15,9 +15,10 @@ script = ExtResource("1_sdjne")
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -165.5
-offset_right = 407.655
-offset_bottom = 165.5
+offset_left = 20.0
+offset_top = -311.5
+offset_right = 427.655
+offset_bottom = 311.5
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_cl45v")
 

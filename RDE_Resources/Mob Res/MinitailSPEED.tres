@@ -1,18 +1,15 @@
 [gd_resource type="Resource" script_class="MobRes" load_steps=6 format=3 uid="uid://ew4pwt7n7u3n"]
 
 [ext_resource type="AudioStream" uid="uid://c0wbwydmhq84y" path="res://RDE_Audio/Mob Sounds/Mob Death/mob_death1.wav" id="1_stiqh"]
-[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_xmwl6"]
-[ext_resource type="Script" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_gepl6"]
+[ext_resource type="Script" uid="uid://dtv2ayos1yc04" path="res://RDE_Resources/Resource_Scripts/healthRes.gd" id="1_xmwl6"]
+[ext_resource type="Script" uid="uid://cpj5kdv0pt1sc" path="res://RDE_Resources/Resource_Scripts/mobRes.gd" id="2_gepl6"]
 [ext_resource type="Texture2D" uid="uid://djl1livyvdd5n" path="res://RDE_Images/rt_minitailSPEED.png" id="3_431ud"]
 
 [sub_resource type="Resource" id="Resource_x6ded"]
 resource_local_to_scene = true
 script = ExtResource("1_xmwl6")
 HP_NAME = "MinitailSPEED"
-is_player = false
 MAX_HP = 14
-damage_rate = 1.0
-invicible = false
 
 [resource]
 resource_local_to_scene = true
@@ -21,23 +18,10 @@ name = "MinitailSPEED"
 display_name = "Minitail Speed"
 color = Color(1, 0.796078, 0.247059, 1)
 hp_bg_color = Color(0.0192382, 0.08638, 6.01634e-09, 1)
-blood_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_431ud")
 base_sprtflip_enabled = false
-hurt_sounds = Array[AudioStream]([])
-death_sounds = Array[AudioStream]([ExtResource("1_stiqh")])
 health_comp = SubResource("Resource_x6ded")
-num_of_bars = 3
-is_boss = false
-is_enemy = true
-is_hittable = true
-collision_enabled = false
-player_detection_radius = 150.0
-mini_hp_visible = true
 pos_track_delay = 1.0
 mob_size = Vector2(0.75, 0.75)
-sprite_size = Vector2(1, 1)
-collision_size = Vector2(1, 1)
-hitbox_size = Vector2(4, 4)
 collision_dmg = 0.5
 collision_dmg_cooldown = 0.2
