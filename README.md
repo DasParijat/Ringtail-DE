@@ -102,6 +102,13 @@ The game is available to play on the web (in the link and itch.io), and download
 <ul>
 	<li>
 		<ul>
+			(1/12/26)
+			<li>(General) 
+			Created export template for 4.5, rexported Windows and Linux versions</li>
+		</ul>
+	</li>
+	<li>
+		<ul>
 			(1/8/26)
 			<li>(General) 
 			Upgraded Ringtail DE to use Godot 4.5</li>
